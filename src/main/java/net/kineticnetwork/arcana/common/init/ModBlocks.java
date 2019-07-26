@@ -1,5 +1,6 @@
-package net.kineticnetwork.arcana.blocks;
+package net.kineticnetwork.arcana.common.init;
 
+import net.kineticnetwork.arcana.common.blocks.*;
 import net.minecraftforge.registries.ObjectHolder;
 
 public class ModBlocks {

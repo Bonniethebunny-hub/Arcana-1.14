@@ -1,11 +1,8 @@
-package net.kineticnetwork.arcana.setup;
+package net.kineticnetwork.arcana.common;
 
 import net.minecraft.world.World;
-public class ServerProxy implements IProxy {
-
-
-
-
+public class ServerProxy implements IProxy
+{
     @Override
     public World getClientWorld() {
         throw new IllegalStateException("Only run this on the client!");

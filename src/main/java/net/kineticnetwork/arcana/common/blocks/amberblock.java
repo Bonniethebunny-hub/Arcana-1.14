@@ -1,17 +1,17 @@
-package net.kineticnetwork.arcana.blocks;
+package net.kineticnetwork.arcana.common.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 
-public class greatwoodplanks extends Block {
+public class amberblock extends Block {
 
-    public greatwoodplanks() {
-        super(Properties.create(Material.IRON)
+    public amberblock() {
+        super(Properties.create(Material.GLASS)
                 .sound(SoundType.STONE)
                 .hardnessAndResistance(3.0f)
                 .lightValue(2)
         );
-        setRegistryName("greatwoodplanks");
+        setRegistryName("amberblock");
     }
 }

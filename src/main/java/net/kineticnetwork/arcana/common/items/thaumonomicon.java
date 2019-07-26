@@ -1,6 +1,6 @@
-package net.kineticnetwork.arcana.items;
+package net.kineticnetwork.arcana.common.items;
 
-import net.kineticnetwork.arcana.creativetab.ModTabGroups;
+import net.kineticnetwork.arcana.common.creativetab.ModTabGroups;
 import net.minecraft.item.Item;
 
 public class thaumonomicon extends Item {

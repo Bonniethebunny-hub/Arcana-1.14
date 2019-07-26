@@ -1,13 +1,12 @@
 package net.kineticnetwork.arcana;
 
-import net.kineticnetwork.arcana.blocks.*;
-import net.kineticnetwork.arcana.blocks.ModBlocks;
-import net.kineticnetwork.arcana.creativetab.ModTabGroups;
-import net.kineticnetwork.arcana.items.thaumonomicon;
-import net.kineticnetwork.arcana.setup.ClientProxy;
-import net.kineticnetwork.arcana.setup.IProxy;
-import net.kineticnetwork.arcana.setup.ModSetup;
-import net.kineticnetwork.arcana.setup.ServerProxy;
+import net.kineticnetwork.arcana.common.blocks.*;
+import net.kineticnetwork.arcana.common.init.ModBlocks;
+import net.kineticnetwork.arcana.common.creativetab.ModTabGroups;
+import net.kineticnetwork.arcana.common.items.thaumonomicon;
+import net.kineticnetwork.arcana.client.ClientProxy;
+import net.kineticnetwork.arcana.common.IProxy;
+import net.kineticnetwork.arcana.common.ServerProxy;
 import net.kineticnetwork.arcana.util.Constants;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
@@ -18,14 +17,11 @@ import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 @Mod(Constants.MODID)
 public class ArcanaMod
 {
     public static IProxy proxy = DistExecutor.runForDist(() -> () -> new ClientProxy(), () -> () -> new ServerProxy());
-    public static ModSetup setup = new ModSetup();
 
     public ArcanaMod()
     {
@@ -34,7 +30,7 @@ public class ArcanaMod
 
     private void setup(final FMLCommonSetupEvent event)
     {
-        setup.init();
+
     }
 
     @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
