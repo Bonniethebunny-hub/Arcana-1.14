@@ -1,4 +1,4 @@
-package net.kineticnetwork.arcana.init;
+package net.kineticnetwork.arcana.items;
 
 import net.kineticnetwork.arcana.items.thaumonomicon;
 import net.minecraftforge.registries.ObjectHolder;

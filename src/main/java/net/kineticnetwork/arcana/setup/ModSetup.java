@@ -1,6 +1,6 @@
 package net.kineticnetwork.arcana.setup;
 
-import net.kineticnetwork.arcana.init.ModBlocks;
+import net.kineticnetwork.arcana.blocks.ModBlocks;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 

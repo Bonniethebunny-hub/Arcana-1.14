@@ -1,4 +1,4 @@
-package net.kineticnetwork.arcana.init;
+package net.kineticnetwork.arcana.blocks;
 
 import net.kineticnetwork.arcana.blocks.*;
 import net.minecraftforge.registries.ObjectHolder;
