@@ -7,22 +7,34 @@ import net.minecraftforge.registries.ObjectHolder;
 public class ModBlocks {
 
     @ObjectHolder("arcana:arcanestone")
-    public  static arcanestone ARCANESTONE;
+    public static arcanestone ARCANESTONE;
 
     @ObjectHolder("arcana:arcanestonebrick")
-    public  static arcanestonebrick ARCANESTONEBRICK;
+    public static arcanestonebrick ARCANESTONEBRICK;
 
     @ObjectHolder("arcana:infusionstone")
-    public  static infusionstone INFUSIONSTONE;
+    public static infusionstone INFUSIONSTONE;
 
     @ObjectHolder("arcana:amberblock")
-    public  static amberblock AMBERBLOCK;
+    public static amberblock AMBERBLOCK;
 
     @ObjectHolder("arcana:silverwoodplanks")
-    public  static silverwoodplanks SILVERWOODPLANKS;
+    public static silverwoodplanks SILVERWOODPLANKS;
 
     @ObjectHolder("arcana:greatwoodplanks")
-    public  static greatwoodplanks GREATWOODPLANKS;
+    public static greatwoodplanks GREATWOODPLANKS;
+
+    @ObjectHolder("arcana:taintedrock")
+    public static taintedrock TAINTEDROCK;
+
+    @ObjectHolder("arcana:taintedsoil")
+    public static taintedsoil TAINTEDSOIL;
+
+    @ObjectHolder("arcana:taintedcrust")
+    public static taintedcrust TAINTEDCRUST;
+
+    @ObjectHolder("arcana:greatwoodsapling")
+    public static greatwoodsapling GREATWOODSAPLING;
 }
 
 

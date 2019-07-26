@@ -33,6 +33,11 @@ public class EventSubscriber
             event.getRegistry().register(new amberblock());
             event.getRegistry().register(new silverwoodplanks());
             event.getRegistry().register(new greatwoodplanks());
+            event.getRegistry().register(new greatwoodsapling());
+            event.getRegistry().register(new taintedcrust());
+            event.getRegistry().register(new taintedrock());
+            event.getRegistry().register(new taintedsoil());
+
         }
 
         /**
@@ -50,7 +55,10 @@ public class EventSubscriber
             event.getRegistry().register(new BlockItem(ModBlocks.AMBERBLOCK, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("amberblock"));
             event.getRegistry().register(new BlockItem(ModBlocks.SILVERWOODPLANKS, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("silverwoodplanks"));
             event.getRegistry().register(new BlockItem(ModBlocks.GREATWOODPLANKS, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("greatwoodplanks"));
-
+            event.getRegistry().register(new BlockItem(ModBlocks.GREATWOODSAPLING, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("greatwoodsapling"));
+            event.getRegistry().register(new BlockItem(ModBlocks.TAINTEDCRUST, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("taintedcrust"));
+            event.getRegistry().register(new BlockItem(ModBlocks.TAINTEDROCK, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("taintedrock"));
+            event.getRegistry().register(new BlockItem(ModBlocks.TAINTEDSOIL, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("taintedsoil"));
             // ITEMS
             event.getRegistry().register(new thaumonomicon());
         }
