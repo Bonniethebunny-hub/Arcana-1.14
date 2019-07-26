@@ -1,6 +1,6 @@
 {
   "_comment": "CREATIVE TABS",
-  "itemGroup.arcana=Arcana Tab",
+  "itemGroup.arcana": "Arcana Tab",
 
   "_comment": "MOD BLOCKS",
   "block.arcana.arcanestone": "Arcane Stone",
