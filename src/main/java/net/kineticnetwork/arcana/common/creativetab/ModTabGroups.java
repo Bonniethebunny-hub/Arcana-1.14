@@ -1,7 +1,7 @@
 package net.kineticnetwork.arcana.common.creativetab;
 
 import net.kineticnetwork.arcana.common.init.ModBlocks;
-import net.kineticnetwork.arcana.util.Constants;
+import net.kineticnetwork.arcana.utilities.Constants;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 
