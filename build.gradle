@@ -75,9 +75,9 @@ dependencies {
 jar {
     manifest {
         attributes([
-                "Specification-Title"     : "examplemod",
+                "Specification-Title"     : "Arcana",
                 "Specification-Vendor"    : "examplemodsareus",
-                "Specification-Version"   : "1",
+                "Specification-Version"   : "BETA-SNAPSHOT 0.0.1",
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : "${version}",
                 "Implementation-Vendor"   : "examplemodsareus",
