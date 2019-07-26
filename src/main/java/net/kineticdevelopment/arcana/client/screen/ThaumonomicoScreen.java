@@ -1,5 +1,6 @@
-package net.kineticdevelopment.arcana.client.inventory;
+package net.kineticdevelopment.arcana.client.screen;
 
+import net.kineticdevelopment.arcana.client.gui.GuiThaumonomicon;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.ShulkerBoxContainer;
@@ -8,13 +9,12 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
-public class ThaumonomiconBoxScreen extends ContainerScreen<ShulkerBoxContainer>
+public class ThaumonomicoScreen extends ContainerScreen<GuiThaumonomicon>
 {
     private int textureXSize;
     private int textureYSize;
 
-    public ThaumonomiconBoxScreen(ShulkerBoxContainer screenContainer, PlayerInventory inv, ITextComponent titleIn)
-    {
+    public ThaumonomicoScreen(GuiThaumonomicon screenContainer, PlayerInventory inv, ITextComponent titleIn) {
         super(screenContainer, inv, titleIn);
     }
 

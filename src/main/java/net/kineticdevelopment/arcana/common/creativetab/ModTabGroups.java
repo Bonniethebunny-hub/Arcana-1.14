@@ -1,6 +1,7 @@
 package net.kineticdevelopment.arcana.common.creativetab;
 
 import net.kineticdevelopment.arcana.common.init.ModBlocks;
+import net.kineticdevelopment.arcana.common.init.ModItems;
 import net.kineticdevelopment.arcana.utilities.Constants;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -10,7 +11,7 @@ import java.util.function.Supplier;
 
 public class ModTabGroups
 {
-    public static final ItemGroup MOD_ITEM_GROUP = new ModTabGroup(Constants.MODID, () -> new ItemStack(ModBlocks.ARCANESTONE));
+    public static final ItemGroup MOD_ITEM_GROUP = new ModTabGroup(Constants.MODID, () -> new ItemStack(ModItems.THAUMONOMICON));
 
     public static final class ModTabGroup extends ItemGroup
     {
