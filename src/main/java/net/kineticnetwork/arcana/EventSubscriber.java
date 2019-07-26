@@ -66,8 +66,8 @@ public class EventSubscriber
     {
         if (!event.getPlayer().world.isRemote)
         {
-            event.getPlayer().sendMessage(new StringTextComponent(TextFormatting.AQUA + "Hello there " +
-                    TextFormatting.YELLOW + event.getPlayer().getDisplayName() + TextFormatting.RED + ", we hope you enjoy the Arcana Mod!"));
+            event.getPlayer().sendMessage(new StringTextComponent(TextFormatting.RED + "Hello there " +
+                    TextFormatting.AQUA + event.getPlayer().getDisplayName().getString() + TextFormatting.RED + ", we hope you enjoy the Arcana Mod!"));
         }
     }
 }
