@@ -3,6 +3,7 @@ package net.kineticdevelopment.arcana;
 import net.kineticdevelopment.arcana.common.blocks.*;
 import net.kineticdevelopment.arcana.common.creativetab.ModTabGroups;
 import net.kineticdevelopment.arcana.common.init.ModBlocks;
+import net.kineticdevelopment.arcana.common.items.thaumiumingot;
 import net.kineticdevelopment.arcana.common.items.thaumonomicon;
 import net.kineticdevelopment.arcana.common.blocks.*;
 import net.minecraft.block.Block;
@@ -38,6 +39,7 @@ public class EventSubscriber
             event.getRegistry().register(new taintedrock());
             event.getRegistry().register(new taintedsoil());
             event.getRegistry().register(new cinnabarore());
+            event.getRegistry().register(new thaumiumblock());
 
         }
 
@@ -61,8 +63,10 @@ public class EventSubscriber
             event.getRegistry().register(new BlockItem(ModBlocks.TAINTEDROCK, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("taintedrock"));
             event.getRegistry().register(new BlockItem(ModBlocks.TAINTEDSOIL, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("taintedsoil"));
             event.getRegistry().register(new BlockItem(ModBlocks.CINNABARORE, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("cinnabarore"));
+            event.getRegistry().register(new BlockItem(ModBlocks.THAUMIUMBLOCK, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("thaumiumblock"));
             // ITEMS
             event.getRegistry().register(new thaumonomicon());
+            event.getRegistry().register(new thaumiumingot());
         }
     }
 

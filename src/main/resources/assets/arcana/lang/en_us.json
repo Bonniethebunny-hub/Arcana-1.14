@@ -14,7 +14,9 @@
   "block.arcana.taintedrock": "Tainted Rock",
   "block.arcana.taintedsoil": "Tainted Soil",
   "block.arcana.cinnabarore": "Cinnabar Ore",
+  "block.arcana.thaumiumblock": "Thaumium Block",
 
   "_comment": "MOD ITEMS",
-  "item.arcana.thaumonomicon": "Thaumonomicon"
+  "item.arcana.thaumonomicon": "Thaumonomicon",
+  "item.arcana.thaumiumingot": "Thaumium Ingot"
 }

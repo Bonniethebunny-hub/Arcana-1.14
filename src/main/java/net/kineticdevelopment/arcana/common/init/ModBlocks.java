@@ -36,6 +36,9 @@ public class ModBlocks {
     @ObjectHolder("arcana:cinnabarore")
     public static cinnabarore CINNABARORE;
 
+    @ObjectHolder("arcana:thaumiumblock")
+    public static thaumiumblock THAUMIUMBLOCK;
+
     @ObjectHolder("arcana:greatwoodsapling")
     public static greatwoodsapling GREATWOODSAPLING;
 }
