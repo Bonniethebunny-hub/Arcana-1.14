@@ -1,6 +1,7 @@
 package net.kineticnetwork.arcana;
 
 import net.kineticnetwork.arcana.blocks.*;
+import net.kineticnetwork.arcana.init.ModBlocks;
 import net.kineticnetwork.arcana.items.thaumonomicon;
 import net.kineticnetwork.arcana.setup.ClientProxy;
 import net.kineticnetwork.arcana.setup.IProxy;
