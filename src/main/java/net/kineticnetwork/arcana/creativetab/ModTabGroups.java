@@ -2,6 +2,7 @@ package net.kineticnetwork.arcana.creativetab;
 
 import net.kineticnetwork.arcana.blocks.ModBlocks;
 import net.kineticnetwork.arcana.ArcanaMod;
+import net.kineticnetwork.arcana.util.Constants;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 
@@ -10,7 +11,7 @@ import java.util.function.Supplier;
 
 public class ModTabGroups
 {
-    public static final ItemGroup MOD_ITEM_GROUP = new ModTabGroup(ArcanaMod.MODID, () -> new ItemStack(ModBlocks.ARCANESTONE));
+    public static final ItemGroup MOD_ITEM_GROUP = new ModTabGroup(Constants.MODID, () -> new ItemStack(ModBlocks.ARCANESTONE));
 
     public static final class ModTabGroup extends ItemGroup
     {

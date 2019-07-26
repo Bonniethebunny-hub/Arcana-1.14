@@ -1,0 +1,15 @@
+{
+  "_comment": "CREATIVE TABS",
+  "itemGroup.arcana=Arcana Tab",
+
+  "_comment": "MOD BLOCKS",
+  "block.arcana.arcanestone": "Arcane Stone",
+  "block.arcana.arcanestonebrick": "Arcane StoneBrick",
+  "block.arcana.infusionstone": "Infusion Stone",
+  "block.arcana.amberblock": "Amber Block",
+  "block.arcana.silverwoodplanks": "Silver Wood Planks",
+  "block.arcana.greatwoodplanks": "Great Wood Planks",
+
+  "_comment": "MOD ITEMS",
+  "item.arcana.thaumonomicon": "Thaumonomicon"
+}
