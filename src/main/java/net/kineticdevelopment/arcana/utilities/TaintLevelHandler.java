@@ -36,9 +36,16 @@ public class TaintLevelHandler
     	int taintLevel;
         try (BufferedReader br = Files.newBufferedReader(Paths.get("saves/"+world.getWorldInfo().getWorldName()+"/taintLevel.txt"))) 
         {
-            taintLevel = Integer.parseInt(br.readLine());
-            return taintLevel;
-
+        	if(br.readLine() != null)
+        	{
+        		taintLevel = Integer.parseInt(br.readLine());
+                return taintLevel;
+        	}
+        	if(br.readLine() == null)
+        	{
+        		taintLevel = 0;
+                return taintLevel;
+        	}
         } 
         catch(IOException e) 
         {
@@ -52,8 +59,18 @@ public class TaintLevelHandler
     	int taintLevel = 2147483647;
         try (BufferedReader br = Files.newBufferedReader(Paths.get("saves/"+world.getWorldInfo().getWorldName()+"/taintLevel.txt"))) 
         {
-            taintLevel = Integer.parseInt(br.readLine());
-            taintLevel = taintLevel + amount;
+        	String s = br.readLine();
+            if(s != null)
+            {
+            	taintLevel = Integer.parseInt(s);
+                taintLevel = taintLevel + amount;
+            }
+            
+            if(s == null)
+            {
+            	taintLevel = 0;
+                taintLevel = taintLevel + amount;
+            }
             System.out.println("Taint Level is now "+taintLevel);
         } 
         catch(IOException e) 
@@ -76,8 +93,18 @@ public class TaintLevelHandler
     	int taintLevel = 2147483647;
         try (BufferedReader br = Files.newBufferedReader(Paths.get("saves/"+world.getWorldInfo().getWorldName()+"/taintLevel.txt"))) 
         {
-            taintLevel = Integer.parseInt(br.readLine());
-            taintLevel = taintLevel - amount;
+        	String s = br.readLine();
+            if(s != null)
+            {
+            	taintLevel = Integer.parseInt(s);
+                taintLevel = taintLevel - amount;
+            }
+            
+            if(s == null)
+            {
+            	taintLevel = 0;
+                taintLevel = taintLevel - amount;
+            }
             System.out.println("Taint Level is now "+taintLevel);
         } 
         catch(IOException e) 
