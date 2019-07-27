@@ -11,7 +11,7 @@ public class amberblock extends Block {
         super(Properties.create(Material.IRON)
                 .sound(SoundType.STONE)
                 .hardnessAndResistance(3.0f)
-                .lightValue(2)
+                .lightValue(10)
                 .harvestLevel(1)
                 .harvestTool(ToolType.PICKAXE)
         );
