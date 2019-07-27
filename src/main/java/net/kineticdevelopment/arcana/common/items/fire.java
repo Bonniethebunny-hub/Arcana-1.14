@@ -6,7 +6,8 @@ import net.minecraft.item.Item;
 public class fire extends Item {
 
     public fire() {
-        super(new Properties().group(ModTabGroups.MOD_ITEM_GROUP).maxStackSize(64));
+        super(new Properties().group(ModTabGroups.MOD_ITEM_GROUP)
+        .maxStackSize(64));
 
         setRegistryName("fire");
     }
