@@ -1,9 +1,7 @@
 package net.kineticdevelopment.arcana;
 
 import net.kineticdevelopment.arcana.common.blocks.*;
-import net.kineticdevelopment.arcana.common.blocks.stairs.SilverwoodStairs;
-import net.kineticdevelopment.arcana.common.blocks.trees.GreatwoodTree;
-import net.kineticdevelopment.arcana.common.blocks.trees.SilverwoodTree;
+import net.kineticdevelopment.arcana.common.blocks.trees.*;
 import net.kineticdevelopment.arcana.common.creativetab.ModTabGroups;
 import net.kineticdevelopment.arcana.common.init.ModBlocks;
 import net.kineticdevelopment.arcana.common.items.*;
@@ -37,6 +35,7 @@ public class EventSubscriber {
             event.getRegistry().register(new greatwoodplanks());
             event.getRegistry().register(new silverwoodsapling(new SilverwoodTree(), Block.Properties.create(Material.LEAVES).doesNotBlockMovement()));
             event.getRegistry().register(new greatwoodsapling(new GreatwoodTree(), Block.Properties.create(Material.LEAVES).doesNotBlockMovement()));
+            event.getRegistry().register(new dairsapling(new DairTree(), Block.Properties.create(Material.LEAVES).doesNotBlockMovement()));
             event.getRegistry().register(new taintedcrust());
             event.getRegistry().register(new taintedrock());
             event.getRegistry().register(new taintedsoil());
@@ -46,6 +45,9 @@ public class EventSubscriber {
             event.getRegistry().register(new greatwoodleaves(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.5F).sound(SoundType.PLANT)));
             event.getRegistry().register(new silverwoodlog(Block.Properties.create(Material.WOOD).hardnessAndResistance(1.1F).harvestTool(ToolType.AXE)));
             event.getRegistry().register(new silverwoodleaves(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.5F).sound(SoundType.PLANT)));
+            event.getRegistry().register(new dairlog(Block.Properties.create(Material.WOOD).hardnessAndResistance(1.1F).harvestTool(ToolType.AXE)));
+            event.getRegistry().register(new dairleaves(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.5F).sound(SoundType.PLANT)));
+            event.getRegistry().register(new strippeddairlog(Block.Properties.create(Material.WOOD).hardnessAndResistance(1.1F).harvestTool(ToolType.AXE)));
         }
 
         // Register ITEMS & ModBlocks
@@ -73,6 +75,10 @@ public class EventSubscriber {
             event.getRegistry().register(new BlockItem(ModBlocks.SILVERWOODLOG, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("silverwoodlog"));
             event.getRegistry().register(new BlockItem(ModBlocks.SILVERWOODLEAVES, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("silverwoodleaves"));
             event.getRegistry().register(new BlockItem(ModBlocks.SILVERWOODSAPLING, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("silverwoodsapling"));
+            event.getRegistry().register(new BlockItem(ModBlocks.DAIRLOG, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("dairlog"));
+            event.getRegistry().register(new BlockItem(ModBlocks.DAIRLEAVES, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("dairleaves"));
+            event.getRegistry().register(new BlockItem(ModBlocks.DAIRSAPLING, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("dairsapling"));
+            event.getRegistry().register(new BlockItem(ModBlocks.STRIPPEDDAIRLOG, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("strippeddairlog"));
             // ITEMS
             event.getRegistry().register(new thaumonomicon());
             event.getRegistry().register(new thaumiumingot());

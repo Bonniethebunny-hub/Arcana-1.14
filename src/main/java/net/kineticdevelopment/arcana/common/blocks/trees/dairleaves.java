@@ -1,4 +1,4 @@
-package net.kineticdevelopment.arcana.common.blocks;
+package net.kineticdevelopment.arcana.common.blocks.trees;
 
 import net.kineticdevelopment.arcana.common.init.ModBlocks;
 import net.minecraft.block.Block;
@@ -22,15 +22,16 @@ import net.minecraftforge.common.IShearable;
 
 import java.util.Random;
 
-@SuppressWarnings("deprecation")
-public class greatwoodleaves extends Block implements IShearable {
+import static net.minecraft.block.Block.spawnDrops;
+
+public class dairleaves extends Block implements IShearable {
     public static final IntegerProperty DISTANCE = BlockStateProperties.DISTANCE_1_7;
     public static final BooleanProperty PERSISTENT = BlockStateProperties.PERSISTENT;
     protected static boolean renderTranslucent;
 
-    public greatwoodleaves(Block.Properties properties) {
+    public dairleaves(Block.Properties properties) {
         super(properties);
-        setRegistryName("greatwoodleaves");
+        setRegistryName("dairleaves");
         this.setDefaultState(this.stateContainer.getBaseState().with(DISTANCE, Integer.valueOf(7)).with(PERSISTENT, Boolean.valueOf(false)));
     }
 
@@ -80,11 +81,11 @@ public class greatwoodleaves extends Block implements IShearable {
     }
 
     private static int getDistance(BlockState neighbor) {
-        if(neighbor.getBlock().equals(ModBlocks.GREATWOODLOG)) {
+        if(neighbor.getBlock().equals(ModBlocks.DAIRLOG)) {
             return 0;
-        } 
+        }
         else {
-            return neighbor.getBlock() instanceof greatwoodleaves ? neighbor.get(DISTANCE) : 7;
+            return neighbor.getBlock() instanceof dairleaves ? neighbor.get(DISTANCE) : 7;
         }
     }
 

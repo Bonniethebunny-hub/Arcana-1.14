@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "axis=y":  { "model": "arcana:block/dairlog" },
+    "axis=z":   { "model": "arcana:block/dairlog", "x": 90 },
+    "axis=x":   { "model": "arcana:block/dairlog", "x": 90, "y": 90 }
+  }
+}

@@ -1,6 +1,7 @@
 package net.kineticdevelopment.arcana.common.init;
 
 import net.kineticdevelopment.arcana.common.blocks.*;
+import net.kineticdevelopment.arcana.common.blocks.trees.*;
 import net.minecraftforge.registries.ObjectHolder;
 
 public class ModBlocks {
@@ -61,6 +62,18 @@ public class ModBlocks {
     
     @ObjectHolder("arcana:silverwoodstairs")
     public static arcaneworktable SILVERWOODSTAIRS;
+
+    @ObjectHolder("arcana:dairlog")
+    public static dairlog DAIRLOG;
+
+    @ObjectHolder("arcana:dairleaves")
+    public static dairleaves DAIRLEAVES;
+
+    @ObjectHolder("arcana:dairsapling")
+    public static dairsapling DAIRSAPLING;
+
+    @ObjectHolder("arcana:strippeddairlog")
+    public static strippeddairlog STRIPPEDDAIRLOG;
 }
 
 

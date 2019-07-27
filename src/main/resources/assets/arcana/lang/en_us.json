@@ -21,6 +21,10 @@
   "block.arcana.silverwoodleaves": "Silverwood Leaves",
   "block.arcana.silverwoodsapling": "Silverwood Sapling",
   "block.arcana.arcaneworktable": "Arcane Worktable",
+  "block.arcana.dairlog": "Dair Log",
+  "block.arcana.dairleaves": "Dair Leaves",
+  "block.arcana.dairsapling": "Dair Sapling",
+  "block.arcana.strippeddairlog": "Stripped Dair Log",
 
   "_comment": "MOD ITEMS",
   "item.arcana.thaumonomicon": "§5Thaumonomicon",
