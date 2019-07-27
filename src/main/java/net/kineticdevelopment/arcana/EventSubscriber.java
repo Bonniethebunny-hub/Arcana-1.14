@@ -82,6 +82,7 @@ public class EventSubscriber {
             event.getRegistry().register(new wandcapthaumium());
             event.getRegistry().register(new wandcapiron());
             event.getRegistry().register(new wandcapgold());
+            event.getRegistry().register(new basicwand());
 
             //Aspects
             event.getRegistry().register(new air());

@@ -44,5 +44,6 @@
   "item.arcana.wandcapiron": "Iron Wand Cap",
   "item.arcana.wandcapsilver": "Silver Wand Cap",
   "item.arcana.wandcapthaumium": "Thaumium Wand Cap",
-  "item.arcana.wandcapvoid": "Void Wand Cap"
+  "item.arcana.wandcapvoid": "Void Wand Cap",
+  "item.arcana.basicwand": "Basic Wand"
 }

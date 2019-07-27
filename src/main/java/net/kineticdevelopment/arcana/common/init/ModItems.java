@@ -15,6 +15,9 @@ public class ModItems {
     @ObjectHolder("arcana:quicksilver")
     public static quicksilver QUICKSILVER;
 
+    @ObjectHolder("arcana:basicwand")
+    public static basicwand BASICWAND;
+
     @ObjectHolder("arcana:air")
     public static air AIR;
 
