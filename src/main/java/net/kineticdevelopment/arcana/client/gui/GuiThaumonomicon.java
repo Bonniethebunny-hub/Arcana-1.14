@@ -1,5 +1,6 @@
 package net.kineticdevelopment.arcana.client.gui;
 
+import net.kineticdevelopment.arcana.client.container.ContainerThaumonomicon;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;
@@ -30,6 +31,6 @@ public class GuiThaumonomicon implements INamedContainerProvider
     public Container createMenu(int i, PlayerInventory playerInventory, PlayerEntity playerEntity)
     {
         // TODO This is for testing and make a new container for the thaumonomicon
-        return new FurnaceContainer(i, playerInventory);
+        return new ContainerThaumonomicon(i, playerInventory);
     }
 }
