@@ -18,5 +18,19 @@
 
   "_comment": "MOD ITEMS",
   "item.arcana.thaumonomicon": "Thaumonomicon",
-  "item.arcana.thaumiumingot": "Thaumium Ingot"
+  "item.arcana.thaumiumingot": "Thaumium Ingot",
+  "item.arcana.quicksilver": "Quicksilver",
+  "item.arcana.aer": "Aer",
+  "item.arcana.aqua": "Aqua",
+  "item.arcana.gelum": "Gelum",
+  "item.arcana.ignis": "Ignis",
+  "item.arcana.lux": "Lux",
+  "item.arcana.motus": "Motus",
+  "item.arcana.ordo": "Ordo",
+  "item.arcana.perditio": "Perditio",
+  "item.arcana.permutatio": "Permutatio",
+  "item.arcana.tempestas": "Tempestas",
+  "item.arcana.terra": "Terra",
+  "item.arcana.vacuos": "Vacuos",
+  "item.arcana.venenum": "Venenum"
 }

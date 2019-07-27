@@ -3,9 +3,7 @@ package net.kineticdevelopment.arcana;
 import net.kineticdevelopment.arcana.common.blocks.*;
 import net.kineticdevelopment.arcana.common.creativetab.ModTabGroups;
 import net.kineticdevelopment.arcana.common.init.ModBlocks;
-import net.kineticdevelopment.arcana.common.items.thaumiumingot;
-import net.kineticdevelopment.arcana.common.items.thaumonomicon;
-import net.kineticdevelopment.arcana.common.blocks.*;
+import net.kineticdevelopment.arcana.common.items.*;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -67,6 +65,21 @@ public class EventSubscriber
             // ITEMS
             event.getRegistry().register(new thaumonomicon());
             event.getRegistry().register(new thaumiumingot());
+            event.getRegistry().register(new quicksilver());
+            event.getRegistry().register(new aer());
+            event.getRegistry().register(new aqua());
+            event.getRegistry().register(new gelum());
+            event.getRegistry().register(new ignis());
+            event.getRegistry().register(new lux());
+            event.getRegistry().register(new motus());
+            event.getRegistry().register(new ordo());
+            event.getRegistry().register(new perditio());
+            event.getRegistry().register(new permutatio());
+            event.getRegistry().register(new tempestas());
+            event.getRegistry().register(new terra());
+            event.getRegistry().register(new vacuos());
+            event.getRegistry().register(new venenum());
+
         }
     }
 
