@@ -3,11 +3,9 @@ package net.kineticdevelopment.arcana.common.items;
 import net.kineticdevelopment.arcana.common.creativetab.ModTabGroups;
 import net.minecraft.item.Item;
 
-public class water extends Item 
-{
+public class water extends Item {
 
-    public water() 
-    {
+    public water() {
         super(new Properties().group(ModTabGroups.MOD_ITEM_GROUP)
         .maxStackSize(64));
 

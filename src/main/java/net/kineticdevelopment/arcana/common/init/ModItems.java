@@ -3,8 +3,7 @@ package net.kineticdevelopment.arcana.common.init;
 import net.kineticdevelopment.arcana.common.items.*;
 import net.minecraftforge.registries.ObjectHolder;
 
-public class ModItems 
-{
+public class ModItems {
 
     @ObjectHolder("arcana:thaumonomicon")
     public static thaumonomicon THAUMONOMICON;

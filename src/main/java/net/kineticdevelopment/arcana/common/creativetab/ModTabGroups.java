@@ -8,12 +8,10 @@ import net.minecraft.item.ItemStack;
 import javax.annotation.Nonnull;
 import java.util.function.Supplier;
 
-public class ModTabGroups
-{
+public class ModTabGroups {
     public static final ItemGroup MOD_ITEM_GROUP = new ModTabGroup(Constants.MODID, () -> new ItemStack(ModItems.THAUMONOMICON));
 
-    public static final class ModTabGroup extends ItemGroup
-    {
+    public static final class ModTabGroup extends ItemGroup {
 
         @Nonnull
         private final Supplier<ItemStack> iconSupplier;
@@ -22,16 +20,14 @@ public class ModTabGroups
          * @param name  String: mod id
          * @param iconSupplier
          */
-        public ModTabGroup(@Nonnull final String name, @Nonnull final Supplier<ItemStack> iconSupplier)
-        {
+        public ModTabGroup(@Nonnull final String name, @Nonnull final Supplier<ItemStack> iconSupplier) {
             super(name);
             this.iconSupplier = iconSupplier;
         }
 
         @Override
         @Nonnull
-        public ItemStack createIcon() 
-        {
+        public ItemStack createIcon() {
             return iconSupplier.get();
         }
 
