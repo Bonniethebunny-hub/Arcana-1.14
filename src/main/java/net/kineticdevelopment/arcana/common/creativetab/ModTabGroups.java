@@ -1,6 +1,5 @@
 package net.kineticdevelopment.arcana.common.creativetab;
 
-import net.kineticdevelopment.arcana.common.init.ModBlocks;
 import net.kineticdevelopment.arcana.common.init.ModItems;
 import net.kineticdevelopment.arcana.utilities.Constants;
 import net.minecraft.item.ItemGroup;

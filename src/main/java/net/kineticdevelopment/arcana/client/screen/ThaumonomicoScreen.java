@@ -3,7 +3,6 @@ package net.kineticdevelopment.arcana.client.screen;
 import net.kineticdevelopment.arcana.client.gui.GuiThaumonomicon;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.inventory.container.ShulkerBoxContainer;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;

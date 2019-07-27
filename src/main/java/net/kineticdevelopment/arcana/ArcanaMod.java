@@ -1,9 +1,9 @@
 package net.kineticdevelopment.arcana;
 
+import net.kineticdevelopment.arcana.client.ClientProxy;
 import net.kineticdevelopment.arcana.common.IProxy;
 import net.kineticdevelopment.arcana.common.ServerProxy;
 import net.kineticdevelopment.arcana.utilities.Constants;
-import net.kineticdevelopment.arcana.client.ClientProxy;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
