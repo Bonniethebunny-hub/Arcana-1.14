@@ -31,6 +31,8 @@ public class EventSubscriber {
             event.getRegistry().register(new arcanestonebrick());
             event.getRegistry().register(new infusionstone());
             event.getRegistry().register(new amberblock());
+            event.getRegistry().register(new amberbrick());
+            event.getRegistry().register(new amberblockswirl());
             event.getRegistry().register(new silverwoodplanks());
             event.getRegistry().register(new greatwoodplanks());
             event.getRegistry().register(new silverwoodsapling(new SilverwoodTree(), Block.Properties.create(Material.LEAVES).doesNotBlockMovement()));
@@ -62,6 +64,8 @@ public class EventSubscriber {
             event.getRegistry().register(new BlockItem(ModBlocks.ARCANESTONEBRICK, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("arcanestonebrick"));
             event.getRegistry().register(new BlockItem(ModBlocks.INFUSIONSTONE, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("infusionstone"));
             event.getRegistry().register(new BlockItem(ModBlocks.AMBERBLOCK, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("amberblock"));
+            event.getRegistry().register(new BlockItem(ModBlocks.AMBERBLOCKSWIRL, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("amberblockswirl"));
+            event.getRegistry().register(new BlockItem(ModBlocks.AMBERBRICK, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("amberbrick"));
             event.getRegistry().register(new BlockItem(ModBlocks.SILVERWOODPLANKS, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("silverwoodplanks"));
             event.getRegistry().register(new BlockItem(ModBlocks.GREATWOODPLANKS, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("greatwoodplanks"));
             event.getRegistry().register(new BlockItem(ModBlocks.GREATWOODSAPLING, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("greatwoodsapling"));

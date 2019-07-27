@@ -18,6 +18,12 @@ public class ModBlocks {
     @ObjectHolder("arcana:amberblock")
     public static amberblock AMBERBLOCK;
 
+    @ObjectHolder("arcana:amberblockswirl")
+    public static amberblockswirl AMBERBLOCKSWIRL;
+
+    @ObjectHolder("arcana:amberbrick")
+    public static amberbrick AMBERBRICK;
+
     @ObjectHolder("arcana:silverwoodplanks")
     public static silverwoodplanks SILVERWOODPLANKS;
     
