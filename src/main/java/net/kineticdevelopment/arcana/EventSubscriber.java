@@ -1,6 +1,7 @@
 package net.kineticdevelopment.arcana;
 
 import net.kineticdevelopment.arcana.common.blocks.*;
+import net.kineticdevelopment.arcana.common.blocks.stairs.SilverwoodStairs;
 import net.kineticdevelopment.arcana.common.blocks.trees.GreatwoodTree;
 import net.kineticdevelopment.arcana.common.blocks.trees.SilverwoodTree;
 import net.kineticdevelopment.arcana.common.creativetab.ModTabGroups;
@@ -34,8 +35,8 @@ public class EventSubscriber {
             event.getRegistry().register(new amberblock());
             event.getRegistry().register(new silverwoodplanks());
             event.getRegistry().register(new greatwoodplanks());
-            event.getRegistry().register(new silverwoodsapling(new SilverwoodTree(), Block.Properties.create(Material.PLANTS).doesNotBlockMovement()));
-            event.getRegistry().register(new greatwoodsapling(new GreatwoodTree(), Block.Properties.create(Material.PLANTS).doesNotBlockMovement()));
+            event.getRegistry().register(new silverwoodsapling(new SilverwoodTree(), Block.Properties.create(Material.LEAVES).doesNotBlockMovement()));
+            event.getRegistry().register(new greatwoodsapling(new GreatwoodTree(), Block.Properties.create(Material.LEAVES).doesNotBlockMovement()));
             event.getRegistry().register(new taintedcrust());
             event.getRegistry().register(new taintedrock());
             event.getRegistry().register(new taintedsoil());

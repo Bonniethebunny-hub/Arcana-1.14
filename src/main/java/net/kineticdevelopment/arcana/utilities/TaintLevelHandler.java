@@ -1,0 +1,97 @@
+package net.kineticdevelopment.arcana.utilities;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+import net.minecraft.world.World;
+
+public class TaintLevelHandler 
+{
+	public static void createTaintLevelFile(World world)
+	{
+		final File file = new File("saves/"+world.getWorldInfo().getWorldName(), "taintLevel.txt");
+		try(FileWriter fw = new FileWriter("saves/"+world.getWorldInfo().getWorldName()+"/taintLevel.txt", false); BufferedWriter bw = new BufferedWriter(fw); PrintWriter out = new PrintWriter(bw))
+		{
+			if(!file.exists())
+			{
+				file.createNewFile();
+				out.print("0");
+				Constants.LOGGER.info("Created Taint Level File");
+			}
+		} 
+		catch (IOException e) 
+		{
+			
+	    }
+	}
+    
+    public int getTaintLevel(World world)
+    {
+    	int taintLevel;
+        try (BufferedReader br = Files.newBufferedReader(Paths.get("saves/"+world.getWorldInfo().getWorldName()+"/taintLevel.txt"))) 
+        {
+            taintLevel = Integer.parseInt(br.readLine());
+            return taintLevel;
+
+        } 
+        catch(IOException e) 
+        {
+            System.err.format("IOException: %s%n", e);
+        }
+        return 2147483647;
+    }
+    
+    public static void increaseTaintLevel(World world, int amount)
+    {
+    	int taintLevel = 2147483647;
+        try (BufferedReader br = Files.newBufferedReader(Paths.get("saves/"+world.getWorldInfo().getWorldName()+"/taintLevel.txt"))) 
+        {
+            taintLevel = Integer.parseInt(br.readLine());
+            taintLevel = taintLevel + amount;
+            System.out.println("Taint Level is now "+taintLevel);
+        } 
+        catch(IOException e) 
+        {
+            System.err.format("IOException: %s%n", e);
+        }
+        
+		try(FileWriter fw = new FileWriter("saves/"+world.getWorldInfo().getWorldName()+"/taintLevel.txt", false); BufferedWriter bw = new BufferedWriter(fw); PrintWriter out = new PrintWriter(bw))
+		{
+			out.print(taintLevel);
+		} 
+		catch (IOException e) 
+		{
+			
+	    }
+    }
+    
+    public static void decreaseTaintLevel(World world, int amount)
+    {
+    	int taintLevel = 2147483647;
+        try (BufferedReader br = Files.newBufferedReader(Paths.get("saves/"+world.getWorldInfo().getWorldName()+"/taintLevel.txt"))) 
+        {
+            taintLevel = Integer.parseInt(br.readLine());
+            taintLevel = taintLevel - amount;
+            System.out.println("Taint Level is now "+taintLevel);
+        } 
+        catch(IOException e) 
+        {
+            System.err.format("IOException: %s%n", e);
+        }
+        
+		try(FileWriter fw = new FileWriter("saves/"+world.getWorldInfo().getWorldName()+"/taintLevel.txt", false); BufferedWriter bw = new BufferedWriter(fw); PrintWriter out = new PrintWriter(bw))
+		{
+			out.print(taintLevel);
+		} 
+		catch (IOException e) 
+		{
+			
+	    }
+    }
+}
