@@ -41,6 +41,7 @@ public class EventSubscriber {
             event.getRegistry().register(new taintedsoil());
             event.getRegistry().register(new cinnabarore());
             event.getRegistry().register(new thaumiumblock());
+            event.getRegistry().register(new greatwoodlog());
 
         }
 
@@ -62,6 +63,7 @@ public class EventSubscriber {
             event.getRegistry().register(new BlockItem(ModBlocks.TAINTEDSOIL, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("taintedsoil"));
             event.getRegistry().register(new BlockItem(ModBlocks.CINNABARORE, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("cinnabarore"));
             event.getRegistry().register(new BlockItem(ModBlocks.THAUMIUMBLOCK, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("thaumiumblock"));
+            event.getRegistry().register(new BlockItem(ModBlocks.GREATWOODLOG, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("greatwoodlog"));
             // ITEMS
             event.getRegistry().register(new thaumonomicon());
             event.getRegistry().register(new thaumiumingot());
