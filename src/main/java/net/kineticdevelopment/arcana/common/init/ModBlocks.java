@@ -55,6 +55,9 @@ public class ModBlocks {
 
     @ObjectHolder("arcana:silverwoodsapling")
     public static silverwoodsapling SILVERWOODSAPLING;
+    
+    @ObjectHolder("arcana:arcaneworktable")
+    public static arcaneworktable ARCANEWORKTABLE;
 }
 
 

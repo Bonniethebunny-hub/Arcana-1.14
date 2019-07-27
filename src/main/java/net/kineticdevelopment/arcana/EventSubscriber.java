@@ -28,6 +28,7 @@ public class EventSubscriber {
         @SubscribeEvent
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> event) {
             event.getRegistry().register(new arcanestone());
+            event.getRegistry().register(new arcaneworktable());
             event.getRegistry().register(new arcanestonebrick());
             event.getRegistry().register(new infusionstone());
             event.getRegistry().register(new amberblock());
@@ -54,6 +55,7 @@ public class EventSubscriber {
 
             // BLOCKS
             event.getRegistry().register(new BlockItem(ModBlocks.ARCANESTONE, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("arcanestone"));
+            event.getRegistry().register(new BlockItem(ModBlocks.ARCANEWORKTABLE, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("arcaneworktable"));
             event.getRegistry().register(new BlockItem(ModBlocks.ARCANESTONEBRICK, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("arcanestonebrick"));
             event.getRegistry().register(new BlockItem(ModBlocks.INFUSIONSTONE, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("infusionstone"));
             event.getRegistry().register(new BlockItem(ModBlocks.AMBERBLOCK, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("amberblock"));
