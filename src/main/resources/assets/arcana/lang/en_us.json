@@ -17,6 +17,9 @@
   "block.arcana.thaumiumblock": "Thaumium Block",
   "block.arcana.greatwoodlog": "Greatwood Log",
   "block.arcana.greatwoodleaves": "Greatwood Leaves",
+  "block.arcana.silverwoodlog": "Silverwood Log",
+  "block.arcana.silverwoodleaves": "Silverwood Leaves",
+  "block.arcana.silverwoodsapling": "Silverwood Sapling",
 
   "_comment": "MOD ITEMS",
   "item.arcana.thaumonomicon": "§5Thaumonomicon",

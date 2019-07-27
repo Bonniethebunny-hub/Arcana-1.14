@@ -8,6 +8,7 @@ import net.kineticdevelopment.arcana.common.init.ModBlocks;
 import net.kineticdevelopment.arcana.common.items.*;
 import net.kineticdevelopment.arcana.common.items.elements.*;
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -40,15 +41,16 @@ public class EventSubscriber {
             event.getRegistry().register(new cinnabarore());
             event.getRegistry().register(new thaumiumblock());
             event.getRegistry().register(new greatwoodlog(Block.Properties.create(Material.WOOD).hardnessAndResistance(1.1F).harvestTool(ToolType.AXE)));
-            event.getRegistry().register(new greatwoodleaves(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.5F)));
+            event.getRegistry().register(new greatwoodleaves(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.5F).sound(SoundType.PLANT)));
             event.getRegistry().register(new silverwoodlog(Block.Properties.create(Material.WOOD).hardnessAndResistance(1.1F).harvestTool(ToolType.AXE)));
-            event.getRegistry().register(new silverwoodleaves(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.5F)));
+            event.getRegistry().register(new silverwoodleaves(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.5F).sound(SoundType.PLANT)));
         }
 
         // Register ITEMS & ModBlocks
         @SubscribeEvent
         public static void onItemsRegistry(final RegistryEvent.Register<Item> event) {
-            Item.Properties properties = new Item.Properties();
+            @SuppressWarnings("unused")
+			Item.Properties properties = new Item.Properties();
 
             // BLOCKS
             event.getRegistry().register(new BlockItem(ModBlocks.ARCANESTONE, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("arcanestone"));
@@ -65,6 +67,9 @@ public class EventSubscriber {
             event.getRegistry().register(new BlockItem(ModBlocks.THAUMIUMBLOCK, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("thaumiumblock"));
             event.getRegistry().register(new BlockItem(ModBlocks.GREATWOODLOG, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("greatwoodlog"));
             event.getRegistry().register(new BlockItem(ModBlocks.GREATWOODLEAVES, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("greatwoodleaves"));
+            event.getRegistry().register(new BlockItem(ModBlocks.SILVERWOODLOG, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("silverwoodlog"));
+            event.getRegistry().register(new BlockItem(ModBlocks.SILVERWOODLEAVES, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("silverwoodleaves"));
+            event.getRegistry().register(new BlockItem(ModBlocks.SILVERWOODSAPLING, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("silverwoodsapling"));
             // ITEMS
             event.getRegistry().register(new thaumonomicon());
             event.getRegistry().register(new thaumiumingot());

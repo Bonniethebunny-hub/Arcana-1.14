@@ -32,7 +32,7 @@ public class silverwoodsapling extends BushBlock implements IGrowable {
         );
         this.tree = tree;
         this.setDefaultState(this.stateContainer.getBaseState().with(STAGE, Integer.valueOf(0)));
-        setRegistryName("greatwoodsapling");
+        setRegistryName("silverwoodsapling");
     }
 
     public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
