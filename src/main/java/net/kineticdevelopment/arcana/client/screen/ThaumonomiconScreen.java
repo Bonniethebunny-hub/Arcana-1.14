@@ -10,12 +10,12 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
-public class ThaumonomicoScreen extends ContainerScreen
+public class ThaumonomiconScreen extends ContainerScreen
 {
     private int textureXSize;
     private int textureYSize;
 
-    public ThaumonomicoScreen(Container screenContainer, PlayerInventory inv, ITextComponent titleIn) {
+    public ThaumonomiconScreen(Container screenContainer, PlayerInventory inv, ITextComponent titleIn) {
         super(screenContainer, inv, titleIn);
     }
 

@@ -1,8 +1,8 @@
 package net.kineticdevelopment.arcana.common.blocks;
 
+import net.kineticdevelopment.arcana.common.init.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.LeavesBlock;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.particles.ParticleTypes;
@@ -10,7 +10,6 @@ import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -19,10 +18,12 @@ import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.common.IShearable;
 
 import java.util.Random;
 
-public class greatwoodleaves extends Block implements net.minecraftforge.common.IShearable {
+@SuppressWarnings("deprecation")
+public class greatwoodleaves extends Block implements IShearable {
     public static final IntegerProperty DISTANCE = BlockStateProperties.DISTANCE_1_7;
     public static final BooleanProperty PERSISTENT = BlockStateProperties.PERSISTENT;
     protected static boolean renderTranslucent;
@@ -33,10 +34,6 @@ public class greatwoodleaves extends Block implements net.minecraftforge.common.
         this.setDefaultState(this.stateContainer.getBaseState().with(DISTANCE, Integer.valueOf(7)).with(PERSISTENT, Boolean.valueOf(false)));
     }
 
-    /**
-     * Returns whether or not this block is of a type that needs random ticking. Called for ref-counting purposes by
-     * ExtendedBlockStorage in order to broadly cull a chunk from the random chunk update list for efficiency's sake.
-     */
     public boolean ticksRandomly(BlockState state) {
         return state.get(DISTANCE) == 7 && !state.get(PERSISTENT);
     }
@@ -57,12 +54,6 @@ public class greatwoodleaves extends Block implements net.minecraftforge.common.
         return 1;
     }
 
-    /**
-     * Update the provided state given the provided neighbor facing and neighbor state, returning a new state.
-     * For example, fences make their connections to the passed in state if possible, and wet concrete powder immediately
-     * returns its solidified counterpart.
-     * Note that this method should ideally consider only the specific face passed in.
-     */
     public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
         int i = getDistance(facingState) + 1;
         if (i != 1 || stateIn.get(DISTANCE) != i) {
@@ -89,18 +80,16 @@ public class greatwoodleaves extends Block implements net.minecraftforge.common.
     }
 
     private static int getDistance(BlockState neighbor) {
-        if (BlockTags.LOGS.contains(neighbor.getBlock())) {
+        if(neighbor.getBlock().equals(ModBlocks.GREATWOODLOG)) 
+        {
             return 0;
-        } else {
-            return neighbor.getBlock() instanceof LeavesBlock ? neighbor.get(DISTANCE) : 7;
+        } 
+        else 
+        {
+            return neighbor.getBlock() instanceof greatwoodleaves ? neighbor.get(DISTANCE) : 7;
         }
     }
 
-    /**
-     * Called periodically clientside on blocks near the player to show effects (like furnace fire particles). Note that
-     * this method is unrelated to {@link randomTick} and {@link #needsRandomTick}, and will always be called regardless
-     * of whether the block can receive random update ticks
-     */
     @OnlyIn(Dist.CLIENT)
     public void animateTick(BlockState stateIn, World worldIn, BlockPos pos, Random rand) {
         if (worldIn.isRainingAt(pos.up())) {
@@ -119,17 +108,13 @@ public class greatwoodleaves extends Block implements net.minecraftforge.common.
 
     @OnlyIn(Dist.CLIENT)
     public static void setRenderTranslucent(boolean fancy) {
-        renderTranslucent = fancy;
+        renderTranslucent = true;
     }
 
     public boolean isSolid(BlockState state) {
         return false;
     }
 
-    /**
-     * Gets the render layer this block will render on. SOLID for solid blocks, CUTOUT or CUTOUT_MIPPED for on-off
-     * transparency (glass, reeds), TRANSLUCENT for fully blended transparency (stained glass)
-     */
     public BlockRenderLayer getRenderLayer() {
         return renderTranslucent ? BlockRenderLayer.CUTOUT_MIPPED : BlockRenderLayer.SOLID;
     }
