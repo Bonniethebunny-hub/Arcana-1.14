@@ -26,7 +26,7 @@ public class thaumonomicon extends Item {
     {
         if (!worldIn.isRemote)
         {
-            NetworkHooks.openGui((ServerPlayerEntity) playerIn, (INamedContainerProvider) new GuiThaumonomicon(1));
+            NetworkHooks.openGui((ServerPlayerEntity) playerIn, (INamedContainerProvider) new GuiThaumonomicon());
         }
 
         return super.onItemRightClick(worldIn, playerIn, handIn);
