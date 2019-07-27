@@ -19,6 +19,9 @@ public class ModBlocks {
 
     @ObjectHolder("arcana:silverwoodplanks")
     public static silverwoodplanks SILVERWOODPLANKS;
+    
+    @ObjectHolder("arcana:silverwoodleaves")
+    public static silverwoodleaves SILVERWOODLEAVES;
 
     @ObjectHolder("arcana:greatwoodplanks")
     public static greatwoodplanks GREATWOODPLANKS;
@@ -46,6 +49,12 @@ public class ModBlocks {
 
     @ObjectHolder("arcana:greatwoodsapling")
     public static greatwoodsapling GREATWOODSAPLING;
+    
+    @ObjectHolder("arcana:silverwoodlog")
+    public static silverwoodlog SILVERWOODLOG;
+
+    @ObjectHolder("arcana:silverwoodsapling")
+    public static silverwoodsapling SILVERWOODSAPLING;
 }
 
 
