@@ -6,8 +6,7 @@ import net.minecraft.item.Item;
 public class ice extends Item {
 
     public ice() {
-        super(new Properties().group(ModTabGroups.MOD_ITEM_GROUP)
-        .maxStackSize(64));
+        super(new Properties().group(ModTabGroups.MOD_ITEM_GROUP).maxStackSize(64));
 
         setRegistryName("ice");
     }

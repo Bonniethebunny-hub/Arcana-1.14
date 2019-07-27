@@ -6,8 +6,7 @@ import net.minecraft.item.Item;
 public class wind extends Item {
 
     public wind() {
-        super(new Properties().group(ModTabGroups.MOD_ITEM_GROUP)
-        .maxStackSize(64));
+        super(new Properties().group(ModTabGroups.MOD_ITEM_GROUP).maxStackSize(64));
 
         setRegistryName("wind");
     }

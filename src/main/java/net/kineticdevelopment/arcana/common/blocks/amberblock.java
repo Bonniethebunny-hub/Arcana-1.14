@@ -7,11 +7,7 @@ import net.minecraft.block.material.Material;
 public class amberblock extends Block {
 
     public amberblock() {
-        super(Properties.create(Material.IRON)
-                .sound(SoundType.STONE)
-                .hardnessAndResistance(3.0f)
-                .lightValue(2)
-        );
+        super(Properties.create(Material.IRON).sound(SoundType.STONE).hardnessAndResistance(3.0f).lightValue(2));
         setRegistryName("amberblock");
     }
 }

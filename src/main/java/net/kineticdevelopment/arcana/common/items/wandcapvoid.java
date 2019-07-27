@@ -6,8 +6,7 @@ import net.minecraft.item.Item;
 public class wandcapvoid extends Item {
 
     public wandcapvoid() {
-        super(new Properties().group(ModTabGroups.MOD_ITEM_GROUP)
-        .maxStackSize(64));
+        super(new Properties().group(ModTabGroups.MOD_ITEM_GROUP).maxStackSize(64));
 
         setRegistryName("wandcapvoid");
     }

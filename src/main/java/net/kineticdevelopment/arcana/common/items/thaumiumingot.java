@@ -6,8 +6,7 @@ import net.minecraft.item.Item;
 public class thaumiumingot extends Item {
 
     public thaumiumingot() {
-        super(new Properties().group(ModTabGroups.MOD_ITEM_GROUP)
-        .maxStackSize(1));
+        super(new Properties().group(ModTabGroups.MOD_ITEM_GROUP).maxStackSize(1));
 
         setRegistryName("thaumiumingot");
     }

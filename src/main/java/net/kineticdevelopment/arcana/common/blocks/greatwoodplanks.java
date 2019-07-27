@@ -7,11 +7,7 @@ import net.minecraft.block.material.Material;
 public class greatwoodplanks extends Block {
 
     public greatwoodplanks() {
-        super(Properties.create(Material.IRON)
-                .sound(SoundType.STONE)
-                .hardnessAndResistance(3.0f)
-                .lightValue(2)
-        );
+        super(Properties.create(Material.IRON).sound(SoundType.STONE).hardnessAndResistance(3.0f).lightValue(2));
         setRegistryName("greatwoodplanks");
     }
 }
