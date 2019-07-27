@@ -3,12 +3,12 @@ package net.kineticdevelopment.arcana.common.items;
 import net.kineticdevelopment.arcana.common.creativetab.ModTabGroups;
 import net.minecraft.item.Item;
 
-public class tempestas extends Item {
+public class exchange extends Item {
 
-    public tempestas() {
+    public exchange() {
         super(new Properties().group(ModTabGroups.MOD_ITEM_GROUP)
         .maxStackSize(64));
 
-        setRegistryName("tempestas");
+        setRegistryName("exchange");
     }
 }

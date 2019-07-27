@@ -14,44 +14,44 @@ public class ModItems {
     @ObjectHolder("arcana:quicksilver")
     public static quicksilver QUICKSILVER;
 
-    @ObjectHolder("arcana:aer")
-    public static aer AER;
+    @ObjectHolder("arcana:air")
+    public static air AIR;
 
-    @ObjectHolder("arcana:aqua")
-    public static aqua AQUA;
+    @ObjectHolder("arcana:water")
+    public static water WATER;
 
-    @ObjectHolder("arcana:gelum")
-    public static gelum GELUM;
+    @ObjectHolder("arcana:ice")
+    public static ice ICE;
 
-    @ObjectHolder("arcana:ignis")
-    public static ignis IGNIS;
+    @ObjectHolder("arcana:fire")
+    public static fire FIRE;
 
-    @ObjectHolder("arcana:lux")
-    public static lux LUX;
+    @ObjectHolder("arcana:light")
+    public static light LIGHT;
 
-    @ObjectHolder("arcana:motus")
-    public static motus MOTUS;
+    @ObjectHolder("arcana:movement")
+    public static movement MOVEMENT;
 
-    @ObjectHolder("arcana:ordo")
-    public static ordo ORDO;
+    @ObjectHolder("arcana:order")
+    public static order ORDER;
 
-    @ObjectHolder("arcana:perditio")
-    public static perditio PERDITIO;
+    @ObjectHolder("arcana:chaos")
+    public static chaos CHAOS;
 
-    @ObjectHolder("arcana:permutatio")
-    public static permutatio PERMUTATIO;
+    @ObjectHolder("arcana:exchange")
+    public static exchange EXCHANGE;
 
-    @ObjectHolder("arcana:tempestas")
-    public static tempestas TEMPESTAS;
+    @ObjectHolder("arcana:wind")
+    public static wind WIND;
 
-    @ObjectHolder("arcana:vacuos")
-    public static vacuos vacuos;
+    @ObjectHolder("arcana:vacuum")
+    public static vacuum VACUUM;
 
-    @ObjectHolder("arcana:terra")
-    public static terra TERRA;
+    @ObjectHolder("arcana:earth")
+    public static earth EARTH;
 
-    @ObjectHolder("arcana:venenum")
-    public static venenum VENENUM;
+    @ObjectHolder("arcana:venom")
+    public static venom VENOM;
 
     @ObjectHolder("arcana:wandcapcopper")
     public static wandcapcopper WANDCAPCOPPER;

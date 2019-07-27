@@ -3,12 +3,12 @@ package net.kineticdevelopment.arcana.common.items;
 import net.kineticdevelopment.arcana.common.creativetab.ModTabGroups;
 import net.minecraft.item.Item;
 
-public class aqua extends Item {
+public class chaos extends Item {
 
-    public aqua() {
+    public chaos() {
         super(new Properties().group(ModTabGroups.MOD_ITEM_GROUP)
         .maxStackSize(64));
 
-        setRegistryName("aqua");
+        setRegistryName("chaos");
     }
 }

@@ -74,19 +74,19 @@ public class EventSubscriber
             event.getRegistry().register(new wandcapgold());
 
             //Aspects
-            event.getRegistry().register(new aer());
-            event.getRegistry().register(new aqua());
-            event.getRegistry().register(new gelum());
-            event.getRegistry().register(new ignis());
-            event.getRegistry().register(new lux());
-            event.getRegistry().register(new motus());
-            event.getRegistry().register(new ordo());
-            event.getRegistry().register(new perditio());
-            event.getRegistry().register(new permutatio());
-            event.getRegistry().register(new tempestas());
-            event.getRegistry().register(new terra());
-            event.getRegistry().register(new vacuos());
-            event.getRegistry().register(new venenum());
+            event.getRegistry().register(new air());
+            event.getRegistry().register(new water());
+            event.getRegistry().register(new ice());
+            event.getRegistry().register(new fire());
+            event.getRegistry().register(new light());
+            event.getRegistry().register(new movement());
+            event.getRegistry().register(new order());
+            event.getRegistry().register(new chaos());
+            event.getRegistry().register(new exchange());
+            event.getRegistry().register(new wind());
+            event.getRegistry().register(new earth());
+            event.getRegistry().register(new vacuum());
+            event.getRegistry().register(new venom());
 
         }
     }

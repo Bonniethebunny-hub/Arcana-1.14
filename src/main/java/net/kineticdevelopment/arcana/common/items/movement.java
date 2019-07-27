@@ -3,12 +3,12 @@ package net.kineticdevelopment.arcana.common.items;
 import net.kineticdevelopment.arcana.common.creativetab.ModTabGroups;
 import net.minecraft.item.Item;
 
-public class lux extends Item {
+public class movement extends Item {
 
-    public lux() {
+    public movement() {
         super(new Properties().group(ModTabGroups.MOD_ITEM_GROUP)
         .maxStackSize(64));
 
-        setRegistryName("lux");
+        setRegistryName("movement");
     }
 }
