@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "axis=y":  { "model": "arcana:block/greatwoodlog" },
+    "axis=z":   { "model": "arcana:block/greatwoodlog", "x": 90 },
+    "axis=x":   { "model": "arcana:block/greatwoodlog", "x": 90, "y": 90 }
+  }
+}
