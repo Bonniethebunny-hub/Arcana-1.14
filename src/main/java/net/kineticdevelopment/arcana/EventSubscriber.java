@@ -2,6 +2,7 @@ package net.kineticdevelopment.arcana;
 
 import net.kineticdevelopment.arcana.common.blocks.*;
 import net.kineticdevelopment.arcana.common.blocks.trees.GreatwoodTree;
+import net.kineticdevelopment.arcana.common.blocks.trees.SilverwoodTree;
 import net.kineticdevelopment.arcana.common.creativetab.ModTabGroups;
 import net.kineticdevelopment.arcana.common.init.ModBlocks;
 import net.kineticdevelopment.arcana.common.items.*;
@@ -12,14 +13,15 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraftforge.common.ToolType;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
+@EventBusSubscriber(bus = EventBusSubscriber.Bus.FORGE)
 public class EventSubscriber {
-    @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
+    @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
     public static class RegistryEvents {
         // Register BLOCKS
         @SubscribeEvent
@@ -30,15 +32,17 @@ public class EventSubscriber {
             event.getRegistry().register(new amberblock());
             event.getRegistry().register(new silverwoodplanks());
             event.getRegistry().register(new greatwoodplanks());
-            event.getRegistry().register(new greatwoodsapling(new GreatwoodTree(), Block.Properties.create(Material.PLANTS)));
+            event.getRegistry().register(new silverwoodsapling(new SilverwoodTree(), Block.Properties.create(Material.PLANTS).doesNotBlockMovement()));
+            event.getRegistry().register(new greatwoodsapling(new GreatwoodTree(), Block.Properties.create(Material.PLANTS).doesNotBlockMovement()));
             event.getRegistry().register(new taintedcrust());
             event.getRegistry().register(new taintedrock());
             event.getRegistry().register(new taintedsoil());
             event.getRegistry().register(new cinnabarore());
             event.getRegistry().register(new thaumiumblock());
-            event.getRegistry().register(new greatwoodlog(Block.Properties.create(Material.WOOD)));
-            event.getRegistry().register(new greatwoodleaves(Block.Properties.create(Material.LEAVES)));
-
+            event.getRegistry().register(new greatwoodlog(Block.Properties.create(Material.WOOD).hardnessAndResistance(1.1F).harvestTool(ToolType.AXE)));
+            event.getRegistry().register(new greatwoodleaves(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.5F)));
+            event.getRegistry().register(new silverwoodlog(Block.Properties.create(Material.WOOD).hardnessAndResistance(1.1F).harvestTool(ToolType.AXE)));
+            event.getRegistry().register(new silverwoodleaves(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.5F)));
         }
 
         // Register ITEMS & ModBlocks
