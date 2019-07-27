@@ -1,11 +1,25 @@
 package net.kineticdevelopment.arcana;
 
 import net.kineticdevelopment.arcana.common.blocks.*;
-import net.kineticdevelopment.arcana.common.blocks.trees.*;
+import net.kineticdevelopment.arcana.common.blocks.treeblocks.dairleaves;
+import net.kineticdevelopment.arcana.common.blocks.treeblocks.dairlog;
+import net.kineticdevelopment.arcana.common.blocks.treeblocks.dairsapling;
+import net.kineticdevelopment.arcana.common.blocks.treeblocks.greatwoodleaves;
+import net.kineticdevelopment.arcana.common.blocks.treeblocks.greatwoodlog;
+import net.kineticdevelopment.arcana.common.blocks.treeblocks.greatwoodsapling;
+import net.kineticdevelopment.arcana.common.blocks.treeblocks.silverwoodleaves;
+import net.kineticdevelopment.arcana.common.blocks.treeblocks.silverwoodlog;
+import net.kineticdevelopment.arcana.common.blocks.treeblocks.silverwoodsapling;
+import net.kineticdevelopment.arcana.common.blocks.treeblocks.strippeddairlog;
+import net.kineticdevelopment.arcana.common.blocks.treeblocks.strippedtaintedoaklog;
+import net.kineticdevelopment.arcana.common.blocks.treeblocks.taintedoakleaves;
+import net.kineticdevelopment.arcana.common.blocks.treeblocks.taintedoaklog;
+import net.kineticdevelopment.arcana.common.blocks.treeblocks.taintedoaksapling;
 import net.kineticdevelopment.arcana.common.creativetab.ModTabGroups;
 import net.kineticdevelopment.arcana.common.init.ModBlocks;
 import net.kineticdevelopment.arcana.common.items.*;
 import net.kineticdevelopment.arcana.common.items.elements.*;
+import net.kineticdevelopment.arcana.common.structures.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;

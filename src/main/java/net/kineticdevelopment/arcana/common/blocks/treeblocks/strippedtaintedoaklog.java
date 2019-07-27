@@ -1,4 +1,4 @@
-package net.kineticdevelopment.arcana.common.blocks.trees;
+package net.kineticdevelopment.arcana.common.blocks.treeblocks;
 
 import net.minecraft.block.RotatedPillarBlock;
 

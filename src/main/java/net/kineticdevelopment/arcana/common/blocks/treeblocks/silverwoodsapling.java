@@ -1,4 +1,4 @@
-package net.kineticdevelopment.arcana.common.blocks.trees;
+package net.kineticdevelopment.arcana.common.blocks.treeblocks;
 
 import java.util.Random;
 
@@ -20,19 +20,19 @@ import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
 
-public class greatwoodsapling extends BushBlock implements IGrowable {
+public class silverwoodsapling extends BushBlock implements IGrowable {
 	public static final IntegerProperty STAGE = BlockStateProperties.STAGE_0_1;
     protected static final VoxelShape SHAPE = Block.makeCuboidShape(2.0D, 0.0D, 2.0D, 14.0D, 12.0D, 14.0D);
     private final Tree tree;
     
-    public greatwoodsapling(Tree tree, Block.Properties properties) {
+    public silverwoodsapling(Tree tree, Block.Properties properties) {
         super(Block.Properties.create(Material.BAMBOO_SAPLING)
                 .sound(SoundType.BAMBOO_SAPLING)
                 .hardnessAndResistance(3.0f)
         );
         this.tree = tree;
         this.setDefaultState(this.stateContainer.getBaseState().with(STAGE, Integer.valueOf(0)));
-        setRegistryName("greatwoodsapling");
+        setRegistryName("silverwoodsapling");
     }
 
     public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {

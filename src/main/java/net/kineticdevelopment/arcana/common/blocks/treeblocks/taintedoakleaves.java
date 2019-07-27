@@ -1,4 +1,4 @@
-package net.kineticdevelopment.arcana.common.blocks.trees;
+package net.kineticdevelopment.arcana.common.blocks.treeblocks;
 
 import net.kineticdevelopment.arcana.common.init.ModBlocks;
 import net.minecraft.block.Block;
@@ -22,15 +22,14 @@ import net.minecraftforge.common.IShearable;
 
 import java.util.Random;
 
-@SuppressWarnings("deprecation")
-public class silverwoodleaves extends Block implements IShearable {
+public class taintedoakleaves extends Block implements IShearable {
     public static final IntegerProperty DISTANCE = BlockStateProperties.DISTANCE_1_7;
     public static final BooleanProperty PERSISTENT = BlockStateProperties.PERSISTENT;
     protected static boolean renderTranslucent;
 
-    public silverwoodleaves(Block.Properties properties) {
+    public taintedoakleaves(Properties properties) {
         super(properties);
-        setRegistryName("silverwoodleaves");
+        setRegistryName("taintedoakleaves");
         this.setDefaultState(this.stateContainer.getBaseState().with(DISTANCE, Integer.valueOf(7)).with(PERSISTENT, Boolean.valueOf(false)));
     }
 
@@ -80,11 +79,11 @@ public class silverwoodleaves extends Block implements IShearable {
     }
 
     private static int getDistance(BlockState neighbor) {
-        if(neighbor.getBlock().equals(ModBlocks.SILVERWOODLOG)) {
+        if(neighbor.getBlock().equals(ModBlocks.TAINTEDOAKLOG)) {
             return 0;
-        } 
+        }
         else {
-            return neighbor.getBlock() instanceof silverwoodleaves ? neighbor.get(DISTANCE) : 7;
+            return neighbor.getBlock() instanceof taintedoakleaves ? neighbor.get(DISTANCE) : 7;
         }
     }
 
@@ -103,7 +102,7 @@ public class silverwoodleaves extends Block implements IShearable {
             }
         }
     }
-    
+
     @OnlyIn(Dist.CLIENT)
     public static void setRenderTranslucent(boolean fancy) {
         renderTranslucent = true;
