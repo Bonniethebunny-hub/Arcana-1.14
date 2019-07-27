@@ -1,22 +1,43 @@
 package net.kineticdevelopment.arcana.client.gui;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;
-import net.minecraft.inventory.container.ContainerType;
+import net.minecraft.inventory.container.INamedContainerProvider;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 import javax.annotation.Nullable;
 
 @OnlyIn(Dist.CLIENT)
-public class GuiThaumonomicon extends Container
+public class GuiThaumonomicon implements INamedContainerProvider
 {
-    protected GuiThaumonomicon(@Nullable ContainerType<?> type, int id) {
-        super(type, id);
+    private final int slot;
+
+    public GuiThaumonomicon(int slot)
+    {
+        this.slot = slot;
     }
 
     @Override
-    public boolean canInteractWith(PlayerEntity playerIn) {
-        return false;
+    public ITextComponent getDisplayName()
+    {
+        return new StringTextComponent("thaumonomicon");
+    }
+
+    @Nullable
+    @Override
+    public Container createMenu(int i, PlayerInventory playerInventory, PlayerEntity playerEntity)
+    {
+        ItemStack heldItem = playerInventory.getStackInSlot(slot);
+
+        int blockedSlot = -1;
+        if (playerEntity.getHeldItemMainhand() == heldItem)
+            blockedSlot = playerInventory.currentItem;
+
+        return new BeltContainer(i, playerInventory, blockedSlot, heldItem);
     }
 }
