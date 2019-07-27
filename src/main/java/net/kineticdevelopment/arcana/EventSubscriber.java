@@ -4,6 +4,7 @@ import net.kineticdevelopment.arcana.common.blocks.*;
 import net.kineticdevelopment.arcana.common.creativetab.ModTabGroups;
 import net.kineticdevelopment.arcana.common.init.ModBlocks;
 import net.kineticdevelopment.arcana.common.items.*;
+import net.kineticdevelopment.arcana.common.items.elements.*;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
