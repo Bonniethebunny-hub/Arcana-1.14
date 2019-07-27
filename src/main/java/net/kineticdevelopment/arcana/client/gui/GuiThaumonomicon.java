@@ -23,14 +23,13 @@ public class GuiThaumonomicon implements INamedContainerProvider
     @Override
     public ITextComponent getDisplayName()
     {
-        return new StringTextComponent("thaumonomicon");
+        return new StringTextComponent("Thaumonomicon GUI");
     }
 
     @Nullable
     @Override
     public Container createMenu(int i, PlayerInventory playerInventory, PlayerEntity playerEntity)
     {
-        // TODO This is for testing and make a new container for the thaumonomicon
         return new ContainerThaumonomicon(i, playerInventory);
     }
 }
