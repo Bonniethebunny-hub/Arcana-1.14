@@ -8,6 +8,6 @@ public class ContainerThaumonomicon extends ContainerThaumonomiconAbstract
 {
     public ContainerThaumonomicon(int i, PlayerInventory playerInventory)
     {
-        super(ContainerType.GENERIC_3X3, IRecipeType.SMELTING, i, playerInventory);
+        super(ContainerType.GENERIC_3X3, i, playerInventory);
     }
 }

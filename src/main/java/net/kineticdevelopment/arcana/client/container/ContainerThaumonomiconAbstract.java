@@ -20,12 +20,12 @@ public class ContainerThaumonomiconAbstract extends Container
     protected final World world;
     private IInventory thaumonomiconInventory;
 
-    protected ContainerThaumonomiconAbstract(ContainerType<?> containerTypeIn, IRecipeType<? extends AbstractCookingRecipe> recipeTypeIn, int id, PlayerInventory playerInventoryIn)
+    protected ContainerThaumonomiconAbstract(ContainerType<?> containerTypeIn, int id, PlayerInventory playerInventoryIn)
     {
-        this(containerTypeIn, recipeTypeIn, id, playerInventoryIn, new Inventory(3), new IntArray(4));
+        this(containerTypeIn, id, playerInventoryIn, new Inventory(3), new IntArray(4));
     }
 
-    protected ContainerThaumonomiconAbstract(ContainerType<?> containerTypeIn, IRecipeType<? extends AbstractCookingRecipe> recipeTypeIn, int id, PlayerInventory playerInventoryIn, IInventory thaumonomiconInventoryIn, IIntArray iIntArray)
+    protected ContainerThaumonomiconAbstract(ContainerType<?> containerTypeIn, int id, PlayerInventory playerInventoryIn, IInventory thaumonomiconInventoryIn, IIntArray iIntArray)
     {
         super(containerTypeIn, id);
         this.world = playerInventoryIn.player.world;
