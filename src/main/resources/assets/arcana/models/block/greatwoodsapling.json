@@ -1,6 +1,6 @@
 {
   "parent": "block/cross",
   "textures": {
-    "all": "arcana:block/greatwoodsapling"
+    "cross": "arcana:block/greatwoodsapling"
   }
 }

@@ -23,6 +23,9 @@ public class ModBlocks {
     @ObjectHolder("arcana:greatwoodplanks")
     public static greatwoodplanks GREATWOODPLANKS;
 
+    @ObjectHolder("arcana:greatwoodleaves")
+    public static greatwoodleaves GREATWOODLEAVES;
+
     @ObjectHolder("arcana:taintedrock")
     public static taintedrock TAINTEDROCK;
 
@@ -37,6 +40,9 @@ public class ModBlocks {
 
     @ObjectHolder("arcana:thaumiumblock")
     public static thaumiumblock THAUMIUMBLOCK;
+
+    @ObjectHolder("arcana:greatwoodlog")
+    public static greatwoodlog GREATWOODLOG;
 
     @ObjectHolder("arcana:greatwoodsapling")
     public static greatwoodsapling GREATWOODSAPLING;

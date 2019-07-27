@@ -1,3 +1,6 @@
 {
-  "parent": "arcana:block/greatwoodsapling"
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "arcana:block/greatwoodsapling"
+  }
 }

@@ -21,8 +21,8 @@ import net.minecraft.world.gen.feature.AbstractTreeFeature;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
 
 public class GreatwoodTreeFeature extends AbstractTreeFeature<NoFeatureConfig> {
-	private static final BlockState LOG = ModBlocks.GREATWOODPLANKS.getDefaultState();
-	private static final BlockState LEAVES = ModBlocks.GREATWOODPLANKS.getDefaultState();
+	private static final BlockState LOG = ModBlocks.GREATWOODLOG.getDefaultState();
+	private static final BlockState LEAVES = ModBlocks.GREATWOODLEAVES.getDefaultState();
 
 	public GreatwoodTreeFeature(Function<Dynamic<?>, ? extends NoFeatureConfig> configFactoryIn, boolean doBlockNotifyIn) {
 		super(configFactoryIn, doBlockNotifyIn);
