@@ -14,22 +14,18 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import javax.annotation.Nullable;
 
 @OnlyIn(Dist.CLIENT)
-public class GuiThaumonomicon implements INamedContainerProvider
-{
-    public GuiThaumonomicon()
-    {
+public class GuiThaumonomicon implements INamedContainerProvider {
+    public GuiThaumonomicon() {
     }
 
     @Override
-    public ITextComponent getDisplayName()
-    {
+    public ITextComponent getDisplayName() {
         return new StringTextComponent("Thaumonomicon GUI");
     }
 
     @Nullable
     @Override
-    public Container createMenu(int i, PlayerInventory playerInventory, PlayerEntity playerEntity)
-    {
+    public Container createMenu(int i, PlayerInventory playerInventory, PlayerEntity playerEntity) {
         return new ContainerThaumonomicon(i, playerInventory);
     }
 }

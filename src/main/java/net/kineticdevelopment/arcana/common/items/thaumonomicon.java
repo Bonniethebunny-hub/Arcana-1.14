@@ -29,10 +29,8 @@ public class thaumonomicon extends Item {
     }
 
     @Override
-    public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn)
-    {
-        if (!worldIn.isRemote)
-        {
+    public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
+        if (!worldIn.isRemote) {
             NetworkHooks.openGui((ServerPlayerEntity) playerIn, (INamedContainerProvider) new GuiThaumonomicon());
         }
 
@@ -40,8 +38,7 @@ public class thaumonomicon extends Item {
     }
 
     @Override
-    public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn)
-    {
+    public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         tooltip.add(new StringTextComponent(TextFormatting.RED + "OPEN ME NOW PEASANT!"));
     }
 }

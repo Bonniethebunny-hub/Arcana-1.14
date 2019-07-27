@@ -15,18 +15,15 @@ import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class ContainerThaumonomiconAbstract extends Container
-{
+public class ContainerThaumonomiconAbstract extends Container {
     protected final World world;
     private IInventory thaumonomiconInventory;
 
-    protected ContainerThaumonomiconAbstract(ContainerType<?> containerTypeIn, int id, PlayerInventory playerInventoryIn)
-    {
+    protected ContainerThaumonomiconAbstract(ContainerType<?> containerTypeIn, int id, PlayerInventory playerInventoryIn) {
         this(containerTypeIn, id, playerInventoryIn, new Inventory(3), new IntArray(4));
     }
 
-    protected ContainerThaumonomiconAbstract(ContainerType<?> containerTypeIn, int id, PlayerInventory playerInventoryIn, IInventory thaumonomiconInventoryIn, IIntArray iIntArray)
-    {
+    protected ContainerThaumonomiconAbstract(ContainerType<?> containerTypeIn, int id, PlayerInventory playerInventoryIn, IInventory thaumonomiconInventoryIn, IIntArray iIntArray) {
         super(containerTypeIn, id);
         this.world = playerInventoryIn.player.world;
         this.thaumonomiconInventory = thaumonomiconInventoryIn;

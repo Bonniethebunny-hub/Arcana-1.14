@@ -15,12 +15,10 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod(Constants.MODID)
-public class ArcanaMod
-{
+public class ArcanaMod {
     public static IProxy proxy = DistExecutor.runForDist(() -> () -> new ClientProxy(), () -> () -> new ServerProxy());
 
-    public ArcanaMod()
-    {
+    public ArcanaMod() {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
     }
 

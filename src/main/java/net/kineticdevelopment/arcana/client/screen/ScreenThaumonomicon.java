@@ -6,12 +6,10 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 
-public class ScreenThaumonomicon<T extends ContainerThaumonomicon> extends ContainerScreen<T>
-{
+public class ScreenThaumonomicon<T extends ContainerThaumonomicon> extends ContainerScreen<T> {
     private final ResourceLocation texture;
 
-    public ScreenThaumonomicon(T screenContainer, PlayerInventory inv, ITextComponent titleIn, ResourceLocation texture)
-    {
+    public ScreenThaumonomicon(T screenContainer, PlayerInventory inv, ITextComponent titleIn, ResourceLocation texture) {
         super(screenContainer, inv, titleIn);
         this.xSize = width;
         this.ySize = height;
@@ -19,16 +17,14 @@ public class ScreenThaumonomicon<T extends ContainerThaumonomicon> extends Conta
     }
 
     @Override
-    public void render(int p_render_1_, int p_render_2_, float p_render_3_)
-    {
+    public void render(int p_render_1_, int p_render_2_, float p_render_3_) {
         this.renderBackground();
         super.render(p_render_1_, p_render_2_, p_render_3_);
         this.renderHoveredToolTip(p_render_1_, p_render_2_);
     }
 
     @Override
-    protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY)
-    {
+    protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
         this.minecraft.getTextureManager().bindTexture(texture);
     }
 }

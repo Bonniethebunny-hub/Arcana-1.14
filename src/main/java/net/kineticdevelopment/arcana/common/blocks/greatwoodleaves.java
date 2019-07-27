@@ -80,12 +80,10 @@ public class greatwoodleaves extends Block implements IShearable {
     }
 
     private static int getDistance(BlockState neighbor) {
-        if(neighbor.getBlock().equals(ModBlocks.GREATWOODLOG)) 
-        {
+        if(neighbor.getBlock().equals(ModBlocks.GREATWOODLOG)) {
             return 0;
         } 
-        else 
-        {
+        else {
             return neighbor.getBlock() instanceof greatwoodleaves ? neighbor.get(DISTANCE) : 7;
         }
     }
