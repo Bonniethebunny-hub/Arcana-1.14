@@ -22,15 +22,12 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
-public class EventSubscriber
-{
+public class EventSubscriber {
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-    public static class RegistryEvents
-    {
+    public static class RegistryEvents {
         // Register BLOCKS
         @SubscribeEvent
-        public static void onBlocksRegistry(final RegistryEvent.Register<Block> event)
-        {
+        public static void onBlocksRegistry(final RegistryEvent.Register<Block> event) {
             event.getRegistry().register(new arcanestone());
             event.getRegistry().register(new arcanestonebrick());
             event.getRegistry().register(new infusionstone());
@@ -48,8 +45,7 @@ public class EventSubscriber
 
         // Register ITEMS & ModBlocks
         @SubscribeEvent
-        public static void onItemsRegistry(final RegistryEvent.Register<Item> event)
-        {
+        public static void onItemsRegistry(final RegistryEvent.Register<Item> event) {
             Item.Properties properties = new Item.Properties();
 
             // BLOCKS
@@ -96,10 +92,8 @@ public class EventSubscriber
 
     //On Player Join Event Which Sends A Message To the Player In the Chat
     @SubscribeEvent
-    public static void onPlayerJoinWorld(PlayerEvent.PlayerLoggedInEvent event)
-    {
-        if (!event.getPlayer().world.isRemote)
-        {
+    public static void onPlayerJoinWorld(PlayerEvent.PlayerLoggedInEvent event) {
+        if (!event.getPlayer().world.isRemote) {
             event.getPlayer().sendMessage(new StringTextComponent(TextFormatting.RED + "Hello there " +
                     TextFormatting.AQUA + event.getPlayer().getDisplayName().getString() + TextFormatting.RED + ", we hope you enjoy the Arcana Mod!"));
         }

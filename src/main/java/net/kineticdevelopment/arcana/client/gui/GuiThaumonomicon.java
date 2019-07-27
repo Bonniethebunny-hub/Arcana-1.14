@@ -9,8 +9,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import javax.annotation.Nullable;
 
 @OnlyIn(Dist.CLIENT)
-public class GuiThaumonomicon extends Container
-{
+public class GuiThaumonomicon extends Container {
     protected GuiThaumonomicon(@Nullable ContainerType<?> type, int id) {
         super(type, id);
     }

@@ -9,11 +9,9 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 
-public class thaumonomicon extends Item 
-{
+public class thaumonomicon extends Item {
 
-    public thaumonomicon() 
-    {
+    public thaumonomicon() {
         super(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)
         .maxStackSize(1));
 
@@ -21,12 +19,10 @@ public class thaumonomicon extends Item
     }
 
     @Override
-    public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn)
-    {
+    public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
         ItemStack itemStack = new ItemStack(ModItems.THAUMONOMICON);
 
-        if (!worldIn.isRemote)
-        {
+        if (!worldIn.isRemote) {
             playerIn.openContainer.getInventory().add(1, itemStack);
         }
 
