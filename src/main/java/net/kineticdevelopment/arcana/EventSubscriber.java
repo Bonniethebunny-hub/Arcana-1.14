@@ -38,6 +38,7 @@ public class EventSubscriber {
             event.getRegistry().register(new silverwoodsapling(new SilverwoodTree(), Block.Properties.create(Material.LEAVES).doesNotBlockMovement()));
             event.getRegistry().register(new greatwoodsapling(new GreatwoodTree(), Block.Properties.create(Material.LEAVES).doesNotBlockMovement()));
             event.getRegistry().register(new dairsapling(new DairTree(), Block.Properties.create(Material.LEAVES).doesNotBlockMovement()));
+            event.getRegistry().register(new taintedoaksapling(new TaintedOakTree(), Block.Properties.create(Material.LEAVES).doesNotBlockMovement()));
             event.getRegistry().register(new taintedcrust());
             event.getRegistry().register(new taintedrock());
             event.getRegistry().register(new taintedsoil());
@@ -50,6 +51,10 @@ public class EventSubscriber {
             event.getRegistry().register(new dairlog(Block.Properties.create(Material.WOOD).hardnessAndResistance(1.1F).harvestTool(ToolType.AXE)));
             event.getRegistry().register(new dairleaves(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.5F).sound(SoundType.PLANT)));
             event.getRegistry().register(new strippeddairlog(Block.Properties.create(Material.WOOD).hardnessAndResistance(1.1F).harvestTool(ToolType.AXE)));
+            event.getRegistry().register(new taintedoakleaves(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.5F).sound(SoundType.PLANT)));
+            event.getRegistry().register(new taintedoaklog(Block.Properties.create(Material.WOOD).hardnessAndResistance(1.1F).harvestTool(ToolType.AXE)));
+            event.getRegistry().register(new strippedtaintedoaklog(Block.Properties.create(Material.WOOD).hardnessAndResistance(1.1F).harvestTool(ToolType.AXE)));
+            event.getRegistry().register(new taintedoakplanks());
         }
 
         // Register ITEMS & ModBlocks
@@ -83,6 +88,11 @@ public class EventSubscriber {
             event.getRegistry().register(new BlockItem(ModBlocks.DAIRLEAVES, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("dairleaves"));
             event.getRegistry().register(new BlockItem(ModBlocks.DAIRSAPLING, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("dairsapling"));
             event.getRegistry().register(new BlockItem(ModBlocks.STRIPPEDDAIRLOG, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("strippeddairlog"));
+            event.getRegistry().register(new BlockItem(ModBlocks.TAINTEDOAKLEAVES, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("taintedoakleaves"));
+            event.getRegistry().register(new BlockItem(ModBlocks.TAINTEDOAKSAPLING, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("taintedoaksapling"));
+            event.getRegistry().register(new BlockItem(ModBlocks.STRIPPEDTAINTEDOAKLOG, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("strippedtaintedoaklog"));
+            event.getRegistry().register(new BlockItem(ModBlocks.TAINTEDOAKLOG, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("taintedoaklog"));
+            event.getRegistry().register(new BlockItem(ModBlocks.TAINTEDOAKPLANKS, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("taintedoakplanks"));
             // ITEMS
             event.getRegistry().register(new thaumonomicon());
             event.getRegistry().register(new thaumiumingot());

@@ -45,6 +45,21 @@ public class ModBlocks {
     @ObjectHolder("arcana:taintedcrust")
     public static taintedcrust TAINTEDCRUST;
 
+    @ObjectHolder("arcana:taintedoakleaves")
+    public static taintedoakleaves TAINTEDOAKLEAVES;
+
+    @ObjectHolder("arcana:taintedoaksapling")
+    public static taintedoaksapling TAINTEDOAKSAPLING;
+
+    @ObjectHolder("arcana:taintedoaklog")
+    public static taintedoaklog TAINTEDOAKLOG;
+
+    @ObjectHolder("arcana:taintedoakplanks")
+    public static taintedoakplanks TAINTEDOAKPLANKS;
+
+    @ObjectHolder("arcana:strippedtaintedoaklog")
+    public static strippedtaintedoaklog STRIPPEDTAINTEDOAKLOG;
+
     @ObjectHolder("arcana:cinnabarore")
     public static cinnabarore CINNABARORE;
 

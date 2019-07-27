@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "axis=y":  { "model": "arcana:block/taintedoaklog" },
+    "axis=z":   { "model": "arcana:block/taintedoaklog", "x": 90 },
+    "axis=x":   { "model": "arcana:block/taintedoaklog", "x": 90, "y": 90 }
+  }
+}
