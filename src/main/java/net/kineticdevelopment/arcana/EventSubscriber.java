@@ -20,9 +20,7 @@ public class EventSubscriber
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class RegistryEvents
     {
-        /**
-         * Register BLOCKS
-         */
+        // Register BLOCKS
         @SubscribeEvent
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> event)
         {
@@ -41,9 +39,7 @@ public class EventSubscriber
 
         }
 
-        /**
-         * Register ITEMS & ModBlocks
-         */
+        // Register ITEMS & ModBlocks
         @SubscribeEvent
         public static void onItemsRegistry(final RegistryEvent.Register<Item> event)
         {
@@ -91,9 +87,7 @@ public class EventSubscriber
         }
     }
 
-    /**
-     * On Player Join Event Which Sends A Message To the Player In the Chat
-     */
+    //On Player Join Event Which Sends A Message To the Player In the Chat
     @SubscribeEvent
     public static void onPlayerJoinWorld(PlayerEvent.PlayerLoggedInEvent event)
     {

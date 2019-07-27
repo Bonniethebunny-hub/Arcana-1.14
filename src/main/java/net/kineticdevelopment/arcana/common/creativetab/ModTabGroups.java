@@ -30,7 +30,8 @@ public class ModTabGroups
 
         @Override
         @Nonnull
-        public ItemStack createIcon() {
+        public ItemStack createIcon() 
+        {
             return iconSupplier.get();
         }
 
