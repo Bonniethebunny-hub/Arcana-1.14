@@ -9,7 +9,7 @@ import javax.annotation.Nonnull;
 import java.util.function.Supplier;
 
 public class ModTabGroups {
-    public static final ItemGroup MOD_ITEM_GROUP = new ModTabGroup(Constants.MODID, () -> new ItemStack(ModItems.THAUMONOMICON));
+    public static final ItemGroup MOD_ITEM_GROUP = new ModTabGroup(Constants.MODID, () -> new ItemStack(ModItems.THAUMONOMICON)).setBackgroundImageName("item_search.png");
 
     public static final class ModTabGroup extends ItemGroup {
 
@@ -29,6 +29,11 @@ public class ModTabGroups {
         @Nonnull
         public ItemStack createIcon() {
             return iconSupplier.get();
+        }
+        
+        @Override
+        public boolean hasSearchBar() {
+        	return true;
         }
 
     }
