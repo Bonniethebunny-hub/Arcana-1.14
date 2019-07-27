@@ -1,4 +1,4 @@
-package net.kineticdevelopment.arcana.common.items;
+package net.kineticdevelopment.arcana.common.items.elements;
 
 import net.kineticdevelopment.arcana.common.creativetab.ModTabGroups;
 import net.minecraft.item.Item;
