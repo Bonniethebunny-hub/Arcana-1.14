@@ -3,8 +3,8 @@ package net.kineticdevelopment.arcana.client.gui;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;
+import net.minecraft.inventory.container.FurnaceContainer;
 import net.minecraft.inventory.container.INamedContainerProvider;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraftforge.api.distmarker.Dist;
@@ -15,11 +15,8 @@ import javax.annotation.Nullable;
 @OnlyIn(Dist.CLIENT)
 public class GuiThaumonomicon implements INamedContainerProvider
 {
-    private final int slot;
-
-    public GuiThaumonomicon(int slot)
+    public GuiThaumonomicon()
     {
-        this.slot = slot;
     }
 
     @Override
@@ -32,13 +29,7 @@ public class GuiThaumonomicon implements INamedContainerProvider
     @Override
     public Container createMenu(int i, PlayerInventory playerInventory, PlayerEntity playerEntity)
     {
-        ItemStack heldItem = playerInventory.getStackInSlot(slot);
-
-        int blockedSlot = -1;
-        if (playerEntity.getHeldItemMainhand() == heldItem)
-            blockedSlot = playerInventory.currentItem;
-
-        //return new BeltContainer(i, playerInventory, blockedSlot, heldItem);
-        return null;
+        // TODO This is for testing and make a new container for the thaumonomicon
+        return new FurnaceContainer(i, playerInventory);
     }
 }
