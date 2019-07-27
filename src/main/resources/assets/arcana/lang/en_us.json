@@ -1,6 +1,6 @@
 {
   "_comment": "CREATIVE TABS",
-  "itemGroup.arcana": "Arcana Tab",
+  "itemGroup.arcana": "Arcana",
 
   "_comment": "MOD BLOCKS",
   "block.arcana.arcanestone": "Arcane Stone",
@@ -32,5 +32,11 @@
   "item.arcana.tempestas": "Tempestas",
   "item.arcana.terra": "Terra",
   "item.arcana.vacuos": "Vacuos",
-  "item.arcana.venenum": "Venenum"
+  "item.arcana.venenum": "Venenum",
+  "item.arcana.wandcapgold": "Gold Wand Cap",
+  "item.arcana.wandcapcopper": "Copper Wand Cap",
+  "item.arcana.wandcapiron": "Iron Wand Cap",
+  "item.arcana.wandcapsilver": "Silver Wand Cap",
+  "item.arcana.wandcapthaumium": "Thaumium Wand Cap",
+  "item.arcana.wandcapvoid": "Void Wand Cap"
 }

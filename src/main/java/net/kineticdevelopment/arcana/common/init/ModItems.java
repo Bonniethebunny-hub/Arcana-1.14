@@ -52,4 +52,22 @@ public class ModItems {
 
     @ObjectHolder("arcana:venenum")
     public static venenum VENENUM;
+
+    @ObjectHolder("arcana:wandcapcopper")
+    public static wandcapcopper WANDCAPCOPPER;
+
+    @ObjectHolder("arcana:wandcapgold")
+    public static wandcapgold WANDCAPGOLD;
+
+    @ObjectHolder("arcana:wandcapiron")
+    public static wandcapiron WANDCAPIRON;
+
+    @ObjectHolder("arcana:wandcapsilver")
+    public static wandcapsilver WANDCAPSILVER;
+
+    @ObjectHolder("arcana:wandcapthaumium")
+    public static wandcapthaumium WANDCAPTHAUMIUM;
+
+    @ObjectHolder("arcana:wandcapvoid")
+    public static wandcapvoid WANDCAPVOID;
 }

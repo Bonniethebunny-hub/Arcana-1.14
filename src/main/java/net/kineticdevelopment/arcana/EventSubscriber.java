@@ -66,6 +66,14 @@ public class EventSubscriber
             event.getRegistry().register(new thaumonomicon());
             event.getRegistry().register(new thaumiumingot());
             event.getRegistry().register(new quicksilver());
+            event.getRegistry().register(new wandcapcopper());
+            event.getRegistry().register(new wandcapsilver());
+            event.getRegistry().register(new wandcapvoid());
+            event.getRegistry().register(new wandcapthaumium());
+            event.getRegistry().register(new wandcapiron());
+            event.getRegistry().register(new wandcapgold());
+
+            //Aspects
             event.getRegistry().register(new aer());
             event.getRegistry().register(new aqua());
             event.getRegistry().register(new gelum());
