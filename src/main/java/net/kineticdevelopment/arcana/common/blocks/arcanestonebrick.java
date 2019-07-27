@@ -4,9 +4,11 @@ import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 
-public class arcanestonebrick extends Block {
+public class arcanestonebrick extends Block 
+{
 
-    public arcanestonebrick() {
+    public arcanestonebrick() 
+    {
         super(Properties.create(Material.IRON)
                 .sound(SoundType.STONE)
                 .hardnessAndResistance(3.0f)

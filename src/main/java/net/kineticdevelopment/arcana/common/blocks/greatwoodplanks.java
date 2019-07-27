@@ -4,9 +4,11 @@ import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 
-public class greatwoodplanks extends Block {
+public class greatwoodplanks extends Block 
+{
 
-    public greatwoodplanks() {
+    public greatwoodplanks() 
+    {
         super(Properties.create(Material.IRON)
                 .sound(SoundType.STONE)
                 .hardnessAndResistance(3.0f)
