@@ -9,7 +9,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 
 public class ThaumonomiconScreen extends ContainerScreen<ThaumonomiconContainer> {
-    private static final ResourceLocation THAUMONOMICON_GUI_TEXTURE = new ResourceLocation(Constants.MODID, "textures/gui/container/arcaneworkbench.png");
+    private static final ResourceLocation THAUMONOMICON_GUI_TEXTURE = new ResourceLocation(Constants.MODID, "textures/gui/container/gui_researchbook.png");
 
     public ThaumonomiconScreen(ThaumonomiconContainer screenContainer, PlayerInventory inv, ITextComponent titleIn) {
         super(screenContainer, inv, titleIn);
@@ -27,8 +27,7 @@ public class ThaumonomiconScreen extends ContainerScreen<ThaumonomiconContainer>
      */
     @Override
     protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-        this.font.drawString(this.title.getFormattedText(), 2.0F, -40.0F, 4610752);
-        this.font.drawString(this.playerInventory.getDisplayName().getFormattedText(), 8.0F, (float)(this.ySize - 69 + 2), 4610752);
+        this.font.drawString(this.title.getFormattedText(), 30.0F, -25.0F, 4610752);
     }
 
     /**
@@ -38,8 +37,8 @@ public class ThaumonomiconScreen extends ContainerScreen<ThaumonomiconContainer>
     protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
         GlStateManager.color4f(1.0F, 1.0F, 1.0F, 1.0F);
         this.minecraft.getTextureManager().bindTexture(THAUMONOMICON_GUI_TEXTURE);
-        int i = (this.width - this.xSize) / 2 - 8;
-        int j = (this.height - this.ySize) / 28;
-        this.blit(i, j, 0, 0, 190, 235);
+        int i = (this.width - this.xSize) / 3 + 3;
+        int j = (this.height - this.ySize) / 3;
+        this.blit(i, j, 0, 0, 255, 182);
     }
 }

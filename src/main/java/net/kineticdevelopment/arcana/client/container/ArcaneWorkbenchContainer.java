@@ -12,10 +12,10 @@ public class ArcaneWorkbenchContainer extends Container {
     private IItemHandler playerInventory;
 
     public ArcaneWorkbenchContainer(int windowId, PlayerInventory playerInventory) {
-        super(ModContainer.THAUMONOMICON_CONTAINER, windowId);
+        super(ModContainer.ARCANEWORKBENCH_CONTAINER, windowId);
         this.playerInventory = new InvWrapper(playerInventory);
 
-        layoutPlayerInventorySlots(7, 109);
+        layoutPlayerInventorySlots(7, 115);
     }
 
     private int addSlotRange(IItemHandler handler, int index, int x, int y, int amount, int dx) {

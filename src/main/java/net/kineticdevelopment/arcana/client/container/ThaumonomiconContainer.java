@@ -12,10 +12,8 @@ public class ThaumonomiconContainer extends Container {
     private IItemHandler playerInventory;
 
     public ThaumonomiconContainer(int windowId, PlayerInventory playerInventory) {
-        super(ModContainer.ARCANEWORKBENCH_CONTAINER, windowId);
+        super(ModContainer.THAUMONOMICON_CONTAINER, windowId);
         this.playerInventory = new InvWrapper(playerInventory);
-
-        layoutPlayerInventorySlots(7, 109);
     }
 
     private int addSlotRange(IItemHandler handler, int index, int x, int y, int amount, int dx) {
