@@ -7,8 +7,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.world.World;
 
-public class ClientProxy implements IProxy
-{
+public class ClientProxy implements IProxy {
     @Override
     public void init() {
         ScreenManager.registerFactory(ModContainer.THAUMONOMICON_CONTAINER, ThaumonomiconScreen::new);

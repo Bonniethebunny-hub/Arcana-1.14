@@ -67,8 +67,7 @@ public class silverwoodsapling extends BushBlock implements IGrowable {
     	TemplateManager templatemanager = worldserver.getStructureTemplateManager();
     	Template template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/silverwoodtree"));
 
-    	if(template == null)
-    	{
+    	if(template == null) {
     		Constants.LOGGER.error("Could not find structure at "+(new ResourceLocation("arcana", "trees/silverwoodtree")));
     	}
     	BlockState iblockstate = worldIn.getBlockState(pos);

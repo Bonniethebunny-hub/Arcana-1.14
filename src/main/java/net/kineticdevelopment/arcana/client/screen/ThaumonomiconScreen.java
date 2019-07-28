@@ -9,8 +9,7 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 
-public class ThaumonomiconScreen extends ContainerScreen<ThaumonomiconContainer>
-{
+public class ThaumonomiconScreen extends ContainerScreen<ThaumonomiconContainer> {
     private static final ResourceLocation THAUMONOMICON_GUI_TEXTURE = new ResourceLocation(Constants.MODID, "textures/gui/container/arcaneworkbench.png");
 
     public ThaumonomiconScreen(ThaumonomiconContainer screenContainer, PlayerInventory inv, ITextComponent titleIn) {

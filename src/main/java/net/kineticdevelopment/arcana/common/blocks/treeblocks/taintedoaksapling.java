@@ -57,8 +57,7 @@ public class taintedoaksapling extends BushBlock implements IGrowable {
     	TemplateManager templatemanager = worldserver.getStructureTemplateManager();
     	Template template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/taintedtree"));
 
-    	if(template == null)
-    	{
+    	if(template == null) {
     		Constants.LOGGER.error("Could not find structure at "+new ResourceLocation("arcana:structures/trees/taintedtree"));
     	}
     	BlockState iblockstate = worldIn.getBlockState(pos);

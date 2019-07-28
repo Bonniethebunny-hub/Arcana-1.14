@@ -9,8 +9,7 @@ import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 import net.minecraftforge.items.wrapper.InvWrapper;
 
-public class ThaumonomiconContainer extends Container
-{
+public class ThaumonomiconContainer extends Container {
     private IItemHandler playerInventory;
 
     public ThaumonomiconContainer(int windowId, World world, PlayerInventory playerInventory) {
