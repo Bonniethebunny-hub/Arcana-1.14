@@ -28,14 +28,13 @@ public class arcaneworktable extends Block {
         );
         setRegistryName("arcaneworktable");
     }
-    
     public static boolean isOpaque(VoxelShape shape) {
-    	return false;
+        return false;
     }
-    
+
     public boolean isNormalCube(BlockState state, IBlockReader worldIn, BlockPos pos) {
         return false;
-     }
+    }
 
     @Override
     public boolean onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {

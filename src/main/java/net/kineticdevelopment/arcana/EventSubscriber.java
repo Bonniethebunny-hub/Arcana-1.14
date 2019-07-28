@@ -87,7 +87,6 @@ public class EventSubscriber {
             Block[] modBlocks = {
                     ModBlocks.ARCANESTONE,
                     ModBlocks.ARCANEWORKTABLE,
-                    ModBlocks.ARCANESTONE,
                     ModBlocks.ARCANESTONEBRICK,
                     ModBlocks.INFUSIONSTONE,
                     ModBlocks.AMBERBLOCK,
