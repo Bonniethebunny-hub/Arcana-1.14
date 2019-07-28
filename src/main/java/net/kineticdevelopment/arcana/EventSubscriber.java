@@ -18,15 +18,18 @@ import net.kineticdevelopment.arcana.common.blocks.treeblocks.taintedoaklog;
 import net.kineticdevelopment.arcana.common.blocks.treeblocks.taintedoaksapling;
 import net.kineticdevelopment.arcana.common.creativetab.ModTabGroups;
 import net.kineticdevelopment.arcana.common.init.ModBlocks;
+import net.kineticdevelopment.arcana.common.init.ModEntities;
 import net.kineticdevelopment.arcana.common.items.*;
 import net.kineticdevelopment.arcana.common.items.elements.*;
 import net.kineticdevelopment.arcana.common.structures.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.entity.EntityType;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
@@ -38,6 +41,8 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 
 import java.lang.reflect.Array;
+
+import static net.kineticdevelopment.arcana.utilities.Constants.MODID;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.FORGE)
 public class EventSubscriber {
@@ -132,6 +137,9 @@ public class EventSubscriber {
             event.getRegistry().register(new wandcapgold());
             event.getRegistry().register(new basicwand());
 
+            //Spawn Eggs
+            ModEntities.registerEntitySpawnEggs(event);
+
             //Aspects
             event.getRegistry().register(new air());
             event.getRegistry().register(new water());
@@ -157,6 +165,16 @@ public class EventSubscriber {
         }
     }
 
+    @SubscribeEvent
+    public static void onRegisterEntities(final RegistryEvent.Register<EntityType<?>> event)
+    {
+        event.getRegistry().registerAll(
+                ModEntities.ARCANA_ENTITY_COW
+        );
+
+        ModEntities.registerEntityWorldSpawns();
+    }
+
     //On Player Join Event Which Sends A Message To the Player In the Chat
     @SubscribeEvent
     public static void onPlayerJoinWorld(PlayerEvent.PlayerLoggedInEvent event) {
@@ -164,5 +182,11 @@ public class EventSubscriber {
             event.getPlayer().sendMessage(new StringTextComponent(TextFormatting.RED + "Hello there " +
                     TextFormatting.AQUA + event.getPlayer().getDisplayName().getString() + TextFormatting.RED + ", we hope you enjoy the Arcana Mod!"));
         }
+    }
+
+    public static ResourceLocation location(String name)
+    {
+        return new ResourceLocation(MODID, name);
+        //for ease of coding in reference to this class
     }
 }

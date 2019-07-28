@@ -5,6 +5,7 @@ import net.kineticdevelopment.arcana.client.container.ThaumonomiconContainer;
 import net.kineticdevelopment.arcana.common.IProxy;
 import net.kineticdevelopment.arcana.common.ServerProxy;
 import net.kineticdevelopment.arcana.utilities.Constants;
+import net.kineticdevelopment.arcana.utilities.renderers.ModRenderRegistry;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraftforge.fml.DistExecutor;
@@ -20,9 +21,17 @@ public class ArcanaMod {
 
     public ArcanaMod() {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientRegistries);
     }
 
     private void setup(final FMLCommonSetupEvent event) {
         Constants.LOGGER.info(Constants.MODID + event + " is now loaded!");
     }
+
+    private void clientRegistries(final FMLClientSetupEvent event)
+    {
+        ModRenderRegistry.registerEntityRenders();
+        Constants.LOGGER.info("clientRegistries method registered.");
+    }
+
 }

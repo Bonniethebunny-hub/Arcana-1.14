@@ -2,9 +2,13 @@ package net.kineticdevelopment.arcana.common.init;
 
 import net.kineticdevelopment.arcana.common.items.*;
 import net.kineticdevelopment.arcana.common.items.elements.*;
+import net.minecraft.item.Item;
 import net.minecraftforge.registries.ObjectHolder;
 
 public class ModItems {
+
+    @ObjectHolder("arcana:spawn_egg")
+    public static Item arcana_entity_egg;
 
     @ObjectHolder("arcana:thaumonomicon")
     public static thaumonomicon THAUMONOMICON;
