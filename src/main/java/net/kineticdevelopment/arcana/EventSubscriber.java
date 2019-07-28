@@ -37,6 +37,8 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 
+import java.lang.reflect.Array;
+
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.FORGE)
 public class EventSubscriber {
     @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
@@ -79,38 +81,46 @@ public class EventSubscriber {
         @SubscribeEvent
         public static void onItemsRegistry(final RegistryEvent.Register<Item> event) {
             @SuppressWarnings("unused")
-			Item.Properties properties = new Item.Properties();
+            Item.Properties properties = new Item.Properties();
 
             // BLOCKS
-            event.getRegistry().register(new BlockItem(ModBlocks.ARCANESTONE, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("arcanestone"));
-            event.getRegistry().register(new BlockItem(ModBlocks.ARCANEWORKTABLE, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("arcaneworktable"));
-            event.getRegistry().register(new BlockItem(ModBlocks.ARCANESTONEBRICK, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("arcanestonebrick"));
-            event.getRegistry().register(new BlockItem(ModBlocks.INFUSIONSTONE, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("infusionstone"));
-            event.getRegistry().register(new BlockItem(ModBlocks.AMBERBLOCK, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("amberblock"));
-            event.getRegistry().register(new BlockItem(ModBlocks.AMBERBLOCKSWIRL, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("amberblockswirl"));
-            event.getRegistry().register(new BlockItem(ModBlocks.AMBERBRICK, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("amberbrick"));
-            event.getRegistry().register(new BlockItem(ModBlocks.SILVERWOODPLANKS, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("silverwoodplanks"));
-            event.getRegistry().register(new BlockItem(ModBlocks.GREATWOODPLANKS, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("greatwoodplanks"));
-            event.getRegistry().register(new BlockItem(ModBlocks.GREATWOODSAPLING, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("greatwoodsapling"));
-            event.getRegistry().register(new BlockItem(ModBlocks.TAINTEDCRUST, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("taintedcrust"));
-            event.getRegistry().register(new BlockItem(ModBlocks.TAINTEDROCK, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("taintedrock"));
-            event.getRegistry().register(new BlockItem(ModBlocks.TAINTEDSOIL, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("taintedsoil"));
-            event.getRegistry().register(new BlockItem(ModBlocks.CINNABARORE, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("cinnabarore"));
-            event.getRegistry().register(new BlockItem(ModBlocks.THAUMIUMBLOCK, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("thaumiumblock"));
-            event.getRegistry().register(new BlockItem(ModBlocks.GREATWOODLOG, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("greatwoodlog"));
-            event.getRegistry().register(new BlockItem(ModBlocks.GREATWOODLEAVES, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("greatwoodleaves"));
-            event.getRegistry().register(new BlockItem(ModBlocks.SILVERWOODLOG, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("silverwoodlog"));
-            event.getRegistry().register(new BlockItem(ModBlocks.SILVERWOODLEAVES, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("silverwoodleaves"));
-            event.getRegistry().register(new BlockItem(ModBlocks.SILVERWOODSAPLING, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("silverwoodsapling"));
-            event.getRegistry().register(new BlockItem(ModBlocks.DAIRLOG, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("dairlog"));
-            event.getRegistry().register(new BlockItem(ModBlocks.DAIRLEAVES, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("dairleaves"));
-            event.getRegistry().register(new BlockItem(ModBlocks.DAIRSAPLING, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("dairsapling"));
-            event.getRegistry().register(new BlockItem(ModBlocks.STRIPPEDDAIRLOG, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("strippeddairlog"));
-            event.getRegistry().register(new BlockItem(ModBlocks.TAINTEDOAKLEAVES, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("taintedoakleaves"));
-            event.getRegistry().register(new BlockItem(ModBlocks.TAINTEDOAKSAPLING, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("taintedoaksapling"));
-            event.getRegistry().register(new BlockItem(ModBlocks.STRIPPEDTAINTEDOAKLOG, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("strippedtaintedoaklog"));
-            event.getRegistry().register(new BlockItem(ModBlocks.TAINTEDOAKLOG, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("taintedoaklog"));
-            event.getRegistry().register(new BlockItem(ModBlocks.TAINTEDOAKPLANKS, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName("taintedoakplanks"));
+            Block[] modBlocks = {
+                    ModBlocks.ARCANESTONE,
+                    ModBlocks.ARCANEWORKTABLE,
+                    ModBlocks.ARCANESTONE,
+                    ModBlocks.ARCANESTONEBRICK,
+                    ModBlocks.INFUSIONSTONE,
+                    ModBlocks.AMBERBLOCK,
+                    ModBlocks.AMBERBLOCKSWIRL,
+                    ModBlocks.AMBERBRICK,
+                    ModBlocks.SILVERWOODPLANKS,
+                    ModBlocks.GREATWOODPLANKS,
+                    ModBlocks.GREATWOODSAPLING,
+                    ModBlocks.TAINTEDCRUST,
+                    ModBlocks.TAINTEDROCK,
+                    ModBlocks.TAINTEDSOIL,
+                    ModBlocks.CINNABARORE,
+                    ModBlocks.THAUMIUMBLOCK,
+                    ModBlocks.GREATWOODLOG,
+                    ModBlocks.GREATWOODLEAVES,
+                    ModBlocks.SILVERWOODLOG,
+                    ModBlocks.SILVERWOODLEAVES,
+                    ModBlocks.SILVERWOODSAPLING,
+                    ModBlocks.DAIRLOG,
+                    ModBlocks.DAIRLEAVES,
+                    ModBlocks.DAIRSAPLING,
+                    ModBlocks.STRIPPEDDAIRLOG,
+                    ModBlocks.TAINTEDOAKLEAVES,
+                    ModBlocks.TAINTEDOAKSAPLING,
+                    ModBlocks.STRIPPEDTAINTEDOAKLOG,
+                    ModBlocks.TAINTEDOAKLOG,
+                    ModBlocks.TAINTEDOAKPLANKS
+            };
+
+            for (Block block : modBlocks){
+                event.getRegistry().register(new BlockItem(block, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName(block.getRegistryName()));
+            }
+
             // ITEMS
             event.getRegistry().register(new thaumonomicon());
             event.getRegistry().register(new thaumiumingot());
@@ -141,8 +151,7 @@ public class EventSubscriber {
         }
 
         @SubscribeEvent
-        public static void onContainerRegistry(final RegistryEvent.Register<ContainerType<?>> event)
-        {
+        public static void onContainerRegistry(final RegistryEvent.Register<ContainerType<?>> event) {
             event.getRegistry().register(IForgeContainerType.create((windowId, inv, data) -> {
                 return new ThaumonomiconContainer(windowId, ArcanaMod.proxy.getClientWorld(), inv);
             }).setRegistryName("thaumonomiconcontainer"));
