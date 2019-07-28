@@ -24,7 +24,6 @@ import net.kineticdevelopment.arcana.common.structures.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.util.math.BlockPos;
@@ -138,14 +137,6 @@ public class EventSubscriber {
             event.getRegistry().register(new vacuum());
             event.getRegistry().register(new venom());
 
-        }
-
-        @SubscribeEvent
-        public static void onContainerRegistry(final RegistryEvent.Register<ContainerType<?>> event)
-        {
-            event.getRegistry().register(IForgeContainerType.create((windowId, inv, data) -> {
-                return new ThaumonomiconContainer(windowId, ArcanaMod.proxy.getClientWorld(), inv);
-            }).setRegistryName("thaumonomiconcontainer"));
         }
     }
 
