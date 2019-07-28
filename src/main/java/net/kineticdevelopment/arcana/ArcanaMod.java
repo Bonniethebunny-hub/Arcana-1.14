@@ -1,13 +1,14 @@
 package net.kineticdevelopment.arcana;
 
 import net.kineticdevelopment.arcana.client.ClientProxy;
-import net.kineticdevelopment.arcana.client.container.ContainerThaumonomicon;
-import net.kineticdevelopment.arcana.client.screen.ScreenThaumonomicon;
 import net.kineticdevelopment.arcana.common.IProxy;
 import net.kineticdevelopment.arcana.common.ServerProxy;
 import net.kineticdevelopment.arcana.utilities.Constants;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.inventory.container.ContainerType;
+import net.minecraftforge.common.extensions.IForgeContainerType;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -30,13 +31,5 @@ public class ArcanaMod {
 
     private void doClientStuff(final FMLClientSetupEvent event)
     {
-        ScreenManager.registerFactory(ObjectHolders.THAUMONOMICON_CONTAINER_TYPE, ScreenThaumonomicon::new);
     }
-
-    @ObjectHolder(Constants.MODID)
-    public static class ObjectHolders
-    {
-        public static final ContainerType<ContainerThaumonomicon> THAUMONOMICON_CONTAINER_TYPE = null;
-    }
-
 }
