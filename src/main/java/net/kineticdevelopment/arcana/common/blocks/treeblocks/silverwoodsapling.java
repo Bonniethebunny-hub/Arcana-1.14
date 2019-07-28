@@ -69,7 +69,7 @@ public class silverwoodsapling extends BushBlock implements IGrowable {
 
     	if(template == null)
     	{
-    		Constants.LOGGER.error("Could not find structure at "+new ResourceLocation("arcana:structures/trees/silverwoodtree"));
+    		Constants.LOGGER.error("Could not find structure at "+(new ResourceLocation("arcana", "trees/silverwoodtree")));
     	}
     	BlockState iblockstate = worldIn.getBlockState(pos);
     	worldserver.notifyBlockUpdate(pos, iblockstate, iblockstate, 3);
