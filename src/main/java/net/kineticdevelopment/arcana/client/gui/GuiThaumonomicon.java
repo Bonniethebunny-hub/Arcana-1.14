@@ -29,6 +29,5 @@ public class GuiThaumonomicon implements INamedContainerProvider {
     @Override
     public Container createMenu(int i, PlayerInventory playerInventory, PlayerEntity playerEntity) {
         return new ContainerThaumonomicon(ArcanaMod.ObjectHolders.THAUMONOMICON_CONTAINER_TYPE, i, playerInventory);
-        ContainerType.ANVIL
     }
 }
