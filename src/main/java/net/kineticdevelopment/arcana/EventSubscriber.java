@@ -1,5 +1,6 @@
 package net.kineticdevelopment.arcana;
 
+import net.kineticdevelopment.arcana.client.container.ArcaneWorkbenchContainer;
 import net.kineticdevelopment.arcana.client.container.ThaumonomiconContainer;
 import net.kineticdevelopment.arcana.common.blocks.*;
 import net.kineticdevelopment.arcana.common.blocks.treeblocks.dairleaves;
@@ -154,6 +155,10 @@ public class EventSubscriber {
             event.getRegistry().register(IForgeContainerType.create((windowId, inv, data) -> {
                 return new ThaumonomiconContainer(windowId, inv);
             }).setRegistryName("arcana:thaumonomiconcontainer"));
+
+            event.getRegistry().register(IForgeContainerType.create((windowId, inv, data) -> {
+                return new ArcaneWorkbenchContainer(windowId, inv);
+            }).setRegistryName("arcana:arcaneworkbenchcontainer"));
         }
     }
 

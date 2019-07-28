@@ -1,5 +1,6 @@
 package net.kineticdevelopment.arcana.common.blocks;
 
+import net.kineticdevelopment.arcana.client.gui.GuiArcaneWorkbench;
 import net.kineticdevelopment.arcana.client.gui.GuiThaumonomicon;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -39,8 +40,7 @@ public class arcaneworktable extends Block {
     @Override
     public boolean onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
         if (!worldIn.isRemote) {
-            // TODO Change the "new GuiThaumonomicon()" to another custom mode GUI for the Arcane Workbench!! (Was set to GUITHAUMONICON just for TESTING)
-            NetworkHooks.openGui((ServerPlayerEntity) player, (INamedContainerProvider) new GuiThaumonomicon());
+            NetworkHooks.openGui((ServerPlayerEntity) player, (INamedContainerProvider) new GuiArcaneWorkbench());
         }
 
         return super.onBlockActivated(state, worldIn, pos, player, handIn, hit);

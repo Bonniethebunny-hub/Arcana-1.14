@@ -8,11 +8,11 @@ import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 import net.minecraftforge.items.wrapper.InvWrapper;
 
-public class ThaumonomiconContainer extends Container {
+public class ArcaneWorkbenchContainer extends Container {
     private IItemHandler playerInventory;
 
-    public ThaumonomiconContainer(int windowId, PlayerInventory playerInventory) {
-        super(ModContainer.ARCANEWORKBENCH_CONTAINER, windowId);
+    public ArcaneWorkbenchContainer(int windowId, PlayerInventory playerInventory) {
+        super(ModContainer.THAUMONOMICON_CONTAINER, windowId);
         this.playerInventory = new InvWrapper(playerInventory);
 
         layoutPlayerInventorySlots(7, 109);
