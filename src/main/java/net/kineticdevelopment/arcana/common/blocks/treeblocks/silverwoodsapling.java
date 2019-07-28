@@ -2,6 +2,7 @@ package net.kineticdevelopment.arcana.common.blocks.treeblocks;
 
 import java.util.Random;
 
+import net.kineticdevelopment.arcana.utilities.Constants;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.BushBlock;
@@ -9,15 +10,28 @@ import net.minecraft.block.IGrowable;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.trees.Tree;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
+import net.minecraft.util.Mirror;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.ResourceLocationException;
+import net.minecraft.util.Rotation;
+import net.minecraft.util.StringUtils;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
+import net.minecraft.world.gen.feature.template.IntegrityProcessor;
+import net.minecraft.world.gen.feature.template.PlacementSettings;
+import net.minecraft.world.gen.feature.template.Template;
+import net.minecraft.world.gen.feature.template.TemplateManager;
+import net.minecraft.world.server.ServerWorld;
 
 
 public class silverwoodsapling extends BushBlock implements IGrowable {
@@ -49,13 +63,20 @@ public class silverwoodsapling extends BushBlock implements IGrowable {
     }
 
     public void grow(IWorld worldIn, BlockPos pos, BlockState state, Random rand) {
-       if (state.get(STAGE) == 0) {
-          worldIn.setBlockState(pos, state.cycle(STAGE), 4);
-       } else {
-          if (!net.minecraftforge.event.ForgeEventFactory.saplingGrowTree(worldIn, rand, pos)) return;
-          this.tree.spawn(worldIn, pos, state, rand);
-       }
+    	ServerWorld worldserver = (ServerWorld) worldIn;
+    	TemplateManager templatemanager = worldserver.getStructureTemplateManager();
+    	Template template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/silverwoodtree"));
 
+    	if(template == null)
+    	{
+    		Constants.LOGGER.error("Could not find structure at "+new ResourceLocation("arcana:structures/trees/silverwoodtree"));
+    	}
+    	BlockState iblockstate = worldIn.getBlockState(pos);
+    	worldserver.notifyBlockUpdate(pos, iblockstate, iblockstate, 3);
+    	PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)
+    			.setRotation(Rotation.NONE).setIgnoreEntities(false).setChunk((ChunkPos) null);
+
+    	template.addBlocksToWorld(worldIn, pos.add(-4, 0, -4), placementsettings);
     }
 
     /**
