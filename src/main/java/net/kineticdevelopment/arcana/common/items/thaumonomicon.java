@@ -1,5 +1,6 @@
 package net.kineticdevelopment.arcana.common.items;
 
+import net.kineticdevelopment.arcana.client.container.ThaumonomiconContainer;
 import net.kineticdevelopment.arcana.client.gui.GuiThaumonomicon;
 import net.kineticdevelopment.arcana.common.creativetab.ModTabGroups;
 import net.minecraft.client.util.ITooltipFlag;
