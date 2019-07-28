@@ -4,7 +4,6 @@ import net.kineticdevelopment.arcana.common.init.ModContainer;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;
-import net.minecraft.world.World;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 import net.minecraftforge.items.wrapper.InvWrapper;
@@ -16,7 +15,7 @@ public class ThaumonomiconContainer extends Container {
         super(ModContainer.THAUMONOMICON_CONTAINER, windowId);
         this.playerInventory = new InvWrapper(playerInventory);
 
-        layoutPlayerInventorySlots(10, 70);
+        layoutPlayerInventorySlots(7, 109);
     }
 
     private int addSlotRange(IItemHandler handler, int index, int x, int y, int amount, int dx) {

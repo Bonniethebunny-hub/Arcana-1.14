@@ -3,7 +3,6 @@ package net.kineticdevelopment.arcana.client.screen;
 import com.mojang.blaze3d.platform.GlStateManager;
 import net.kineticdevelopment.arcana.client.container.ThaumonomiconContainer;
 import net.kineticdevelopment.arcana.utilities.Constants;
-import net.minecraft.client.gui.screen.HopperScreen;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.util.ResourceLocation;
@@ -28,8 +27,8 @@ public class ThaumonomiconScreen extends ContainerScreen<ThaumonomiconContainer>
      */
     @Override
     protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-        this.font.drawString(this.title.getFormattedText(), 8.0F, 6.0F, 4210752);
-        this.font.drawString(this.playerInventory.getDisplayName().getFormattedText(), 8.0F, (float)(this.ySize - 96 + 2), 4210752);
+        this.font.drawString(this.title.getFormattedText(), 2.0F, -40.0F, 4610752);
+        this.font.drawString(this.playerInventory.getDisplayName().getFormattedText(), 8.0F, (float)(this.ySize - 69 + 2), 4610752);
     }
 
     /**
@@ -39,8 +38,8 @@ public class ThaumonomiconScreen extends ContainerScreen<ThaumonomiconContainer>
     protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
         GlStateManager.color4f(1.0F, 1.0F, 1.0F, 1.0F);
         this.minecraft.getTextureManager().bindTexture(THAUMONOMICON_GUI_TEXTURE);
-        int i = (this.width - this.xSize) / 2;
-        int j = (this.height - this.ySize) / 2;
-        this.blit(i, j, 0, 0, this.xSize, this.ySize);
+        int i = (this.width - this.xSize) / 2 - 8;
+        int j = (this.height - this.ySize) / 28;
+        this.blit(i, j, 0, 0, 190, 235);
     }
 }
