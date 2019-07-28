@@ -1,5 +1,6 @@
 package net.kineticdevelopment.arcana.client.gui;
 
+import net.kineticdevelopment.arcana.ArcanaMod;
 import net.kineticdevelopment.arcana.client.container.ContainerThaumonomicon;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -26,6 +27,6 @@ public class GuiThaumonomicon implements INamedContainerProvider {
     @Nullable
     @Override
     public Container createMenu(int i, PlayerInventory playerInventory, PlayerEntity playerEntity) {
-        return new ContainerThaumonomicon(i, playerInventory);
+        return new ContainerThaumonomicon(ArcanaMod.ObjectHolders.THAUMONOMICON_CONTAINER_TYPE, i, playerInventory);
     }
 }
