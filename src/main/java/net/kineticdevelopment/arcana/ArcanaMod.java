@@ -13,6 +13,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.ObjectHolder;
 
 @Mod(Constants.MODID)
 public class ArcanaMod {
@@ -20,10 +21,22 @@ public class ArcanaMod {
 
     public ArcanaMod() {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
     }
 
     private void setup(final FMLCommonSetupEvent event) {
         Constants.LOGGER.info(Constants.MODID + event + " is now loaded!");
+    }
+
+    private void doClientStuff(final FMLClientSetupEvent event)
+    {
+        ScreenManager.registerFactory(ObjectHolders.THAUMONOMICON_CONTAINER_TYPE, ScreenThaumonomicon::new);
+    }
+
+    @ObjectHolder(Constants.MODID)
+    public static class ObjectHolders
+    {
+        public static final ContainerType<ContainerThaumonomicon> THAUMONOMICON_CONTAINER_TYPE = null;
     }
 
 }
