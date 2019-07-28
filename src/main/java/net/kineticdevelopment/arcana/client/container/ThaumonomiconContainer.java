@@ -12,7 +12,7 @@ import net.minecraftforge.items.wrapper.InvWrapper;
 public class ThaumonomiconContainer extends Container {
     private IItemHandler playerInventory;
 
-    public ThaumonomiconContainer(int windowId, World world, PlayerInventory playerInventory) {
+    public ThaumonomiconContainer(int windowId, PlayerInventory playerInventory) {
         super(ModContainer.THAUMONOMICON_CONTAINER, windowId);
         this.playerInventory = new InvWrapper(playerInventory);
 

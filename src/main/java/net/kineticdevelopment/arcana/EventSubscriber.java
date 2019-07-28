@@ -152,8 +152,8 @@ public class EventSubscriber {
         @SubscribeEvent
         public static void onContainerRegistry(final RegistryEvent.Register<ContainerType<?>> event) {
             event.getRegistry().register(IForgeContainerType.create((windowId, inv, data) -> {
-                return new ThaumonomiconContainer(windowId, ArcanaMod.proxy.getClientWorld(), inv);
-            }).setRegistryName("thaumonomiconcontainer"));
+                return new ThaumonomiconContainer(windowId, inv);
+            }).setRegistryName("arcana:thaumonomiconcontainer"));
         }
     }
 

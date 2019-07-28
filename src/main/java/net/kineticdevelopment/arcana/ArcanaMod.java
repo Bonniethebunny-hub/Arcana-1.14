@@ -24,5 +24,6 @@ public class ArcanaMod {
 
     private void setup(final FMLCommonSetupEvent event) {
         Constants.LOGGER.info(Constants.MODID + event + " is now loaded!");
+        proxy.init();
     }
 }
