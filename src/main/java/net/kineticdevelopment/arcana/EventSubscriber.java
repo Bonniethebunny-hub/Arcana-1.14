@@ -137,19 +137,59 @@ public class EventSubscriber {
 
             //Aspects
             event.getRegistry().register(new air());
-            event.getRegistry().register(new water());
-            event.getRegistry().register(new ice());
-            event.getRegistry().register(new fire());
-            event.getRegistry().register(new light());
-            event.getRegistry().register(new movement());
-            event.getRegistry().register(new order());
+            event.getRegistry().register(new armor());
+            event.getRegistry().register(new aura());
+            event.getRegistry().register(new beast());
             event.getRegistry().register(new chaos());
-            event.getRegistry().register(new exchange());
-            event.getRegistry().register(new wind());
+            event.getRegistry().register(new crafting());
+            event.getRegistry().register(new crystal());
+            event.getRegistry().register(new darkness());
+            event.getRegistry().register(new death());
             event.getRegistry().register(new earth());
+            event.getRegistry().register(new eldrich());
+            event.getRegistry().register(new ender());
+            event.getRegistry().register(new envy());
+            event.getRegistry().register(new exchange());
+            event.getRegistry().register(new fabric());
+            event.getRegistry().register(new fire());
+            event.getRegistry().register(new flesh());
+            event.getRegistry().register(new flight());
+            event.getRegistry().register(new gluttony());
+            event.getRegistry().register(new greed());
+            event.getRegistry().register(new harvest());
+            event.getRegistry().register(new human());
+            event.getRegistry().register(new ice());
+            event.getRegistry().register(new inprison());
+            event.getRegistry().register(new journey());
+            event.getRegistry().register(new life());
+            event.getRegistry().register(new light());
+            event.getRegistry().register(new lust());
+            event.getRegistry().register(new machine());
+            event.getRegistry().register(new mana());
+            event.getRegistry().register(new metal());
+            event.getRegistry().register(new mind());
+            event.getRegistry().register(new mining());
+            event.getRegistry().register(new movement());
+            event.getRegistry().register(new nether());
+            event.getRegistry().register(new order());
+            event.getRegistry().register(new plant());
+            event.getRegistry().register(new pride());
+            event.getRegistry().register(new seeds());
+            event.getRegistry().register(new senses());
+            event.getRegistry().register(new slime());
+            event.getRegistry().register(new sloth());
+            event.getRegistry().register(new spirit());
+            event.getRegistry().register(new strength());
+            event.getRegistry().register(new taint());
+            event.getRegistry().register(new tool());
+            event.getRegistry().register(new tree());
+            event.getRegistry().register(new undead());
             event.getRegistry().register(new vacuum());
             event.getRegistry().register(new venom());
-
+            event.getRegistry().register(new water());
+            event.getRegistry().register(new weapon());
+            event.getRegistry().register(new wind());
+            event.getRegistry().register(new wrath());
         }
 
         @SubscribeEvent
