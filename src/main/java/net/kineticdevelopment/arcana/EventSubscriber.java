@@ -4,20 +4,7 @@ import net.kineticdevelopment.arcana.client.container.ArcaneWorkbenchContainer;
 import net.kineticdevelopment.arcana.client.container.ThaumonomiconContainer;
 import net.kineticdevelopment.arcana.client.container.lootbags.CommonLootbagContainer;
 import net.kineticdevelopment.arcana.common.blocks.*;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.dairleaves;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.dairlog;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.dairsapling;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.greatwoodleaves;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.greatwoodlog;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.greatwoodsapling;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.silverwoodleaves;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.silverwoodlog;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.silverwoodsapling;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.strippeddairlog;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.strippedtaintedoaklog;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.taintedoakleaves;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.taintedoaklog;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.taintedoaksapling;
+import net.kineticdevelopment.arcana.common.blocks.treeblocks.*;
 import net.kineticdevelopment.arcana.common.creativetab.ModTabGroups;
 import net.kineticdevelopment.arcana.common.init.ModBlocks;
 import net.kineticdevelopment.arcana.common.items.*;
@@ -74,7 +61,11 @@ public class EventSubscriber {
             event.getRegistry().register(new taintedoakleaves(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.5F).sound(SoundType.PLANT)));
             event.getRegistry().register(new taintedoaklog(Block.Properties.create(Material.WOOD).hardnessAndResistance(1.1F).harvestTool(ToolType.AXE)));
             event.getRegistry().register(new strippedtaintedoaklog(Block.Properties.create(Material.WOOD).hardnessAndResistance(1.1F).harvestTool(ToolType.AXE)));
+            event.getRegistry().register(new tainteddairlog(Block.Properties.create(Material.WOOD).hardnessAndResistance(1.1F).harvestTool(ToolType.AXE)));
+            event.getRegistry().register(new strippedtainteddairlog(Block.Properties.create(Material.WOOD).hardnessAndResistance(1.1F).harvestTool(ToolType.AXE)));
+            event.getRegistry().register(new tainteddairleaves(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.5F).sound(SoundType.PLANT)));
             event.getRegistry().register(new taintedoakplanks());
+            event.getRegistry().register(new tainteddairplanks());
         }
 
         // Register ITEMS & ModBlocks
@@ -113,7 +104,11 @@ public class EventSubscriber {
                     ModBlocks.TAINTEDOAKSAPLING,
                     ModBlocks.STRIPPEDTAINTEDOAKLOG,
                     ModBlocks.TAINTEDOAKLOG,
-                    ModBlocks.TAINTEDOAKPLANKS
+                    ModBlocks.TAINTEDOAKPLANKS,
+                    ModBlocks.TAINTEDDAIRPLANKS,
+                    ModBlocks.TAINTEDDAIRLOG,
+                    ModBlocks.STRIPPEDTAINTEDDAIRLOG,
+                    ModBlocks.TAINTEDDAIRLEAVES
             };
 
             for (Block block : modBlocks){

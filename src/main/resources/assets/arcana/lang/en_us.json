@@ -31,7 +31,10 @@
   "block.arcana.taintedoaklog": "Tainted Oak Log",
   "block.arcana.taintedoaksapling": "Tainted Oak Sapling",
   "block.arcana.taintedoakplanks": "Tainted Oak Planks",
-  "block.arcana.taintedoakleaves": "Tainted Oak Leaves",
+  "block.arcana.tainteddairlog": "Tainted Dair Log",
+  "block.arcana.tainteddairleaves": "Tainted Dair Leaves",
+  "block.arcana.strippedtainteddairlog": "Stripped Tainted Dair Log",
+  "block.arcana.tainteddairplanks": "Tainted Dair Planks",
 
   "_comment": "MOD ITEMS",
   "item.arcana.thaumonomicon": "§5Thaumonomicon",

@@ -1,20 +1,7 @@
 package net.kineticdevelopment.arcana.common.init;
 
 import net.kineticdevelopment.arcana.common.blocks.*;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.dairleaves;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.dairlog;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.dairsapling;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.greatwoodleaves;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.greatwoodlog;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.greatwoodsapling;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.silverwoodleaves;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.silverwoodlog;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.silverwoodsapling;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.strippeddairlog;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.strippedtaintedoaklog;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.taintedoakleaves;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.taintedoaklog;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.taintedoaksapling;
+import net.kineticdevelopment.arcana.common.blocks.treeblocks.*;
 import net.kineticdevelopment.arcana.common.structures.*;
 import net.minecraftforge.registries.ObjectHolder;
 
@@ -109,6 +96,18 @@ public class ModBlocks {
 
     @ObjectHolder("arcana:strippeddairlog")
     public static strippeddairlog STRIPPEDDAIRLOG;
+
+    @ObjectHolder("arcana:tainteddairlog")
+    public static tainteddairlog TAINTEDDAIRLOG;
+
+    @ObjectHolder("arcana:tainteddairplanks")
+    public static tainteddairplanks TAINTEDDAIRPLANKS;
+
+    @ObjectHolder("arcana:strippedtainteddairlog")
+    public static strippedtainteddairlog STRIPPEDTAINTEDDAIRLOG;
+
+    @ObjectHolder("arcana:tainteddairleaves")
+    public static tainteddairleaves TAINTEDDAIRLEAVES;
 }
 
 
