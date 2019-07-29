@@ -2,6 +2,7 @@ package net.kineticdevelopment.arcana.common.init;
 
 import net.kineticdevelopment.arcana.common.items.*;
 import net.kineticdevelopment.arcana.common.items.elements.*;
+import net.kineticdevelopment.arcana.common.items.lootbags.CommonLootbag;
 import net.minecraftforge.registries.ObjectHolder;
 
 public class ModItems {
@@ -74,4 +75,8 @@ public class ModItems {
 
     @ObjectHolder("arcana:wandcapvoid")
     public static wandcapvoid WANDCAPVOID;
+
+    @ObjectHolder("arcana:commonlootbag")
+    public static CommonLootbag COMMON_LOOTBAG;
+
 }

@@ -2,6 +2,7 @@ package net.kineticdevelopment.arcana;
 
 import net.kineticdevelopment.arcana.client.container.ArcaneWorkbenchContainer;
 import net.kineticdevelopment.arcana.client.container.ThaumonomiconContainer;
+import net.kineticdevelopment.arcana.client.container.lootbags.CommonLootbagContainer;
 import net.kineticdevelopment.arcana.common.blocks.*;
 import net.kineticdevelopment.arcana.common.blocks.treeblocks.dairleaves;
 import net.kineticdevelopment.arcana.common.blocks.treeblocks.dairlog;
@@ -21,6 +22,7 @@ import net.kineticdevelopment.arcana.common.creativetab.ModTabGroups;
 import net.kineticdevelopment.arcana.common.init.ModBlocks;
 import net.kineticdevelopment.arcana.common.items.*;
 import net.kineticdevelopment.arcana.common.items.elements.*;
+import net.kineticdevelopment.arcana.common.items.lootbags.CommonLootbag;
 import net.kineticdevelopment.arcana.common.structures.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -28,7 +30,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.common.ToolType;
@@ -37,8 +38,6 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
-
-import java.lang.reflect.Array;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.FORGE)
 public class EventSubscriber {
@@ -121,6 +120,9 @@ public class EventSubscriber {
                 event.getRegistry().register(new BlockItem(block, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName(block.getRegistryName()));
             }
 
+            // LOOT BAGS
+            event.getRegistry().register(new CommonLootbag());
+
             // ITEMS
             event.getRegistry().register(new thaumonomicon());
             event.getRegistry().register(new thaumiumingot());
@@ -159,6 +161,10 @@ public class EventSubscriber {
             event.getRegistry().register(IForgeContainerType.create((windowId, inv, data) -> {
                 return new ArcaneWorkbenchContainer(windowId, inv);
             }).setRegistryName("arcana:arcaneworkbenchcontainer"));
+
+            event.getRegistry().register(IForgeContainerType.create((windowId, inv, data) -> {
+                return new CommonLootbagContainer(windowId, inv);
+            }).setRegistryName("arcana:commonlootbagcontainer"));
         }
     }
 
