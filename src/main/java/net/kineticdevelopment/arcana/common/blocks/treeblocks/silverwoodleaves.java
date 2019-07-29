@@ -33,6 +33,10 @@ public class silverwoodleaves extends Block implements IShearable {
         setRegistryName("silverwoodleaves");
         this.setDefaultState(this.stateContainer.getBaseState().with(DISTANCE, Integer.valueOf(7)).with(PERSISTENT, Boolean.valueOf(false)));
     }
+    
+    public BlockRenderLayer getRenderLayer() {
+        return BlockRenderLayer.TRANSLUCENT;
+    }
 
     public boolean ticksRandomly(BlockState state) {
         return state.get(DISTANCE) == 7 && !state.get(PERSISTENT);
@@ -111,10 +115,6 @@ public class silverwoodleaves extends Block implements IShearable {
 
     public boolean isSolid(BlockState state) {
         return false;
-    }
-
-    public BlockRenderLayer getRenderLayer() {
-        return renderTranslucent ? BlockRenderLayer.CUTOUT_MIPPED : BlockRenderLayer.SOLID;
     }
 
     public boolean causesSuffocation(BlockState state, IBlockReader worldIn, BlockPos pos) {

@@ -113,7 +113,7 @@ public class taintedoakleaves extends Block implements IShearable {
     }
 
     public BlockRenderLayer getRenderLayer() {
-        return renderTranslucent ? BlockRenderLayer.CUTOUT_MIPPED : BlockRenderLayer.SOLID;
+        return BlockRenderLayer.TRANSLUCENT;
     }
 
     public boolean causesSuffocation(BlockState state, IBlockReader worldIn, BlockPos pos) {

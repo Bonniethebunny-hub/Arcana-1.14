@@ -22,6 +22,7 @@ import net.minecraftforge.common.IShearable;
 
 import java.util.Random;
 
+@SuppressWarnings("deprecation")
 public class tainteddairleaves extends Block implements IShearable {
     public static final IntegerProperty DISTANCE = BlockStateProperties.DISTANCE_1_7;
     public static final BooleanProperty PERSISTENT = BlockStateProperties.PERSISTENT;
@@ -113,7 +114,7 @@ public class tainteddairleaves extends Block implements IShearable {
     }
 
     public BlockRenderLayer getRenderLayer() {
-        return renderTranslucent ? BlockRenderLayer.CUTOUT_MIPPED : BlockRenderLayer.SOLID;
+        return BlockRenderLayer.TRANSLUCENT;
     }
 
     public boolean causesSuffocation(BlockState state, IBlockReader worldIn, BlockPos pos) {
