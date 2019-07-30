@@ -40,6 +40,7 @@ public class greatwoodsapling extends BushBlock implements IGrowable {
         super(Block.Properties.create(Material.BAMBOO_SAPLING)
                 .sound(SoundType.BAMBOO_SAPLING)
                 .hardnessAndResistance(3.0f)
+                .doesNotBlockMovement()
         );
         this.setDefaultState(this.stateContainer.getBaseState().with(STAGE, Integer.valueOf(0)));
         setRegistryName("greatwoodsapling");

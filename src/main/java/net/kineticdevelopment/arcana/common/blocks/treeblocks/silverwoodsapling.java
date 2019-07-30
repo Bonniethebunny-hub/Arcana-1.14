@@ -40,6 +40,7 @@ public class silverwoodsapling extends BushBlock implements IGrowable {
         super(Block.Properties.create(Material.BAMBOO_SAPLING)
                 .sound(SoundType.BAMBOO_SAPLING)
                 .hardnessAndResistance(3.0f)
+                .doesNotBlockMovement()
         );
         this.setDefaultState(this.stateContainer.getBaseState().with(STAGE, Integer.valueOf(0)));
         setRegistryName("silverwoodsapling");
@@ -97,7 +98,9 @@ public class silverwoodsapling extends BushBlock implements IGrowable {
     @Override
     public void onBlockHarvested(World worldIn, BlockPos pos, BlockState state, PlayerEntity player) {
         worldIn.playEvent(player, 2001, pos, getStateId(state));
-        spawnAsEntity(worldIn, pos, new ItemStack(this));
+        if(!player.isCreative()) {
+        	spawnAsEntity(worldIn, pos, new ItemStack(this));
+        }
     }
     
     public static void spawnAsEntity(World worldIn, BlockPos pos, ItemStack stack) {

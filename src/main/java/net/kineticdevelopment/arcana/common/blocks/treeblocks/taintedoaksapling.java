@@ -35,6 +35,7 @@ public class taintedoaksapling extends BushBlock implements IGrowable {
         super(Properties.create(Material.BAMBOO_SAPLING)
                 .sound(SoundType.BAMBOO_SAPLING)
                 .hardnessAndResistance(3.0f)
+                .doesNotBlockMovement()
         );
         this.setDefaultState(this.stateContainer.getBaseState().with(STAGE, Integer.valueOf(0)));
         setRegistryName("taintedoaksapling");

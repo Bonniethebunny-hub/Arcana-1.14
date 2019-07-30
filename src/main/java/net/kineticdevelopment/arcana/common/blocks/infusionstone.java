@@ -27,7 +27,9 @@ public class infusionstone extends Block {
     @Override
     public void onBlockHarvested(World worldIn, BlockPos pos, BlockState state, PlayerEntity player) {
         worldIn.playEvent(player, 2001, pos, getStateId(state));
-        spawnAsEntity(worldIn, pos, new ItemStack(this));
+        if(!player.isCreative()) {
+        	spawnAsEntity(worldIn, pos, new ItemStack(this));
+        }
     }
     
     public static void spawnAsEntity(World worldIn, BlockPos pos, ItemStack stack) {
