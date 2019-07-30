@@ -1,19 +1,38 @@
 package net.kineticdevelopment.arcana.client;
 
+import com.mojang.blaze3d.platform.GlStateManager;
+import net.kineticdevelopment.arcana.client.gui.RenderHelper;
+import net.kineticdevelopment.arcana.common.armor.AspectGogglesHelmet;
+import net.kineticdevelopment.arcana.common.init.ModArmor;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+import org.lwjgl.opengl.GL11;
 
-public class GuiEvents {
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
+public class GuiEvents
+{
     @SubscribeEvent
     public void drawHUD(RenderGameOverlayEvent.Post event) {
         Minecraft mc = Minecraft.getInstance();
         PlayerEntity player = (PlayerEntity) mc.getRenderViewEntity();
 
-        if (event.getType() == RenderGameOverlayEvent.ElementType.ALL) {
+        if (event.getType() == RenderGameOverlayEvent.ElementType.ALL)
+        {
+            if (player.getItemStackFromSlot(EquipmentSlotType.HEAD).getItem() instanceof AspectGogglesHelmet)
+            {
+                GL11.glPushMatrix();
 
+                // ASPECT GOGGLES
+                RenderHelper.renderText("Aspect Goggles: ", 20, 20, 1006063360);
+
+                GlStateManager.disableBlend();
+                GL11.glPopMatrix();
+            }
         }
     }
 

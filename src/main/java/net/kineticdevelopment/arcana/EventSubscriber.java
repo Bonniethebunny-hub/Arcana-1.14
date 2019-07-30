@@ -3,6 +3,8 @@ package net.kineticdevelopment.arcana;
 import net.kineticdevelopment.arcana.client.container.ArcaneWorkbenchContainer;
 import net.kineticdevelopment.arcana.client.container.ThaumonomiconContainer;
 import net.kineticdevelopment.arcana.client.container.lootbags.CommonLootbagContainer;
+import net.kineticdevelopment.arcana.common.armor.ArmorMaterial;
+import net.kineticdevelopment.arcana.common.armor.AspectGogglesHelmet;
 import net.kineticdevelopment.arcana.common.blocks.*;
 import net.kineticdevelopment.arcana.common.blocks.treeblocks.*;
 import net.kineticdevelopment.arcana.common.creativetab.ModTabGroups;
@@ -14,9 +16,11 @@ import net.kineticdevelopment.arcana.common.structures.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.common.ToolType;
@@ -185,6 +189,9 @@ public class EventSubscriber {
             event.getRegistry().register(new weapon());
             event.getRegistry().register(new wind());
             event.getRegistry().register(new wrath());
+
+            // ARMOR
+            event.getRegistry().register(new AspectGogglesHelmet("aspect_goggles", ArmorMaterial.ASPECT_GOGGLES_HELMET, EquipmentSlotType.HEAD, (new Item.Properties()).group(ModTabGroups.MOD_ITEM_GROUP)));
         }
 
         @SubscribeEvent
