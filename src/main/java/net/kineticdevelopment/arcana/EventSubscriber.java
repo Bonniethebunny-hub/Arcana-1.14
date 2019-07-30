@@ -115,6 +115,7 @@ import net.kineticdevelopment.arcana.common.items.elements.weapon;
 import net.kineticdevelopment.arcana.common.items.elements.wind;
 import net.kineticdevelopment.arcana.common.items.elements.wrath;
 import net.kineticdevelopment.arcana.common.items.lootbags.CommonLootbag;
+import net.kineticdevelopment.arcana.utilities.effects.Tainted;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -122,6 +123,8 @@ import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.potion.Effect;
+import net.minecraft.potion.EffectType;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.common.ToolType;
@@ -314,6 +317,13 @@ public class EventSubscriber {
 
             // ARMOR
             event.getRegistry().register(new AspectGogglesHelmet("aspect_goggles", ArmorMaterial.ASPECT_GOGGLES_HELMET, EquipmentSlotType.HEAD, (new Item.Properties()).group(ModTabGroups.MOD_ITEM_GROUP)));
+        }
+        
+        //Potions
+        @SubscribeEvent
+        public static void onPotionRegistry(final RegistryEvent.Register<Effect> event) {
+        	event.getRegistry().register(new Tainted(EffectType.HARMFUL, 10494192).setRegistryName("tainted"));
+        	System.out.println("Potions Registered!");
         }
 
         @SubscribeEvent

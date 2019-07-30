@@ -2,6 +2,7 @@ package net.kineticdevelopment.arcana.common.blocks.tainted;
 
 import java.util.Random;
 
+import net.kineticdevelopment.arcana.common.init.ModPotions;
 import net.kineticdevelopment.arcana.utilities.TaintSpreader;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -13,7 +14,6 @@ import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.EffectInstance;
-import net.minecraft.potion.Effects;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
@@ -46,7 +46,7 @@ public class taintedrock extends Block {
     	if(entityIn instanceof LivingEntity) {
         	LivingEntity entity = (LivingEntity) entityIn;
         	
-        	entity.addPotionEffect(new EffectInstance(Effects.POISON, 30, 2, false, false));
+        	entity.addPotionEffect(new EffectInstance(ModPotions.TAINTED, 60, 1, false, true));
         }
     }
     

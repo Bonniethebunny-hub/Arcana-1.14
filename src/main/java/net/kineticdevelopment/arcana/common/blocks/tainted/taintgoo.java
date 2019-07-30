@@ -2,6 +2,7 @@ package net.kineticdevelopment.arcana.common.blocks.tainted;
 
 import java.util.Random;
 
+import net.kineticdevelopment.arcana.common.init.ModPotions;
 import net.kineticdevelopment.arcana.utilities.TaintSpreader;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -15,8 +16,6 @@ import net.minecraft.entity.item.FallingBlockEntity;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.particles.BlockParticleData;
-import net.minecraft.particles.ParticleTypes;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import net.minecraft.util.BlockRenderLayer;
@@ -96,25 +95,6 @@ public class taintgoo extends FallingBlock {
      public void onBroken(World worldIn, BlockPos pos) {
      }
 
-     /**
-      * Called periodically clientside on blocks near the player to show effects (like furnace fire particles). Note that
-      * this method is unrelated to {@link randomTick} and {@link #needsRandomTick}, and will always be called regardless
-      * of whether the block can receive random update ticks
-      */
-     @OnlyIn(Dist.CLIENT)
-     public void animateTick(BlockState stateIn, World worldIn, BlockPos pos, Random rand) {
-        if (rand.nextInt(16) == 0) {
-           BlockPos blockpos = pos.down();
-           if (worldIn.isAirBlock(blockpos) || canFallThrough(worldIn.getBlockState(blockpos))) {
-              double d0 = (double)((float)pos.getX() + rand.nextFloat());
-              double d1 = (double)pos.getY() - 0.05D;
-              double d2 = (double)((float)pos.getZ() + rand.nextFloat());
-              worldIn.addParticle(new BlockParticleData(ParticleTypes.FALLING_DUST, stateIn), d0, d1, d2, 0.0D, 0.0D, 0.0D);
-           }
-        }
-
-     }
-
      @OnlyIn(Dist.CLIENT)
      public int getDustColor(BlockState state) {
         return -16777216;
@@ -140,7 +120,7 @@ public class taintgoo extends FallingBlock {
     	if(entityIn instanceof LivingEntity) {
         	LivingEntity entity = (LivingEntity) entityIn;
         	
-        	entity.addPotionEffect(new EffectInstance(Effects.POISON, 30, 2, false, false));
+        	entity.addPotionEffect(new EffectInstance(ModPotions.TAINTED, 60, 1, false, true));
         	entity.addPotionEffect(new EffectInstance(Effects.SLOWNESS, 60, 3, false, true));
         	entity.addPotionEffect(new EffectInstance(Effects.SLOW_FALLING, 60, 3, false, true));
         }
