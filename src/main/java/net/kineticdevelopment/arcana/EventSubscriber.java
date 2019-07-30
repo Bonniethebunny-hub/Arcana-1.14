@@ -12,7 +12,6 @@ import net.kineticdevelopment.arcana.common.init.ModBlocks;
 import net.kineticdevelopment.arcana.common.items.*;
 import net.kineticdevelopment.arcana.common.items.elements.*;
 import net.kineticdevelopment.arcana.common.items.lootbags.CommonLootbag;
-import net.kineticdevelopment.arcana.common.structures.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -20,7 +19,6 @@ import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.common.ToolType;
@@ -46,10 +44,10 @@ public class EventSubscriber {
             event.getRegistry().register(new amberblockswirl());
             event.getRegistry().register(new silverwoodplanks());
             event.getRegistry().register(new greatwoodplanks());
-            event.getRegistry().register(new silverwoodsapling(new SilverwoodTree(), Block.Properties.create(Material.LEAVES).doesNotBlockMovement()));
-            event.getRegistry().register(new greatwoodsapling(new GreatwoodTree(), Block.Properties.create(Material.LEAVES).doesNotBlockMovement()));
-            event.getRegistry().register(new dairsapling(new DairTree(), Block.Properties.create(Material.LEAVES).doesNotBlockMovement()));
-            event.getRegistry().register(new taintedoaksapling(new TaintedOakTree(), Block.Properties.create(Material.LEAVES).doesNotBlockMovement()));
+            event.getRegistry().register(new silverwoodsapling(Block.Properties.create(Material.LEAVES).doesNotBlockMovement()));
+            event.getRegistry().register(new greatwoodsapling(Block.Properties.create(Material.LEAVES).doesNotBlockMovement()));
+            event.getRegistry().register(new dairsapling(Block.Properties.create(Material.LEAVES).doesNotBlockMovement()));
+            event.getRegistry().register(new taintedoaksapling(Block.Properties.create(Material.LEAVES).doesNotBlockMovement()));
             event.getRegistry().register(new taintedcrust());
             event.getRegistry().register(new taintedrock());
             event.getRegistry().register(new taintedsoil());
@@ -70,6 +68,7 @@ public class EventSubscriber {
             event.getRegistry().register(new tainteddairleaves(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.5F).sound(SoundType.PLANT)));
             event.getRegistry().register(new taintedoakplanks());
             event.getRegistry().register(new tainteddairplanks());
+
         }
 
         // Register ITEMS & ModBlocks

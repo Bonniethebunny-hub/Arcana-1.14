@@ -1,9 +1,7 @@
 package net.kineticdevelopment.arcana.client.screen.lootbags;
 
 import com.mojang.blaze3d.platform.GlStateManager;
-import net.kineticdevelopment.arcana.client.container.ArcaneWorkbenchContainer;
 import net.kineticdevelopment.arcana.client.container.lootbags.CommonLootbagContainer;
-import net.kineticdevelopment.arcana.utilities.Constants;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.util.ResourceLocation;
@@ -14,7 +12,8 @@ public class CommonLootbagScreen extends ContainerScreen<CommonLootbagContainer>
     private static final ResourceLocation COMMONLOOTBAG_GUI_TEXTURE = new ResourceLocation("textures/gui/container/generic_54.png");
     private final int inventoryRows;
 
-    public CommonLootbagScreen(CommonLootbagContainer screenContainer, PlayerInventory inv, ITextComponent titleIn) {
+    @SuppressWarnings("unused")
+	public CommonLootbagScreen(CommonLootbagContainer screenContainer, PlayerInventory inv, ITextComponent titleIn) {
         super(screenContainer, inv, titleIn);
         final int i = 222;
         final int j = 114;

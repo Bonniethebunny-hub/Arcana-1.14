@@ -1,6 +1,5 @@
 package net.kineticdevelopment.arcana.client.gui.lootbags;
 
-import net.kineticdevelopment.arcana.client.container.ArcaneWorkbenchContainer;
 import net.kineticdevelopment.arcana.client.container.lootbags.CommonLootbagContainer;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;

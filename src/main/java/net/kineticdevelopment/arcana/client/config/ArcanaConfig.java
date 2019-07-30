@@ -3,6 +3,7 @@ package net.kineticdevelopment.arcana.client.config;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.fml.common.Mod;
 
+@SuppressWarnings("unused")
 @Mod.EventBusSubscriber
 public class ArcanaConfig
 {

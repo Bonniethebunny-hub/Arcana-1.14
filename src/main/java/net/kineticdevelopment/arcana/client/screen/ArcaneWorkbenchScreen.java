@@ -2,7 +2,6 @@ package net.kineticdevelopment.arcana.client.screen;
 
 import com.mojang.blaze3d.platform.GlStateManager;
 import net.kineticdevelopment.arcana.client.container.ArcaneWorkbenchContainer;
-import net.kineticdevelopment.arcana.client.container.ThaumonomiconContainer;
 import net.kineticdevelopment.arcana.utilities.Constants;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.entity.player.PlayerInventory;

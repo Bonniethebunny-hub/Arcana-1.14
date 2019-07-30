@@ -12,7 +12,8 @@ public final class PacketHandler {
     private static final SimpleChannel HANDLER = NetworkRegistry.ChannelBuilder.named(new ResourceLocation(Constants.MODID, "main_channel")).clientAcceptedVersions(PROTOCOL_VERSION::equals).serverAcceptedVersions(PROTOCOL_VERSION::equals).networkProtocolVersion(() -> PROTOCOL_VERSION).simpleChannel();
 
     public static void register() {
-        int disc = 0;
+        @SuppressWarnings("unused")
+		int disc = 0;
     }
 
     public static <MSG> void send(PacketDistributor.PacketTarget target, MSG message) {

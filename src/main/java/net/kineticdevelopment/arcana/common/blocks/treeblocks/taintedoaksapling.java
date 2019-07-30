@@ -3,7 +3,9 @@ package net.kineticdevelopment.arcana.common.blocks.treeblocks;
 import net.kineticdevelopment.arcana.utilities.Constants;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.trees.Tree;
+import net.minecraft.entity.item.ItemEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
@@ -14,6 +16,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
@@ -27,14 +30,12 @@ import java.util.Random;
 public class taintedoaksapling extends BushBlock implements IGrowable {
     public static final IntegerProperty STAGE = BlockStateProperties.STAGE_0_1;
     protected static final VoxelShape SHAPE = Block.makeCuboidShape(2.0D, 0.0D, 2.0D, 14.0D, 12.0D, 14.0D);
-    private final Tree tree;
 
-    public taintedoaksapling(Tree tree, Properties properties) {
+    public taintedoaksapling(Properties properties) {
         super(Properties.create(Material.BAMBOO_SAPLING)
                 .sound(SoundType.BAMBOO_SAPLING)
                 .hardnessAndResistance(3.0f)
         );
-        this.tree = tree;
         this.setDefaultState(this.stateContainer.getBaseState().with(STAGE, Integer.valueOf(0)));
         setRegistryName("taintedoaksapling");
     }
@@ -43,7 +44,8 @@ public class taintedoaksapling extends BushBlock implements IGrowable {
         return SHAPE;
     }
 
-    public void tick(BlockState state, World worldIn, BlockPos pos, Random random) {
+    @SuppressWarnings("deprecation")
+	public void tick(BlockState state, World worldIn, BlockPos pos, Random random) {
         super.tick(state, worldIn, pos, random);
         if (!worldIn.isAreaLoaded(pos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
         if (worldIn.getLight(pos.up()) >= 9 && random.nextInt(7) == 0) {
@@ -85,5 +87,22 @@ public class taintedoaksapling extends BushBlock implements IGrowable {
 
     protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
         builder.add(STAGE);
+    }
+    
+    @Override
+    public void onBlockHarvested(World worldIn, BlockPos pos, BlockState state, PlayerEntity player) {
+        worldIn.playEvent(player, 2001, pos, getStateId(state));
+        spawnAsEntity(worldIn, pos, new ItemStack(this));
+    }
+    
+    public static void spawnAsEntity(World worldIn, BlockPos pos, ItemStack stack) {
+        if (!worldIn.isRemote && !stack.isEmpty() && worldIn.getGameRules().getBoolean(GameRules.DO_TILE_DROPS) && !worldIn.restoringBlockSnapshots) { // do not drop items while restoring blockstates, prevents item dupe
+           double d0 = (double)(worldIn.rand.nextFloat() * 0.5F) + 0.25D;
+           double d1 = (double)(worldIn.rand.nextFloat() * 0.5F) + 0.25D;
+           double d2 = (double)(worldIn.rand.nextFloat() * 0.5F) + 0.25D;
+           ItemEntity itementity = new ItemEntity(worldIn, (double)pos.getX() + d0, (double)pos.getY() + d1, (double)pos.getZ() + d2, stack);
+           itementity.setDefaultPickupDelay();
+           worldIn.addEntity(itementity);
+        }
     }
 }

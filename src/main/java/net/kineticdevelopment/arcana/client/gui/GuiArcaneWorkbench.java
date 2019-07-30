@@ -1,7 +1,6 @@
 package net.kineticdevelopment.arcana.client.gui;
 
 import net.kineticdevelopment.arcana.client.container.ArcaneWorkbenchContainer;
-import net.kineticdevelopment.arcana.client.container.ThaumonomiconContainer;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;
