@@ -19,15 +19,19 @@ import net.kineticdevelopment.arcana.common.blocks.treeblocks.taintedoaklog;
 import net.kineticdevelopment.arcana.common.blocks.treeblocks.taintedoaksapling;
 import net.kineticdevelopment.arcana.common.creativetab.ModTabGroups;
 import net.kineticdevelopment.arcana.common.init.ModBlocks;
+import net.kineticdevelopment.arcana.common.init.ModEntities;
 import net.kineticdevelopment.arcana.common.items.*;
 import net.kineticdevelopment.arcana.common.items.elements.*;
 import net.kineticdevelopment.arcana.common.structures.*;
+import net.kineticdevelopment.arcana.utilities.Constants;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.entity.EntityType;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
@@ -148,7 +152,12 @@ public class EventSubscriber {
             event.getRegistry().register(new vacuum());
             event.getRegistry().register(new venom());
 
+            //Entity Spawn Eggs
+            ModEntities.registerEntitySpawnEggs(event);
+
         }
+
+
 
         @SubscribeEvent
         public static void onContainerRegistry(final RegistryEvent.Register<ContainerType<?>> event) {
@@ -160,6 +169,21 @@ public class EventSubscriber {
                 return new ArcaneWorkbenchContainer(windowId, inv);
             }).setRegistryName("arcana:arcaneworkbenchcontainer"));
         }
+    }
+
+    @SubscribeEvent
+    public static void registerEntities(final RegistryEvent.Register<EntityType<?>> event)
+    {
+        event.getRegistry().registerAll(
+                ModEntities.ARCANA_ENTITY
+        );
+
+        ModEntities.registerEntityWorldSpawns();
+    }
+
+    public static ResourceLocation location(String name)
+    {
+        return new ResourceLocation(Constants.MODID, name);
     }
 
     //On Player Join Event Which Sends A Message To the Player In the Chat
