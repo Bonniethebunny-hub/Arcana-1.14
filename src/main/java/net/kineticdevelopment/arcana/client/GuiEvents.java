@@ -12,17 +12,14 @@ import net.minecraftforge.fml.common.Mod;
 import org.lwjgl.opengl.GL11;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-public class GuiEvents
-{
+public class GuiEvents {
     @SubscribeEvent
     public void drawHUD(RenderGameOverlayEvent.Post event) {
         Minecraft mc = Minecraft.getInstance();
         PlayerEntity player = (PlayerEntity) mc.getRenderViewEntity();
 
-        if (event.getType() == RenderGameOverlayEvent.ElementType.ALL)
-        {
-            if (player.getItemStackFromSlot(EquipmentSlotType.HEAD).getItem() instanceof AspectGogglesHelmet)
-            {
+        if (event.getType() == RenderGameOverlayEvent.ElementType.ALL) {
+            if (player.getItemStackFromSlot(EquipmentSlotType.HEAD).getItem() instanceof AspectGogglesHelmet) {
                 GL11.glPushMatrix();
 
                 // ASPECT GOGGLES

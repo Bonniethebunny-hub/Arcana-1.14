@@ -12,8 +12,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.network.NetworkHooks;
 
-public class CommonLootbag extends Item
-{
+public class CommonLootbag extends Item {
     public CommonLootbag() {
         super(new Properties().group(ModTabGroups.MOD_ITEM_GROUP)
                 .maxStackSize(1));

@@ -15,8 +15,7 @@ import net.minecraft.world.World;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class AspectGogglesHelmet extends ArmorItem
-{
+public class AspectGogglesHelmet extends ArmorItem {
     public AspectGogglesHelmet(final String name, IArmorMaterial materialIn, EquipmentSlotType slot, Properties builder) {
         super(materialIn, slot, builder);
 
@@ -32,8 +31,7 @@ public class AspectGogglesHelmet extends ArmorItem
 
 
     @Override
-    public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn)
-    {
+    public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         tooltip.add(new StringTextComponent(TextFormatting.RED + "For scanning aspects!"));
     }
 }

@@ -21,14 +21,12 @@ public class tainteddairlog extends RotatedPillarBlock {
     
     @Override
     public boolean onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
-    	if(player.getHeldItemMainhand().getItem() instanceof AxeItem)
-    	{
+    	if(player.getHeldItemMainhand().getItem() instanceof AxeItem) {
     		worldIn.setBlockState(pos, ModBlocks.STRIPPEDTAINTEDDAIRLOG.getDefaultState().with(RotatedPillarBlock.AXIS, state.get(RotatedPillarBlock.AXIS)), 11);
     		player.getHeldItemMainhand().setDamage(player.getHeldItemMainhand().getDamage() + 1);
     		return true;
     	}
-    	else
-    	{
+    	else {
     		return false;
     	}
     }
