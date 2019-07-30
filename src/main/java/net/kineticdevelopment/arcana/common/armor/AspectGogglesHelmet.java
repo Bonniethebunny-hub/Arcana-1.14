@@ -28,8 +28,6 @@ public class AspectGogglesHelmet extends ArmorItem {
         return Constants.MODID + ":textures/item/aspect_goggles_layer_1.png";
     }
 
-
-
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         tooltip.add(new StringTextComponent(TextFormatting.RED + "For scanning aspects!"));

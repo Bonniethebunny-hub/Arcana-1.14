@@ -117,5 +117,8 @@
   "item.arcana.crafting": "Crafting",
   "item.arcana.beast": "Beast",
   "item.arcana.aura": "Aura",
-  "item.arcana.armor": "Armor"
+  "item.arcana.armor": "Armor",
+
+  "_comment": "ASPECTS",
+  "item.arcana.aspect_goggles": "Aspect Goggles"
 }
