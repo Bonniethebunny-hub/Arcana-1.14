@@ -16,18 +16,18 @@ import net.minecraftforge.event.RegistryEvent;
 
 public class ModEntities
 {
-    public static EntityType<?> ARCANA_ENTITY = EntityType.Builder.create(TaintedCow::new, EntityClassification.CREATURE).build(Constants.MODID + ":tainted_cow").setRegistryName(EventSubscriber.location("tained_cow"));
+    public static EntityType<?> ARCANA_TAINTED_COW = EntityType.Builder.create(TaintedCow::new, EntityClassification.CREATURE).build(Constants.MODID + ":tainted_cow").setRegistryName(EventSubscriber.location("tained_cow"));
 
     public static void registerEntitySpawnEggs(final RegistryEvent.Register<Item> event)
     {
         event.getRegistry().registerAll(
-            ModItems.arcana_entity_egg = registerEntitySpawnEgg(ARCANA_ENTITY, 0x6d24ad, 0x6c801f, "tainted_cow_egg")
+            ModItems.arcana_tainted_cow_egg = registerEntitySpawnEgg(ARCANA_TAINTED_COW, 0x6d24ad, 0x6c801f, "tainted_cow_egg")
         );
     }
 
     public static void registerEntityWorldSpawns()
     {
-        registerEntityWorldSpawn(ARCANA_ENTITY, Biomes.PLAINS, Biomes.TAIGA, Biomes.SWAMP);
+        registerEntityWorldSpawn(ARCANA_TAINTED_COW, Biomes.PLAINS, Biomes.TAIGA, Biomes.SWAMP);
     }
 
     public static Item registerEntitySpawnEgg(EntityType<?> type, int color1, int color2, String name)

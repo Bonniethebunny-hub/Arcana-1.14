@@ -7,8 +7,8 @@ import net.minecraftforge.registries.ObjectHolder;
 
 public class ModItems {
 
-    @ObjectHolder("arcana:entityegg")
-    public static Item arcana_entity_egg;
+    @ObjectHolder("arcana:tainted_cow_egg")
+    public static Item arcana_tainted_cow_egg;
 
     @ObjectHolder("arcana:thaumonomicon")
     public static thaumonomicon THAUMONOMICON;

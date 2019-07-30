@@ -175,7 +175,7 @@ public class EventSubscriber {
     public static void registerEntities(final RegistryEvent.Register<EntityType<?>> event)
     {
         event.getRegistry().registerAll(
-                ModEntities.ARCANA_ENTITY
+                ModEntities.ARCANA_TAINTED_COW
         );
 
         ModEntities.registerEntityWorldSpawns();
