@@ -2,6 +2,7 @@ package net.kineticdevelopment.arcana.utilities.effects;
 
 import javax.annotation.Nullable;
 
+import net.kineticdevelopment.arcana.utilities.DamageSources.DamageSourceTaint;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.potion.Effect;
@@ -24,7 +25,7 @@ public class Tainted extends Effect implements IForgeEffect {
 	
 	@Override
 	public void performEffect(LivingEntity entity, int amplifier) {
-		entity.attackEntityFrom(DamageSource.MAGIC, 0.5F);
+		entity.attackEntityFrom(DamageSourceTaint.Taint, 0.5F);
 	}
 	
 	@Override

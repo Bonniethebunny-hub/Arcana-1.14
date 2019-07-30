@@ -47,6 +47,8 @@
   "block.arcana.taintedcinnabarore": "Tainted Cinnabar Ore",
   "block.arcana.taintgoo": "Taint Goo",
   "effect.arcana.tainted": "Tainted",
+  "death.attack.Taint.player": "%1$s was consumed by Taint",
+  "death.attack.Taint": "%1$s was consumed by Taint",
 
   "_comment": "MOD ITEMS",
   "item.arcana.thaumonomicon": "§5Thaumonomicon",
