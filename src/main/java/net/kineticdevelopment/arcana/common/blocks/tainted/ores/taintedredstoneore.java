@@ -1,4 +1,4 @@
-package net.kineticdevelopment.arcana.common.blocks;
+package net.kineticdevelopment.arcana.common.blocks.tainted.ores;
 
 import java.util.Random;
 
@@ -7,28 +7,25 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.potion.Effects;
+import net.minecraft.item.Items;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
 
-public class taintedrock extends Block {
-    public taintedrock() {
-        super(Block.Properties.create(Material.ROCK)
+public class taintedredstoneore extends Block {
+
+    public taintedredstoneore() {
+        super(Properties.create(Material.IRON)
                 .sound(SoundType.STONE)
                 .hardnessAndResistance(3.0f)
-                .harvestLevel(1)
+                .harvestLevel(2)
                 .harvestTool(ToolType.PICKAXE)
-                .tickRandomly()
         );
-        setRegistryName("taintedrock");
+        setRegistryName("taintedredstoneore");
     }
     
     @Override
@@ -42,18 +39,11 @@ public class taintedrock extends Block {
     }
     
     @Override
-    public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn) {
-    	if(entityIn instanceof LivingEntity) {
-        	LivingEntity entity = (LivingEntity) entityIn;
-        	
-        	entity.addPotionEffect(new EffectInstance(Effects.POISON, 30, 2, false, false));
-        }
-    }
-    
-    @Override
     public void onBlockHarvested(World worldIn, BlockPos pos, BlockState state, PlayerEntity player) {
         worldIn.playEvent(player, 2001, pos, getStateId(state));
-        spawnAsEntity(worldIn, pos, new ItemStack(this));
+        if(!player.isCreative()) {
+        	spawnAsEntity(worldIn, pos, new ItemStack(Items.REDSTONE));
+        }
     }
     
     public static void spawnAsEntity(World worldIn, BlockPos pos, ItemStack stack) {

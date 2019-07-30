@@ -1,6 +1,5 @@
-package net.kineticdevelopment.arcana.common.blocks;
+package net.kineticdevelopment.arcana.common.blocks.tainted;
 
-import net.kineticdevelopment.arcana.common.init.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SoundType;
@@ -13,23 +12,23 @@ import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
 
-public class cinnabarore extends Block {
+public class tainteddairplanks extends Block {
 
-    public cinnabarore() {
+    public tainteddairplanks() {
         super(Properties.create(Material.IRON)
                 .sound(SoundType.STONE)
                 .hardnessAndResistance(3.0f)
-                .harvestLevel(2)
-                .harvestTool(ToolType.PICKAXE)
+                .lightValue(2)
+                .harvestTool(ToolType.AXE)
         );
-        setRegistryName("cinnabarore");
+        setRegistryName("tainteddairplanks");
     }
     
     @Override
     public void onBlockHarvested(World worldIn, BlockPos pos, BlockState state, PlayerEntity player) {
         worldIn.playEvent(player, 2001, pos, getStateId(state));
         if(!player.isCreative()) {
-        	spawnAsEntity(worldIn, pos, new ItemStack(ModItems.QUICKSILVER));
+        	spawnAsEntity(worldIn, pos, new ItemStack(this));
         }
     }
     

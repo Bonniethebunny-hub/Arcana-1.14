@@ -1,6 +1,10 @@
-package net.kineticdevelopment.arcana.common.blocks;
+package net.kineticdevelopment.arcana.common.blocks.tainted.ores;
 
-import net.kineticdevelopment.arcana.common.init.ModItems;
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
+
+import net.kineticdevelopment.arcana.common.init.ModBlocks;
+import net.kineticdevelopment.arcana.utilities.TaintSpreader;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SoundType;
@@ -13,23 +17,37 @@ import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
 
-public class cinnabarore extends Block {
+public class taintedamberore extends Block {
 
-    public cinnabarore() {
+    public taintedamberore() {
         super(Properties.create(Material.IRON)
                 .sound(SoundType.STONE)
                 .hardnessAndResistance(3.0f)
-                .harvestLevel(2)
+                .harvestLevel(3)
                 .harvestTool(ToolType.PICKAXE)
         );
-        setRegistryName("cinnabarore");
+        setRegistryName("taintedamberore");
+    }
+    
+    @Override
+    public boolean ticksRandomly(BlockState state) {
+        return true;
+    }
+    
+    public void tick(BlockState state, World worldIn, BlockPos pos, Random random) {
+    	
+    	TaintSpreader.spreadTaint(worldIn, pos);
     }
     
     @Override
     public void onBlockHarvested(World worldIn, BlockPos pos, BlockState state, PlayerEntity player) {
         worldIn.playEvent(player, 2001, pos, getStateId(state));
         if(!player.isCreative()) {
-        	spawnAsEntity(worldIn, pos, new ItemStack(ModItems.QUICKSILVER));
+        	int h = ThreadLocalRandom.current().nextInt(1, 3);
+        	if(h == 2) {
+        		//Add Amber Item
+        		spawnAsEntity(worldIn, pos, new ItemStack(ModBlocks.AMBERBLOCK));
+        	}
         }
     }
     

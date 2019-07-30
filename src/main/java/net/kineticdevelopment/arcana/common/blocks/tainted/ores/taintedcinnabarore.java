@@ -1,5 +1,10 @@
-package net.kineticdevelopment.arcana.common.blocks;
+package net.kineticdevelopment.arcana.common.blocks.tainted.ores;
 
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
+
+import net.kineticdevelopment.arcana.common.init.ModItems;
+import net.kineticdevelopment.arcana.utilities.TaintSpreader;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SoundType;
@@ -12,23 +17,36 @@ import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
 
-public class tainteddairplanks extends Block {
+public class taintedcinnabarore extends Block {
 
-    public tainteddairplanks() {
+    public taintedcinnabarore() {
         super(Properties.create(Material.IRON)
                 .sound(SoundType.STONE)
                 .hardnessAndResistance(3.0f)
-                .lightValue(2)
-                .harvestTool(ToolType.AXE)
+                .harvestLevel(3)
+                .harvestTool(ToolType.PICKAXE)
         );
-        setRegistryName("tainteddairplanks");
+        setRegistryName("taintedcinnabarore");
+    }
+    
+    @Override
+    public boolean ticksRandomly(BlockState state) {
+        return true;
+    }
+    
+    public void tick(BlockState state, World worldIn, BlockPos pos, Random random) {
+    	
+    	TaintSpreader.spreadTaint(worldIn, pos);
     }
     
     @Override
     public void onBlockHarvested(World worldIn, BlockPos pos, BlockState state, PlayerEntity player) {
         worldIn.playEvent(player, 2001, pos, getStateId(state));
         if(!player.isCreative()) {
-        	spawnAsEntity(worldIn, pos, new ItemStack(this));
+        	int h = ThreadLocalRandom.current().nextInt(1, 3);
+        	if(h == 2) {
+        		spawnAsEntity(worldIn, pos, new ItemStack(ModItems.QUICKSILVER));
+        	}
         }
     }
     

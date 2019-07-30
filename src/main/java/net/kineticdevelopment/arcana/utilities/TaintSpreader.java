@@ -49,6 +49,18 @@ public class TaintSpreader {
 		add(Blocks.CYAN_CONCRETE);
 		add(Blocks.CLAY);
 		add(Blocks.END_STONE);
+		add(Blocks.DARK_OAK_LOG);
+		add(Blocks.JUNGLE_LOG);
+	}};
+	
+	@SuppressWarnings("serial")
+	static List<Block> DestroyedTaintedOreProspects = new ArrayList<Block>() {{
+	}};
+	
+	@SuppressWarnings("serial")
+	static List<Block> TaintGooProspects = new ArrayList<Block>() {{
+		add(Blocks.JUNGLE_LEAVES);
+		add(Blocks.DARK_OAK_LEAVES);
 		add(Blocks.WATER);
 	}};
 	
@@ -133,6 +145,170 @@ public class TaintSpreader {
     	}
     	if(TaintedSoilProspects.contains(worldIn.getBlockState(pos.add(0, -1, 0)).getBlock())) {
     		worldIn.setBlockState(pos.add(0, -1, 0), ModBlocks.TAINTEDSOIL.getDefaultState());
+    	}
+    	
+    	//Tainted Rock
+    	if(TaintedRockProspects.contains(worldIn.getBlockState(pos.add(1, 0, 0)).getBlock())) {
+    		worldIn.setBlockState(pos.add(1, 0, 0), ModBlocks.TAINTEDROCK.getDefaultState());
+    	}
+    	if(TaintedRockProspects.contains(worldIn.getBlockState(pos.add(1, 0, 1)).getBlock())) {
+    		worldIn.setBlockState(pos.add(1, 0, 1), ModBlocks.TAINTEDROCK.getDefaultState());
+    	}
+    	if(TaintedRockProspects.contains(worldIn.getBlockState(pos.add(-1, 0, 0)).getBlock())) {
+    		worldIn.setBlockState(pos.add(-1, 0, 0), ModBlocks.TAINTEDROCK.getDefaultState());
+    	}
+    	if(TaintedRockProspects.contains(worldIn.getBlockState(pos.add(-1, 0, -1)).getBlock())) {
+    		worldIn.setBlockState(pos.add(-1, 0, -1), ModBlocks.TAINTEDROCK.getDefaultState());
+    	}
+    	if(TaintedRockProspects.contains(worldIn.getBlockState(pos.add(-1, 0, 1)).getBlock())) {
+    		worldIn.setBlockState(pos.add(-1, 0, 1), ModBlocks.TAINTEDROCK.getDefaultState());
+    	}
+    	if(TaintedRockProspects.contains(worldIn.getBlockState(pos.add(1, 0, -1)).getBlock())) {
+    		worldIn.setBlockState(pos.add(1, 0, -1), ModBlocks.TAINTEDROCK.getDefaultState());
+    	}
+    	if(TaintedRockProspects.contains(worldIn.getBlockState(pos.add(0, 0, -1)).getBlock())) {
+    		worldIn.setBlockState(pos.add(0, 0, -1), ModBlocks.TAINTEDROCK.getDefaultState());
+    	}
+    	if(TaintedRockProspects.contains(worldIn.getBlockState(pos.add(0, 0, 1)).getBlock())) {
+    		worldIn.setBlockState(pos.add(0, 0, 1), ModBlocks.TAINTEDROCK.getDefaultState());
+    	}
+    	
+    	if(TaintedRockProspects.contains(worldIn.getBlockState(pos.add(1, 1, 0)).getBlock())) {
+    		worldIn.setBlockState(pos.add(1, 1, 0), ModBlocks.TAINTEDROCK.getDefaultState());
+    	}
+    	if(TaintedRockProspects.contains(worldIn.getBlockState(pos.add(1, 1, 1)).getBlock())) {
+    		worldIn.setBlockState(pos.add(1, 1, 1), ModBlocks.TAINTEDROCK.getDefaultState());
+    	}
+    	if(TaintedRockProspects.contains(worldIn.getBlockState(pos.add(-1, 1, 0)).getBlock())) {
+    		worldIn.setBlockState(pos.add(-1, 1, 0), ModBlocks.TAINTEDROCK.getDefaultState());
+    	}
+    	if(TaintedRockProspects.contains(worldIn.getBlockState(pos.add(-1, 1, -1)).getBlock())) {
+    		worldIn.setBlockState(pos.add(-1, 1, -1), ModBlocks.TAINTEDROCK.getDefaultState());
+    	}
+    	if(TaintedRockProspects.contains(worldIn.getBlockState(pos.add(-1, 1, 1)).getBlock())) {
+    		worldIn.setBlockState(pos.add(-1, 1, 1), ModBlocks.TAINTEDROCK.getDefaultState());
+    	}
+    	if(TaintedRockProspects.contains(worldIn.getBlockState(pos.add(1, 1, -1)).getBlock())) {
+    		worldIn.setBlockState(pos.add(1, 1, -1), ModBlocks.TAINTEDROCK.getDefaultState());
+    	}
+    	if(TaintedRockProspects.contains(worldIn.getBlockState(pos.add(0, 1, -1)).getBlock())) {
+    		worldIn.setBlockState(pos.add(0, 1, -1), ModBlocks.TAINTEDROCK.getDefaultState());
+    	}
+    	if(TaintedRockProspects.contains(worldIn.getBlockState(pos.add(0, 1, 1)).getBlock())) {
+    		worldIn.setBlockState(pos.add(0, 1, 1), ModBlocks.TAINTEDROCK.getDefaultState());
+    	}
+    	if(TaintedRockProspects.contains(worldIn.getBlockState(pos.add(0, 1, 0)).getBlock())) {
+    		worldIn.setBlockState(pos.add(0, 1, 0), ModBlocks.TAINTEDROCK.getDefaultState());
+    	}
+    	
+    	if(TaintedRockProspects.contains(worldIn.getBlockState(pos.add(1, -1, 0)).getBlock())) {
+    		worldIn.setBlockState(pos.add(1, -1, 0), ModBlocks.TAINTEDROCK.getDefaultState());
+    	}
+    	if(TaintedRockProspects.contains(worldIn.getBlockState(pos.add(1, -1, 1)).getBlock())) {
+    		worldIn.setBlockState(pos.add(1, -1, 1), ModBlocks.TAINTEDROCK.getDefaultState());
+    	}
+    	if(TaintedRockProspects.contains(worldIn.getBlockState(pos.add(-1, -1, 0)).getBlock())) {
+    		worldIn.setBlockState(pos.add(-1, -1, 0), ModBlocks.TAINTEDROCK.getDefaultState());
+    	}
+    	if(TaintedRockProspects.contains(worldIn.getBlockState(pos.add(-1, -1, -1)).getBlock())) {
+    		worldIn.setBlockState(pos.add(-1, -1, -1), ModBlocks.TAINTEDROCK.getDefaultState());
+    	}
+    	if(TaintedRockProspects.contains(worldIn.getBlockState(pos.add(-1, -1, 1)).getBlock())) {
+    		worldIn.setBlockState(pos.add(-1, -1, 1), ModBlocks.TAINTEDROCK.getDefaultState());
+    	}
+    	if(TaintedRockProspects.contains(worldIn.getBlockState(pos.add(1, -1, -1)).getBlock())) {
+    		worldIn.setBlockState(pos.add(1, -1, -1), ModBlocks.TAINTEDROCK.getDefaultState());
+    	}
+    	if(TaintedRockProspects.contains(worldIn.getBlockState(pos.add(0, -1, -1)).getBlock())) {
+    		worldIn.setBlockState(pos.add(0, -1, -1), ModBlocks.TAINTEDROCK.getDefaultState());
+    	}
+    	if(TaintedRockProspects.contains(worldIn.getBlockState(pos.add(0, -1, 1)).getBlock())) {
+    		worldIn.setBlockState(pos.add(0, -1, 1), ModBlocks.TAINTEDROCK.getDefaultState());
+    	}
+    	if(TaintedRockProspects.contains(worldIn.getBlockState(pos.add(0, -1, 0)).getBlock())) {
+    		worldIn.setBlockState(pos.add(0, -1, 0), ModBlocks.TAINTEDROCK.getDefaultState());
+    	}
+    	
+    	//Taint Goo
+    	if(TaintGooProspects.contains(worldIn.getBlockState(pos.add(1, 0, 0)).getBlock())) {
+    		worldIn.setBlockState(pos.add(1, 0, 0), ModBlocks.TAINTGOO.getDefaultState());
+    	}
+    	if(TaintGooProspects.contains(worldIn.getBlockState(pos.add(1, 0, 1)).getBlock())) {
+    		worldIn.setBlockState(pos.add(1, 0, 1), ModBlocks.TAINTGOO.getDefaultState());
+    	}
+    	if(TaintGooProspects.contains(worldIn.getBlockState(pos.add(-1, 0, 0)).getBlock())) {
+    		worldIn.setBlockState(pos.add(-1, 0, 0), ModBlocks.TAINTGOO.getDefaultState());
+    	}
+    	if(TaintGooProspects.contains(worldIn.getBlockState(pos.add(-1, 0, -1)).getBlock())) {
+    		worldIn.setBlockState(pos.add(-1, 0, -1), ModBlocks.TAINTGOO.getDefaultState());
+    	}
+    	if(TaintGooProspects.contains(worldIn.getBlockState(pos.add(-1, 0, 1)).getBlock())) {
+    		worldIn.setBlockState(pos.add(-1, 0, 1), ModBlocks.TAINTGOO.getDefaultState());
+    	}
+    	if(TaintGooProspects.contains(worldIn.getBlockState(pos.add(1, 0, -1)).getBlock())) {
+    		worldIn.setBlockState(pos.add(1, 0, -1), ModBlocks.TAINTGOO.getDefaultState());
+    	}
+    	if(TaintGooProspects.contains(worldIn.getBlockState(pos.add(0, 0, -1)).getBlock())) {
+    		worldIn.setBlockState(pos.add(0, 0, -1), ModBlocks.TAINTGOO.getDefaultState());
+    	}
+    	if(TaintGooProspects.contains(worldIn.getBlockState(pos.add(0, 0, 1)).getBlock())) {
+    		worldIn.setBlockState(pos.add(0, 0, 1), ModBlocks.TAINTGOO.getDefaultState());
+    	}
+    	
+    	if(TaintGooProspects.contains(worldIn.getBlockState(pos.add(1, 1, 0)).getBlock())) {
+    		worldIn.setBlockState(pos.add(1, 1, 0), ModBlocks.TAINTGOO.getDefaultState());
+    	}
+    	if(TaintGooProspects.contains(worldIn.getBlockState(pos.add(1, 1, 1)).getBlock())) {
+    		worldIn.setBlockState(pos.add(1, 1, 1), ModBlocks.TAINTGOO.getDefaultState());
+    	}
+    	if(TaintGooProspects.contains(worldIn.getBlockState(pos.add(-1, 1, 0)).getBlock())) {
+    		worldIn.setBlockState(pos.add(-1, 1, 0), ModBlocks.TAINTGOO.getDefaultState());
+    	}
+    	if(TaintGooProspects.contains(worldIn.getBlockState(pos.add(-1, 1, -1)).getBlock())) {
+    		worldIn.setBlockState(pos.add(-1, 1, -1), ModBlocks.TAINTGOO.getDefaultState());
+    	}
+    	if(TaintGooProspects.contains(worldIn.getBlockState(pos.add(-1, 1, 1)).getBlock())) {
+    		worldIn.setBlockState(pos.add(-1, 1, 1), ModBlocks.TAINTGOO.getDefaultState());
+    	}
+    	if(TaintGooProspects.contains(worldIn.getBlockState(pos.add(1, 1, -1)).getBlock())) {
+    		worldIn.setBlockState(pos.add(1, 1, -1), ModBlocks.TAINTGOO.getDefaultState());
+    	}
+    	if(TaintGooProspects.contains(worldIn.getBlockState(pos.add(0, 1, -1)).getBlock())) {
+    		worldIn.setBlockState(pos.add(0, 1, -1), ModBlocks.TAINTGOO.getDefaultState());
+    	}
+    	if(TaintGooProspects.contains(worldIn.getBlockState(pos.add(0, 1, 1)).getBlock())) {
+    		worldIn.setBlockState(pos.add(0, 1, 1), ModBlocks.TAINTGOO.getDefaultState());
+    	}
+    	if(TaintGooProspects.contains(worldIn.getBlockState(pos.add(0, 1, 0)).getBlock())) {
+    		worldIn.setBlockState(pos.add(0, 1, 0), ModBlocks.TAINTGOO.getDefaultState());
+    	}
+    	
+    	if(TaintGooProspects.contains(worldIn.getBlockState(pos.add(1, -1, 0)).getBlock())) {
+    		worldIn.setBlockState(pos.add(1, -1, 0), ModBlocks.TAINTGOO.getDefaultState());
+    	}
+    	if(TaintGooProspects.contains(worldIn.getBlockState(pos.add(1, -1, 1)).getBlock())) {
+    		worldIn.setBlockState(pos.add(1, -1, 1), ModBlocks.TAINTGOO.getDefaultState());
+    	}
+    	if(TaintGooProspects.contains(worldIn.getBlockState(pos.add(-1, -1, 0)).getBlock())) {
+    		worldIn.setBlockState(pos.add(-1, -1, 0), ModBlocks.TAINTGOO.getDefaultState());
+    	}
+    	if(TaintGooProspects.contains(worldIn.getBlockState(pos.add(-1, -1, -1)).getBlock())) {
+    		worldIn.setBlockState(pos.add(-1, -1, -1), ModBlocks.TAINTGOO.getDefaultState());
+    	}
+    	if(TaintGooProspects.contains(worldIn.getBlockState(pos.add(-1, -1, 1)).getBlock())) {
+    		worldIn.setBlockState(pos.add(-1, -1, 1), ModBlocks.TAINTGOO.getDefaultState());
+    	}
+    	if(TaintGooProspects.contains(worldIn.getBlockState(pos.add(1, -1, -1)).getBlock())) {
+    		worldIn.setBlockState(pos.add(1, -1, -1), ModBlocks.TAINTGOO.getDefaultState());
+    	}
+    	if(TaintGooProspects.contains(worldIn.getBlockState(pos.add(0, -1, -1)).getBlock())) {
+    		worldIn.setBlockState(pos.add(0, -1, -1), ModBlocks.TAINTGOO.getDefaultState());
+    	}
+    	if(TaintGooProspects.contains(worldIn.getBlockState(pos.add(0, -1, 1)).getBlock())) {
+    		worldIn.setBlockState(pos.add(0, -1, 1), ModBlocks.TAINTGOO.getDefaultState());
+    	}
+    	if(TaintGooProspects.contains(worldIn.getBlockState(pos.add(0, -1, 0)).getBlock())) {
+    		worldIn.setBlockState(pos.add(0, -1, 0), ModBlocks.TAINTGOO.getDefaultState());
     	}
     	
     	//Tainted Rock
@@ -461,6 +637,662 @@ public class TaintSpreader {
     	}
     	if(worldIn.getBlockState(pos.add(0, -1, 0)).getBlock().equals(Blocks.OAK_LEAVES)) {
     		worldIn.setBlockState(pos.add(0, -1, 0), ModBlocks.TAINTEDOAKLEAVES.getDefaultState());
+    	}
+    	
+    	//Tainted Coal Ore
+    	if(worldIn.getBlockState(pos.add(1, 0, 0)).getBlock().equals(Blocks.COAL_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 0, 0), ModBlocks.TAINTEDCOALORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, 0, 1)).getBlock().equals(Blocks.COAL_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 0, 1), ModBlocks.TAINTEDCOALORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 0, 0)).getBlock().equals(Blocks.COAL_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 0, 0), ModBlocks.TAINTEDCOALORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 0, -1)).getBlock().equals(Blocks.COAL_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 0, -1), ModBlocks.TAINTEDCOALORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 0, 1)).getBlock().equals(Blocks.COAL_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 0, 1), ModBlocks.TAINTEDCOALORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, 0, -1)).getBlock().equals(Blocks.COAL_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 0, -1), ModBlocks.TAINTEDCOALORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, 0, -1)).getBlock().equals(Blocks.COAL_ORE)) {
+    		worldIn.setBlockState(pos.add(0, 0, -1), ModBlocks.TAINTEDCOALORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, 0, 1)).getBlock().equals(Blocks.COAL_ORE)) {
+    		worldIn.setBlockState(pos.add(0, 0, 1), ModBlocks.TAINTEDCOALORE.getDefaultState());
+    	}
+    	
+    	if(worldIn.getBlockState(pos.add(1, 1, 0)).getBlock().equals(Blocks.COAL_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 1, 0), ModBlocks.TAINTEDCOALORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, 1, 1)).getBlock().equals(Blocks.COAL_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 1, 1), ModBlocks.TAINTEDCOALORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 1, 0)).getBlock().equals(Blocks.COAL_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 1, 0), ModBlocks.TAINTEDCOALORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 1, -1)).getBlock().equals(Blocks.COAL_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 1, -1), ModBlocks.TAINTEDCOALORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 1, 1)).getBlock().equals(Blocks.COAL_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 1, 1), ModBlocks.TAINTEDCOALORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, 1, -1)).getBlock().equals(Blocks.COAL_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 1, -1), ModBlocks.TAINTEDCOALORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, 1, -1)).getBlock().equals(Blocks.COAL_ORE)) {
+    		worldIn.setBlockState(pos.add(0, 1, -1), ModBlocks.TAINTEDCOALORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, 1, 1)).getBlock().equals(Blocks.COAL_ORE)) {
+    		worldIn.setBlockState(pos.add(0, 1, 1), ModBlocks.TAINTEDCOALORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, 1, 0)).getBlock().equals(Blocks.COAL_ORE)) {
+    		worldIn.setBlockState(pos.add(0, 1, 0), ModBlocks.TAINTEDCOALORE.getDefaultState());
+    	}
+    	
+    	if(worldIn.getBlockState(pos.add(1, -1, 0)).getBlock().equals(Blocks.COAL_ORE)) {
+    		worldIn.setBlockState(pos.add(1, -1, 0), ModBlocks.TAINTEDCOALORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, -1, 1)).getBlock().equals(Blocks.COAL_ORE)) {
+    		worldIn.setBlockState(pos.add(1, -1, 1), ModBlocks.TAINTEDCOALORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, -1, 0)).getBlock().equals(Blocks.COAL_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, -1, 0), ModBlocks.TAINTEDCOALORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, -1, -1)).getBlock().equals(Blocks.COAL_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, -1, -1), ModBlocks.TAINTEDCOALORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, -1, 1)).getBlock().equals(Blocks.COAL_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, -1, 1), ModBlocks.TAINTEDCOALORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, -1, -1)).getBlock().equals(Blocks.COAL_ORE)) {
+    		worldIn.setBlockState(pos.add(1, -1, -1), ModBlocks.TAINTEDCOALORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, -1, -1)).getBlock().equals(Blocks.COAL_ORE)) {
+    		worldIn.setBlockState(pos.add(0, -1, -1), ModBlocks.TAINTEDCOALORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, -1, 1)).getBlock().equals(Blocks.COAL_ORE)) {
+    		worldIn.setBlockState(pos.add(0, -1, 1), ModBlocks.TAINTEDCOALORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, -1, 0)).getBlock().equals(Blocks.COAL_ORE)) {
+    		worldIn.setBlockState(pos.add(0, -1, 0), ModBlocks.TAINTEDCOALORE.getDefaultState());
+    	}
+    	
+    	//Tainted Diamond Ore
+    	if(worldIn.getBlockState(pos.add(1, 0, 0)).getBlock().equals(Blocks.DIAMOND_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 0, 0), ModBlocks.TAINTEDDIAMONDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, 0, 1)).getBlock().equals(Blocks.DIAMOND_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 0, 1), ModBlocks.TAINTEDDIAMONDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 0, 0)).getBlock().equals(Blocks.DIAMOND_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 0, 0), ModBlocks.TAINTEDDIAMONDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 0, -1)).getBlock().equals(Blocks.DIAMOND_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 0, -1), ModBlocks.TAINTEDDIAMONDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 0, 1)).getBlock().equals(Blocks.DIAMOND_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 0, 1), ModBlocks.TAINTEDDIAMONDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, 0, -1)).getBlock().equals(Blocks.DIAMOND_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 0, -1), ModBlocks.TAINTEDDIAMONDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, 0, -1)).getBlock().equals(Blocks.DIAMOND_ORE)) {
+    		worldIn.setBlockState(pos.add(0, 0, -1), ModBlocks.TAINTEDDIAMONDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, 0, 1)).getBlock().equals(Blocks.DIAMOND_ORE)) {
+    		worldIn.setBlockState(pos.add(0, 0, 1), ModBlocks.TAINTEDDIAMONDORE.getDefaultState());
+    	}
+    	
+    	if(worldIn.getBlockState(pos.add(1, 1, 0)).getBlock().equals(Blocks.DIAMOND_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 1, 0), ModBlocks.TAINTEDDIAMONDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, 1, 1)).getBlock().equals(Blocks.DIAMOND_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 1, 1), ModBlocks.TAINTEDDIAMONDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 1, 0)).getBlock().equals(Blocks.DIAMOND_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 1, 0), ModBlocks.TAINTEDDIAMONDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 1, -1)).getBlock().equals(Blocks.DIAMOND_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 1, -1), ModBlocks.TAINTEDDIAMONDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 1, 1)).getBlock().equals(Blocks.DIAMOND_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 1, 1), ModBlocks.TAINTEDDIAMONDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, 1, -1)).getBlock().equals(Blocks.DIAMOND_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 1, -1), ModBlocks.TAINTEDDIAMONDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, 1, -1)).getBlock().equals(Blocks.DIAMOND_ORE)) {
+    		worldIn.setBlockState(pos.add(0, 1, -1), ModBlocks.TAINTEDDIAMONDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, 1, 1)).getBlock().equals(Blocks.DIAMOND_ORE)) {
+    		worldIn.setBlockState(pos.add(0, 1, 1), ModBlocks.TAINTEDDIAMONDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, 1, 0)).getBlock().equals(Blocks.DIAMOND_ORE)) {
+    		worldIn.setBlockState(pos.add(0, 1, 0), ModBlocks.TAINTEDDIAMONDORE.getDefaultState());
+    	}
+    	
+    	if(worldIn.getBlockState(pos.add(1, -1, 0)).getBlock().equals(Blocks.DIAMOND_ORE)) {
+    		worldIn.setBlockState(pos.add(1, -1, 0), ModBlocks.TAINTEDDIAMONDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, -1, 1)).getBlock().equals(Blocks.DIAMOND_ORE)) {
+    		worldIn.setBlockState(pos.add(1, -1, 1), ModBlocks.TAINTEDDIAMONDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, -1, 0)).getBlock().equals(Blocks.DIAMOND_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, -1, 0), ModBlocks.TAINTEDDIAMONDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, -1, -1)).getBlock().equals(Blocks.DIAMOND_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, -1, -1), ModBlocks.TAINTEDDIAMONDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, -1, 1)).getBlock().equals(Blocks.DIAMOND_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, -1, 1), ModBlocks.TAINTEDDIAMONDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, -1, -1)).getBlock().equals(Blocks.DIAMOND_ORE)) {
+    		worldIn.setBlockState(pos.add(1, -1, -1), ModBlocks.TAINTEDDIAMONDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, -1, -1)).getBlock().equals(Blocks.DIAMOND_ORE)) {
+    		worldIn.setBlockState(pos.add(0, -1, -1), ModBlocks.TAINTEDDIAMONDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, -1, 1)).getBlock().equals(Blocks.DIAMOND_ORE)) {
+    		worldIn.setBlockState(pos.add(0, -1, 1), ModBlocks.TAINTEDDIAMONDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, -1, 0)).getBlock().equals(Blocks.DIAMOND_ORE)) {
+    		worldIn.setBlockState(pos.add(0, -1, 0), ModBlocks.TAINTEDDIAMONDORE.getDefaultState());
+    	}
+    	
+    	//Tainted Iron Ore
+    	if(worldIn.getBlockState(pos.add(1, 0, 0)).getBlock().equals(Blocks.IRON_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 0, 0), ModBlocks.TAINTEDIRONORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, 0, 1)).getBlock().equals(Blocks.IRON_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 0, 1), ModBlocks.TAINTEDIRONORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 0, 0)).getBlock().equals(Blocks.IRON_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 0, 0), ModBlocks.TAINTEDIRONORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 0, -1)).getBlock().equals(Blocks.IRON_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 0, -1), ModBlocks.TAINTEDIRONORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 0, 1)).getBlock().equals(Blocks.IRON_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 0, 1), ModBlocks.TAINTEDIRONORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, 0, -1)).getBlock().equals(Blocks.IRON_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 0, -1), ModBlocks.TAINTEDIRONORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, 0, -1)).getBlock().equals(Blocks.IRON_ORE)) {
+    		worldIn.setBlockState(pos.add(0, 0, -1), ModBlocks.TAINTEDIRONORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, 0, 1)).getBlock().equals(Blocks.IRON_ORE)) {
+    		worldIn.setBlockState(pos.add(0, 0, 1), ModBlocks.TAINTEDIRONORE.getDefaultState());
+    	}
+    	
+    	if(worldIn.getBlockState(pos.add(1, 1, 0)).getBlock().equals(Blocks.IRON_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 1, 0), ModBlocks.TAINTEDIRONORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, 1, 1)).getBlock().equals(Blocks.IRON_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 1, 1), ModBlocks.TAINTEDIRONORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 1, 0)).getBlock().equals(Blocks.IRON_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 1, 0), ModBlocks.TAINTEDIRONORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 1, -1)).getBlock().equals(Blocks.IRON_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 1, -1), ModBlocks.TAINTEDIRONORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 1, 1)).getBlock().equals(Blocks.IRON_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 1, 1), ModBlocks.TAINTEDIRONORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, 1, -1)).getBlock().equals(Blocks.IRON_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 1, -1), ModBlocks.TAINTEDIRONORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, 1, -1)).getBlock().equals(Blocks.IRON_ORE)) {
+    		worldIn.setBlockState(pos.add(0, 1, -1), ModBlocks.TAINTEDIRONORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, 1, 1)).getBlock().equals(Blocks.IRON_ORE)) {
+    		worldIn.setBlockState(pos.add(0, 1, 1), ModBlocks.TAINTEDIRONORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, 1, 0)).getBlock().equals(Blocks.IRON_ORE)) {
+    		worldIn.setBlockState(pos.add(0, 1, 0), ModBlocks.TAINTEDIRONORE.getDefaultState());
+    	}
+    	
+    	if(worldIn.getBlockState(pos.add(1, -1, 0)).getBlock().equals(Blocks.IRON_ORE)) {
+    		worldIn.setBlockState(pos.add(1, -1, 0), ModBlocks.TAINTEDIRONORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, -1, 1)).getBlock().equals(Blocks.IRON_ORE)) {
+    		worldIn.setBlockState(pos.add(1, -1, 1), ModBlocks.TAINTEDIRONORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, -1, 0)).getBlock().equals(Blocks.IRON_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, -1, 0), ModBlocks.TAINTEDIRONORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, -1, -1)).getBlock().equals(Blocks.IRON_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, -1, -1), ModBlocks.TAINTEDIRONORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, -1, 1)).getBlock().equals(Blocks.IRON_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, -1, 1), ModBlocks.TAINTEDIRONORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, -1, -1)).getBlock().equals(Blocks.IRON_ORE)) {
+    		worldIn.setBlockState(pos.add(1, -1, -1), ModBlocks.TAINTEDIRONORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, -1, -1)).getBlock().equals(Blocks.IRON_ORE)) {
+    		worldIn.setBlockState(pos.add(0, -1, -1), ModBlocks.TAINTEDIRONORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, -1, 1)).getBlock().equals(Blocks.IRON_ORE)) {
+    		worldIn.setBlockState(pos.add(0, -1, 1), ModBlocks.TAINTEDIRONORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, -1, 0)).getBlock().equals(Blocks.IRON_ORE)) {
+    		worldIn.setBlockState(pos.add(0, -1, 0), ModBlocks.TAINTEDIRONORE.getDefaultState());
+    	}
+    	
+    	//Tainted Gold Ore
+    	if(worldIn.getBlockState(pos.add(1, 0, 0)).getBlock().equals(Blocks.GOLD_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 0, 0), ModBlocks.TAINTEDGOLDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, 0, 1)).getBlock().equals(Blocks.GOLD_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 0, 1), ModBlocks.TAINTEDGOLDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 0, 0)).getBlock().equals(Blocks.GOLD_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 0, 0), ModBlocks.TAINTEDGOLDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 0, -1)).getBlock().equals(Blocks.GOLD_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 0, -1), ModBlocks.TAINTEDGOLDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 0, 1)).getBlock().equals(Blocks.GOLD_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 0, 1), ModBlocks.TAINTEDGOLDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, 0, -1)).getBlock().equals(Blocks.GOLD_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 0, -1), ModBlocks.TAINTEDGOLDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, 0, -1)).getBlock().equals(Blocks.GOLD_ORE)) {
+    		worldIn.setBlockState(pos.add(0, 0, -1), ModBlocks.TAINTEDGOLDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, 0, 1)).getBlock().equals(Blocks.GOLD_ORE)) {
+    		worldIn.setBlockState(pos.add(0, 0, 1), ModBlocks.TAINTEDGOLDORE.getDefaultState());
+    	}
+    	
+    	if(worldIn.getBlockState(pos.add(1, 1, 0)).getBlock().equals(Blocks.GOLD_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 1, 0), ModBlocks.TAINTEDGOLDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, 1, 1)).getBlock().equals(Blocks.GOLD_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 1, 1), ModBlocks.TAINTEDGOLDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 1, 0)).getBlock().equals(Blocks.GOLD_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 1, 0), ModBlocks.TAINTEDGOLDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 1, -1)).getBlock().equals(Blocks.GOLD_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 1, -1), ModBlocks.TAINTEDGOLDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 1, 1)).getBlock().equals(Blocks.GOLD_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 1, 1), ModBlocks.TAINTEDGOLDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, 1, -1)).getBlock().equals(Blocks.GOLD_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 1, -1), ModBlocks.TAINTEDGOLDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, 1, -1)).getBlock().equals(Blocks.GOLD_ORE)) {
+    		worldIn.setBlockState(pos.add(0, 1, -1), ModBlocks.TAINTEDGOLDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, 1, 1)).getBlock().equals(Blocks.GOLD_ORE)) {
+    		worldIn.setBlockState(pos.add(0, 1, 1), ModBlocks.TAINTEDGOLDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, 1, 0)).getBlock().equals(Blocks.GOLD_ORE)) {
+    		worldIn.setBlockState(pos.add(0, 1, 0), ModBlocks.TAINTEDGOLDORE.getDefaultState());
+    	}
+    	
+    	if(worldIn.getBlockState(pos.add(1, -1, 0)).getBlock().equals(Blocks.GOLD_ORE)) {
+    		worldIn.setBlockState(pos.add(1, -1, 0), ModBlocks.TAINTEDGOLDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, -1, 1)).getBlock().equals(Blocks.GOLD_ORE)) {
+    		worldIn.setBlockState(pos.add(1, -1, 1), ModBlocks.TAINTEDGOLDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, -1, 0)).getBlock().equals(Blocks.GOLD_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, -1, 0), ModBlocks.TAINTEDGOLDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, -1, -1)).getBlock().equals(Blocks.GOLD_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, -1, -1), ModBlocks.TAINTEDGOLDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, -1, 1)).getBlock().equals(Blocks.GOLD_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, -1, 1), ModBlocks.TAINTEDGOLDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, -1, -1)).getBlock().equals(Blocks.GOLD_ORE)) {
+    		worldIn.setBlockState(pos.add(1, -1, -1), ModBlocks.TAINTEDGOLDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, -1, -1)).getBlock().equals(Blocks.GOLD_ORE)) {
+    		worldIn.setBlockState(pos.add(0, -1, -1), ModBlocks.TAINTEDGOLDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, -1, 1)).getBlock().equals(Blocks.GOLD_ORE)) {
+    		worldIn.setBlockState(pos.add(0, -1, 1), ModBlocks.TAINTEDGOLDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, -1, 0)).getBlock().equals(Blocks.GOLD_ORE)) {
+    		worldIn.setBlockState(pos.add(0, -1, 0), ModBlocks.TAINTEDGOLDORE.getDefaultState());
+    	}
+    	
+    	//Tainted Emerald Ore
+    	if(worldIn.getBlockState(pos.add(1, 0, 0)).getBlock().equals(Blocks.EMERALD_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 0, 0), ModBlocks.TAINTEDEMERALDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, 0, 1)).getBlock().equals(Blocks.EMERALD_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 0, 1), ModBlocks.TAINTEDEMERALDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 0, 0)).getBlock().equals(Blocks.EMERALD_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 0, 0), ModBlocks.TAINTEDEMERALDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 0, -1)).getBlock().equals(Blocks.EMERALD_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 0, -1), ModBlocks.TAINTEDEMERALDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 0, 1)).getBlock().equals(Blocks.EMERALD_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 0, 1), ModBlocks.TAINTEDEMERALDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, 0, -1)).getBlock().equals(Blocks.EMERALD_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 0, -1), ModBlocks.TAINTEDEMERALDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, 0, -1)).getBlock().equals(Blocks.EMERALD_ORE)) {
+    		worldIn.setBlockState(pos.add(0, 0, -1), ModBlocks.TAINTEDEMERALDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, 0, 1)).getBlock().equals(Blocks.EMERALD_ORE)) {
+    		worldIn.setBlockState(pos.add(0, 0, 1), ModBlocks.TAINTEDEMERALDORE.getDefaultState());
+    	}
+    	
+    	if(worldIn.getBlockState(pos.add(1, 1, 0)).getBlock().equals(Blocks.EMERALD_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 1, 0), ModBlocks.TAINTEDEMERALDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, 1, 1)).getBlock().equals(Blocks.EMERALD_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 1, 1), ModBlocks.TAINTEDEMERALDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 1, 0)).getBlock().equals(Blocks.EMERALD_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 1, 0), ModBlocks.TAINTEDEMERALDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 1, -1)).getBlock().equals(Blocks.EMERALD_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 1, -1), ModBlocks.TAINTEDEMERALDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 1, 1)).getBlock().equals(Blocks.EMERALD_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 1, 1), ModBlocks.TAINTEDEMERALDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, 1, -1)).getBlock().equals(Blocks.EMERALD_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 1, -1), ModBlocks.TAINTEDEMERALDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, 1, -1)).getBlock().equals(Blocks.EMERALD_ORE)) {
+    		worldIn.setBlockState(pos.add(0, 1, -1), ModBlocks.TAINTEDEMERALDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, 1, 1)).getBlock().equals(Blocks.EMERALD_ORE)) {
+    		worldIn.setBlockState(pos.add(0, 1, 1), ModBlocks.TAINTEDEMERALDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, 1, 0)).getBlock().equals(Blocks.EMERALD_ORE)) {
+    		worldIn.setBlockState(pos.add(0, 1, 0), ModBlocks.TAINTEDEMERALDORE.getDefaultState());
+    	}
+    	
+    	if(worldIn.getBlockState(pos.add(1, -1, 0)).getBlock().equals(Blocks.EMERALD_ORE)) {
+    		worldIn.setBlockState(pos.add(1, -1, 0), ModBlocks.TAINTEDEMERALDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, -1, 1)).getBlock().equals(Blocks.EMERALD_ORE)) {
+    		worldIn.setBlockState(pos.add(1, -1, 1), ModBlocks.TAINTEDEMERALDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, -1, 0)).getBlock().equals(Blocks.EMERALD_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, -1, 0), ModBlocks.TAINTEDEMERALDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, -1, -1)).getBlock().equals(Blocks.EMERALD_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, -1, -1), ModBlocks.TAINTEDEMERALDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, -1, 1)).getBlock().equals(Blocks.EMERALD_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, -1, 1), ModBlocks.TAINTEDEMERALDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, -1, -1)).getBlock().equals(Blocks.EMERALD_ORE)) {
+    		worldIn.setBlockState(pos.add(1, -1, -1), ModBlocks.TAINTEDEMERALDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, -1, -1)).getBlock().equals(Blocks.EMERALD_ORE)) {
+    		worldIn.setBlockState(pos.add(0, -1, -1), ModBlocks.TAINTEDEMERALDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, -1, 1)).getBlock().equals(Blocks.EMERALD_ORE)) {
+    		worldIn.setBlockState(pos.add(0, -1, 1), ModBlocks.TAINTEDEMERALDORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, -1, 0)).getBlock().equals(Blocks.EMERALD_ORE)) {
+    		worldIn.setBlockState(pos.add(0, -1, 0), ModBlocks.TAINTEDEMERALDORE.getDefaultState());
+    	}
+    	
+    	//Tainted Lapis Ore
+    	if(worldIn.getBlockState(pos.add(1, 0, 0)).getBlock().equals(Blocks.LAPIS_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 0, 0), ModBlocks.TAINTEDLAPISORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, 0, 1)).getBlock().equals(Blocks.LAPIS_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 0, 1), ModBlocks.TAINTEDLAPISORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 0, 0)).getBlock().equals(Blocks.LAPIS_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 0, 0), ModBlocks.TAINTEDLAPISORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 0, -1)).getBlock().equals(Blocks.LAPIS_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 0, -1), ModBlocks.TAINTEDLAPISORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 0, 1)).getBlock().equals(Blocks.LAPIS_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 0, 1), ModBlocks.TAINTEDLAPISORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, 0, -1)).getBlock().equals(Blocks.LAPIS_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 0, -1), ModBlocks.TAINTEDLAPISORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, 0, -1)).getBlock().equals(Blocks.LAPIS_ORE)) {
+    		worldIn.setBlockState(pos.add(0, 0, -1), ModBlocks.TAINTEDLAPISORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, 0, 1)).getBlock().equals(Blocks.LAPIS_ORE)) {
+    		worldIn.setBlockState(pos.add(0, 0, 1), ModBlocks.TAINTEDLAPISORE.getDefaultState());
+    	}
+    	
+    	if(worldIn.getBlockState(pos.add(1, 1, 0)).getBlock().equals(Blocks.LAPIS_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 1, 0), ModBlocks.TAINTEDLAPISORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, 1, 1)).getBlock().equals(Blocks.LAPIS_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 1, 1), ModBlocks.TAINTEDLAPISORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 1, 0)).getBlock().equals(Blocks.LAPIS_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 1, 0), ModBlocks.TAINTEDLAPISORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 1, -1)).getBlock().equals(Blocks.LAPIS_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 1, -1), ModBlocks.TAINTEDLAPISORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 1, 1)).getBlock().equals(Blocks.LAPIS_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 1, 1), ModBlocks.TAINTEDLAPISORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, 1, -1)).getBlock().equals(Blocks.LAPIS_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 1, -1), ModBlocks.TAINTEDLAPISORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, 1, -1)).getBlock().equals(Blocks.LAPIS_ORE)) {
+    		worldIn.setBlockState(pos.add(0, 1, -1), ModBlocks.TAINTEDLAPISORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, 1, 1)).getBlock().equals(Blocks.LAPIS_ORE)) {
+    		worldIn.setBlockState(pos.add(0, 1, 1), ModBlocks.TAINTEDLAPISORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, 1, 0)).getBlock().equals(Blocks.LAPIS_ORE)) {
+    		worldIn.setBlockState(pos.add(0, 1, 0), ModBlocks.TAINTEDLAPISORE.getDefaultState());
+    	}
+    	
+    	if(worldIn.getBlockState(pos.add(1, -1, 0)).getBlock().equals(Blocks.LAPIS_ORE)) {
+    		worldIn.setBlockState(pos.add(1, -1, 0), ModBlocks.TAINTEDLAPISORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, -1, 1)).getBlock().equals(Blocks.LAPIS_ORE)) {
+    		worldIn.setBlockState(pos.add(1, -1, 1), ModBlocks.TAINTEDLAPISORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, -1, 0)).getBlock().equals(Blocks.LAPIS_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, -1, 0), ModBlocks.TAINTEDLAPISORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, -1, -1)).getBlock().equals(Blocks.LAPIS_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, -1, -1), ModBlocks.TAINTEDLAPISORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, -1, 1)).getBlock().equals(Blocks.LAPIS_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, -1, 1), ModBlocks.TAINTEDLAPISORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, -1, -1)).getBlock().equals(Blocks.LAPIS_ORE)) {
+    		worldIn.setBlockState(pos.add(1, -1, -1), ModBlocks.TAINTEDLAPISORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, -1, -1)).getBlock().equals(Blocks.LAPIS_ORE)) {
+    		worldIn.setBlockState(pos.add(0, -1, -1), ModBlocks.TAINTEDLAPISORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, -1, 1)).getBlock().equals(Blocks.LAPIS_ORE)) {
+    		worldIn.setBlockState(pos.add(0, -1, 1), ModBlocks.TAINTEDLAPISORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, -1, 0)).getBlock().equals(Blocks.LAPIS_ORE)) {
+    		worldIn.setBlockState(pos.add(0, -1, 0), ModBlocks.TAINTEDLAPISORE.getDefaultState());
+    	}
+    	
+    	//Tainted Redstone Ore
+    	if(worldIn.getBlockState(pos.add(1, 0, 0)).getBlock().equals(Blocks.REDSTONE_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 0, 0), ModBlocks.TAINTEDREDSTONEORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, 0, 1)).getBlock().equals(Blocks.REDSTONE_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 0, 1), ModBlocks.TAINTEDREDSTONEORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 0, 0)).getBlock().equals(Blocks.REDSTONE_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 0, 0), ModBlocks.TAINTEDREDSTONEORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 0, -1)).getBlock().equals(Blocks.REDSTONE_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 0, -1), ModBlocks.TAINTEDREDSTONEORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 0, 1)).getBlock().equals(Blocks.REDSTONE_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 0, 1), ModBlocks.TAINTEDREDSTONEORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, 0, -1)).getBlock().equals(Blocks.REDSTONE_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 0, -1), ModBlocks.TAINTEDREDSTONEORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, 0, -1)).getBlock().equals(Blocks.REDSTONE_ORE)) {
+    		worldIn.setBlockState(pos.add(0, 0, -1), ModBlocks.TAINTEDREDSTONEORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, 0, 1)).getBlock().equals(Blocks.REDSTONE_ORE)) {
+    		worldIn.setBlockState(pos.add(0, 0, 1), ModBlocks.TAINTEDREDSTONEORE.getDefaultState());
+    	}
+    	
+    	if(worldIn.getBlockState(pos.add(1, 1, 0)).getBlock().equals(Blocks.REDSTONE_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 1, 0), ModBlocks.TAINTEDREDSTONEORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, 1, 1)).getBlock().equals(Blocks.REDSTONE_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 1, 1), ModBlocks.TAINTEDREDSTONEORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 1, 0)).getBlock().equals(Blocks.REDSTONE_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 1, 0), ModBlocks.TAINTEDREDSTONEORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 1, -1)).getBlock().equals(Blocks.REDSTONE_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 1, -1), ModBlocks.TAINTEDREDSTONEORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 1, 1)).getBlock().equals(Blocks.REDSTONE_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, 1, 1), ModBlocks.TAINTEDREDSTONEORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, 1, -1)).getBlock().equals(Blocks.REDSTONE_ORE)) {
+    		worldIn.setBlockState(pos.add(1, 1, -1), ModBlocks.TAINTEDREDSTONEORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, 1, -1)).getBlock().equals(Blocks.REDSTONE_ORE)) {
+    		worldIn.setBlockState(pos.add(0, 1, -1), ModBlocks.TAINTEDREDSTONEORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, 1, 1)).getBlock().equals(Blocks.REDSTONE_ORE)) {
+    		worldIn.setBlockState(pos.add(0, 1, 1), ModBlocks.TAINTEDREDSTONEORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, 1, 0)).getBlock().equals(Blocks.REDSTONE_ORE)) {
+    		worldIn.setBlockState(pos.add(0, 1, 0), ModBlocks.TAINTEDREDSTONEORE.getDefaultState());
+    	}
+    	
+    	if(worldIn.getBlockState(pos.add(1, -1, 0)).getBlock().equals(Blocks.REDSTONE_ORE)) {
+    		worldIn.setBlockState(pos.add(1, -1, 0), ModBlocks.TAINTEDREDSTONEORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, -1, 1)).getBlock().equals(Blocks.REDSTONE_ORE)) {
+    		worldIn.setBlockState(pos.add(1, -1, 1), ModBlocks.TAINTEDREDSTONEORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, -1, 0)).getBlock().equals(Blocks.REDSTONE_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, -1, 0), ModBlocks.TAINTEDREDSTONEORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, -1, -1)).getBlock().equals(Blocks.REDSTONE_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, -1, -1), ModBlocks.TAINTEDREDSTONEORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, -1, 1)).getBlock().equals(Blocks.REDSTONE_ORE)) {
+    		worldIn.setBlockState(pos.add(-1, -1, 1), ModBlocks.TAINTEDREDSTONEORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, -1, -1)).getBlock().equals(Blocks.REDSTONE_ORE)) {
+    		worldIn.setBlockState(pos.add(1, -1, -1), ModBlocks.TAINTEDREDSTONEORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, -1, -1)).getBlock().equals(Blocks.REDSTONE_ORE)) {
+    		worldIn.setBlockState(pos.add(0, -1, -1), ModBlocks.TAINTEDREDSTONEORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, -1, 1)).getBlock().equals(Blocks.REDSTONE_ORE)) {
+    		worldIn.setBlockState(pos.add(0, -1, 1), ModBlocks.TAINTEDREDSTONEORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, -1, 0)).getBlock().equals(Blocks.REDSTONE_ORE)) {
+    		worldIn.setBlockState(pos.add(0, -1, 0), ModBlocks.TAINTEDREDSTONEORE.getDefaultState());
+    	}
+    	
+    	//Tainted Cinnabar Ore
+    	if(worldIn.getBlockState(pos.add(1, 0, 0)).getBlock().equals(ModBlocks.CINNABARORE)) {
+    		worldIn.setBlockState(pos.add(1, 0, 0), ModBlocks.TAINTEDCINNABARORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, 0, 1)).getBlock().equals(ModBlocks.CINNABARORE)) {
+    		worldIn.setBlockState(pos.add(1, 0, 1), ModBlocks.TAINTEDCINNABARORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 0, 0)).getBlock().equals(ModBlocks.CINNABARORE)) {
+    		worldIn.setBlockState(pos.add(-1, 0, 0), ModBlocks.TAINTEDCINNABARORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 0, -1)).getBlock().equals(ModBlocks.CINNABARORE)) {
+    		worldIn.setBlockState(pos.add(-1, 0, -1), ModBlocks.TAINTEDCINNABARORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 0, 1)).getBlock().equals(ModBlocks.CINNABARORE)) {
+    		worldIn.setBlockState(pos.add(-1, 0, 1), ModBlocks.TAINTEDCINNABARORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, 0, -1)).getBlock().equals(ModBlocks.CINNABARORE)) {
+    		worldIn.setBlockState(pos.add(1, 0, -1), ModBlocks.TAINTEDCINNABARORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, 0, -1)).getBlock().equals(ModBlocks.CINNABARORE)) {
+    		worldIn.setBlockState(pos.add(0, 0, -1), ModBlocks.TAINTEDCINNABARORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, 0, 1)).getBlock().equals(ModBlocks.CINNABARORE)) {
+    		worldIn.setBlockState(pos.add(0, 0, 1), ModBlocks.TAINTEDCINNABARORE.getDefaultState());
+    	}
+    	
+    	if(worldIn.getBlockState(pos.add(1, 1, 0)).getBlock().equals(ModBlocks.CINNABARORE)) {
+    		worldIn.setBlockState(pos.add(1, 1, 0), ModBlocks.TAINTEDCINNABARORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, 1, 1)).getBlock().equals(ModBlocks.CINNABARORE)) {
+    		worldIn.setBlockState(pos.add(1, 1, 1), ModBlocks.TAINTEDCINNABARORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 1, 0)).getBlock().equals(ModBlocks.CINNABARORE)) {
+    		worldIn.setBlockState(pos.add(-1, 1, 0), ModBlocks.TAINTEDCINNABARORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 1, -1)).getBlock().equals(ModBlocks.CINNABARORE)) {
+    		worldIn.setBlockState(pos.add(-1, 1, -1), ModBlocks.TAINTEDCINNABARORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, 1, 1)).getBlock().equals(ModBlocks.CINNABARORE)) {
+    		worldIn.setBlockState(pos.add(-1, 1, 1), ModBlocks.TAINTEDCINNABARORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, 1, -1)).getBlock().equals(ModBlocks.CINNABARORE)) {
+    		worldIn.setBlockState(pos.add(1, 1, -1), ModBlocks.TAINTEDCINNABARORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, 1, -1)).getBlock().equals(ModBlocks.CINNABARORE)) {
+    		worldIn.setBlockState(pos.add(0, 1, -1), ModBlocks.TAINTEDCINNABARORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, 1, 1)).getBlock().equals(ModBlocks.CINNABARORE)) {
+    		worldIn.setBlockState(pos.add(0, 1, 1), ModBlocks.TAINTEDCINNABARORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, 1, 0)).getBlock().equals(ModBlocks.CINNABARORE)) {
+    		worldIn.setBlockState(pos.add(0, 1, 0), ModBlocks.TAINTEDCINNABARORE.getDefaultState());
+    	}
+    	
+    	if(worldIn.getBlockState(pos.add(1, -1, 0)).getBlock().equals(ModBlocks.CINNABARORE)) {
+    		worldIn.setBlockState(pos.add(1, -1, 0), ModBlocks.TAINTEDCINNABARORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, -1, 1)).getBlock().equals(ModBlocks.CINNABARORE)) {
+    		worldIn.setBlockState(pos.add(1, -1, 1), ModBlocks.TAINTEDCINNABARORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, -1, 0)).getBlock().equals(ModBlocks.CINNABARORE)) {
+    		worldIn.setBlockState(pos.add(-1, -1, 0), ModBlocks.TAINTEDCINNABARORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, -1, -1)).getBlock().equals(ModBlocks.CINNABARORE)) {
+    		worldIn.setBlockState(pos.add(-1, -1, -1), ModBlocks.TAINTEDCINNABARORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(-1, -1, 1)).getBlock().equals(ModBlocks.CINNABARORE)) {
+    		worldIn.setBlockState(pos.add(-1, -1, 1), ModBlocks.TAINTEDCINNABARORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(1, -1, -1)).getBlock().equals(ModBlocks.CINNABARORE)) {
+    		worldIn.setBlockState(pos.add(1, -1, -1), ModBlocks.TAINTEDCINNABARORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, -1, -1)).getBlock().equals(ModBlocks.CINNABARORE)) {
+    		worldIn.setBlockState(pos.add(0, -1, -1), ModBlocks.TAINTEDCINNABARORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, -1, 1)).getBlock().equals(ModBlocks.CINNABARORE)) {
+    		worldIn.setBlockState(pos.add(0, -1, 1), ModBlocks.TAINTEDCINNABARORE.getDefaultState());
+    	}
+    	if(worldIn.getBlockState(pos.add(0, -1, 0)).getBlock().equals(ModBlocks.CINNABARORE)) {
+    		worldIn.setBlockState(pos.add(0, -1, 0), ModBlocks.TAINTEDCINNABARORE.getDefaultState());
     	}
 	}
 }

@@ -5,12 +5,115 @@ import net.kineticdevelopment.arcana.client.container.ThaumonomiconContainer;
 import net.kineticdevelopment.arcana.client.container.lootbags.CommonLootbagContainer;
 import net.kineticdevelopment.arcana.common.armor.ArmorMaterial;
 import net.kineticdevelopment.arcana.common.armor.AspectGogglesHelmet;
-import net.kineticdevelopment.arcana.common.blocks.*;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.*;
+import net.kineticdevelopment.arcana.common.blocks.amberblock;
+import net.kineticdevelopment.arcana.common.blocks.amberblockswirl;
+import net.kineticdevelopment.arcana.common.blocks.amberbrick;
+import net.kineticdevelopment.arcana.common.blocks.arcanestone;
+import net.kineticdevelopment.arcana.common.blocks.arcanestonebrick;
+import net.kineticdevelopment.arcana.common.blocks.arcaneworktable;
+import net.kineticdevelopment.arcana.common.blocks.cinnabarore;
+import net.kineticdevelopment.arcana.common.blocks.greatwoodplanks;
+import net.kineticdevelopment.arcana.common.blocks.infusionstone;
+import net.kineticdevelopment.arcana.common.blocks.silverwoodplanks;
+import net.kineticdevelopment.arcana.common.blocks.thaumiumblock;
+import net.kineticdevelopment.arcana.common.blocks.tainted.taintedcrust;
+import net.kineticdevelopment.arcana.common.blocks.tainted.tainteddairplanks;
+import net.kineticdevelopment.arcana.common.blocks.tainted.taintedoakplanks;
+import net.kineticdevelopment.arcana.common.blocks.tainted.taintedrock;
+import net.kineticdevelopment.arcana.common.blocks.tainted.taintedsoil;
+import net.kineticdevelopment.arcana.common.blocks.tainted.taintgoo;
+import net.kineticdevelopment.arcana.common.blocks.tainted.ores.taintedamberore;
+import net.kineticdevelopment.arcana.common.blocks.tainted.ores.taintedcinnabarore;
+import net.kineticdevelopment.arcana.common.blocks.tainted.ores.taintedcoalore;
+import net.kineticdevelopment.arcana.common.blocks.tainted.ores.tainteddiamondore;
+import net.kineticdevelopment.arcana.common.blocks.tainted.ores.taintedemeraldore;
+import net.kineticdevelopment.arcana.common.blocks.tainted.ores.taintedgoldore;
+import net.kineticdevelopment.arcana.common.blocks.tainted.ores.taintedironore;
+import net.kineticdevelopment.arcana.common.blocks.tainted.ores.taintedlapisore;
+import net.kineticdevelopment.arcana.common.blocks.tainted.ores.taintedredstoneore;
+import net.kineticdevelopment.arcana.common.blocks.treeblocks.dairleaves;
+import net.kineticdevelopment.arcana.common.blocks.treeblocks.dairlog;
+import net.kineticdevelopment.arcana.common.blocks.treeblocks.dairsapling;
+import net.kineticdevelopment.arcana.common.blocks.treeblocks.greatwoodleaves;
+import net.kineticdevelopment.arcana.common.blocks.treeblocks.greatwoodlog;
+import net.kineticdevelopment.arcana.common.blocks.treeblocks.greatwoodsapling;
+import net.kineticdevelopment.arcana.common.blocks.treeblocks.silverwoodleaves;
+import net.kineticdevelopment.arcana.common.blocks.treeblocks.silverwoodlog;
+import net.kineticdevelopment.arcana.common.blocks.treeblocks.silverwoodsapling;
+import net.kineticdevelopment.arcana.common.blocks.treeblocks.strippeddairlog;
+import net.kineticdevelopment.arcana.common.blocks.treeblocks.strippedtainteddairlog;
+import net.kineticdevelopment.arcana.common.blocks.treeblocks.strippedtaintedoaklog;
+import net.kineticdevelopment.arcana.common.blocks.treeblocks.tainteddairleaves;
+import net.kineticdevelopment.arcana.common.blocks.treeblocks.tainteddairlog;
+import net.kineticdevelopment.arcana.common.blocks.treeblocks.taintedoakleaves;
+import net.kineticdevelopment.arcana.common.blocks.treeblocks.taintedoaklog;
+import net.kineticdevelopment.arcana.common.blocks.treeblocks.taintedoaksapling;
 import net.kineticdevelopment.arcana.common.creativetab.ModTabGroups;
 import net.kineticdevelopment.arcana.common.init.ModBlocks;
-import net.kineticdevelopment.arcana.common.items.*;
-import net.kineticdevelopment.arcana.common.items.elements.*;
+import net.kineticdevelopment.arcana.common.items.basicwand;
+import net.kineticdevelopment.arcana.common.items.quicksilver;
+import net.kineticdevelopment.arcana.common.items.thaumiumingot;
+import net.kineticdevelopment.arcana.common.items.thaumonomicon;
+import net.kineticdevelopment.arcana.common.items.wandcapcopper;
+import net.kineticdevelopment.arcana.common.items.wandcapgold;
+import net.kineticdevelopment.arcana.common.items.wandcapiron;
+import net.kineticdevelopment.arcana.common.items.wandcapsilver;
+import net.kineticdevelopment.arcana.common.items.wandcapthaumium;
+import net.kineticdevelopment.arcana.common.items.wandcapvoid;
+import net.kineticdevelopment.arcana.common.items.elements.air;
+import net.kineticdevelopment.arcana.common.items.elements.armor;
+import net.kineticdevelopment.arcana.common.items.elements.aura;
+import net.kineticdevelopment.arcana.common.items.elements.beast;
+import net.kineticdevelopment.arcana.common.items.elements.chaos;
+import net.kineticdevelopment.arcana.common.items.elements.crafting;
+import net.kineticdevelopment.arcana.common.items.elements.crystal;
+import net.kineticdevelopment.arcana.common.items.elements.darkness;
+import net.kineticdevelopment.arcana.common.items.elements.death;
+import net.kineticdevelopment.arcana.common.items.elements.earth;
+import net.kineticdevelopment.arcana.common.items.elements.eldrich;
+import net.kineticdevelopment.arcana.common.items.elements.ender;
+import net.kineticdevelopment.arcana.common.items.elements.envy;
+import net.kineticdevelopment.arcana.common.items.elements.exchange;
+import net.kineticdevelopment.arcana.common.items.elements.fabric;
+import net.kineticdevelopment.arcana.common.items.elements.fire;
+import net.kineticdevelopment.arcana.common.items.elements.flesh;
+import net.kineticdevelopment.arcana.common.items.elements.flight;
+import net.kineticdevelopment.arcana.common.items.elements.gluttony;
+import net.kineticdevelopment.arcana.common.items.elements.greed;
+import net.kineticdevelopment.arcana.common.items.elements.harvest;
+import net.kineticdevelopment.arcana.common.items.elements.human;
+import net.kineticdevelopment.arcana.common.items.elements.ice;
+import net.kineticdevelopment.arcana.common.items.elements.inprison;
+import net.kineticdevelopment.arcana.common.items.elements.journey;
+import net.kineticdevelopment.arcana.common.items.elements.life;
+import net.kineticdevelopment.arcana.common.items.elements.light;
+import net.kineticdevelopment.arcana.common.items.elements.lust;
+import net.kineticdevelopment.arcana.common.items.elements.machine;
+import net.kineticdevelopment.arcana.common.items.elements.mana;
+import net.kineticdevelopment.arcana.common.items.elements.metal;
+import net.kineticdevelopment.arcana.common.items.elements.mind;
+import net.kineticdevelopment.arcana.common.items.elements.mining;
+import net.kineticdevelopment.arcana.common.items.elements.movement;
+import net.kineticdevelopment.arcana.common.items.elements.nether;
+import net.kineticdevelopment.arcana.common.items.elements.order;
+import net.kineticdevelopment.arcana.common.items.elements.plant;
+import net.kineticdevelopment.arcana.common.items.elements.pride;
+import net.kineticdevelopment.arcana.common.items.elements.seeds;
+import net.kineticdevelopment.arcana.common.items.elements.senses;
+import net.kineticdevelopment.arcana.common.items.elements.slime;
+import net.kineticdevelopment.arcana.common.items.elements.sloth;
+import net.kineticdevelopment.arcana.common.items.elements.spirit;
+import net.kineticdevelopment.arcana.common.items.elements.strength;
+import net.kineticdevelopment.arcana.common.items.elements.taint;
+import net.kineticdevelopment.arcana.common.items.elements.tool;
+import net.kineticdevelopment.arcana.common.items.elements.tree;
+import net.kineticdevelopment.arcana.common.items.elements.undead;
+import net.kineticdevelopment.arcana.common.items.elements.vacuum;
+import net.kineticdevelopment.arcana.common.items.elements.venom;
+import net.kineticdevelopment.arcana.common.items.elements.water;
+import net.kineticdevelopment.arcana.common.items.elements.weapon;
+import net.kineticdevelopment.arcana.common.items.elements.wind;
+import net.kineticdevelopment.arcana.common.items.elements.wrath;
 import net.kineticdevelopment.arcana.common.items.lootbags.CommonLootbag;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -68,6 +171,16 @@ public class EventSubscriber {
             event.getRegistry().register(new tainteddairleaves(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.5F).sound(SoundType.PLANT)));
             event.getRegistry().register(new taintedoakplanks());
             event.getRegistry().register(new tainteddairplanks());
+            event.getRegistry().register(new taintedironore());
+            event.getRegistry().register(new taintedgoldore());
+            event.getRegistry().register(new taintedlapisore());
+            event.getRegistry().register(new taintedredstoneore());
+            event.getRegistry().register(new taintedemeraldore());
+            event.getRegistry().register(new taintedamberore());
+            event.getRegistry().register(new taintedcinnabarore());
+            event.getRegistry().register(new taintedcoalore());
+            event.getRegistry().register(new tainteddiamondore());
+            event.getRegistry().register(new taintgoo());
 
         }
 
@@ -111,7 +224,17 @@ public class EventSubscriber {
                     ModBlocks.TAINTEDDAIRPLANKS,
                     ModBlocks.TAINTEDDAIRLOG,
                     ModBlocks.STRIPPEDTAINTEDDAIRLOG,
-                    ModBlocks.TAINTEDDAIRLEAVES
+                    ModBlocks.TAINTEDDAIRLEAVES,
+                    ModBlocks.TAINTEDAMBERORE,
+                    ModBlocks.TAINTEDCOALORE,
+                    ModBlocks.TAINTEDCINNABARORE,
+                    ModBlocks.TAINTEDDIAMONDORE,
+                    ModBlocks.TAINTEDEMERALDORE,
+                    ModBlocks.TAINTEDGOLDORE,
+                    ModBlocks.TAINTEDIRONORE,
+                    ModBlocks.TAINTEDLAPISORE,
+                    ModBlocks.TAINTEDREDSTONEORE,
+                    ModBlocks.TAINTGOO
             };
 
             for (Block block : modBlocks){
