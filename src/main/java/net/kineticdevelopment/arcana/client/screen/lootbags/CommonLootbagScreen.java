@@ -7,8 +7,7 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 
-public class CommonLootbagScreen extends ContainerScreen<CommonLootbagContainer>
-{
+public class CommonLootbagScreen extends ContainerScreen<CommonLootbagContainer> {
     private static final ResourceLocation COMMONLOOTBAG_GUI_TEXTURE = new ResourceLocation("textures/gui/container/generic_54.png");
     private final int inventoryRows;
 

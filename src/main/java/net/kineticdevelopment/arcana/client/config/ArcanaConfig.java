@@ -5,8 +5,7 @@ import net.minecraftforge.fml.common.Mod;
 
 @SuppressWarnings("unused")
 @Mod.EventBusSubscriber
-public class ArcanaConfig
-{
+public class ArcanaConfig {
     public static final String CATEGORY_GENERAL = "general";
 
     private static final ForgeConfigSpec.Builder COMMON_BUILDER = new ForgeConfigSpec.Builder();

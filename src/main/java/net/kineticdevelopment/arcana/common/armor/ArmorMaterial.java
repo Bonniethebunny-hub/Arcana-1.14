@@ -12,8 +12,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 import java.util.function.Supplier;
 
-public enum ArmorMaterial implements IArmorMaterial
-{
+public enum ArmorMaterial implements IArmorMaterial {
     ASPECT_GOGGLES_HELMET("aspect_goggles", 5, new int[]{1, 2, 3, 1}, 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, () -> {
         return Ingredient.fromItems(Items.LEATHER);
     });

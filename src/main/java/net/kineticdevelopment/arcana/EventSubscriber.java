@@ -31,23 +31,6 @@ import net.kineticdevelopment.arcana.common.blocks.tainted.ores.taintedgoldore;
 import net.kineticdevelopment.arcana.common.blocks.tainted.ores.taintedironore;
 import net.kineticdevelopment.arcana.common.blocks.tainted.ores.taintedlapisore;
 import net.kineticdevelopment.arcana.common.blocks.tainted.ores.taintedredstoneore;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.dairleaves;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.dairlog;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.dairsapling;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.greatwoodleaves;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.greatwoodlog;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.greatwoodsapling;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.silverwoodleaves;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.silverwoodlog;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.silverwoodsapling;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.strippeddairlog;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.strippedtainteddairlog;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.strippedtaintedoaklog;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.tainteddairleaves;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.tainteddairlog;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.taintedoakleaves;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.taintedoaklog;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.taintedoaksapling;
 import net.kineticdevelopment.arcana.common.creativetab.ModTabGroups;
 import net.kineticdevelopment.arcana.common.init.ModBlocks;
 import net.kineticdevelopment.arcana.common.items.basicwand;
@@ -115,6 +98,7 @@ import net.kineticdevelopment.arcana.common.items.elements.weapon;
 import net.kineticdevelopment.arcana.common.items.elements.wind;
 import net.kineticdevelopment.arcana.common.items.elements.wrath;
 import net.kineticdevelopment.arcana.common.items.lootbags.CommonLootbag;
+import net.kineticdevelopment.arcana.utilities.Constants;
 import net.kineticdevelopment.arcana.utilities.effects.Tainted;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -134,6 +118,8 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 
+import java.lang.reflect.InvocationTargetException;
+
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.FORGE)
 public class EventSubscriber {
     @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
@@ -141,49 +127,105 @@ public class EventSubscriber {
         // Register BLOCKS
         @SubscribeEvent
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> event) {
-            event.getRegistry().register(new arcanestone());
-            event.getRegistry().register(new arcaneworktable());
-            event.getRegistry().register(new arcanestonebrick());
-            event.getRegistry().register(new infusionstone());
-            event.getRegistry().register(new amberblock());
-            event.getRegistry().register(new amberbrick());
-            event.getRegistry().register(new amberblockswirl());
-            event.getRegistry().register(new silverwoodplanks());
-            event.getRegistry().register(new greatwoodplanks());
-            event.getRegistry().register(new silverwoodsapling(Block.Properties.create(Material.LEAVES).doesNotBlockMovement()));
-            event.getRegistry().register(new greatwoodsapling(Block.Properties.create(Material.LEAVES).doesNotBlockMovement()));
-            event.getRegistry().register(new dairsapling(Block.Properties.create(Material.LEAVES).doesNotBlockMovement()));
-            event.getRegistry().register(new taintedoaksapling(Block.Properties.create(Material.LEAVES).doesNotBlockMovement()));
-            event.getRegistry().register(new taintedcrust());
-            event.getRegistry().register(new taintedrock());
-            event.getRegistry().register(new taintedsoil());
-            event.getRegistry().register(new cinnabarore());
-            event.getRegistry().register(new thaumiumblock());
-            event.getRegistry().register(new greatwoodlog(Block.Properties.create(Material.WOOD).hardnessAndResistance(1.1F).harvestTool(ToolType.AXE)));
-            event.getRegistry().register(new greatwoodleaves(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.5F).sound(SoundType.PLANT)));
-            event.getRegistry().register(new silverwoodlog(Block.Properties.create(Material.WOOD).hardnessAndResistance(1.1F).harvestTool(ToolType.AXE)));
-            event.getRegistry().register(new silverwoodleaves(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.5F).sound(SoundType.PLANT)));
-            event.getRegistry().register(new dairlog(Block.Properties.create(Material.WOOD).hardnessAndResistance(1.1F).harvestTool(ToolType.AXE)));
-            event.getRegistry().register(new dairleaves(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.5F).sound(SoundType.PLANT)));
-            event.getRegistry().register(new strippeddairlog(Block.Properties.create(Material.WOOD).hardnessAndResistance(1.1F).harvestTool(ToolType.AXE)));
-            event.getRegistry().register(new taintedoakleaves(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.5F).sound(SoundType.PLANT)));
-            event.getRegistry().register(new taintedoaklog(Block.Properties.create(Material.WOOD).hardnessAndResistance(1.1F).harvestTool(ToolType.AXE)));
-            event.getRegistry().register(new strippedtaintedoaklog(Block.Properties.create(Material.WOOD).hardnessAndResistance(1.1F).harvestTool(ToolType.AXE)));
-            event.getRegistry().register(new tainteddairlog(Block.Properties.create(Material.WOOD).hardnessAndResistance(1.1F).harvestTool(ToolType.AXE)));
-            event.getRegistry().register(new strippedtainteddairlog(Block.Properties.create(Material.WOOD).hardnessAndResistance(1.1F).harvestTool(ToolType.AXE)));
-            event.getRegistry().register(new tainteddairleaves(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.5F).sound(SoundType.PLANT)));
-            event.getRegistry().register(new taintedoakplanks());
-            event.getRegistry().register(new tainteddairplanks());
-            event.getRegistry().register(new taintedironore());
-            event.getRegistry().register(new taintedgoldore());
-            event.getRegistry().register(new taintedlapisore());
-            event.getRegistry().register(new taintedredstoneore());
-            event.getRegistry().register(new taintedemeraldore());
-            event.getRegistry().register(new taintedamberore());
-            event.getRegistry().register(new taintedcinnabarore());
-            event.getRegistry().register(new taintedcoalore());
-            event.getRegistry().register(new tainteddiamondore());
-            event.getRegistry().register(new taintgoo());
+
+            // Created with Block.Properties.create(Material.LEAVES).doesNotBlockMovement()
+            String[] saplings = {
+                    "silverwoodsapling",
+                    "greatwoodsapling",
+                    "dairsapling",
+                    "taintedoaksapling"
+            };
+
+            // Created with Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.5F).sound(SoundType.PLANT)
+            String[] leaves = {
+                    "silverwoodleaves",
+                    "dairleaves",
+                    "taintedoakleaves",
+                    "tainteddairleaves",
+                    "greatwoodleaves"
+            };
+
+            // Created with Block.Properties.create(Material.WOOD).hardnessAndResistance(1.1F).harvestTool(ToolType.AXE)
+            String[] logs = {
+                    "greatwoodlog",
+                    "silverwoodlog",
+                    "dairlog",
+                    "strippeddairlog",
+                    "taintedoaklog",
+                    "strippedtaintedoaklog",
+                    "tainteddairlog",
+                    "strippedtainteddairlog"
+            };
+
+            // Created normally
+            Block[] otherBlocks = {
+                    new arcanestone(),
+                    new arcaneworktable(),
+                    new arcanestonebrick(),
+                    new infusionstone(),
+                    new amberblock(),
+                    new amberbrick(),
+                    new amberblockswirl(),
+                    new silverwoodplanks(),
+                    new greatwoodplanks(),
+                    new taintedcrust(),
+                    new taintedrock(),
+                    new taintedsoil(),
+                    new cinnabarore(),
+                    new thaumiumblock(),
+                    new taintedoakplanks(),
+                    new tainteddairplanks(),
+                    new taintedironore(),
+                    new taintedgoldore(),
+                    new taintedlapisore(),
+                    new taintedredstoneore(),
+                    new taintedemeraldore(),
+                    new taintedamberore(),
+                    new taintedcinnabarore(),
+                    new taintedcoalore(),
+                    new tainteddiamondore(),
+                    new taintgoo()
+            };
+
+            for (String clsname : saplings){
+                try {
+                    event.getRegistry().register((Block)
+                            Class.forName("net.kineticdevelopment.arcana.common.blocks.treeblocks." + clsname)
+                                    .getDeclaredConstructor(Block.Properties.class)
+                                    .newInstance(Block.Properties.create(Material.LEAVES).doesNotBlockMovement()));
+                } catch (ClassNotFoundException | NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
+                    Constants.LOGGER.error("Issue with class: " + clsname);
+                    e.printStackTrace();
+                }
+            }
+
+            for (String clsname : leaves){
+                try {
+                    event.getRegistry().register((Block)
+                            Class.forName("net.kineticdevelopment.arcana.common.blocks.treeblocks." + clsname)
+                                    .getDeclaredConstructor(Block.Properties.class)
+                                    .newInstance(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.5F).sound(SoundType.PLANT)));
+                } catch (ClassNotFoundException | NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
+                    Constants.LOGGER.error("Issue with class: " + clsname);
+                    e.printStackTrace();
+                }
+            }
+
+            for (String clsname : logs){
+                try {
+                    event.getRegistry().register((Block)
+                            Class.forName("net.kineticdevelopment.arcana.common.blocks.treeblocks." + clsname)
+                                    .getDeclaredConstructor(Block.Properties.class)
+                                    .newInstance(Block.Properties.create(Material.WOOD).hardnessAndResistance(1.1F).harvestTool(ToolType.AXE)));
+                } catch (ClassNotFoundException | NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
+                    Constants.LOGGER.error("Issue with class: " + clsname);
+                    e.printStackTrace();
+                }
+            }
+
+            for (Block block : otherBlocks){
+                event.getRegistry().register(block);
+            }
 
         }
 
@@ -318,13 +360,6 @@ public class EventSubscriber {
             // ARMOR
             event.getRegistry().register(new AspectGogglesHelmet("aspect_goggles", ArmorMaterial.ASPECT_GOGGLES_HELMET, EquipmentSlotType.HEAD, (new Item.Properties()).group(ModTabGroups.MOD_ITEM_GROUP)));
         }
-        
-        //Potions
-        @SubscribeEvent
-        public static void onPotionRegistry(final RegistryEvent.Register<Effect> event) {
-        	event.getRegistry().register(new Tainted(EffectType.HARMFUL, 10494192).setRegistryName("tainted"));
-        	System.out.println("Potions Registered!");
-        }
 
         @SubscribeEvent
         public static void onContainerRegistry(final RegistryEvent.Register<ContainerType<?>> event) {
@@ -340,7 +375,17 @@ public class EventSubscriber {
                 return new CommonLootbagContainer(windowId, inv);
             }).setRegistryName("arcana:commonlootbagcontainer"));
         }
+
+        //Potions
+        @SubscribeEvent
+        public static void onPotionRegistry(final RegistryEvent.Register<Effect> event) {
+            event.getRegistry().register(new Tainted(EffectType.HARMFUL, 10494192).setRegistryName("tainted"));
+            System.out.println("Potions Registered!");
+        }
     }
+
+
+
 
     //On Player Join Event Which Sends A Message To the Player In the Chat
     @SubscribeEvent

@@ -8,12 +8,10 @@ import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 import net.minecraftforge.items.wrapper.InvWrapper;
 
-public class CommonLootbagContainer extends Container
-{
+public class CommonLootbagContainer extends Container {
     private IItemHandler playerInventory;
 
-    public CommonLootbagContainer(int windowId, PlayerInventory playerInventory)
-    {
+    public CommonLootbagContainer(int windowId, PlayerInventory playerInventory) {
         super(ModContainer.COMMONLOOTBAG_CONTAINER, windowId);
         this.playerInventory = new InvWrapper(playerInventory);
 

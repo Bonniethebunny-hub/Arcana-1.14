@@ -36,8 +36,7 @@ public class ThaumonomiconScreen extends ContainerScreen<ThaumonomiconContainer>
      * Draws the background layer of this container (behind the items).
      */
     @Override
-    protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY)
-    {
+    protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
         GlStateManager.color4f(1.0F, 1.0F, 1.0F, 1.0F);
         this.minecraft.getTextureManager().bindTexture(THAUMONOMICON_GUI_TEXTURE);
         int i = (this.width - this.xSize) / 3 + 3;
