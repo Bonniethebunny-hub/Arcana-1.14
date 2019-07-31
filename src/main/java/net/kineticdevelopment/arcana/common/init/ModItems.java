@@ -13,6 +13,9 @@ public class ModItems {
     @ObjectHolder("arcana:tainted_zombie_egg")
     public static Item arcana_tainted_zombie_egg;
 
+    @ObjectHolder("arcana:tainted_pig_egg")
+    public static Item arcana_tainted_pig_egg;
+
     @ObjectHolder("arcana:thaumonomicon")
     public static thaumonomicon THAUMONOMICON;
 
