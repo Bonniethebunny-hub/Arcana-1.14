@@ -1,7 +1,7 @@
 package net.kineticdevelopment.arcana.common.blocks.tainted;
 
 import net.kineticdevelopment.arcana.common.init.ModPotions;
-import net.kineticdevelopment.arcana.utilities.TaintSpreader;
+import net.kineticdevelopment.arcana.utilities.taint.TaintSpreader;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;

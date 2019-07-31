@@ -1,7 +1,7 @@
 package net.kineticdevelopment.arcana.common.blocks.tainted.ores;
 
 import net.kineticdevelopment.arcana.common.init.ModBlocks;
-import net.kineticdevelopment.arcana.utilities.TaintSpreader;
+import net.kineticdevelopment.arcana.utilities.taint.TaintSpreader;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SoundType;

@@ -1,8 +1,9 @@
-package net.kineticdevelopment.arcana.utilities;
+package net.kineticdevelopment.arcana.utilities.taint;
 
 import net.kineticdevelopment.arcana.common.init.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -12,7 +13,6 @@ import java.util.Map;
 
 public class TaintSpreader {
 
-    @SuppressWarnings("serial")
     static Block[] TaintedSoilProspects = {
         Blocks.GRASS_BLOCK,
         Blocks.DIRT,
@@ -22,7 +22,6 @@ public class TaintSpreader {
     };
 
 
-    @SuppressWarnings("serial")
     static Block[] TaintedRockProspects = {
         Blocks.COBBLESTONE,
         Blocks.STONE,
@@ -36,7 +35,6 @@ public class TaintSpreader {
         Blocks.MOSSY_COBBLESTONE,
     };
 
-    @SuppressWarnings("serial")
     static Block[] TaintedCrustProspects = {
         Blocks.BLACK_CONCRETE,
         Blocks.WHITE_CONCRETE,
@@ -54,7 +52,6 @@ public class TaintSpreader {
         Blocks.JUNGLE_LOG
     };
 
-    @SuppressWarnings("serial")
     static Block[] TaintGooProspects = {
         Blocks.JUNGLE_LEAVES,
         Blocks.DARK_OAK_LEAVES,
@@ -62,7 +59,8 @@ public class TaintSpreader {
     };
 
     // Ugly instantiation; JDK9 introduces a fancier way but for now we're limited to JDK8
-    static HashMap<Block, Block> singleBlockConversions = new HashMap<Block, Block>() {{
+    @SuppressWarnings("serial")
+	static HashMap<Block, Block> singleBlockConversions = new HashMap<Block, Block>() {{
         put(Blocks.OAK_LOG, ModBlocks.TAINTEDOAKLOG);
         put(Blocks.OAK_LEAVES, ModBlocks.TAINTEDOAKLEAVES);
         put(Blocks.COAL_ORE, ModBlocks.TAINTEDCOALORE);
@@ -75,7 +73,8 @@ public class TaintSpreader {
         put(ModBlocks.CINNABARORE, ModBlocks.TAINTEDCINNABARORE);
     }};
 
-    public static void spreadTaint(World worldIn, BlockPos pos) {
+    @SuppressWarnings("serial")
+	public static void spreadTaint(World worldIn, BlockPos pos) {
 
         // Map of <OriginalBlocks -> TaintedBlock>
         // For <OriginalBlock -> TaintedBlock> see singleBlockConversions above
@@ -96,7 +95,12 @@ public class TaintSpreader {
                     boolean changed = false;
                     for (Map.Entry<Block[], Block> entry : conversionLists.entrySet()) {
                         if (Arrays.stream(entry.getKey()).anyMatch(bl -> b.equals(bl.getBlock()))) {
-                            worldIn.setBlockState(nPos, entry.getValue().getDefaultState());
+                            if(worldIn.getBlockState(nPos).has(RotatedPillarBlock.AXIS)) {
+                            	worldIn.setBlockState(nPos, entry.getValue().getDefaultState().with(RotatedPillarBlock.AXIS, worldIn.getBlockState(nPos).get(RotatedPillarBlock.AXIS)));
+                            }
+                            else { 
+                            	worldIn.setBlockState(nPos, entry.getValue().getDefaultState());
+                            }
                             changed = true;
                             break;
                         }
@@ -108,7 +112,12 @@ public class TaintSpreader {
 
                     for (Map.Entry<Block, Block> entry : singleBlockConversions.entrySet()) {
                         if (b.equals(entry.getKey().getBlock())) {
-                            worldIn.setBlockState(nPos, entry.getValue().getDefaultState());
+                        	if(worldIn.getBlockState(nPos).has(RotatedPillarBlock.AXIS)) {
+                            	worldIn.setBlockState(nPos, entry.getValue().getDefaultState().with(RotatedPillarBlock.AXIS, worldIn.getBlockState(nPos).get(RotatedPillarBlock.AXIS)));
+                            }
+                            else { 
+                            	worldIn.setBlockState(nPos, entry.getValue().getDefaultState());
+                            }
                             break;
                         }
                     }

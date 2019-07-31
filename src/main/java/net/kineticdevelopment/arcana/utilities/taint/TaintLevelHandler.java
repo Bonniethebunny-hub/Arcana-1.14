@@ -1,5 +1,6 @@
-package net.kineticdevelopment.arcana.utilities;
+package net.kineticdevelopment.arcana.utilities.taint;
 
+import net.kineticdevelopment.arcana.utilities.Constants;
 import net.minecraft.world.World;
 
 import java.io.*;

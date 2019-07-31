@@ -1,6 +1,6 @@
 package net.kineticdevelopment.arcana.common.blocks.treeblocks;
 
-import net.kineticdevelopment.arcana.utilities.TaintCleaner;
+import net.kineticdevelopment.arcana.utilities.taint.TaintCleaner;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.RotatedPillarBlock;
