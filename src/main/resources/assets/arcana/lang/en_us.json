@@ -48,6 +48,8 @@
   "effect.arcana.tainted": "Tainted",
   "death.attack.Taint.player": "%1$s was consumed by Taint",
   "death.attack.Taint": "%1$s was consumed by Taint",
+  "block.arcana.taintscrubber": "Taint Scrubber",
+  
   "_comment": "MOD ITEMS",
   "item.arcana.thaumonomicon": "§5Thaumonomicon",
   "item.arcana.thaumiumingot": "Thaumium Ingot",
@@ -60,6 +62,7 @@
   "item.arcana.wandcapvoid": "Void Wand Cap",
   "item.arcana.basicwand": "Basic Wand",
   "item.arcana.commonlootbag": "Common Lootbag",
+  
   "_comment": "ASPECTS",
   "item.arcana.air": "Air",
   "item.arcana.water": "Water",

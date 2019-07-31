@@ -139,6 +139,9 @@ public class ModBlocks {
 
     @ObjectHolder("arcana:taintgoo")
     public static taintgoo TAINTGOO;
+    
+    @ObjectHolder("arcana:taintscrubber")
+    public static TaintScrubber TAINTSCRUBBER;
 }
 
 

@@ -58,11 +58,6 @@ public class tainteddairleaves extends Block implements IShearable {
         }
     }
 
-    @OnlyIn(Dist.CLIENT)
-    public static void setRenderTranslucent(boolean fancy) {
-        renderTranslucent = true;
-    }
-
     public boolean ticksRandomly(BlockState state) {
         return state.get(DISTANCE) == 7 && !state.get(PERSISTENT);
     }

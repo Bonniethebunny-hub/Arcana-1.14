@@ -108,7 +108,8 @@ public class EventSubscriber {
                 new taintedcinnabarore(),
                 new taintedcoalore(),
                 new tainteddiamondore(),
-                new taintgoo()
+                new taintgoo(),
+                new TaintScrubber()
             };
 
             for (String clsname : saplings) {
@@ -203,7 +204,8 @@ public class EventSubscriber {
                 ModBlocks.TAINTEDIRONORE,
                 ModBlocks.TAINTEDLAPISORE,
                 ModBlocks.TAINTEDREDSTONEORE,
-                ModBlocks.TAINTGOO
+                ModBlocks.TAINTGOO,
+                ModBlocks.TAINTSCRUBBER
             };
 
             for (Block block : modBlocks) {

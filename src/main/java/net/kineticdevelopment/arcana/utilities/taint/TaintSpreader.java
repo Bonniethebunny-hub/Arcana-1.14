@@ -12,7 +12,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TaintSpreader {
-
+	
+	/**
+     * List of blocks tainted soil spreads to
+     */
     static Block[] TaintedSoilProspects = {
         Blocks.GRASS_BLOCK,
         Blocks.DIRT,
@@ -21,7 +24,9 @@ public class TaintSpreader {
         Blocks.FARMLAND,
     };
 
-
+    /**
+     * List of blocks tainted rock spreads to
+     */
     static Block[] TaintedRockProspects = {
         Blocks.COBBLESTONE,
         Blocks.STONE,
@@ -35,6 +40,9 @@ public class TaintSpreader {
         Blocks.MOSSY_COBBLESTONE,
     };
 
+    /**
+     * List of blocks tainted crust spreads to
+     */
     static Block[] TaintedCrustProspects = {
         Blocks.BLACK_CONCRETE,
         Blocks.WHITE_CONCRETE,
@@ -51,14 +59,17 @@ public class TaintSpreader {
         Blocks.DARK_OAK_LOG,
         Blocks.JUNGLE_LOG
     };
-
+    
+    /**
+     * List of blocks taint goo spreads to
+     */
     static Block[] TaintGooProspects = {
         Blocks.JUNGLE_LEAVES,
         Blocks.DARK_OAK_LEAVES,
         Blocks.WATER
     };
 
-    // Ugly instantiation; JDK9 introduces a fancier way but for now we're limited to JDK8
+
     @SuppressWarnings("serial")
 	static HashMap<Block, Block> singleBlockConversions = new HashMap<Block, Block>() {{
         put(Blocks.OAK_LOG, ModBlocks.TAINTEDOAKLOG);
@@ -72,7 +83,12 @@ public class TaintSpreader {
         put(Blocks.EMERALD_ORE, ModBlocks.TAINTEDEMERALDORE);
         put(ModBlocks.CINNABARORE, ModBlocks.TAINTEDCINNABARORE);
     }};
-
+    
+    /**
+     * Spreads taint
+     * @param worldIn
+     * @param pos
+     */
     @SuppressWarnings("serial")
 	public static void spreadTaint(World worldIn, BlockPos pos) {
 
