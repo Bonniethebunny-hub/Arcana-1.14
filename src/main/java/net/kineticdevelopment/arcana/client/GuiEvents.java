@@ -1,7 +1,6 @@
 package net.kineticdevelopment.arcana.client;
 
 import com.mojang.blaze3d.platform.GlStateManager;
-import net.java.games.input.Keyboard;
 import net.kineticdevelopment.arcana.client.gui.RenderHelper;
 import net.kineticdevelopment.arcana.common.armor.AspectGogglesHelmet;
 import net.minecraft.client.Minecraft;
@@ -9,14 +8,11 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
-import net.minecraftforge.client.event.GuiScreenEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import org.lwjgl.opengl.GL11;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class GuiEvents {
@@ -71,8 +67,6 @@ public class GuiEvents {
             if (((PlayerEntity) player).isCreative()) {
                 if (player.getItemStackFromSlot(EquipmentSlotType.HEAD).getItem() instanceof AspectGogglesHelmet) {
                     return;
-                } else {
-                    RenderHelper.renderText(TextFormatting.WHITE + "Creative Mode", 20, 20, 0xFFFFFF);
                 }
             }
         }
