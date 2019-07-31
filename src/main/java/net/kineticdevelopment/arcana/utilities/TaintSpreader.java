@@ -72,6 +72,7 @@ public class TaintSpreader {
 		put(Blocks.LAPIS_ORE, ModBlocks.TAINTEDLAPISORE);
 		put(Blocks.EMERALD_ORE, ModBlocks.TAINTEDEMERALDORE);
 		put(ModBlocks.CINNABARORE, ModBlocks.TAINTEDCINNABARORE);
+		put(Blocks.GLASS, ModBlocks.TAINTEDSOIL);
 	}};
 	
 	public static void spreadTaint(World worldIn, BlockPos pos) {
@@ -94,7 +95,7 @@ public class TaintSpreader {
 					Block b = worldIn.getBlockState(nPos).getBlock();
 					boolean changed = false;
 					for (Map.Entry<Block[], Block> entry : conversionLists.entrySet()){
-						if (Arrays.stream(entry.getKey()).anyMatch(bl -> b.equals(bl))) {
+						if (Arrays.stream(entry.getKey()).anyMatch(bl -> b.equals(bl.getBlock()))) {
 							worldIn.setBlockState(nPos, entry.getValue().getDefaultState());
 							changed = true;
 							break;
@@ -106,7 +107,7 @@ public class TaintSpreader {
 					}
 
 					for (Map.Entry<Block, Block> entry : singleBlockConversions.entrySet()){
-						if (b.equals(entry.getKey())) {
+						if (b.equals(entry.getKey().getBlock())) {
 							worldIn.setBlockState(nPos, entry.getValue().getDefaultState());
 							break;
 						}
