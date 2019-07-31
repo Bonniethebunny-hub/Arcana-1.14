@@ -8,6 +8,7 @@ import java.util.function.Predicate;
 
 import javax.annotation.Nullable;
 
+import net.kineticdevelopment.arcana.common.init.ModEntities;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.CreatureAttribute;
@@ -32,10 +33,7 @@ import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
 import net.minecraft.entity.ai.goal.WaterAvoidingRandomWalkingGoal;
 import net.minecraft.entity.merchant.villager.AbstractVillagerEntity;
 import net.minecraft.entity.merchant.villager.VillagerEntity;
-import net.minecraft.entity.monster.CreeperEntity;
-import net.minecraft.entity.monster.MonsterEntity;
-import net.minecraft.entity.monster.ZombiePigmanEntity;
-import net.minecraft.entity.monster.ZombieVillagerEntity;
+import net.minecraft.entity.monster.*;
 import net.minecraft.entity.passive.ChickenEntity;
 import net.minecraft.entity.passive.IronGolemEntity;
 import net.minecraft.entity.passive.TurtleEntity;
@@ -60,7 +58,7 @@ import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
-public class TaintedZombie extends MonsterEntity {
+public class TaintedZombie extends ZombieEntity {
 	   private static final UUID BABY_SPEED_BOOST_ID = UUID.fromString("B9766B59-9566-4402-BC1F-2EE2A276D836");
 	   private static final AttributeModifier BABY_SPEED_BOOST = new AttributeModifier(BABY_SPEED_BOOST_ID, "Baby speed boost", 0.5D, AttributeModifier.Operation.MULTIPLY_BASE);
 	   private static final DataParameter<Boolean> IS_CHILD = EntityDataManager.createKey(TaintedZombie.class, DataSerializers.BOOLEAN);
@@ -74,13 +72,11 @@ public class TaintedZombie extends MonsterEntity {
 	   private int inWaterTime;
 	   private int drownedConversionTime;
 
-	   public TaintedZombie(EntityType<? extends MonsterEntity> cow, World worldIn) {
-	      super(cow, worldIn);
+		@SuppressWarnings("uncleared")
+	   public TaintedZombie(EntityType<? extends ZombieEntity> type, World worldIn) {
+		   super((EntityType<? extends ZombieEntity>) ModEntities.ARCANA_TAINTED_ZOMBIE, worldIn);
 	   }
 
-	   public TaintedZombie(World worldIn) {
-	      this(EntityType.ZOMBIE, worldIn);
-	   }
 
 	   protected void registerGoals() {
 	      this.goalSelector.addGoal(4, new TaintedZombie.AttackTurtleEggGoal(this, 1.0D, 3));
@@ -235,10 +231,11 @@ public class TaintedZombie extends MonsterEntity {
 	   }
 
 	   @SuppressWarnings("deprecation")
-	protected void func_213698_b(EntityType<? extends TaintedZombie> p_213698_1_) {
+	protected void func_213698_b(EntityType<? extends ZombieEntity> p_213698_1_) {
 	      if (!this.removed) {
-	         TaintedZombie zombieentity = p_213698_1_.create(this.world);
-	         zombieentity.copyLocationAndAnglesFrom(this);
+	         TaintedZombie zombieentity = (TaintedZombie) p_213698_1_.create(this.world);
+			  assert zombieentity != null;
+			  zombieentity.copyLocationAndAnglesFrom(this);
 	         zombieentity.setCanPickUpLoot(this.canPickUpLoot());
 	         zombieentity.setBreakDoorsAItask(zombieentity.canBreakDoors() && this.isBreakDoorsTaskSet());
 	         zombieentity.applyAttributeBonuses(zombieentity.world.getDifficultyForLocation(new BlockPos(zombieentity)).getClampedAdditionalDifficulty());
