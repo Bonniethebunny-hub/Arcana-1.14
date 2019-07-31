@@ -1,7 +1,9 @@
 {
   "variants": {
     "": [
-      { "model": "arcana:block/taintedlapisrore" }
+      {
+        "model": "arcana:block/taintedlapisore"
+      }
     ]
   }
 }

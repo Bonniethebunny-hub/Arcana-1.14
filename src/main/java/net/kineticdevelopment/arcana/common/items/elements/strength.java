@@ -7,7 +7,7 @@ public class strength extends Item {
 
     public strength() {
         super(new Properties().group(ModTabGroups.MOD_ITEM_GROUP)
-        .maxStackSize(64));
+            .maxStackSize(64));
 
         setRegistryName("strength");
     }

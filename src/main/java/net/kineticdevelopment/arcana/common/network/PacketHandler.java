@@ -13,7 +13,7 @@ public final class PacketHandler {
 
     public static void register() {
         @SuppressWarnings("unused")
-		int disc = 0;
+        int disc = 0;
     }
 
     public static <MSG> void send(PacketDistributor.PacketTarget target, MSG message) {

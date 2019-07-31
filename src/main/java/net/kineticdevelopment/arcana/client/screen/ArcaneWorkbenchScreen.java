@@ -28,7 +28,7 @@ public class ArcaneWorkbenchScreen extends ContainerScreen<ArcaneWorkbenchContai
     @Override
     protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
         this.font.drawString(this.title.getFormattedText(), 2.0F, -40.0F, 4610752);
-        this.font.drawString(this.playerInventory.getDisplayName().getFormattedText(), 8.0F, (float)(this.ySize - 69 + 2), 4610752);
+        this.font.drawString(this.playerInventory.getDisplayName().getFormattedText(), 8.0F, (float) (this.ySize - 69 + 2), 4610752);
     }
 
     /**

@@ -1,7 +1,9 @@
 {
   "variants": {
     "": [
-      { "model": "arcana:block/taintedgoldore" }
+      {
+        "model": "arcana:block/taintedgoldore"
+      }
     ]
   }
 }

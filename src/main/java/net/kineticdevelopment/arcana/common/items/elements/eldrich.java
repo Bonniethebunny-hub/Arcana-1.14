@@ -7,7 +7,7 @@ public class eldrich extends Item {
 
     public eldrich() {
         super(new Properties().group(ModTabGroups.MOD_ITEM_GROUP)
-        .maxStackSize(64));
+            .maxStackSize(64));
 
         setRegistryName("eldrich");
     }

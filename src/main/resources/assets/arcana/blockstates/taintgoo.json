@@ -1,7 +1,9 @@
 {
   "variants": {
     "": [
-      { "model": "arcana:block/taintgoo" }
+      {
+        "model": "arcana:block/taintgoo"
+      }
     ]
   }
 }

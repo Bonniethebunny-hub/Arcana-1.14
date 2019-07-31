@@ -7,7 +7,7 @@ public class flesh extends Item {
 
     public flesh() {
         super(new Properties().group(ModTabGroups.MOD_ITEM_GROUP)
-        .maxStackSize(64));
+            .maxStackSize(64));
 
         setRegistryName("flesh");
     }

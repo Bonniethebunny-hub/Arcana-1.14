@@ -7,7 +7,7 @@ public class gluttony extends Item {
 
     public gluttony() {
         super(new Properties().group(ModTabGroups.MOD_ITEM_GROUP)
-        .maxStackSize(64));
+            .maxStackSize(64));
 
         setRegistryName("gluttony");
     }
