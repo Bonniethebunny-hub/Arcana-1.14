@@ -7,7 +7,7 @@ public class inprison extends Item {
 
     public inprison() {
         super(new Properties().group(ModTabGroups.MOD_ITEM_GROUP)
-        .maxStackSize(64));
+            .maxStackSize(64));
 
         setRegistryName("inprison");
     }

@@ -12,7 +12,7 @@ public class CommonLootbagScreen extends ContainerScreen<CommonLootbagContainer>
     private final int inventoryRows;
 
     @SuppressWarnings("unused")
-	public CommonLootbagScreen(CommonLootbagContainer screenContainer, PlayerInventory inv, ITextComponent titleIn) {
+    public CommonLootbagScreen(CommonLootbagContainer screenContainer, PlayerInventory inv, ITextComponent titleIn) {
         super(screenContainer, inv, titleIn);
         final int i = 222;
         final int j = 114;

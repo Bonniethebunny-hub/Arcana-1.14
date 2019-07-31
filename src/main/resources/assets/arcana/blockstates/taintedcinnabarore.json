@@ -1,7 +1,9 @@
 {
   "variants": {
     "": [
-      { "model": "arcana:block/taintedcinnabarore" }
+      {
+        "model": "arcana:block/taintedcinnabarore"
+      }
     ]
   }
 }
