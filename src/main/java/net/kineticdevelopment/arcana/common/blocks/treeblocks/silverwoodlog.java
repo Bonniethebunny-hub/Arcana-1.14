@@ -1,5 +1,9 @@
 package net.kineticdevelopment.arcana.common.blocks.treeblocks;
 
+import java.util.Random;
+
+import net.kineticdevelopment.arcana.utilities.TaintCleaner;
+import net.kineticdevelopment.arcana.utilities.TaintSpreader;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.RotatedPillarBlock;
@@ -16,6 +20,16 @@ public class silverwoodlog extends RotatedPillarBlock {
     public silverwoodlog(Block.Properties properties) {
         super(properties);
         setRegistryName("silverwoodlog");
+    }
+    
+    @Override
+    public boolean ticksRandomly(BlockState state) {
+        return true;
+    }
+    
+    public void tick(BlockState state, World worldIn, BlockPos pos, Random random) {
+    	
+    	TaintCleaner.cleanTaint(worldIn, pos);
     }
     
     @Override
