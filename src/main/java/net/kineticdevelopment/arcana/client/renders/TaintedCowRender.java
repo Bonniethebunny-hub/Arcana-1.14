@@ -20,7 +20,8 @@ public class TaintedCowRender extends LivingRenderer<TaintedCow, TaintedCowModel
         super(manager, new TaintedCowModel(), 0f);
     }
 
-    @Override protected ResourceLocation getEntityTexture(TaintedCow entity)
+    @Override
+    protected ResourceLocation getEntityTexture(TaintedCow entity)
     {
         return EventSubscriber.location("textures/entity/tainted_cow.png");
     }
