@@ -94,7 +94,7 @@ public class TaintSpreader {
 					Block b = worldIn.getBlockState(nPos).getBlock();
 					boolean changed = false;
 					for (Map.Entry<Block[], Block> entry : conversionLists.entrySet()){
-						if (Arrays.stream(entry.getKey()).anyMatch(bl -> bl == b)) {
+						if (Arrays.stream(entry.getKey()).anyMatch(bl -> b.equals(bl))) {
 							worldIn.setBlockState(nPos, entry.getValue().getDefaultState());
 							changed = true;
 							break;
@@ -106,7 +106,7 @@ public class TaintSpreader {
 					}
 
 					for (Map.Entry<Block, Block> entry : singleBlockConversions.entrySet()){
-						if (entry.getKey() == b) {
+						if (b.equals(entry.getKey())) {
 							worldIn.setBlockState(nPos, entry.getValue().getDefaultState());
 							break;
 						}
