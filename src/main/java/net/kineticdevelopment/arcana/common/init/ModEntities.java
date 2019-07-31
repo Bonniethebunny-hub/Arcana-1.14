@@ -16,7 +16,7 @@ import net.minecraftforge.event.RegistryEvent;
 
 public class ModEntities
 {
-    public static EntityType<?> ARCANA_TAINTED_COW = EntityType.Builder.create(TaintedCow::new, EntityClassification.CREATURE).build(Constants.MODID + ":tainted_cow").setRegistryName(EventSubscriber.location("tained_cow"));
+    public static EntityType<?> ARCANA_TAINTED_COW = EntityType.Builder.create(TaintedCow::new, EntityClassification.CREATURE).build(Constants.MODID + ":tainted_cow").setRegistryName(EventSubscriber.location("tainted_cow"));
 
     public static void registerEntitySpawnEggs(final RegistryEvent.Register<Item> event)
     {

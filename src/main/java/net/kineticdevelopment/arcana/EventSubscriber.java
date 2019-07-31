@@ -169,17 +169,19 @@ public class EventSubscriber {
                 return new ArcaneWorkbenchContainer(windowId, inv);
             }).setRegistryName("arcana:arcaneworkbenchcontainer"));
         }
+
+        @SubscribeEvent
+        public static void registerEntities(final RegistryEvent.Register<EntityType<?>> event)
+        {
+            event.getRegistry().registerAll(
+                    ModEntities.ARCANA_TAINTED_COW
+            );
+
+            ModEntities.registerEntityWorldSpawns();
+        }
+
     }
 
-    @SubscribeEvent
-    public static void registerEntities(final RegistryEvent.Register<EntityType<?>> event)
-    {
-        event.getRegistry().registerAll(
-                ModEntities.ARCANA_TAINTED_COW
-        );
-
-        ModEntities.registerEntityWorldSpawns();
-    }
 
     public static ResourceLocation location(String name)
     {
