@@ -1,6 +1,7 @@
 package net.kineticdevelopment.arcana.common.blocks.treeblocks;
 
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 import net.kineticdevelopment.arcana.utilities.Constants;
 import net.minecraft.block.Block;
@@ -61,19 +62,32 @@ public class silverwoodsapling extends BushBlock implements IGrowable {
     }
 
     public void grow(IWorld worldIn, BlockPos pos, BlockState state, Random rand) {
-    	ServerWorld worldserver = (ServerWorld) worldIn;
-    	TemplateManager templatemanager = worldserver.getStructureTemplateManager();
-    	Template template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/silverwoodtree"));
+    	if (state.get(STAGE) == 0) {
+            worldIn.setBlockState(pos, state.cycle(STAGE), 4);
+         } else {
+            if (!net.minecraftforge.event.ForgeEventFactory.saplingGrowTree(worldIn, rand, pos)) return;
+            ServerWorld worldserver = (ServerWorld) worldIn;
+        	TemplateManager templatemanager = worldserver.getStructureTemplateManager();
+        	Template template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/silverwood/silverwood0"));;
+        	int h = ThreadLocalRandom.current().nextInt(0, 7);
+        	if(h==1) {template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/silverwood/silverwood1"));}
+        	if(h==2) {template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/silverwood/silverwood2"));}
+        	if(h==3) {template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/silverwood/silverwood3"));}
+        	if(h==4) {template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/silverwood/silverwood4"));}
+        	if(h==5) {template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/silverwood/silverwood5"));}
+        	if(h==6) {template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/silverwood/silverwood6"));}
+        	if(h==7) {template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/silverwood/silverwood7"));}
 
-    	if(template == null) {
-    		Constants.LOGGER.error("Could not find structure at "+(new ResourceLocation("arcana", "trees/silverwoodtree")));
-    	}
-    	BlockState iblockstate = worldIn.getBlockState(pos);
-    	worldserver.notifyBlockUpdate(pos, iblockstate, iblockstate, 3);
-    	PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)
-    			.setRotation(Rotation.NONE).setIgnoreEntities(false).setChunk((ChunkPos) null);
+        	if(template == null) {
+        		Constants.LOGGER.error("Could not find structure at "+(new ResourceLocation("arcana", "trees/silverwoodtree")));
+        	}
+        	BlockState iblockstate = worldIn.getBlockState(pos);
+        	worldserver.notifyBlockUpdate(pos, iblockstate, iblockstate, 3);
+        	PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)
+        			.setRotation(Rotation.NONE).setIgnoreEntities(false).setChunk((ChunkPos) null);
 
-    	template.addBlocksToWorld(worldIn, pos.add(-4, 0, -4), placementsettings);
+        	template.addBlocksToWorld(worldIn, pos.add(-3, -1, -3), placementsettings);
+         }
     }
 
     /**
