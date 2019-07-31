@@ -15,7 +15,7 @@ import net.minecraftforge.fml.network.NetworkHooks;
 public class CommonLootbag extends Item {
     public CommonLootbag() {
         super(new Properties().group(ModTabGroups.MOD_ITEM_GROUP)
-                .maxStackSize(1));
+            .maxStackSize(1));
 
         setRegistryName("commonlootbag");
     }
@@ -23,7 +23,7 @@ public class CommonLootbag extends Item {
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
         if (!worldIn.isRemote) {
-            NetworkHooks.openGui((ServerPlayerEntity) playerIn, (INamedContainerProvider) new GuiCommonLootbag());
+            NetworkHooks.openGui((ServerPlayerEntity) playerIn, new GuiCommonLootbag());
         }
 
         return super.onItemRightClick(worldIn, playerIn, handIn);

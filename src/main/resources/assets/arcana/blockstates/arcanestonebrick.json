@@ -1,7 +1,9 @@
 {
   "variants": {
     "": [
-      { "model": "arcana:block/arcanestonebrick" }
+      {
+        "model": "arcana:block/arcanestonebrick"
+      }
     ]
   }
 }

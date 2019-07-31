@@ -1,7 +1,6 @@
 {
   "_comment": "CREATIVE TABS",
   "itemGroup.arcana": "Arcana",
-
   "_comment": "MOD BLOCKS",
   "block.arcana.arcanestone": "Arcane Stone",
   "block.arcana.arcanestonebrick": "Arcane Stone Bricks",
@@ -49,7 +48,6 @@
   "effect.arcana.tainted": "Tainted",
   "death.attack.Taint.player": "%1$s was consumed by Taint",
   "death.attack.Taint": "%1$s was consumed by Taint",
-
   "_comment": "MOD ITEMS",
   "item.arcana.thaumonomicon": "§5Thaumonomicon",
   "item.arcana.thaumiumingot": "Thaumium Ingot",
@@ -62,7 +60,6 @@
   "item.arcana.wandcapvoid": "Void Wand Cap",
   "item.arcana.basicwand": "Basic Wand",
   "item.arcana.commonlootbag": "Common Lootbag",
-
   "_comment": "ASPECTS",
   "item.arcana.air": "Air",
   "item.arcana.water": "Water",
@@ -118,7 +115,6 @@
   "item.arcana.beast": "Beast",
   "item.arcana.aura": "Aura",
   "item.arcana.armor": "Armor",
-
   "_comment": "ASPECTS",
   "item.arcana.aspect_goggles": "Aspect Goggles"
 }

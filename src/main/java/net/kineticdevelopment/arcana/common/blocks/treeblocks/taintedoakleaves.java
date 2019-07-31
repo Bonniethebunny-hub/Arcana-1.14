@@ -35,6 +35,35 @@ public class taintedoakleaves extends Block implements IShearable {
         this.setDefaultState(this.stateContainer.getBaseState().with(DISTANCE, Integer.valueOf(7)).with(PERSISTENT, Boolean.valueOf(false)));
     }
 
+    private static BlockState updateDistance(BlockState p_208493_0_, IWorld p_208493_1_, BlockPos p_208493_2_) {
+        int i = 7;
+
+        try (BlockPos.PooledMutableBlockPos blockpos$pooledmutableblockpos = BlockPos.PooledMutableBlockPos.retain()) {
+            for (Direction direction : Direction.values()) {
+                blockpos$pooledmutableblockpos.setPos(p_208493_2_).move(direction);
+                i = Math.min(i, getDistance(p_208493_1_.getBlockState(blockpos$pooledmutableblockpos)) + 1);
+                if (i == 1) {
+                    break;
+                }
+            }
+        }
+
+        return p_208493_0_.with(DISTANCE, Integer.valueOf(i));
+    }
+
+    private static int getDistance(BlockState neighbor) {
+        if (neighbor.getBlock().equals(ModBlocks.TAINTEDOAKLOG)) {
+            return 0;
+        } else {
+            return neighbor.getBlock() instanceof taintedoakleaves ? neighbor.get(DISTANCE) : 7;
+        }
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    public static void setRenderTranslucent(boolean fancy) {
+        renderTranslucent = true;
+    }
+
     public boolean ticksRandomly(BlockState state) {
         return state.get(DISTANCE) == 7 && !state.get(PERSISTENT);
     }
@@ -46,12 +75,12 @@ public class taintedoakleaves extends Block implements IShearable {
         }
 
     }
-    
+
     public void tick(BlockState state, World worldIn, BlockPos pos, Random random) {
-    	
-    	worldIn.setBlockState(pos, updateDistance(state, worldIn, pos), 3);
-    	
-    	TaintSpreader.spreadTaint(worldIn, pos);
+
+        worldIn.setBlockState(pos, updateDistance(state, worldIn, pos), 3);
+
+        TaintSpreader.spreadTaint(worldIn, pos);
     }
 
     public int getOpacity(BlockState state, IBlockReader worldIn, BlockPos pos) {
@@ -67,31 +96,6 @@ public class taintedoakleaves extends Block implements IShearable {
         return stateIn;
     }
 
-    private static BlockState updateDistance(BlockState p_208493_0_, IWorld p_208493_1_, BlockPos p_208493_2_) {
-        int i = 7;
-
-        try (BlockPos.PooledMutableBlockPos blockpos$pooledmutableblockpos = BlockPos.PooledMutableBlockPos.retain()) {
-            for(Direction direction : Direction.values()) {
-                blockpos$pooledmutableblockpos.setPos(p_208493_2_).move(direction);
-                i = Math.min(i, getDistance(p_208493_1_.getBlockState(blockpos$pooledmutableblockpos)) + 1);
-                if (i == 1) {
-                    break;
-                }
-            }
-        }
-
-        return p_208493_0_.with(DISTANCE, Integer.valueOf(i));
-    }
-
-    private static int getDistance(BlockState neighbor) {
-        if(neighbor.getBlock().equals(ModBlocks.TAINTEDOAKLOG)) {
-            return 0;
-        }
-        else {
-            return neighbor.getBlock() instanceof taintedoakleaves ? neighbor.get(DISTANCE) : 7;
-        }
-    }
-
     @OnlyIn(Dist.CLIENT)
     public void animateTick(BlockState stateIn, World worldIn, BlockPos pos, Random rand) {
         if (worldIn.isRainingAt(pos.up())) {
@@ -99,18 +103,13 @@ public class taintedoakleaves extends Block implements IShearable {
                 BlockPos blockpos = pos.down();
                 BlockState blockstate = worldIn.getBlockState(blockpos);
                 if (!blockstate.isSolid() || !blockstate.func_224755_d(worldIn, blockpos, Direction.UP)) {
-                    double d0 = (double)((float)pos.getX() + rand.nextFloat());
-                    double d1 = (double)pos.getY() - 0.05D;
-                    double d2 = (double)((float)pos.getZ() + rand.nextFloat());
+                    double d0 = (double) ((float) pos.getX() + rand.nextFloat());
+                    double d1 = (double) pos.getY() - 0.05D;
+                    double d2 = (double) ((float) pos.getZ() + rand.nextFloat());
                     worldIn.addParticle(ParticleTypes.DRIPPING_WATER, d0, d1, d2, 0.0D, 0.0D, 0.0D);
                 }
             }
         }
-    }
-
-    @OnlyIn(Dist.CLIENT)
-    public static void setRenderTranslucent(boolean fancy) {
-        renderTranslucent = true;
     }
 
     public boolean isSolid(BlockState state) {

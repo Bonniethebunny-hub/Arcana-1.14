@@ -7,7 +7,7 @@ public class pride extends Item {
 
     public pride() {
         super(new Properties().group(ModTabGroups.MOD_ITEM_GROUP)
-        .maxStackSize(64));
+            .maxStackSize(64));
 
         setRegistryName("pride");
     }

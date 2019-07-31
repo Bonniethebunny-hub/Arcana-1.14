@@ -7,7 +7,7 @@ public class slime extends Item {
 
     public slime() {
         super(new Properties().group(ModTabGroups.MOD_ITEM_GROUP)
-        .maxStackSize(64));
+            .maxStackSize(64));
 
         setRegistryName("slime");
     }
