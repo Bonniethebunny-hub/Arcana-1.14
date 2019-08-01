@@ -177,7 +177,8 @@ public class EventSubscriber {
                     ModEntities.ARCANA_TAINTED_PIG,
                     ModEntities.ARCANA_TAINTED_COW,
                     ModEntities.ARCANA_TAINTED_ZOMBIE,
-                    ModEntities.ARCANA_TAINTED_CHICKEN
+                    ModEntities.ARCANA_TAINTED_CHICKEN,
+                    ModEntities.ARCANA_TAINTED_CREEPER
             );
 
             ModEntities.registerEntityWorldSpawns();

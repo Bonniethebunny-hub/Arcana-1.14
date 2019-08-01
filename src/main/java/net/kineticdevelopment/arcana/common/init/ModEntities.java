@@ -3,10 +3,7 @@ package net.kineticdevelopment.arcana.common.init;
 
 import net.kineticdevelopment.arcana.EventSubscriber;
 import net.kineticdevelopment.arcana.common.creativetab.ModTabGroups;
-import net.kineticdevelopment.arcana.common.entities.TaintedChicken;
-import net.kineticdevelopment.arcana.common.entities.TaintedCow;
-import net.kineticdevelopment.arcana.common.entities.TaintedPig;
-import net.kineticdevelopment.arcana.common.entities.TaintedZombie;
+import net.kineticdevelopment.arcana.common.entities.*;
 import net.kineticdevelopment.arcana.utilities.Constants;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
@@ -23,7 +20,7 @@ public class ModEntities
     public static EntityType<?> ARCANA_TAINTED_ZOMBIE = EntityType.Builder.create(TaintedZombie::new, EntityClassification.MONSTER).build(Constants.MODID + ":tainted_zombie").setRegistryName(EventSubscriber.location("tainted_zombie"));
     public static EntityType<?> ARCANA_TAINTED_PIG = EntityType.Builder.create(TaintedPig::new, EntityClassification.CREATURE).build(Constants.MODID + ":tainted_pig").setRegistryName(EventSubscriber.location("tainted_pig"));
     public static EntityType<?> ARCANA_TAINTED_CHICKEN = EntityType.Builder.create(TaintedChicken::new, EntityClassification.CREATURE).build(Constants.MODID + ":tainted_chicken").setRegistryName(EventSubscriber.location("tainted_chicken"));
-
+    public static EntityType<?> ARCANA_TAINTED_CREEPER = EntityType.Builder.create(TaintedCreeper::new, EntityClassification.MONSTER).build(Constants.MODID + ":tainted_creeper").setRegistryName(EventSubscriber.location("tainted_creeper"));
 
     public static void registerEntitySpawnEggs(final RegistryEvent.Register<Item> event)
     {
@@ -31,7 +28,8 @@ public class ModEntities
                 ModItems.arcana_tainted_cow_egg = registerEntitySpawnEgg(ARCANA_TAINTED_COW, 0x6d24ad, 0x6c801f, "tainted_cow_egg"),
                 ModItems.arcana_tainted_zombie_egg = registerEntitySpawnEgg(ARCANA_TAINTED_ZOMBIE, 0x6d24ad, 0x236620, "tainted_zombie_egg"),
                 ModItems.arcana_tainted_pig_egg = registerEntitySpawnEgg(ARCANA_TAINTED_PIG, 0x6d24ad,0x750867, "tainted_pig_egg"),
-                ModItems.arcana_tainted_chicken_egg = registerEntitySpawnEgg(ARCANA_TAINTED_CHICKEN, 0x6d24ad, 0xa89b32, "tainted_chicken_egg")
+                ModItems.arcana_tainted_chicken_egg = registerEntitySpawnEgg(ARCANA_TAINTED_CHICKEN, 0x6d24ad, 0xa89b32, "tainted_chicken_egg"),
+                ModItems.arcana_tainted_creeper_egg = registerEntitySpawnEgg(ARCANA_TAINTED_CREEPER, 0x6d24ad, 0x2aa823, "tainted_creeper_egg")
         );
     }
 

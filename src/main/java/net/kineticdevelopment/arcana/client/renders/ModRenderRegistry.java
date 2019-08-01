@@ -1,9 +1,6 @@
 package net.kineticdevelopment.arcana.client.renders;
 
-import net.kineticdevelopment.arcana.common.entities.TaintedChicken;
-import net.kineticdevelopment.arcana.common.entities.TaintedCow;
-import net.kineticdevelopment.arcana.common.entities.TaintedPig;
-import net.kineticdevelopment.arcana.common.entities.TaintedZombie;
+import net.kineticdevelopment.arcana.common.entities.*;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
@@ -19,5 +16,6 @@ public class ModRenderRegistry
         RenderingRegistry.registerEntityRenderingHandler(TaintedZombie.class, new TaintedZombieRender.RenderFactory());
         RenderingRegistry.registerEntityRenderingHandler(TaintedPig.class, new TaintedPigRender.RenderFactory());
         RenderingRegistry.registerEntityRenderingHandler(TaintedChicken.class, new TaintedChickenRender.RenderFactory());
+        RenderingRegistry.registerEntityRenderingHandler(TaintedCreeper.class, new TaintedCreeperRender.RenderFactory());
     }
 }
