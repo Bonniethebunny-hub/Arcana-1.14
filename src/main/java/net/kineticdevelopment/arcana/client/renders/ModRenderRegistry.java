@@ -18,5 +18,6 @@ public class ModRenderRegistry
         RenderingRegistry.registerEntityRenderingHandler(TaintedChicken.class, new TaintedChickenRender.RenderFactory());
         RenderingRegistry.registerEntityRenderingHandler(TaintedCreeper.class, new TaintedCreeperRender.RenderFactory());
         RenderingRegistry.registerEntityRenderingHandler(TaintedSpider.class, new TaintedSpiderRender.RenderFactory());
+        RenderingRegistry.registerEntityRenderingHandler(TaintedSlime.class, new TaintedSlimeRender.RenderFactory());
     }
 }
