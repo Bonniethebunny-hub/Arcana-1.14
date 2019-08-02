@@ -24,6 +24,8 @@ public class ModEntities
     public static EntityType<?> ARCANA_TAINTED_SPIDER = EntityType.Builder.create(TaintedSpider::new, EntityClassification.MONSTER).build(Constants.MODID + ":tainted_spider").setRegistryName(EventSubscriber.location("tainted_spider"));
     public static EntityType<?> ARCANA_TAINTED_SLIME = EntityType.Builder.create(TaintedSlime::new, EntityClassification.MONSTER).build(Constants.MODID + ":tainted_slime").setRegistryName(EventSubscriber.location("tainted_slime"));
 
+    public static EntityType<?> ARCANA_WIZARD_VILLAGER = EntityType.Builder.create(WizardVillager::new, EntityClassification.MISC).build(Constants.MODID + ":wizard_villager").setRegistryName(EventSubscriber.location("wizard_villager"));
+
     public static void registerEntitySpawnEggs(final RegistryEvent.Register<Item> event)
     {
         event.getRegistry().registerAll(
@@ -33,7 +35,8 @@ public class ModEntities
                 ModItems.arcana_tainted_chicken_egg = registerEntitySpawnEgg(ARCANA_TAINTED_CHICKEN, 0x6d24ad, 0xa89b32, "tainted_chicken_egg"),
                 ModItems.arcana_tainted_creeper_egg = registerEntitySpawnEgg(ARCANA_TAINTED_CREEPER, 0x6d24ad, 0x2aa823, "tainted_creeper_egg"),
                 ModItems.arcana_tainted_spider_egg = registerEntitySpawnEgg(ARCANA_TAINTED_SPIDER, 0x6d24ad, 0x09040d, "tainted_spider_egg"),
-                ModItems.arcana_tainted_slime_egg = registerEntitySpawnEgg(ARCANA_TAINTED_SLIME, 0x6d24ad, 0x04ba1c, "tainted_slime_egg")
+                ModItems.arcana_tainted_slime_egg = registerEntitySpawnEgg(ARCANA_TAINTED_SLIME, 0x6d24ad, 0x04ba1c, "tainted_slime_egg"),
+                ModItems.arcana_wizard_villager_egg = registerEntitySpawnEgg(ARCANA_WIZARD_VILLAGER, 0x6b10c7, 0xc78d10, "wizard_villager_egg")
         );
     }
 

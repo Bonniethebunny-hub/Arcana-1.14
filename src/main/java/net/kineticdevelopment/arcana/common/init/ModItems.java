@@ -7,6 +7,9 @@ import net.minecraftforge.registries.ObjectHolder;
 
 public class ModItems {
 
+    @ObjectHolder("arcana:wizard_villager_egg")
+    public static Item arcana_wizard_villager_egg;
+
     @ObjectHolder("arcana:tainted_cow_egg")
     public static Item arcana_tainted_cow_egg;
 
