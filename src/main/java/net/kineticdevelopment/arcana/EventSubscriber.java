@@ -16,7 +16,7 @@ import net.kineticdevelopment.arcana.common.items.elements.*;
 
 import net.minecraft.entity.EntityType;
 import net.kineticdevelopment.arcana.common.items.lootbags.CommonLootbag;
-import net.kineticdevelopment.arcana.common.structures.*;
+
 import net.kineticdevelopment.arcana.utilities.Constants;
 import net.kineticdevelopment.arcana.utilities.effects.Tainted;
 import net.minecraft.block.Block;
@@ -29,6 +29,7 @@ import net.minecraft.item.Item;
 import net.minecraft.potion.Effect;
 import net.minecraft.potion.EffectType;
 
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.common.ToolType;
@@ -41,7 +42,8 @@ import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 import java.lang.reflect.InvocationTargetException;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.FORGE)
-public class EventSubscriber {
+public class EventSubscriber
+{
     //On Player Join Event Which Sends A Message To the Player In the Chat
     @SubscribeEvent
     public static void onPlayerJoinWorld(PlayerEvent.PlayerLoggedInEvent event) {
@@ -351,5 +353,5 @@ public class EventSubscriber {
             event.getRegistry().register(new Tainted(EffectType.HARMFUL, 10494192).setRegistryName("tainted"));
             System.out.println("Potions Registered!");
         }
-    }
 }
+
