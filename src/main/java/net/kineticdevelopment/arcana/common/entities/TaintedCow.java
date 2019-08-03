@@ -9,25 +9,26 @@ import net.minecraft.entity.ai.goal.RandomWalkingGoal;
 import net.minecraft.entity.ai.goal.SwimGoal;
 import net.minecraft.world.World;
 
-public class TaintedCow extends CreatureEntity {
-
-    @SuppressWarnings("unchecked")
+public class TaintedCow extends CreatureEntity
+{
+    @SuppressWarnings("uncleared")
     public TaintedCow(EntityType<? extends CreatureEntity> type, World worldIn)
     {
-        super((EntityType<? extends CreatureEntity>) ModEntities.ARCANA_ENTITY_COW, worldIn);
+        super((EntityType<? extends CreatureEntity>) ModEntities.ARCANA_TAINTED_COW, worldIn);
     }
 
     @Override
-    protected void registerGoals(){
+    protected void registerGoals()
+    {
         this.goalSelector.addGoal(0, new SwimGoal(this));
         this.goalSelector.addGoal(1, new RandomWalkingGoal(this, 1.2d));
         this.goalSelector.addGoal(2, new LookRandomlyGoal(this));
     }
 
     @Override
-    protected void registerAttributes()
-    {
+    protected void registerAttributes() {
         super.registerAttributes();
         this.getAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(20.0d);
+        this.getAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(1.2d);
     }
 }

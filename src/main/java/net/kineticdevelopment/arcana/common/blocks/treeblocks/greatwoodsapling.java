@@ -9,7 +9,9 @@ import net.minecraft.block.BushBlock;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.trees.Tree;
+import net.minecraft.entity.item.ItemEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
@@ -17,9 +19,9 @@ import net.minecraft.util.Mirror;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
@@ -30,65 +32,83 @@ import net.minecraft.world.server.ServerWorld;
 
 
 public class greatwoodsapling extends BushBlock implements IGrowable {
-	public static final IntegerProperty STAGE = BlockStateProperties.STAGE_0_1;
+    public static final IntegerProperty STAGE = BlockStateProperties.STAGE_0_1;
     protected static final VoxelShape SHAPE = Block.makeCuboidShape(2.0D, 0.0D, 2.0D, 14.0D, 12.0D, 14.0D);
-    private final Tree tree;
-    
-    public greatwoodsapling(Tree tree, Block.Properties properties) {
+
+    public greatwoodsapling(Block.Properties properties) {
         super(Block.Properties.create(Material.BAMBOO_SAPLING)
-                .sound(SoundType.BAMBOO_SAPLING)
-                .hardnessAndResistance(3.0f)
+            .sound(SoundType.BAMBOO_SAPLING)
+            .hardnessAndResistance(3.0f)
+            .doesNotBlockMovement()
         );
-        this.tree = tree;
         this.setDefaultState(this.stateContainer.getBaseState().with(STAGE, Integer.valueOf(0)));
         setRegistryName("greatwoodsapling");
     }
 
-    public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
-       return SHAPE;
+    public static void spawnAsEntity(World worldIn, BlockPos pos, ItemStack stack) {
+        if (!worldIn.isRemote && !stack.isEmpty() && worldIn.getGameRules().getBoolean(GameRules.DO_TILE_DROPS) && !worldIn.restoringBlockSnapshots) { // do not drop items while restoring blockstates, prevents item dupe
+            double d0 = (double) (worldIn.rand.nextFloat() * 0.5F) + 0.25D;
+            double d1 = (double) (worldIn.rand.nextFloat() * 0.5F) + 0.25D;
+            double d2 = (double) (worldIn.rand.nextFloat() * 0.5F) + 0.25D;
+            ItemEntity itementity = new ItemEntity(worldIn, (double) pos.getX() + d0, (double) pos.getY() + d1, (double) pos.getZ() + d2, stack);
+            itementity.setDefaultPickupDelay();
+            worldIn.addEntity(itementity);
+        }
     }
 
+    public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
+        return SHAPE;
+    }
+
+    @SuppressWarnings("deprecation")
     public void tick(BlockState state, World worldIn, BlockPos pos, Random random) {
-       super.tick(state, worldIn, pos, random);
-       if (!worldIn.isAreaLoaded(pos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
-       if (worldIn.getLight(pos.up()) >= 9 && random.nextInt(7) == 0) {
-          this.grow(worldIn, pos, state, random);
-       }
+        super.tick(state, worldIn, pos, random);
+        if (!worldIn.isAreaLoaded(pos, 1))
+            return; // Forge: prevent loading unloaded chunks when checking neighbor's light
+        if (worldIn.getLight(pos.up()) >= 9 && random.nextInt(7) == 0) {
+            this.grow(worldIn, pos, state, random);
+        }
 
     }
 
     public void grow(IWorld worldIn, BlockPos pos, BlockState state, Random rand) {
-    	ServerWorld worldserver = (ServerWorld) worldIn;
-    	TemplateManager templatemanager = worldserver.getStructureTemplateManager();
-    	Template template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/greatwoodtree"));
+        ServerWorld worldserver = (ServerWorld) worldIn;
+        TemplateManager templatemanager = worldserver.getStructureTemplateManager();
+        Template template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/greatwoodtree"));
 
-    	if(template == null) {
-    		Constants.LOGGER.error("Could not find structure at "+new ResourceLocation("arcana:structures/trees/silverwoodtree"));
-    	}
-    	BlockState iblockstate = worldIn.getBlockState(pos);
-    	worldserver.notifyBlockUpdate(pos, iblockstate, iblockstate, 3);
-    	PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)
-    			.setRotation(Rotation.NONE).setIgnoreEntities(false).setChunk((ChunkPos) null);
+        if (template == null) {
+            Constants.LOGGER.error("Could not find structure at " + new ResourceLocation("arcana:structures/trees/silverwoodtree"));
+        }
+        BlockState iblockstate = worldIn.getBlockState(pos);
+        worldserver.notifyBlockUpdate(pos, iblockstate, iblockstate, 3);
+        PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)
+            .setRotation(Rotation.NONE).setIgnoreEntities(false).setChunk(null);
 
-    	template.addBlocksToWorld(worldIn, pos.add(-4, 0, -4), placementsettings);
+        template.addBlocksToWorld(worldIn, pos.add(-4, 0, -4), placementsettings);
     }
 
     /**
      * Whether this IGrowable can grow
      */
     public boolean canGrow(IBlockReader worldIn, BlockPos pos, BlockState state, boolean isClient) {
-       return true;
+        return true;
     }
 
     public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, BlockState state) {
-       return (double)worldIn.rand.nextFloat() < 0.45D;
+        return (double) worldIn.rand.nextFloat() < 0.45D;
     }
 
     public void grow(World worldIn, Random rand, BlockPos pos, BlockState state) {
-       this.grow(worldIn, pos, state, rand);
+        this.grow(worldIn, pos, state, rand);
     }
 
     protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
-       builder.add(STAGE);
+        builder.add(STAGE);
+    }
+
+    @Override
+    public void onBlockHarvested(World worldIn, BlockPos pos, BlockState state, PlayerEntity player) {
+        worldIn.playEvent(player, 2001, pos, getStateId(state));
+        spawnAsEntity(worldIn, pos, new ItemStack(this));
     }
 }

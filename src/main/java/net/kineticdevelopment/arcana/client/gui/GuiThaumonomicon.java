@@ -25,6 +25,6 @@ public class GuiThaumonomicon implements INamedContainerProvider {
     @Nullable
     @Override
     public Container createMenu(int i, PlayerInventory playerInventory, PlayerEntity playerEntity) {
-        return new ThaumonomiconContainer(i, playerEntity.world, playerInventory);
+        return new ThaumonomiconContainer(i, playerInventory);
     }
 }

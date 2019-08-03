@@ -7,7 +7,7 @@ public class wind extends Item {
 
     public wind() {
         super(new Properties().group(ModTabGroups.MOD_ITEM_GROUP)
-        .maxStackSize(64));
+            .maxStackSize(64));
 
         setRegistryName("wind");
     }

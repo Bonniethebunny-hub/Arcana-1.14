@@ -17,7 +17,7 @@ public class ModTabGroups {
         private final Supplier<ItemStack> iconSupplier;
 
         /**
-         * @param name  String: mod id
+         * @param name         String: mod id
          * @param iconSupplier
          */
         public ModTabGroup(@Nonnull final String name, @Nonnull final Supplier<ItemStack> iconSupplier) {
@@ -30,10 +30,10 @@ public class ModTabGroups {
         public ItemStack createIcon() {
             return iconSupplier.get();
         }
-        
+
         @Override
         public boolean hasSearchBar() {
-        	return true;
+            return true;
         }
 
     }

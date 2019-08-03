@@ -1,7 +1,9 @@
 {
   "variants": {
     "": [
-      { "model": "arcana:block/amberbrick" }
+      {
+        "model": "arcana:block/amberbrick"
+      }
     ]
   }
 }
