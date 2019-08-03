@@ -2,10 +2,38 @@ package net.kineticdevelopment.arcana.common.init;
 
 import net.kineticdevelopment.arcana.common.items.*;
 import net.kineticdevelopment.arcana.common.items.elements.*;
+
+import net.minecraft.item.Item;
+
 import net.kineticdevelopment.arcana.common.items.lootbags.CommonLootbag;
+
 import net.minecraftforge.registries.ObjectHolder;
 
 public class ModItems {
+
+    @ObjectHolder("arcana:wizard_villager_egg")
+    public static Item arcana_wizard_villager_egg;
+
+    @ObjectHolder("arcana:tainted_cow_egg")
+    public static Item arcana_tainted_cow_egg;
+
+    @ObjectHolder("arcana:tainted_zombie_egg")
+    public static Item arcana_tainted_zombie_egg;
+
+    @ObjectHolder("arcana:tainted_pig_egg")
+    public static Item arcana_tainted_pig_egg;
+
+    @ObjectHolder("arcana:tainted_chicken_egg")
+    public static Item arcana_tainted_chicken_egg;
+
+    @ObjectHolder("arcana:tainted_creeper_egg")
+    public static Item arcana_tainted_creeper_egg;
+
+    @ObjectHolder("arcana:tainted_spider_egg")
+    public static Item arcana_tainted_spider_egg;
+
+    @ObjectHolder("arcana:tainted_slime_egg")
+    public static Item arcana_tainted_slime_egg;
 
     @ObjectHolder("arcana:thaumonomicon")
     public static thaumonomicon THAUMONOMICON;

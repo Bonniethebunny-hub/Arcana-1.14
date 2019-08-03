@@ -1,6 +1,29 @@
 {
   "_comment": "CREATIVE TABS",
   "itemGroup.arcana": "Arcana",
+
+
+  "_comment": "MOD ENTITIES",
+  "entity.arcana.tainted_pig": "Tainted Pig",
+  "entity.arcana.tainted_cow": "Tainted Cow",
+  "entity.arcana.tainted_zombie": "Tainted Zombie",
+  "entity.arcana.tainted_chicken": "Tainted Chicken",
+  "entity.arcana.tainted_creeper": "Tainted Creeper",
+  "entity.arcana.tainted_spider": "Tainted Spider",
+  "entity.arcana.tainted_slime": "Tainted Slime",
+  "entity.arcana.wizard_villager.none": "Wizard Villager",
+
+  "_comment": "MOD SPAWN EGGS",
+  "item.arcana.tainted_cow_egg": "Tainted Cow Spawn Egg",
+  "item.arcana.tainted_zombie_egg": "Tainted Zombie Spawn Egg",
+  "item.arcana.tainted_pig_egg": "Tainted Pig Spawn Egg",
+  "item.arcana.tainted_chicken_egg": "Tainted Chicken Spawn Egg",
+  "item.arcana.tainted_creeper_egg": "Tainted Creeper Spawn Egg",
+  "item.arcana.tainted_spider_egg": "Tainted Spider Spawn Egg",
+  "item.arcana.tainted_slime_egg": "Tainted Slime Spawn Egg",
+  "item.arcana.wizard_villager_egg": "Wizard Villager Spawn Egg",
+
+
   "_comment": "MOD BLOCKS",
   "block.arcana.arcanestone": "Arcane Stone",
   "block.arcana.arcanestonebrick": "Arcane Stone Bricks",

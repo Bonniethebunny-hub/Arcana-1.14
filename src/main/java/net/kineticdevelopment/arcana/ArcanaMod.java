@@ -1,6 +1,9 @@
 package net.kineticdevelopment.arcana;
 
 import net.kineticdevelopment.arcana.client.ClientProxy;
+
+import net.kineticdevelopment.arcana.client.renders.ModRenderRegistry;
+
 import net.kineticdevelopment.arcana.common.IProxy;
 import net.kineticdevelopment.arcana.common.ServerProxy;
 import net.kineticdevelopment.arcana.utilities.Constants;
@@ -15,10 +18,19 @@ public class ArcanaMod {
 
     public ArcanaMod() {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientRegistries);
     }
 
     private void setup(final FMLCommonSetupEvent event) {
         Constants.LOGGER.info(Constants.MODID + event + " is now loaded!");
         proxy.init();
     }
+
+    private void clientRegistries(final FMLClientSetupEvent event)
+    {
+        ModRenderRegistry.registryEntityRenders();
+
+        Constants.LOGGER.info("clientRegistries method registered.");
+    }
+
 }

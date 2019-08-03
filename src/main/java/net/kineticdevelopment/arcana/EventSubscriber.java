@@ -10,9 +10,13 @@ import net.kineticdevelopment.arcana.common.blocks.tainted.ores.*;
 import net.kineticdevelopment.arcana.common.blocks.tainted.*;
 import net.kineticdevelopment.arcana.common.creativetab.ModTabGroups;
 import net.kineticdevelopment.arcana.common.init.ModBlocks;
+import net.kineticdevelopment.arcana.common.init.ModEntities;
 import net.kineticdevelopment.arcana.common.items.*;
 import net.kineticdevelopment.arcana.common.items.elements.*;
+
+import net.minecraft.entity.EntityType;
 import net.kineticdevelopment.arcana.common.items.lootbags.CommonLootbag;
+import net.kineticdevelopment.arcana.common.structures.*;
 import net.kineticdevelopment.arcana.utilities.Constants;
 import net.kineticdevelopment.arcana.utilities.effects.Tainted;
 import net.minecraft.block.Block;
@@ -24,6 +28,7 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.potion.Effect;
 import net.minecraft.potion.EffectType;
+
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.common.ToolType;
@@ -289,9 +294,15 @@ public class EventSubscriber {
                 event.getRegistry().register(aspect);
             }
 
+            //Entity Spawn Eggs
+            ModEntities.registerEntitySpawnEggs(event);
+          
             // ARMOR
             event.getRegistry().register(new AspectGogglesHelmet("aspect_goggles", ArmorMaterial.ASPECT_GOGGLES_HELMET, EquipmentSlotType.HEAD, (new Item.Properties()).group(ModTabGroups.MOD_ITEM_GROUP)));
+
         }
+
+
 
         @SubscribeEvent
         public static void onContainerRegistry(final RegistryEvent.Register<ContainerType<?>> event) {
@@ -307,6 +318,32 @@ public class EventSubscriber {
                 return new CommonLootbagContainer(windowId, inv);
             }).setRegistryName("arcana:commonlootbagcontainer"));
         }
+
+          @SubscribeEvent
+        public static void registerEntities(final RegistryEvent.Register<EntityType<?>> event)
+        {
+            event.getRegistry().registerAll(
+                    ModEntities.ARCANA_TAINTED_PIG,
+                    ModEntities.ARCANA_TAINTED_COW,
+                    ModEntities.ARCANA_TAINTED_ZOMBIE,
+                    ModEntities.ARCANA_TAINTED_CHICKEN,
+                    ModEntities.ARCANA_TAINTED_CREEPER,
+                    ModEntities.ARCANA_TAINTED_SPIDER,
+                    ModEntities.ARCANA_TAINTED_SLIME,
+                    ModEntities.ARCANA_WIZARD_VILLAGER
+            );
+
+            ModEntities.registerEntityWorldSpawns();
+        }
+
+    }
+
+
+    public static ResourceLocation location(String name)
+    {
+        return new ResourceLocation(Constants.MODID, name);
+    }
+
 
         //Potions
         @SubscribeEvent
