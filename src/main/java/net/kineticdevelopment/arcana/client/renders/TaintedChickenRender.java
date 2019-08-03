@@ -13,11 +13,11 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
 
 @OnlyIn(Dist.CLIENT)
-public class TaintedChickenRender extends LivingRenderer<TaintedChicken, TaintedChickenModel>
+public class TaintedChickenRender extends LivingRenderer<TaintedChicken, TaintedChickenModel<TaintedChicken>>
 {
     public TaintedChickenRender(EntityRendererManager manager)
     {
-        super(manager, new TaintedChickenModel(), 0f);
+        super(manager, new TaintedChickenModel<TaintedChicken>(), 0f);
     }
 
     @Override

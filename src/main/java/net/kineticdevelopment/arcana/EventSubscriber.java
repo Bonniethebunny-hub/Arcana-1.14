@@ -321,7 +321,7 @@ public class EventSubscriber
             }).setRegistryName("arcana:commonlootbagcontainer"));
         }
 
-          @SubscribeEvent
+        @SubscribeEvent
         public static void registerEntities(final RegistryEvent.Register<EntityType<?>> event)
         {
             event.getRegistry().registerAll(
@@ -337,21 +337,21 @@ public class EventSubscriber
 
             ModEntities.registerEntityWorldSpawns();
         }
-
-    }
-
-
-    public static ResourceLocation location(String name)
-    {
-        return new ResourceLocation(Constants.MODID, name);
-    }
-
-
-        //Potions
+        
         @SubscribeEvent
         public static void onPotionRegistry(final RegistryEvent.Register<Effect> event) {
             event.getRegistry().register(new Tainted(EffectType.HARMFUL, 10494192).setRegistryName("tainted"));
             System.out.println("Potions Registered!");
         }
+
+    }
+
+    /**
+     * Makes a resource location for the Arcana directory with the supplied path
+     */
+    public static ResourceLocation location(String path)
+    {
+        return new ResourceLocation(Constants.MODID, path);
+    }
 }
 

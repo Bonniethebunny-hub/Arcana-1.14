@@ -96,9 +96,9 @@ public class TaintCleaner {
             }
         }
         
-        for (int x = -5; x < 6; x++) {
-            for (int y = -5; y < 6; y++) {
-                for (int z = -5; z < 6; z++) {
+        for (int x = num1; x < num2; x++) {
+            for (int y = num1; y < num2; y++) {
+                for (int z = -5; z < num2; z++) {
                     if (CobblestoneProspects.contains(worldIn.getBlockState(pos.add(x, y, z)).getBlock())) {
                         worldIn.setBlockState(pos.add(x, y, z), Blocks.COBBLESTONE.getDefaultState());
                     }
@@ -107,9 +107,9 @@ public class TaintCleaner {
             }
         }
         
-        for (int x = -5; x < 6; x++) {
-            for (int y = -5; y < 6; y++) {
-                for (int z = -5; z < 6; z++) {
+        for (int x = num1; x < num2; x++) {
+            for (int y = num1; y < num2; y++) {
+                for (int z = -5; z < num2; z++) {
                     if (AirProspects.contains(worldIn.getBlockState(pos.add(x, y, z)).getBlock())) {
                         worldIn.setBlockState(pos.add(x, y, z), Blocks.AIR.getDefaultState());
                     }
