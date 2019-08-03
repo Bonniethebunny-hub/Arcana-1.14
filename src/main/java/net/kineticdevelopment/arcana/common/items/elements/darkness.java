@@ -7,7 +7,7 @@ public class darkness extends Item {
 
     public darkness() {
         super(new Properties().group(ModTabGroups.MOD_ITEM_GROUP)
-        .maxStackSize(64));
+            .maxStackSize(64));
 
         setRegistryName("darkness");
     }

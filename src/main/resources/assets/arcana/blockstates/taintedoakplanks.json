@@ -1,7 +1,9 @@
 {
   "variants": {
     "": [
-      { "model": "arcana:block/taintedoakplanks"}
+      {
+        "model": "arcana:block/taintedoakplanks"
+      }
     ]
   }
 }

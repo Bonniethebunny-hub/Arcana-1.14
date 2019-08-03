@@ -12,6 +12,7 @@ public final class PacketHandler {
     private static final SimpleChannel HANDLER = NetworkRegistry.ChannelBuilder.named(new ResourceLocation(Constants.MODID, "main_channel")).clientAcceptedVersions(PROTOCOL_VERSION::equals).serverAcceptedVersions(PROTOCOL_VERSION::equals).networkProtocolVersion(() -> PROTOCOL_VERSION).simpleChannel();
 
     public static void register() {
+        @SuppressWarnings("unused")
         int disc = 0;
     }
 

@@ -1,21 +1,9 @@
 package net.kineticdevelopment.arcana.common.init;
 
 import net.kineticdevelopment.arcana.common.blocks.*;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.dairleaves;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.dairlog;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.dairsapling;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.greatwoodleaves;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.greatwoodlog;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.greatwoodsapling;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.silverwoodleaves;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.silverwoodlog;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.silverwoodsapling;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.strippeddairlog;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.strippedtaintedoaklog;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.taintedoakleaves;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.taintedoaklog;
-import net.kineticdevelopment.arcana.common.blocks.treeblocks.taintedoaksapling;
-import net.kineticdevelopment.arcana.common.structures.*;
+import net.kineticdevelopment.arcana.common.blocks.tainted.ores.*;
+import net.kineticdevelopment.arcana.common.blocks.tainted.*;
+import net.kineticdevelopment.arcana.common.blocks.treeblocks.*;
 import net.minecraftforge.registries.ObjectHolder;
 
 public class ModBlocks {
@@ -40,7 +28,7 @@ public class ModBlocks {
 
     @ObjectHolder("arcana:silverwoodplanks")
     public static silverwoodplanks SILVERWOODPLANKS;
-    
+
     @ObjectHolder("arcana:silverwoodleaves")
     public static silverwoodleaves SILVERWOODLEAVES;
 
@@ -85,16 +73,16 @@ public class ModBlocks {
 
     @ObjectHolder("arcana:greatwoodsapling")
     public static greatwoodsapling GREATWOODSAPLING;
-    
+
     @ObjectHolder("arcana:silverwoodlog")
     public static silverwoodlog SILVERWOODLOG;
 
     @ObjectHolder("arcana:silverwoodsapling")
     public static silverwoodsapling SILVERWOODSAPLING;
-    
+
     @ObjectHolder("arcana:arcaneworktable")
     public static arcaneworktable ARCANEWORKTABLE;
-    
+
     @ObjectHolder("arcana:silverwoodstairs")
     public static arcaneworktable SILVERWOODSTAIRS;
 
@@ -109,6 +97,51 @@ public class ModBlocks {
 
     @ObjectHolder("arcana:strippeddairlog")
     public static strippeddairlog STRIPPEDDAIRLOG;
+
+    @ObjectHolder("arcana:tainteddairlog")
+    public static tainteddairlog TAINTEDDAIRLOG;
+
+    @ObjectHolder("arcana:tainteddairplanks")
+    public static tainteddairplanks TAINTEDDAIRPLANKS;
+
+    @ObjectHolder("arcana:strippedtainteddairlog")
+    public static strippedtainteddairlog STRIPPEDTAINTEDDAIRLOG;
+
+    @ObjectHolder("arcana:tainteddairleaves")
+    public static tainteddairleaves TAINTEDDAIRLEAVES;
+
+    @ObjectHolder("arcana:taintedamberore")
+    public static taintedamberore TAINTEDAMBERORE;
+
+    @ObjectHolder("arcana:tainteddiamondore")
+    public static tainteddiamondore TAINTEDDIAMONDORE;
+
+    @ObjectHolder("arcana:taintedemeraldore")
+    public static taintedemeraldore TAINTEDEMERALDORE;
+
+    @ObjectHolder("arcana:taintedgoldore")
+    public static taintedgoldore TAINTEDGOLDORE;
+
+    @ObjectHolder("arcana:taintedcoalore")
+    public static taintedcoalore TAINTEDCOALORE;
+
+    @ObjectHolder("arcana:taintedironore")
+    public static taintedironore TAINTEDIRONORE;
+
+    @ObjectHolder("arcana:taintedredstoneore")
+    public static taintedredstoneore TAINTEDREDSTONEORE;
+
+    @ObjectHolder("arcana:taintedcinnabarore")
+    public static taintedcinnabarore TAINTEDCINNABARORE;
+
+    @ObjectHolder("arcana:taintedlapisore")
+    public static taintedlapisore TAINTEDLAPISORE;
+
+    @ObjectHolder("arcana:taintgoo")
+    public static taintgoo TAINTGOO;
+    
+    @ObjectHolder("arcana:taintscrubber")
+    public static TaintScrubber TAINTSCRUBBER;
 }
 
 

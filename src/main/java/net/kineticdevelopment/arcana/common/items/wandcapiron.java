@@ -6,7 +6,7 @@ import net.minecraft.item.Item;
 public class wandcapiron extends Item {
     public wandcapiron() {
         super(new Properties().group(ModTabGroups.MOD_ITEM_GROUP)
-        .maxStackSize(64));
+            .maxStackSize(64));
 
         setRegistryName("wandcapiron");
     }
