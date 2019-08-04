@@ -88,6 +88,21 @@ public class RegistryHandler
                 "tainteddairlog",
                 "strippedtainteddairlog"
             };
+            
+        	// Created with Block.Properties.create(Material.LEAVES).doesNotBlockMovement()
+            String[] taintedsaplings = {
+            		
+            };
+
+            // Created with Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.5F).sound(SoundType.PLANT)
+            String[] taintedleaves = {
+            		
+            };
+
+            // Created with Block.Properties.create(Material.WOOD).hardnessAndResistance(1.1F).harvestTool(ToolType.AXE)
+            String[] taintedlogs = {
+            		
+            };
 
             // Created normally
             Block[] otherBlocks = {
@@ -148,6 +163,43 @@ public class RegistryHandler
                 try {
                     event.getRegistry().register((Block)
                         Class.forName("net.kineticdevelopment.arcana.common.blocks.treeblocks." + clsname)
+                            .getDeclaredConstructor(Block.Properties.class)
+                            .newInstance(Block.Properties.create(Material.WOOD).hardnessAndResistance(1.1F).harvestTool(ToolType.AXE)));
+                } catch (ClassNotFoundException | NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
+                    Constants.LOGGER.error("Issue with class: " + clsname);
+                    e.printStackTrace();
+                }
+            }
+            
+            //Tainted Tree Blocks
+            for (String clsname : taintedsaplings) {
+                try {
+                    event.getRegistry().register((Block)
+                        Class.forName("net.kineticdevelopment.arcana.common.blocks.tainted.taintedtrees." + clsname)
+                            .getDeclaredConstructor(Block.Properties.class)
+                            .newInstance(Block.Properties.create(Material.LEAVES).doesNotBlockMovement()));
+                } catch (ClassNotFoundException | NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
+                    Constants.LOGGER.error("Issue with class: " + clsname);
+                    e.printStackTrace();
+                }
+            }
+
+            for (String clsname : taintedleaves) {
+                try {
+                    event.getRegistry().register((Block)
+                        Class.forName("net.kineticdevelopment.arcana.common.blocks.tainted.taintedtrees." + clsname)
+                            .getDeclaredConstructor(Block.Properties.class)
+                            .newInstance(Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.5F).sound(SoundType.PLANT)));
+                } catch (ClassNotFoundException | NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
+                    Constants.LOGGER.error("Issue with class: " + clsname);
+                    e.printStackTrace();
+                }
+            }
+
+            for (String clsname : taintedlogs) {
+                try {
+                    event.getRegistry().register((Block)
+                        Class.forName("net.kineticdevelopment.arcana.common.blocks.tainted.taintedtrees." + clsname)
                             .getDeclaredConstructor(Block.Properties.class)
                             .newInstance(Block.Properties.create(Material.WOOD).hardnessAndResistance(1.1F).harvestTool(ToolType.AXE)));
                 } catch (ClassNotFoundException | NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) {

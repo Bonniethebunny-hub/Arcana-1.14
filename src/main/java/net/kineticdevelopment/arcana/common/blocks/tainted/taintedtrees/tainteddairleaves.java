@@ -1,7 +1,6 @@
-package net.kineticdevelopment.arcana.common.blocks.treeblocks;
+package net.kineticdevelopment.arcana.common.blocks.tainted.taintedtrees;
 
 import net.kineticdevelopment.arcana.common.init.ModBlocks;
-import net.kineticdevelopment.arcana.utilities.taint.TaintSpreader;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
@@ -24,14 +23,14 @@ import net.minecraftforge.common.IShearable;
 import java.util.Random;
 
 @SuppressWarnings("deprecation")
-public class taintedoakleaves extends Block implements IShearable {
+public class tainteddairleaves extends Block implements IShearable {
     public static final IntegerProperty DISTANCE = BlockStateProperties.DISTANCE_1_7;
     public static final BooleanProperty PERSISTENT = BlockStateProperties.PERSISTENT;
     protected static boolean renderTranslucent;
 
-    public taintedoakleaves(Properties properties) {
+    public tainteddairleaves(Properties properties) {
         super(properties);
-        setRegistryName("taintedoakleaves");
+        setRegistryName("tainteddairleaves");
         this.setDefaultState(this.stateContainer.getBaseState().with(DISTANCE, Integer.valueOf(7)).with(PERSISTENT, Boolean.valueOf(false)));
     }
 
@@ -52,16 +51,11 @@ public class taintedoakleaves extends Block implements IShearable {
     }
 
     private static int getDistance(BlockState neighbor) {
-        if (neighbor.getBlock().equals(ModBlocks.TAINTEDOAKLOG)) {
+        if (neighbor.getBlock().equals(ModBlocks.DAIRLOG)) {
             return 0;
         } else {
-            return neighbor.getBlock() instanceof taintedoakleaves ? neighbor.get(DISTANCE) : 7;
+            return neighbor.getBlock() instanceof tainteddairleaves ? neighbor.get(DISTANCE) : 7;
         }
-    }
-
-    @OnlyIn(Dist.CLIENT)
-    public static void setRenderTranslucent(boolean fancy) {
-        renderTranslucent = true;
     }
 
     public boolean ticksRandomly(BlockState state) {
@@ -77,10 +71,7 @@ public class taintedoakleaves extends Block implements IShearable {
     }
 
     public void tick(BlockState state, World worldIn, BlockPos pos, Random random) {
-
         worldIn.setBlockState(pos, updateDistance(state, worldIn, pos), 3);
-
-        TaintSpreader.spreadTaint(worldIn, pos);
     }
 
     public int getOpacity(BlockState state, IBlockReader worldIn, BlockPos pos) {

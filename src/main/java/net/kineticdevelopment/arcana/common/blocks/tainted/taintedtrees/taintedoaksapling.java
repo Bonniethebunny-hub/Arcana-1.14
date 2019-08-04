@@ -1,4 +1,4 @@
-package net.kineticdevelopment.arcana.common.blocks.treeblocks;
+package net.kineticdevelopment.arcana.common.blocks.tainted.taintedtrees;
 
 import net.kineticdevelopment.arcana.utilities.Constants;
 import net.minecraft.block.*;

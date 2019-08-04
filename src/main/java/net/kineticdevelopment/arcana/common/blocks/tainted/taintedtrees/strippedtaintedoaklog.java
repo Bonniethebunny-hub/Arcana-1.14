@@ -1,4 +1,4 @@
-package net.kineticdevelopment.arcana.common.blocks.treeblocks;
+package net.kineticdevelopment.arcana.common.blocks.tainted.taintedtrees;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.RotatedPillarBlock;
@@ -9,10 +9,10 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 
-public class strippedtainteddairlog extends RotatedPillarBlock {
-    public strippedtainteddairlog(Properties properties) {
+public class strippedtaintedoaklog extends RotatedPillarBlock {
+    public strippedtaintedoaklog(Properties properties) {
         super(properties);
-        setRegistryName("strippedtainteddairlog");
+        setRegistryName("strippedtaintedoaklog");
     }
 
     public static void spawnAsEntity(World worldIn, BlockPos pos, ItemStack stack) {

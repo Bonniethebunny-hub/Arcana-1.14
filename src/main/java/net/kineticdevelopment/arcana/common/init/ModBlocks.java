@@ -2,6 +2,13 @@ package net.kineticdevelopment.arcana.common.init;
 
 import net.kineticdevelopment.arcana.common.blocks.*;
 import net.kineticdevelopment.arcana.common.blocks.tainted.ores.*;
+import net.kineticdevelopment.arcana.common.blocks.tainted.taintedtrees.strippedtainteddairlog;
+import net.kineticdevelopment.arcana.common.blocks.tainted.taintedtrees.strippedtaintedoaklog;
+import net.kineticdevelopment.arcana.common.blocks.tainted.taintedtrees.tainteddairleaves;
+import net.kineticdevelopment.arcana.common.blocks.tainted.taintedtrees.tainteddairlog;
+import net.kineticdevelopment.arcana.common.blocks.tainted.taintedtrees.taintedoakleaves;
+import net.kineticdevelopment.arcana.common.blocks.tainted.taintedtrees.taintedoaklog;
+import net.kineticdevelopment.arcana.common.blocks.tainted.taintedtrees.taintedoaksapling;
 import net.kineticdevelopment.arcana.common.blocks.tainted.*;
 import net.kineticdevelopment.arcana.common.blocks.treeblocks.*;
 import net.minecraftforge.registries.ObjectHolder;
