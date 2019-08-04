@@ -149,6 +149,9 @@ public class ModBlocks {
     
     @ObjectHolder("arcana:taintscrubber")
     public static TaintScrubber TAINTSCRUBBER;
+
+    @ObjectHolder("arcana:obsidiantotemtop")
+    public static obsidiantotemtop OBSIDIANTOTEMTOP;
 }
 
 

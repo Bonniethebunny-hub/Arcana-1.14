@@ -72,6 +72,7 @@
   "death.attack.Taint.player": "%1$s was consumed by Taint",
   "death.attack.Taint": "%1$s was consumed by Taint",
   "block.arcana.taintscrubber": "Taint Scrubber",
+  "block.arcana.obsidiantotemtop": "Obsidian Totem Top",
   
   "_comment": "MOD ITEMS",
   "item.arcana.thaumonomicon": "§5Thaumonomicon",

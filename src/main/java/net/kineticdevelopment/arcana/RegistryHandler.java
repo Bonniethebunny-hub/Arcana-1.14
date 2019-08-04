@@ -15,7 +15,6 @@ import net.kineticdevelopment.arcana.common.items.*;
 import net.kineticdevelopment.arcana.common.items.elements.*;
 
 import net.minecraft.entity.EntityType;
-import net.minecraft.fluid.Fluid;
 import net.kineticdevelopment.arcana.common.items.lootbags.CommonLootbag;
 
 import net.kineticdevelopment.arcana.utilities.Constants;
@@ -64,16 +63,13 @@ public class RegistryHandler
             String[] saplings = {
                 "silverwoodsapling",
                 "greatwoodsapling",
-                "dairsapling",
-                "taintedoaksapling"
+                "dairsapling"
             };
 
             // Created with Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.5F).sound(SoundType.PLANT)
             String[] leaves = {
                 "silverwoodleaves",
                 "dairleaves",
-                "taintedoakleaves",
-                "tainteddairleaves",
                 "greatwoodleaves"
             };
 
@@ -82,26 +78,26 @@ public class RegistryHandler
                 "greatwoodlog",
                 "silverwoodlog",
                 "dairlog",
-                "strippeddairlog",
-                "taintedoaklog",
-                "strippedtaintedoaklog",
-                "tainteddairlog",
-                "strippedtainteddairlog"
+                "strippeddairlog"
             };
             
         	// Created with Block.Properties.create(Material.LEAVES).doesNotBlockMovement()
             String[] taintedsaplings = {
-            		
+                    "taintedoaksapling"
             };
 
             // Created with Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.5F).sound(SoundType.PLANT)
             String[] taintedleaves = {
-            		
+                    "taintedoakleaves",
+                    "tainteddairleaves"
             };
 
             // Created with Block.Properties.create(Material.WOOD).hardnessAndResistance(1.1F).harvestTool(ToolType.AXE)
             String[] taintedlogs = {
-            		
+                    "taintedoaklog",
+                    "strippedtaintedoaklog",
+                    "tainteddairlog",
+                    "strippedtainteddairlog"
             };
 
             // Created normally
@@ -132,7 +128,8 @@ public class RegistryHandler
                 new taintedcoalore(),
                 new tainteddiamondore(),
                 new taintgoo(),
-                new TaintScrubber()
+                new TaintScrubber(),
+                new obsidiantotemtop()
             };
 
             for (String clsname : saplings) {
@@ -265,7 +262,8 @@ public class RegistryHandler
                 ModBlocks.TAINTEDLAPISORE,
                 ModBlocks.TAINTEDREDSTONEORE,
                 ModBlocks.TAINTGOO,
-                ModBlocks.TAINTSCRUBBER
+                ModBlocks.TAINTSCRUBBER,
+                ModBlocks.OBSIDIANTOTEMTOP
             };
 
             for (Block block : modBlocks) {
