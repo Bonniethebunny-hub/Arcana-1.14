@@ -1,7 +1,7 @@
 package net.kineticdevelopment.arcana.client.renders;
 
 
-import net.kineticdevelopment.arcana.EventSubscriber;
+import net.kineticdevelopment.arcana.RegistryHandler;
 import net.kineticdevelopment.arcana.client.models.TaintedPigModel;
 import net.kineticdevelopment.arcana.common.entities.TaintedPig;
 import net.minecraft.client.renderer.entity.EntityRenderer;
@@ -23,7 +23,7 @@ public class TaintedPigRender extends LivingRenderer<TaintedPig, TaintedPigModel
     @Override
     protected ResourceLocation getEntityTexture(TaintedPig entity)
     {
-        return EventSubscriber.location("textures/entity/tainted_pig.png");
+        return RegistryHandler.location("textures/entity/tainted_pig.png");
     }
 
     public static class RenderFactory implements IRenderFactory<TaintedPig>

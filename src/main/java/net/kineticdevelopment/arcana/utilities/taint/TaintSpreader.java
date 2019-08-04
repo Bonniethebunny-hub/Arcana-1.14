@@ -65,8 +65,7 @@ public class TaintSpreader {
      */
     static Block[] TaintGooProspects = {
         Blocks.JUNGLE_LEAVES,
-        Blocks.DARK_OAK_LEAVES,
-        Blocks.WATER
+        Blocks.DARK_OAK_LEAVES
     };
 
 

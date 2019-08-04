@@ -1,7 +1,7 @@
 package net.kineticdevelopment.arcana.client.renders;
 
 
-import net.kineticdevelopment.arcana.EventSubscriber;
+import net.kineticdevelopment.arcana.RegistryHandler;
 import net.kineticdevelopment.arcana.client.models.WizardVillagerModel;
 import net.kineticdevelopment.arcana.common.entities.WizardVillager;
 import net.minecraft.client.renderer.entity.EntityRenderer;
@@ -24,7 +24,7 @@ public class WizardVillagerRender extends LivingRenderer<WizardVillager, WizardV
     @Override
     protected ResourceLocation getEntityTexture(WizardVillager entity)
     {
-        return EventSubscriber.location("textures/entity/villager_wizard.png");
+        return RegistryHandler.location("textures/entity/villager_wizard.png");
     }
 
     public static class RenderFactory implements IRenderFactory<WizardVillager>

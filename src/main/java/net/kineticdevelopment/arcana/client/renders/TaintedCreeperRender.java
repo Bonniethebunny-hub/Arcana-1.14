@@ -1,7 +1,7 @@
 package net.kineticdevelopment.arcana.client.renders;
 
 
-import net.kineticdevelopment.arcana.EventSubscriber;
+import net.kineticdevelopment.arcana.RegistryHandler;
 import net.kineticdevelopment.arcana.client.models.TaintedCreeperModel;
 import net.kineticdevelopment.arcana.common.entities.TaintedCreeper;
 import net.minecraft.client.renderer.entity.EntityRenderer;
@@ -23,7 +23,7 @@ public class TaintedCreeperRender extends LivingRenderer<TaintedCreeper, Tainted
     @Override
     protected ResourceLocation getEntityTexture(TaintedCreeper entity)
     {
-        return EventSubscriber.location("textures/entity/tainted_creeper.png");
+        return RegistryHandler.location("textures/entity/tainted_creeper.png");
     }
 
     public static class RenderFactory implements IRenderFactory<TaintedCreeper>

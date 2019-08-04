@@ -43,7 +43,7 @@ import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 import java.lang.reflect.InvocationTargetException;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.FORGE)
-public class EventSubscriber
+public class RegistryHandler
 {
     //On Player Join Event Which Sends A Message To the Player In the Chat
     @SubscribeEvent

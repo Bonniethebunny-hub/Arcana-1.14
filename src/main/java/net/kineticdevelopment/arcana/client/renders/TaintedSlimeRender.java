@@ -1,7 +1,7 @@
 package net.kineticdevelopment.arcana.client.renders;
 
 
-import net.kineticdevelopment.arcana.EventSubscriber;
+import net.kineticdevelopment.arcana.RegistryHandler;
 import net.kineticdevelopment.arcana.client.models.TaintedSlimeModel;
 import net.kineticdevelopment.arcana.common.entities.TaintedSlime;
 import net.minecraft.client.renderer.entity.EntityRenderer;
@@ -25,7 +25,7 @@ public class TaintedSlimeRender extends LivingRenderer<TaintedSlime, TaintedSlim
     @Override
     protected ResourceLocation getEntityTexture(TaintedSlime entity)
     {
-        return EventSubscriber.location("textures/entity/tainted_slime.png");
+        return RegistryHandler.location("textures/entity/tainted_slime.png");
     }
 
     public static class RenderFactory implements IRenderFactory<TaintedSlime>

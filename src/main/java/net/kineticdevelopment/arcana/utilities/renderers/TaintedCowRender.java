@@ -1,6 +1,6 @@
 package net.kineticdevelopment.arcana.utilities.renderers;
 
-import net.kineticdevelopment.arcana.EventSubscriber;
+import net.kineticdevelopment.arcana.RegistryHandler;
 import net.kineticdevelopment.arcana.common.entities.TaintedCow;
 import net.kineticdevelopment.arcana.utilities.renderers.models.TaintedCowModel;
 import net.minecraft.client.renderer.entity.EntityRenderer;
@@ -19,7 +19,7 @@ public class TaintedCowRender extends LivingRenderer<TaintedCow, TaintedCowModel
 
     @Override
     protected ResourceLocation getEntityTexture(TaintedCow entity) {
-        return EventSubscriber.location("textures/entity/tainted_cow.png");
+        return RegistryHandler.location("textures/entity/tainted_cow.png");
     }
 
     public static class RenderFactory implements IRenderFactory<TaintedCow>

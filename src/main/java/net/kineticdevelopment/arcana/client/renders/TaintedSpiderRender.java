@@ -1,7 +1,7 @@
 package net.kineticdevelopment.arcana.client.renders;
 
 
-import net.kineticdevelopment.arcana.EventSubscriber;
+import net.kineticdevelopment.arcana.RegistryHandler;
 import net.kineticdevelopment.arcana.client.models.TaintedSpiderModel;
 import net.kineticdevelopment.arcana.common.entities.TaintedSpider;
 import net.minecraft.client.renderer.entity.EntityRenderer;
@@ -34,7 +34,7 @@ public class TaintedSpiderRender extends LivingRenderer<TaintedSpider, TaintedSp
     @Override
     protected ResourceLocation getEntityTexture(TaintedSpider entity)
     {
-        return EventSubscriber.location("textures/entity/tainted_spider.png");
+        return RegistryHandler.location("textures/entity/tainted_spider.png");
     }
 
     public static class RenderFactory implements IRenderFactory<TaintedSpider>

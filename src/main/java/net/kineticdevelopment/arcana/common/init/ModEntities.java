@@ -1,7 +1,7 @@
 package net.kineticdevelopment.arcana.common.init;
 
 
-import net.kineticdevelopment.arcana.EventSubscriber;
+import net.kineticdevelopment.arcana.RegistryHandler;
 import net.kineticdevelopment.arcana.common.creativetab.ModTabGroups;
 import net.kineticdevelopment.arcana.common.entities.*;
 import net.kineticdevelopment.arcana.utilities.Constants;
@@ -15,16 +15,16 @@ import net.minecraft.world.biome.Biomes;
 import net.minecraftforge.event.RegistryEvent;
 
 public class ModEntities {
-    public static EntityType<?> ARCANA_TAINTED_COW = EntityType.Builder.create(TaintedCow::new, EntityClassification.CREATURE).build(Constants.MODID + ":tainted_cow").setRegistryName(EventSubscriber.location("tainted_cow"));
-    public static EntityType<?> ARCANA_TAINTED_ZOMBIE = EntityType.Builder.create(TaintedZombie::new, EntityClassification.MONSTER).build(Constants.MODID + ":tainted_zombie").setRegistryName(EventSubscriber.location("tainted_zombie"));
-    public static EntityType<?> ARCANA_TAINTED_PIG = EntityType.Builder.create(TaintedPig::new, EntityClassification.CREATURE).build(Constants.MODID + ":tainted_pig").setRegistryName(EventSubscriber.location("tainted_pig"));
-    public static EntityType<?> ARCANA_TAINTED_CHICKEN = EntityType.Builder.create(TaintedChicken::new, EntityClassification.CREATURE).build(Constants.MODID + ":tainted_chicken").setRegistryName(EventSubscriber.location("tainted_chicken"));
-    public static EntityType<?> ARCANA_TAINTED_CREEPER = EntityType.Builder.create(TaintedCreeper::new, EntityClassification.MONSTER).build(Constants.MODID + ":tainted_creeper").setRegistryName(EventSubscriber.location("tainted_creeper"));
-    public static EntityType<?> ARCANA_TAINTED_SPIDER = EntityType.Builder.create(TaintedSpider::new, EntityClassification.MONSTER).build(Constants.MODID + ":tainted_spider").setRegistryName(EventSubscriber.location("tainted_spider"));
-    public static EntityType<?> ARCANA_TAINTED_SLIME = EntityType.Builder.create(TaintedSlime::new, EntityClassification.MONSTER).build(Constants.MODID + ":tainted_slime").setRegistryName(EventSubscriber.location("tainted_slime"));
-    public static EntityType<?> KOALA = EntityType.Builder.create(Koala::new, EntityClassification.MISC).build(Constants.MODID + ":koala").setRegistryName(EventSubscriber.location("koala"));
+    public static EntityType<?> ARCANA_TAINTED_COW = EntityType.Builder.create(TaintedCow::new, EntityClassification.CREATURE).build(Constants.MODID + ":tainted_cow").setRegistryName(RegistryHandler.location("tainted_cow"));
+    public static EntityType<?> ARCANA_TAINTED_ZOMBIE = EntityType.Builder.create(TaintedZombie::new, EntityClassification.MONSTER).build(Constants.MODID + ":tainted_zombie").setRegistryName(RegistryHandler.location("tainted_zombie"));
+    public static EntityType<?> ARCANA_TAINTED_PIG = EntityType.Builder.create(TaintedPig::new, EntityClassification.CREATURE).build(Constants.MODID + ":tainted_pig").setRegistryName(RegistryHandler.location("tainted_pig"));
+    public static EntityType<?> ARCANA_TAINTED_CHICKEN = EntityType.Builder.create(TaintedChicken::new, EntityClassification.CREATURE).build(Constants.MODID + ":tainted_chicken").setRegistryName(RegistryHandler.location("tainted_chicken"));
+    public static EntityType<?> ARCANA_TAINTED_CREEPER = EntityType.Builder.create(TaintedCreeper::new, EntityClassification.MONSTER).build(Constants.MODID + ":tainted_creeper").setRegistryName(RegistryHandler.location("tainted_creeper"));
+    public static EntityType<?> ARCANA_TAINTED_SPIDER = EntityType.Builder.create(TaintedSpider::new, EntityClassification.MONSTER).build(Constants.MODID + ":tainted_spider").setRegistryName(RegistryHandler.location("tainted_spider"));
+    public static EntityType<?> ARCANA_TAINTED_SLIME = EntityType.Builder.create(TaintedSlime::new, EntityClassification.MONSTER).build(Constants.MODID + ":tainted_slime").setRegistryName(RegistryHandler.location("tainted_slime"));
+    public static EntityType<?> KOALA = EntityType.Builder.create(Koala::new, EntityClassification.MISC).build(Constants.MODID + ":koala").setRegistryName(RegistryHandler.location("koala"));
 
-    public static EntityType<?> ARCANA_WIZARD_VILLAGER = EntityType.Builder.create(WizardVillager::new, EntityClassification.MISC).build(Constants.MODID + ":wizard_villager").setRegistryName(EventSubscriber.location("wizard_villager"));
+    public static EntityType<?> ARCANA_WIZARD_VILLAGER = EntityType.Builder.create(WizardVillager::new, EntityClassification.MISC).build(Constants.MODID + ":wizard_villager").setRegistryName(RegistryHandler.location("wizard_villager"));
 
     public static void registerEntitySpawnEggs(final RegistryEvent.Register<Item> event) {
         event.getRegistry().registerAll(
@@ -45,7 +45,7 @@ public class ModEntities {
 
     public static Item registerEntitySpawnEgg(EntityType<?> type, int color1, int color2, String name) {
         SpawnEggItem item = new SpawnEggItem(type, color1, color2, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP));
-        item.setRegistryName(EventSubscriber.location(name));
+        item.setRegistryName(RegistryHandler.location(name));
         return item;
     }
 
