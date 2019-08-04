@@ -332,7 +332,8 @@ public class EventSubscriber
                     ModEntities.ARCANA_TAINTED_CREEPER,
                     ModEntities.ARCANA_TAINTED_SPIDER,
                     ModEntities.ARCANA_TAINTED_SLIME,
-                    ModEntities.ARCANA_WIZARD_VILLAGER
+                    ModEntities.ARCANA_WIZARD_VILLAGER,
+                    ModEntities.KOALA
             );
 
             ModEntities.registerEntityWorldSpawns();
