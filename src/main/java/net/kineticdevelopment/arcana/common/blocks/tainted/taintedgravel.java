@@ -27,8 +27,8 @@ import net.minecraftforge.common.ToolType;
 
 import java.util.Random;
 
-public class taintedsoil extends Block {
-    public taintedsoil() {
+public class taintedgravel extends Block {
+    public taintedgravel() {
         super(Block.Properties.create(Material.SAND)
             .sound(SoundType.GROUND)
             .hardnessAndResistance(3.0f)
@@ -36,7 +36,7 @@ public class taintedsoil extends Block {
             .harvestTool(ToolType.SHOVEL)
             .tickRandomly()
         );
-        setRegistryName("taintedsoil");
+        setRegistryName("taintedgravel");
     }
 
     public static void spawnAsEntity(World worldIn, BlockPos pos, ItemStack stack) {
@@ -52,7 +52,7 @@ public class taintedsoil extends Block {
     
     @Override
     public boolean canSustainPlant(BlockState state, IBlockReader world, BlockPos pos, Direction facing, net.minecraftforge.common.IPlantable plantable) {
-       return true;
+       return false;
     }
 
     @Override

@@ -10,8 +10,10 @@ import net.minecraft.entity.item.FallingBlockEntity;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.pathfinding.PathType;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -29,7 +31,6 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import java.util.Random;
 
 public class taintgoo extends Block {
-	private static final VoxelShape SHAPE = Block.makeCuboidShape(0D, 0D, 0D, 11.0D, 11.0D, 11.0D);
 	
     public taintgoo() {
         super(Block.Properties.create(Material.MISCELLANEOUS)
@@ -61,7 +62,7 @@ public class taintgoo extends Block {
     
     @Override
     public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
-    	return SHAPE;
+       return VoxelShapes.fullCube();
     }
 
     public BlockRenderLayer getRenderLayer() {

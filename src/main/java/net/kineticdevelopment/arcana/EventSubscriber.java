@@ -15,6 +15,7 @@ import net.kineticdevelopment.arcana.common.items.*;
 import net.kineticdevelopment.arcana.common.items.elements.*;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.fluid.Fluid;
 import net.kineticdevelopment.arcana.common.items.lootbags.CommonLootbag;
 
 import net.kineticdevelopment.arcana.utilities.Constants;

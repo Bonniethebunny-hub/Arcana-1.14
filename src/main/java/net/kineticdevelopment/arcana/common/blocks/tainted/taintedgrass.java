@@ -15,6 +15,7 @@ import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.EffectInstance;
+import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
@@ -27,14 +28,15 @@ import net.minecraftforge.common.ToolType;
 
 import java.util.Random;
 
-public class taintedsoil extends Block {
-    public taintedsoil() {
+public class taintedgrass extends Block {
+    public taintedgrass() {
         super(Block.Properties.create(Material.SAND)
             .sound(SoundType.GROUND)
             .hardnessAndResistance(3.0f)
             .harvestLevel(0)
             .harvestTool(ToolType.SHOVEL)
             .tickRandomly()
+            .doesNotBlockMovement()
         );
         setRegistryName("taintedsoil");
     }
@@ -52,7 +54,7 @@ public class taintedsoil extends Block {
     
     @Override
     public boolean canSustainPlant(BlockState state, IBlockReader world, BlockPos pos, Direction facing, net.minecraftforge.common.IPlantable plantable) {
-       return true;
+       return false;
     }
 
     @Override
@@ -73,7 +75,11 @@ public class taintedsoil extends Block {
             entity.addPotionEffect(new EffectInstance(ModPotions.TAINTED, 60, 1, false, true));
         }
     }
-
+    
+    public BlockRenderLayer getRenderLayer() {
+        return BlockRenderLayer.CUTOUT_MIPPED;
+    }
+    
     @Override
     public void onBlockHarvested(World worldIn, BlockPos pos, BlockState state, PlayerEntity player) {
         worldIn.playEvent(player, 2001, pos, getStateId(state));
