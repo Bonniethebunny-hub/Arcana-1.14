@@ -218,10 +218,7 @@ public class RegistryHandler
         //biomes
         @SubscribeEvent
         public static void onBiomeRegistry(final RegistryEvent.Register<Biome> event) {
-
-            Biome TaintBiome = new TaintBiome();
-            TaintBiome.setRegistryName("taintbiome");
-            event.getRegistry().register(new TaintBiome());
+            event.getRegistry().register(new TaintBiome().setRegistryName("taintbiome"));
             System.out.println("Biomes are working, fat whoop!");
 
 
