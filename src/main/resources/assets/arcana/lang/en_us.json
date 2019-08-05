@@ -75,6 +75,10 @@
   "death.attack.Taint": "%1$s was consumed by Taint",
   "block.arcana.taintscrubber": "Taint Scrubber",
   "block.arcana.obsidiantotemtop": "Obsidian Totem Top",
+  "block.arcana.taintedstonebrick": "Tainted Stone Bricks",
+  "block.arcana.taintedsand": "Tainted Sand",
+  "block.arcana.taintedgravel": "Tainted Gravel",
+  "block.arcana.taintedobsidian": "Tainted Obsidian",
   
   "_comment": "MOD ITEMS",
   "item.arcana.thaumonomicon": "§5Thaumonomicon",
