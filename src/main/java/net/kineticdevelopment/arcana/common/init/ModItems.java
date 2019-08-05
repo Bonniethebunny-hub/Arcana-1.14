@@ -11,6 +11,7 @@ import net.minecraftforge.registries.ObjectHolder;
 
 public class ModItems {
 
+    //spawn eggs
     @ObjectHolder("arcana:wizard_villager_egg")
     public static Item arcana_wizard_villager_egg;
 
@@ -35,6 +36,8 @@ public class ModItems {
     @ObjectHolder("arcana:tainted_slime_egg")
     public static Item arcana_tainted_slime_egg;
 
+
+    //normal items
     @ObjectHolder("arcana:thaumonomicon")
     public static thaumonomicon THAUMONOMICON;
 
@@ -44,9 +47,12 @@ public class ModItems {
     @ObjectHolder("arcana:quicksilver")
     public static quicksilver QUICKSILVER;
 
+    //wands
     @ObjectHolder("arcana:basicwand")
     public static basicwand BASICWAND;
 
+
+    //aspects
     @ObjectHolder("arcana:air")
     public static air AIR;
 
