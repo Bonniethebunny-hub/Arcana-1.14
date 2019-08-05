@@ -13,6 +13,7 @@ import net.kineticdevelopment.arcana.common.init.ModBlocks;
 import net.kineticdevelopment.arcana.common.init.ModEntities;
 import net.kineticdevelopment.arcana.common.items.*;
 import net.kineticdevelopment.arcana.common.items.elements.*;
+import net.kineticdevelopment.arcana.common.biomes.TaintBiome;
 
 import net.minecraft.entity.EntityType;
 import net.kineticdevelopment.arcana.common.items.lootbags.CommonLootbag;
@@ -28,16 +29,18 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.potion.Effect;
 import net.minecraft.potion.EffectType;
+import net.minecraft.world.biome.Biome;
 
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.common.extensions.IForgeContainerType;
-import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
+import net.minecraftforge.registries.ObjectHolder;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -52,6 +55,8 @@ public class RegistryHandler
                 TextFormatting.AQUA + event.getPlayer().getDisplayName().getString() + TextFormatting.RED + ", we hope you enjoy the Arcana Mod!"));
         }
     }
+
+
 
     @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
     public static class RegistryEvents {
@@ -208,6 +213,18 @@ public class RegistryHandler
             for (Block block : otherBlocks) {
                 event.getRegistry().register(block);
             }
+
+        }
+        //biomes
+        @SubscribeEvent
+        public static void onBiomeRegistry(final RegistryEvent.Register<Biome> event) {
+
+            Biome TaintBiome = new TaintBiome();
+            TaintBiome.setRegistryName("taintbiome");
+            event.getRegistry().register(new TaintBiome());
+            System.out.println("Biomes are working, fat whoop!");
+
+
 
         }
 
