@@ -86,6 +86,7 @@ public class ModBlocks {
     public static strippeddairlog STRIPPEDDAIRLOG;
 
     //tainted blocks
+
     @ObjectHolder("arcana:taintedrock")
     public static taintedrock TAINTEDROCK;
 
@@ -100,6 +101,18 @@ public class ModBlocks {
 
     @ObjectHolder("arcana:taintgoo")
     public static taintgoo TAINTGOO;
+
+    @ObjectHolder("arcana:taintedstonebrick")
+    public static taintedstonebrick TAINTEDSTONEBRICK;
+
+    @ObjectHolder("arcana:taintedsand")
+    public static taintedsand TAINTEDSAND;
+
+    @ObjectHolder("arcana:taintedgravel")
+    public static taintedgravel TAINTEDGRAVEL;
+
+    @ObjectHolder("arcana:taintedobsidian")
+    public static taintedobsidian TAINTEDOBSIDIAN;
 
 
     //tainted tree blocks
@@ -162,7 +175,6 @@ public class ModBlocks {
 
     @ObjectHolder("arcana:taintedlapisore")
     public static taintedlapisore TAINTEDLAPISORE;
-    
 
 }
 

@@ -129,7 +129,11 @@ public class RegistryHandler
                 new tainteddiamondore(),
                 new taintgoo(),
                 new TaintScrubber(),
-                new obsidiantotemtop()
+                new obsidiantotemtop(),
+                new taintedstonebrick(),
+                new taintedsand(),
+                new taintedgravel(),
+                new taintedobsidian()
             };
 
             for (String clsname : saplings) {
@@ -263,7 +267,11 @@ public class RegistryHandler
                 ModBlocks.TAINTEDREDSTONEORE,
                 ModBlocks.TAINTGOO,
                 ModBlocks.TAINTSCRUBBER,
-                ModBlocks.OBSIDIANTOTEMTOP
+                ModBlocks.OBSIDIANTOTEMTOP,
+                ModBlocks.TAINTEDSTONEBRICK,
+                ModBlocks.TAINTEDSAND,
+                ModBlocks.TAINTEDGRAVEL,
+                ModBlocks.TAINTEDOBSIDIAN
             };
 
             for (Block block : modBlocks) {

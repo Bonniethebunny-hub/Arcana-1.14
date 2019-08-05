@@ -4,9 +4,6 @@ import net.kineticdevelopment.arcana.common.init.ModPotions;
 import net.kineticdevelopment.arcana.utilities.taint.TaintSpreader;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.BushBlock;
-import net.minecraft.block.GlazedTerracottaBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
@@ -15,30 +12,23 @@ import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.EffectInstance;
-import net.minecraft.util.BlockRenderLayer;
-import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.shapes.ISelectionContext;
-import net.minecraft.util.math.shapes.VoxelShape;
-import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.GameRules;
-import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
 
 import java.util.Random;
 
-public class taintedflower extends Block {
-    public taintedflower() {
-        super(Block.Properties.create(Material.SAND)
-            .sound(SoundType.GROUND)
+public class taintedobsidian extends Block {
+    public taintedobsidian() {
+        super(Block.Properties.create(Material.ROCK)
+            .sound(SoundType.STONE)
             .hardnessAndResistance(3.0f)
-            .harvestLevel(0)
-            .harvestTool(ToolType.SHOVEL)
+            .harvestLevel(1)
+            .harvestTool(ToolType.PICKAXE)
             .tickRandomly()
-            .doesNotBlockMovement()
         );
-        setRegistryName("taintedsoil");
+        setRegistryName("taintedobsidian");
     }
 
     public static void spawnAsEntity(World worldIn, BlockPos pos, ItemStack stack) {
@@ -50,11 +40,6 @@ public class taintedflower extends Block {
             itementity.setDefaultPickupDelay();
             worldIn.addEntity(itementity);
         }
-    }
-    
-    @Override
-    public boolean canSustainPlant(BlockState state, IBlockReader world, BlockPos pos, Direction facing, net.minecraftforge.common.IPlantable plantable) {
-       return false;
     }
 
     @Override
@@ -74,10 +59,6 @@ public class taintedflower extends Block {
 
             entity.addPotionEffect(new EffectInstance(ModPotions.TAINTED, 60, 1, false, true));
         }
-    }
-    
-    public BlockRenderLayer getRenderLayer() {
-        return BlockRenderLayer.CUTOUT_MIPPED;
     }
 
     @Override
