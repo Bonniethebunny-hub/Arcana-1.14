@@ -13,17 +13,15 @@ import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
 
-import java.util.Random;
-
-public class SeeNoEvil extends Block {
-    public SeeNoEvil() {
+public class hearnoevil extends Block {
+    public hearnoevil() {
         super(Properties.create(Material.IRON)
                 .sound(SoundType.WOOD)
                 .hardnessAndResistance(3.0f)
                 .harvestLevel(1)
                 .harvestTool(ToolType.PICKAXE)
         );
-        setRegistryName("seenoevil");
+        setRegistryName("hearnoevil");
     }
 
     public static void spawnAsEntity(World worldIn, BlockPos pos, ItemStack stack) {

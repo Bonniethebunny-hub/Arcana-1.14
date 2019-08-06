@@ -15,7 +15,6 @@ import net.kineticdevelopment.arcana.common.items.*;
 import net.kineticdevelopment.arcana.common.items.elements.*;
 import net.kineticdevelopment.arcana.common.biomes.TaintBiome;
 
-import net.minecraft.block.SlabBlock;
 import net.minecraft.entity.EntityType;
 import net.kineticdevelopment.arcana.common.items.lootbags.CommonLootbag;
 
@@ -42,7 +41,6 @@ import net.minecraftforge.common.ToolType;
 import net.minecraftforge.common.extensions.IForgeContainerType;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
-import net.minecraftforge.registries.ObjectHolder;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -141,8 +139,10 @@ public class RegistryHandler
                     new taintedsand(),
                     new taintedgravel(),
                     new taintedobsidian(),
-                    new SeeNoEvil(),
-                    new tainted_planks_slab()
+                    new seenoevil(),
+                    new tainted_planks_slab(),
+                    new hearnoevil(),
+                    new speaknoevil()
             };
 
             for (String clsname : saplings) {
@@ -292,6 +292,8 @@ public class RegistryHandler
                     ModBlocks.TAINTEDGRAVEL,
                     ModBlocks.TAINTEDOBSIDIAN,
                     ModBlocks.SEENOEVIL,
+                    ModBlocks.SPEAKNOEVIL,
+                    ModBlocks.HEARNOEVIL,
                     ModBlocks.TAINTEDPLANKSSLAB
 
             };

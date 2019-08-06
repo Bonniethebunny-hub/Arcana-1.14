@@ -51,7 +51,13 @@ public class ModBlocks {
     public static obsidiantotemtop OBSIDIANTOTEMTOP;
 
     @ObjectHolder("arcana:seenoevil")
-    public static SeeNoEvil SEENOEVIL;
+    public static seenoevil SEENOEVIL;
+
+    @ObjectHolder("arcana:speaknoevil")
+    public static speaknoevil SPEAKNOEVIL;
+
+    @ObjectHolder("arcana:hearnoevil")
+    public static hearnoevil HEARNOEVIL;
 
 
     //tree blocks
