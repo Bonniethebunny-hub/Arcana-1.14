@@ -1,16 +1,7 @@
 {
   "variants": {
-    "axis=y": {
-      "model": "arcana:block/strippedtaintedoaklog"
-    },
-    "axis=z": {
-      "model": "arcana:block/strippedtaintedoaklog",
-      "x": 90
-    },
-    "axis=x": {
-      "model": "arcana:block/strippedtaintedoaklog",
-      "x": 90,
-      "y": 90
-    }
+    "axis=y":  { "model": "arcana:block/strippedtaintedoaklog" },
+    "axis=z":   { "model": "arcana:block/strippedtaintedoaklog", "x": 90 },
+    "axis=x":   { "model": "arcana:block/strippedtaintedoaklog", "x": 90, "y": 90 }
   }
 }

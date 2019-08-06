@@ -1,9 +1,7 @@
 {
   "variants": {
     "": [
-      {
-        "model": "arcana:block/silverwoodleaves"
-      }
+      { "model": "arcana:block/silverwoodleaves" }
     ]
   }
 }

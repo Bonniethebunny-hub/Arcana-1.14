@@ -7,7 +7,7 @@ public class journey extends Item {
 
     public journey() {
         super(new Properties().group(ModTabGroups.MOD_ITEM_GROUP)
-            .maxStackSize(64));
+        .maxStackSize(64));
 
         setRegistryName("journey");
     }

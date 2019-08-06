@@ -7,7 +7,7 @@ public class venom extends Item {
 
     public venom() {
         super(new Properties().group(ModTabGroups.MOD_ITEM_GROUP)
-            .maxStackSize(64));
+        .maxStackSize(64));
 
         setRegistryName("venom");
     }

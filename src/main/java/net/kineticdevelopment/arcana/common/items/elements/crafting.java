@@ -7,7 +7,7 @@ public class crafting extends Item {
 
     public crafting() {
         super(new Properties().group(ModTabGroups.MOD_ITEM_GROUP)
-            .maxStackSize(64));
+        .maxStackSize(64));
 
         setRegistryName("crafting");
     }

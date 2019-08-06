@@ -7,7 +7,7 @@ public class mining extends Item {
 
     public mining() {
         super(new Properties().group(ModTabGroups.MOD_ITEM_GROUP)
-            .maxStackSize(64));
+        .maxStackSize(64));
 
         setRegistryName("mining");
     }

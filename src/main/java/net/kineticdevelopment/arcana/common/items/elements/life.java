@@ -7,7 +7,7 @@ public class life extends Item {
 
     public life() {
         super(new Properties().group(ModTabGroups.MOD_ITEM_GROUP)
-            .maxStackSize(64));
+        .maxStackSize(64));
 
         setRegistryName("life");
     }

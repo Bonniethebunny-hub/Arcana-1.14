@@ -1,9 +1,7 @@
 {
   "variants": {
     "": [
-      {
-        "model": "arcana:block/arcaneworktable"
-      }
+      { "model": "arcana:block/arcaneworktable" }
     ]
   }
 }

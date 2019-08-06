@@ -1,16 +1,7 @@
 {
   "variants": {
-    "axis=y": {
-      "model": "arcana:block/tainteddairlog"
-    },
-    "axis=z": {
-      "model": "arcana:block/tainteddairlog",
-      "x": 90
-    },
-    "axis=x": {
-      "model": "arcana:block/tainteddairlog",
-      "x": 90,
-      "y": 90
-    }
+    "axis=y":  { "model": "arcana:block/tainteddairlog" },
+    "axis=z":   { "model": "arcana:block/tainteddairlog", "x": 90 },
+    "axis=x":   { "model": "arcana:block/tainteddairlog", "x": 90, "y": 90 }
   }
 }

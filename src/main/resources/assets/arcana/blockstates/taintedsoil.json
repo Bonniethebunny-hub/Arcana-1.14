@@ -1,9 +1,7 @@
 {
   "variants": {
     "": [
-      {
-        "model": "arcana:block/taintedsoil"
-      }
+      { "model": "arcana:block/taintedsoil" }
     ]
   }
 }

@@ -11,7 +11,7 @@ import net.minecraft.util.text.ITextComponent;
 public class ThaumonomiconScreen extends ContainerScreen<ThaumonomiconContainer> {
     private static final ResourceLocation THAUMONOMICON_GUI_TEXTURE = new ResourceLocation(Constants.MODID, "textures/gui/container/gui_researchbook.png");
     @SuppressWarnings("unused")
-    private static final ResourceLocation THAUMONOMICON_RESEARCH_ONE_TAB = new ResourceLocation(Constants.MODID, "textures/gui/container/research_one_tab.png");
+	private static final ResourceLocation THAUMONOMICON_RESEARCH_ONE_TAB = new ResourceLocation(Constants.MODID, "textures/gui/container/research_one_tab.png");
 
     public ThaumonomiconScreen(ThaumonomiconContainer screenContainer, PlayerInventory inv, ITextComponent titleIn) {
         super(screenContainer, inv, titleIn);

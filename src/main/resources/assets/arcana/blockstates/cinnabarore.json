@@ -1,9 +1,7 @@
 {
   "variants": {
     "": [
-      {
-        "model": "arcana:block/cinnabarore"
-      }
+      { "model": "arcana:block/cinnabarore" }
     ]
   }
 }

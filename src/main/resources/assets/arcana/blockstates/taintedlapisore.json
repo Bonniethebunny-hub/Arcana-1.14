@@ -1,9 +1,13 @@
 {
   "variants": {
     "": [
+<<<<<<< HEAD
       {
         "model": "arcana:block/taintedlapisore"
       }
+=======
+      { "model": "arcana:block/taintedlapisrore" }
+>>>>>>> parent of 316aa72... Reformat code to be consistent, remove debugging taint conversion
     ]
   }
 }

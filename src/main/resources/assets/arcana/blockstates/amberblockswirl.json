@@ -1,9 +1,7 @@
 {
   "variants": {
     "": [
-      {
-        "model": "arcana:block/amberblockswirl"
-      }
+      { "model": "arcana:block/amberblockswirl" }
     ]
   }
 }

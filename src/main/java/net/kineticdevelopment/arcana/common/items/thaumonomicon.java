@@ -22,7 +22,7 @@ import java.util.List;
 public class thaumonomicon extends Item {
     public thaumonomicon() {
         super(new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)
-            .maxStackSize(1));
+                .maxStackSize(1));
 
         setRegistryName("thaumonomicon");
     }
@@ -30,7 +30,7 @@ public class thaumonomicon extends Item {
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
         if (!worldIn.isRemote) {
-            NetworkHooks.openGui((ServerPlayerEntity) playerIn, new GuiThaumonomicon());
+            NetworkHooks.openGui((ServerPlayerEntity) playerIn, (INamedContainerProvider) new GuiThaumonomicon());
         }
 
         return super.onItemRightClick(worldIn, playerIn, handIn);

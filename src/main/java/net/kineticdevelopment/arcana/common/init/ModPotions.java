@@ -5,7 +5,7 @@ import net.minecraftforge.registries.ObjectHolder;
 
 @ObjectHolder("arcana")
 public class ModPotions {
-
-    @ObjectHolder("arcana:tainted")
+	
+	@ObjectHolder("arcana:tainted")
     public static Tainted TAINTED;
 }

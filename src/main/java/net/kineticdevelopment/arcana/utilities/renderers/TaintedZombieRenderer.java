@@ -10,13 +10,13 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
 public class TaintedZombieRenderer extends MobRenderer<TaintedZombie, TaintedZombieModel<TaintedZombie>> {
-    private static final ResourceLocation MOB_TEXTURES = new ResourceLocation("arcana:textures/entity/taintedzombie.png");
+   private static final ResourceLocation MOB_TEXTURES = new ResourceLocation("arcana:textures/entity/taintedzombie.png");
 
-    public TaintedZombieRenderer(EntityRendererManager renderManagerIn) {
-        super(renderManagerIn, new TaintedZombieModel<>(), 0.5F);
-    }
+   public TaintedZombieRenderer(EntityRendererManager renderManagerIn) {
+      super(renderManagerIn, new TaintedZombieModel<>(), 0.5F);
+   }
 
-    protected ResourceLocation getEntityTexture(TaintedZombie entity) {
-        return MOB_TEXTURES;
-    }
+   protected ResourceLocation getEntityTexture(TaintedZombie entity) {
+      return MOB_TEXTURES;
+   }
 }

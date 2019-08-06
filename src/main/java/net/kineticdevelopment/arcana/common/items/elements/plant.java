@@ -7,7 +7,7 @@ public class plant extends Item {
 
     public plant() {
         super(new Properties().group(ModTabGroups.MOD_ITEM_GROUP)
-            .maxStackSize(64));
+        .maxStackSize(64));
 
         setRegistryName("plant");
     }

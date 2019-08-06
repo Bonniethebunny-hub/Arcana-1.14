@@ -7,7 +7,7 @@ public class human extends Item {
 
     public human() {
         super(new Properties().group(ModTabGroups.MOD_ITEM_GROUP)
-            .maxStackSize(64));
+        .maxStackSize(64));
 
         setRegistryName("human");
     }

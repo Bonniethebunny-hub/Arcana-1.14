@@ -33,23 +33,12 @@ public class taintedoaksapling extends BushBlock implements IGrowable {
 
     public taintedoaksapling(Properties properties) {
         super(Properties.create(Material.BAMBOO_SAPLING)
-            .sound(SoundType.BAMBOO_SAPLING)
-            .hardnessAndResistance(3.0f)
-            .doesNotBlockMovement()
+                .sound(SoundType.BAMBOO_SAPLING)
+                .hardnessAndResistance(3.0f)
+                .doesNotBlockMovement()
         );
         this.setDefaultState(this.stateContainer.getBaseState().with(STAGE, Integer.valueOf(0)));
         setRegistryName("taintedoaksapling");
-    }
-
-    public static void spawnAsEntity(World worldIn, BlockPos pos, ItemStack stack) {
-        if (!worldIn.isRemote && !stack.isEmpty() && worldIn.getGameRules().getBoolean(GameRules.DO_TILE_DROPS) && !worldIn.restoringBlockSnapshots) { // do not drop items while restoring blockstates, prevents item dupe
-            double d0 = (double) (worldIn.rand.nextFloat() * 0.5F) + 0.25D;
-            double d1 = (double) (worldIn.rand.nextFloat() * 0.5F) + 0.25D;
-            double d2 = (double) (worldIn.rand.nextFloat() * 0.5F) + 0.25D;
-            ItemEntity itementity = new ItemEntity(worldIn, (double) pos.getX() + d0, (double) pos.getY() + d1, (double) pos.getZ() + d2, stack);
-            itementity.setDefaultPickupDelay();
-            worldIn.addEntity(itementity);
-        }
     }
 
     public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
@@ -57,10 +46,9 @@ public class taintedoaksapling extends BushBlock implements IGrowable {
     }
 
     @SuppressWarnings("deprecation")
-    public void tick(BlockState state, World worldIn, BlockPos pos, Random random) {
+	public void tick(BlockState state, World worldIn, BlockPos pos, Random random) {
         super.tick(state, worldIn, pos, random);
-        if (!worldIn.isAreaLoaded(pos, 1))
-            return; // Forge: prevent loading unloaded chunks when checking neighbor's light
+        if (!worldIn.isAreaLoaded(pos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
         if (worldIn.getLight(pos.up()) >= 9 && random.nextInt(7) == 0) {
             this.grow(worldIn, pos, state, random);
         }
@@ -68,19 +56,19 @@ public class taintedoaksapling extends BushBlock implements IGrowable {
     }
 
     public void grow(IWorld worldIn, BlockPos pos, BlockState state, Random rand) {
-        ServerWorld worldserver = (ServerWorld) worldIn;
-        TemplateManager templatemanager = worldserver.getStructureTemplateManager();
-        Template template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/taintedtree"));
+    	ServerWorld worldserver = (ServerWorld) worldIn;
+    	TemplateManager templatemanager = worldserver.getStructureTemplateManager();
+    	Template template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/taintedtree"));
 
-        if (template == null) {
-            Constants.LOGGER.error("Could not find structure at " + new ResourceLocation("arcana:structures/trees/taintedtree"));
-        }
-        BlockState iblockstate = worldIn.getBlockState(pos);
-        worldserver.notifyBlockUpdate(pos, iblockstate, iblockstate, 3);
-        PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)
-            .setRotation(Rotation.NONE).setIgnoreEntities(false).setChunk(null);
+    	if(template == null) {
+    		Constants.LOGGER.error("Could not find structure at "+new ResourceLocation("arcana:structures/trees/taintedtree"));
+    	}
+    	BlockState iblockstate = worldIn.getBlockState(pos);
+    	worldserver.notifyBlockUpdate(pos, iblockstate, iblockstate, 3);
+    	PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)
+    			.setRotation(Rotation.NONE).setIgnoreEntities(false).setChunk((ChunkPos) null);
 
-        template.addBlocksToWorld(worldIn, pos.add(-4, 0, -4), placementsettings);
+    	template.addBlocksToWorld(worldIn, pos.add(-4, 0, -4), placementsettings);
     }
 
     /**
@@ -91,7 +79,7 @@ public class taintedoaksapling extends BushBlock implements IGrowable {
     }
 
     public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, BlockState state) {
-        return (double) worldIn.rand.nextFloat() < 0.45D;
+        return (double)worldIn.rand.nextFloat() < 0.45D;
     }
 
     public void grow(World worldIn, Random rand, BlockPos pos, BlockState state) {
@@ -101,10 +89,21 @@ public class taintedoaksapling extends BushBlock implements IGrowable {
     protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
         builder.add(STAGE);
     }
-
+    
     @Override
     public void onBlockHarvested(World worldIn, BlockPos pos, BlockState state, PlayerEntity player) {
         worldIn.playEvent(player, 2001, pos, getStateId(state));
         spawnAsEntity(worldIn, pos, new ItemStack(this));
+    }
+    
+    public static void spawnAsEntity(World worldIn, BlockPos pos, ItemStack stack) {
+        if (!worldIn.isRemote && !stack.isEmpty() && worldIn.getGameRules().getBoolean(GameRules.DO_TILE_DROPS) && !worldIn.restoringBlockSnapshots) { // do not drop items while restoring blockstates, prevents item dupe
+           double d0 = (double)(worldIn.rand.nextFloat() * 0.5F) + 0.25D;
+           double d1 = (double)(worldIn.rand.nextFloat() * 0.5F) + 0.25D;
+           double d2 = (double)(worldIn.rand.nextFloat() * 0.5F) + 0.25D;
+           ItemEntity itementity = new ItemEntity(worldIn, (double)pos.getX() + d0, (double)pos.getY() + d1, (double)pos.getZ() + d2, stack);
+           itementity.setDefaultPickupDelay();
+           worldIn.addEntity(itementity);
+        }
     }
 }

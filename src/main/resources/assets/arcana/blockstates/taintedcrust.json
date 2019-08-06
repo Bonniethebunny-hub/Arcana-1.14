@@ -1,9 +1,7 @@
 {
   "variants": {
     "": [
-      {
-        "model": "arcana:block/taintedcrust"
-      }
+      { "model": "arcana:block/taintedcrust" }
     ]
   }
 }

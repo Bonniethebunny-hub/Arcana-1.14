@@ -2,6 +2,7 @@ package net.kineticdevelopment.arcana.client.gui;
 
 import com.mojang.blaze3d.platform.GlStateManager;
 import net.minecraft.client.Minecraft;
+import org.lwjgl.opengl.GL11;
 
 public class RenderHelper {
     public static void renderText(String text, int posX, int posY, int color) {

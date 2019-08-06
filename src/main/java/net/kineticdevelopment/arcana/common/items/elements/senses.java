@@ -7,7 +7,7 @@ public class senses extends Item {
 
     public senses() {
         super(new Properties().group(ModTabGroups.MOD_ITEM_GROUP)
-            .maxStackSize(64));
+        .maxStackSize(64));
 
         setRegistryName("senses");
     }

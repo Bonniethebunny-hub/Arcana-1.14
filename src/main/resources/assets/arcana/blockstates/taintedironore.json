@@ -1,9 +1,7 @@
 {
   "variants": {
     "": [
-      {
-        "model": "arcana:block/taintedironore"
-      }
+      { "model": "arcana:block/taintedironore" }
     ]
   }
 }

@@ -1,9 +1,7 @@
 {
   "variants": {
     "": [
-      {
-        "model": "arcana:block/greatwoodplanks"
-      }
+      { "model": "arcana:block/greatwoodplanks" }
     ]
   }
 }

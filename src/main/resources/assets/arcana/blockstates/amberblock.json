@@ -1,9 +1,7 @@
 {
   "variants": {
     "": [
-      {
-        "model": "arcana:block/amberblock"
-      }
+      { "model": "arcana:block/amberblock" }
     ]
   }
 }

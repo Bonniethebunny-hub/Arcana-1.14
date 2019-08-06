@@ -1,9 +1,7 @@
 {
   "variants": {
     "": [
-      {
-        "model": "arcana:block/dairsapling"
-      }
+      { "model": "arcana:block/dairsapling" }
     ]
   }
 }

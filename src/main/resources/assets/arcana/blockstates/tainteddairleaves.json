@@ -1,9 +1,7 @@
 {
   "variants": {
     "": [
-      {
-        "model": "arcana:block/tainteddairleaves"
-      }
+      { "model": "arcana:block/tainteddairleaves" }
     ]
   }
 }
