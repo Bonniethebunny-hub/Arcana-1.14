@@ -50,6 +50,9 @@ public class ModBlocks {
     @ObjectHolder("arcana:obsidiantotemtop")
     public static obsidiantotemtop OBSIDIANTOTEMTOP;
 
+    @ObjectHolder("arcana:seenoevil")
+    public static SeeNoEvil SEENOEVIL;
+
 
     //tree blocks
     @ObjectHolder("arcana:silverwoodplanks")
@@ -175,6 +178,9 @@ public class ModBlocks {
 
     @ObjectHolder("arcana:taintedlapisore")
     public static taintedlapisore TAINTEDLAPISORE;
+
+    @ObjectHolder("arcana:taintedplanksslab")
+    public static tainted_planks_slab TAINTEDPLANKSSLAB;
 
 }
 

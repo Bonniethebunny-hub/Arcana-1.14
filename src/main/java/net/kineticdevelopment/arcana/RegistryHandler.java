@@ -15,6 +15,7 @@ import net.kineticdevelopment.arcana.common.items.*;
 import net.kineticdevelopment.arcana.common.items.elements.*;
 import net.kineticdevelopment.arcana.common.biomes.TaintBiome;
 
+import net.minecraft.block.SlabBlock;
 import net.minecraft.entity.EntityType;
 import net.kineticdevelopment.arcana.common.items.lootbags.CommonLootbag;
 
@@ -30,6 +31,7 @@ import net.minecraft.item.Item;
 import net.minecraft.potion.Effect;
 import net.minecraft.potion.EffectType;
 import net.minecraft.world.biome.Biome;
+
 
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.event.RegistryEvent;
@@ -107,38 +109,40 @@ public class RegistryHandler
 
             // Created normally
             Block[] otherBlocks = {
-                new arcanestone(),
-                new arcaneworktable(),
-                new arcanestonebrick(),
-                new infusionstone(),
-                new amberblock(),
-                new amberbrick(),
-                new amberblockswirl(),
-                new silverwoodplanks(),
-                new greatwoodplanks(),
-                new taintedcrust(),
-                new taintedrock(),
-                new taintedsoil(),
-                new cinnabarore(),
-                new thaumiumblock(),
-                new taintedoakplanks(),
-                new tainteddairplanks(),
-                new taintedironore(),
-                new taintedgoldore(),
-                new taintedlapisore(),
-                new taintedredstoneore(),
-                new taintedemeraldore(),
-                new taintedamberore(),
-                new taintedcinnabarore(),
-                new taintedcoalore(),
-                new tainteddiamondore(),
-                new taintgoo(),
-                new TaintScrubber(),
-                new obsidiantotemtop(),
-                new taintedstonebrick(),
-                new taintedsand(),
-                new taintedgravel(),
-                new taintedobsidian()
+                    new arcanestone(),
+                    new arcaneworktable(),
+                    new arcanestonebrick(),
+                    new infusionstone(),
+                    new amberblock(),
+                    new amberbrick(),
+                    new amberblockswirl(),
+                    new silverwoodplanks(),
+                    new greatwoodplanks(),
+                    new taintedcrust(),
+                    new taintedrock(),
+                    new taintedsoil(),
+                    new cinnabarore(),
+                    new thaumiumblock(),
+                    new taintedoakplanks(),
+                    new tainteddairplanks(),
+                    new taintedironore(),
+                    new taintedgoldore(),
+                    new taintedlapisore(),
+                    new taintedredstoneore(),
+                    new taintedemeraldore(),
+                    new taintedamberore(),
+                    new taintedcinnabarore(),
+                    new taintedcoalore(),
+                    new tainteddiamondore(),
+                    new taintgoo(),
+                    new TaintScrubber(),
+                    new obsidiantotemtop(),
+                    new taintedstonebrick(),
+                    new taintedsand(),
+                    new taintedgravel(),
+                    new taintedobsidian(),
+                    new SeeNoEvil(),
+                    new tainted_planks_slab()
             };
 
             for (String clsname : saplings) {
@@ -229,6 +233,7 @@ public class RegistryHandler
 
         }
 
+
         // Register ITEMS & ModBlocks
         @SubscribeEvent
         public static void onItemsRegistry(final RegistryEvent.Register<Item> event) {
@@ -237,55 +242,58 @@ public class RegistryHandler
 
             // BLOCKS
             Block[] modBlocks = {
-                ModBlocks.ARCANESTONE,
-                ModBlocks.ARCANEWORKTABLE,
-                ModBlocks.ARCANESTONEBRICK,
-                ModBlocks.INFUSIONSTONE,
-                ModBlocks.AMBERBLOCK,
-                ModBlocks.AMBERBLOCKSWIRL,
-                ModBlocks.AMBERBRICK,
-                ModBlocks.SILVERWOODPLANKS,
-                ModBlocks.GREATWOODPLANKS,
-                ModBlocks.GREATWOODSAPLING,
-                ModBlocks.TAINTEDCRUST,
-                ModBlocks.TAINTEDROCK,
-                ModBlocks.TAINTEDSOIL,
-                ModBlocks.CINNABARORE,
-                ModBlocks.THAUMIUMBLOCK,
-                ModBlocks.GREATWOODLOG,
-                ModBlocks.GREATWOODLEAVES,
-                ModBlocks.SILVERWOODLOG,
-                ModBlocks.SILVERWOODLEAVES,
-                ModBlocks.SILVERWOODSAPLING,
-                ModBlocks.DAIRLOG,
-                ModBlocks.DAIRLEAVES,
-                ModBlocks.DAIRSAPLING,
-                ModBlocks.STRIPPEDDAIRLOG,
-                ModBlocks.TAINTEDOAKLEAVES,
-                ModBlocks.TAINTEDOAKSAPLING,
-                ModBlocks.STRIPPEDTAINTEDOAKLOG,
-                ModBlocks.TAINTEDOAKLOG,
-                ModBlocks.TAINTEDOAKPLANKS,
-                ModBlocks.TAINTEDDAIRPLANKS,
-                ModBlocks.TAINTEDDAIRLOG,
-                ModBlocks.STRIPPEDTAINTEDDAIRLOG,
-                ModBlocks.TAINTEDDAIRLEAVES,
-                ModBlocks.TAINTEDAMBERORE,
-                ModBlocks.TAINTEDCOALORE,
-                ModBlocks.TAINTEDCINNABARORE,
-                ModBlocks.TAINTEDDIAMONDORE,
-                ModBlocks.TAINTEDEMERALDORE,
-                ModBlocks.TAINTEDGOLDORE,
-                ModBlocks.TAINTEDIRONORE,
-                ModBlocks.TAINTEDLAPISORE,
-                ModBlocks.TAINTEDREDSTONEORE,
-                ModBlocks.TAINTGOO,
-                ModBlocks.TAINTSCRUBBER,
-                ModBlocks.OBSIDIANTOTEMTOP,
-                ModBlocks.TAINTEDSTONEBRICK,
-                ModBlocks.TAINTEDSAND,
-                ModBlocks.TAINTEDGRAVEL,
-                ModBlocks.TAINTEDOBSIDIAN
+                    ModBlocks.ARCANESTONE,
+                    ModBlocks.ARCANEWORKTABLE,
+                    ModBlocks.ARCANESTONEBRICK,
+                    ModBlocks.INFUSIONSTONE,
+                    ModBlocks.AMBERBLOCK,
+                    ModBlocks.AMBERBLOCKSWIRL,
+                    ModBlocks.AMBERBRICK,
+                    ModBlocks.SILVERWOODPLANKS,
+                    ModBlocks.GREATWOODPLANKS,
+                    ModBlocks.GREATWOODSAPLING,
+                    ModBlocks.TAINTEDCRUST,
+                    ModBlocks.TAINTEDROCK,
+                    ModBlocks.TAINTEDSOIL,
+                    ModBlocks.CINNABARORE,
+                    ModBlocks.THAUMIUMBLOCK,
+                    ModBlocks.GREATWOODLOG,
+                    ModBlocks.GREATWOODLEAVES,
+                    ModBlocks.SILVERWOODLOG,
+                    ModBlocks.SILVERWOODLEAVES,
+                    ModBlocks.SILVERWOODSAPLING,
+                    ModBlocks.DAIRLOG,
+                    ModBlocks.DAIRLEAVES,
+                    ModBlocks.DAIRSAPLING,
+                    ModBlocks.STRIPPEDDAIRLOG,
+                    ModBlocks.TAINTEDOAKLEAVES,
+                    ModBlocks.TAINTEDOAKSAPLING,
+                    ModBlocks.STRIPPEDTAINTEDOAKLOG,
+                    ModBlocks.TAINTEDOAKLOG,
+                    ModBlocks.TAINTEDOAKPLANKS,
+                    ModBlocks.TAINTEDDAIRPLANKS,
+                    ModBlocks.TAINTEDDAIRLOG,
+                    ModBlocks.STRIPPEDTAINTEDDAIRLOG,
+                    ModBlocks.TAINTEDDAIRLEAVES,
+                    ModBlocks.TAINTEDAMBERORE,
+                    ModBlocks.TAINTEDCOALORE,
+                    ModBlocks.TAINTEDCINNABARORE,
+                    ModBlocks.TAINTEDDIAMONDORE,
+                    ModBlocks.TAINTEDEMERALDORE,
+                    ModBlocks.TAINTEDGOLDORE,
+                    ModBlocks.TAINTEDIRONORE,
+                    ModBlocks.TAINTEDLAPISORE,
+                    ModBlocks.TAINTEDREDSTONEORE,
+                    ModBlocks.TAINTGOO,
+                    ModBlocks.TAINTSCRUBBER,
+                    ModBlocks.OBSIDIANTOTEMTOP,
+                    ModBlocks.TAINTEDSTONEBRICK,
+                    ModBlocks.TAINTEDSAND,
+                    ModBlocks.TAINTEDGRAVEL,
+                    ModBlocks.TAINTEDOBSIDIAN,
+                    ModBlocks.SEENOEVIL,
+                    ModBlocks.TAINTEDPLANKSSLAB
+
             };
 
             for (Block block : modBlocks) {

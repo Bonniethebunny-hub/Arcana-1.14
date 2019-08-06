@@ -24,6 +24,7 @@ public class taintedoakplanks extends Block {
         setRegistryName("taintedoakplanks");
     }
 
+
     public static void spawnAsEntity(World worldIn, BlockPos pos, ItemStack stack) {
         if (!worldIn.isRemote && !stack.isEmpty() && worldIn.getGameRules().getBoolean(GameRules.DO_TILE_DROPS) && !worldIn.restoringBlockSnapshots) { // do not drop items while restoring blockstates, prevents item dupe
             double d0 = (double) (worldIn.rand.nextFloat() * 0.5F) + 0.25D;

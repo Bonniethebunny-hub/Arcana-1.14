@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "type=bottom": {"model": "arcana:block/taintedoakplanks"},
+    "type=top": {"model": "arcana:block/taintedoakplanks"},
+    "type=double": {"model": "arcana:block/taintedoakplanks"}
+  }
+}
