@@ -1,6 +1,7 @@
 package net.kineticdevelopment.arcana.common.blocks.tainted;
 
 import net.kineticdevelopment.arcana.common.init.ModPotions;
+import net.kineticdevelopment.arcana.utilities.taint.TaintLevelHandler;
 import net.kineticdevelopment.arcana.utilities.taint.TaintSpreader;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
@@ -89,6 +90,7 @@ public class taintgoo extends Block {
     @Override
     public void onBlockHarvested(World worldIn, BlockPos pos, BlockState state, PlayerEntity player) {
         worldIn.playEvent(player, 2001, pos, getStateId(state));
+        TaintLevelHandler.increaseTaintLevel(worldIn, 1);
         spawnAsEntity(worldIn, pos, new ItemStack(this));
     }
 }

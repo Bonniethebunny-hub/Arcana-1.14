@@ -10,8 +10,8 @@ import java.nio.file.Paths;
 public class TaintLevelHandler {
     public static void createTaintLevelFile(World world) {
         if (!world.isRemote) {
-            final File file = new File("saves/" + world.getWorldInfo().getWorldName(), "taintLevel.txt");
-            try (FileWriter fw = new FileWriter("saves/" + world.getWorldInfo().getWorldName() + "/taintLevel.txt", false); BufferedWriter bw = new BufferedWriter(fw); PrintWriter out = new PrintWriter(bw)) {
+            final File file = new File("saves/" + world.getWorldInfo().getWorldName(), "taintLevel.taint");
+            try (FileWriter fw = new FileWriter("saves/" + world.getWorldInfo().getWorldName() + "/taintLevel.taint", false); BufferedWriter bw = new BufferedWriter(fw); PrintWriter out = new PrintWriter(bw)) {
                 if (!file.exists()) {
                     file.createNewFile();
                     out.print("0");
@@ -26,7 +26,7 @@ public class TaintLevelHandler {
     public static int getTaintLevel(World world) {
         if (!world.isRemote) {
             int taintLevel;
-            try (BufferedReader br = Files.newBufferedReader(Paths.get("saves/" + world.getWorldInfo().getWorldName() + "/taintLevel.txt"))) {
+            try (BufferedReader br = Files.newBufferedReader(Paths.get("saves/" + world.getWorldInfo().getWorldName() + "/taintLevel.taint"))) {
                 if (br.readLine() != null) {
                     taintLevel = Integer.parseInt(br.readLine());
                     return taintLevel;
@@ -46,7 +46,7 @@ public class TaintLevelHandler {
     public static void increaseTaintLevel(World world, int amount) {
         if (!world.isRemote) {
             int taintLevel = 2147483647;
-            try (BufferedReader br = Files.newBufferedReader(Paths.get("saves/" + world.getWorldInfo().getWorldName() + "/taintLevel.txt"))) {
+            try (BufferedReader br = Files.newBufferedReader(Paths.get("saves/" + world.getWorldInfo().getWorldName() + "/taintLevel.taint"))) {
                 String s = br.readLine();
                 if (s != null) {
                     taintLevel = Integer.parseInt(s);
@@ -62,7 +62,7 @@ public class TaintLevelHandler {
                 System.err.format("IOException: %s%n", e);
             }
 
-            try (FileWriter fw = new FileWriter("saves/" + world.getWorldInfo().getWorldName() + "/taintLevel.txt", false); BufferedWriter bw = new BufferedWriter(fw); PrintWriter out = new PrintWriter(bw)) {
+            try (FileWriter fw = new FileWriter("saves/" + world.getWorldInfo().getWorldName() + "/taintLevel.taint", false); BufferedWriter bw = new BufferedWriter(fw); PrintWriter out = new PrintWriter(bw)) {
                 out.print(taintLevel);
             } catch (IOException e) {
 
@@ -73,7 +73,7 @@ public class TaintLevelHandler {
     public static void decreaseTaintLevel(World world, int amount) {
         if (!world.isRemote) {
             int taintLevel = 2147483647;
-            try (BufferedReader br = Files.newBufferedReader(Paths.get("saves/" + world.getWorldInfo().getWorldName() + "/taintLevel.txt"))) {
+            try (BufferedReader br = Files.newBufferedReader(Paths.get("saves/" + world.getWorldInfo().getWorldName() + "/taintLevel.taint"))) {
                 String s = br.readLine();
                 if (s != null) {
                     taintLevel = Integer.parseInt(s);
@@ -89,7 +89,7 @@ public class TaintLevelHandler {
                 System.err.format("IOException: %s%n", e);
             }
 
-            try (FileWriter fw = new FileWriter("saves/" + world.getWorldInfo().getWorldName() + "/taintLevel.txt", false); BufferedWriter bw = new BufferedWriter(fw); PrintWriter out = new PrintWriter(bw)) {
+            try (FileWriter fw = new FileWriter("saves/" + world.getWorldInfo().getWorldName() + "/taintLevel.taint", false); BufferedWriter bw = new BufferedWriter(fw); PrintWriter out = new PrintWriter(bw)) {
                 out.print(taintLevel);
             } catch (IOException e) {
 
