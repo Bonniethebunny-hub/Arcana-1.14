@@ -41,6 +41,12 @@ public class ModItems {
     @ObjectHolder("arcana:thaumonomicon")
     public static thaumonomicon THAUMONOMICON;
 
+    @ObjectHolder("arcana:bookoftaint")
+    public static bookoftainticon BOOKOFTAINICON;
+
+    @ObjectHolder("arcana:crimsonrites")
+    public static crimsonritesicon CRIMSONRIGHTSICON;
+
     @ObjectHolder("arcana:thaumiumingot")
     public static thaumiumingot THAUMIUMINGOT;
 

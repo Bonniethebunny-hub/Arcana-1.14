@@ -307,6 +307,8 @@ public class RegistryHandler
 
             // ITEMS
             event.getRegistry().register(new thaumonomicon());
+            event.getRegistry().register(new bookoftainticon());
+            event.getRegistry().register(new crimsonritesicon());
             event.getRegistry().register(new thaumiumingot());
             event.getRegistry().register(new quicksilver());
             event.getRegistry().register(new wandcapcopper());
