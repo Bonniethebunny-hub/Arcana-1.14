@@ -1,7 +1,9 @@
 {
   "variants": {
     "": [
-      { "model": "arcana:block/taintedrock" }
+      {
+        "model": "arcana:block/taintedrock"
+      }
     ]
   }
 }

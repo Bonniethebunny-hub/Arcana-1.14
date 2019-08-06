@@ -1,7 +1,9 @@
 {
   "variants": {
     "": [
-      { "model": "arcana:block/infusionstone" }
+      {
+        "model": "arcana:block/infusionstone"
+      }
     ]
   }
 }
