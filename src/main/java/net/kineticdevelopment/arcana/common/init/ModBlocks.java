@@ -2,13 +2,7 @@ package net.kineticdevelopment.arcana.common.init;
 
 import net.kineticdevelopment.arcana.common.blocks.*;
 import net.kineticdevelopment.arcana.common.blocks.tainted.ores.*;
-import net.kineticdevelopment.arcana.common.blocks.tainted.taintedtrees.strippedtainteddairlog;
-import net.kineticdevelopment.arcana.common.blocks.tainted.taintedtrees.strippedtaintedoaklog;
-import net.kineticdevelopment.arcana.common.blocks.tainted.taintedtrees.tainteddairleaves;
-import net.kineticdevelopment.arcana.common.blocks.tainted.taintedtrees.tainteddairlog;
-import net.kineticdevelopment.arcana.common.blocks.tainted.taintedtrees.taintedoakleaves;
-import net.kineticdevelopment.arcana.common.blocks.tainted.taintedtrees.taintedoaklog;
-import net.kineticdevelopment.arcana.common.blocks.tainted.taintedtrees.taintedoaksapling;
+import net.kineticdevelopment.arcana.common.blocks.tainted.taintedtrees.*;
 import net.kineticdevelopment.arcana.common.blocks.tainted.*;
 import net.kineticdevelopment.arcana.common.blocks.treeblocks.*;
 import net.minecraftforge.registries.ObjectHolder;
@@ -123,6 +117,9 @@ public class ModBlocks {
     @ObjectHolder("arcana:taintedobsidian")
     public static taintedobsidian TAINTEDOBSIDIAN;
 
+    @ObjectHolder("arcana:taintedbirchplanks")
+    public static taintedbirchplanks TAINTEDBIRCHPLANKS;
+
 
     //tainted tree blocks
 
@@ -149,6 +146,15 @@ public class ModBlocks {
 
     @ObjectHolder("arcana:tainteddairleaves")
     public static tainteddairleaves TAINTEDDAIRLEAVES;
+
+    @ObjectHolder("arcana:taintedbirchlog")
+    public static taintedbirchlog TAINTEDBIRCHLOG;
+
+    @ObjectHolder("arcana:taintedbirchleaves")
+    public static taintedbirchleaves TAINTEDBIRCHLEAVES;
+
+    @ObjectHolder("arcana:strippedtaintedbirchlog")
+    public static strippedtaintedbirchlog STRIPPEDTAINTEDBIRCHLOG;
 
     //ores
 

@@ -79,6 +79,10 @@
   "block.arcana.taintedsand": "Tainted Sand",
   "block.arcana.taintedgravel": "Tainted Gravel",
   "block.arcana.taintedobsidian": "Tainted Obsidian",
+  "block.arcana.taintedbirchlog": "Tainted Birch Logs",
+  "block.arcana.taintedbirchplanks": "Tainted Birch Planks",
+  "block.arcana.taintedbirchleaves": "Tainted Birch Leaves",
+  "block.arcana.strippedtaintedbirchlog": "Stripped Tainted Birch Log",
   
   "_comment": "MOD ITEMS",
   "item.arcana.thaumonomicon": "§5Thaumonomicon",

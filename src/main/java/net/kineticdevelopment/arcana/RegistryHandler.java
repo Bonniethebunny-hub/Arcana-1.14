@@ -94,7 +94,8 @@ public class RegistryHandler
             // Created with Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.5F).sound(SoundType.PLANT)
             String[] taintedleaves = {
                     "taintedoakleaves",
-                    "tainteddairleaves"
+                    "tainteddairleaves",
+                    "taintedbirchleaves"
             };
 
             // Created with Block.Properties.create(Material.WOOD).hardnessAndResistance(1.1F).harvestTool(ToolType.AXE)
@@ -102,7 +103,9 @@ public class RegistryHandler
                     "taintedoaklog",
                     "strippedtaintedoaklog",
                     "tainteddairlog",
-                    "strippedtainteddairlog"
+                    "strippedtainteddairlog",
+                    "taintedbirchlog",
+                    "strippedtaintedbirchlog"
             };
 
             // Created normally
@@ -142,7 +145,8 @@ public class RegistryHandler
                     new seenoevil(),
                     new tainted_planks_slab(),
                     new hearnoevil(),
-                    new speaknoevil()
+                    new speaknoevil(),
+                    new taintedbirchplanks()
             };
 
             for (String clsname : saplings) {
@@ -294,7 +298,11 @@ public class RegistryHandler
                     ModBlocks.SEENOEVIL,
                     ModBlocks.SPEAKNOEVIL,
                     ModBlocks.HEARNOEVIL,
-                    ModBlocks.TAINTEDPLANKSSLAB
+                    ModBlocks.TAINTEDPLANKSSLAB,
+                    ModBlocks.TAINTEDBIRCHLOG,
+                    ModBlocks.TAINTEDBIRCHPLANKS,
+                    ModBlocks.TAINTEDBIRCHLEAVES,
+                    ModBlocks.STRIPPEDTAINTEDBIRCHLOG,
 
             };
 
