@@ -1,27 +1,18 @@
 package net.kineticdevelopment.arcana.common.blocks.tainted.taintedtrees;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
+import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
-import net.minecraftforge.common.ToolType;
 
-public class taintedspruceplanks extends Block {
-
-    public taintedspruceplanks() {
-        super(Properties.create(Material.IRON)
-            .sound(SoundType.STONE)
-            .hardnessAndResistance(3.0f)
-            .lightValue(2)
-            .harvestTool(ToolType.AXE)
-        );
-        setRegistryName("taintedspruceplanks");
+public class strippedtaintedacacialog extends RotatedPillarBlock {
+    public strippedtaintedacacialog(Properties properties) {
+        super(properties);
+        setRegistryName("strippedtaintedacacialog");
     }
 
     public static void spawnAsEntity(World worldIn, BlockPos pos, ItemStack stack) {

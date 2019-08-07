@@ -87,9 +87,15 @@
   "block.arcana.taintedspruceleaves": "Tainted Spruce Leaves",
   "block.arcana.taintedsprucesapling": "Tainted Spruce Sapling",
   "block.arcana.taintedspruceplanks": "Tainted Spruce Planks",
+  "block.arcana.taintedsprucelog": "Tainted Spruce Logs",
   "block.arcana.strippedtaintedsprucelog": "Stripped Tainted Spruce Logs",
+  "block.arcana.taintedacaciasapling": "Tainted Acacia Sapling",
+  "block.arcana.taintedacaciaplanks": "Tainted Acacia Planks",
+  "block.arcana.taintedacacialeaves": "Tainted Acacia Leaves",
+  "block.arcana.taintedacacialog": "Tainted Acacia Logs",
+  "block.arcana.strippedtaintedacacialog": "Stripped Tainted Acacia Logs",
 
-  
+
   "_comment": "MOD ITEMS",
   "item.arcana.thaumonomicon": "§5Thaumonomicon",
   "item.arcana.thaumiumingot": "Thaumium Ingot",
