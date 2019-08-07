@@ -1,5 +1,6 @@
 package net.kineticdevelopment.arcana.utilities.taint;
 
+import net.kineticdevelopment.arcana.common.blocks.tainted.taintedcrust;
 import net.kineticdevelopment.arcana.common.init.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -56,8 +57,8 @@ public class TaintSpreader {
         Blocks.CYAN_CONCRETE,
         Blocks.CLAY,
         Blocks.END_STONE,
-        Blocks.DARK_OAK_LOG,
-        Blocks.JUNGLE_LOG
+        Blocks.JUNGLE_LOG,
+        Blocks.DARK_OAK_LOG
     };
     
     /**
@@ -110,7 +111,7 @@ public class TaintSpreader {
                     boolean changed = false;
                     for (Map.Entry<Block[], Block> entry : conversionLists.entrySet()) {
                         if (Arrays.stream(entry.getKey()).anyMatch(bl -> b.equals(bl.getBlock()))) {
-                            if(worldIn.getBlockState(nPos).has(RotatedPillarBlock.AXIS)) {
+                            if(worldIn.getBlockState(nPos).has(RotatedPillarBlock.AXIS) && !(entry.getValue() instanceof taintedcrust)) {
                             	worldIn.setBlockState(nPos, entry.getValue().getDefaultState().with(RotatedPillarBlock.AXIS, worldIn.getBlockState(nPos).get(RotatedPillarBlock.AXIS)));
                             }
                             else { 

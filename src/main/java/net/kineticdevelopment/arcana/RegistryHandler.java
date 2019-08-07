@@ -8,8 +8,6 @@ import net.kineticdevelopment.arcana.common.armor.AspectGogglesHelmet;
 import net.kineticdevelopment.arcana.common.blocks.*;
 import net.kineticdevelopment.arcana.common.blocks.tainted.ores.*;
 import net.kineticdevelopment.arcana.common.blocks.tainted.*;
-import net.kineticdevelopment.arcana.common.blocks.tainted.taintedtrees.hiddenoakleaves;
-import net.kineticdevelopment.arcana.common.blocks.tainted.taintedtrees.hiddenoaklog;
 import net.kineticdevelopment.arcana.common.creativetab.ModTabGroups;
 import net.kineticdevelopment.arcana.common.init.ModBlocks;
 import net.kineticdevelopment.arcana.common.init.ModEntities;
