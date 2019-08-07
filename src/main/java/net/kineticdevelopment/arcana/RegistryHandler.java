@@ -8,6 +8,7 @@ import net.kineticdevelopment.arcana.common.armor.AspectGogglesHelmet;
 import net.kineticdevelopment.arcana.common.blocks.*;
 import net.kineticdevelopment.arcana.common.blocks.tainted.ores.*;
 import net.kineticdevelopment.arcana.common.blocks.tainted.*;
+import net.kineticdevelopment.arcana.common.blocks.tainted.taintedtrees.taintedspruceplanks;
 import net.kineticdevelopment.arcana.common.creativetab.ModTabGroups;
 import net.kineticdevelopment.arcana.common.init.ModBlocks;
 import net.kineticdevelopment.arcana.common.init.ModEntities;
@@ -88,14 +89,17 @@ public class RegistryHandler
             
         	// Created with Block.Properties.create(Material.LEAVES).doesNotBlockMovement()
             String[] taintedsaplings = {
-                    "taintedoaksapling"
+                    "taintedoaksapling",
+                    "taintedbirchsapling",
+                    "taintedsprucesapling"
             };
 
             // Created with Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.5F).sound(SoundType.PLANT)
             String[] taintedleaves = {
                     "taintedoakleaves",
                     "tainteddairleaves",
-                    "taintedbirchleaves"
+                    "taintedbirchleaves",
+                    "taintedspruceleaves"
             };
 
             // Created with Block.Properties.create(Material.WOOD).hardnessAndResistance(1.1F).harvestTool(ToolType.AXE)
@@ -105,7 +109,9 @@ public class RegistryHandler
                     "tainteddairlog",
                     "strippedtainteddairlog",
                     "taintedbirchlog",
-                    "strippedtaintedbirchlog"
+                    "strippedtaintedbirchlog",
+                    "taintedsprucelog",
+                    "strippedtaintedsprucelog"
             };
 
             // Created normally
@@ -146,7 +152,8 @@ public class RegistryHandler
                     new tainted_planks_slab(),
                     new hearnoevil(),
                     new speaknoevil(),
-                    new taintedbirchplanks()
+                    new taintedbirchplanks(),
+                    new taintedspruceplanks()
             };
 
             for (String clsname : saplings) {
@@ -303,6 +310,12 @@ public class RegistryHandler
                     ModBlocks.TAINTEDBIRCHPLANKS,
                     ModBlocks.TAINTEDBIRCHLEAVES,
                     ModBlocks.STRIPPEDTAINTEDBIRCHLOG,
+                    ModBlocks.TAINTEDBIRCHSAPLING,
+                    ModBlocks.TAINTEDSPRUCELEAVES,
+                    ModBlocks.TAINTEDSPRUCESAPLING,
+                    ModBlocks.TAINTEDSPRUCEPLANKS,
+                    ModBlocks.TAINTEDSPRUCELOG,
+                    ModBlocks.STRIPPEDTAINTEDSPRUCELOG,
 
             };
 

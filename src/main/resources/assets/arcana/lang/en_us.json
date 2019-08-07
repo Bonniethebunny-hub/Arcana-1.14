@@ -83,6 +83,12 @@
   "block.arcana.taintedbirchplanks": "Tainted Birch Planks",
   "block.arcana.taintedbirchleaves": "Tainted Birch Leaves",
   "block.arcana.strippedtaintedbirchlog": "Stripped Tainted Birch Log",
+  "block.arcana.taintedbirchsapling": "Tainted Birch Sapling",
+  "block.arcana.taintedspruceleaves": "Tainted Spruce Leaves",
+  "block.arcana.taintedsprucesapling": "Tainted Spruce Sapling",
+  "block.arcana.taintedspruceplanks": "Tainted Spruce Planks",
+  "block.arcana.strippedtaintedsprucelog": "Stripped Tainted Spruce Logs",
+
   
   "_comment": "MOD ITEMS",
   "item.arcana.thaumonomicon": "§5Thaumonomicon",

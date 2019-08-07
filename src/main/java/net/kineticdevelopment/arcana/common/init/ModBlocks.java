@@ -156,6 +156,25 @@ public class ModBlocks {
     @ObjectHolder("arcana:strippedtaintedbirchlog")
     public static strippedtaintedbirchlog STRIPPEDTAINTEDBIRCHLOG;
 
+    @ObjectHolder("arcana:taintedbirchsapling")
+    public static taintedbirchsapling TAINTEDBIRCHSAPLING;
+
+    @ObjectHolder("arcana:taintedspruceleaves")
+    public static taintedspruceleaves TAINTEDSPRUCELEAVES;
+
+    @ObjectHolder("arcana:taintedsprucesapling")
+    public static taintedsprucesapling TAINTEDSPRUCESAPLING;
+
+    @ObjectHolder("arcana:taintedspruceplanks")
+    public static taintedspruceplanks TAINTEDSPRUCEPLANKS;
+
+    @ObjectHolder("arcana:taintedsprucelog")
+    public static taintedsprucelog TAINTEDSPRUCELOG;
+
+    @ObjectHolder("arcana:strippedtaintedsprucelog")
+    public static strippedtaintedsprucelog STRIPPEDTAINTEDSPRUCELOG;
+
+
     //ores
 
     @ObjectHolder("arcana:cinnabarore")
