@@ -88,12 +88,6 @@ public class ModBlocks {
     @ObjectHolder("arcana:strippeddairlog")
     public static strippeddairlog STRIPPEDDAIRLOG;
 
-    @ObjectHolder("arcana:hiddenoaklog")
-    public static hiddenoaklog HIDDENOAKLOG;
-
-    @ObjectHolder("arcana:hiddenoakleaves")
-    public static hiddenoakleaves HIDDENOAKLEAVES;
-
     //tainted blocks
 
     @ObjectHolder("arcana:taintedrock")
