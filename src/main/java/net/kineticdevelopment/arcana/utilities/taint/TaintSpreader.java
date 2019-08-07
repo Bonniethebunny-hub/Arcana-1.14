@@ -82,6 +82,9 @@ public class TaintSpreader {
         put(Blocks.LAPIS_ORE, ModBlocks.TAINTEDLAPISORE);
         put(Blocks.EMERALD_ORE, ModBlocks.TAINTEDEMERALDORE);
         put(ModBlocks.CINNABARORE, ModBlocks.TAINTEDCINNABARORE);
+        put(Blocks.SAND, ModBlocks.TAINTEDSAND);
+        put(Blocks.RED_SAND, ModBlocks.TAINTEDSAND);
+        put(Blocks.GRAVEL, ModBlocks.TAINTEDGRAVEL);
     }};
     
     /**
