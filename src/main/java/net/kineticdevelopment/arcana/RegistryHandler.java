@@ -88,14 +88,19 @@ public class RegistryHandler
             
         	// Created with Block.Properties.create(Material.LEAVES).doesNotBlockMovement()
             String[] taintedsaplings = {
-                    "taintedoaksapling"
+                    "taintedoaksapling",
+                    "taintedbirchsapling",
+                    "taintedsprucesapling",
+                    "taintedacaciasapling"
             };
 
             // Created with Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.5F).sound(SoundType.PLANT)
             String[] taintedleaves = {
                     "taintedoakleaves",
                     "tainteddairleaves",
-                    "hiddenoakleaves"
+                    "taintedbirchleaves",
+                    "taintedspruceleaves",
+                    "taintedacacialeaves"
             };
 
             // Created with Block.Properties.create(Material.WOOD).hardnessAndResistance(1.1F).harvestTool(ToolType.AXE)
@@ -104,7 +109,12 @@ public class RegistryHandler
                     "strippedtaintedoaklog",
                     "tainteddairlog",
                     "strippedtainteddairlog",
-                    "hiddenoaklog"
+                    "taintedbirchlog",
+                    "strippedtaintedbirchlog",
+                    "taintedsprucelog",
+                    "strippedtaintedsprucelog",
+                    "taintedacacialog",
+                    "strippedtaintedacacialog"
             };
 
             // Created normally
@@ -145,6 +155,9 @@ public class RegistryHandler
                     new tainted_planks_slab(),
                     new hearnoevil(),
                     new speaknoevil(),
+                    new taintedbirchplanks(),
+                    new taintedspruceplanks(),
+                    new taintedacaciaplanks()
             };
 
             for (String clsname : saplings) {
@@ -297,8 +310,21 @@ public class RegistryHandler
                     ModBlocks.SPEAKNOEVIL,
                     ModBlocks.HEARNOEVIL,
                     ModBlocks.TAINTEDPLANKSSLAB,
-                    ModBlocks.HIDDENOAKLOG,
-                    ModBlocks.HIDDENOAKLEAVES
+                    ModBlocks.TAINTEDBIRCHLOG,
+                    ModBlocks.TAINTEDBIRCHPLANKS,
+                    ModBlocks.TAINTEDBIRCHLEAVES,
+                    ModBlocks.STRIPPEDTAINTEDBIRCHLOG,
+                    ModBlocks.TAINTEDBIRCHSAPLING,
+                    ModBlocks.TAINTEDSPRUCELEAVES,
+                    ModBlocks.TAINTEDSPRUCESAPLING,
+                    ModBlocks.TAINTEDSPRUCEPLANKS,
+                    ModBlocks.TAINTEDSPRUCELOG,
+                    ModBlocks.STRIPPEDTAINTEDSPRUCELOG,
+                    ModBlocks.TAINTEDACACIASAPLING,
+                    ModBlocks.TAINTEDACACIAPLANKS,
+                    ModBlocks.TAINTEDACACIALEAVES,
+                    ModBlocks.TAINTEDACACIALOG,
+                    ModBlocks.STRIPPEDTAINTEDACACIALOG,
 
             };
 
