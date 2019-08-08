@@ -94,54 +94,55 @@ public class TaintSpreader {
      */
     @SuppressWarnings("serial")
 	public static void spreadTaint(World worldIn, BlockPos pos) {
+    	if (TaintLevelHandler.getTaintLevel(worldIn.getWorld()) >= 5) {
+    		// Map of <OriginalBlocks -> TaintedBlock>
+            // For <OriginalBlock -> TaintedBlock> see singleBlockConversions above
+            HashMap<Block[], Block> conversionLists = new HashMap<Block[], Block>() {{
+                put(TaintedSoilProspects, ModBlocks.TAINTEDSOIL);
+                put(TaintedRockProspects, ModBlocks.TAINTEDROCK);
+                put(TaintGooProspects, ModBlocks.TAINTGOO);
+                put(TaintedRockProspects, ModBlocks.TAINTEDROCK);
+                put(TaintedCrustProspects, ModBlocks.TAINTEDCRUST);
+            }};
 
-        // Map of <OriginalBlocks -> TaintedBlock>
-        // For <OriginalBlock -> TaintedBlock> see singleBlockConversions above
-        HashMap<Block[], Block> conversionLists = new HashMap<Block[], Block>() {{
-            put(TaintedSoilProspects, ModBlocks.TAINTEDSOIL);
-            put(TaintedRockProspects, ModBlocks.TAINTEDROCK);
-            put(TaintGooProspects, ModBlocks.TAINTGOO);
-            put(TaintedRockProspects, ModBlocks.TAINTEDROCK);
-            put(TaintedCrustProspects, ModBlocks.TAINTEDCRUST);
-        }};
-
-        // iterate {x, y, z} through {-1, 0, 1}
-        for (int x = -1; x < 2; x++) {
-            for (int y = -1; y < 2; y++) {
-                for (int z = -1; z < 2; z++) {
-                    BlockPos nPos = pos.add(x, y, z);
-                    Block b = worldIn.getBlockState(nPos).getBlock();
-                    boolean changed = false;
-                    for (Map.Entry<Block[], Block> entry : conversionLists.entrySet()) {
-                        if (Arrays.stream(entry.getKey()).anyMatch(bl -> b.equals(bl.getBlock()))) {
-                            if(worldIn.getBlockState(nPos).has(RotatedPillarBlock.AXIS) && !(entry.getValue() instanceof taintedcrust)) {
-                            	worldIn.setBlockState(nPos, entry.getValue().getDefaultState().with(RotatedPillarBlock.AXIS, worldIn.getBlockState(nPos).get(RotatedPillarBlock.AXIS)));
+            // iterate {x, y, z} through {-1, 0, 1}
+            for (int x = -1; x < 2; x++) {
+                for (int y = -1; y < 2; y++) {
+                    for (int z = -1; z < 2; z++) {
+                        BlockPos nPos = pos.add(x, y, z);
+                        Block b = worldIn.getBlockState(nPos).getBlock();
+                        boolean changed = false;
+                        for (Map.Entry<Block[], Block> entry : conversionLists.entrySet()) {
+                            if (Arrays.stream(entry.getKey()).anyMatch(bl -> b.equals(bl.getBlock()))) {
+                                if(worldIn.getBlockState(nPos).has(RotatedPillarBlock.AXIS) && !(entry.getValue() instanceof taintedcrust)) {
+                                	worldIn.setBlockState(nPos, entry.getValue().getDefaultState().with(RotatedPillarBlock.AXIS, worldIn.getBlockState(nPos).get(RotatedPillarBlock.AXIS)));
+                                }
+                                else { 
+                                	worldIn.setBlockState(nPos, entry.getValue().getDefaultState());
+                                }
+                                changed = true;
+                                break;
                             }
-                            else { 
-                            	worldIn.setBlockState(nPos, entry.getValue().getDefaultState());
-                            }
-                            changed = true;
-                            break;
                         }
-                    }
 
-                    if (changed) {
-                        continue;
-                    }
+                        if (changed) {
+                            continue;
+                        }
 
-                    for (Map.Entry<Block, Block> entry : singleBlockConversions.entrySet()) {
-                        if (b.equals(entry.getKey().getBlock())) {
-                        	if(worldIn.getBlockState(nPos).has(RotatedPillarBlock.AXIS)) {
-                            	worldIn.setBlockState(nPos, entry.getValue().getDefaultState().with(RotatedPillarBlock.AXIS, worldIn.getBlockState(nPos).get(RotatedPillarBlock.AXIS)));
+                        for (Map.Entry<Block, Block> entry : singleBlockConversions.entrySet()) {
+                            if (b.equals(entry.getKey().getBlock())) {
+                            	if(worldIn.getBlockState(nPos).has(RotatedPillarBlock.AXIS)) {
+                                	worldIn.setBlockState(nPos, entry.getValue().getDefaultState().with(RotatedPillarBlock.AXIS, worldIn.getBlockState(nPos).get(RotatedPillarBlock.AXIS)));
+                                }
+                                else { 
+                                	worldIn.setBlockState(nPos, entry.getValue().getDefaultState());
+                                }
+                                break;
                             }
-                            else { 
-                            	worldIn.setBlockState(nPos, entry.getValue().getDefaultState());
-                            }
-                            break;
                         }
                     }
                 }
             }
-        }
+    	}
     }
 }

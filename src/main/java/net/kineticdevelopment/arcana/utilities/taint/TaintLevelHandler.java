@@ -5,8 +5,10 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.world.World;
 
 import java.io.*;
+import java.math.RoundingMode;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.text.DecimalFormat;
 
 public class TaintLevelHandler {
     public static void createTaintLevelFile(World world) {
@@ -61,7 +63,11 @@ public class TaintLevelHandler {
         if (!world.isRemote) {
             double taintLevel;
             try (BufferedReader br = Files.newBufferedReader(Paths.get("saves/" + world.getWorldInfo().getWorldName() + ".taint"))) {
-            	String s = br.readLine();
+            	String s1 = br.readLine();
+                DecimalFormat df = new DecimalFormat("#.##");
+    			df.setRoundingMode(RoundingMode.DOWN);
+    			double d1 = Double.parseDouble(s1);
+    			String s = df.format(d1);
                 if (s != null) {
                     taintLevel = Double.parseDouble(s);
                     return taintLevel;
@@ -84,7 +90,11 @@ public class TaintLevelHandler {
         if (!world.isRemote) {
             double taintLevel = 2147483647;
             try (BufferedReader br = Files.newBufferedReader(Paths.get("saves/" + world.getWorldInfo().getWorldName() + ".taint"))) {
-                String s = br.readLine();
+            	String s1 = br.readLine();
+                DecimalFormat df = new DecimalFormat("#.##");
+    			df.setRoundingMode(RoundingMode.DOWN);
+    			double d1 = Double.parseDouble(s1);
+    			String s = df.format(d1);
                 System.out.println(s);
                 if (s != null) {
                     taintLevel = Double.parseDouble(s);
@@ -108,12 +118,16 @@ public class TaintLevelHandler {
             }
         }
     }
-
+    
     public static void decreaseTaintLevel(World world, double amount) {
     	if (!world.isRemote) {
             double taintLevel = 2147483647;
             try (BufferedReader br = Files.newBufferedReader(Paths.get("saves/" + world.getWorldInfo().getWorldName() + ".taint"))) {
-                String s = br.readLine();
+            	String s1 = br.readLine();
+                DecimalFormat df = new DecimalFormat("#.##");
+    			df.setRoundingMode(RoundingMode.DOWN);
+    			double d1 = Double.parseDouble(s1);
+    			String s = df.format(d1);
                 System.out.println(s);
                 if (s != null) {
                     taintLevel = Double.parseDouble(s);
