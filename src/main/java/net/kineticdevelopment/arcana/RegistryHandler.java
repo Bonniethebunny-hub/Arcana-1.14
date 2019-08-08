@@ -157,7 +157,8 @@ public class RegistryHandler
                     new speaknoevil(),
                     new taintedbirchplanks(),
                     new taintedspruceplanks(),
-                    new taintedacaciaplanks()
+                    new taintedacaciaplanks(),
+                    new taintedflower()
             };
 
             for (String clsname : saplings) {
@@ -325,6 +326,7 @@ public class RegistryHandler
                     ModBlocks.TAINTEDACACIALEAVES,
                     ModBlocks.TAINTEDACACIALOG,
                     ModBlocks.STRIPPEDTAINTEDACACIALOG,
+                    ModBlocks.TAINTEDFLOWER,
 
             };
 

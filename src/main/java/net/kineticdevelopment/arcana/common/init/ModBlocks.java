@@ -120,6 +120,9 @@ public class ModBlocks {
     @ObjectHolder("arcana:taintedbirchplanks")
     public static taintedbirchplanks TAINTEDBIRCHPLANKS;
 
+    @ObjectHolder("arcana:taintedflower")
+    public static taintedflower TAINTEDFLOWER;
+
 
     //tainted tree blocks
 
