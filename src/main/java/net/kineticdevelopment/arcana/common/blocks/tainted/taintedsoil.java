@@ -1,5 +1,6 @@
 package net.kineticdevelopment.arcana.common.blocks.tainted;
 
+import net.kineticdevelopment.arcana.common.init.ModBiomes;
 import net.kineticdevelopment.arcana.common.init.ModPotions;
 import net.kineticdevelopment.arcana.utilities.taint.TaintSpreader;
 import net.minecraft.block.Block;
@@ -13,11 +14,13 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.ToolType;
 
 import java.util.Random;
 
 public class taintedsoil extends Block {
+	Biome[] tainted = {ModBiomes.TAINTBIOME};
     public taintedsoil() {
         super(Block.Properties.create(Material.SAND)
             .sound(SoundType.GROUND)
@@ -40,7 +43,6 @@ public class taintedsoil extends Block {
     }
 
     public void tick(BlockState state, World worldIn, BlockPos pos, Random random) {
-
         TaintSpreader.spreadTaint(worldIn, pos);
     }
 

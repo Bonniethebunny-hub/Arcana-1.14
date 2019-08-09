@@ -14,21 +14,17 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
-import net.minecraftforge.common.ToolType;
-
 import java.util.Random;
 
 public class taintedgrass extends Block {
     public taintedgrass() {
         super(Block.Properties.create(Material.SAND)
             .sound(SoundType.GROUND)
-            .hardnessAndResistance(3.0f)
             .harvestLevel(0)
-            .harvestTool(ToolType.SHOVEL)
             .tickRandomly()
             .doesNotBlockMovement()
         );
-        setRegistryName("taintedsoil");
+        setRegistryName("taintedgrass");
     }
     
     @Override

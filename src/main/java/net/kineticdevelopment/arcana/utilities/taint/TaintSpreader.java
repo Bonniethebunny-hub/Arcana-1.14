@@ -18,55 +18,75 @@ public class TaintSpreader {
      * List of blocks tainted soil spreads to
      */
     static Block[] TaintedSoilProspects = {
-        Blocks.GRASS_BLOCK,
-        Blocks.DIRT,
-        Blocks.COARSE_DIRT,
-        Blocks.GRASS_PATH,
-        Blocks.FARMLAND,
+    		Blocks.GRASS_BLOCK,
+    		Blocks.DIRT,
+    		Blocks.COARSE_DIRT,
+    		Blocks.GRASS_PATH,
+    		Blocks.FARMLAND,
     };
 
     /**
      * List of blocks tainted rock spreads to
      */
     static Block[] TaintedRockProspects = {
-        Blocks.COBBLESTONE,
-        Blocks.STONE,
-        Blocks.DIORITE,
-        Blocks.ANDESITE,
-        Blocks.GRANITE,
-        Blocks.STONE_BRICKS,
-        Blocks.CHISELED_STONE_BRICKS,
-        Blocks.CRACKED_STONE_BRICKS,
-        Blocks.MOSSY_STONE_BRICKS,
-        Blocks.MOSSY_COBBLESTONE,
+    		Blocks.COBBLESTONE,
+    		Blocks.STONE,
+    		Blocks.DIORITE,
+    		Blocks.ANDESITE,
+    		Blocks.GRANITE,
+    		Blocks.STONE_BRICKS,
+    		Blocks.CHISELED_STONE_BRICKS,
+    		Blocks.CRACKED_STONE_BRICKS,
+    		Blocks.MOSSY_STONE_BRICKS,
+    		Blocks.MOSSY_COBBLESTONE,
     };
 
     /**
      * List of blocks tainted crust spreads to
      */
     static Block[] TaintedCrustProspects = {
-        Blocks.BLACK_CONCRETE,
-        Blocks.WHITE_CONCRETE,
-        Blocks.GREEN_CONCRETE,
-        Blocks.GRAY_CONCRETE,
-        Blocks.PINK_CONCRETE,
-        Blocks.PURPLE_CONCRETE,
-        Blocks.ORANGE_CONCRETE,
-        Blocks.BLUE_CONCRETE,
-        Blocks.BROWN_CONCRETE,
-        Blocks.CYAN_CONCRETE,
-        Blocks.CLAY,
-        Blocks.END_STONE,
-        Blocks.JUNGLE_LOG,
-        Blocks.DARK_OAK_LOG
+    		Blocks.BLACK_CONCRETE,
+    		Blocks.WHITE_CONCRETE,
+    		Blocks.GREEN_CONCRETE,
+    		Blocks.GRAY_CONCRETE,
+    		Blocks.PINK_CONCRETE,
+    		Blocks.PURPLE_CONCRETE,
+    		Blocks.ORANGE_CONCRETE,
+    		Blocks.BLUE_CONCRETE,
+    		Blocks.BROWN_CONCRETE,
+    		Blocks.CYAN_CONCRETE,
+    		Blocks.CLAY,
+    		Blocks.END_STONE,
+    		Blocks.JUNGLE_LOG,
+    		Blocks.DARK_OAK_LOG
     };
     
     /**
      * List of blocks taint goo spreads to
      */
     static Block[] TaintGooProspects = {
-        Blocks.JUNGLE_LEAVES,
-        Blocks.DARK_OAK_LEAVES
+    		Blocks.JUNGLE_LEAVES,
+    		Blocks.DARK_OAK_LEAVES
+    };
+    
+    static Block[] TaintedFlowerProspects = {
+    		Blocks.CORNFLOWER,
+    		Blocks.SUNFLOWER,
+    		Blocks.ROSE_BUSH,
+    		Blocks.OXEYE_DAISY,
+    		Blocks.ORANGE_TULIP,
+    		Blocks.PINK_TULIP,
+    		Blocks.RED_TULIP,
+    		Blocks.WHITE_TULIP,
+    		Blocks.DANDELION,
+    		Blocks.WITHER_ROSE,
+    		Blocks.LILY_OF_THE_VALLEY,
+    		Blocks.ALLIUM,
+    		Blocks.AZURE_BLUET,
+    		Blocks.BLUE_ORCHID,
+    		Blocks.LILAC,
+    		Blocks.PEONY,
+    		Blocks.POPPY
     };
 
 
@@ -103,6 +123,7 @@ public class TaintSpreader {
                 put(TaintGooProspects, ModBlocks.TAINTGOO);
                 put(TaintedRockProspects, ModBlocks.TAINTEDROCK);
                 put(TaintedCrustProspects, ModBlocks.TAINTEDCRUST);
+                put(TaintedFlowerProspects, ModBlocks.TAINTEDFLOWER);
             }};
 
             // iterate {x, y, z} through {-1, 0, 1}
