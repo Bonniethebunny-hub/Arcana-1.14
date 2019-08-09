@@ -1,9 +1,7 @@
 package net.kineticdevelopment.arcana.common.biomes;
 
 import net.kineticdevelopment.arcana.common.init.ModBlocks;
-import net.kineticdevelopment.arcana.common.init.ModEntities;
 import net.minecraft.block.Blocks;
-import net.minecraft.entity.EntityClassification;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.surfacebuilders.ConfiguredSurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;

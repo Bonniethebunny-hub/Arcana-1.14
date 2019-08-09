@@ -1,7 +1,6 @@
 package net.kineticdevelopment.arcana.utilities.EventBuses;
 
 import net.kineticdevelopment.arcana.utilities.taint.TaintLevelHandler;
-import net.minecraft.world.World;
 import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;

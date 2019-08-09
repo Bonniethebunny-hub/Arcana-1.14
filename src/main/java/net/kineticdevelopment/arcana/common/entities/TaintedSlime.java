@@ -4,14 +4,12 @@ import net.kineticdevelopment.arcana.common.init.ModEntities;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.goal.LookRandomlyGoal;
-import net.minecraft.entity.ai.goal.RandomWalkingGoal;
 import net.minecraft.entity.ai.goal.SwimGoal;
 import net.minecraft.entity.monster.SlimeEntity;
 import net.minecraft.world.World;
 
 public class TaintedSlime extends SlimeEntity
 {
-    @SuppressWarnings("uncleared")
     public TaintedSlime(EntityType<? extends SlimeEntity> type, World worldIn)
     {
         super((EntityType<? extends SlimeEntity>) ModEntities.ARCANA_TAINTED_SLIME, worldIn);

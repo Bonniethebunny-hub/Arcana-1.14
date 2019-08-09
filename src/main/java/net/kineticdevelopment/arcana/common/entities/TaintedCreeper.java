@@ -12,7 +12,6 @@ import net.minecraft.world.World;
 public class TaintedCreeper extends CreeperEntity
 {
 
-    @SuppressWarnings("uncleared")
     public TaintedCreeper(EntityType<? extends CreeperEntity> type, World worldIn)
     {
         super((EntityType<? extends CreeperEntity>) ModEntities.ARCANA_TAINTED_CREEPER, worldIn);

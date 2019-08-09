@@ -11,7 +11,6 @@ import net.minecraft.world.World;
 
 public class Koala extends CreatureEntity {
 
-    @SuppressWarnings("uncleared")
     public Koala(EntityType<? extends CreatureEntity> type, World worldIn) {
         super((EntityType<? extends CreatureEntity>) ModEntities.KOALA, worldIn);
     }

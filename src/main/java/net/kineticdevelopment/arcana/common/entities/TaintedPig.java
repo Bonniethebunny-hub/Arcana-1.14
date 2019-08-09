@@ -12,7 +12,6 @@ import net.minecraft.world.World;
 public class TaintedPig extends CreatureEntity
 {
 
-    @SuppressWarnings("uncleared")
     public TaintedPig(EntityType<? extends CreatureEntity> type, World worldIn)
     {
         super((EntityType<? extends CreatureEntity>) ModEntities.ARCANA_TAINTED_PIG, worldIn);

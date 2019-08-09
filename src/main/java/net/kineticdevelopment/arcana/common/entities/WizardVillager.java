@@ -12,7 +12,6 @@ import net.minecraft.world.World;
 public class WizardVillager extends VillagerEntity
 {
 
-    @SuppressWarnings("uncleared")
     public WizardVillager(EntityType<? extends VillagerEntity> type, World worldIn)
     {
         super((EntityType<? extends VillagerEntity>) ModEntities.ARCANA_WIZARD_VILLAGER, worldIn);

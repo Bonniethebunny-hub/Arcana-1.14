@@ -55,8 +55,7 @@ public class TaintedZombie extends ZombieEntity {
 	   private int inWaterTime;
 	   private int drownedConversionTime;
 
-		@SuppressWarnings("uncleared")
-	   public TaintedZombie(EntityType<? extends ZombieEntity> type, World worldIn) {
+		public TaintedZombie(EntityType<? extends ZombieEntity> type, World worldIn) {
 		   super((EntityType<? extends ZombieEntity>) ModEntities.ARCANA_TAINTED_ZOMBIE, worldIn);
 	   }
 

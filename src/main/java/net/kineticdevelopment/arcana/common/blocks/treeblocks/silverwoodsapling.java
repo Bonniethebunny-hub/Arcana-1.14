@@ -4,7 +4,6 @@ import net.kineticdevelopment.arcana.utilities.Constants;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.item.ItemEntity;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
@@ -100,7 +99,7 @@ public class silverwoodsapling extends BushBlock implements IGrowable {
             }
 
             if (template == null) {
-                Constants.LOGGER.error("Could not find structure at " + (new ResourceLocation("arcana", "trees/silverwoodtree")));
+                Constants.LOGGER.error("Could not find structure");
             }
             BlockState iblockstate = worldIn.getBlockState(pos);
             worldserver.notifyBlockUpdate(pos, iblockstate, iblockstate, 3);
@@ -128,13 +127,5 @@ public class silverwoodsapling extends BushBlock implements IGrowable {
 
     protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
         builder.add(STAGE);
-    }
-
-    @Override
-    public void onBlockHarvested(World worldIn, BlockPos pos, BlockState state, PlayerEntity player) {
-        worldIn.playEvent(player, 2001, pos, getStateId(state));
-        if (!player.isCreative()) {
-            spawnAsEntity(worldIn, pos, new ItemStack(this));
-        }
     }
 }

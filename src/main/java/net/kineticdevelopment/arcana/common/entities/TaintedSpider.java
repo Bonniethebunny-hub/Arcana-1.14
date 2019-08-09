@@ -11,7 +11,6 @@ import net.minecraft.world.World;
 
 public class TaintedSpider extends SpiderEntity
 {
-    @SuppressWarnings("uncleared")
     public TaintedSpider(EntityType<? extends SpiderEntity> type, World worldIn)
     {
         super((EntityType<? extends SpiderEntity>) ModEntities.ARCANA_TAINTED_SPIDER, worldIn);
