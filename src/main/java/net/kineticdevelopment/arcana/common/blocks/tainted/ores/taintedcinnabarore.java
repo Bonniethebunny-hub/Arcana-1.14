@@ -1,6 +1,6 @@
 package net.kineticdevelopment.arcana.common.blocks.tainted.ores;
 
-import net.kineticdevelopment.arcana.common.init.ModItems;
+import net.kineticdevelopment.arcana.common.init.ItemInit;
 import net.kineticdevelopment.arcana.utilities.taint.TaintSpreader;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -56,7 +56,7 @@ public class taintedcinnabarore extends Block {
         if (!player.isCreative()) {
             int h = ThreadLocalRandom.current().nextInt(1, 3);
             if (h == 2) {
-                spawnAsEntity(worldIn, pos, new ItemStack(ModItems.QUICKSILVER));
+                spawnAsEntity(worldIn, pos, new ItemStack(ItemInit.QUICKSILVER));
             }
         }
     }

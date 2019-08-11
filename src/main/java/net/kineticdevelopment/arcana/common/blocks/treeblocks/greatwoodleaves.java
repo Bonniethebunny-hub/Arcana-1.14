@@ -1,6 +1,6 @@
 package net.kineticdevelopment.arcana.common.blocks.treeblocks;
 
-import net.kineticdevelopment.arcana.common.init.ModBlocks;
+import net.kineticdevelopment.arcana.common.init.BlockInit;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
@@ -51,7 +51,7 @@ public class greatwoodleaves extends Block implements IShearable {
     }
 
     private static int getDistance(BlockState neighbor) {
-        if (neighbor.getBlock().equals(ModBlocks.GREATWOODLOG)) {
+        if (neighbor.getBlock().equals(BlockInit.GREATWOODLOG)) {
             return 0;
         } else {
             return neighbor.getBlock() instanceof greatwoodleaves ? neighbor.get(DISTANCE) : 7;

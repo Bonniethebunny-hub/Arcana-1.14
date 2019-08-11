@@ -1,6 +1,6 @@
 package net.kineticdevelopment.arcana.common.blocks.tainted;
 
-import net.kineticdevelopment.arcana.common.init.ModPotions;
+import net.kineticdevelopment.arcana.common.init.EffectInit;
 import net.kineticdevelopment.arcana.utilities.taint.TaintSpreader;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -49,7 +49,7 @@ public class taintedsand extends Block {
         if (entityIn instanceof LivingEntity) {
             LivingEntity entity = (LivingEntity) entityIn;
 
-            entity.addPotionEffect(new EffectInstance(ModPotions.TAINTED, 60, 1, false, true));
+            entity.addPotionEffect(new EffectInstance(EffectInit.TAINTED, 60, 1, false, true));
         }
     }
 }

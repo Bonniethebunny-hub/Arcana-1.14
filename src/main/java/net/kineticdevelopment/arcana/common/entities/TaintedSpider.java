@@ -1,6 +1,6 @@
 package net.kineticdevelopment.arcana.common.entities;
 
-import net.kineticdevelopment.arcana.common.init.ModEntities;
+import net.kineticdevelopment.arcana.common.init.EntityInit;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.goal.LookRandomlyGoal;
@@ -13,7 +13,7 @@ public class TaintedSpider extends SpiderEntity
 {
     public TaintedSpider(EntityType<? extends SpiderEntity> type, World worldIn)
     {
-        super((EntityType<? extends SpiderEntity>) ModEntities.ARCANA_TAINTED_SPIDER, worldIn);
+        super((EntityType<? extends SpiderEntity>) EntityInit.ARCANA_TAINTED_SPIDER, worldIn);
     }
 
     @Override

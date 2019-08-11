@@ -1,6 +1,6 @@
 package net.kineticdevelopment.arcana.common.entities;
 
-import net.kineticdevelopment.arcana.common.init.ModEntities;
+import net.kineticdevelopment.arcana.common.init.EntityInit;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.goal.LookRandomlyGoal;
@@ -14,7 +14,7 @@ public class TaintedCreeper extends CreeperEntity
 
     public TaintedCreeper(EntityType<? extends CreeperEntity> type, World worldIn)
     {
-        super((EntityType<? extends CreeperEntity>) ModEntities.ARCANA_TAINTED_CREEPER, worldIn);
+        super((EntityType<? extends CreeperEntity>) EntityInit.ARCANA_TAINTED_CREEPER, worldIn);
     }
 
     @Override

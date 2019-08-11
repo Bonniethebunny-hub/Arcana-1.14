@@ -6,7 +6,7 @@ import net.kineticdevelopment.arcana.client.container.lootbags.CommonLootbagCont
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraftforge.registries.ObjectHolder;
 
-public class ModContainer {
+public class ContainerInit {
     @ObjectHolder("arcana:thaumonomiconcontainer")
     public static ContainerType<ThaumonomiconContainer> THAUMONOMICON_CONTAINER;
 

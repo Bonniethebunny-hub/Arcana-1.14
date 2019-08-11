@@ -1,6 +1,6 @@
 package net.kineticdevelopment.arcana.client.container;
 
-import net.kineticdevelopment.arcana.common.init.ModContainer;
+import net.kineticdevelopment.arcana.common.init.ContainerInit;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;
@@ -12,7 +12,7 @@ public class ThaumonomiconContainer extends Container {
     private IItemHandler playerInventory;
 
     public ThaumonomiconContainer(int windowId, PlayerInventory playerInventory) {
-        super(ModContainer.THAUMONOMICON_CONTAINER, windowId);
+        super(ContainerInit.THAUMONOMICON_CONTAINER, windowId);
         this.playerInventory = new InvWrapper(playerInventory);
     }
 

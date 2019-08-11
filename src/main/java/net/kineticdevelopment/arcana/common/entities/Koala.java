@@ -1,6 +1,6 @@
 package net.kineticdevelopment.arcana.common.entities;
 
-import net.kineticdevelopment.arcana.common.init.ModEntities;
+import net.kineticdevelopment.arcana.common.init.EntityInit;
 import net.minecraft.entity.CreatureEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 public class Koala extends CreatureEntity {
 
     public Koala(EntityType<? extends CreatureEntity> type, World worldIn) {
-        super((EntityType<? extends CreatureEntity>) ModEntities.KOALA, worldIn);
+        super((EntityType<? extends CreatureEntity>) EntityInit.KOALA, worldIn);
     }
 
     @Override

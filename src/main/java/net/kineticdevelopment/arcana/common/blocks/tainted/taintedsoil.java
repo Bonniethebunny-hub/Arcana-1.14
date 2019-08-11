@@ -1,7 +1,7 @@
 package net.kineticdevelopment.arcana.common.blocks.tainted;
 
-import net.kineticdevelopment.arcana.common.init.ModBiomes;
-import net.kineticdevelopment.arcana.common.init.ModPotions;
+import net.kineticdevelopment.arcana.common.init.BiomeInit;
+import net.kineticdevelopment.arcana.common.init.EffectInit;
 import net.kineticdevelopment.arcana.utilities.taint.TaintSpreader;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -20,7 +20,7 @@ import net.minecraftforge.common.ToolType;
 import java.util.Random;
 
 public class taintedsoil extends Block {
-	Biome[] tainted = {ModBiomes.TAINTBIOME};
+	Biome[] tainted = {BiomeInit.TAINTBIOME};
     public taintedsoil() {
         super(Block.Properties.create(Material.SAND)
             .sound(SoundType.GROUND)
@@ -51,7 +51,7 @@ public class taintedsoil extends Block {
         if (entityIn instanceof LivingEntity) {
             LivingEntity entity = (LivingEntity) entityIn;
 
-            entity.addPotionEffect(new EffectInstance(ModPotions.TAINTED, 60, 1, false, true));
+            entity.addPotionEffect(new EffectInstance(EffectInit.TAINTED, 60, 1, false, true));
         }
     }
 }

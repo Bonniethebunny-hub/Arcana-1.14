@@ -9,7 +9,7 @@ import net.kineticdevelopment.arcana.common.items.lootbags.CommonLootbag;
 
 import net.minecraftforge.registries.ObjectHolder;
 
-public class ModItems {
+public class ItemInit {
 
     //spawn eggs
     @ObjectHolder("arcana:wizard_villager_egg")

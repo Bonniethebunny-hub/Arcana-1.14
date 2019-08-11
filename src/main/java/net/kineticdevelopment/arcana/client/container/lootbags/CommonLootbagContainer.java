@@ -1,6 +1,6 @@
 package net.kineticdevelopment.arcana.client.container.lootbags;
 
-import net.kineticdevelopment.arcana.common.init.ModContainer;
+import net.kineticdevelopment.arcana.common.init.ContainerInit;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;
@@ -12,7 +12,7 @@ public class CommonLootbagContainer extends Container {
     private IItemHandler playerInventory;
 
     public CommonLootbagContainer(int windowId, PlayerInventory playerInventory) {
-        super(ModContainer.COMMONLOOTBAG_CONTAINER, windowId);
+        super(ContainerInit.COMMONLOOTBAG_CONTAINER, windowId);
         this.playerInventory = new InvWrapper(playerInventory);
 
         layoutPlayerInventorySlots(7, 115);

@@ -1,6 +1,6 @@
 package net.kineticdevelopment.arcana.common.blocks.tainted.taintedtrees;
 
-import net.kineticdevelopment.arcana.common.init.ModBlocks;
+import net.kineticdevelopment.arcana.common.init.BlockInit;
 import net.kineticdevelopment.arcana.utilities.taint.TaintSpreader;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.RotatedPillarBlock;
@@ -22,7 +22,7 @@ public class taintedoaklog extends RotatedPillarBlock {
     @Override
     public boolean onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
         if (player.getHeldItemMainhand().getItem() instanceof AxeItem) {
-            worldIn.setBlockState(pos, ModBlocks.STRIPPEDTAINTEDOAKLOG.getDefaultState().with(RotatedPillarBlock.AXIS, state.get(RotatedPillarBlock.AXIS)), 11);
+            worldIn.setBlockState(pos, BlockInit.STRIPPEDTAINTEDOAKLOG.getDefaultState().with(RotatedPillarBlock.AXIS, state.get(RotatedPillarBlock.AXIS)), 11);
             player.getHeldItemMainhand().setDamage(player.getHeldItemMainhand().getDamage() + 1);
             return true;
         } else {

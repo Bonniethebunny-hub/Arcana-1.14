@@ -1,6 +1,6 @@
 package net.kineticdevelopment.arcana.common.biomes;
 
-import net.kineticdevelopment.arcana.common.init.ModBlocks;
+import net.kineticdevelopment.arcana.common.init.BlockInit;
 import net.minecraft.block.Blocks;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.surfacebuilders.ConfiguredSurfaceBuilder;
@@ -10,7 +10,7 @@ import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 
 public class TaintBiome extends Biome {
 
-        protected static final SurfaceBuilderConfig TaintBiome = new SurfaceBuilderConfig(ModBlocks.TAINTEDSOIL.getDefaultState(), Blocks.DIRT.getDefaultState(), Blocks.CLAY.getDefaultState());
+        protected static final SurfaceBuilderConfig TaintBiome = new SurfaceBuilderConfig(BlockInit.TAINTEDSOIL.getDefaultState(), Blocks.DIRT.getDefaultState(), Blocks.CLAY.getDefaultState());
 
 	public TaintBiome()
         {

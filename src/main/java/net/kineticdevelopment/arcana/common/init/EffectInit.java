@@ -4,7 +4,7 @@ import net.kineticdevelopment.arcana.utilities.effects.Tainted;
 import net.minecraftforge.registries.ObjectHolder;
 
 @ObjectHolder("arcana")
-public class ModPotions {
+public class EffectInit {
 
     @ObjectHolder("arcana:tainted")
     public static Tainted TAINTED;
