@@ -98,6 +98,17 @@ public class silverwoodsapling extends BushBlock implements IGrowable {
                 template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/silverwood/silverwood7"));
             }
 
+            switch(h) {
+                case 1: template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/silverwood/silverwood1")); break;
+                case 2: template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/silverwood/silverwood2")); break;
+                case 3: template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/silverwood/silverwood3")); break;
+                case 4: template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/silverwood/silverwood4")); break;
+                case 5: template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/silverwood/silverwood5")); break;
+                case 6: template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/silverwood/silverwood6")); break;
+                case 7: template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/silverwood/silverwood7")); break;
+            }
+
+
             if (template == null) {
                 Constants.LOGGER.error("Could not find structure");
             }

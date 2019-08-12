@@ -55,7 +55,7 @@ public class dairsapling extends BushBlock implements IGrowable {
         Template template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/dairtree"));
 
         if (template == null) {
-            Constants.LOGGER.error("Could not find structure at " + new ResourceLocation("arcana:structures/trees/silverwoodtree"));
+            Constants.LOGGER.error("Could not find structure at " + new ResourceLocation("arcana:structures/trees/dairtree"));
         }
         BlockState iblockstate = worldIn.getBlockState(pos);
         worldserver.notifyBlockUpdate(pos, iblockstate, iblockstate, 3);
