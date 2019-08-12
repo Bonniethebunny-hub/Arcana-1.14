@@ -19,8 +19,8 @@ public class taintedflower extends BushBlock {
     }
 
     public taintedflower() {
-        super(Properties.create(Material.BAMBOO_SAPLING)
-            .sound(SoundType.BAMBOO_SAPLING)
+        super(Properties.create(Material.PLANTS)
+            .sound(SoundType.PLANT)
             .hardnessAndResistance(0.0f)
             .doesNotBlockMovement()
         );

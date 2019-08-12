@@ -7,9 +7,9 @@ import net.kineticdevelopment.arcana.common.blocks.tainted.*;
 import net.kineticdevelopment.arcana.common.blocks.treeblocks.*;
 import net.minecraftforge.registries.ObjectHolder;
 
-public class ModBlocks {
+public class BlockInit {
 
-    //normal blocks
+    //Normal blocks
 
     @ObjectHolder("arcana:arcanestone")
     public static arcanestone ARCANESTONE;
@@ -54,7 +54,7 @@ public class ModBlocks {
     public static hearnoevil HEARNOEVIL;
 
 
-    //tree blocks
+    //Tree blocks
     @ObjectHolder("arcana:silverwoodplanks")
     public static silverwoodplanks SILVERWOODPLANKS;
 
@@ -88,7 +88,7 @@ public class ModBlocks {
     @ObjectHolder("arcana:strippeddairlog")
     public static strippeddairlog STRIPPEDDAIRLOG;
 
-    //tainted blocks
+    //Tainted blocks
 
     @ObjectHolder("arcana:taintedrock")
     public static taintedrock TAINTEDROCK;
@@ -122,9 +122,15 @@ public class ModBlocks {
 
     @ObjectHolder("arcana:taintedflower")
     public static taintedflower TAINTEDFLOWER;
+    
+    @ObjectHolder("arcana:taintedgrass")
+    public static taintedgrass TAINTEDGRASS;
+    
+    @ObjectHolder("arcana:taintedportal")
+    public static taintedportal TAINTEDPORTAL;
 
 
-    //tainted tree blocks
+    //Tainted tree blocks
 
     @ObjectHolder("arcana:taintedoakleaves")
     public static taintedoakleaves TAINTEDOAKLEAVES;
@@ -193,13 +199,13 @@ public class ModBlocks {
     public static strippedtaintedacacialog STRIPPEDTAINTEDACACIALOG;
 
 
-    //ores
+    //Ores
 
     @ObjectHolder("arcana:cinnabarore")
     public static cinnabarore CINNABARORE;
 
 
-    //tainted ores
+    //Tainted ores
 
     @ObjectHolder("arcana:taintedamberore")
     public static taintedamberore TAINTEDAMBERORE;

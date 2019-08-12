@@ -1,6 +1,6 @@
 package net.kineticdevelopment.arcana.common.blocks.tainted.taintedtrees;
 
-import net.kineticdevelopment.arcana.common.init.ModBlocks;
+import net.kineticdevelopment.arcana.common.init.BlockInit;
 import net.kineticdevelopment.arcana.utilities.taint.TaintSpreader;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -52,7 +52,7 @@ public class taintedoakleaves extends Block implements IShearable {
     }
 
     private static int getDistance(BlockState neighbor) {
-        if (neighbor.getBlock().equals(ModBlocks.TAINTEDOAKLOG)) {
+        if (neighbor.getBlock().equals(BlockInit.TAINTEDOAKLOG)) {
             return 0;
         } else {
             return neighbor.getBlock() instanceof taintedoakleaves ? neighbor.get(DISTANCE) : 7;

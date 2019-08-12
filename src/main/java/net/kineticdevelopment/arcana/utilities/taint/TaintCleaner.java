@@ -1,6 +1,6 @@
 package net.kineticdevelopment.arcana.utilities.taint;
 
-import net.kineticdevelopment.arcana.common.init.ModBlocks;
+import net.kineticdevelopment.arcana.common.init.BlockInit;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -13,37 +13,37 @@ public class TaintCleaner {
 
     @SuppressWarnings("serial")
     static List<Block> DirtProspects = new ArrayList<Block>() {{
-        add(ModBlocks.TAINTEDSOIL);
+        add(BlockInit.TAINTEDSOIL);
     }};
 
     @SuppressWarnings("serial")
     static List<Block> CobblestoneProspects = new ArrayList<Block>() {{
-        add(ModBlocks.TAINTEDROCK);
-        add(ModBlocks.TAINTEDAMBERORE);
-        add(ModBlocks.TAINTEDIRONORE);
-        add(ModBlocks.TAINTEDGOLDORE);
-        add(ModBlocks.TAINTEDDIAMONDORE);
-        add(ModBlocks.TAINTEDLAPISORE);
-        add(ModBlocks.TAINTEDEMERALDORE);
-        add(ModBlocks.TAINTEDCOALORE);
-        add(ModBlocks.TAINTEDCINNABARORE);
-        add(ModBlocks.TAINTEDREDSTONEORE);
+        add(BlockInit.TAINTEDROCK);
+        add(BlockInit.TAINTEDAMBERORE);
+        add(BlockInit.TAINTEDIRONORE);
+        add(BlockInit.TAINTEDGOLDORE);
+        add(BlockInit.TAINTEDDIAMONDORE);
+        add(BlockInit.TAINTEDLAPISORE);
+        add(BlockInit.TAINTEDEMERALDORE);
+        add(BlockInit.TAINTEDCOALORE);
+        add(BlockInit.TAINTEDCINNABARORE);
+        add(BlockInit.TAINTEDREDSTONEORE);
     }};
     
     @SuppressWarnings("serial")
     static List<Block> SandProspects = new ArrayList<Block>() {{
-        add(ModBlocks.TAINTEDSAND);
+        add(BlockInit.TAINTEDSAND);
     }};
     
     @SuppressWarnings("serial")
     static List<Block> GravelProspects = new ArrayList<Block>() {{
-        add(ModBlocks.TAINTEDGRAVEL);
+        add(BlockInit.TAINTEDGRAVEL);
     }};
     
     @SuppressWarnings("serial")
     static List<Block> AirProspects = new ArrayList<Block>() {{
-        add(ModBlocks.TAINTEDCRUST);
-        add(ModBlocks.TAINTGOO);
+        add(BlockInit.TAINTEDCRUST);
+        add(BlockInit.TAINTGOO);
     }};
     
     /**

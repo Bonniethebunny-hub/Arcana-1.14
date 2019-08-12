@@ -1,6 +1,6 @@
 package net.kineticdevelopment.arcana.common.entities;
 
-import net.kineticdevelopment.arcana.common.init.ModEntities;
+import net.kineticdevelopment.arcana.common.init.EntityInit;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.goal.LookRandomlyGoal;
@@ -14,7 +14,7 @@ public class WizardVillager extends VillagerEntity
 
     public WizardVillager(EntityType<? extends VillagerEntity> type, World worldIn)
     {
-        super((EntityType<? extends VillagerEntity>) ModEntities.ARCANA_WIZARD_VILLAGER, worldIn);
+        super((EntityType<? extends VillagerEntity>) EntityInit.ARCANA_WIZARD_VILLAGER, worldIn);
     }
 
     @Override

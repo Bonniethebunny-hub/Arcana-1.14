@@ -1,6 +1,6 @@
 package net.kineticdevelopment.arcana.common.entities;
 
-import net.kineticdevelopment.arcana.common.init.ModEntities;
+import net.kineticdevelopment.arcana.common.init.EntityInit;
 import net.minecraft.entity.CreatureEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -13,7 +13,7 @@ public class TaintedCow extends CreatureEntity
 {
     public TaintedCow(EntityType<? extends CreatureEntity> type, World worldIn)
     {
-        super((EntityType<? extends CreatureEntity>) ModEntities.ARCANA_TAINTED_COW, worldIn);
+        super((EntityType<? extends CreatureEntity>) EntityInit.ARCANA_TAINTED_COW, worldIn);
     }
 
     @Override

@@ -1,6 +1,6 @@
 package net.kineticdevelopment.arcana.common.blocks.tainted.ores;
 
-import net.kineticdevelopment.arcana.common.init.ModBlocks;
+import net.kineticdevelopment.arcana.common.init.BlockInit;
 import net.kineticdevelopment.arcana.utilities.taint.TaintSpreader;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -57,7 +57,7 @@ public class taintedamberore extends Block {
             int h = ThreadLocalRandom.current().nextInt(1, 3);
             if (h == 2) {
                 //Add Amber Item
-                spawnAsEntity(worldIn, pos, new ItemStack(ModBlocks.AMBERBLOCK));
+                spawnAsEntity(worldIn, pos, new ItemStack(BlockInit.AMBERBLOCK));
             }
         }
     }

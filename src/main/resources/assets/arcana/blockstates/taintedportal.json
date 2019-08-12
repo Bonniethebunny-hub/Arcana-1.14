@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "axis=z": { "model": "arcana:block/taintedportal_ew" },
+        "axis=x": { "model": "arcana:block/taintedportal_ns" }
+    }
+}

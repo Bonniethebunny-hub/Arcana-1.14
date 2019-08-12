@@ -14,7 +14,7 @@ import net.minecraft.world.biome.Biome.SpawnListEntry;
 import net.minecraft.world.biome.Biomes;
 import net.minecraftforge.event.RegistryEvent;
 
-public class ModEntities {
+public class EntityInit {
     public static EntityType<?> ARCANA_TAINTED_COW = EntityType.Builder.create(TaintedCow::new, EntityClassification.CREATURE).build(Constants.MODID + ":tainted_cow").setRegistryName(RegistryHandler.location("tainted_cow"));
     public static EntityType<?> ARCANA_TAINTED_ZOMBIE = EntityType.Builder.create(TaintedZombie::new, EntityClassification.MONSTER).build(Constants.MODID + ":tainted_zombie").setRegistryName(RegistryHandler.location("tainted_zombie"));
     public static EntityType<?> ARCANA_TAINTED_PIG = EntityType.Builder.create(TaintedPig::new, EntityClassification.CREATURE).build(Constants.MODID + ":tainted_pig").setRegistryName(RegistryHandler.location("tainted_pig"));
@@ -28,14 +28,14 @@ public class ModEntities {
 
     public static void registerEntitySpawnEggs(final RegistryEvent.Register<Item> event) {
         event.getRegistry().registerAll(
-                ModItems.arcana_tainted_cow_egg = registerEntitySpawnEgg(ARCANA_TAINTED_COW, 0x6d24ad, 0x6c801f, "tainted_cow_egg"),
-                ModItems.arcana_tainted_zombie_egg = registerEntitySpawnEgg(ARCANA_TAINTED_ZOMBIE, 0x6d24ad, 0x236620, "tainted_zombie_egg"),
-                ModItems.arcana_tainted_pig_egg = registerEntitySpawnEgg(ARCANA_TAINTED_PIG, 0x6d24ad,0x750867, "tainted_pig_egg"),
-                ModItems.arcana_tainted_chicken_egg = registerEntitySpawnEgg(ARCANA_TAINTED_CHICKEN, 0x6d24ad, 0xa89b32, "tainted_chicken_egg"),
-                ModItems.arcana_tainted_creeper_egg = registerEntitySpawnEgg(ARCANA_TAINTED_CREEPER, 0x6d24ad, 0x2aa823, "tainted_creeper_egg"),
-                ModItems.arcana_tainted_spider_egg = registerEntitySpawnEgg(ARCANA_TAINTED_SPIDER, 0x6d24ad, 0x09040d, "tainted_spider_egg"),
-                ModItems.arcana_tainted_slime_egg = registerEntitySpawnEgg(ARCANA_TAINTED_SLIME, 0x6d24ad, 0x04ba1c, "tainted_slime_egg"),
-                ModItems.arcana_wizard_villager_egg = registerEntitySpawnEgg(ARCANA_WIZARD_VILLAGER, 0x6b10c7, 0xc78d10, "wizard_villager_egg")
+                ItemInit.arcana_tainted_cow_egg = registerEntitySpawnEgg(ARCANA_TAINTED_COW, 0x6d24ad, 0x6c801f, "tainted_cow_egg"),
+                ItemInit.arcana_tainted_zombie_egg = registerEntitySpawnEgg(ARCANA_TAINTED_ZOMBIE, 0x6d24ad, 0x236620, "tainted_zombie_egg"),
+                ItemInit.arcana_tainted_pig_egg = registerEntitySpawnEgg(ARCANA_TAINTED_PIG, 0x6d24ad,0x750867, "tainted_pig_egg"),
+                ItemInit.arcana_tainted_chicken_egg = registerEntitySpawnEgg(ARCANA_TAINTED_CHICKEN, 0x6d24ad, 0xa89b32, "tainted_chicken_egg"),
+                ItemInit.arcana_tainted_creeper_egg = registerEntitySpawnEgg(ARCANA_TAINTED_CREEPER, 0x6d24ad, 0x2aa823, "tainted_creeper_egg"),
+                ItemInit.arcana_tainted_spider_egg = registerEntitySpawnEgg(ARCANA_TAINTED_SPIDER, 0x6d24ad, 0x09040d, "tainted_spider_egg"),
+                ItemInit.arcana_tainted_slime_egg = registerEntitySpawnEgg(ARCANA_TAINTED_SLIME, 0x6d24ad, 0x04ba1c, "tainted_slime_egg"),
+                ItemInit.arcana_wizard_villager_egg = registerEntitySpawnEgg(ARCANA_WIZARD_VILLAGER, 0x6b10c7, 0xc78d10, "wizard_villager_egg")
         );
     }
 

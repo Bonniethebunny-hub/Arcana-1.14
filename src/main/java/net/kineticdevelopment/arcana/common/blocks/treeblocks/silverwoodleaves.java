@@ -1,6 +1,6 @@
 package net.kineticdevelopment.arcana.common.blocks.treeblocks;
 
-import net.kineticdevelopment.arcana.common.init.ModBlocks;
+import net.kineticdevelopment.arcana.common.init.BlockInit;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
@@ -51,7 +51,7 @@ public class silverwoodleaves extends Block implements IShearable {
     }
 
     private static int getDistance(BlockState neighbor) {
-        if (neighbor.getBlock().equals(ModBlocks.SILVERWOODLOG)) {
+        if (neighbor.getBlock().equals(BlockInit.SILVERWOODLOG)) {
             return 0;
         } else {
             return neighbor.getBlock() instanceof silverwoodleaves ? neighbor.get(DISTANCE) : 7;

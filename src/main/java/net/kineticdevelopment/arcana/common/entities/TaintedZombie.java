@@ -9,7 +9,7 @@ import java.util.function.Predicate;
 
 import javax.annotation.Nullable;
 
-import net.kineticdevelopment.arcana.common.init.ModEntities;
+import net.kineticdevelopment.arcana.common.init.EntityInit;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -56,7 +56,7 @@ public class TaintedZombie extends ZombieEntity {
 	   private int drownedConversionTime;
 
 		public TaintedZombie(EntityType<? extends ZombieEntity> type, World worldIn) {
-		   super((EntityType<? extends ZombieEntity>) ModEntities.ARCANA_TAINTED_ZOMBIE, worldIn);
+		   super((EntityType<? extends ZombieEntity>) EntityInit.ARCANA_TAINTED_ZOMBIE, worldIn);
 	   }
 
 

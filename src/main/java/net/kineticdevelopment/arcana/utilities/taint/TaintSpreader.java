@@ -1,7 +1,7 @@
 package net.kineticdevelopment.arcana.utilities.taint;
 
 import net.kineticdevelopment.arcana.common.blocks.tainted.taintedcrust;
-import net.kineticdevelopment.arcana.common.init.ModBlocks;
+import net.kineticdevelopment.arcana.common.init.BlockInit;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.RotatedPillarBlock;
@@ -92,19 +92,19 @@ public class TaintSpreader {
 
     @SuppressWarnings("serial")
 	static HashMap<Block, Block> singleBlockConversions = new HashMap<Block, Block>() {{
-        put(Blocks.OAK_LOG, ModBlocks.TAINTEDOAKLOG);
-        put(Blocks.OAK_LEAVES, ModBlocks.TAINTEDOAKLEAVES);
-        put(Blocks.COAL_ORE, ModBlocks.TAINTEDCOALORE);
-        put(Blocks.DIAMOND_ORE, ModBlocks.TAINTEDDIAMONDORE);
-        put(Blocks.IRON_ORE, ModBlocks.TAINTEDIRONORE);
-        put(Blocks.GOLD_ORE, ModBlocks.TAINTEDGOLDORE);
-        put(Blocks.REDSTONE_ORE, ModBlocks.TAINTEDREDSTONEORE);
-        put(Blocks.LAPIS_ORE, ModBlocks.TAINTEDLAPISORE);
-        put(Blocks.EMERALD_ORE, ModBlocks.TAINTEDEMERALDORE);
-        put(ModBlocks.CINNABARORE, ModBlocks.TAINTEDCINNABARORE);
-        put(Blocks.SAND, ModBlocks.TAINTEDSAND);
-        put(Blocks.RED_SAND, ModBlocks.TAINTEDSAND);
-        put(Blocks.GRAVEL, ModBlocks.TAINTEDGRAVEL);
+        put(Blocks.OAK_LOG, BlockInit.TAINTEDOAKLOG);
+        put(Blocks.OAK_LEAVES, BlockInit.TAINTEDOAKLEAVES);
+        put(Blocks.COAL_ORE, BlockInit.TAINTEDCOALORE);
+        put(Blocks.DIAMOND_ORE, BlockInit.TAINTEDDIAMONDORE);
+        put(Blocks.IRON_ORE, BlockInit.TAINTEDIRONORE);
+        put(Blocks.GOLD_ORE, BlockInit.TAINTEDGOLDORE);
+        put(Blocks.REDSTONE_ORE, BlockInit.TAINTEDREDSTONEORE);
+        put(Blocks.LAPIS_ORE, BlockInit.TAINTEDLAPISORE);
+        put(Blocks.EMERALD_ORE, BlockInit.TAINTEDEMERALDORE);
+        put(BlockInit.CINNABARORE, BlockInit.TAINTEDCINNABARORE);
+        put(Blocks.SAND, BlockInit.TAINTEDSAND);
+        put(Blocks.RED_SAND, BlockInit.TAINTEDSAND);
+        put(Blocks.GRAVEL, BlockInit.TAINTEDGRAVEL);
     }};
     
     /**
@@ -118,12 +118,12 @@ public class TaintSpreader {
     		// Map of <OriginalBlocks -> TaintedBlock>
             // For <OriginalBlock -> TaintedBlock> see singleBlockConversions above
             HashMap<Block[], Block> conversionLists = new HashMap<Block[], Block>() {{
-                put(TaintedSoilProspects, ModBlocks.TAINTEDSOIL);
-                put(TaintedRockProspects, ModBlocks.TAINTEDROCK);
-                put(TaintGooProspects, ModBlocks.TAINTGOO);
-                put(TaintedRockProspects, ModBlocks.TAINTEDROCK);
-                put(TaintedCrustProspects, ModBlocks.TAINTEDCRUST);
-                put(TaintedFlowerProspects, ModBlocks.TAINTEDFLOWER);
+                put(TaintedSoilProspects, BlockInit.TAINTEDSOIL);
+                put(TaintedRockProspects, BlockInit.TAINTEDROCK);
+                put(TaintGooProspects, BlockInit.TAINTGOO);
+                put(TaintedRockProspects, BlockInit.TAINTEDROCK);
+                put(TaintedCrustProspects, BlockInit.TAINTEDCRUST);
+                put(TaintedFlowerProspects, BlockInit.TAINTEDFLOWER);
             }};
 
             // iterate {x, y, z} through {-1, 0, 1}
