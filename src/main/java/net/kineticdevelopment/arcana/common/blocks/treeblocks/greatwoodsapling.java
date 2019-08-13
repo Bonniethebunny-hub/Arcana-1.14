@@ -1,6 +1,7 @@
 package net.kineticdevelopment.arcana.common.blocks.treeblocks;
 
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 import net.kineticdevelopment.arcana.utilities.Constants;
 import net.minecraft.block.Block;
@@ -59,10 +60,18 @@ public class greatwoodsapling extends BushBlock implements IGrowable {
     public void grow(IWorld worldIn, BlockPos pos, BlockState state, Random rand) {
         ServerWorld worldserver = (ServerWorld) worldIn;
         TemplateManager templatemanager = worldserver.getStructureTemplateManager();
-        Template template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/greatwoodtree"));
+        Template template;
+        int h = ThreadLocalRandom.current().nextInt(2, 7);
+        switch(h) {
+            default: template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/greatwood/greatwood1")); break;
+            case 2: template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/greatwood/greatwood2")); break;
+            case 3: template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/greatwood/greatwood3")); break;
+            case 4: template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/greatwood/greatwood4")); break;
+        }
+
 
         if (template == null) {
-            Constants.LOGGER.error("Could not find structure at " + new ResourceLocation("arcana:structures/trees/silverwoodtree"));
+            Constants.LOGGER.error("Could not find structure at " + new ResourceLocation("arcana:structures/trees/greatwoodtree"));
         }
         BlockState iblockstate = worldIn.getBlockState(pos);
         worldserver.notifyBlockUpdate(pos, iblockstate, iblockstate, 3);
