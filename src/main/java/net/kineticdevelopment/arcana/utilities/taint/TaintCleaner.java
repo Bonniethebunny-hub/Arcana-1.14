@@ -1,6 +1,6 @@
 package net.kineticdevelopment.arcana.utilities.taint;
 
-import net.kineticdevelopment.arcana.common.init.ModBlocks;
+import net.kineticdevelopment.arcana.common.init.BlockInit;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -13,27 +13,37 @@ public class TaintCleaner {
 
     @SuppressWarnings("serial")
     static List<Block> DirtProspects = new ArrayList<Block>() {{
-        add(ModBlocks.TAINTEDSOIL);
+        add(BlockInit.TAINTEDSOIL);
     }};
 
     @SuppressWarnings("serial")
     static List<Block> CobblestoneProspects = new ArrayList<Block>() {{
-        add(ModBlocks.TAINTEDROCK);
-        add(ModBlocks.TAINTEDAMBERORE);
-        add(ModBlocks.TAINTEDIRONORE);
-        add(ModBlocks.TAINTEDGOLDORE);
-        add(ModBlocks.TAINTEDDIAMONDORE);
-        add(ModBlocks.TAINTEDLAPISORE);
-        add(ModBlocks.TAINTEDEMERALDORE);
-        add(ModBlocks.TAINTEDCOALORE);
-        add(ModBlocks.TAINTEDCINNABARORE);
-        add(ModBlocks.TAINTEDREDSTONEORE);
+        add(BlockInit.TAINTEDROCK);
+        add(BlockInit.TAINTEDAMBERORE);
+        add(BlockInit.TAINTEDIRONORE);
+        add(BlockInit.TAINTEDGOLDORE);
+        add(BlockInit.TAINTEDDIAMONDORE);
+        add(BlockInit.TAINTEDLAPISORE);
+        add(BlockInit.TAINTEDEMERALDORE);
+        add(BlockInit.TAINTEDCOALORE);
+        add(BlockInit.TAINTEDCINNABARORE);
+        add(BlockInit.TAINTEDREDSTONEORE);
     }};
-
+    
+    @SuppressWarnings("serial")
+    static List<Block> SandProspects = new ArrayList<Block>() {{
+        add(BlockInit.TAINTEDSAND);
+    }};
+    
+    @SuppressWarnings("serial")
+    static List<Block> GravelProspects = new ArrayList<Block>() {{
+        add(BlockInit.TAINTEDGRAVEL);
+    }};
+    
     @SuppressWarnings("serial")
     static List<Block> AirProspects = new ArrayList<Block>() {{
-        add(ModBlocks.TAINTEDCRUST);
-        add(ModBlocks.TAINTGOO);
+        add(BlockInit.TAINTEDCRUST);
+        add(BlockInit.TAINTGOO);
     }};
     
     /**
@@ -70,6 +80,28 @@ public class TaintCleaner {
                 for (int z = -5; z < 6; z++) {
                     if (AirProspects.contains(worldIn.getBlockState(pos.add(x, y, z)).getBlock())) {
                         worldIn.setBlockState(pos.add(x, y, z), Blocks.AIR.getDefaultState());
+                    }
+                }
+
+            }
+        }
+        
+        for (int x = -5; x < 6; x++) {
+            for (int y = -5; y < 6; y++) {
+                for (int z = -5; z < 6; z++) {
+                    if (SandProspects.contains(worldIn.getBlockState(pos.add(x, y, z)).getBlock())) {
+                        worldIn.setBlockState(pos.add(x, y, z), Blocks.SAND.getDefaultState());
+                    }
+                }
+
+            }
+        }
+        
+        for (int x = -5; x < 6; x++) {
+            for (int y = -5; y < 6; y++) {
+                for (int z = -5; z < 6; z++) {
+                    if (GravelProspects.contains(worldIn.getBlockState(pos.add(x, y, z)).getBlock())) {
+                        worldIn.setBlockState(pos.add(x, y, z), Blocks.GRAVEL.getDefaultState());
                     }
                 }
 
@@ -112,6 +144,28 @@ public class TaintCleaner {
                 for (int z = -5; z < num2; z++) {
                     if (AirProspects.contains(worldIn.getBlockState(pos.add(x, y, z)).getBlock())) {
                         worldIn.setBlockState(pos.add(x, y, z), Blocks.AIR.getDefaultState());
+                    }
+                }
+
+            }
+        }
+        
+        for (int x = num1; x < num2; x++) {
+            for (int y = num1; y < num2; y++) {
+                for (int z = -5; z < num2; z++) {
+                    if (SandProspects.contains(worldIn.getBlockState(pos.add(x, y, z)).getBlock())) {
+                        worldIn.setBlockState(pos.add(x, y, z), Blocks.SAND.getDefaultState());
+                    }
+                }
+
+            }
+        }
+        
+        for (int x = num1; x < num2; x++) {
+            for (int y = num1; y < num2; y++) {
+                for (int z = -5; z < num2; z++) {
+                    if (GravelProspects.contains(worldIn.getBlockState(pos.add(x, y, z)).getBlock())) {
+                        worldIn.setBlockState(pos.add(x, y, z), Blocks.GRAVEL.getDefaultState());
                     }
                 }
 

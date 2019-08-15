@@ -2,7 +2,7 @@
   "variants": {
     "": [
       {
-        "model": "arcana:block/hearoevil"
+        "model": "arcana:block/hearnoevil"
       }
     ]
   }

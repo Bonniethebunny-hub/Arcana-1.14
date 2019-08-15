@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "type=bottom": {"model": "arcana:block/taintedplanksslab"},
+    "type=top": {"model": "arcana:block/taintedplanksslabtop"},
+    "type=double": {"model": "arcana:block/taintedoakplanks"}
+  }
+}

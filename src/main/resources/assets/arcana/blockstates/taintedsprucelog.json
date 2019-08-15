@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=y": {
+      "model": "arcana:block/taintedsprucelog"
+    },
+    "axis=z": {
+      "model": "arcana:block/taintedsprucelog",
+      "x": 90
+    },
+    "axis=x": {
+      "model": "arcana:block/taintedsprucelog",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

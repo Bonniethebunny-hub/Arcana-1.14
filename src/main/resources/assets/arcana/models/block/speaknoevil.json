@@ -1,7 +1,7 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "arcana:block/speaknoevil"
+		"1": "arcana:block/speaknoevil"
 	},
 
 	"elements": [

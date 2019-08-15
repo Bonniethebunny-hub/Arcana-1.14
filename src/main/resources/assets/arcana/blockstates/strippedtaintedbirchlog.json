@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=y": {
+      "model": "arcana:block/strippedtaintedbirchlog"
+    },
+    "axis=z": {
+      "model": "arcana:block/strippedtaintedbirchlog",
+      "x": 90
+    },
+    "axis=x": {
+      "model": "arcana:block/strippedtaintedbirchlog",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

@@ -1,6 +1,7 @@
 package net.kineticdevelopment.arcana.common.blocks.treeblocks;
 
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 import net.kineticdevelopment.arcana.utilities.Constants;
 import net.minecraft.block.Block;
@@ -9,9 +10,6 @@ import net.minecraft.block.BushBlock;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.entity.item.ItemEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
@@ -21,7 +19,6 @@ import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
-import net.minecraft.world.GameRules;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
@@ -45,17 +42,6 @@ public class greatwoodsapling extends BushBlock implements IGrowable {
         setRegistryName("greatwoodsapling");
     }
 
-    public static void spawnAsEntity(World worldIn, BlockPos pos, ItemStack stack) {
-        if (!worldIn.isRemote && !stack.isEmpty() && worldIn.getGameRules().getBoolean(GameRules.DO_TILE_DROPS) && !worldIn.restoringBlockSnapshots) { // do not drop items while restoring blockstates, prevents item dupe
-            double d0 = (double) (worldIn.rand.nextFloat() * 0.5F) + 0.25D;
-            double d1 = (double) (worldIn.rand.nextFloat() * 0.5F) + 0.25D;
-            double d2 = (double) (worldIn.rand.nextFloat() * 0.5F) + 0.25D;
-            ItemEntity itementity = new ItemEntity(worldIn, (double) pos.getX() + d0, (double) pos.getY() + d1, (double) pos.getZ() + d2, stack);
-            itementity.setDefaultPickupDelay();
-            worldIn.addEntity(itementity);
-        }
-    }
-
     public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
         return SHAPE;
     }
@@ -74,10 +60,18 @@ public class greatwoodsapling extends BushBlock implements IGrowable {
     public void grow(IWorld worldIn, BlockPos pos, BlockState state, Random rand) {
         ServerWorld worldserver = (ServerWorld) worldIn;
         TemplateManager templatemanager = worldserver.getStructureTemplateManager();
-        Template template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/greatwoodtree"));
+        Template template;
+        int h = ThreadLocalRandom.current().nextInt(2, 7);
+        switch(h) {
+            default: template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/greatwood/greatwood1")); break;
+            case 2: template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/greatwood/greatwood2")); break;
+            case 3: template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/greatwood/greatwood3")); break;
+            case 4: template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/greatwood/greatwood4")); break;
+        }
+
 
         if (template == null) {
-            Constants.LOGGER.error("Could not find structure at " + new ResourceLocation("arcana:structures/trees/silverwoodtree"));
+            Constants.LOGGER.error("Could not find structure at " + new ResourceLocation("arcana:structures/trees/greatwoodtree"));
         }
         BlockState iblockstate = worldIn.getBlockState(pos);
         worldserver.notifyBlockUpdate(pos, iblockstate, iblockstate, 3);
@@ -104,11 +98,5 @@ public class greatwoodsapling extends BushBlock implements IGrowable {
 
     protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
         builder.add(STAGE);
-    }
-
-    @Override
-    public void onBlockHarvested(World worldIn, BlockPos pos, BlockState state, PlayerEntity player) {
-        worldIn.playEvent(player, 2001, pos, getStateId(state));
-        spawnAsEntity(worldIn, pos, new ItemStack(this));
     }
 }

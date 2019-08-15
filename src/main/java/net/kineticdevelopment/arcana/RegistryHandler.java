@@ -9,8 +9,8 @@ import net.kineticdevelopment.arcana.common.blocks.*;
 import net.kineticdevelopment.arcana.common.blocks.tainted.ores.*;
 import net.kineticdevelopment.arcana.common.blocks.tainted.*;
 import net.kineticdevelopment.arcana.common.creativetab.ModTabGroups;
-import net.kineticdevelopment.arcana.common.init.ModBlocks;
-import net.kineticdevelopment.arcana.common.init.ModEntities;
+import net.kineticdevelopment.arcana.common.init.BlockInit;
+import net.kineticdevelopment.arcana.common.init.EntityInit;
 import net.kineticdevelopment.arcana.common.items.*;
 import net.kineticdevelopment.arcana.common.items.elements.*;
 import net.kineticdevelopment.arcana.common.biomes.TaintBiome;
@@ -88,13 +88,19 @@ public class RegistryHandler
             
         	// Created with Block.Properties.create(Material.LEAVES).doesNotBlockMovement()
             String[] taintedsaplings = {
-                    "taintedoaksapling"
+                    "taintedoaksapling",
+                    "taintedbirchsapling",
+                    "taintedsprucesapling",
+                    "taintedacaciasapling"
             };
 
             // Created with Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.5F).sound(SoundType.PLANT)
             String[] taintedleaves = {
                     "taintedoakleaves",
-                    "tainteddairleaves"
+                    "tainteddairleaves",
+                    "taintedbirchleaves",
+                    "taintedspruceleaves",
+                    "taintedacacialeaves"
             };
 
             // Created with Block.Properties.create(Material.WOOD).hardnessAndResistance(1.1F).harvestTool(ToolType.AXE)
@@ -102,7 +108,13 @@ public class RegistryHandler
                     "taintedoaklog",
                     "strippedtaintedoaklog",
                     "tainteddairlog",
-                    "strippedtainteddairlog"
+                    "strippedtainteddairlog",
+                    "taintedbirchlog",
+                    "strippedtaintedbirchlog",
+                    "taintedsprucelog",
+                    "strippedtaintedsprucelog",
+                    "taintedacacialog",
+                    "strippedtaintedacacialog"
             };
 
             // Created normally
@@ -142,7 +154,13 @@ public class RegistryHandler
                     new seenoevil(),
                     new tainted_planks_slab(),
                     new hearnoevil(),
-                    new speaknoevil()
+                    new speaknoevil(),
+                    new taintedbirchplanks(),
+                    new taintedspruceplanks(),
+                    new taintedacaciaplanks(),
+                    new taintedflower(),
+                    new taintedgrass(),
+                    new taintedportal()
             };
 
             for (String clsname : saplings) {
@@ -227,10 +245,6 @@ public class RegistryHandler
         @SubscribeEvent
         public static void onBiomeRegistry(final RegistryEvent.Register<Biome> event) {
             event.getRegistry().register(new TaintBiome().setRegistryName("taintbiome"));
-            System.out.println("Biomes are working, fat whoop!");
-
-
-
         }
 
 
@@ -242,60 +256,77 @@ public class RegistryHandler
 
             // BLOCKS
             Block[] modBlocks = {
-                    ModBlocks.ARCANESTONE,
-                    ModBlocks.ARCANEWORKTABLE,
-                    ModBlocks.ARCANESTONEBRICK,
-                    ModBlocks.INFUSIONSTONE,
-                    ModBlocks.AMBERBLOCK,
-                    ModBlocks.AMBERBLOCKSWIRL,
-                    ModBlocks.AMBERBRICK,
-                    ModBlocks.SILVERWOODPLANKS,
-                    ModBlocks.GREATWOODPLANKS,
-                    ModBlocks.GREATWOODSAPLING,
-                    ModBlocks.TAINTEDCRUST,
-                    ModBlocks.TAINTEDROCK,
-                    ModBlocks.TAINTEDSOIL,
-                    ModBlocks.CINNABARORE,
-                    ModBlocks.THAUMIUMBLOCK,
-                    ModBlocks.GREATWOODLOG,
-                    ModBlocks.GREATWOODLEAVES,
-                    ModBlocks.SILVERWOODLOG,
-                    ModBlocks.SILVERWOODLEAVES,
-                    ModBlocks.SILVERWOODSAPLING,
-                    ModBlocks.DAIRLOG,
-                    ModBlocks.DAIRLEAVES,
-                    ModBlocks.DAIRSAPLING,
-                    ModBlocks.STRIPPEDDAIRLOG,
-                    ModBlocks.TAINTEDOAKLEAVES,
-                    ModBlocks.TAINTEDOAKSAPLING,
-                    ModBlocks.STRIPPEDTAINTEDOAKLOG,
-                    ModBlocks.TAINTEDOAKLOG,
-                    ModBlocks.TAINTEDOAKPLANKS,
-                    ModBlocks.TAINTEDDAIRPLANKS,
-                    ModBlocks.TAINTEDDAIRLOG,
-                    ModBlocks.STRIPPEDTAINTEDDAIRLOG,
-                    ModBlocks.TAINTEDDAIRLEAVES,
-                    ModBlocks.TAINTEDAMBERORE,
-                    ModBlocks.TAINTEDCOALORE,
-                    ModBlocks.TAINTEDCINNABARORE,
-                    ModBlocks.TAINTEDDIAMONDORE,
-                    ModBlocks.TAINTEDEMERALDORE,
-                    ModBlocks.TAINTEDGOLDORE,
-                    ModBlocks.TAINTEDIRONORE,
-                    ModBlocks.TAINTEDLAPISORE,
-                    ModBlocks.TAINTEDREDSTONEORE,
-                    ModBlocks.TAINTGOO,
-                    ModBlocks.TAINTSCRUBBER,
-                    ModBlocks.OBSIDIANTOTEMTOP,
-                    ModBlocks.TAINTEDSTONEBRICK,
-                    ModBlocks.TAINTEDSAND,
-                    ModBlocks.TAINTEDGRAVEL,
-                    ModBlocks.TAINTEDOBSIDIAN,
-                    ModBlocks.SEENOEVIL,
-                    ModBlocks.SPEAKNOEVIL,
-                    ModBlocks.HEARNOEVIL,
-                    ModBlocks.TAINTEDPLANKSSLAB
-
+                    BlockInit.ARCANESTONE,
+                    BlockInit.ARCANEWORKTABLE,
+                    BlockInit.ARCANESTONEBRICK,
+                    BlockInit.INFUSIONSTONE,
+                    BlockInit.AMBERBLOCK,
+                    BlockInit.AMBERBLOCKSWIRL,
+                    BlockInit.AMBERBRICK,
+                    BlockInit.SILVERWOODPLANKS,
+                    BlockInit.GREATWOODPLANKS,
+                    BlockInit.GREATWOODSAPLING,
+                    BlockInit.TAINTEDCRUST,
+                    BlockInit.TAINTEDROCK,
+                    BlockInit.TAINTEDSOIL,
+                    BlockInit.CINNABARORE,
+                    BlockInit.THAUMIUMBLOCK,
+                    BlockInit.GREATWOODLOG,
+                    BlockInit.GREATWOODLEAVES,
+                    BlockInit.SILVERWOODLOG,
+                    BlockInit.SILVERWOODLEAVES,
+                    BlockInit.SILVERWOODSAPLING,
+                    BlockInit.DAIRLOG,
+                    BlockInit.DAIRLEAVES,
+                    BlockInit.DAIRSAPLING,
+                    BlockInit.STRIPPEDDAIRLOG,
+                    BlockInit.TAINTEDOAKLEAVES,
+                    BlockInit.TAINTEDOAKSAPLING,
+                    BlockInit.STRIPPEDTAINTEDOAKLOG,
+                    BlockInit.TAINTEDOAKLOG,
+                    BlockInit.TAINTEDOAKPLANKS,
+                    BlockInit.TAINTEDDAIRPLANKS,
+                    BlockInit.TAINTEDDAIRLOG,
+                    BlockInit.STRIPPEDTAINTEDDAIRLOG,
+                    BlockInit.TAINTEDDAIRLEAVES,
+                    BlockInit.TAINTEDAMBERORE,
+                    BlockInit.TAINTEDCOALORE,
+                    BlockInit.TAINTEDCINNABARORE,
+                    BlockInit.TAINTEDDIAMONDORE,
+                    BlockInit.TAINTEDEMERALDORE,
+                    BlockInit.TAINTEDGOLDORE,
+                    BlockInit.TAINTEDIRONORE,
+                    BlockInit.TAINTEDLAPISORE,
+                    BlockInit.TAINTEDREDSTONEORE,
+                    BlockInit.TAINTGOO,
+                    BlockInit.TAINTSCRUBBER,
+                    BlockInit.OBSIDIANTOTEMTOP,
+                    BlockInit.TAINTEDSTONEBRICK,
+                    BlockInit.TAINTEDSAND,
+                    BlockInit.TAINTEDGRAVEL,
+                    BlockInit.TAINTEDOBSIDIAN,
+                    BlockInit.SEENOEVIL,
+                    BlockInit.SPEAKNOEVIL,
+                    BlockInit.HEARNOEVIL,
+                    BlockInit.TAINTEDPLANKSSLAB,
+                    BlockInit.TAINTEDBIRCHLOG,
+                    BlockInit.TAINTEDBIRCHPLANKS,
+                    BlockInit.TAINTEDBIRCHLEAVES,
+                    BlockInit.STRIPPEDTAINTEDBIRCHLOG,
+                    BlockInit.TAINTEDBIRCHSAPLING,
+                    BlockInit.TAINTEDSPRUCELEAVES,
+                    BlockInit.TAINTEDSPRUCESAPLING,
+                    BlockInit.TAINTEDSPRUCEPLANKS,
+                    BlockInit.TAINTEDSPRUCELOG,
+                    BlockInit.STRIPPEDTAINTEDSPRUCELOG,
+                    BlockInit.TAINTEDACACIASAPLING,
+                    BlockInit.TAINTEDACACIAPLANKS,
+                    BlockInit.TAINTEDACACIALEAVES,
+                    BlockInit.TAINTEDACACIALOG,
+                    BlockInit.STRIPPEDTAINTEDACACIALOG,
+                    BlockInit.TAINTEDFLOWER,
+                    BlockInit.TAINTEDGRASS,
+                    BlockInit.TAINTEDPORTAL
             };
 
             for (Block block : modBlocks) {
@@ -331,7 +362,7 @@ public class RegistryHandler
                 new darkness(),
                 new death(),
                 new earth(),
-                new eldrich(),
+                new eldritch(),
                 new ender(),
                 new envy(),
                 new exchange(),
@@ -382,7 +413,7 @@ public class RegistryHandler
             }
 
             //Entity Spawn Eggs
-            ModEntities.registerEntitySpawnEggs(event);
+            EntityInit.registerEntitySpawnEggs(event);
           
             // ARMOR
             event.getRegistry().register(new AspectGogglesHelmet("aspect_goggles", ArmorMaterial.ASPECT_GOGGLES_HELMET, EquipmentSlotType.HEAD, (new Item.Properties()).group(ModTabGroups.MOD_ITEM_GROUP)));
@@ -410,26 +441,25 @@ public class RegistryHandler
         public static void registerEntities(final RegistryEvent.Register<EntityType<?>> event)
         {
             event.getRegistry().registerAll(
-                    ModEntities.ARCANA_TAINTED_PIG,
-                    ModEntities.ARCANA_TAINTED_COW,
-                    ModEntities.ARCANA_TAINTED_ZOMBIE,
-                    ModEntities.ARCANA_TAINTED_CHICKEN,
-                    ModEntities.ARCANA_TAINTED_CREEPER,
-                    ModEntities.ARCANA_TAINTED_SPIDER,
-                    ModEntities.ARCANA_TAINTED_SLIME,
-                    ModEntities.ARCANA_WIZARD_VILLAGER,
-                    ModEntities.KOALA
+                    EntityInit.ARCANA_TAINTED_PIG,
+                    EntityInit.ARCANA_TAINTED_COW,
+                    EntityInit.ARCANA_TAINTED_ZOMBIE,
+                    EntityInit.ARCANA_TAINTED_CHICKEN,
+                    EntityInit.ARCANA_TAINTED_CREEPER,
+                    EntityInit.ARCANA_TAINTED_SPIDER,
+                    EntityInit.ARCANA_TAINTED_SLIME,
+                    EntityInit.ARCANA_WIZARD_VILLAGER,
+                    EntityInit.KOALA
             );
 
-            ModEntities.registerEntityWorldSpawns();
+            EntityInit.registerEntityWorldSpawns();
         }
         
         @SubscribeEvent
-        public static void onPotionRegistry(final RegistryEvent.Register<Effect> event) {
+        public static void onEffectRegistry(final RegistryEvent.Register<Effect> event) {
             event.getRegistry().register(new Tainted(EffectType.HARMFUL, 10494192).setRegistryName("tainted"));
             System.out.println("Potions Registered!");
         }
-
     }
 
     /**
