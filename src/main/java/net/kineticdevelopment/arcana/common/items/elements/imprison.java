@@ -14,18 +14,18 @@ import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class machine extends Item {
+public class imprison extends Item {
 
-    public machine() {
+    public imprison() {
         super(new Properties().group(ModTabGroups.MOD_ITEM_GROUP)
             .maxStackSize(64));
 
-        setRegistryName("machine");
+        setRegistryName("imprison");
     }
     
     @OnlyIn(Dist.CLIENT)
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        tooltip.add(new StringTextComponent("Machina"));
+        tooltip.add(new StringTextComponent("Incarcero"));
     }
 }

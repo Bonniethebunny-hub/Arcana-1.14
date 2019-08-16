@@ -375,7 +375,7 @@ public class RegistryHandler
                 new harvest(),
                 new human(),
                 new ice(),
-                new inprison(),
+                new imprison(),
                 new journey(),
                 new life(),
                 new light(),

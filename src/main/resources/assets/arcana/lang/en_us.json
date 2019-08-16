@@ -94,6 +94,10 @@
   "block.arcana.taintedacacialeaves": "Tainted Acacia Leaves",
   "block.arcana.taintedacacialog": "Tainted Acacia Logs",
   "block.arcana.strippedtaintedacacialog": "Stripped Tainted Acacia Logs",
+  "block.arcana.hearnoevil": "Hear No Evil Statue",
+  "block.arcana.seenoevil": "See No Evil Statue",
+  "block.arcana.speaknoevil": "Speak No Evil Statue",
+  "block.arcana.taintedplanksslab": "Tainted Oak Slab",
 
 
   "_comment": "MOD ITEMS",
@@ -150,7 +154,7 @@
   "item.arcana.lust": "Lust",
   "item.arcana.life": "Life",
   "item.arcana.journey": "Journey",
-  "item.arcana.inprison": "Inprison",
+  "item.arcana.imprison": "Imprison",
   "item.arcana.harvest": "Harvest",
   "item.arcana.greed": "Greed",
   "item.arcana.gluttony": "Gluttony",
@@ -158,7 +162,7 @@
   "item.arcana.flesh": "Flesh",
   "item.arcana.fabric": "Fabric",
   "item.arcana.envy": "Envy",
-  "item.arcana.eldrich": "Eldrich",
+  "item.arcana.eldritch": "Eldritch",
   "item.arcana.death": "Death",
   "item.arcana.darkness": "Darkness",
   "item.arcana.crystal": "Crystal",

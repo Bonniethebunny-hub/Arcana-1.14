@@ -11,8 +11,9 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.fml.network.NetworkHooks;
 
 import javax.annotation.Nullable;
@@ -34,9 +35,10 @@ public class thaumonomicon extends Item {
 
         return super.onItemRightClick(worldIn, playerIn, handIn);
     }
-
+    
+    @OnlyIn(Dist.CLIENT)
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        tooltip.add(new StringTextComponent(TextFormatting.RED + "OPEN ME NOW PEASANT!"));
+        tooltip.add(new StringTextComponent("Placeholder Text :D"));
     }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "arcana:item/eldrich"
+    "layer0": "arcana:item/eldritch"
   }
 }
