@@ -1,14 +1,14 @@
 package net.kineticdevelopment.arcana.client.models;
 
-import net.kineticdevelopment.arcana.common.entities.Koala;
 import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.entity.model.RendererModel;
 import net.minecraft.client.renderer.model.ModelBox;
+import net.minecraft.entity.Entity;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
-public class KoalaModel extends EntityModel<Koala> {
+public class KoalaModel<T extends Entity> extends EntityModel<T> {
 	private final RendererModel body;
 	private final RendererModel arms;
 	private final RendererModel heazd;
@@ -50,11 +50,8 @@ public class KoalaModel extends EntityModel<Koala> {
 	}
 	
 	@Override
-	public void render(Koala entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scale) {
+	public void render(T entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scale) {
 		body.render(scale);
-		heazd.render(scale);
-		arms.render(scale);
-		legs.render(scale);
 	}
 	
 	public void setRotationAngle(RendererModel RendererModel, float x, float y, float z) {

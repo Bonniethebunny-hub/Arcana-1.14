@@ -12,17 +12,17 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
 
 @OnlyIn(Dist.CLIENT)
-public class KoalaRenderer extends LivingRenderer<Koala, KoalaModel>
+public class KoalaRenderer extends LivingRenderer<Koala, KoalaModel<Koala>>
 {
     public KoalaRenderer(EntityRendererManager manager)
     {
-        super(manager, new KoalaModel(), 0f);
+        super(manager, new KoalaModel<Koala>(), 0f);
     }
 
     @Override
     protected ResourceLocation getEntityTexture(Koala entity)
     {
-        return RegistryHandler.location("textures/entity/tainted_pig.png");
+        return RegistryHandler.location("textures/entity/koala.png");
     }
 
     public static class RenderFactory implements IRenderFactory<Koala>

@@ -19,6 +19,7 @@ public class ModRenderRegistry
         RenderingRegistry.registerEntityRenderingHandler(TaintedCreeper.class, new TaintedCreeperRender.RenderFactory());
         RenderingRegistry.registerEntityRenderingHandler(TaintedSpider.class, new TaintedSpiderRender.RenderFactory());
         RenderingRegistry.registerEntityRenderingHandler(TaintedSlime.class, new TaintedSlimeRender.RenderFactory());
+        RenderingRegistry.registerEntityRenderingHandler(Koala.class, new KoalaRenderer.RenderFactory());
 
         RenderingRegistry.registerEntityRenderingHandler(WizardVillager.class, new WizardVillagerRender.RenderFactory());
     }
