@@ -9,7 +9,6 @@ import net.kineticdevelopment.arcana.common.ServerProxy;
 import net.kineticdevelopment.arcana.utilities.Constants;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -28,11 +27,9 @@ public class ArcanaMod {
         proxy.init();
     }
 
-    private void clientRegistries(final FMLClientSetupEvent event)
-    {
+    private void clientRegistries(final FMLClientSetupEvent event) {
         ModRenderRegistry.registryEntityRenders();
 
         Constants.LOGGER.info("clientRegistries method registered.");
     }
-
 }
