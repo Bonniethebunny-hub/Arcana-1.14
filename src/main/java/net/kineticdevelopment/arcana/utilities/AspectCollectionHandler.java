@@ -1,18 +1,36 @@
 package net.kineticdevelopment.arcana.utilities;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.LineNumberReader;
+import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map.Entry;
+import javax.annotation.Nullable;
 
 import net.kineticdevelopment.arcana.common.init.ItemInit;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
+import net.minecraft.world.World;
+
 
 public class AspectCollectionHandler {
+	
+	//No touchy mart
+	
 	@SuppressWarnings("serial")
-	static HashMap<Block, Item[]> BlockAspects = new HashMap<Block, Item[]>() {{
-		put(Blocks.DIRT, new Item[] {ItemInit.EARTH});
-		put(Blocks.ICE, new Item[] {ItemInit.ICE, ItemInit.WATER});
+	static HashMap<Block, Aspect[]> BlockAspects = new HashMap<Block, Aspect[]>() {{
+		put(Blocks.DIRT, new Aspect[] {new Aspect(ItemInit.EARTH)});
+		put(Blocks.ICE, new Aspect[] {new Aspect(ItemInit.ICE), new Aspect(ItemInit.WATER)});
 	}};
 	
 	/**
@@ -20,13 +38,98 @@ public class AspectCollectionHandler {
 	 * @param block
 	 * @return Item[]
 	 */
-	public static Item[] getBlockAspects(Block block) {
-		for (Entry<Block, Item[]> entry : BlockAspects.entrySet()) {
+	public static Aspect[] getBlockAspects(Block block) {
+		for (Entry<Block, Aspect[]> entry : BlockAspects.entrySet()) {
 			if (block.equals(entry.getKey().getBlock())) {
-            	Item[] aspects = entry.getValue(); 
+            	Aspect[] aspects = entry.getValue(); 
             	return aspects;
             }
         }
 		return null;
+	}
+	
+	/**
+	 * Adds the specified aspect to the player's pool
+	 * @param player
+	 * @param world
+	 * @param aspect
+	 */
+	public static void addAspectToPlayer(PlayerEntity player, World world, Aspect aspect) {
+	      try {
+	    	  File aspectDataDir = new File(world.getWorldInfo().getWorldName(), "aspectdata");
+	    	  aspectDataDir.mkdirs();
+	    	  
+	    	  File playerAspectData = new File(aspectDataDir, player.getCachedUniqueIdString()+".aspect");
+	    	  if(!playerAspectData.exists()) {
+	    		  playerAspectData.createNewFile();
+	    	  }
+	    	  ArrayList<Aspect> aspectlist = getPlayerAspects(player, world);
+	    	  
+	    	  try(FileWriter fw = new FileWriter(playerAspectData, true);
+	    	      BufferedWriter bw = new BufferedWriter(fw);
+	    		  PrintWriter out = new PrintWriter(bw)) {
+	    		  if(!aspectlist.contains(aspect)) {
+	    			  out.println(Item.getIdFromItem(aspect.getAspectItem()));
+	    		  }
+	  		  } 
+	  		  	catch (IOException e) {
+	  		  		Constants.LOGGER.warn("Failed to write to "+player.getCachedUniqueIdString()+".aspect");
+	  			}
+	      } catch (Exception var5) {
+	    	  Constants.LOGGER.warn("Error adding aspect "+aspect.getName()+" to "+player.getName());
+	      }
+
+	}
+
+	   
+	@Nullable
+	public static ArrayList<Aspect> getPlayerAspects(PlayerEntity player, World world) {
+		ArrayList<Aspect> aspectlist = new ArrayList<Aspect>();
+		
+		int lineCount = 0;
+		try
+		{
+			File aspectDataDir = new File(world.getWorldInfo().getWorldName(), "aspectdata");
+			aspectDataDir.mkdirs();
+	    	  
+			File playerAspectData = new File(aspectDataDir, player.getCachedUniqueIdString()+".aspect");
+			FileReader fr = new FileReader(playerAspectData);
+		    LineNumberReader lnr = new LineNumberReader(fr);
+		    
+	        while (lnr.readLine() != null)
+	        {
+	        	lineCount++;
+	        }
+	 
+	        System.out.println("Total number of lines : " + lineCount);
+	 
+	        lnr.close();
+		}
+		catch(IOException e)
+		{
+			e.printStackTrace();
+		}
+		finally
+		{
+    		
+	        try(BufferedReader br = Files.newBufferedReader(Paths.get(world.getWorldInfo().getWorldName()+"/aspectdata", player.getCachedUniqueIdString()+".aspect"))) 
+	        {
+	            String line;
+	            while ((line = br.readLine()) != null) 
+	            {
+	            	for(int i=0; i<lineCount; i++) {
+	            		Aspect aspect = new Aspect(Item.getItemById(Integer.parseInt(line)));
+	            		aspectlist.add(aspect);
+	            		System.out.println(aspect.getName());
+	            	}
+	            }
+	        } 
+	        catch(IOException e) 
+	        {
+	            System.err.format("IOException: %s%n", e);
+	        }
+		}
+		
+		return aspectlist;
 	}
 }
