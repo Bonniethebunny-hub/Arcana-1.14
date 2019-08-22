@@ -23,17 +23,18 @@ import net.minecraft.world.server.ServerWorld;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class dairsapling extends BushBlock implements IGrowable {
+public class willowsapling extends BushBlock implements IGrowable {
     public static final IntegerProperty STAGE = BlockStateProperties.STAGE_0_1;
     protected static final VoxelShape SHAPE = Block.makeCuboidShape(2.0D, 0.0D, 2.0D, 14.0D, 12.0D, 14.0D);
 
-    public dairsapling(Block.Properties properties) {
+    public willowsapling(Block.Properties properties) {
         super(Block.Properties.create(Material.BAMBOO_SAPLING)
-            .sound(SoundType.BAMBOO_SAPLING)
-            .hardnessAndResistance(3.0f)
+                .sound(SoundType.BAMBOO_SAPLING)
+                .hardnessAndResistance(3.0f)
         );
+        setRegistryName("willowsapling");
         this.setDefaultState(this.stateContainer.getBaseState().with(STAGE, Integer.valueOf(0)));
-        setRegistryName("dairsapling");
+
     }
     public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
         return SHAPE;
@@ -53,13 +54,13 @@ public class dairsapling extends BushBlock implements IGrowable {
     public void grow(IWorld worldIn, BlockPos pos, BlockState state, Random rand) {
         ServerWorld worldserver = (ServerWorld) worldIn;
         TemplateManager templatemanager = worldserver.getStructureTemplateManager();
-        Template template = templatemanager.getTemplate(new ResourceLocation("arcana", "structures/trees/dair/dair_small0"));
+        Template template = templatemanager.getTemplate(new ResourceLocation("arcana", "structures/trees/willow/dair_small0"));
         int h = ThreadLocalRandom.current().nextInt(0, 4);
         switch(h) {
-            case 1: template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/dair/dair_small_0")); break;
-            case 2: template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/dair/dair_small_1")); break;
-            case 3: template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/dair/dair_small_2")); break;
-            case 4: template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/dair/dair_small_3")); break;
+            case 1: template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/willow/dair_small_0")); break;
+            case 2: template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/willow/dair_small_1")); break;
+            case 3: template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/willow/dair_small_2")); break;
+            case 4: template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/willow/dair_small_3")); break;
 //            case 5: template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/silverwood/silverwood5")); break;
 //            case 6: template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/silverwood/silverwood6")); break;
 //            case 7: template = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/silverwood/silverwood7")); break;
@@ -70,7 +71,7 @@ public class dairsapling extends BushBlock implements IGrowable {
         BlockState iblockstate = worldIn.getBlockState(pos);
         worldserver.notifyBlockUpdate(pos, iblockstate, iblockstate, 3);
         PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)
-            .setRotation(Rotation.NONE).setIgnoreEntities(false).setChunk(worldIn.getChunk(pos).getPos());
+                .setRotation(Rotation.NONE).setIgnoreEntities(false).setChunk(worldIn.getChunk(pos).getPos());
 
         template.addBlocksToWorld(worldIn, pos.add(-4, 0, -4), placementsettings);
     }

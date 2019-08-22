@@ -93,7 +93,7 @@ public class silverwoodsapling extends BushBlock implements IGrowable {
             BlockState iblockstate = worldIn.getBlockState(pos);
             worldserver.notifyBlockUpdate(pos, iblockstate, iblockstate, 3);
             PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)
-                .setRotation(Rotation.NONE).setIgnoreEntities(false).setChunk(null);
+                .setRotation(Rotation.NONE).setIgnoreEntities(false).setChunk(worldIn.getChunk(pos).getPos());
 
             template.addBlocksToWorld(worldIn, pos.add(-3, -1, -3), placementsettings);
         }

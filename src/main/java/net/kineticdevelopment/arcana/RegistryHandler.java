@@ -15,6 +15,9 @@ import net.kineticdevelopment.arcana.common.items.*;
 import net.kineticdevelopment.arcana.common.items.elements.*;
 import net.kineticdevelopment.arcana.common.biomes.TaintBiome;
 
+import net.kineticdevelopment.arcana.utilities.structures.DairTreeFeature;
+import net.kineticdevelopment.arcana.utilities.structures.GreatwoodFeature;
+import net.kineticdevelopment.arcana.utilities.structures.SilverwoodFeature;
 import net.minecraft.entity.EntityType;
 import net.kineticdevelopment.arcana.common.items.lootbags.CommonLootbag;
 
@@ -32,6 +35,11 @@ import net.minecraft.potion.EffectType;
 import net.minecraft.world.biome.Biome;
 
 
+import net.minecraft.world.biome.Biomes;
+import net.minecraft.world.gen.GenerationStage;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
+import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraft.util.ResourceLocation;
@@ -85,7 +93,7 @@ public class RegistryHandler
                 "dairlog",
                 "strippeddairlog"
             };
-            
+
         	// Created with Block.Properties.create(Material.LEAVES).doesNotBlockMovement()
             String[] taintedsaplings = {
                     "taintedoaksapling",
@@ -198,7 +206,7 @@ public class RegistryHandler
                     e.printStackTrace();
                 }
             }
-            
+
             //Tainted Tree Blocks
             for (String clsname : taintedsaplings) {
                 try {
@@ -326,7 +334,10 @@ public class RegistryHandler
                     BlockInit.STRIPPEDTAINTEDACACIALOG,
                     BlockInit.TAINTEDFLOWER,
                     BlockInit.TAINTEDGRASS,
-                    BlockInit.TAINTEDPORTAL
+                    BlockInit.TAINTEDPORTAL,
+//                    BlockInit.WILLOWLOG,
+//                    BlockInit.WILLOWLEAVES,
+//                    BlockInit.WILLOWSAPLING,
             };
 
             for (Block block : modBlocks) {
@@ -414,7 +425,7 @@ public class RegistryHandler
 
             //Entity Spawn Eggs
             EntityInit.registerEntitySpawnEggs(event);
-          
+
             // ARMOR
             event.getRegistry().register(new AspectGogglesHelmet("aspect_goggles", ArmorMaterial.ASPECT_GOGGLES_HELMET, EquipmentSlotType.HEAD, (new Item.Properties()).group(ModTabGroups.MOD_ITEM_GROUP)));
 
@@ -454,12 +465,27 @@ public class RegistryHandler
 
             EntityInit.registerEntityWorldSpawns();
         }
-        
+
         @SubscribeEvent
         public static void onEffectRegistry(final RegistryEvent.Register<Effect> event) {
             event.getRegistry().register(new Tainted(EffectType.HARMFUL, 10494192).setRegistryName("tainted"));
             System.out.println("Potions Registered!");
         }
+
+        @SubscribeEvent
+        public static void onFeatureRegistry(final RegistryEvent.Register<Feature<?>> event) {
+            //Tree Registry
+            Feature<?>[] trees = {
+                    new DairTreeFeature(NoFeatureConfig::deserialize).setRegistryName("arcana:dairtree"),
+                    new GreatwoodFeature(NoFeatureConfig::deserialize).setRegistryName("arcana:greatwoodtree"),
+                    new SilverwoodFeature(NoFeatureConfig::deserialize).setRegistryName("arcana:silverwoodtree")
+            };
+            for (Feature<?> tree : trees
+                 ) {
+                event.getRegistry().register(tree);
+            }
+        }
+
     }
 
     /**

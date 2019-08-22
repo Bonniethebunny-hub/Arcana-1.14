@@ -1,10 +1,8 @@
 {
   "_comment": "CREATIVE TABS",
   "itemGroup.arcana": "Arcana",
-
   "_comment": "Biomes",
   "biome.arcana.taintbiome": "Tainted Land",
-
   "_comment": "MOD ENTITIES",
   "entity.arcana.tainted_pig": "Tainted Pig",
   "entity.arcana.tainted_cow": "Tainted Cow",
@@ -14,7 +12,6 @@
   "entity.arcana.tainted_spider": "Tainted Spider",
   "entity.arcana.tainted_slime": "Tainted Slime",
   "entity.arcana.wizard_villager.none": "Wizard Villager",
-
   "_comment": "MOD SPAWN EGGS",
   "item.arcana.tainted_cow_egg": "Tainted Cow Spawn Egg",
   "item.arcana.tainted_zombie_egg": "Tainted Zombie Spawn Egg",
@@ -24,8 +21,6 @@
   "item.arcana.tainted_spider_egg": "Tainted Spider Spawn Egg",
   "item.arcana.tainted_slime_egg": "Tainted Slime Spawn Egg",
   "item.arcana.wizard_villager_egg": "Wizard Villager Spawn Egg",
-
-
   "_comment": "MOD BLOCKS",
   "block.arcana.arcanestone": "Arcane Stone",
   "block.arcana.arcanestonebrick": "Arcane Stone Bricks",
@@ -98,6 +93,10 @@
   "block.arcana.seenoevil": "See No Evil Statue",
   "block.arcana.speaknoevil": "Speak No Evil Statue",
   "block.arcana.taintedplanksslab": "Tainted Oak Slab",
+  "block.arcana.willowlog": "Willow Log",
+  "block.arcana.willowleaves": "Willow Leaves",
+  "block.arcana.willowsapling": "Willow Sapling",
+
 
 
   "_comment": "MOD ITEMS",

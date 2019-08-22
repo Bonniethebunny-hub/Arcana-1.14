@@ -1,41 +1,36 @@
-package net.kineticdevelopment.arcana.utilities.generators;
+package net.kineticdevelopment.arcana.utilities.structures;
 
+import com.mojang.datafixers.Dynamic;
 import net.kineticdevelopment.arcana.utilities.Constants;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
-import net.minecraft.world.biome.Biome;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.biome.Biomes;
-import net.minecraft.world.chunk.AbstractChunkProvider;
 import net.minecraft.world.gen.ChunkGenerator;
-import net.minecraft.world.gen.WorldGenRegion;
+import net.minecraft.world.gen.GenerationSettings;
+import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraft.world.gen.feature.template.PlacementSettings;
 import net.minecraft.world.gen.feature.template.Template;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 import net.minecraft.world.server.ServerWorld;
-import net.minecraftforge.fml.common.IWorldGenerator;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.registries.ForgeRegistryEntry;
 
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.function.Function;
 
-public class StructureGenerator implements IWorldGenerator {
-
+public class GreatwoodFeature extends Feature<NoFeatureConfig> {
+    public GreatwoodFeature(Function<Dynamic<?>, ? extends NoFeatureConfig> configFactoryIn) {
+        super(configFactoryIn);
+    }
 
     @Override
-    public void generate(Random random, int chunkX, int chunkZ, World world, ChunkGenerator chunkGenerator, AbstractChunkProvider chunkProvider) {
-        int x = (chunkX * 16) + random.nextInt(15);
-        int z = (chunkZ * 16) + random.nextInt(15);
-        int y = calculateGenerationHeight(world, x, z, Blocks.GRASS_BLOCK);
-        BlockPos spawnPos = new BlockPos(x,y,z);
+    public boolean place(IWorld world, ChunkGenerator<? extends GenerationSettings> generator, Random random, BlockPos spawnPos, NoFeatureConfig config) {
         ServerWorld worldserver = (ServerWorld) world;
         TemplateManager templatemanager = worldserver.getStructureTemplateManager();
-        Template greatwoodTree = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/greatwoodtree"));
+        Template greatwoodTree;
         int h = ThreadLocalRandom.current().nextInt(2, 7);
         switch(h) {
             default: greatwoodTree = templatemanager.getTemplate(new ResourceLocation("arcana", "trees/greatwood/greatwood1")); break;
@@ -45,33 +40,17 @@ public class StructureGenerator implements IWorldGenerator {
         }
 
         if(random.nextInt(1) != 0 || world.getBiome(spawnPos) != Biomes.PLAINS) {
-            return;
+            return false;
         }
 
         if(greatwoodTree == null) {
             Constants.LOGGER.error("Could not find structure at " + new ResourceLocation("arcana:structures/trees/greatwood"));
-            return;
+            return false;
         }
         PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)
-                .setRotation(Rotation.NONE).setIgnoreEntities(false).setChunk(null);
+                .setRotation(Rotation.NONE).setIgnoreEntities(false).setChunk(world.getChunk(spawnPos).getPos());
 
         greatwoodTree.addBlocksToWorld(world, spawnPos.add(-4, 0, -4), placementsettings);
-
-
-    }
-
-
-    private static int calculateGenerationHeight(World world, int x, int z, Block topBlock)
-    {
-        int y = world.getHeight();
-        boolean foundGround = false;
-
-        while(!foundGround && y-- >= 0)
-        {
-            Block block = world.getBlockState(new BlockPos(x,y,z)).getBlock();
-            foundGround = block == topBlock;
-        }
-
-        return y;
+        return true;
     }
 }
