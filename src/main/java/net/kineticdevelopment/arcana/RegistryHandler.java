@@ -48,14 +48,14 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.common.extensions.IForgeContainerType;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.gameevent.PlayerEvent;
+
 
 import java.lang.reflect.InvocationTargetException;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.FORGE)
 public class RegistryHandler
 {
-    //On Player Join Event Which Sends A Message To the Player In the Chat
+    /**On Player Join Event Which Sends A Message To the Player In the Chat
     @SubscribeEvent
     public static void onPlayerJoinWorld(PlayerEvent.PlayerLoggedInEvent event) {
         if (!event.getPlayer().world.isRemote) {
@@ -63,7 +63,7 @@ public class RegistryHandler
                 TextFormatting.AQUA + event.getPlayer().getDisplayName().getString() + TextFormatting.RED + ", we hope you enjoy the Arcana Mod!"));
         }
     }
-
+    **/
 
 
     @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
