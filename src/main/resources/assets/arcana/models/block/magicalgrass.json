@@ -1,0 +1,9 @@
+{
+  "parent": "block/block",
+  "textures": {
+    "particle": "block/dirt",
+    "bottom": "block/dirt",
+    "top": "arcana:block/magical_forest_grass_block_top",
+    "side": "arcana:block/magical_forest_grass_block_side"
+  }
+}

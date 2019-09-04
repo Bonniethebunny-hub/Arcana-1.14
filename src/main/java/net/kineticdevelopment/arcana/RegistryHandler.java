@@ -5,10 +5,12 @@ import net.kineticdevelopment.arcana.client.container.ThaumonomiconContainer;
 import net.kineticdevelopment.arcana.client.container.lootbags.CommonLootbagContainer;
 import net.kineticdevelopment.arcana.common.armor.ArmorMaterial;
 import net.kineticdevelopment.arcana.common.armor.AspectGogglesHelmet;
+import net.kineticdevelopment.arcana.common.biomes.MagicalForestBiome;
 import net.kineticdevelopment.arcana.common.blocks.*;
 import net.kineticdevelopment.arcana.common.blocks.tainted.ores.*;
 import net.kineticdevelopment.arcana.common.blocks.tainted.*;
 import net.kineticdevelopment.arcana.common.creativetab.ModTabGroups;
+import net.kineticdevelopment.arcana.common.init.BiomeInit;
 import net.kineticdevelopment.arcana.common.init.BlockInit;
 import net.kineticdevelopment.arcana.common.init.EntityInit;
 import net.kineticdevelopment.arcana.common.items.*;
@@ -18,6 +20,7 @@ import net.kineticdevelopment.arcana.common.biomes.TaintBiome;
 import net.kineticdevelopment.arcana.utilities.structures.DairTreeFeature;
 import net.kineticdevelopment.arcana.utilities.structures.GreatwoodFeature;
 import net.kineticdevelopment.arcana.utilities.structures.SilverwoodFeature;
+import net.minecraft.block.StairsBlock;
 import net.minecraft.entity.EntityType;
 import net.kineticdevelopment.arcana.common.items.lootbags.CommonLootbag;
 
@@ -32,12 +35,12 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.potion.Effect;
 import net.minecraft.potion.EffectType;
+import net.minecraft.world.World;
+import net.minecraft.world.WorldGenTickList;
 import net.minecraft.world.biome.Biome;
 
 
-import net.minecraft.world.biome.Biomes;
-import net.minecraft.world.gen.GenerationStage;
-import net.minecraft.world.gen.feature.ConfiguredFeature;
+import net.minecraft.world.gen.WorldGenRegion;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -72,19 +75,20 @@ public class RegistryHandler
         @SubscribeEvent
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> event) {
 
-
             // Created with Block.Properties.create(Material.LEAVES).doesNotBlockMovement()
             String[] saplings = {
                 "silverwoodsapling",
                 "greatwoodsapling",
-                "dairsapling"
+                "dairsapling",
+                    "willowsapling"
             };
 
             // Created with Block.Properties.create(Material.LEAVES).hardnessAndResistance(0.5F).sound(SoundType.PLANT)
             String[] leaves = {
                 "silverwoodleaves",
                 "dairleaves",
-                "greatwoodleaves"
+                "greatwoodleaves",
+                    "willowleaves"
             };
 
             // Created with Block.Properties.create(Material.WOOD).hardnessAndResistance(1.1F).harvestTool(ToolType.AXE)
@@ -92,7 +96,8 @@ public class RegistryHandler
                 "greatwoodlog",
                 "silverwoodlog",
                 "dairlog",
-                "strippeddairlog"
+                "strippeddairlog",
+                    "willowlog"
             };
 
         	// Created with Block.Properties.create(Material.LEAVES).doesNotBlockMovement()
@@ -169,9 +174,9 @@ public class RegistryHandler
                     new taintedacaciaplanks(),
                     new taintedflower(),
                     new taintedgrass(),
-                    new taintedportal()
-
-
+                    new taintedportal(),
+                    new magicalforestgrass(),
+                    new tainted_stairs(BlockInit.TAINTEDACACIAPLANKS.getDefaultState(), Block.Properties.from((Block)BlockInit.TAINTEDACACIAPLANKS))
             };
 
             for (String clsname : saplings) {
@@ -256,6 +261,7 @@ public class RegistryHandler
         @SubscribeEvent
         public static void onBiomeRegistry(final RegistryEvent.Register<Biome> event) {
             event.getRegistry().register(new TaintBiome().setRegistryName("taintbiome"));
+            event.getRegistry().register(new MagicalForestBiome().setRegistryName("magicalforestbiome"));
         }
 
 
@@ -338,11 +344,11 @@ public class RegistryHandler
                     BlockInit.TAINTEDFLOWER,
                     BlockInit.TAINTEDGRASS,
                     BlockInit.TAINTEDPORTAL,
-                    BlockInit.TAINTEDPLANKSSTAIRS
-//                    BlockInit.WILLOWLOG,
-//                    BlockInit.WILLOWLEAVES,
-//                    BlockInit.WILLOWSAPLING,
-            };
+                    BlockInit.MAGICALGRASS,
+                    BlockInit.WILLOWLOG,
+                    BlockInit.WILLOWLEAVES,
+                    BlockInit.WILLOWSAPLING,
+        };
 
             for (Block block : modBlocks) {
                 event.getRegistry().register(new BlockItem(block, new Item.Properties().group(ModTabGroups.MOD_ITEM_GROUP)).setRegistryName(block.getRegistryName()));
@@ -482,13 +488,14 @@ public class RegistryHandler
             Feature<?>[] trees = {
                     new DairTreeFeature(NoFeatureConfig::deserialize).setRegistryName("arcana:dairtree"),
                     new GreatwoodFeature(NoFeatureConfig::deserialize).setRegistryName("arcana:greatwoodtree"),
-                    new SilverwoodFeature(NoFeatureConfig::deserialize).setRegistryName("arcana:silverwoodtree")
+                    new SilverwoodFeature(NoFeatureConfig::deserialize).setRegistryName("silverwoodtree")
             };
             for (Feature<?> tree : trees
                  ) {
                 event.getRegistry().register(tree);
             }
         }
+
 
     }
 

@@ -3,6 +3,7 @@
   "itemGroup.arcana": "Arcana",
   "_comment": "Biomes",
   "biome.arcana.taintbiome": "Tainted Land",
+  "biome.arcana.magicalforestbiome": "Magical Forest",
   "_comment": "MOD ENTITIES",
   "entity.arcana.tainted_pig": "Tainted Pig",
   "entity.arcana.tainted_cow": "Tainted Cow",
@@ -96,7 +97,7 @@
   "block.arcana.willowlog": "Willow Log",
   "block.arcana.willowleaves": "Willow Leaves",
   "block.arcana.willowsapling": "Willow Sapling",
-
+  "block.arcana.magicalgrass": "Magical Grass",
 
 
   "_comment": "MOD ITEMS",

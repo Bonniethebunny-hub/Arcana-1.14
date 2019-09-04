@@ -88,14 +88,19 @@ public class BlockInit {
     @ObjectHolder("arcana:strippeddairlog")
     public static strippeddairlog STRIPPEDDAIRLOG;
 
-//    @ObjectHolder("arcana:willowlog")
-//    public static willowlog WILLOWLOG;
-//
-//    @ObjectHolder("arcana:willowleaves")
-//    public static willowleaves WILLOWLEAVES;
-//
-//    @ObjectHolder("arcana:willowsapling")
-//    public static willowsapling WILLOWSAPLING;
+    @ObjectHolder("arcana:magicalgrass")
+    public static magicalforestgrass MAGICALGRASS;
+
+    @ObjectHolder("arcana:willowlog")
+    public static willowlog WILLOWLOG;
+
+    @ObjectHolder("arcana:willowleaves")
+    public static willowleaves WILLOWLEAVES;
+
+    @ObjectHolder("arcana:willowsapling")
+    public static willowsapling WILLOWSAPLING;
+
+
 
     //Tainted blocks
 
