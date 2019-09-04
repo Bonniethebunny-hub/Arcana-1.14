@@ -72,6 +72,7 @@ public class RegistryHandler
         @SubscribeEvent
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> event) {
 
+
             // Created with Block.Properties.create(Material.LEAVES).doesNotBlockMovement()
             String[] saplings = {
                 "silverwoodsapling",
@@ -169,6 +170,8 @@ public class RegistryHandler
                     new taintedflower(),
                     new taintedgrass(),
                     new taintedportal()
+
+
             };
 
             for (String clsname : saplings) {
@@ -335,6 +338,7 @@ public class RegistryHandler
                     BlockInit.TAINTEDFLOWER,
                     BlockInit.TAINTEDGRASS,
                     BlockInit.TAINTEDPORTAL,
+                    BlockInit.TAINTEDPLANKSSTAIRS
 //                    BlockInit.WILLOWLOG,
 //                    BlockInit.WILLOWLEAVES,
 //                    BlockInit.WILLOWSAPLING,

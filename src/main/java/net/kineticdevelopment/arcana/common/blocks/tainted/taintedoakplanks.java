@@ -14,6 +14,7 @@ public class taintedoakplanks extends Block {
             .lightValue(2)
             .harvestTool(ToolType.AXE)
         );
+
         setRegistryName("taintedoakplanks");
     }
 }

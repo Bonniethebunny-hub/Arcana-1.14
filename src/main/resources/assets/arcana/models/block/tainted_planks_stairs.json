@@ -1,0 +1,8 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "arcana:block/taintedoakplanks",
+    "top": "arcana:block/taintedoakplanks",
+    "side": "arcana:block/taintedoakplanks"
+  }
+}
