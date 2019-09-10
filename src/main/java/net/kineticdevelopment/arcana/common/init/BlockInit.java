@@ -113,8 +113,6 @@ public class BlockInit {
     @ObjectHolder("arcana:taintedcrust")
     public static taintedcrust TAINTEDCRUST;
 
-    @ObjectHolder("arcana:taintedoakplanks")
-    public static taintedoakplanks TAINTEDOAKPLANKS;
 
     @ObjectHolder("arcana:taintgoo")
     public static taintgoo TAINTGOO;
@@ -145,6 +143,9 @@ public class BlockInit {
 
 
     //Tainted tree blocks
+
+    @ObjectHolder("arcana:taintedoakplanks")
+    public static taintedoakplanks TAINTEDOAKPLANKS;
 
     @ObjectHolder("arcana:taintedoakleaves")
     public static taintedoakleaves TAINTEDOAKLEAVES;
@@ -211,6 +212,9 @@ public class BlockInit {
 
     @ObjectHolder("arcana:strippedtaintedacacialog")
     public static strippedtaintedacacialog STRIPPEDTAINTEDACACIALOG;
+
+    @ObjectHolder("arcana:tainted_planks_stairs")
+    public static tainted_oak_stairs TAINTEDOAKSTAIRS;
 
 
     //Ores

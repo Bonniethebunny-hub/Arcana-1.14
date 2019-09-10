@@ -10,7 +10,6 @@ import net.kineticdevelopment.arcana.common.blocks.*;
 import net.kineticdevelopment.arcana.common.blocks.tainted.ores.*;
 import net.kineticdevelopment.arcana.common.blocks.tainted.*;
 import net.kineticdevelopment.arcana.common.creativetab.ModTabGroups;
-import net.kineticdevelopment.arcana.common.init.BiomeInit;
 import net.kineticdevelopment.arcana.common.init.BlockInit;
 import net.kineticdevelopment.arcana.common.init.EntityInit;
 import net.kineticdevelopment.arcana.common.items.*;
@@ -20,7 +19,6 @@ import net.kineticdevelopment.arcana.common.biomes.TaintBiome;
 import net.kineticdevelopment.arcana.utilities.structures.DairTreeFeature;
 import net.kineticdevelopment.arcana.utilities.structures.GreatwoodFeature;
 import net.kineticdevelopment.arcana.utilities.structures.SilverwoodFeature;
-import net.minecraft.block.StairsBlock;
 import net.minecraft.entity.EntityType;
 import net.kineticdevelopment.arcana.common.items.lootbags.CommonLootbag;
 
@@ -35,19 +33,14 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.potion.Effect;
 import net.minecraft.potion.EffectType;
-import net.minecraft.world.World;
-import net.minecraft.world.WorldGenTickList;
 import net.minecraft.world.biome.Biome;
 
 
-import net.minecraft.world.gen.WorldGenRegion;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.common.extensions.IForgeContainerType;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -176,7 +169,7 @@ public class RegistryHandler
                     new taintedgrass(),
                     new taintedportal(),
                     new magicalforestgrass(),
-                    new tainted_stairs(BlockInit.TAINTEDACACIAPLANKS.getDefaultState(), Block.Properties.from((Block)BlockInit.TAINTEDACACIAPLANKS))
+                    //new tainted_oak_stairs(BlockInit.TAINTEDOAKPLANKS),
             };
 
             for (String clsname : saplings) {
@@ -348,6 +341,7 @@ public class RegistryHandler
                     BlockInit.WILLOWLOG,
                     BlockInit.WILLOWLEAVES,
                     BlockInit.WILLOWSAPLING,
+                    //BlockInit.TAINTEDOAKSTAIRS,
         };
 
             for (Block block : modBlocks) {
