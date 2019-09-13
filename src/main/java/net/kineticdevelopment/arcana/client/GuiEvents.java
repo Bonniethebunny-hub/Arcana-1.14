@@ -75,7 +75,7 @@ public class GuiEvents {
     @SubscribeEvent
     public void onRenderGuiPre(RenderGameOverlayEvent.Pre event) {
         /**
-         * Example of canceling rendergameoverlayevents
+         * arcana of canceling rendergameoverlayevents
          if (event.getType() == RenderGameOverlayEvent.ElementType.HEALTH || event.getType() == RenderGameOverlayEvent.ElementType.FOOD || event.getType() == RenderGameOverlayEvent.ElementType.EXPERIENCE || event.getType() == RenderGameOverlayEvent.ElementType.ARMOR) {
          event.setCanceled(true);
          }

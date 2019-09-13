@@ -582,8 +582,8 @@ Build: 1.14.4-28.0.3 - Sat Jul 20 19:59:31 GMT 2019
 =========
 Build: 1.14.4-28.0.2 - Sat Jul 20 16:06:15 GMT 2019
 	thaun1:
-		Updated Example Version Range for 1.14.4 (#5950)
-		* Updated Example Version Range for 1.14.4
+		Updated arcana Version Range for 1.14.4 (#5950)
+		* Updated arcana Version Range for 1.14.4
 		
 		* Also changed loader version and version range
 
@@ -743,7 +743,7 @@ Build: 1.14.3-27.0.38 - Tue Jul 09 02:49:22 GMT 2019
 Build: 1.14.3-27.0.31 - Tue Jul 09 02:43:35 GMT 2019
 	lex:
 		Fixed EntityJoinWorldEvent not being fired when player is added to
-		ServerWorld. #5827 Fixed wrong example path for the access transformer
+		ServerWorld. #5827 Fixed wrong arcana path for the access transformer
 		in the MDK build.gradle. #5891 Added getters for mouse x/y velocity and
 		if the middle-mouse button is being held down. #5776 Modify issue
 		template for better clarity. #5874 Fixed grindstone not using
@@ -1127,7 +1127,7 @@ Build: 1.14.2-26.0.25 - Thu Jun 13 02:28:25 GMT 2019
 		less costly.
 
 	28928887+marcus8448:
-		Update Example Mod (#5781)
+		Update arcana Mod (#5781)
 
 =========
 Build: 1.14.2-26.0.23 - Wed Jun 12 23:22:23 GMT 2019

@@ -110,7 +110,7 @@ public class TaintCleaner {
     }
     
     /**
-     * Uses a radius, radius is first number plus second number, example: -5 + 6 = radius of 5
+     * Uses a radius, radius is first number plus second number, arcana: -5 + 6 = radius of 5
      * <p>Radius is that many blocks in each direction<p>
      * 
      * @see #cleanTaint(World, BlockPos)

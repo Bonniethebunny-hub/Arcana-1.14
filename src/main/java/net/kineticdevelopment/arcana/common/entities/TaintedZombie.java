@@ -178,7 +178,7 @@ public class TaintedZombie extends ZombieEntity {
 	   }
 
 	   /**
-	    * Called frequently so the entity can update its state every tick as required. For example, zombies and skeletons
+	    * Called frequently so the entity can update its state every tick as required. For arcana, zombies and skeletons
 	    * use this to react to sunlight and start to burn.
 	    */
 	   public void livingTick() {
