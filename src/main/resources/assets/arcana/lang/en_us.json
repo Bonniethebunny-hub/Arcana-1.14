@@ -1,9 +1,11 @@
 {
   "_comment": "CREATIVE TABS",
   "itemGroup.arcana": "Arcana",
+  
   "_comment": "Biomes",
   "biome.arcana.taintbiome": "Tainted Land",
   "biome.arcana.magicalforestbiome": "Magical Forest",
+  
   "_comment": "MOD ENTITIES",
   "entity.arcana.tainted_pig": "Tainted Pig",
   "entity.arcana.tainted_cow": "Tainted Cow",
@@ -13,6 +15,8 @@
   "entity.arcana.tainted_spider": "Tainted Spider",
   "entity.arcana.tainted_slime": "Tainted Slime",
   "entity.arcana.wizard_villager.none": "Wizard Villager",
+  "entity.arcana.pridedemon": "Pride",
+  
   "_comment": "MOD SPAWN EGGS",
   "item.arcana.tainted_cow_egg": "Tainted Cow Spawn Egg",
   "item.arcana.tainted_zombie_egg": "Tainted Zombie Spawn Egg",
@@ -22,6 +26,7 @@
   "item.arcana.tainted_spider_egg": "Tainted Spider Spawn Egg",
   "item.arcana.tainted_slime_egg": "Tainted Slime Spawn Egg",
   "item.arcana.wizard_villager_egg": "Wizard Villager Spawn Egg",
+  
   "_comment": "MOD BLOCKS",
   "block.arcana.arcanestone": "Arcane Stone",
   "block.arcana.arcanestonebrick": "Arcane Stone Bricks",
@@ -67,8 +72,6 @@
   "block.arcana.taintedcinnabarore": "Tainted Cinnabar Ore",
   "block.arcana.taintgoo": "Taint Goo",
   "effect.arcana.tainted": "Tainted",
-  "death.attack.Taint.player": "%1$s was consumed by Taint",
-  "death.attack.Taint": "%1$s was consumed by Taint",
   "block.arcana.taintscrubber": "Taint Scrubber",
   "block.arcana.obsidiantotemtop": "Obsidian Totem Top",
   "block.arcana.taintedstonebrick": "Tainted Stone Bricks",
@@ -99,6 +102,9 @@
   "block.arcana.willowsapling": "Willow Sapling",
   "block.arcana.magicalgrass": "Magical Grass",
 
+  "_comment": "DEATH MESSAGES",
+  "death.attack.Taint.player": "%1$s was consumed by Taint",
+  "death.attack.Taint": "%1$s was consumed by Taint",
 
   "_comment": "MOD ITEMS",
   "item.arcana.thaumonomicon": "§5Thaumonomicon",
@@ -170,6 +176,7 @@
   "item.arcana.beast": "Beast",
   "item.arcana.aura": "Aura",
   "item.arcana.armor": "Armor",
+  
   "_comment": "ASPECTS",
   "item.arcana.aspect_goggles": "Aspect Goggles"
 }

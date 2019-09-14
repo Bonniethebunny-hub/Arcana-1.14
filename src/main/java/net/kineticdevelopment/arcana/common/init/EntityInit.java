@@ -3,7 +3,22 @@ package net.kineticdevelopment.arcana.common.init;
 
 import net.kineticdevelopment.arcana.RegistryHandler;
 import net.kineticdevelopment.arcana.common.creativetab.ModTabGroups;
-import net.kineticdevelopment.arcana.common.entities.*;
+import net.kineticdevelopment.arcana.common.entities.Koala;
+import net.kineticdevelopment.arcana.common.entities.TaintedChicken;
+import net.kineticdevelopment.arcana.common.entities.TaintedCow;
+import net.kineticdevelopment.arcana.common.entities.TaintedCreeper;
+import net.kineticdevelopment.arcana.common.entities.TaintedPig;
+import net.kineticdevelopment.arcana.common.entities.TaintedSlime;
+import net.kineticdevelopment.arcana.common.entities.TaintedSpider;
+import net.kineticdevelopment.arcana.common.entities.TaintedZombie;
+import net.kineticdevelopment.arcana.common.entities.WizardVillager;
+import net.kineticdevelopment.arcana.common.entities.sins.EnvyDemon;
+import net.kineticdevelopment.arcana.common.entities.sins.GluttonyDemon;
+import net.kineticdevelopment.arcana.common.entities.sins.GreedDemon;
+import net.kineticdevelopment.arcana.common.entities.sins.LustDemon;
+import net.kineticdevelopment.arcana.common.entities.sins.PrideDemon;
+import net.kineticdevelopment.arcana.common.entities.sins.SlothDemon;
+import net.kineticdevelopment.arcana.common.entities.sins.WrathDemon;
 import net.kineticdevelopment.arcana.utilities.Constants;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
@@ -23,6 +38,15 @@ public class EntityInit {
     public static EntityType<?> ARCANA_TAINTED_SPIDER = EntityType.Builder.create(TaintedSpider::new, EntityClassification.MONSTER).build(Constants.MODID + ":tainted_spider").setRegistryName(RegistryHandler.location("tainted_spider"));
     public static EntityType<?> ARCANA_TAINTED_SLIME = EntityType.Builder.create(TaintedSlime::new, EntityClassification.MONSTER).build(Constants.MODID + ":tainted_slime").setRegistryName(RegistryHandler.location("tainted_slime"));
     public static EntityType<?> KOALA = EntityType.Builder.create(Koala::new, EntityClassification.MISC).build(Constants.MODID + ":koala").setRegistryName(RegistryHandler.location("koala"));
+    
+    //Sin Demons
+    public static EntityType<?> PRIDEDEMON = EntityType.Builder.create(PrideDemon::new, EntityClassification.MONSTER).build(Constants.MODID + ":pridedemon").setRegistryName(RegistryHandler.location("pridedemon"));
+    public static EntityType<?> GREEDDEMON = EntityType.Builder.create(GreedDemon::new, EntityClassification.MONSTER).build(Constants.MODID + ":greeddemon").setRegistryName(RegistryHandler.location("greeddemon"));
+    public static EntityType<?> LUSTDEMON = EntityType.Builder.create(LustDemon::new, EntityClassification.MONSTER).build(Constants.MODID + ":lustdemon").setRegistryName(RegistryHandler.location("lustdemon"));
+    public static EntityType<?> ENVYDEMON = EntityType.Builder.create(EnvyDemon::new, EntityClassification.MONSTER).build(Constants.MODID + ":envydemon").setRegistryName(RegistryHandler.location("envydemon"));
+    public static EntityType<?> GLUTTONYDEMON = EntityType.Builder.create(GluttonyDemon::new, EntityClassification.MONSTER).build(Constants.MODID + ":gluttonydemon").setRegistryName(RegistryHandler.location("gluttonydemon"));
+    public static EntityType<?> SLOTHDEMON = EntityType.Builder.create(SlothDemon::new, EntityClassification.MONSTER).build(Constants.MODID + ":slothdemon").setRegistryName(RegistryHandler.location("slothdemon"));
+    public static EntityType<?> WRATHDEMON = EntityType.Builder.create(WrathDemon::new, EntityClassification.MONSTER).build(Constants.MODID + ":wrathdemon").setRegistryName(RegistryHandler.location("wrathdemon"));
 
     public static EntityType<?> ARCANA_WIZARD_VILLAGER = EntityType.Builder.create(WizardVillager::new, EntityClassification.MISC).build(Constants.MODID + ":wizard_villager").setRegistryName(RegistryHandler.location("wizard_villager"));
 

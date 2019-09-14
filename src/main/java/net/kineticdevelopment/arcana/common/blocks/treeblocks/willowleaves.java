@@ -1,6 +1,5 @@
 package net.kineticdevelopment.arcana.common.blocks.treeblocks;
 
-import jdk.nashorn.internal.ir.Statement;
 import net.kineticdevelopment.arcana.common.init.BlockInit;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -21,7 +20,6 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.IShearable;
 
-import java.util.List;
 import java.util.Random;
 @SuppressWarnings("deprecation")
 public class willowleaves extends Block implements IShearable {

@@ -464,7 +464,8 @@ public class RegistryHandler
                     EntityInit.ARCANA_TAINTED_SPIDER,
                     EntityInit.ARCANA_TAINTED_SLIME,
                     EntityInit.ARCANA_WIZARD_VILLAGER,
-                    EntityInit.KOALA
+                    EntityInit.KOALA,
+                    EntityInit.PRIDEDEMON
             );
 
             EntityInit.registerEntityWorldSpawns();
