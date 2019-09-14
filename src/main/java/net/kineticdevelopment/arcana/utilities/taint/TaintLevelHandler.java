@@ -38,25 +38,23 @@ public class TaintLevelHandler {
         }
 
         if(world.isRemote) {
-        	if(!Minecraft.getInstance().isSingleplayer()) {
-        		final File file = new File(world.getWorldInfo().getWorldName()+".txt");
-            	if(!file.exists()) {
-            		try {
-            			file.createNewFile();
-            		}
-                	catch (IOException e) {
-            			e.printStackTrace();
-            		}
-            		try(FileWriter fw = new FileWriter(world.getWorldInfo().getWorldName()+".txt", false);
-            			BufferedWriter bw = new BufferedWriter(fw);
-            			PrintWriter out = new PrintWriter(bw)) {
-            			out.println("0");
-            		}
-            		catch (IOException e) {
+        	final File file = new File(world.getWorldInfo().getWorldName()+".txt");
+        	if(!file.exists()) {
+        		try {
+        			file.createNewFile();
+        		}
+            	catch (IOException e) {
+        			e.printStackTrace();
+        		}
+        		try(FileWriter fw = new FileWriter(world.getWorldInfo().getWorldName()+".txt", false);
+        			BufferedWriter bw = new BufferedWriter(fw);
+        			PrintWriter out = new PrintWriter(bw)) {
+        			out.println("0");
+        		}
+        		catch (IOException e) {
 
-            	    }
-            		Constants.LOGGER.info("Created Taint Level file for server world '"+world.getWorldInfo().getWorldName()+"'");
-            	}
+        	    }
+        		Constants.LOGGER.info("Created Taint Level file for server world '"+world.getWorldInfo().getWorldName()+"'");
         	}
         }
     }
