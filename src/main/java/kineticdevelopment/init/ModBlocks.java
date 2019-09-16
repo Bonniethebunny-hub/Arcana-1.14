@@ -28,7 +28,7 @@ public class ModBlocks {
         //Planks
         tainted_oak_planks = registerBlock(new Block(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)), "tainted_oak_planks");
         tainted_plank_stairs = registerBlock(new ArcanaStairsBlock(tainted_oak_planks.getDefaultState(), Block.Properties.from(tainted_oak_planks)), "tainted_plank_stairs");
-        tainted_plank_slabs = registerBlock(new SlabBlock(Block.Properties.from(tainted_oak_planks)), "tainted_oak_slab");
+        tainted_plank_slab = registerBlock(new SlabBlock(Block.Properties.from(tainted_oak_planks)), "tainted_plank_slab");
     }
 
 
