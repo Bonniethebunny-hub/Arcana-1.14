@@ -1,5 +1,4 @@
 # Arcana
 
-All code in this project falls under the MIT License. However, credit to the original author must be included in your project. 
+Licensed under a Creative Commons Attribution-NonCommercial-NoDerivs 4.0 Unported License. https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en_US
 
-If you're pulling or forking the project to GitHub, it must be public.
