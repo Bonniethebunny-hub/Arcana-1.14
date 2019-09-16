@@ -33,6 +33,10 @@ public class ModBlocksTainted {
         //Tainted Rocks
         tainted_crust = registerBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F,6.0F).sound(SoundType.STONE)), "tainted_crust");
         tainted_crust_slab =registerBlock(new SlabBlock(Block.Properties.from(tainted_crust)),"tainted_crust_slab");
+
+
+        //plants
+        tainted_fibers =registerBlock(new VineBlock(Block.Properties.create(Material.TALL_PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(1.0F).sound(SoundType.PLANT)), "taint_fibers");
     }
 
 

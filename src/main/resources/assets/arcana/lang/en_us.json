@@ -1,6 +1,6 @@
 {
   "_comment": "CREATIVE TABS",
-  "itemGroup.Arcana": "Arcana",
+  "itemGroup.arcana": "Arcana",
 
   "_comment": "Tainted Blocks",
   "block.arcana.tainted_crust": "Tainted Crust",
@@ -10,5 +10,5 @@
   "block.arcana.tainted_plank_slab": "Tainted Oak Planks Slab",
 
   "_comment": "Books",
-  "item."
+  "item.arcana.thaumonomicon": "Thaumonomicon"
 }
