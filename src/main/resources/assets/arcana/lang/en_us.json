@@ -8,6 +8,10 @@
   "block.arcana.tainted_oak_planks": "Tainted Oak Planks",
   "block.arcana.tainted_plank_stairs": "Tainted Oak Planks Stairs",
   "block.arcana.tainted_plank_slab": "Tainted Oak Planks Slab",
+  "block.arcana.taint_fibers": "Taint Fibers",
+  "block.arcana.tainted_rock_slab": "Tainted Rock Slab",
+  "block.arcana.tainted_rock": "Tainted Rock",
+  "block.arcana.tainted_soil": "Tainted Soil",
 
   "_comment": "Books",
   "item.arcana.thaumonomicon": "Thaumonomicon"

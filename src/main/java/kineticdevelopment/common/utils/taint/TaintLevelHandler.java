@@ -11,7 +11,7 @@ import java.nio.file.Paths;
 import java.text.DecimalFormat;
 
 public class TaintLevelHandler {
-/**
+
     public static void createTaintLevelFile(World world) {
         if(!world.isRemote) {
             if(Minecraft.getInstance().isSingleplayer()) {
@@ -152,5 +152,5 @@ public class TaintLevelHandler {
             }
         }
     }
- **/
+
 }
