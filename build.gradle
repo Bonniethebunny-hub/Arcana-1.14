@@ -43,7 +43,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                arcanamod {
+                arcana {
                     source sourceSets.main
                 }
             }
@@ -59,7 +59,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                arcanamod {
+                arcana {
                     source sourceSets.main
                 }
             }
@@ -74,10 +74,10 @@ minecraft {
             // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
 
-            args '--mod', 'arcanamod', '--all', '--output', file('src/generated/resources/')
+            args '--mod', 'arcana', '--all', '--output', file('src/generated/resources/')
 
             mods {
-                arcanamod {
+                arcana {
                     source sourceSets.main
                 }
             }
@@ -115,12 +115,12 @@ dependencies {
 jar {
     manifest {
         attributes([
-            "Specification-Title": "arcanamod",
-            "Specification-Vendor": "arcanamodsareus",
+            "Specification-Title": "arcana",
+            "Specification-Vendor": "arcanasareus",
             "Specification-Version": "1", // We are version 1 of ourselves
             "Implementation-Title": project.name,
             "Implementation-Version": "${version}",
-            "Implementation-Vendor" :"arcanamodsareus",
+            "Implementation-Vendor" :"arcanasareus",
             "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }
