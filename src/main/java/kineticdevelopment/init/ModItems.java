@@ -2,6 +2,7 @@ package kineticdevelopment.init;
 
 
 import kineticdevelopment.api.items.ArcanaItems;
+import kineticdevelopment.common.utils.ArcanaItemGroup;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -16,7 +17,7 @@ public class ModItems {
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> even)
     {
-        Thaumonomicon = registerItem(new Item(new Item.Properties().maxStackSize(1)), "thaumonomicon");
+        Thaumonomicon = registerItem(new Item(new Item.Properties().maxStackSize(1).group(ArcanaItemGroup.instance)), "thaumonomicon");
     }
 
     public static Item registerItem(Item item, String name) {
