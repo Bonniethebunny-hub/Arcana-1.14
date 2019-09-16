@@ -2,7 +2,7 @@ package kineticdevelopment.init;
 
 
 import kineticdevelopment.api.items.ArcanaItems;
-import kineticdevelopment.common.utils.ArcanaItemGroup;
+import kineticdevelopment.common.utils.creativetab.ArcanaItemGroup;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;

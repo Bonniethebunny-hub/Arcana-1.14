@@ -1,4 +1,4 @@
-package kineticdevelopment.common.utils;
+package kineticdevelopment.common.utils.creativetab;
 
 import net.minecraft.item.ItemGroup;
 import kineticdevelopment.api.items.ArcanaItems;
@@ -16,7 +16,14 @@ public class ArcanaItemGroup extends ItemGroup {
 
     @Override
     public ItemStack createIcon() {
+
         return new ItemStack(ArcanaItems.Thaumonomicon);
+    }
+
+    @Override
+    public boolean hasSearchBar() {
+        return true;
+
     }
 
 

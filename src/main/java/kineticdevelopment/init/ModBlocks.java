@@ -1,7 +1,7 @@
 package kineticdevelopment.init;
 
 import kineticdevelopment.common.blocks.ArcanaStairsBlock;
-import kineticdevelopment.common.utils.ArcanaItemGroup;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.block.SoundType;
@@ -9,6 +9,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
+import kineticdevelopment.common.utils.creativetab.ArcanaItemGroup;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
