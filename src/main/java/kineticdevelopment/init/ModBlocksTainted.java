@@ -37,10 +37,16 @@ public class ModBlocksTainted {
         tainted_rock_slab = registerBlock(new SlabBlock(Block.Properties.from(tainted_rock)), "tainted_rock_slab");
         tainted_soil = registerBlock(new Block(Block.Properties.create(Material.EARTH).hardnessAndResistance(0.1F, 0.2F).sound(SoundType.GROUND)), "tainted_soil");
 
+        //Tainted Other
+        tainted_sand = registerBlock(new Block(Block.Properties.create(Material.SAND).hardnessAndResistance(0.1F,0.2F).sound(SoundType.SAND)), "tainted_sand");
+        tainted_gravel = registerBlock(new Block(Block.Properties.create(Material.CLAY).hardnessAndResistance(0.3F,0.4F).sound(SoundType.SAND)), "tainted_gravel");
 
 
         //Tainted Plants
-        tainted_fibers =registerBlock(new VineBlock(Block.Properties.create(Material.TALL_PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(1.0F).sound(SoundType.PLANT)), "taint_fibers");
+        tainted_fibers = registerBlock(new VineBlock(Block.Properties.create(Material.TALL_PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(1.0F).sound(SoundType.PLANT)), "taint_fibers");
+
+        //arcane blocks
+
     }
 
 
