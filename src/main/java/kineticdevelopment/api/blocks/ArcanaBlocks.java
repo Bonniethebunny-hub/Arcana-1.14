@@ -1,4 +1,4 @@
-package kineticdevelopment.api.blocks;
+ package kineticdevelopment.api.blocks;
 
 import net.minecraft.block.Block;
 
@@ -52,5 +52,8 @@ public class ArcanaBlocks {
     public static Block arcane_stone_bricks_slab;
     public static Block arcana_stone_bricks_stairs;
     public static Block infusion_arcane_stone;
+
+    //dead tree
+    public static Block dead_tree_log;
 
 }
