@@ -23,7 +23,7 @@ public class basicwand extends Item {
         		Aspect[] aspects = AspectCollectionHandler.getBlockAspects(context.getWorld().getBlockState(context.getPos()).getBlock());
             	
             	for(int i=0; i<aspects.length; i++) {
-            		AspectCollectionHandler.addAspectToPlayer(context.getPlayer(), context.getWorld(), aspects[i]);
+            		AspectCollectionHandler.addAspectToPlayer(context.getPlayer(), context.getWorld(), aspects[i], 10);
             	}
         	}
         	else {

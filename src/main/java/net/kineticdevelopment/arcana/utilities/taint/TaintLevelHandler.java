@@ -14,7 +14,7 @@ public class TaintLevelHandler {
     public static void createTaintLevelFile(World world) {
         if(!world.isRemote) {
         	if(Minecraft.getInstance().isSingleplayer()) {
-        		final File file = new File("saves", world.getWorldInfo().getWorldName()+".taint");
+        		final File file = new File("saves/", world.getWorldInfo().getWorldName()+".taint");
             	if(!file.exists()) {
             		try {
             			file.createNewFile();
@@ -22,7 +22,7 @@ public class TaintLevelHandler {
                 	catch (IOException e) {
             			e.printStackTrace();
             		}
-            		try(FileWriter fw = new FileWriter("saves"+world.getWorldInfo().getWorldName()+".taint", false);
+            		try(FileWriter fw = new FileWriter("saves/"+world.getWorldInfo().getWorldName()+".taint", false);
             			BufferedWriter bw = new BufferedWriter(fw);
             			PrintWriter out = new PrintWriter(bw)) {
             			out.println("0");
@@ -62,7 +62,7 @@ public class TaintLevelHandler {
     public static double getTaintLevel(World world) {
         if (!world.isRemote) {
             double taintLevel;
-            try (BufferedReader br = Files.newBufferedReader(Paths.get("saves" + world.getWorldInfo().getWorldName() + ".taint"))) {
+            try (BufferedReader br = Files.newBufferedReader(Paths.get("saves/" + world.getWorldInfo().getWorldName() + ".taint"))) {
             	String s1 = br.readLine();
                 DecimalFormat df = new DecimalFormat("#.##");
     			df.setRoundingMode(RoundingMode.DOWN);
@@ -89,7 +89,7 @@ public class TaintLevelHandler {
     public static void increaseTaintLevel(World world, double amount) {
         if (!world.isRemote) {
             double taintLevel = 2147483647;
-            try (BufferedReader br = Files.newBufferedReader(Paths.get("saves" + world.getWorldInfo().getWorldName() + ".taint"))) {
+            try (BufferedReader br = Files.newBufferedReader(Paths.get("saves/" + world.getWorldInfo().getWorldName() + ".taint"))) {
             	String s1 = br.readLine();
                 DecimalFormat df = new DecimalFormat("#.##");
     			df.setRoundingMode(RoundingMode.DOWN);
@@ -110,7 +110,7 @@ public class TaintLevelHandler {
                 System.err.format("IOException: %s%n", e);
             }
 
-            try (FileWriter fw = new FileWriter("saves" + world.getWorldInfo().getWorldName() + ".taint", false); BufferedWriter bw = new BufferedWriter(fw); PrintWriter out = new PrintWriter(bw)) {
+            try (FileWriter fw = new FileWriter("saves/" + world.getWorldInfo().getWorldName() + ".taint", false); BufferedWriter bw = new BufferedWriter(fw); PrintWriter out = new PrintWriter(bw)) {
                 out.print(taintLevel);
                 out.close();
             } catch (IOException e) {
@@ -122,7 +122,7 @@ public class TaintLevelHandler {
     public static void decreaseTaintLevel(World world, double amount) {
     	if (!world.isRemote) {
             double taintLevel = 2147483647;
-            try (BufferedReader br = Files.newBufferedReader(Paths.get("saves" + world.getWorldInfo().getWorldName() + ".taint"))) {
+            try (BufferedReader br = Files.newBufferedReader(Paths.get("saves/" + world.getWorldInfo().getWorldName() + ".taint"))) {
             	String s1 = br.readLine();
                 DecimalFormat df = new DecimalFormat("#.##");
     			df.setRoundingMode(RoundingMode.DOWN);
@@ -143,7 +143,7 @@ public class TaintLevelHandler {
                 System.err.format("IOException: %s%n", e);
             }
 
-            try (FileWriter fw = new FileWriter("saves" + world.getWorldInfo().getWorldName() + ".taint", false); BufferedWriter bw = new BufferedWriter(fw); PrintWriter out = new PrintWriter(bw)) {
+            try (FileWriter fw = new FileWriter("saves/" + world.getWorldInfo().getWorldName() + ".taint", false); BufferedWriter bw = new BufferedWriter(fw); PrintWriter out = new PrintWriter(bw)) {
                 out.print(taintLevel);
                 out.close();
             } catch (IOException e) {

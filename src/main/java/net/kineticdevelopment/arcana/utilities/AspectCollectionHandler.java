@@ -53,13 +53,14 @@ public class AspectCollectionHandler {
 	 * @param player
 	 * @param world
 	 * @param aspect
+	 * @param amount
 	 */
-	public static void addAspectToPlayer(PlayerEntity player, World world, Aspect aspect) {
+	public static void addAspectToPlayer(PlayerEntity player, World world, Aspect aspect, int amount) {
 	      try {
 	    	  File aspectDataDir = new File(world.getWorldInfo().getWorldName(), "aspectdata");
 	    	  aspectDataDir.mkdirs();
 	    	  
-	    	  File playerAspectData = new File(aspectDataDir, player.getCachedUniqueIdString()+".aspect");
+	    	  File playerAspectData = new File(aspectDataDir, player.getCachedUniqueIdString()+".aspectpool");
 	    	  if(!playerAspectData.exists()) {
 	    		  playerAspectData.createNewFile();
 	    	  }
@@ -69,14 +70,15 @@ public class AspectCollectionHandler {
 	    	      BufferedWriter bw = new BufferedWriter(fw);
 	    		  PrintWriter out = new PrintWriter(bw)) {
 	    		  if(!aspectlist.contains(aspect)) {
-	    			  out.println(Item.getIdFromItem(aspect.getAspectItem()));
+	    			  out.println(aspect.getName()+", "+amount);
 	    		  }
 	  		  } 
 	  		  	catch (IOException e) {
-	  		  		Constants.LOGGER.warn("Failed to write to "+player.getCachedUniqueIdString()+".aspect");
+	  		  		Constants.LOGGER.warn("Failed to write to "+player.getCachedUniqueIdString()+".aspectpool");
 	  			}
 	      } catch (Exception var5) {
-	    	  Constants.LOGGER.warn("Error adding aspect "+aspect.getName()+" to "+player.getName());
+	    	  Constants.LOGGER.warn("Error adding aspect "+aspect.getName()+" to "+player.getName().getFormattedText());
+	    	  var5.printStackTrace();
 	      }
 
 	}
@@ -92,7 +94,7 @@ public class AspectCollectionHandler {
 			File aspectDataDir = new File(world.getWorldInfo().getWorldName(), "aspectdata");
 			aspectDataDir.mkdirs();
 	    	  
-			File playerAspectData = new File(aspectDataDir, player.getCachedUniqueIdString()+".aspect");
+			File playerAspectData = new File(aspectDataDir, player.getCachedUniqueIdString()+".aspectpool");
 			FileReader fr = new FileReader(playerAspectData);
 		    LineNumberReader lnr = new LineNumberReader(fr);
 		    
@@ -112,13 +114,13 @@ public class AspectCollectionHandler {
 		finally
 		{
     		
-	        try(BufferedReader br = Files.newBufferedReader(Paths.get(world.getWorldInfo().getWorldName()+"/aspectdata", player.getCachedUniqueIdString()+".aspect"))) 
+	        try(BufferedReader br = Files.newBufferedReader(Paths.get(world.getWorldInfo().getWorldName()+"/aspectdata", player.getCachedUniqueIdString()+".aspectpool"))) 
 	        {
 	            String line;
 	            while ((line = br.readLine()) != null) 
 	            {
 	            	for(int i=0; i<lineCount; i++) {
-	            		Aspect aspect = new Aspect(Item.getItemById(Integer.parseInt(line)));
+	            		Aspect aspect = Aspect.getAspectByName(line.substring(0, line.indexOf(",")));
 	            		aspectlist.add(aspect);
 	            		System.out.println(aspect.getName());
 	            	}
