@@ -20,6 +20,7 @@ public class ArcanaBlocks {
     //tainted other
     public static Block tainted_sand;
     public static Block tainted_gravel;
+    public static Block tainted_goo;
 
     //tainted ores
 

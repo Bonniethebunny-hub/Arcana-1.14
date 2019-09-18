@@ -18,6 +18,7 @@ public class ModItems {
     public static void registerItems(RegistryEvent.Register<Item> even)
     {
         Thaumonomicon = registerItem(new Item(new Item.Properties().maxStackSize(1).group(ArcanaItemGroup.instance)), "thaumonomicon");
+
     }
 
     public static Item registerItem(Item item, String name) {

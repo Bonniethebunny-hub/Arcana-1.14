@@ -8,9 +8,9 @@ public class ArcanaItemGroup extends ItemGroup {
 
     public static final ArcanaItemGroup instance = new ArcanaItemGroup(ItemGroup.GROUPS.length, "arcana");
 
-    private ArcanaItemGroup(int index, String lable) {
+    private ArcanaItemGroup(int index, String label) {
 
-        super(index, lable);
+        super(index, label);
 
     }
 
