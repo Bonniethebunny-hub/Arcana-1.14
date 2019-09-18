@@ -17,7 +17,9 @@ public class ModItems {
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> even)
     {
-        Thaumonomicon = registerItem(new Item(new Item.Properties().maxStackSize(1).group(ArcanaItemGroup.instance)), "thaumonomicon");
+        thaumonomicon = registerItem(new Item(new Item.Properties().maxStackSize(1).group(ArcanaItemGroup.instance)), "thaumonomicon");
+        quicksilver = registerItem(new Item(new Item.Properties().maxStackSize(64).group(ArcanaItemGroup.instance)), "quicksilver");
+        amber = registerItem(new Item(new Item.Properties().maxStackSize(64).group(ArcanaItemGroup.instance)), "quicksilver");
 
     }
 

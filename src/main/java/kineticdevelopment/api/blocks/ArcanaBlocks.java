@@ -23,11 +23,26 @@ public class ArcanaBlocks {
     public static Block tainted_goo;
 
     //tainted ores
+    public static Block tainted_cinnabar_ore;
+    public static Block tainted_amber_ore;
+    public static Block tainted_arcanium_ore;
+    public static Block tainted_coal_ore;
+    public static Block tainted_diamond_ore;
+    public static Block tainted_emerald_ore;
+    public static Block tainted_iron_ore;
+    public static Block tainted_lapis_lazuli_ore;
+    public static Block tainted_ruby_ore;
+    public static Block tainted_silver_ore;
 
     //tainted plants
     public static Block tainted_fibers;
 
     //tainted grass
+
+    //ore
+    public static Block amber_ore;
+    public static Block cinnabar_ore;
+    public static Block arcanium_ore;
 
     //arcane blocks
     public static Block arcane_stone;

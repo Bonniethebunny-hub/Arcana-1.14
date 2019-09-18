@@ -1,4 +1,4 @@
-package kineticdevelopment.common.blocks;
+package kineticdevelopment.common.blocks.tainted;
 
 
 import kineticdevelopment.common.utils.taint.TaintLevelHandler;
@@ -33,7 +33,6 @@ public class TaintedGoo extends Block {
                 .sound(SoundType.SLIME)
                 .hardnessAndResistance(3.0f)
         );
-        setRegistryName("taintgoo");
     }
 
     public void tick(BlockState state, World worldIn, BlockPos pos, Random random) {

@@ -3,7 +3,11 @@ import net.minecraft.item.Item;
 
 public class ArcanaItems {
 
-    public static Item Thaumonomicon;
+    public static Item thaumonomicon;
+    public static Item quicksilver;
+    public static Item amber;
+    public static Item arcanium; //not added as item
+    public static Item silver; //not added as item
 
     //aspects
     public static Item aspect_air;

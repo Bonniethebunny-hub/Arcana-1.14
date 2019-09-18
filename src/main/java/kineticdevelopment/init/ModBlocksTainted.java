@@ -1,15 +1,14 @@
 package kineticdevelopment.init;
 
 import kineticdevelopment.common.blocks.ArcanaStairsBlock;
+import kineticdevelopment.common.blocks.ores.*;
+import kineticdevelopment.common.blocks.tainted.TaintedCrust;
+import kineticdevelopment.common.blocks.tainted.TaintedGoo;
 import kineticdevelopment.common.utils.creativetab.ArcanaItemGroup;
-import kineticdevelopment.common.blocks.*;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -45,7 +44,15 @@ public class ModBlocksTainted {
         //Tainted Plants
         tainted_fibers = registerBlock(new VineBlock(Block.Properties.create(Material.TALL_PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(1.0F).sound(SoundType.PLANT)), "taint_fibers");
 
-        //arcane blocks
+        //Tainted Ore
+        tainted_cinnabar_ore = registerBlock(new TaintedCinnabarOre(), "tainted_cinnabar_ore");
+        tainted_amber_ore = registerBlock(new TaintedAmberOre(), "tainted_amber_ore");
+        tainted_arcanium_ore = registerBlock(new TaintedArcaniumOre(), "tainted_arcanium_ore");
+        tainted_coal_ore = registerBlock(new TaintedCoalOre(), "tainted_coal_ore");
+        tainted_diamond_ore = registerBlock(new TaintedDiamondOre(), "tainted_diamond_ore");
+
+
+
 
     }
 

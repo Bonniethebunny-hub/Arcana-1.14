@@ -1,4 +1,4 @@
-package kineticdevelopment.common.blocks;
+package kineticdevelopment.common.blocks.tainted;
 
 import kineticdevelopment.common.utils.taint.TaintSpreader;
 import kineticdevelopment.init.ModEffects;
