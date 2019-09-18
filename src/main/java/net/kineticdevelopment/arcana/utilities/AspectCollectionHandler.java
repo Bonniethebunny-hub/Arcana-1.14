@@ -88,8 +88,7 @@ public class AspectCollectionHandler {
 		ArrayList<Aspect> aspectlist = new ArrayList<Aspect>();
 		
 		int lineCount = 0;
-		try
-		{
+		try {
 			File aspectDataDir = new File(world.getWorldInfo().getWorldName(), "aspectdata");
 			aspectDataDir.mkdirs();
 	    	  
@@ -97,8 +96,7 @@ public class AspectCollectionHandler {
 			FileReader fr = new FileReader(playerAspectData);
 		    LineNumberReader lnr = new LineNumberReader(fr);
 		    
-	        while (lnr.readLine() != null)
-	        {
+	        while (lnr.readLine() != null) {
 	        	lineCount++;
 	        }
 	 
@@ -106,18 +104,14 @@ public class AspectCollectionHandler {
 	 
 	        lnr.close();
 		}
-		catch(IOException e)
-		{
+		catch(IOException e) {
 			e.printStackTrace();
 		}
-		finally
-		{
+		finally {
     		
-	        try(BufferedReader br = Files.newBufferedReader(Paths.get(world.getWorldInfo().getWorldName()+"/aspectdata", player.getCachedUniqueIdString()+".aspectpool"))) 
-	        {
+	        try(BufferedReader br = Files.newBufferedReader(Paths.get(world.getWorldInfo().getWorldName()+"/aspectdata", player.getCachedUniqueIdString()+".aspectpool"))) {
 	            String line;
-	            while ((line = br.readLine()) != null) 
-	            {
+	            while ((line = br.readLine()) != null) {
 	            	for(int i=0; i<lineCount; i++) {
 	            		Aspect aspect = Aspect.getAspectByName(line.substring(0, line.indexOf(",")));
 	            		aspectlist.add(aspect);
@@ -125,8 +119,7 @@ public class AspectCollectionHandler {
 	            	}
 	            }
 	        } 
-	        catch(IOException e) 
-	        {
+	        catch(IOException e) {
 	            System.err.format("IOException: %s%n", e);
 	        }
 		}
