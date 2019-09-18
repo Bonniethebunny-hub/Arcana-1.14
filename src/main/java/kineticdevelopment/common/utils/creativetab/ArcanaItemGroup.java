@@ -1,3 +1,7 @@
+/**
+ * Main creative tab
+ */
+
 package kineticdevelopment.common.utils.creativetab;
 
 import net.minecraft.item.ItemGroup;
@@ -17,7 +21,7 @@ public class ArcanaItemGroup extends ItemGroup {
     @Override
     public ItemStack createIcon() {
 
-        return new ItemStack(ArcanaItems.Thaumonomicon);
+        return new ItemStack(ArcanaItems.thaumonomicon);
     }
 
     @Override

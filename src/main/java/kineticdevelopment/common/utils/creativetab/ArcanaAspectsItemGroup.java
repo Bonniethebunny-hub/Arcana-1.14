@@ -1,3 +1,6 @@
+/**
+ * Creative tab for aspects. This doesn't need to be in the final build
+ */
 package kineticdevelopment.common.utils.creativetab;
 
 import kineticdevelopment.api.items.ArcanaItems;

@@ -1,3 +1,7 @@
+/**
+ * Please only use for tainted blocks and nothing else.
+ */
+
 package kineticdevelopment.init;
 
 import kineticdevelopment.common.blocks.ArcanaStairsBlock;
@@ -50,6 +54,14 @@ public class ModBlocksTainted {
         tainted_arcanium_ore = registerBlock(new TaintedArcaniumOre(), "tainted_arcanium_ore");
         tainted_coal_ore = registerBlock(new TaintedCoalOre(), "tainted_coal_ore");
         tainted_diamond_ore = registerBlock(new TaintedDiamondOre(), "tainted_diamond_ore");
+        tainted_iron_ore = registerBlock(new TaintedIronOre(), "tainted_iron_ore");
+        tainted_silver_ore = registerBlock(new TaintedSilverOre(), "tainted_silver_ore");
+        tainted_ruby_ore = registerBlock(new TaintedRubyOre(), "tainted_ruby_ore");
+        tainted_emerald_ore = registerBlock(new TaintedEmeraldOre(), "tainted_emerald_ore");
+        tainted_gold_ore = registerBlock(new TaintedGoldOre(), "tainted_gold_ore");
+        tainted_lapis_lazuli_ore = registerBlock(new TaintedLapisOre(), "tainted_lapis_ore");
+        tainted_redstone_ore = registerBlock(new TaintedLapisOre(), "tainted_redstone_ore");
+        tainted_destroyed_ore = registerBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.1F, 0.2F).sound(SoundType.STONE)), "tainted_destroyed_ore");
 
 
 

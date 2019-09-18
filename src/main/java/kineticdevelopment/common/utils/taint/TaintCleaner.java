@@ -19,27 +19,27 @@ public class TaintCleaner {
     @SuppressWarnings("serial")
     static List<Block> CobblestoneProspects = new ArrayList<Block>() {{
         add(ArcanaBlocks.tainted_rock);
-        //add(ArcanaBlocks.TAINTEDAMBERORE);
-        //add(ArcanaBlocks.TAINTEDIRONORE);
-       // add(ArcanaBlocks.TAINTEDGOLDORE);
-       // add(ArcanaBlocks.TAINTEDDIAMONDORE);
-       // add(ArcanaBlocks.TAINTEDLAPISORE);
-       // add(ArcanaBlocks.TAINTEDEMERALDORE);
-      //  add(ArcanaBlocks.TAINTEDCOALORE);
-      //  add(ArcanaBlocks.TAINTEDCINNABARORE);
-      //  add(ArcanaBlocks.TAINTEDREDSTONEORE);
+        add(ArcanaBlocks.tainted_amber_ore);
+        add(ArcanaBlocks.tainted_rock);
+        add(ArcanaBlocks.tainted_gold_ore);
+        add(ArcanaBlocks.tainted_diamond_ore);
+        add(ArcanaBlocks.tainted_lapis_lazuli_ore);
+        add(ArcanaBlocks.tainted_emerald_ore);
+        add(ArcanaBlocks.tainted_coal_ore);
+        add(ArcanaBlocks.tainted_cinnabar_ore);
+        add(ArcanaBlocks.tainted_redstone_ore);
     }};
-/**
+
     @SuppressWarnings("serial")
     static List<Block> SandProspects = new ArrayList<Block>() {{
-        add(ArcanaBlocks.TAINTEDSAND);
+        add(ArcanaBlocks.tainted_sand);
     }};
 
     @SuppressWarnings("serial")
     static List<Block> GravelProspects = new ArrayList<Block>() {{
-        add(ArcanaBlocks.TAINTEDGRAVEL);
+        add(ArcanaBlocks.tainted_gravel);
     }};
-**/
+
     @SuppressWarnings("serial")
     static List<Block> AirProspects = new ArrayList<Block>() {{
         add(ArcanaBlocks.tainted_crust);
@@ -85,7 +85,7 @@ public class TaintCleaner {
 
             }
         }
-/**
+
         for (int x = -5; x < 6; x++) {
             for (int y = -5; y < 6; y++) {
                 for (int z = -5; z < 6; z++) {
@@ -108,7 +108,7 @@ public class TaintCleaner {
             }
         }
     }
- **/
+
 
     /**
      * Uses a radius, radius is first number plus second number, arcana: -5 + 6 = radius of 5
@@ -116,7 +116,7 @@ public class TaintCleaner {
      *
      * @see #cleanTaint(World, BlockPos)
      */
-/**
+
     public static void cleanTaintWithRadius(World worldIn, BlockPos pos, int num1, int num2) {
 
         for (int x = num1; x < num2; x++) {
@@ -151,7 +151,7 @@ public class TaintCleaner {
 
             }
         }
-/**
+
         for (int x = num1; x < num2; x++) {
             for (int y = num1; y < num2; y++) {
                 for (int z = -5; z < num2; z++) {
@@ -172,6 +172,8 @@ public class TaintCleaner {
                 }
 
             }
- **/   }
-}
+        }
 
+
+    }
+}

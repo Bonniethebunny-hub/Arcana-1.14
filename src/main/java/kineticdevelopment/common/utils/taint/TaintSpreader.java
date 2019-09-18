@@ -1,7 +1,7 @@
 package kineticdevelopment.common.utils.taint;
 
-import kineticdevelopment.common.blocks.tainted.TaintedCrust;
 import kineticdevelopment.api.blocks.ArcanaBlocks;
+import kineticdevelopment.common.blocks.tainted.TaintedCrust;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.RotatedPillarBlock;
@@ -14,11 +14,9 @@ import java.util.Map;
 
 public class TaintSpreader {
 
-
     /**
      * List of blocks tainted soil spreads to
      */
-
     static Block[] TaintedSoilProspects = {
             Blocks.GRASS_BLOCK,
             Blocks.DIRT,
@@ -30,7 +28,6 @@ public class TaintSpreader {
     /**
      * List of blocks tainted rock spreads to
      */
-
     static Block[] TaintedRockProspects = {
             Blocks.COBBLESTONE,
             Blocks.STONE,
@@ -47,7 +44,6 @@ public class TaintSpreader {
     /**
      * List of blocks tainted crust spreads to
      */
-
     static Block[] TaintedCrustProspects = {
             Blocks.BLACK_CONCRETE,
             Blocks.WHITE_CONCRETE,
@@ -68,7 +64,6 @@ public class TaintSpreader {
     /**
      * List of blocks taint goo spreads to
      */
-
     static Block[] TaintGooProspects = {
             Blocks.JUNGLE_LEAVES,
             Blocks.DARK_OAK_LEAVES
@@ -97,19 +92,19 @@ public class TaintSpreader {
 
     @SuppressWarnings("serial")
     static HashMap<Block, Block> singleBlockConversions = new HashMap<Block, Block>() {{
-       // put(Blocks.OAK_LOG, ArcanaBlocks.TAINTEDOAKLOG);
-        //put(Blocks.OAK_LEAVES, ArcanaBlocks.TAINTEDOAKLEAVES);
-       // put(Blocks.COAL_ORE, ArcanaBlocks.TAINTEDCOALORE);
-       // put(Blocks.DIAMOND_ORE, ArcanaBlocks.TAINTEDDIAMONDORE);
-      //  put(Blocks.IRON_ORE, ArcanaBlocks.TAINTEDIRONORE);
-       // put(Blocks.GOLD_ORE, ArcanaBlocks.TAINTEDGOLDORE);
-      //  put(Blocks.REDSTONE_ORE, ArcanaBlocks.TAINTEDREDSTONEORE);
-      //  put(Blocks.LAPIS_ORE, ArcanaBlocks.TAINTEDLAPISORE);
-      //  put(Blocks.EMERALD_ORE, ArcanaBlocks.TAINTEDEMERALDORE);
-      //  put(ArcanaBlocks.CINNABARORE, ArcanaBlocks.TAINTEDCINNABARORE);
-     //   put(Blocks.SAND, ArcanaBlocks.TAINTEDSAND);
-     //   put(Blocks.RED_SAND, ArcanaBlocks.TAINTEDSAND);
-      //  put(Blocks.GRAVEL, ArcanaBlocks.TAINTEDGRAVEL);
+        //put(Blocks.OAK_LOG, BlockInit.TAINTEDOAKLOG);
+       // put(Blocks.OAK_LEAVES, BlockInit.TAINTEDOAKLEAVES);
+        put(Blocks.COAL_ORE, ArcanaBlocks.tainted_coal_ore);
+        put(Blocks.DIAMOND_ORE, ArcanaBlocks.tainted_diamond_ore);
+        put(Blocks.IRON_ORE, ArcanaBlocks.tainted_iron_ore);
+        put(Blocks.GOLD_ORE, ArcanaBlocks.tainted_gold_ore);
+        put(Blocks.REDSTONE_ORE, ArcanaBlocks.tainted_redstone_ore);
+        put(Blocks.LAPIS_ORE, ArcanaBlocks.tainted_lapis_lazuli_ore);
+        put(Blocks.EMERALD_ORE, ArcanaBlocks.tainted_emerald_ore);
+        put(ArcanaBlocks.cinnabar_ore, ArcanaBlocks.tainted_cinnabar_ore);
+        put(Blocks.SAND, ArcanaBlocks.tainted_sand);
+        put(Blocks.RED_SAND, ArcanaBlocks.tainted_sand);
+        put(Blocks.GRAVEL, ArcanaBlocks.tainted_gravel);
     }};
 
     /**
@@ -117,7 +112,6 @@ public class TaintSpreader {
      * @param worldIn
      * @param pos
      */
-
     @SuppressWarnings("serial")
     public static void spreadTaint(World worldIn, BlockPos pos) {
         if (TaintLevelHandler.getTaintLevel(worldIn.getWorld()) >= 5) {
@@ -126,10 +120,10 @@ public class TaintSpreader {
             HashMap<Block[], Block> conversionLists = new HashMap<Block[], Block>() {{
                 put(TaintedSoilProspects, ArcanaBlocks.tainted_soil);
                 put(TaintedRockProspects, ArcanaBlocks.tainted_rock);
-                //put(TaintGooProspects, ArcanaBlocks.TAINTGOO);
+                put(TaintGooProspects, ArcanaBlocks.tainted_goo);
                 put(TaintedRockProspects, ArcanaBlocks.tainted_rock);
                 put(TaintedCrustProspects, ArcanaBlocks.tainted_crust);
-               // put(TaintedFlowerProspects, ArcanaBlocks.TAINTEDFLOWER);
+                //put(TaintedFlowerProspects, BlockInit.TAINTEDFLOWER);
             }};
 
             // iterate {x, y, z} through {-1, 0, 1}
@@ -172,5 +166,4 @@ public class TaintSpreader {
             }
         }
     }
-
 }

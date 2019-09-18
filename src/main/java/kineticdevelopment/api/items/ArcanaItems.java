@@ -1,3 +1,8 @@
+/**
+ This class should to be used as part of registering all items. Please do not use this for anything else. Make another API package or
+ check to see if one you need is already there.
+ **/
+
 package kineticdevelopment.api.items;
 import net.minecraft.item.Item;
 

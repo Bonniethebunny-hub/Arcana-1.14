@@ -1,3 +1,8 @@
+/**
+ This class should to be used as part of registering all blocks. Please do not use this for anything else. Make another API package or
+ check to see if one you need is already there.
+ **/
+
 package kineticdevelopment.api.blocks;
 
 import net.minecraft.block.Block;
@@ -33,6 +38,9 @@ public class ArcanaBlocks {
     public static Block tainted_lapis_lazuli_ore;
     public static Block tainted_ruby_ore;
     public static Block tainted_silver_ore;
+    public static Block tainted_gold_ore;
+    public static Block tainted_destroyed_ore;
+    public static Block tainted_redstone_ore;
 
     //tainted plants
     public static Block tainted_fibers;

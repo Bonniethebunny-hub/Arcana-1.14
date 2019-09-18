@@ -1,3 +1,9 @@
+/**
+ * All code in this project is covered by the Creative Commons Attribution-NonCommercial-NoDerivs 4.0 Unported License.
+ * Copyright Kinetic Development 2019
+ */
+
+
 package kineticdevelopment.core;
 
 

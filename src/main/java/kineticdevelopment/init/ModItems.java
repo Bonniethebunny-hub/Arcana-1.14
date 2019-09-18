@@ -1,3 +1,7 @@
+/**
+ * All items should be listed here.
+ */
+
 package kineticdevelopment.init;
 
 
@@ -19,7 +23,7 @@ public class ModItems {
     {
         thaumonomicon = registerItem(new Item(new Item.Properties().maxStackSize(1).group(ArcanaItemGroup.instance)), "thaumonomicon");
         quicksilver = registerItem(new Item(new Item.Properties().maxStackSize(64).group(ArcanaItemGroup.instance)), "quicksilver");
-        amber = registerItem(new Item(new Item.Properties().maxStackSize(64).group(ArcanaItemGroup.instance)), "quicksilver");
+        amber = registerItem(new Item(new Item.Properties().maxStackSize(64).group(ArcanaItemGroup.instance)), "amber");
 
     }
 

@@ -1,8 +1,13 @@
+/**
+ * Register all non tainted blocks
+ */
+
 package kineticdevelopment.init;
 
 import kineticdevelopment.common.blocks.ArcanaStairsBlock;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.LogBlock;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
