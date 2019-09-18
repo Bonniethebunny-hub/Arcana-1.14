@@ -1,22 +1,14 @@
 package net.kineticdevelopment.arcana.common.biomes;
 
 import net.kineticdevelopment.arcana.common.init.BlockInit;
-import net.kineticdevelopment.arcana.common.init.FeatureInit;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.Biomes;
-import net.minecraft.world.dimension.Dimension;
-import net.minecraft.world.gen.GenerationStage;
-import net.minecraft.world.gen.feature.IFeatureConfig;
-import net.minecraft.world.gen.placement.AtSurfaceWithExtraConfig;
-import net.minecraft.world.gen.placement.Placement;
 import net.minecraft.world.gen.surfacebuilders.ConfiguredSurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 import net.minecraftforge.common.BiomeManager;
-import net.minecraftforge.common.DimensionManager;
 
 public class MagicalForestBiome extends Biome {
     protected static final SurfaceBuilderConfig MagicalForest = new SurfaceBuilderConfig(BlockInit.MAGICALGRASS.getDefaultState(), Blocks.DIRT.getDefaultState(), Blocks.CLAY.getDefaultState());

@@ -13,7 +13,8 @@ import net.minecraft.world.World;
 
 public class EnvyDemon extends CreatureEntity {
 
-    public EnvyDemon(EntityType<? extends CreatureEntity> type, World worldIn) {
+    @SuppressWarnings("unchecked")
+	public EnvyDemon(EntityType<? extends CreatureEntity> type, World worldIn) {
         super((EntityType<? extends CreatureEntity>) EntityInit.ENVYDEMON, worldIn);
     }
 

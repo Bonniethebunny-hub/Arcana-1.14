@@ -29,6 +29,10 @@ public class TaintedSpiderRender extends LivingRenderer<TaintedSpider, TaintedSp
         *
         *Suggested Course of Action: Just leave out a spider eyes layer, not likely going to be noticed by anyone and can be explained away via lore
          */
+        
+        /*
+         * Solution: Make a copy of the SpiderEyesLayer class, and direct it to custom texture, simple fix
+         */
     }
 
     @Override
