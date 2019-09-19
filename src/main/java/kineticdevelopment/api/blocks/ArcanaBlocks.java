@@ -71,8 +71,8 @@ public class ArcanaBlocks {
     public static Block infusion_arcane_stone;
 
     //trees
-    public static Block dead_tree_log;
-    public static Block dead_tree_planks;
-    public static Block trypophobius_tree_log;
-    public static Block trypophobius_tree_planks;
+    public static Block dead_log;
+    public static Block dead_planks;
+    public static Block trypophobius_log;
+    public static Block trypophobius_planks;
 }
