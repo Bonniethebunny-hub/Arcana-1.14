@@ -19,6 +19,10 @@
   "block.arcana.tainted_willow_planks": "Tainted Willow Planks",
   "block.arcana.tainted_willow_leaves": "Tainted Willow Leaves",
   "block.arcana.stripped_tainted_willow_log": "Stripped Tainted Willow Log",
+  "block.arcana.tainted_greatwood_log": "Tainted Greatwood Log",
+  "block.arcana.tainted_greatwood_planks": "Tainted Greatwood Planks",
+  "block.arcana.tainted_greatwood_leaves": "Tainted Greatwood Leaves",
+  "block.arcana.stripped_tainted_greatwood_log": "Stripped Tainted Greatwood Log",
 
   "_comment": "Normal Blocks",
   "block.arcana.arcane_stone": "Arcane Stone",
