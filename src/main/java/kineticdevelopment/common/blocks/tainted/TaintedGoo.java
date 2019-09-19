@@ -64,7 +64,7 @@ public class TaintedGoo extends Block {
         if (entityIn instanceof LivingEntity) {
             LivingEntity entity = (LivingEntity) entityIn;
 
-            entity.addPotionEffect(new EffectInstance(ModEffects.TAINTED, 60, 1, false, true));
+            entity.addPotionEffect(new EffectInstance(ModEffects.tainted_effect, 60, 1, false, true));
             entity.addPotionEffect(new EffectInstance(Effects.SLOWNESS, 60, 3, false, true));
             entity.addPotionEffect(new EffectInstance(Effects.SLOW_FALLING, 60, 3, false, true));
         }

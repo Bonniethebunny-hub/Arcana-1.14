@@ -20,7 +20,7 @@ public class TaintCleaner {
     static List<Block> CobblestoneProspects = new ArrayList<Block>() {{
         add(ArcanaBlocks.tainted_rock);
         add(ArcanaBlocks.tainted_amber_ore);
-        add(ArcanaBlocks.tainted_rock);
+        add(ArcanaBlocks.tainted_iron_ore);
         add(ArcanaBlocks.tainted_gold_ore);
         add(ArcanaBlocks.tainted_diamond_ore);
         add(ArcanaBlocks.tainted_lapis_lazuli_ore);
@@ -43,14 +43,14 @@ public class TaintCleaner {
     @SuppressWarnings("serial")
     static List<Block> AirProspects = new ArrayList<Block>() {{
         add(ArcanaBlocks.tainted_crust);
-       // add(ArcanaBlocks.TAINTGOO);
+        add(ArcanaBlocks.tainted_goo);
     }};
 
     /**
      * Cleans taint with a set radius of 5 in all directions
      *
+     * @see #cleanTaintWithRadius(World, BlockPos, int, int)
      */
-
     public static void cleanTaint(World worldIn, BlockPos pos) {
 
         for (int x = -5; x < 6; x++) {
@@ -109,14 +109,12 @@ public class TaintCleaner {
         }
     }
 
-
     /**
      * Uses a radius, radius is first number plus second number, arcana: -5 + 6 = radius of 5
      * <p>Radius is that many blocks in each direction<p>
      *
      * @see #cleanTaint(World, BlockPos)
      */
-
     public static void cleanTaintWithRadius(World worldIn, BlockPos pos, int num1, int num2) {
 
         for (int x = num1; x < num2; x++) {
@@ -173,7 +171,5 @@ public class TaintCleaner {
 
             }
         }
-
-
     }
 }

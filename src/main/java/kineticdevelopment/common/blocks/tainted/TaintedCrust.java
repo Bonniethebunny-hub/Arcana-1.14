@@ -21,6 +21,7 @@ public class TaintedCrust extends Block {
                 .sound(SoundType.STONE)
                 .hardnessAndResistance(3.0f)
         );
+
     }
 
     @Override
@@ -38,7 +39,7 @@ public class TaintedCrust extends Block {
         if (entityIn instanceof LivingEntity) {
             LivingEntity entity = (LivingEntity) entityIn;
 
-            entity.addPotionEffect(new EffectInstance(ModEffects.TAINTED, 60, 1, false, true));
+            entity.addPotionEffect(new EffectInstance(ModEffects.tainted_effect, 60, 1, false, true));
         }
     }
 }

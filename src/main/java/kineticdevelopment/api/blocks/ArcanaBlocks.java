@@ -61,4 +61,7 @@ public class ArcanaBlocks {
     public static Block arcana_stone_bricks_stairs;
     public static Block infusion_arcane_stone;
 
+    //trees
+    public static Block dead_tree_log;
+
 }
