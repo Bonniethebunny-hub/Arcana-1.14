@@ -36,6 +36,10 @@
   "block.arcana.dead_planks": "Dead Planks",
   "block.arcana.trypophobius_log": "Trypophobius Log",
   "block.arcana.trypophobius_planks": "Trypophobius Planks",
+  "block.arcana.hawthorn_log": "Hawthorn Log",
+  "block.arcana.hawthorn_planks": "Hawthorn Planks",
+  "block.arcana.stripped_hawthorn_log": "Stripped Hawthorn Log",
+  "block.arcana.hawthorn_leaves": "Hawthorn Leaves",
 
   "_comment": "Normal Items",
   "item.arcana.dead_stick": "Dead Stick",

@@ -14,10 +14,12 @@ public class ArcanaBlocks {
     public static Block tainted_oak_planks;
     public static Block tainted_plank_stairs;
     public static Block tainted_plank_slab;
+
     public static Block tainted_willow_log;
     public static Block tainted_willow_planks;
     public static Block stripped_tainted_willow_log;
     public static Block tainted_willow_leaves;
+
     public static Block tainted_greatwood_log;
     public static Block tainted_greatwood_planks;
     public static Block stripped_tainted_greatwood_log;
@@ -73,6 +75,12 @@ public class ArcanaBlocks {
     //trees
     public static Block dead_log;
     public static Block dead_planks;
+
     public static Block trypophobius_log;
     public static Block trypophobius_planks;
+
+    public static Block hawthorn_log;
+    public static Block hawthorn_plank;
+    public static Block stripped_hawthorn_log;
+    public static Block hawthorn_leaves;
 }
