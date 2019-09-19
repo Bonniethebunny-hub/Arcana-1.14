@@ -1,8 +1,10 @@
 package kineticdevelopment.common.blocks.tainted;
 
 
+//import kineticdevelopment.api.effects.ArcanaEffects;
 import kineticdevelopment.common.utils.taint.TaintLevelHandler;
 import kineticdevelopment.common.utils.taint.TaintSpreader;
+import kineticdevelopment.core.Arcana;
 import kineticdevelopment.init.ModEffects;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
@@ -64,7 +66,7 @@ public class TaintedGoo extends Block {
         if (entityIn instanceof LivingEntity) {
             LivingEntity entity = (LivingEntity) entityIn;
 
-            entity.addPotionEffect(new EffectInstance(ModEffects.tainted_effect, 60, 1, false, true));
+            //entity.addPotionEffect(new EffectInstance(ArcanaEffects.tainted_effect, 60, 1, false, true));
             entity.addPotionEffect(new EffectInstance(Effects.SLOWNESS, 60, 3, false, true));
             entity.addPotionEffect(new EffectInstance(Effects.SLOW_FALLING, 60, 3, false, true));
         }
