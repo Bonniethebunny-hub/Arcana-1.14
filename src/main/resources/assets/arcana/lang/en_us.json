@@ -15,6 +15,10 @@
   "block.arcana.tainted_soil": "Tainted Soil",
   "block.arcana.tainted_sand": "Tainted Sand",
   "block.arcana.tainted_gravel": "Tainted Gravel",
+  "block.arcana.tainted_willow_log": "Tainted Willow Log",
+  "block.arcana.tainted_willow_planks": "Tainted Willow Planks",
+  "block.arcana.tainted_willow_leaves": "Tainted Willow Leaves",
+  "block.arcana.stripped_tainted_willow_log": "Stripped Tainted Willow Log",
 
   "_comment": "Normal Blocks",
   "block.arcana.arcane_stone": "Arcane Stone",

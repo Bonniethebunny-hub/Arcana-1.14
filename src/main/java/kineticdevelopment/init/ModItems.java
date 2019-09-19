@@ -26,7 +26,6 @@ public class ModItems {
         amber = registerItem(new Item(new Item.Properties().maxStackSize(64).group(ArcanaItemGroup.instance)), "amber");
         dead_tree_stick = registerItem(new Item(new Item.Properties().maxStackSize(64).group(ArcanaItemGroup.instance)), "dead_tree_stick");
         trypophobius_tree_stick = registerItem(new Item(new Item.Properties().maxStackSize(64).group(ArcanaItemGroup.instance)),"trypophobius_tree_stick");
-
     }
 
     public static Item registerItem(Item item, String name) {
