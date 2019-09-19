@@ -37,8 +37,11 @@ public class ModBlocks {
         arcana_stone_bricks_stairs = registerBlock(new ArcanaStairsBlock(arcane_stone_bricks.getDefaultState(), Block.Properties.from(arcane_stone_bricks)), "arcane_stone_bricks_stairs");
         infusion_arcane_stone = registerBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F,3.0F).sound(SoundType.STONE).lightValue(10)), "infusion_arcane_stone");
 
-        //dead tree
+        //trees
         dead_tree_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "dead_tree_log");
+        dead_tree_planks = registerBlock(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "dead_tree_planks");
+        trypophobius_tree_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "trypophobius_tree_log");
+        trypophobius_tree_planks = registerBlock(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "trypophobius_tree_planks");
     }
 
 

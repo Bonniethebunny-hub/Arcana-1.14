@@ -13,6 +13,8 @@ public class ArcanaItems {
     public static Item amber;
     public static Item arcanium; //not added as item
     public static Item silver; //not added as item
+    public static Item dead_tree_stick;
+    public static Item trypophobius_tree_stick;
 
     //aspects
     public static Item aspect_air;

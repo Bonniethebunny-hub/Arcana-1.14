@@ -25,7 +25,13 @@
   "block.arcana.arcane_stone_bricks_stairs": "Stone Bricks Stairs",
   "block.arcana.infusion_arcane_stone": "Infustion Arcane Stone",
   "block.arcana.dead_tree_log": "Dead Log",
+  "block.arcana.dead_tree_planks": "Dead Planks",
+  "block.arcana.trypophobius_tree_log": "Trypophobius Log",
+  "block.arcana.trypophobius_tree_planks": "Trypophobius Planks",
 
+  "_comment": "Normal Items",
+  "item.arcana.dead_tree_stick": "Dead Stick",
+  "item.arcana.trypophobius_tree_stick": "Trypophobius Stick",
 
   "_comment": "Books",
   "item.arcana.thaumonomicon": "Thaumonomicon",

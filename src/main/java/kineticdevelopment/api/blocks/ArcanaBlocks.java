@@ -63,5 +63,8 @@ public class ArcanaBlocks {
 
     //trees
     public static Block dead_tree_log;
+    public static Block dead_tree_planks;
+    public static Block trypophobius_tree_log;
+    public static Block trypophobius_tree_planks;
 
 }
