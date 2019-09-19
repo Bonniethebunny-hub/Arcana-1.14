@@ -1,5 +1,5 @@
 {
-  "parent": "block/cube_all",
+  "parent": "block/cube_column",
   "textures": {
     "end": "arcana:block/dead_tree_log_top",
     "side": "arcana:block/dead_tree_log"
