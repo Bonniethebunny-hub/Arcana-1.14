@@ -43,9 +43,9 @@ public class ModBlocks {
         trypophobius_planks = registerBlock(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "trypophobius_planks");
 
         hawthorn_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "hawthorn_log");
-        hawthorn_plank = registerBlock(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "hawthorn_planks");
+        hawthorn_plank = registerBlock(new TrapDoorBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "hawthorn_planks");
         stripped_hawthorn_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "stripped_hawthorn_log");
-        hawthorn_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES)), "hawthorn_leaves");
+        hawthorn_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "hawthorn_leaves");
     }
 
 
