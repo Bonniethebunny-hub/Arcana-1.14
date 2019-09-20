@@ -67,19 +67,24 @@ public class ModBlocksTainted {
         //tainted trees
         tainted_willow_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "tainted_willow_log");
         tainted_willow_planks = registerBlock(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "tainted_willow_planks");
+        tainted_willow_slab = registerBlock(new SlabBlock(Block.Properties.from(tainted_willow_planks)), "tainted_willow_slab");
+        tainted_willow_stairs = registerBlock(new ArcanaStairsBlock(tainted_willow_planks.getDefaultState(), Block.Properties.from(tainted_willow_planks)), "tainted_willow_stairs");
         stripped_tainted_willow_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "stripped_tainted_willow_log");
         tainted_willow_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES)), "tainted_willow_leaves");
 
         tainted_greatwood_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "tainted_greatwood_log");
         tainted_greatwood_planks = registerBlock(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "tainted_greatwood_planks");
+        tainted_greatwood_slab = registerBlock(new SlabBlock(Block.Properties.from(tainted_greatwood_planks)), "tainted_greatwood_slab");
+        tainted_greatwood_stairs = registerBlock(new ArcanaStairsBlock(tainted_greatwood_planks.getDefaultState(), Block.Properties.from(tainted_greatwood_planks)), "tainted_greatwood_stairs");
         stripped_tainted_greatwood_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "stripped_tainted_greatwood_log");
         tainted_greatwood_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES)), "tainted_greatwood_leaves");
 
         tainted_hawthorn_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "tainted_hawthorn_log");
         tainted_hawthorn_planks = registerBlock(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "tainted_hawthorn_planks");
+        tainted_hawthorn_slab = registerBlock(new SlabBlock(Block.Properties.from(tainted_hawthorn_planks)), "tainted_hawthorn_slab");
+        tainted_hawthorn_stairs = registerBlock(new ArcanaStairsBlock(tainted_hawthorn_planks.getDefaultState(), Block.Properties.from(tainted_greatwood_planks)), "tainted_hawthorn_stairs");
         stripped_tainted_hawthorn_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "stripped_tainted_hawthorn_log");
         tainted_hawthorn_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES)), "tainted_hawthorn_leaves");
-
     }
 
 

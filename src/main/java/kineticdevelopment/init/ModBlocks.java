@@ -38,12 +38,18 @@ public class ModBlocks {
         //trees
         dead_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "dead_log");
         dead_planks = registerBlock(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "dead_planks");
+        dead_slab = registerBlock(new SlabBlock(Block.Properties.from(dead_planks)), "dead_slab");
+        dead_stairs = registerBlock(new ArcanaStairsBlock(dead_planks.getDefaultState(), Block.Properties.from(dead_planks)), "dead_stairs");
 
         trypophobius_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "trypophobius_log");
         trypophobius_planks = registerBlock(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "trypophobius_planks");
+        trypophobius_slab = registerBlock(new SlabBlock(Block.Properties.from(trypophobius_planks)), "trypophobius_slab");
+        trypophobius_stairs = registerBlock(new ArcanaStairsBlock(trypophobius_planks.getDefaultState(), Block.Properties.from(trypophobius_planks)), "trypophobius_stairs");
 
         hawthorn_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "hawthorn_log");
-        hawthorn_plank = registerBlock(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "hawthorn_planks");
+        hawthorn_planks = registerBlock(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "hawthorn_planks");
+        hawthorn_slab = registerBlock(new SlabBlock(Block.Properties.from(hawthorn_planks)), "hawthorn_slab");
+        hawthorn_stairs = registerBlock(new ArcanaStairsBlock(hawthorn_planks.getDefaultState(), Block.Properties.from(hawthorn_planks)), "hawthorn_stairs");
         stripped_hawthorn_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "stripped_hawthorn_log");
         hawthorn_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES)), "hawthorn_leaves");
     }
