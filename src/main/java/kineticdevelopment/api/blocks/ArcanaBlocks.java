@@ -25,6 +25,11 @@ public class ArcanaBlocks {
     public static Block stripped_tainted_greatwood_log;
     public static Block tainted_greatwood_leaves;
 
+    public static Block tainted_hawthorn_log;
+    public static Block tainted_hawthorn_planks;
+    public static Block stripped_tainted_hawthorn_log;
+    public static Block tainted_hawthorn_leaves;
+
 
     //tainted rocks
     public static Block tainted_crust;
