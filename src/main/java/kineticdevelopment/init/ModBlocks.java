@@ -51,7 +51,7 @@ public class ModBlocks {
         hawthorn_slab = registerBlock(new SlabBlock(Block.Properties.from(hawthorn_planks)), "hawthorn_slab");
         hawthorn_stairs = registerBlock(new ArcanaStairsBlock(hawthorn_planks.getDefaultState(), Block.Properties.from(hawthorn_planks)), "hawthorn_stairs");
         stripped_hawthorn_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "stripped_hawthorn_log");
-        hawthorn_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES)), "hawthorn_leaves");
+        hawthorn_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "hawthorn_leaves");
     }
 
 
