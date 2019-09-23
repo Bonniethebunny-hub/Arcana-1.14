@@ -14,6 +14,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.commons.lang3.Range;
+
 public class TaintSpreader {
 
     /**
@@ -135,11 +137,20 @@ public class TaintSpreader {
                 put(TaintedCrustProspects, ArcanaBlocks.tainted_crust);
                // put(TaintedFlowerProspects, ArcanaBlocks.TAINTEDFLOWER);
             }};
-
-            // iterate {x, y, z} through {-1, 0, 1}
-            for (int x = -1; x < 2; x++) {
-                for (int y = -1; y < 2; y++) {
-                    for (int z = -1; z < 2; z++) {
+            
+            //Simple way of increasing spread range depending on taint level, needs re-done, manual limit atm
+            int int1 = -1;
+            int int2 = 2;
+            int taintLevel = (int) TaintLevelHandler.getTaintLevel(worldIn);
+            
+            for(int p = 10; p < taintLevel; p = p + 10) {
+            	int1 = int1 - 1;
+            	int2 = int2 + 1;
+            }
+            
+            for (int x = int1; x < int2; x++) {
+                for (int y = int1; y < int2; y++) {
+                    for (int z = int1; z < int2; z++) {
                         BlockPos nPos = pos.add(x, y, z);
                         Block b = worldIn.getBlockState(nPos).getBlock();
                         boolean changed = false;
