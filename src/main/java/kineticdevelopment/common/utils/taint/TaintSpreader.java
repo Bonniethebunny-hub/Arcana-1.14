@@ -92,7 +92,7 @@ public class TaintSpreader {
 
     @SuppressWarnings("serial")
     static HashMap<Block, Block> singleBlockConversions = new HashMap<Block, Block>() {{
-       // put(Blocks.OAK_LOG, ArcanaBlocks.TAINTEDOAKLOG);
+        //put(Blocks.OAK_LOG, ArcanaBlocks.TAINTEDOAKLOG);
         //put(Blocks.OAK_LEAVES, ArcanaBlocks.TAINTEDOAKLEAVES);
         put(Blocks.COAL_ORE, ArcanaBlocks.tainted_coal_ore);
         put(Blocks.DIAMOND_ORE, ArcanaBlocks.tainted_diamond_ore);
@@ -101,7 +101,7 @@ public class TaintSpreader {
         put(Blocks.REDSTONE_ORE, ArcanaBlocks.tainted_redstone_ore);
         put(Blocks.LAPIS_ORE, ArcanaBlocks.tainted_lapis_lazuli_ore);
         put(Blocks.EMERALD_ORE, ArcanaBlocks.tainted_emerald_ore);
-        put(ArcanaBlocks.cinnabar_ore, ArcanaBlocks.tainted_cinnabar_ore);
+        //put(ArcanaBlocks.cinnabar_ore, ArcanaBlocks.tainted_cinnabar_ore);
         put(Blocks.SAND, ArcanaBlocks.tainted_sand);
         put(Blocks.RED_SAND, ArcanaBlocks.tainted_sand);
         put(Blocks.GRAVEL, ArcanaBlocks.tainted_gravel);

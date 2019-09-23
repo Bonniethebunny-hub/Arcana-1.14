@@ -7,7 +7,6 @@
 package kineticdevelopment.core;
 
 
-import com.ibm.icu.text.ArabicShaping;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;

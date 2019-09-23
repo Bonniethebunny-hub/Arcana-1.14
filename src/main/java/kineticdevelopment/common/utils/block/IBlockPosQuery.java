@@ -1,4 +1,4 @@
-package kineticdevelopment.common.utils;
+package kineticdevelopment.common.utils.block;
 
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;
