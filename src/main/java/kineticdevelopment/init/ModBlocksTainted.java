@@ -64,6 +64,7 @@ import kineticdevelopment.common.blocks.ores.TaintedRubyOre;
 import kineticdevelopment.common.blocks.ores.TaintedSilverOre;
 import kineticdevelopment.common.blocks.tainted.TaintedCrust;
 import kineticdevelopment.common.blocks.tainted.TaintedGoo;
+import kineticdevelopment.common.blocks.tainted.TaintedSoil;
 import kineticdevelopment.common.utils.creativetab.ArcanaItemGroup;
 import net.minecraft.block.Block;
 import net.minecraft.block.LeavesBlock;
@@ -95,7 +96,7 @@ public class ModBlocksTainted {
         tainted_crust_slab =registerBlock(new TaintedSlab(Block.Properties.from(tainted_crust)),"tainted_crust_slab");
         tainted_rock = registerBlock(new TaintedBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F,6.0F).sound(SoundType.STONE)), "tainted_rock");
         tainted_rock_slab = registerBlock(new TaintedSlab(Block.Properties.from(tainted_rock)), "tainted_rock_slab");
-        tainted_soil = registerBlock(new TaintedBlock(Block.Properties.create(Material.EARTH).hardnessAndResistance(0.1F, 0.2F).sound(SoundType.GROUND)), "tainted_soil");
+        tainted_soil = registerBlock(new TaintedSoil(), "tainted_soil");
 
         //Tainted Other
         tainted_sand = registerBlock(new TaintedBlock(Block.Properties.create(Material.SAND).hardnessAndResistance(0.1F,0.2F).sound(SoundType.SAND)), "tainted_sand");

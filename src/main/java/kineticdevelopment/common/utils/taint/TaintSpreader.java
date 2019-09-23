@@ -111,6 +111,10 @@ public class TaintSpreader {
         put(Blocks.OAK_PLANKS, ArcanaBlocks.tainted_oak_planks);
         put(Blocks.OAK_SLAB, ArcanaBlocks.tainted_plank_slab);
         put(Blocks.COBBLESTONE_SLAB, ArcanaBlocks.tainted_rock_slab);
+        
+        //To be replaced with tainted wood pile
+        put(Blocks.OAK_DOOR, Blocks.AIR);
+        put(Blocks.OAK_TRAPDOOR, Blocks.AIR);
     }};
 
     /**
