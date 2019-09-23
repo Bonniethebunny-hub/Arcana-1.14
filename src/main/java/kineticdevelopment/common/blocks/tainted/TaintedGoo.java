@@ -4,15 +4,9 @@ package kineticdevelopment.common.blocks.tainted;
 //import kineticdevelopment.api.effects.ArcanaEffects;
 import kineticdevelopment.common.utils.taint.TaintLevelHandler;
 import kineticdevelopment.common.utils.taint.TaintSpreader;
-import kineticdevelopment.core.Arcana;
-import kineticdevelopment.init.ModEffects;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.potion.Effects;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -59,17 +53,6 @@ public class TaintedGoo extends Block {
     @OnlyIn(Dist.CLIENT)
     public boolean isSideInvisible(BlockState state, BlockState adjacentBlockState, Direction side) {
         return adjacentBlockState.getBlock() == this || super.isSideInvisible(state, adjacentBlockState, side);
-    }
-
-    @Override
-    public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
-        if (entityIn instanceof LivingEntity) {
-            LivingEntity entity = (LivingEntity) entityIn;
-
-            //entity.addPotionEffect(new EffectInstance(ArcanaEffects.tainted_effect, 60, 1, false, true));
-            entity.addPotionEffect(new EffectInstance(Effects.SLOWNESS, 60, 3, false, true));
-            entity.addPotionEffect(new EffectInstance(Effects.SLOW_FALLING, 60, 3, false, true));
-        }
     }
 
     @Override

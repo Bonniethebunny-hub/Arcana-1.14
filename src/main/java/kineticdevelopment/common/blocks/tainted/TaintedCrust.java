@@ -1,8 +1,9 @@
 package kineticdevelopment.common.blocks.tainted;
 
-//import kineticdevelopment.api.effects.ArcanaEffects;
+import java.util.Random;
+
+import kineticdevelopment.api.effects.ArcanaEffects;
 import kineticdevelopment.common.utils.taint.TaintSpreader;
-import kineticdevelopment.init.ModEffects;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SoundType;
@@ -12,8 +13,6 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-
-import java.util.Random;
 
 public class TaintedCrust extends Block {
     public TaintedCrust() {

@@ -4,7 +4,9 @@ import kineticdevelopment.api.blocks.ArcanaBlocks;
 import kineticdevelopment.common.blocks.tainted.TaintedCrust;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.HorizontalBlock;
 import net.minecraft.block.RotatedPillarBlock;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -105,6 +107,10 @@ public class TaintSpreader {
         put(Blocks.SAND, ArcanaBlocks.tainted_sand);
         put(Blocks.RED_SAND, ArcanaBlocks.tainted_sand);
         put(Blocks.GRAVEL, ArcanaBlocks.tainted_gravel);
+        put(Blocks.OAK_STAIRS, ArcanaBlocks.tainted_plank_stairs);
+        put(Blocks.OAK_PLANKS, ArcanaBlocks.tainted_oak_planks);
+        put(Blocks.OAK_SLAB, ArcanaBlocks.tainted_plank_slab);
+        put(Blocks.COBBLESTONE_SLAB, ArcanaBlocks.tainted_rock_slab);
     }};
 
     /**
@@ -154,6 +160,12 @@ public class TaintSpreader {
                             if (b.equals(entry.getKey().getBlock())) {
                                 if(worldIn.getBlockState(nPos).has(RotatedPillarBlock.AXIS)) {
                                     worldIn.setBlockState(nPos, entry.getValue().getDefaultState().with(RotatedPillarBlock.AXIS, worldIn.getBlockState(nPos).get(RotatedPillarBlock.AXIS)));
+                                }
+                                else if(worldIn.getBlockState(nPos).has(BlockStateProperties.STAIRS_SHAPE) && !(entry.getValue() instanceof TaintedCrust)) {
+                                    worldIn.setBlockState(nPos, entry.getValue().getDefaultState().with(BlockStateProperties.STAIRS_SHAPE, worldIn.getBlockState(nPos).get(BlockStateProperties.STAIRS_SHAPE)).with(HorizontalBlock.HORIZONTAL_FACING, worldIn.getBlockState(nPos).get(HorizontalBlock.HORIZONTAL_FACING)).with(BlockStateProperties.HALF, worldIn.getBlockState(nPos).get(BlockStateProperties.HALF)));
+                                }
+                                else if(worldIn.getBlockState(nPos).has(BlockStateProperties.SLAB_TYPE)) {
+                                    worldIn.setBlockState(nPos, entry.getValue().getDefaultState().with(BlockStateProperties.SLAB_TYPE, worldIn.getBlockState(nPos).get(BlockStateProperties.SLAB_TYPE)));
                                 }
                                 else {
                                     worldIn.setBlockState(nPos, entry.getValue().getDefaultState());

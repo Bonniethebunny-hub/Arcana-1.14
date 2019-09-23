@@ -6,12 +6,6 @@ import net.minecraft.potion.Effect;
 import net.minecraft.potion.EffectType;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.ObjectHolder;
-
-//import static kineticdevelopment.api.effects.ArcanaEffects.*;
-
-
 
 public class ModEffects {
 

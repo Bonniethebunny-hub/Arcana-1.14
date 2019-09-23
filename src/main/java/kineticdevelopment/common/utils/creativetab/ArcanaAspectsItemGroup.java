@@ -12,9 +12,8 @@ public class ArcanaAspectsItemGroup extends ItemGroup {
     public static final ArcanaAspectsItemGroup instance = new ArcanaAspectsItemGroup(ItemGroup.GROUPS.length, "arcana_aspects");
 
     private ArcanaAspectsItemGroup(int index, String label) {
-
         super(index, label);
-
+        this.setBackgroundImageName("item_search.png");
     }
 
     @Override

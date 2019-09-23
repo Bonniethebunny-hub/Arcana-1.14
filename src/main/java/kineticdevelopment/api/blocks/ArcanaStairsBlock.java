@@ -2,7 +2,7 @@
  Used for stairs as they don't have a public constructor. Please always use this class when making a stair block.
  **/
 
-package kineticdevelopment.common.blocks;
+package kineticdevelopment.api.blocks;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.StairsBlock;

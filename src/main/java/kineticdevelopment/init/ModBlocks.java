@@ -4,12 +4,9 @@
 
 package kineticdevelopment.init;
 
-import kineticdevelopment.common.blocks.ArcanaStairsBlock;
-
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
-import net.minecraft.block.trees.Tree;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
@@ -19,6 +16,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import static kineticdevelopment.api.blocks.ArcanaBlocks.*;
+
+import kineticdevelopment.api.blocks.ArcanaStairsBlock;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModBlocks {

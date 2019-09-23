@@ -13,9 +13,8 @@ public class ArcanaItemGroup extends ItemGroup {
     public static final ArcanaItemGroup instance = new ArcanaItemGroup(ItemGroup.GROUPS.length, "arcana");
 
     private ArcanaItemGroup(int index, String label) {
-
         super(index, label);
-
+        this.setBackgroundImageName("item_search.png");
     }
 
     @Override
@@ -29,6 +28,4 @@ public class ArcanaItemGroup extends ItemGroup {
         return true;
 
     }
-
-
 }
