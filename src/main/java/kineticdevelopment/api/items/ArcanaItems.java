@@ -16,6 +16,9 @@ public class ArcanaItems {
     public static Item dead_stick;
     public static Item trypophobius_stick;
 
+    //Food
+    public static Item tainted_melon_slice;
+
     //aspects
     public static Item aspect_air;
     public static Item aspect_armour;

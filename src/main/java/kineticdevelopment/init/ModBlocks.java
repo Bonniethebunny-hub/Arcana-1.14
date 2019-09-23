@@ -4,6 +4,7 @@
 
 package kineticdevelopment.init;
 
+import kineticdevelopment.api.blocks.ArcanaTrapDoorBlock;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
@@ -51,6 +52,7 @@ public class ModBlocks {
         hawthorn_stairs = registerBlock(new ArcanaStairsBlock(hawthorn_planks.getDefaultState(), Block.Properties.from(hawthorn_planks)), "hawthorn_stairs");
         stripped_hawthorn_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "stripped_hawthorn_log");
         hawthorn_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "hawthorn_leaves");
+        hawthorn_trapdoor = registerBlock(new ArcanaTrapDoorBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "hawthorn_trapdoor");
     }
 
 

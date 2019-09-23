@@ -135,7 +135,7 @@ public class TaintSpreader {
                 put(TaintGooProspects, ArcanaBlocks.tainted_goo);
                 put(TaintedRockProspects, ArcanaBlocks.tainted_rock);
                 put(TaintedCrustProspects, ArcanaBlocks.tainted_crust);
-               // put(TaintedFlowerProspects, ArcanaBlocks.TAINTEDFLOWER);
+                put(TaintedFlowerProspects, ArcanaBlocks.tainted_bush);
             }};
             
             //Simple way of increasing spread range depending on taint level, needs re-done, manual limit atm

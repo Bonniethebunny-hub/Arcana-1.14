@@ -37,6 +37,7 @@ public class ArcanaBlocks {
     public static Block tainted_hawthorn_leaves;
 
 
+
     //tainted rocks
     public static Block tainted_crust;
     public static Block tainted_crust_slab;
@@ -66,6 +67,15 @@ public class ArcanaBlocks {
 
     //tainted plants
     public static Block tainted_fibers;
+    public static Block tainted_flower;
+    public static Block tainted_bush;
+    public static Block tainted_mushroom;
+    public static Block tainted_melon;
+    public static Block tainted_pumpkin;
+    public static Block tainted_jack_olantern;
+    public static Block tainted_carved_pumpkin;
+
+
 
     //tainted grass
 
@@ -100,4 +110,7 @@ public class ArcanaBlocks {
     public static Block hawthorn_stairs;
     public static Block stripped_hawthorn_log;
     public static Block hawthorn_leaves;
+    public static Block hawthorn_trapdoor;
+    public static Block hawthorn_door;
+    public static Block hawthorn_sign;
 }
