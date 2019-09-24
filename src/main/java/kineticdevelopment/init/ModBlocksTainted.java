@@ -4,7 +4,6 @@
 
 package kineticdevelopment.init;
 
-import kineticdevelopment.api.blocks.ArcanaFlowerBlock;
 import kineticdevelopment.api.blocks.TaintedBlock;
 import kineticdevelopment.api.blocks.TaintedSlab;
 import kineticdevelopment.api.blocks.TaintedStairsBlock;
@@ -28,13 +27,14 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.potion.Effects;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import static kineticdevelopment.api.blocks.ArcanaBlocks.*;
+
+import kineticdevelopment.api.blocks.ArcanaFlowerBlock;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModBlocksTainted {

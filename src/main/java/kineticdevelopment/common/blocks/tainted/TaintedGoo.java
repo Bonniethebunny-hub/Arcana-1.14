@@ -1,10 +1,12 @@
 package kineticdevelopment.common.blocks.tainted;
 
 
+import kineticdevelopment.api.blocks.TaintedBlock;
 //import kineticdevelopment.api.effects.ArcanaEffects;
 import kineticdevelopment.common.utils.taint.TaintLevelHandler;
-import kineticdevelopment.common.utils.taint.TaintSpreader;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.BlockRenderLayer;
@@ -18,11 +20,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-
-
-import java.util.Random;
-
-public class TaintedGoo extends Block {
+public class TaintedGoo extends TaintedBlock {
 
     public TaintedGoo() {
         super(Block.Properties.create(Material.MISCELLANEOUS)
@@ -30,16 +28,7 @@ public class TaintedGoo extends Block {
                 .hardnessAndResistance(3.0f)
         );
     }
-
-    public void tick(BlockState state, World worldIn, BlockPos pos, Random random) {
-        TaintSpreader.spreadTaint(worldIn, pos);
-    }
-
-    @Override
-    public boolean ticksRandomly(BlockState state) {
-        return true;
-    }
-
+    
     @Override
     public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
         return VoxelShapes.fullCube();
