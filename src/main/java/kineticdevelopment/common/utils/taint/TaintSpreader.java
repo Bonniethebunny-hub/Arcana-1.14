@@ -13,8 +13,7 @@ import net.minecraft.world.World;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-
-import org.apache.commons.lang3.Range;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class TaintSpreader {
 
@@ -114,6 +113,8 @@ public class TaintSpreader {
         put(Blocks.OAK_SLAB, ArcanaBlocks.tainted_plank_slab);
         put(Blocks.COBBLESTONE_SLAB, ArcanaBlocks.tainted_rock_slab);
         
+        put(ArcanaBlocks.tainted_amber_ore, Blocks.GRASS);
+        
         //To be replaced with tainted wood pile
         put(Blocks.OAK_DOOR, Blocks.AIR);
         put(Blocks.OAK_TRAPDOOR, Blocks.AIR);
@@ -138,15 +139,15 @@ public class TaintSpreader {
                // put(TaintedFlowerProspects, ArcanaBlocks.TAINTEDFLOWER);
             }};
             
-            //Simple way of increasing spread range depending on taint level, needs re-done, manual limit atm
+            //Increases taint spread by one block for every 10 levels, might need to be upped to a higher threshold, gets laggy fast
             int int1 = -1;
             int int2 = 2;
-            int taintLevel = (int) TaintLevelHandler.getTaintLevel(worldIn);
+            //int taintLevel = (int) TaintLevelHandler.getTaintLevel(worldIn);
             
-            for(int p = 10; p < taintLevel; p = p + 10) {
-            	int1 = int1 - 1;
-            	int2 = int2 + 1;
-            }
+            //for(int p = 10; p < taintLevel; p = p + 10) {
+            //	int1 = int1 - 1;
+            //	int2 = int2 + 1;
+            //}
             
             for (int x = int1; x < int2; x++) {
                 for (int y = int1; y < int2; y++) {
