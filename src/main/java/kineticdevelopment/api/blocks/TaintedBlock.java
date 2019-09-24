@@ -51,7 +51,8 @@ public class TaintedBlock extends Block {
     public void tick(BlockState state, World worldIn, BlockPos pos, Random random) {
 
         TaintSpreader.spreadTaint(worldIn, pos);
-        boolean surrounded = true;
+        @SuppressWarnings("unused")
+		boolean surrounded = true;
         for (int x = -1; x < 2; x++) {
             for (int y = -1; y < 2; y++) {
                 for (int z = -1; z < 2; z++) {
@@ -68,8 +69,6 @@ public class TaintedBlock extends Block {
         if(surrounded = true) {
         	worldIn.setBlockState(pos, state.with(ModBlockStates.FULLYTAINTED, true));
         }
-        
-        System.out.println("yeet");
     }
     
     @Override
