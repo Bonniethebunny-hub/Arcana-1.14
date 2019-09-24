@@ -36,6 +36,8 @@ public class ArcanaBlocks {
     public static Block stripped_tainted_hawthorn_log;
     public static Block tainted_hawthorn_leaves;
 
+    public static Block tainted_oak_log;
+    public static Block tainted_oak_leaves;
 
 
     //tainted rocks
