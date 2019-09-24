@@ -1,23 +1,31 @@
 package kineticdevelopment.api.blocks;
 
 import java.util.Random;
+import java.util.List;
 
-import kineticdevelopment.api.effects.ArcanaEffects;
+import javax.annotation.Nullable;
+
 import kineticdevelopment.common.utils.taint.TaintSpreader;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.potion.EffectInstance;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
+
 
 public class TaintedBlock extends Block {
 
 	public TaintedBlock(Properties properties) {
 		super(properties);
 	}
-	
+
 	@Override
     public boolean ticksRandomly(BlockState state) {
         return true;
@@ -35,5 +43,9 @@ public class TaintedBlock extends Block {
 
             //entity.addPotionEffect(new EffectInstance(ArcanaEffects.tainted_effect, 60, 1, false, true));
         }
+    }
+    @OnlyIn(Dist.CLIENT)
+    public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+        tooltip.add(new StringTextComponent("This block will spread taint."));
     }
 }

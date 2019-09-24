@@ -4,50 +4,7 @@
 
 package kineticdevelopment.init;
 
-import static kineticdevelopment.api.blocks.ArcanaBlocks.stripped_tainted_greatwood_log;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.stripped_tainted_hawthorn_log;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.stripped_tainted_willow_log;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.tainted_amber_ore;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.tainted_arcanium_ore;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.tainted_cinnabar_ore;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.tainted_coal_ore;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.tainted_crust;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.tainted_crust_slab;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.tainted_destroyed_ore;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.tainted_diamond_ore;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.tainted_emerald_ore;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.tainted_fibers;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.tainted_gold_ore;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.tainted_goo;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.tainted_gravel;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.tainted_greatwood_leaves;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.tainted_greatwood_log;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.tainted_greatwood_planks;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.tainted_greatwood_slab;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.tainted_greatwood_stairs;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.tainted_hawthorn_leaves;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.tainted_hawthorn_log;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.tainted_hawthorn_planks;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.tainted_hawthorn_slab;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.tainted_hawthorn_stairs;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.tainted_iron_ore;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.tainted_lapis_lazuli_ore;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.tainted_oak_planks;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.tainted_plank_slab;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.tainted_plank_stairs;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.tainted_redstone_ore;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.tainted_rock;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.tainted_rock_slab;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.tainted_ruby_ore;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.tainted_sand;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.tainted_silver_ore;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.tainted_soil;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.tainted_willow_leaves;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.tainted_willow_log;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.tainted_willow_planks;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.tainted_willow_slab;
-import static kineticdevelopment.api.blocks.ArcanaBlocks.tainted_willow_stairs;
-
+import kineticdevelopment.api.blocks.ArcanaFlowerBlock;
 import kineticdevelopment.api.blocks.TaintedBlock;
 import kineticdevelopment.api.blocks.TaintedSlab;
 import kineticdevelopment.api.blocks.TaintedStairsBlock;
@@ -66,19 +23,18 @@ import kineticdevelopment.common.blocks.tainted.TaintedCrust;
 import kineticdevelopment.common.blocks.tainted.TaintedGoo;
 import kineticdevelopment.common.blocks.tainted.TaintedSoil;
 import kineticdevelopment.common.utils.creativetab.ArcanaItemGroup;
-import net.minecraft.block.Block;
-import net.minecraft.block.LeavesBlock;
-import net.minecraft.block.LogBlock;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.VineBlock;
+import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.potion.Effects;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
+
+import static kineticdevelopment.api.blocks.ArcanaBlocks.*;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModBlocksTainted {
@@ -102,9 +58,16 @@ public class ModBlocksTainted {
         tainted_sand = registerBlock(new TaintedBlock(Block.Properties.create(Material.SAND).hardnessAndResistance(0.1F,0.2F).sound(SoundType.SAND)), "tainted_sand");
         tainted_gravel = registerBlock(new TaintedBlock(Block.Properties.create(Material.CLAY).hardnessAndResistance(0.3F,0.4F).sound(SoundType.SAND)), "tainted_gravel");
         tainted_goo = registerBlock(new TaintedGoo(), "tainted_goo");
+        tainted_melon = registerBlock(new Block(Block.Properties.create(Material.WOOL).hardnessAndResistance(0.1F,0.2F).sound(SoundType.SLIME)), "tainted_melon");
+        tainted_pumpkin = registerBlock(new Block(Block.Properties.create(Material.WOOL).hardnessAndResistance(0.1F,0.2F).sound(SoundType.SLIME)), "tainted_pumpkin");
+        tainted_carved_pumpkin = registerBlock(new RotatedPillarBlock(Block.Properties.create(Material.WOOL).hardnessAndResistance(0.1F,0.2F).sound(SoundType.SLIME)), "tainted_carved_pumpkin");
+        tainted_jack_olantern = registerBlock(new RotatedPillarBlock(Block.Properties.create(Material.WOOL).hardnessAndResistance(0.1F,0.2F).sound(SoundType.SLIME)), "tainted_jack_olantern");
 
         //Tainted Plants
         tainted_fibers = registerBlock(new VineBlock(Block.Properties.create(Material.TALL_PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(1.0F).sound(SoundType.PLANT)), "taint_fibers");
+        tainted_flower = registerBlock(new ArcanaFlowerBlock(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.PLANT)), "tainted_flower");
+        tainted_bush = registerBlock(new ArcanaFlowerBlock(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.PLANT)), "tainted_bush");
+        tainted_mushroom = registerBlock(new ArcanaFlowerBlock(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.PLANT)), "tainted_mushroom");
 
         //Tainted Ore
         tainted_cinnabar_ore = registerBlock(new TaintedCinnabarOre(), "tainted_cinnabar_ore");
@@ -142,6 +105,9 @@ public class ModBlocksTainted {
         tainted_hawthorn_stairs = registerBlock(new TaintedStairsBlock(tainted_hawthorn_planks.getDefaultState(), Block.Properties.from(tainted_greatwood_planks)), "tainted_hawthorn_stairs");
         stripped_tainted_hawthorn_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "stripped_tainted_hawthorn_log");
         tainted_hawthorn_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "tainted_hawthorn_leaves");
+
+        tainted_oak_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "tainted_oak_log");
+        tainted_oak_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "tainted_oak_leaves");
     }
 
 

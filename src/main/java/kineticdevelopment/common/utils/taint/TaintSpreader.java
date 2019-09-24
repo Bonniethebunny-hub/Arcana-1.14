@@ -89,14 +89,16 @@ public class TaintSpreader {
             Blocks.BLUE_ORCHID,
             Blocks.LILAC,
             Blocks.PEONY,
-            Blocks.POPPY
+            Blocks.POPPY,
+            Blocks.GRASS,
+            Blocks.TALL_GRASS
     };
 
 
     @SuppressWarnings("serial")
     static HashMap<Block, Block> singleBlockConversions = new HashMap<Block, Block>() {{
-        //put(Blocks.OAK_LOG, ArcanaBlocks.TAINTEDOAKLOG);
-        //put(Blocks.OAK_LEAVES, ArcanaBlocks.TAINTEDOAKLEAVES);
+        put(Blocks.OAK_LOG, ArcanaBlocks.tainted_oak_log);
+        put(Blocks.OAK_LEAVES, ArcanaBlocks.tainted_oak_leaves);
         put(Blocks.COAL_ORE, ArcanaBlocks.tainted_coal_ore);
         put(Blocks.DIAMOND_ORE, ArcanaBlocks.tainted_diamond_ore);
         put(Blocks.IRON_ORE, ArcanaBlocks.tainted_iron_ore);
@@ -136,7 +138,7 @@ public class TaintSpreader {
                 put(TaintGooProspects, ArcanaBlocks.tainted_goo);
                 put(TaintedRockProspects, ArcanaBlocks.tainted_rock);
                 put(TaintedCrustProspects, ArcanaBlocks.tainted_crust);
-               // put(TaintedFlowerProspects, ArcanaBlocks.TAINTEDFLOWER);
+                put(TaintedFlowerProspects, ArcanaBlocks.tainted_bush);
             }};
             
             //Increases taint spread by one block for every 10 levels, might need to be upped to a higher threshold, gets laggy fast

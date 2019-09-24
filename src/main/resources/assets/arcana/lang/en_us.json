@@ -33,6 +33,30 @@
   "block.arcana.tainted_hawthorn_stairs": "Tainted Hawthorn Stairs",
   "block.arcana.tainted_hawthorn_leaves": "Tainted Hawthorn Leaves",
   "block.arcana.stripped_tainted_hawthorn_log": "Stripped Tainted Hawthorn Log",
+  "block.arcana.hawthorn_trapdoor": "Hawthorn Trapdoor",
+  "block.arcana.tainted_goo": "Tainted Goo",
+  "block.arcana.tainted_melon": "Tainted Melon",
+  "block.arcana.tainted_pumpkin": "Tainted Pumpkin",
+  "block.arcana.tainted_carved_pumpkin": "Tainted Carved Pumpkin",
+  "block.arcana.tainted_jack_olantern": "Tainted Jack O'Lantern",
+  "block.arcana.tainted_flower": "Tainted Flower",
+  "block.arcana.tainted_bush": "Tainted Bush",
+  "block.arcana.tainted_mushroom": "Tainted Mushroom",
+  "block.arcana.tainted_cinnabar_ore": "Tainted Cinnabar Ore",
+  "block.arcana.tainted_amber_ore": "Tainted Amber Ore",
+  "block.arcana.tainted_arcanium_ore": "Tainted Arcanium Ore",
+  "block.arcana.tainted_coal_ore": "Tainted Coal Ore",
+  "block.arcana.tainted_diamond_ore": "Tainted Diamond Ore",
+  "block.arcana.tainted_iron_ore":"Tainted Iron Ore",
+  "block.arcana.tainted_silver_ore": "Tainted Silver Ore",
+  "block.arcana.tainted_ruby_ore": "Tainted Ruby Ore",
+  "block.arcana.tainted_emerald_ore": "Tainted Ruby Ore",
+  "block.arcana.tainted_gold_ore": "Tainted Gold Ore",
+  "block.arcana.tainted.tainted_lapis": "Tainted Lapis Ore",
+  "block.arcana.tainted_redstone_ore": "Tainted Redstone Ore",
+
+  "block.arcana.tainted_destroyed_ore": "Tainted Destroyed Ore",
+
 
   "_comment": "Normal Blocks",
   "block.arcana.arcane_stone": "Arcane Stone",
@@ -60,6 +84,12 @@
   "_comment": "Normal Items",
   "item.arcana.dead_stick": "Dead Stick",
   "item.arcana.trypophobius_stick": "Trypophobius Stick",
+  "item.arcana.quicksilver": "Quicksliver",
+  "item.arcana.amber": "Amber",
+
+  "_comment": "Tainted Items",
+  "item.arcana.tainted_melon_slice": "Tainted Melon Slice",
+
 
   "_comment": "Books",
   "item.arcana.thaumonomicon": "Thaumonomicon",
