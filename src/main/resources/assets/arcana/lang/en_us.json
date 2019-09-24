@@ -93,6 +93,13 @@
 
   "_comment": "Books",
   "item.arcana.thaumonomicon": "Thaumonomicon",
+  
+  "_comment": "Effects",
+   "effect.arcana.tainted": "Tainted",
+   
+  "_comment": "Death Messages",
+  "death.attack.Taint.player": "%1$s was consumed by Taint",
+  "death.attack.Taint": "%1$s was consumed by Taint",
 
   "_comment": "Aspects",
   "item.arcana.aspect_air": "Air",

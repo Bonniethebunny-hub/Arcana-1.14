@@ -1,6 +1,8 @@
 package kineticdevelopment.common.blocks.ores;
 
-import kineticdevelopment.api.items.ArcanaItems;
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
+
 import kineticdevelopment.common.utils.taint.TaintSpreader;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -14,9 +16,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
-
-import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
 
 
 public class TaintedCoalOre extends Block {

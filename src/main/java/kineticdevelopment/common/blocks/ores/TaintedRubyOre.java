@@ -1,5 +1,8 @@
 package kineticdevelopment.common.blocks.ores;
 
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
+
 import kineticdevelopment.api.items.ArcanaItems;
 import kineticdevelopment.common.utils.taint.TaintSpreader;
 import net.minecraft.block.Block;
@@ -9,14 +12,10 @@ import net.minecraft.block.material.Material;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
-
-import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
 
 
 public class TaintedRubyOre extends Block {

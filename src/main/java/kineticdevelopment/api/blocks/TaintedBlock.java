@@ -1,27 +1,29 @@
 package kineticdevelopment.api.blocks;
 
-import java.util.Random;
 import java.util.List;
+import java.util.Random;
 
 import javax.annotation.Nullable;
 
+import kineticdevelopment.api.effects.ArcanaEffects;
 import kineticdevelopment.common.utils.taint.TaintSpreader;
 import kineticdevelopment.init.ModBlockStates;
 import net.minecraft.block.AirBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.EffectInstance;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
 
 
 public class TaintedBlock extends Block {
@@ -76,7 +78,7 @@ public class TaintedBlock extends Block {
         if (entityIn instanceof LivingEntity) {
             LivingEntity entity = (LivingEntity) entityIn;
 
-            //entity.addPotionEffect(new EffectInstance(ArcanaEffects.tainted_effect, 60, 1, false, true));
+            entity.addPotionEffect(new EffectInstance(ArcanaEffects.tainted_effect, 60, 1, false, true));
         }
     }
     

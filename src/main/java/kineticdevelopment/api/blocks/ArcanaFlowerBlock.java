@@ -4,10 +4,9 @@
 
 package kineticdevelopment.api.blocks;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.BushBlock;
-import net.minecraft.block.FlowerBlock;
-import net.minecraft.block.Block;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;

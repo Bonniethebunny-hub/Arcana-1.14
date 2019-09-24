@@ -5,15 +5,19 @@
 package kineticdevelopment.init;
 
 
-import kineticdevelopment.api.items.ArcanaItems;
+import static kineticdevelopment.api.items.ArcanaItems.amber;
+import static kineticdevelopment.api.items.ArcanaItems.dead_stick;
+import static kineticdevelopment.api.items.ArcanaItems.quicksilver;
+import static kineticdevelopment.api.items.ArcanaItems.tainted_melon_slice;
+import static kineticdevelopment.api.items.ArcanaItems.thaumonomicon;
+import static kineticdevelopment.api.items.ArcanaItems.trypophobius_stick;
+
 import kineticdevelopment.common.utils.creativetab.ArcanaItemGroup;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
-
-import static kineticdevelopment.api.items.ArcanaItems.*;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModItems {

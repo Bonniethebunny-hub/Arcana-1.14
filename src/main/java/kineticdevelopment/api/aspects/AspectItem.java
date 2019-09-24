@@ -5,9 +5,9 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class Aspect extends Item {
+public class AspectItem extends Item {
 
-	public Aspect(Properties properties) {
+	public AspectItem(Properties properties) {
 		super(properties);
 	}
 	

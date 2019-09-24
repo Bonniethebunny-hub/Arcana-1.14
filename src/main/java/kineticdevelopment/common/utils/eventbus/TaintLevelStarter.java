@@ -12,4 +12,12 @@ public class TaintLevelStarter {
     public static void onWorldLoad(WorldEvent.Load event) {
         TaintLevelHandler.createTaintLevelFile(event.getWorld().getWorld());
     }
+//    To change the fog, mainly for when the taint level gets too high, current color is WAY too pink    
+// 	  
+//    @SubscribeEvent
+//    public static void onFogColor(FogColors event) {
+//    	event.setGreen(0);
+//    	event.setBlue(228);
+//    	event.setRed(228);
+//    }
 }
