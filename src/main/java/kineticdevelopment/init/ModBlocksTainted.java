@@ -21,6 +21,7 @@ import kineticdevelopment.common.blocks.ores.TaintedSilverOre;
 import kineticdevelopment.common.blocks.tainted.TaintedCrust;
 import kineticdevelopment.common.blocks.tainted.TaintedGoo;
 import kineticdevelopment.common.blocks.tainted.TaintedSoil;
+import kineticdevelopment.common.blocks.tainted.TraintedJackOLatern;
 import kineticdevelopment.common.utils.creativetab.ArcanaItemGroup;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
@@ -61,7 +62,7 @@ public class ModBlocksTainted {
         tainted_melon = registerBlock(new Block(Block.Properties.create(Material.WOOL).hardnessAndResistance(0.1F,0.2F).sound(SoundType.SLIME)), "tainted_melon");
         tainted_pumpkin = registerBlock(new Block(Block.Properties.create(Material.WOOL).hardnessAndResistance(0.1F,0.2F).sound(SoundType.SLIME)), "tainted_pumpkin");
         tainted_carved_pumpkin = registerBlock(new RotatedPillarBlock(Block.Properties.create(Material.WOOL).hardnessAndResistance(0.1F,0.2F).sound(SoundType.SLIME)), "tainted_carved_pumpkin");
-        tainted_jack_olantern = registerBlock(new RotatedPillarBlock(Block.Properties.create(Material.WOOL).hardnessAndResistance(0.1F,0.2F).sound(SoundType.SLIME)), "tainted_jack_olantern");
+        tainted_jack_olantern = registerBlock(new TraintedJackOLatern(Block.Properties.create(Material.WOOL).hardnessAndResistance(0.1F,0.2F).sound(SoundType.SLIME)), "tainted_jack_olantern");
 
         //Tainted Plants
         tainted_fibers = registerBlock(new VineBlock(Block.Properties.create(Material.TALL_PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(1.0F).sound(SoundType.PLANT)), "taint_fibers");
