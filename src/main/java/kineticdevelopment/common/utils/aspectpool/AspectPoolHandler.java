@@ -25,8 +25,11 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.World;
 
+/**
+ * Handles anything to do with the aspect pool
+ * @author Atlas
+ */
 public class AspectPoolHandler {
-	//Not been tested yet, don't mess with this or Aspect
 	
 	@SuppressWarnings("serial")
 	static HashMap<Block, AspectType[]> BlockAspects = new HashMap<Block, AspectType[]>() {{
@@ -91,7 +94,13 @@ public class AspectPoolHandler {
 		}
 
 	}
-
+	
+	/**
+	 * Fetches an ArrayList of Aspects a player has
+	 * @param player
+	 * @param world
+	 * @return
+	 */
 	@Nullable
 	public static ArrayList<AspectType> getPlayerAspects(PlayerEntity player, World world) {
 		ArrayList<AspectType> aspectlist = new ArrayList<AspectType>();
@@ -152,6 +161,14 @@ public class AspectPoolHandler {
 
 	}
 	
+	/**
+	 * Fetches the amount of an aspect a player has
+	 * @param player
+	 * @param type
+	 * @param world
+	 * @return 
+	 * @throws AspectNotFoundException
+	 */
 	public static int getPlayerAspectAmount(PlayerEntity player, AspectType type, World world) throws AspectNotFoundException {
 		int lineCount = 0;
 		
