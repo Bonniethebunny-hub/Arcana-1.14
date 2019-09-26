@@ -33,7 +33,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import static kineticdevelopment.api.blocks.ArcanaBlocks.*;
+import static kineticdevelopment.api.registry.ArcanaBlocks.*;
 
 import kineticdevelopment.api.blocks.ArcanaFlowerBlock;
 

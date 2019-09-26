@@ -1,6 +1,6 @@
 package kineticdevelopment.common.blocks.ores;
 
-import kineticdevelopment.api.items.ArcanaItems;
+import kineticdevelopment.api.registry.ArcanaItems;
 import kineticdevelopment.common.utils.taint.TaintSpreader;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

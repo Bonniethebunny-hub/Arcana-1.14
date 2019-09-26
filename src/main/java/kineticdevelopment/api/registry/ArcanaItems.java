@@ -3,7 +3,7 @@
  check to see if one you need is already there.
  **/
 
-package kineticdevelopment.api.items;
+package kineticdevelopment.api.registry;
 import net.minecraft.item.Item;
 
 public class ArcanaItems {
