@@ -5,7 +5,7 @@
 package kineticdevelopment.common.utils.creativetab;
 
 import net.minecraft.item.ItemGroup;
-import kineticdevelopment.api.items.ArcanaItems;
+import kineticdevelopment.api.registry.ArcanaItems;
 import net.minecraft.item.ItemStack;
 
 public class ArcanaItemGroup extends ItemGroup {

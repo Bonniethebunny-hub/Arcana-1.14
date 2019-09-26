@@ -115,4 +115,10 @@ public class ArcanaBlocks {
     public static Block hawthorn_trapdoor;
     public static Block hawthorn_door;
     public static Block hawthorn_sapling;
+
+    //statue
+    public static Block hear_no_evil;
+    public static Block speak_no_evil;
+    public static Block see_no_evil;
+
 }

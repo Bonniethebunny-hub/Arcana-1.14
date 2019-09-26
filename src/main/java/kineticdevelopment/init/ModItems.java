@@ -5,12 +5,12 @@
 package kineticdevelopment.init;
 
 
-import static kineticdevelopment.api.items.ArcanaItems.amber;
-import static kineticdevelopment.api.items.ArcanaItems.dead_stick;
-import static kineticdevelopment.api.items.ArcanaItems.quicksilver;
-import static kineticdevelopment.api.items.ArcanaItems.tainted_melon_slice;
-import static kineticdevelopment.api.items.ArcanaItems.thaumonomicon;
-import static kineticdevelopment.api.items.ArcanaItems.trypophobius_stick;
+import static kineticdevelopment.api.registry.ArcanaItems.amber;
+import static kineticdevelopment.api.registry.ArcanaItems.dead_stick;
+import static kineticdevelopment.api.registry.ArcanaItems.quicksilver;
+import static kineticdevelopment.api.registry.ArcanaItems.tainted_melon_slice;
+import static kineticdevelopment.api.registry.ArcanaItems.thaumonomicon;
+import static kineticdevelopment.api.registry.ArcanaItems.trypophobius_stick;
 
 import kineticdevelopment.common.items.Thaumonomicon;
 import kineticdevelopment.common.utils.creativetab.ArcanaItemGroup;

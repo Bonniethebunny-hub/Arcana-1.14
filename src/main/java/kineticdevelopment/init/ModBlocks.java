@@ -4,9 +4,7 @@
 
 package kineticdevelopment.init;
 
-import kineticdevelopment.api.blocks.ArcanaDoorBlock;
-import kineticdevelopment.api.blocks.ArcanaSaplingBlock;
-import kineticdevelopment.api.blocks.ArcanaTrapDoorBlock;
+import kineticdevelopment.api.blocks.*;
 import kineticdevelopment.common.trees.HawthornTree;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
@@ -19,9 +17,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import static kineticdevelopment.api.blocks.ArcanaBlocks.*;
-
-import kineticdevelopment.api.blocks.ArcanaStairsBlock;
+import static kineticdevelopment.api.registry.ArcanaBlocks.*;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModBlocks {
@@ -59,6 +55,10 @@ public class ModBlocks {
         hawthorn_door = registerBlock(new ArcanaDoorBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "hawthorn_door");
         hawthorn_sapling = registerBlock(new ArcanaSaplingBlock(new HawthornTree(), Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(1.0F).sound(SoundType.PLANT)), "hawthorn_sapling");
 
+        //statues
+        //hear_no_evil = registerBlock(new ArcanaRotatableBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "hear_no_evil");
+        //speak_no_evil = registerBlock(new ArcanaRotatableBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "speak_no_evil");
+        //see_no_evil = registerBlock(new ArcanaRotatableBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "see_no_evil");
 
 
     }

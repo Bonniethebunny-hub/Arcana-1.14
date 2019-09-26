@@ -1,6 +1,6 @@
 package kineticdevelopment.common.utils.taint;
 
-import kineticdevelopment.api.blocks.ArcanaBlocks;
+import kineticdevelopment.api.registry.ArcanaBlocks;
 import kineticdevelopment.common.blocks.tainted.TaintedCrust;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;

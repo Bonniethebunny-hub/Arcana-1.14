@@ -3,7 +3,7 @@
  */
 package kineticdevelopment.common.utils.creativetab;
 
-import kineticdevelopment.api.items.ArcanaItems;
+import kineticdevelopment.api.registry.ArcanaItems;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 

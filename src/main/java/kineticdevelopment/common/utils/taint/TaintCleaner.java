@@ -1,6 +1,6 @@
 package kineticdevelopment.common.utils.taint;
 
-import kineticdevelopment.api.blocks.ArcanaBlocks;
+import kineticdevelopment.api.registry.ArcanaBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;

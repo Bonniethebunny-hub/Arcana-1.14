@@ -12,7 +12,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import static kineticdevelopment.api.items.ArcanaItems.*;
+import static kineticdevelopment.api.registry.ArcanaItems.*;
 
 import kineticdevelopment.api.aspects.AspectItem;
 
