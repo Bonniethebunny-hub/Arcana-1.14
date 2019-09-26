@@ -113,6 +113,7 @@ public class AspectPoolHandler {
 				lineCount++;
 			}
 			
+			//Debug
 			System.out.println("Total number of lines : " + lineCount);
 			
 			lnr.close();
@@ -134,6 +135,7 @@ public class AspectPoolHandler {
 						
 						aspectlist.add(aspect);
 						
+						//Debug
 						System.out.println(aspect.name());
 						
 					}
@@ -148,5 +150,62 @@ public class AspectPoolHandler {
 
 		return aspectlist;
 
+	}
+	
+	public static int getPlayerAspectAmount(PlayerEntity player, AspectType type, World world) throws AspectNotFoundException {
+		int lineCount = 0;
+		
+		int returnint = 2138008;
+		
+		try {
+			File aspectDataDir = new File(world.getWorldInfo().getWorldName(), "aspectdata");
+			
+			aspectDataDir.mkdirs();
+			
+			File playerAspectData = new File(aspectDataDir, player.getCachedUniqueIdString()+".aspectpool");
+			
+			FileReader fr = new FileReader(playerAspectData);
+			
+			LineNumberReader lnr = new LineNumberReader(fr);
+			
+			while (lnr.readLine() != null) {
+				lineCount++;
+			}
+			
+			//Debug
+			System.out.println("Total number of lines : " + lineCount);
+			
+			lnr.close();
+		}
+
+		catch(IOException e) {
+			e.printStackTrace();
+		}
+		
+		finally {
+			
+			try(BufferedReader br = Files.newBufferedReader(Paths.get(world.getWorldInfo().getWorldName()+"/aspectdata", player.getCachedUniqueIdString()+".aspectpool"))) {
+				
+				String line;
+				
+				while ((line = br.readLine()) != null) {
+					if(Aspect.getAspectByName(line.substring(0, line.indexOf(","))) == type) {
+						returnint = Integer.parseInt(line.substring(line.indexOf(", ") + 2));
+					}
+				}
+			} 
+
+			catch(IOException | AspectNotFoundException e) {
+				e.printStackTrace();
+			}
+
+		}
+
+		if(!(returnint == 2138008)) {
+			return returnint;
+		}
+		else {
+			throw new AspectNotFoundException("Aspect "+type.name()+" not found for player "+player.getName().getFormattedText());
+		}
 	}
 }

@@ -6,6 +6,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 import kineticdevelopment.api.aspects.Aspect.AspectType;
+import kineticdevelopment.api.aspects.AspectNotFoundException;
 import kineticdevelopment.common.utils.aspectpool.AspectPoolHandler;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.Item;
@@ -37,11 +38,12 @@ public class Thaumonomicon extends Item {
         	}
 
         	else {
-        		ArrayList<AspectType> aspects = AspectPoolHandler.getPlayerAspects(context.getPlayer(), context.getWorld());
-        		
-        		for(int i=0; i<aspects.size(); i++) {
-        			System.out.println(aspects.get(i).name());
-        		}
+        		try {
+					int number = AspectPoolHandler.getPlayerAspectAmount(context.getPlayer(), AspectType.ICE, context.getWorld());
+					System.out.println(String.valueOf(number));
+				} catch (AspectNotFoundException e) {
+					e.printStackTrace();
+				}
         	}
     	}
     	
