@@ -114,6 +114,5 @@ public class ArcanaBlocks {
     public static Block hawthorn_leaves;
     public static Block hawthorn_trapdoor;
     public static Block hawthorn_door;
-    public static Block hawthorn_sign;
     public static Block hawthorn_sapling;
 }
