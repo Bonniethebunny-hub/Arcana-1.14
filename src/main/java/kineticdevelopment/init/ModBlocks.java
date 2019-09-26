@@ -4,7 +4,10 @@
 
 package kineticdevelopment.init;
 
+import kineticdevelopment.api.blocks.ArcanaDoorBlock;
+import kineticdevelopment.api.blocks.ArcanaSaplingBlock;
 import kineticdevelopment.api.blocks.ArcanaTrapDoorBlock;
+import kineticdevelopment.common.trees.HawthornTree;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
@@ -53,6 +56,11 @@ public class ModBlocks {
         stripped_hawthorn_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "stripped_hawthorn_log");
         hawthorn_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "hawthorn_leaves");
         hawthorn_trapdoor = registerBlock(new ArcanaTrapDoorBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "hawthorn_trapdoor");
+        hawthorn_door = registerBlock(new ArcanaDoorBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "hawthorn_door");
+        hawthorn_sapling = registerBlock(new ArcanaSaplingBlock(new HawthornTree(), Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(1.0F).sound(SoundType.PLANT)), "hawthorn_sapling");
+
+
+
     }
 
 
