@@ -8,6 +8,8 @@ import javax.annotation.Nullable;
 import java.util.Random;
 
 public class HawthornTree extends BigTree {
+
+    //Not done, playing around with making the trees without structures. For now I've just extended the BigTree
     @Nullable
     @Override
     protected AbstractTreeFeature<NoFeatureConfig> getBigTreeFeature(Random random) {
