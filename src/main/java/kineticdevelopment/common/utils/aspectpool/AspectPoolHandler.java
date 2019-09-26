@@ -32,6 +32,7 @@ public class AspectPoolHandler {
 	static HashMap<Block, AspectType[]> BlockAspects = new HashMap<Block, AspectType[]>() {{
 		
 		put(Blocks.DIRT, new AspectType[] {AspectType.EARTH});
+		put(Blocks.ICE, new AspectType[] {AspectType.ICE, AspectType.WATER});
 		
 	}};
 	
@@ -77,7 +78,6 @@ public class AspectPoolHandler {
 				
 				if(!aspectlist.contains(aspect)) {
 					out.println(aspect.name()+", "+amount);
-					
 				}
 			} 
 			
