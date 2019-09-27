@@ -3,6 +3,9 @@ package kineticdevelopment.common.utils.aspectpool;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -13,6 +16,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map.Entry;
+import java.util.Set;
 
 import javax.annotation.Nullable;
 
@@ -25,6 +29,8 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.CompressedStreamTools;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
@@ -67,7 +73,11 @@ public class AspectPoolHandler {
 			aspects = AspectPoolHandler.getBlockAspects(block);
 			
         	for(int i=0; i<aspects.length; i++) {
-        		AspectPoolHandler.addAspectToPlayer(player, world, aspects[i], 10);
+        		try {
+					AspectPoolHandler.addAspectsToPlayer(player, world, aspects);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
         	}
 		} catch (BlockHasNoAspectsException e) {
 			e.printStackTrace();
@@ -81,77 +91,75 @@ public class AspectPoolHandler {
 	 * @param player
 	 * @param world
 	 * @param aspect
-	 * @param amount
+	 * @throws IOException 
+	 * @throws FileNotFoundException 
 	 */
-	public static void addAspectToPlayer(PlayerEntity player, World world, AspectType aspect, int amount) {
+	public static void addAspectsToPlayer(PlayerEntity player, World world, AspectType[] aspect) throws FileNotFoundException, IOException {
+		File aspectDataDir = null;
+		File playerAspectData = null;
+		CompoundNBT nbt;
 		try {
-			File aspectDataDir = new File(world.getWorldInfo().getWorldName(), "aspectdata");
+			aspectDataDir = new File(world.getWorldInfo().getWorldName(), "aspectdata");
 			aspectDataDir.mkdirs();
-			File playerAspectData = new File(aspectDataDir, player.getCachedUniqueIdString()+".aspectpool");
+			playerAspectData = new File(aspectDataDir, player.getCachedUniqueIdString()+".aspectpool");
+			
+			ArrayList<AspectType> aspects = getPlayerAspects(player, world);
 			
 			if(!playerAspectData.exists()) {
 				playerAspectData.createNewFile();
+				nbt = new CompoundNBT();
+			}
+			else {
+				nbt = CompressedStreamTools.readCompressed(new FileInputStream(playerAspectData));
 			}
 			
-			ArrayList<AspectType> aspectlist = getPlayerAspects(player, world);
-			
-			try(FileWriter fw = new FileWriter(playerAspectData, true);	
-				BufferedWriter bw = new BufferedWriter(fw);
-				PrintWriter out = new PrintWriter(bw)) {
+			for(int i=0; i < aspect.length; i++) {
+				nbt.putInt(aspect[i].name(), 1);
 				
-				if(!aspectlist.contains(aspect)) {
-					out.println(aspect.name()+", "+amount);
-					
-					player.sendMessage(new StringTextComponent(TextFormatting.GREEN + "You have just learned the " + TextFormatting.RED + aspect.name() + TextFormatting.GREEN + " aspect type!"));
-				}
-				
-				/**
-				 * Doesn't work yet, straight-up wipes the whole file instead of the one line I want it to
-				 */
-//				if(aspectlist.contains(aspect)) {
-//					try (BufferedReader br = Files.newBufferedReader(playerAspectData.toPath()))
-//		    		{
-//		    			FileReader fr = new FileReader(playerAspectData);
-//		    		    LineNumberReader lnr = new LineNumberReader(fr);
-//		    		    String line;
-//		    		    
-//		    		    line=br.readLine();
-//		    		    
-//			        	try(FileWriter fw2 = new FileWriter(playerAspectData, true);
-//			    			BufferedWriter bw2 = new BufferedWriter(fw2);
-//			    			PrintWriter out2 = new PrintWriter(bw2))
-//			    		{
-//			        		while ((line = br.readLine()) != null) {
-//								for(int i=0; i<lnr.getLineNumber(); i++) {
-//									if(Aspect.getAspectByName(line.substring(0, line.indexOf(", "))) == aspect) {
-//										out.write(aspect.name()+", "+String.valueOf((getPlayerAspectAmount(player, aspect, world) + amount)));
-//									}
-//									
-//									//Debug
-//									System.out.println(aspect.name());
-//									
-//								}
-//							}
-//			    		}
-//		    	 
-//		    	        lnr.close();
-//		    		}
-//		    		catch(IOException e)
-//		    		{
-//		    			e.printStackTrace();
-//		    		}
-//				}
-			} 
-			
-			catch (IOException e) {
-				Constants.LOGGER.warn("Failed to write to "+player.getCachedUniqueIdString()+".aspectpool");
+				player.sendMessage(new StringTextComponent(TextFormatting.GREEN + "You have just learned the " + TextFormatting.RED + aspect[i].name() + TextFormatting.GREEN + " aspect type!"));
 			}
-
-		} catch (Exception var5) {
-			Constants.LOGGER.warn("Error adding aspect "+aspect.name()+" to "+player.getName().getFormattedText());
-			var5.printStackTrace();
+			
+			try (FileOutputStream fileoutputstream = new FileOutputStream(playerAspectData)) {
+	            CompressedStreamTools.writeCompressed(nbt, fileoutputstream);
+	         } catch (IOException e) {
+	        	 e.printStackTrace();
+	         }
+		} 
+		
+		catch (IOException e) {
+			Constants.LOGGER.warn("Failed to write to "+player.getCachedUniqueIdString()+".aspectpool");
 		}
-
+	}
+	
+	public static void addAspectAmountToPlayer(PlayerEntity player, World world, boolean yeet) {
+		File aspectDataDir = new File(world.getWorldInfo().getWorldName(), "aspectdata");
+		
+		aspectDataDir.mkdirs();
+		
+		File playerAspectData = new File(aspectDataDir, player.getCachedUniqueIdString()+".aspectpool");
+		CompoundNBT nbt = new CompoundNBT();
+		nbt.putInt("SecondsInADay", 86400);
+		
+		if(yeet) {
+			try {
+				CompressedStreamTools.writeCompressed(nbt, new FileOutputStream(playerAspectData));
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		else if(!yeet) {
+			try {
+				int disanumbah;
+				CompoundNBT nbt2 = CompressedStreamTools.readCompressed(new FileInputStream(playerAspectData));
+				disanumbah = nbt2.getInt("SecondsInADay");
+				System.out.println(disanumbah);
+				
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			
+		}
 	}
 	
 	/**
@@ -164,8 +172,6 @@ public class AspectPoolHandler {
 	public static ArrayList<AspectType> getPlayerAspects(PlayerEntity player, World world) {
 		ArrayList<AspectType> aspectlist = new ArrayList<AspectType>();
 		
-		int lineCount = 0;
-		
 		try {
 			File aspectDataDir = new File(world.getWorldInfo().getWorldName(), "aspectdata");
 			
@@ -173,49 +179,33 @@ public class AspectPoolHandler {
 			
 			File playerAspectData = new File(aspectDataDir, player.getCachedUniqueIdString()+".aspectpool");
 			
-			FileReader fr = new FileReader(playerAspectData);
+			int lineCount = 0;
 			
-			LineNumberReader lnr = new LineNumberReader(fr);
+			CompoundNBT nbt2 = CompressedStreamTools.read(playerAspectData);
+			lineCount = nbt2.size();
+			System.out.println(lineCount);
 			
-			while (lnr.readLine() != null) {
-				lineCount++;
+			String[] names = nbt2.keySet().toArray(new String[lineCount]);
+			
+			for(int i=0; i<lineCount; i++) {
+				AspectType aspect = Aspect.getAspectByName(names[i]);
+				
+				aspectlist.add(aspect);
+				
+				//Debug
+				System.out.println(aspect.name());
+				
 			}
-			
-			//Debug
-			System.out.println("Total number of lines : " + lineCount);
-			
-			lnr.close();
 		}
 
-		catch(IOException e) {
+		catch(IOException | AspectNotFoundException e) {
 			e.printStackTrace();
 		}
 		
 		finally {
 			
-			try(BufferedReader br = Files.newBufferedReader(Paths.get(world.getWorldInfo().getWorldName()+"/aspectdata", player.getCachedUniqueIdString()+".aspectpool"))) {
-				
-				String line;
-				
-				while ((line = br.readLine()) != null) {
-					for(int i=0; i<lineCount; i++) {
-						AspectType aspect = Aspect.getAspectByName(line.substring(0, line.indexOf(",")));
-						
-						aspectlist.add(aspect);
-						
-						//Debug
-						System.out.println(aspect.name());
-						
-					}
-				}
-			} 
-
-			catch(IOException | AspectNotFoundException e) {
-				e.printStackTrace();
-			}
-
 		}
-
+		
 		return aspectlist;
 
 	}

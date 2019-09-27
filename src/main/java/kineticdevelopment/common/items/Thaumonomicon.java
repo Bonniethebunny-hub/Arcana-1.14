@@ -38,12 +38,7 @@ public class Thaumonomicon extends Item {
         	}
 
         	else {
-				try {
-					int number = AspectPoolHandler.getPlayerAspectAmount(context.getPlayer(), AspectType.ICE, context.getWorld());
-					System.out.println(String.valueOf(number));
-				} catch (AspectNotFoundException e) {
-					e.printStackTrace();
-				}
+				AspectPoolHandler.addAspectAmountToPlayer(context.getPlayer(), context.getWorld(), false);
         	}
     	}
     	
