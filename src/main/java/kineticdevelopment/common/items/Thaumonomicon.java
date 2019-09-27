@@ -1,10 +1,7 @@
 package kineticdevelopment.common.items;
 
-import java.util.ArrayList;
 import java.util.List;
-
 import javax.annotation.Nullable;
-
 import kineticdevelopment.api.aspects.Aspect.AspectType;
 import kineticdevelopment.api.aspects.AspectNotFoundException;
 import kineticdevelopment.common.utils.aspectpool.AspectPoolHandler;
@@ -15,6 +12,8 @@ import net.minecraft.item.ItemUseContext;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -34,6 +33,7 @@ public class Thaumonomicon extends Item {
 
             	for(int i=0; i<aspects.length; i++) {
             		AspectPoolHandler.addAspectToPlayer(context.getPlayer(), context.getWorld(), aspects[i], 10);
+            		context.getPlayer().sendMessage(new StringTextComponent(TextFormatting.GREEN + "You have just learned the " + TextFormatting.RED +aspects[i] + TextFormatting.GREEN + " aspect type!"));
             	}
         	}
 
@@ -52,6 +52,6 @@ public class Thaumonomicon extends Item {
 	
 	@OnlyIn(Dist.CLIENT)
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new StringTextComponent("Currently being used for testing with aspect collection"));
+		tooltip.add(new StringTextComponent(TextFormatting.RED + "Currently being used for testing with aspect collection"));
 	}
 }
