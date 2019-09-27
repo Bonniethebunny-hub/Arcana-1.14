@@ -46,8 +46,7 @@ public class Arcana {
     }
 
     private void commonSetupEvent (final FMLCommonSetupEvent event) {
-
-
+        ClientProxy.init();
     }
 
     private void clientSetupEvent(final FMLClientSetupEvent event) {
