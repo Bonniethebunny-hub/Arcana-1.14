@@ -1,7 +1,0 @@
-{
-  "parent": "block/cube_column",
-  "textures": {
-    "end": "arcana:block/silverwoodlogtop",
-    "side": "arcana:block/silverwoodlogside"
-  }
-}
