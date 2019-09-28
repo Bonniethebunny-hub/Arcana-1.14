@@ -2,7 +2,7 @@
  * All items should be listed here.
  */
 
-package kineticdevelopment.init;
+package kineticdevelopment.init.item_entities;
 
 
 import static kineticdevelopment.api.registry.ArcanaItems.amber;

@@ -1,4 +1,4 @@
-package kineticdevelopment.init;
+package kineticdevelopment.init.blocks;
 
 import net.minecraft.state.BooleanProperty;
 

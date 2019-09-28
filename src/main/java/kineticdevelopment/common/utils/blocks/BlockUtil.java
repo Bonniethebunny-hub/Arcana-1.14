@@ -3,7 +3,7 @@
 
 */
 
-package kineticdevelopment.common.utils.block;
+package kineticdevelopment.common.utils.blocks;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.state.IProperty;

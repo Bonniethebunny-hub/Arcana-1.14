@@ -2,7 +2,7 @@
  * Please only list aspects here.
  */
 
-package kineticdevelopment.init;
+package kineticdevelopment.init.item_entities;
 
 
 import kineticdevelopment.common.utils.creativetab.ArcanaAspectsItemGroup;

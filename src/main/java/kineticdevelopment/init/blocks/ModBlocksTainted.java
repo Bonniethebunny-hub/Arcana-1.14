@@ -2,7 +2,7 @@
  * Please only use for tainted blocks and nothing else.
  */
 
-package kineticdevelopment.init;
+package kineticdevelopment.init.blocks;
 
 import kineticdevelopment.api.blocks.TaintedBlock;
 import kineticdevelopment.api.blocks.TaintedSlab;

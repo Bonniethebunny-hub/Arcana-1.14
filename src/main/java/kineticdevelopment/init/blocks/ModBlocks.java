@@ -2,7 +2,7 @@
  * Register all non tainted blocks
  */
 
-package kineticdevelopment.init;
+package kineticdevelopment.init.blocks;
 
 import kineticdevelopment.api.blocks.*;
 import kineticdevelopment.common.trees.HawthornTree;

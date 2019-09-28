@@ -7,7 +7,7 @@ import javax.annotation.Nullable;
 
 import kineticdevelopment.api.effects.ArcanaEffects;
 import kineticdevelopment.common.utils.taint.TaintSpreader;
-import kineticdevelopment.init.ModBlockStates;
+import kineticdevelopment.init.blocks.ModBlockStates;
 import net.minecraft.block.AirBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
