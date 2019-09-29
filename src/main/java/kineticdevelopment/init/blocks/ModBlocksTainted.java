@@ -18,6 +18,7 @@ import kineticdevelopment.common.blocks.ores.TaintedRubyOre;
 import kineticdevelopment.common.blocks.ores.TaintedSilverOre;
 import kineticdevelopment.common.blocks.tainted.*;
 import kineticdevelopment.common.utils.creativetab.ArcanaItemGroup;
+import kineticdevelopment.common.utils.creativetab.ArcanaTaintedItemGroup;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
@@ -89,7 +90,7 @@ public class ModBlocksTainted {
         tainted_greatwood_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "tainted_greatwood_log");
         tainted_greatwood_planks = registerBlock(new TaintedBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "tainted_greatwood_planks");
         tainted_greatwood_slab = registerBlock(new TaintedSlab(Block.Properties.from(tainted_greatwood_planks)), "tainted_greatwood_slab");
-        tainted_greatwood_stairs = registerBlock(new TaintedStairsBlock(tainted_greatwood_planks.getDefaultState(), Block.Properties.from(tainted_greatwood_planks)), "tainted_greatwood_stairs");
+        untainted_greatwood_stairs = registerBlock(new TaintedStairsBlock(tainted_greatwood_planks.getDefaultState(), Block.Properties.from(tainted_greatwood_planks)), "tainted_greatwood_stairs");
         stripped_tainted_greatwood_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "stripped_tainted_greatwood_log");
         tainted_greatwood_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "tainted_greatwood_leaves");
 
@@ -112,7 +113,7 @@ public class ModBlocksTainted {
 
     public static Block registerBlock(Block block, String name)
     {
-        BlockItem itemBlock = new BlockItem(block, new Item.Properties().group(ArcanaItemGroup.instance));
+        BlockItem itemBlock = new BlockItem(block, new Item.Properties().group(ArcanaTaintedItemGroup.instance));
         block.setRegistryName(name);
         itemBlock.setRegistryName(name);
         ForgeRegistries.BLOCKS.register(block);

@@ -125,4 +125,76 @@ public class ArcanaBlocks {
     public static Block speak_no_evil;
     public static Block see_no_evil;
 
+    //untainted blocks
+
+    public static Block untainted_oak_planks;
+    public static Block untainted_plank_stairs;
+    public static Block untainted_plank_slab;
+
+    public static Block untainted_willow_log;
+    public static Block untainted_willow_planks;
+    public static Block untainted_willow_slab;
+    public static Block untainted_willow_stairs;
+    public static Block stripped_untainted_willow_log;
+    public static Block untainted_willow_leaves;
+
+    public static Block untainted_greatwood_log;
+    public static Block untainted_greatwood_planks;
+    public static Block untainted_greatwood_slab;
+    public static Block untainted_greatwood_stairs;
+    public static Block stripped_untainted_greatwood_log;
+    public static Block untainted_greatwood_leaves;
+
+    public static Block untainted_hawthorn_log;
+    public static Block untainted_hawthorn_planks;
+    public static Block untainted_hawthorn_slab;
+    public static Block untainted_hawthorn_stairs;
+    public static Block stripped_untainted_hawthorn_log;
+    public static Block untainted_hawthorn_leaves;
+
+    public static Block untainted_oak_log;
+    public static Block untainted_oak_leaves;
+
+    public static Block untainted_grass_block;
+    public static Block untainted_farmland;
+    public static Block untainted_path;
+
+
+    //untainted  rocks
+    public static Block untainted_crust;
+    public static Block untainted_crust_slab;
+    public static Block untainted_rock;
+    public static Block untainted_rock_slab;
+    public static Block untainted_soil;
+
+    //untainted  other
+    public static Block untainted_sand;
+    public static Block untainted_gravel;
+    public static Block untainted_goo;
+
+    //untainted  ores
+    public static Block untainted_cinnabar_ore;
+    public static Block untainted_amber_ore;
+    public static Block untainted_arcanium_ore;
+    public static Block untainted_coal_ore;
+    public static Block untainted_diamond_ore;
+    public static Block untainted_emerald_ore;
+    public static Block untainted_iron_ore;
+    public static Block untainted_lapis_lazuli_ore;
+    public static Block untainted_ruby_ore;
+    public static Block untainted_silver_ore;
+    public static Block untainted_gold_ore;
+    public static Block untainted_destroyed_ore;
+    public static Block untainted_redstone_ore;
+
+    //untainted plants
+    public static Block untainted_fibers;
+    public static Block untainted_flower;
+    public static Block untainted_bush;
+    public static Block untainted_mushroom;
+    public static Block untainted_melon;
+    public static Block untainted_pumpkin;
+    public static Block untainted_jack_olantern;
+    public static Block untainted_carved_pumpkin;
+
 }

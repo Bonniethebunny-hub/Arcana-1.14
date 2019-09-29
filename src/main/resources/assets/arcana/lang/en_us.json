@@ -2,7 +2,7 @@
   "_comment": "CREATIVE TABS",
   "itemGroup.arcana": "Arcana",
   "itemGroup.arcana_aspects": "Aspects",
-  "itemGroup.arcana_untainted": "unTainted Blocks",
+  "itemGroup.arcana_tainted": "Tainted Blocks",
 
   "_comment": "Tainted Blocks",
   "block.arcana.tainted_crust": "Tainted Crust",
