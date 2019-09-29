@@ -17,14 +17,26 @@ import java.util.Map;
 public class TaintSpreader {
 
     /**
+     * List of blocks tainted grass spreads to
+     */
+
+    static Block[] TaintedGrassProspects = {
+            Blocks.GRASS_BLOCK,
+            Blocks.MYCELIUM
+
+
+    };
+
+    /**
      * List of blocks tainted soil spreads to
      */
+
     static Block[] TaintedSoilProspects = {
-            Blocks.GRASS_BLOCK,
             Blocks.DIRT,
             Blocks.COARSE_DIRT,
-            Blocks.GRASS_PATH,
-            Blocks.FARMLAND,
+            Blocks.PODZOL,
+            Blocks.SANDSTONE
+
     };
 
     /**
@@ -40,7 +52,7 @@ public class TaintSpreader {
             Blocks.CHISELED_STONE_BRICKS,
             Blocks.CRACKED_STONE_BRICKS,
             Blocks.MOSSY_STONE_BRICKS,
-            Blocks.MOSSY_COBBLESTONE,
+            Blocks.MOSSY_COBBLESTONE
     };
 
     /**
@@ -98,6 +110,8 @@ public class TaintSpreader {
     static HashMap<Block, Block> singleBlockConversions = new HashMap<Block, Block>() {{
         put(Blocks.OAK_LOG, ArcanaBlocks.tainted_oak_log);
         put(Blocks.OAK_LEAVES, ArcanaBlocks.tainted_oak_leaves);
+        put(Blocks.GRASS_PATH, ArcanaBlocks.tainted_path);
+        put(Blocks.FARMLAND, ArcanaBlocks.tainted_farmland);
         put(Blocks.COAL_ORE, ArcanaBlocks.tainted_coal_ore);
         put(Blocks.DIAMOND_ORE, ArcanaBlocks.tainted_diamond_ore);
         put(Blocks.IRON_ORE, ArcanaBlocks.tainted_iron_ore);
@@ -138,6 +152,7 @@ public class TaintSpreader {
                 put(TaintedRockProspects, ArcanaBlocks.tainted_rock);
                 put(TaintedCrustProspects, ArcanaBlocks.tainted_crust);
                 put(TaintedFlowerProspects, ArcanaBlocks.tainted_bush);
+                put(TaintedGrassProspects, ArcanaBlocks.tainted_grass_block);
             }};
             
             //Increases taint spread by one block for every 10 levels, might need to be upped to a higher threshold, gets laggy fast

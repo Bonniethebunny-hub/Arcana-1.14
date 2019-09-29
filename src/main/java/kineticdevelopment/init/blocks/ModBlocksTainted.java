@@ -4,9 +4,7 @@
 
 package kineticdevelopment.init.blocks;
 
-import kineticdevelopment.api.blocks.TaintedBlock;
-import kineticdevelopment.api.blocks.TaintedSlab;
-import kineticdevelopment.api.blocks.TaintedStairsBlock;
+import kineticdevelopment.api.blocks.*;
 import kineticdevelopment.common.blocks.ores.TaintedAmberOre;
 import kineticdevelopment.common.blocks.ores.TaintedArcaniumOre;
 import kineticdevelopment.common.blocks.ores.TaintedCinnabarOre;
@@ -18,10 +16,7 @@ import kineticdevelopment.common.blocks.ores.TaintedIronOre;
 import kineticdevelopment.common.blocks.ores.TaintedLapisOre;
 import kineticdevelopment.common.blocks.ores.TaintedRubyOre;
 import kineticdevelopment.common.blocks.ores.TaintedSilverOre;
-import kineticdevelopment.common.blocks.tainted.TaintedCrust;
-import kineticdevelopment.common.blocks.tainted.TaintedGoo;
-import kineticdevelopment.common.blocks.tainted.TaintedSoil;
-import kineticdevelopment.common.blocks.tainted.TraintedJackOLatern;
+import kineticdevelopment.common.blocks.tainted.*;
 import kineticdevelopment.common.utils.creativetab.ArcanaItemGroup;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
@@ -34,8 +29,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import static kineticdevelopment.api.registry.ArcanaBlocks.*;
-
-import kineticdevelopment.api.blocks.ArcanaFlowerBlock;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModBlocksTainted {
@@ -109,6 +102,11 @@ public class ModBlocksTainted {
 
         tainted_oak_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "tainted_oak_log");
         tainted_oak_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "tainted_oak_leaves");
+
+
+        tainted_grass_block = registerBlock(new TaintedGrassBlock(Block.Properties.create(Material.GOURD).hardnessAndResistance(0.1F,0.2F).sound(SoundType.GROUND)), "tainted_grass_block");
+        tainted_farmland = registerBlock(new TaintedFarmland(Block.Properties.create(Material.GOURD).hardnessAndResistance(0.1F,0.2F).sound(SoundType.GROUND)), "tainted_farmland");
+        tainted_path = registerBlock(new TaintedPath(Block.Properties.create(Material.GOURD).hardnessAndResistance(0.1F,0.2F).sound(SoundType.GROUND)), "tainted_path");
     }
 
 
