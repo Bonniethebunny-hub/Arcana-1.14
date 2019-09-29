@@ -60,9 +60,9 @@ public class ModBlocks {
         hawthorn_sapling = registerBlock(new ArcanaSaplingBlock(new HawthornTree(), Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(1.0F).sound(SoundType.PLANT)), "hawthorn_sapling");
 
         //statues
-        //hear_no_evil = registerBlock(new ArcanaRotatableBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "hear_no_evil");
-        //speak_no_evil = registerBlock(new ArcanaRotatableBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "speak_no_evil");
-        //see_no_evil = registerBlock(new ArcanaRotatableBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "see_no_evil");
+        hear_no_evil = registerBlock(new ArcanaRotatableBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "hear_no_evil");
+        speak_no_evil = registerBlock(new ArcanaRotatableBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "speak_no_evil");
+        see_no_evil = registerBlock(new ArcanaRotatableBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "see_no_evil");
 
         //node
         bright_node = registerBlock(new ArcanaFlowerBlock(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.PLANT)), "bright_node");
