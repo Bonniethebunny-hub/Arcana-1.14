@@ -82,6 +82,7 @@ public class TaintedBlock extends Block {
         }
     }
     
+    
     @OnlyIn(Dist.CLIENT)
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         tooltip.add(new StringTextComponent("This block will spread taint."));

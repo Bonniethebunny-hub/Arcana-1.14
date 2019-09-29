@@ -197,4 +197,7 @@ public class ArcanaBlocks {
     public static Block untainted_jack_olantern;
     public static Block untainted_carved_pumpkin;
 
+    //nodes
+    public static Block bright_node;
+
 }
