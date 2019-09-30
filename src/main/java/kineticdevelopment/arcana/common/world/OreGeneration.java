@@ -11,8 +11,7 @@ import net.minecraft.world.gen.placement.Placement;
 import net.minecraftforge.registries.ForgeRegistries;
 
 /**
- * Ore Generation
- * @author MaxIsH0t
+ *
  */
 public class OreGeneration {
 
