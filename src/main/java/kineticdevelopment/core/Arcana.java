@@ -7,6 +7,7 @@
 package kineticdevelopment.core;
 
 
+import kineticdevelopment.common.world.OreGeneration;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
@@ -27,7 +28,7 @@ public class Arcana {
     public static Arcana instance;
     public static final CommonProxy proxy = DistExecutor.runForDist(() -> ClientProxy::new, () -> CommonProxy::new);
 
-    public static Logger logger = LogManager.getLogger(MOD_ID);
+    public static Logger LOGGER = LogManager.getLogger(MOD_ID);
 
     public Arcana() {
 
@@ -47,6 +48,8 @@ public class Arcana {
 
     private void commonSetupEvent (final FMLCommonSetupEvent event) {
         ClientProxy.init();
+        OreGeneration.setupOreGeneration();
+        LOGGER.info("Setup method registered.");
     }
 
     private void clientSetupEvent(final FMLClientSetupEvent event) {
