@@ -1,6 +1,7 @@
 package kineticdevelopment.common.world;
 
-import kineticdevelopment.api.registry.ArcanaBlocks;
+
+import kineticdevelopment.arcana.api.registry.ArcanaBlocks;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.feature.Feature;
