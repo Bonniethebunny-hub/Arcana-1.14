@@ -10,7 +10,7 @@ import org.lwjgl.opengl.GL11;
 
 /**
  * Utils for the GUI's
- * @author MaxIsH0t
+ *
  */
 public class GuiUtils
 {
