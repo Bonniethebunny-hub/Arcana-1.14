@@ -1,4 +1,4 @@
-package kineticdevelopment.common.world;
+package kineticdevelopment.arcana.common.world;
 
 
 import kineticdevelopment.arcana.api.registry.ArcanaBlocks;
