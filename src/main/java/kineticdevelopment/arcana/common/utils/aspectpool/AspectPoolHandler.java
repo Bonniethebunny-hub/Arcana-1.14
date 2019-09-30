@@ -2,6 +2,8 @@ package kineticdevelopment.arcana.common.utils.aspectpool;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.DataInput;
+import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -20,6 +22,7 @@ import java.util.Map.Entry;
 import javax.annotation.Nullable;
 
 import kineticdevelopment.arcana.api.aspects.Aspect;
+import kineticdevelopment.arcana.api.aspects.Aspect.AspectType;
 import kineticdevelopment.arcana.api.aspects.AspectNotFoundException;
 import kineticdevelopment.arcana.api.aspects.BlockHasNoAspectsException;
 import kineticdevelopment.arcana.common.utils.Constants;
@@ -92,7 +95,7 @@ public class AspectPoolHandler {
 	 * @throws IOException 
 	 * @throws FileNotFoundException 
 	 */
-	public static void addAspectsToPlayer(PlayerEntity player, World world, Aspect.AspectType[] aspect) throws FileNotFoundException, IOException {
+	public static void addAspectsToPlayer(PlayerEntity player, World world, AspectType[] aspect) throws FileNotFoundException, IOException {
 		File aspectDataDir = null;
 		File playerAspectData = null;
 		CompoundNBT nbt;
@@ -101,8 +104,6 @@ public class AspectPoolHandler {
 			aspectDataDir.mkdirs();
 			playerAspectData = new File(aspectDataDir, player.getCachedUniqueIdString()+".aspectpool");
 			
-			ArrayList<Aspect.AspectType> aspects = getPlayerAspects(player, world);
-			
 			if(!playerAspectData.exists()) {
 				playerAspectData.createNewFile();
 				nbt = new CompoundNBT();
@@ -110,6 +111,8 @@ public class AspectPoolHandler {
 			else {
 				nbt = CompressedStreamTools.readCompressed(new FileInputStream(playerAspectData));
 			}
+			
+			ArrayList<AspectType> aspects = getPlayerAspects(player, world);
 			
 			for(int i=0; i < aspect.length; i++) {
 				nbt.putInt(aspect[i].name(), 1);
@@ -129,37 +132,6 @@ public class AspectPoolHandler {
 		}
 	}
 	
-	public static void addAspectAmountToPlayer(PlayerEntity player, World world, boolean yeet) {
-		File aspectDataDir = new File(world.getWorldInfo().getWorldName(), "aspectdata");
-		
-		aspectDataDir.mkdirs();
-		
-		File playerAspectData = new File(aspectDataDir, player.getCachedUniqueIdString()+".aspectpool");
-		CompoundNBT nbt = new CompoundNBT();
-		nbt.putInt("SecondsInADay", 86400);
-		
-		if(yeet) {
-			try {
-				CompressedStreamTools.writeCompressed(nbt, new FileOutputStream(playerAspectData));
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		else if(!yeet) {
-			try {
-				int disanumbah;
-				CompoundNBT nbt2 = CompressedStreamTools.readCompressed(new FileInputStream(playerAspectData));
-				disanumbah = nbt2.getInt("SecondsInADay");
-				System.out.println(disanumbah);
-				
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			
-		}
-	}
-	
 	/**
 	 * Fetches an ArrayList of Aspects a player has
 	 * @param player
@@ -167,8 +139,8 @@ public class AspectPoolHandler {
 	 * @return
 	 */
 	@Nullable
-	public static ArrayList<Aspect.AspectType> getPlayerAspects(PlayerEntity player, World world) {
-		ArrayList<Aspect.AspectType> aspectlist = new ArrayList<Aspect.AspectType>();
+	public static ArrayList<AspectType> getPlayerAspects(PlayerEntity player, World world) {
+		ArrayList<AspectType> aspectlist = new ArrayList<Aspect.AspectType>();
 		
 		try {
 			File aspectDataDir = new File(world.getWorldInfo().getWorldName(), "aspectdata");
@@ -179,7 +151,7 @@ public class AspectPoolHandler {
 			
 			int lineCount = 0;
 			
-			CompoundNBT nbt2 = CompressedStreamTools.read(playerAspectData);
+			CompoundNBT nbt2 = CompressedStreamTools.readCompressed(new FileInputStream(playerAspectData));;
 			lineCount = nbt2.size();
 			System.out.println(lineCount);
 			

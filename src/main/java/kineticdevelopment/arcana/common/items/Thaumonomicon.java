@@ -32,10 +32,6 @@ public class Thaumonomicon extends Item {
     		if(!context.isPlacerSneaking()) {
         		AspectPoolHandler.addBlockAspectsToPlayer(context.getWorld().getBlockState(context.getPos()).getBlock(), context.getPlayer(), context.getWorld());
         	}
-
-        	else {
-				AspectPoolHandler.addAspectAmountToPlayer(context.getPlayer(), context.getWorld(), false);
-        	}
     	}
     	
         return ActionResultType.PASS;
