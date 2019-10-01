@@ -27,9 +27,11 @@ import kineticdevelopment.arcana.api.aspects.Aspect.AspectType;
 import kineticdevelopment.arcana.api.aspects.AspectNotFoundException;
 import kineticdevelopment.arcana.api.aspects.BlockHasNoAspectsException;
 import kineticdevelopment.arcana.api.misc.IntegerUtils;
+import kineticdevelopment.arcana.client.gui.NewAspectGUI;
 import kineticdevelopment.arcana.common.utils.Constants;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.nbt.CompoundNBT;
@@ -52,6 +54,14 @@ public class AspectPoolHandler {
 		put(Blocks.ICE, new Aspect.AspectType[] {Aspect.AspectType.ICE, Aspect.AspectType.WATER});
 		
 	}};
+	
+	public static void notifyOfAspectDiscovery(PlayerEntity player, AspectType aspect) {
+		player.sendStatusMessage(new StringTextComponent("You've just discovered the aspect of "+aspect.name()), true);
+	}
+	
+	public static void notifyOfKnownAspectGain(PlayerEntity player, AspectType aspect, int amount) {
+		player.sendStatusMessage(new StringTextComponent("You've just gained "+amount+" of aspect "+aspect.name()), true);
+	}
 	
 	/**
 	
@@ -130,12 +140,12 @@ public class AspectPoolHandler {
 				if(!aspects.contains(aspect[i])) {
 					nbt.putInt(aspect[i].name(), 1);
 					
-					player.sendMessage(new StringTextComponent(TextFormatting.GREEN + "You have just learned the " + TextFormatting.RED + aspect[i].name() + TextFormatting.GREEN + " aspect type!"));
+					notifyOfAspectDiscovery(player, aspect[i]);
 				}
 				else {
 					nbt.putInt(aspect[i].name(), getPlayerAspectAmount(player, aspect[i], world) + amount);
 					
-					player.sendMessage(new StringTextComponent(TextFormatting.GREEN + "You got "+amount+" of aspect "+aspect[i].name()));
+					notifyOfKnownAspectGain(player, aspect[i], amount);
 				}
 			}
 			
@@ -148,6 +158,7 @@ public class AspectPoolHandler {
 		
 		catch (IOException | AspectNotFoundException e) {
 			Constants.LOGGER.warn("Failed to write to "+player.getCachedUniqueIdString()+".aspectpool");
+			e.printStackTrace();
 		}
 	}
 	
