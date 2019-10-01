@@ -59,7 +59,7 @@ public class AspectPoolHandler {
 	 * @param block
 	 * @return AspectType[]
 	 */
-	public static Aspect.AspectType[] getBlockAspects(Block block) throws BlockHasNoAspectsException {
+	public static AspectType[] getBlockAspects(Block block) throws BlockHasNoAspectsException {
 		
 		for (Entry<Block, Aspect.AspectType[]> entry : BlockAspects.entrySet()) {
 			if (block.equals(entry.getKey().getBlock())) {
@@ -112,7 +112,7 @@ public class AspectPoolHandler {
 		File playerAspectData = null;
 		CompoundNBT nbt;
 		try {
-			aspectDataDir = new File(world.getWorldInfo().getWorldName(), "aspectdata");
+			aspectDataDir = new File("Arcana/"+world.getWorldInfo().getWorldName(), "aspectdata");
 			aspectDataDir.mkdirs();
 			playerAspectData = new File(aspectDataDir, player.getCachedUniqueIdString()+".aspectpool");
 			
@@ -151,6 +151,46 @@ public class AspectPoolHandler {
 		}
 	}
 	
+	public static void removeAspectsFromPlayer(PlayerEntity player, World world, AspectType[] aspect, int amount) {
+		File aspectDataDir = null;
+		File playerAspectData = null;
+		CompoundNBT nbt;
+		try {
+			aspectDataDir = new File("Arcana/"+world.getWorldInfo().getWorldName(), "aspectdata");
+			aspectDataDir.mkdirs();
+			playerAspectData = new File(aspectDataDir, player.getCachedUniqueIdString()+".aspectpool");
+			
+			if(!playerAspectData.exists()) {
+				playerAspectData.createNewFile();
+				nbt = new CompoundNBT();
+			}
+			else {
+				nbt = CompressedStreamTools.readCompressed(new FileInputStream(playerAspectData));
+			}
+			
+			for(int i=0; i < aspect.length; i++) {
+				if(getPlayerAspectAmount(player, aspect[i], world) <= 1) {
+					nbt.remove(aspect[i].name());
+				}
+				else {
+					nbt.putInt(aspect[i].name(), getPlayerAspectAmount(player, aspect[i], world) - amount);
+					
+					player.sendMessage(new StringTextComponent(TextFormatting.GREEN + "You lost "+amount+" of aspect "+aspect[i].name()));
+				}
+			}
+			
+			try (FileOutputStream fileoutputstream = new FileOutputStream(playerAspectData)) {
+	            CompressedStreamTools.writeCompressed(nbt, fileoutputstream);
+	         } catch (IOException e) {
+	        	 e.printStackTrace();
+	         }
+		} 
+		
+		catch (IOException | AspectNotFoundException e) {
+			Constants.LOGGER.warn("Failed to write to "+player.getCachedUniqueIdString()+".aspectpool");
+		}
+	}
+	
 	/**
 	 * Fetches an ArrayList of Aspects a player has
 	 * @param player
@@ -162,7 +202,7 @@ public class AspectPoolHandler {
 		ArrayList<AspectType> aspectlist = new ArrayList<Aspect.AspectType>();
 		
 		try {
-			File aspectDataDir = new File(world.getWorldInfo().getWorldName(), "aspectdata");
+			File aspectDataDir = new File("Arcana/"+world.getWorldInfo().getWorldName(), "aspectdata");
 			
 			aspectDataDir.mkdirs();
 			
@@ -207,7 +247,7 @@ public class AspectPoolHandler {
 		int returnint = 2138008;
 		
 		try {
-			File aspectDataDir = new File(world.getWorldInfo().getWorldName(), "aspectdata");
+			File aspectDataDir = new File("Arcana/"+world.getWorldInfo().getWorldName(), "aspectdata");
 			
 			aspectDataDir.mkdirs();
 			
@@ -239,9 +279,9 @@ public class AspectPoolHandler {
 		List<Integer> ids;
 		int[] ids1;
 		try {
-			researchDataDir = new File(world.getWorldInfo().getWorldName(), "researchData");
+			researchDataDir = new File("Arcana/"+world.getWorldInfo().getWorldName(), "researchData");
 			researchDataDir.mkdirs();  	  
-			playerResearchBlackList = new File(researchDataDir, player.getCachedUniqueIdString()+".researchBlackList");
+			playerResearchBlackList = new File(researchDataDir, player.getCachedUniqueIdString()+".researchblacklist");
 			
 			if(!playerResearchBlackList.exists()) {
 				playerResearchBlackList.createNewFile();
@@ -251,14 +291,14 @@ public class AspectPoolHandler {
 			}
 			else {
 				nbt = CompressedStreamTools.readCompressed(new FileInputStream(playerResearchBlackList));
-				ids1 = nbt.getIntArray("Blacklist");
+				ids1 = nbt.getIntArray("Blocks");
 				ids = IntegerUtils.ArrayToList(ids1);
 				if(!isBlockOnPlayerResearchBlackList(block, player, world)) {
 					ids.add(Item.getIdFromItem(block.asItem()));
 				}
 			}
 			
-			nbt.putIntArray("Blacklist", ids);
+			nbt.putIntArray("Blocks", ids);
 			
 			try (FileOutputStream fileoutputstream = new FileOutputStream(playerResearchBlackList)) {
 	            CompressedStreamTools.writeCompressed(nbt, fileoutputstream);
@@ -275,7 +315,7 @@ public class AspectPoolHandler {
 	public static boolean isBlockOnPlayerResearchBlackList(Block block, PlayerEntity player, World world) throws FileNotFoundException {
 		try {
 			int[] ids;
-			File researchDataDir = new File(world.getWorldInfo().getWorldName(), "researchData");
+			File researchDataDir = new File("Arcana/"+world.getWorldInfo().getWorldName(), "researchData");
 			researchDataDir.mkdirs();  	  
 			File playerResearchBlackList = new File(researchDataDir, player.getCachedUniqueIdString()+".researchBlackList");;
 			CompoundNBT nbt2 = null;

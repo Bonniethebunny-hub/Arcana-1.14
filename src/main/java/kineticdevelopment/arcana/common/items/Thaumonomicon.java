@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
+import kineticdevelopment.arcana.api.aspects.Aspect.AspectType;
 import kineticdevelopment.arcana.common.utils.aspectpool.AspectPoolHandler;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
@@ -26,13 +27,6 @@ public class Thaumonomicon extends Item {
 	}
 	
 	public ActionResultType onItemUse(ItemUseContext context) {
-
-    	if(!context.getWorld().isRemote) {
-    		
-    		if(!context.isPlacerSneaking()) {
-        		AspectPoolHandler.addBlockAspectsToPlayer(context.getWorld().getBlockState(context.getPos()).getBlock(), context.getPlayer(), context.getWorld(), 10);
-        	}
-    	}
     	
         return ActionResultType.PASS;
     }
