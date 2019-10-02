@@ -48,7 +48,7 @@ public class TaintedGoo extends TaintedBlock {
     public void onBlockHarvested(World worldIn, BlockPos pos, BlockState state, PlayerEntity player) {
         worldIn.playEvent(player, 2001, pos, getStateId(state));
         if(!player.isCreative()) {
-            TaintLevelHandler.increaseTaintLevel(worldIn, 0.1d);
+            TaintLevelHandler.increaseTaintLevel(worldIn, 0.1f);
         }
     }
 }

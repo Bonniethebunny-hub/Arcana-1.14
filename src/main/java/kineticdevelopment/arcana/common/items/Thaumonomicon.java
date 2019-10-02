@@ -4,8 +4,6 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
-import kineticdevelopment.arcana.api.aspects.Aspect.AspectType;
-import kineticdevelopment.arcana.common.utils.aspectpool.AspectPoolHandler;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
