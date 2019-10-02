@@ -7,7 +7,7 @@ import kineticdevelopment.arcana.common.utils.aspectpool.AspectPoolHandler;
 import kineticdevelopment.arcana.init.ModKeyBindings;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
-import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
@@ -30,7 +30,9 @@ public class KeyPressedEvents {
 				if(player.getItemStackFromSlot(EquipmentSlotType.HEAD).isItemEqual(new ItemStack(ArcanaArmour.aspect_goggles))) {
 					if(Minecraft.getInstance().objectMouseOver.getType().equals(Type.ENTITY)) {
 						//Needs some work
-						Entity entity = ((EntityRayTraceResult) Minecraft.getInstance().objectMouseOver).getEntity();
+						LivingEntity entity = (LivingEntity) ((EntityRayTraceResult) Minecraft.getInstance().objectMouseOver).getEntity();
+						
+						AspectPoolHandler.addMobAspectsToPlayer(entity, player, Minecraft.getInstance().world, 1);
 					}
 					if(Minecraft.getInstance().objectMouseOver.getType().equals(Type.BLOCK)) {
 						Block block = Minecraft.getInstance().world.getBlockState(((BlockRayTraceResult) Minecraft.getInstance().objectMouseOver).getPos()).getBlock();

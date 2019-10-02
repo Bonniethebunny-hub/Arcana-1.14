@@ -2,6 +2,8 @@ package kineticdevelopment.arcana.api.aspects;
 
 import javax.annotation.Nullable;
 
+import kineticdevelopment.arcana.api.exceptions.AspectNotFoundException;
+
 public class Aspect {
 	
 	public enum AspectType {

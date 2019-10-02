@@ -1,4 +1,4 @@
-package kineticdevelopment.arcana.api.aspects;
+package kineticdevelopment.arcana.api.exceptions;
 
 /**
  * A Throw for when a block has no aspects

@@ -14,14 +14,17 @@ import javax.annotation.Nullable;
 
 import kineticdevelopment.arcana.api.aspects.Aspect;
 import kineticdevelopment.arcana.api.aspects.Aspect.AspectType;
-import kineticdevelopment.arcana.api.aspects.AspectNotFoundException;
-import kineticdevelopment.arcana.api.aspects.BlockHasNoAspectsException;
+import kineticdevelopment.arcana.api.exceptions.AspectNotFoundException;
+import kineticdevelopment.arcana.api.exceptions.BlockHasNoAspectsException;
+import kineticdevelopment.arcana.api.exceptions.MobHasNoAspectsException;
 import kineticdevelopment.arcana.api.misc.IntegerUtils;
 import kineticdevelopment.arcana.common.utils.Constants;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.monster.ZombieEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.nbt.CompoundNBT;
@@ -38,10 +41,16 @@ import net.minecraft.world.World;
 public class AspectPoolHandler {
 	
 	@SuppressWarnings("serial")
-	static HashMap<Block, AspectType[]> BlockAspects = new HashMap<Block, Aspect.AspectType[]>() {{
+	static HashMap<Block, AspectType[]> BlockAspects = new HashMap<Block, AspectType[]>() {{
 		
 		put(Blocks.DIRT, new AspectType[] {Aspect.AspectType.EARTH});
 		put(Blocks.ICE, new AspectType[] {Aspect.AspectType.ICE, Aspect.AspectType.WATER});
+		
+	}};
+	
+	@SuppressWarnings("serial")
+	static HashMap<Class<? extends LivingEntity>, AspectType[]> MobAspects = new HashMap<Class<? extends LivingEntity>, AspectType[]>() {{
+		put(ZombieEntity.class, new AspectType[] {AspectType.UNDEAD});
 		
 	}};
 	
@@ -54,21 +63,29 @@ public class AspectPoolHandler {
 	}
 	
 	/**
-	
 	 * Returns an Item Array with all the Aspects of a block
 	 * @param block
 	 * @return AspectType[]
 	 */
 	public static AspectType[] getBlockAspects(Block block) throws BlockHasNoAspectsException {
-		
-		for (Entry<Block, Aspect.AspectType[]> entry : BlockAspects.entrySet()) {
+		for (Entry<Block, AspectType[]> entry : BlockAspects.entrySet()) {
 			if (block.equals(entry.getKey().getBlock())) {
-				Aspect.AspectType[] aspects = entry.getValue();
+				AspectType[] aspects = entry.getValue();
 				return aspects;
 			}
 		}
 		throw new BlockHasNoAspectsException("Block "+block.getNameTextComponent().getFormattedText()+" has no assigned aspects!");
-	 }
+	}
+	
+	public static AspectType[] getMobAspects(LivingEntity entity) throws MobHasNoAspectsException {
+		for (Entry<Class<? extends LivingEntity>, AspectType[]> entry : MobAspects.entrySet()) {
+			if(entity.getClass() == entry.getKey()) {
+				AspectType[] aspects = entry.getValue();
+				return aspects;
+			}
+		}
+		throw new MobHasNoAspectsException("Entity "+entity.getName().getFormattedText()+" has no assigned aspects!");
+	}
 	
 	public static void addBlockAspectsToPlayer(Block block, PlayerEntity player, World world, int amount) {
 		try {
@@ -95,6 +112,24 @@ public class AspectPoolHandler {
 				System.out.println("This block was already scanned!");
 			}
 		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void addMobAspectsToPlayer(LivingEntity entity, PlayerEntity player, World world, int amount) {
+		AspectType[] aspects;
+		try {
+			aspects = AspectPoolHandler.getMobAspects(entity);
+			
+        	for(int i=0; i<aspects.length; i++) {
+        		try {
+					AspectPoolHandler.addAspectsToPlayer(player, world, aspects, amount);
+					System.out.println("Added aspects for mob "+entity.getName().getFormattedText());
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+        	}
+		} catch (MobHasNoAspectsException e) {
 			e.printStackTrace();
 		}
 	}
