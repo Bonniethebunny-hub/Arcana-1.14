@@ -155,37 +155,17 @@ public class ArcanaBlocks {
     public static Block untainted_oak_log;
     public static Block untainted_oak_leaves;
 
-    public static Block untainted_grass_block;
-    public static Block untainted_farmland;
-    public static Block untainted_path;
 
 
     //untainted  rocks
-    public static Block untainted_crust;
-    public static Block untainted_crust_slab;
     public static Block untainted_rock;
     public static Block untainted_rock_slab;
-    public static Block untainted_soil;
 
     //untainted  other
     public static Block untainted_sand;
     public static Block untainted_gravel;
-    public static Block untainted_goo;
 
-    //untainted  ores
-    public static Block untainted_cinnabar_ore;
-    public static Block untainted_amber_ore;
-    public static Block untainted_arcanium_ore;
-    public static Block untainted_coal_ore;
-    public static Block untainted_diamond_ore;
-    public static Block untainted_emerald_ore;
-    public static Block untainted_iron_ore;
-    public static Block untainted_lapis_lazuli_ore;
-    public static Block untainted_ruby_ore;
-    public static Block untainted_silver_ore;
-    public static Block untainted_gold_ore;
-    public static Block untainted_destroyed_ore;
-    public static Block untainted_redstone_ore;
+
 
     //untainted plants
     public static Block untainted_fibers;

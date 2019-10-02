@@ -37,8 +37,8 @@ public class ModBlocksUnTainted {
         untainted_plank_slab = registerBlock(new SlabBlock(Block.Properties.from(untainted_oak_planks)), "untainted_plank_slab");
 
         //Tainted Rocks
-        untainted_rock = registerBlock(new TaintedBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F,6.0F).sound(SoundType.STONE)), "untainted_rock");
-        untainted_rock_slab = registerBlock(new TaintedSlab(Block.Properties.from(untainted_rock)), "untainted_rock_slab");
+        untainted_rock = registerBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F,6.0F).sound(SoundType.STONE)), "untainted_rock");
+        untainted_rock_slab = registerBlock(new SlabBlock(Block.Properties.from(untainted_rock)), "untainted_rock_slab");
 
         //Tainted Other
         untainted_sand = registerBlock(new Block(Block.Properties.create(Material.SAND).hardnessAndResistance(0.1F,0.2F).sound(SoundType.SAND)), "untainted_sand");
