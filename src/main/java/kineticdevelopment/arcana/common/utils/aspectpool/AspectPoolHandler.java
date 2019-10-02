@@ -280,7 +280,7 @@ public class AspectPoolHandler {
 		List<Integer> ids;
 		int[] ids1;
 		try {
-			researchDataDir = new File("Arcana/"+world.getWorldInfo().getWorldName(), "researchData");
+			researchDataDir = new File("Arcana/"+world.getWorldInfo().getWorldName(), "researchdata");
 			researchDataDir.mkdirs();  	  
 			playerResearchBlackList = new File(researchDataDir, player.getCachedUniqueIdString()+".researchblacklist");
 			
@@ -316,9 +316,9 @@ public class AspectPoolHandler {
 	public static boolean isBlockOnPlayerResearchBlackList(Block block, PlayerEntity player, World world) throws FileNotFoundException {
 		try {
 			int[] ids;
-			File researchDataDir = new File("Arcana/"+world.getWorldInfo().getWorldName(), "researchData");
+			File researchDataDir = new File("Arcana/"+world.getWorldInfo().getWorldName(), "researchdata");
 			researchDataDir.mkdirs();  	  
-			File playerResearchBlackList = new File(researchDataDir, player.getCachedUniqueIdString()+".researchBlackList");;
+			File playerResearchBlackList = new File(researchDataDir, player.getCachedUniqueIdString()+".researchblacklist");;
 			CompoundNBT nbt2 = null;
 			
 			if(!playerResearchBlackList.exists()) {

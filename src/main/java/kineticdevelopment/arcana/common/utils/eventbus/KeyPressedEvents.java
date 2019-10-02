@@ -29,6 +29,7 @@ public class KeyPressedEvents {
 				PlayerEntity player = Minecraft.getInstance().player;
 				if(player.getItemStackFromSlot(EquipmentSlotType.HEAD).isItemEqual(new ItemStack(ArcanaArmour.aspect_goggles))) {
 					if(Minecraft.getInstance().objectMouseOver.getType().equals(Type.ENTITY)) {
+						//Needs some work
 						Entity entity = ((EntityRayTraceResult) Minecraft.getInstance().objectMouseOver).getEntity();
 					}
 					if(Minecraft.getInstance().objectMouseOver.getType().equals(Type.BLOCK)) {
