@@ -25,7 +25,6 @@ public class Thaumonomicon extends Item {
 	}
 	
 	public ActionResultType onItemUse(ItemUseContext context) {
-    	
         return ActionResultType.PASS;
     }
 
@@ -40,6 +39,6 @@ public class Thaumonomicon extends Item {
 	
 	@OnlyIn(Dist.CLIENT)
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new StringTextComponent("Currently being used for testing with aspect collection"));
+		tooltip.add(new StringTextComponent("This is a tool tip, tool tips are cool"));
 	}
 }

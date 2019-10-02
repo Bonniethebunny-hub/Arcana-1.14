@@ -8,6 +8,7 @@ package kineticdevelopment.arcana.core;
 
 
 import kineticdevelopment.arcana.common.world.OreGeneration;
+import kineticdevelopment.arcana.init.ModKeyBindings;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
@@ -53,8 +54,7 @@ public class Arcana {
     }
 
     private void clientSetupEvent(final FMLClientSetupEvent event) {
-
-
+    	
     }
 
     private void loadComplete(final FMLLoadCompleteEvent event) {
