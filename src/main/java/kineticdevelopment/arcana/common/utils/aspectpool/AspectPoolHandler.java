@@ -20,6 +20,8 @@ import kineticdevelopment.arcana.api.misc.IntegerUtils;
 import kineticdevelopment.arcana.common.utils.Constants;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.nbt.CompoundNBT;
@@ -36,10 +38,10 @@ import net.minecraft.world.World;
 public class AspectPoolHandler {
 	
 	@SuppressWarnings("serial")
-	static HashMap<Block, Aspect.AspectType[]> BlockAspects = new HashMap<Block, Aspect.AspectType[]>() {{
+	static HashMap<Block, AspectType[]> BlockAspects = new HashMap<Block, Aspect.AspectType[]>() {{
 		
-		put(Blocks.DIRT, new Aspect.AspectType[] {Aspect.AspectType.EARTH});
-		put(Blocks.ICE, new Aspect.AspectType[] {Aspect.AspectType.ICE, Aspect.AspectType.WATER});
+		put(Blocks.DIRT, new AspectType[] {Aspect.AspectType.EARTH});
+		put(Blocks.ICE, new AspectType[] {Aspect.AspectType.ICE, Aspect.AspectType.WATER});
 		
 	}};
 	

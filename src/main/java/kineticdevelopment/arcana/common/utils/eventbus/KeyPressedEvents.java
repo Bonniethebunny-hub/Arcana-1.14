@@ -4,13 +4,13 @@ import org.lwjgl.glfw.GLFW;
 
 import kineticdevelopment.arcana.api.registry.ArcanaArmour;
 import kineticdevelopment.arcana.common.utils.aspectpool.AspectPoolHandler;
+import kineticdevelopment.arcana.init.ModKeyBindings;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.EntityRayTraceResult;
 import net.minecraft.util.math.RayTraceResult.Type;
@@ -24,7 +24,7 @@ public class KeyPressedEvents {
 	
 	@SubscribeEvent
 	public static void onKeyPressed(KeyInputEvent event) {
-		if(event.getKey() == GLFW.GLFW_KEY_R) {
+		if(event.getKey() == ModKeyBindings.SCANWITHGOGGLES.getKey().getKeyCode() && !Minecraft.getInstance().isGamePaused()) {
 			if(event.getAction() == GLFW.GLFW_RELEASE) {
 				PlayerEntity player = Minecraft.getInstance().player;
 				if(player.getItemStackFromSlot(EquipmentSlotType.HEAD).isItemEqual(new ItemStack(ArcanaArmour.aspect_goggles))) {
