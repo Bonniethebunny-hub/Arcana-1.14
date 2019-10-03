@@ -5,16 +5,20 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import kineticdevelopment.arcana.api.misc.ArcanaFileUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.CompressedStreamTools;
 import net.minecraft.world.World;
 
 public class TaintLevelHandler {
+	
     public static void createTaintLevelFile(World world) {
+    	File dir = ArcanaFileUtils.getWorldDirectory(world);
+    	
         if(!world.isRemote) {
             if(Minecraft.getInstance().isSingleplayer()) {
-                final File file = new File("saves/", world.getWorldInfo().getWorldName()+".taint");
+                final File file = new File(dir, "TaintLevel.taint");
                 CompoundNBT nbt;
         		try {
         			if(!file.exists()) {
@@ -41,7 +45,7 @@ public class TaintLevelHandler {
         }
 
         if(world.isRemote) {
-            final File file = new File(world.getWorldInfo().getWorldName()+".taint");
+            final File file = new File(dir, "TaintLevel.taint");
             CompoundNBT nbt;
     		try {
     			if(!file.exists()) {
@@ -68,9 +72,11 @@ public class TaintLevelHandler {
     }
 
     public static float getTaintLevel(World world) {
+    	File dir = ArcanaFileUtils.getWorldDirectory(world);
+    	
         if (!world.isRemote) {
         	CompoundNBT nbt;
-        	final File file = new File("saves/", world.getWorldInfo().getWorldName()+".taint");
+        	final File file = new File(dir, "TaintLevel.taint");
         	try {
         		nbt = CompressedStreamTools.readCompressed(new FileInputStream(file));
         		float returnvalue = nbt.getFloat("TaintLevel");
@@ -87,8 +93,10 @@ public class TaintLevelHandler {
     }
 
     public static void increaseTaintLevel(World world, float amount) {
+    	File dir = ArcanaFileUtils.getWorldDirectory(world);
+    	
         if (!world.isRemote) {
-        	final File file = new File("saves/", world.getWorldInfo().getWorldName()+".taint");
+        	final File file = new File(dir, "TaintLevel.taint");
             CompoundNBT nbt;
     		try {
     			if(!file.exists()) {
@@ -117,8 +125,10 @@ public class TaintLevelHandler {
     }
 
     public static void decreaseTaintLevel(World world, float amount) {
+    	File dir = ArcanaFileUtils.getWorldDirectory(world);
+    	
         if (!world.isRemote) {
-        	final File file = new File("saves/", world.getWorldInfo().getWorldName()+".taint");
+        	final File file = new File(dir, "TaintLevel.taint");
             CompoundNBT nbt;
     		try {
     			if(!file.exists()) {

@@ -3,7 +3,7 @@ package kineticdevelopment.arcana.api.misc;
 import java.util.ArrayList;
 import java.util.List;
 
-public class IntegerUtils {
+public class ArcanaIntegerUtils {
 	
 	public static List<Integer> ArrayToList(int[] array) {
 		List<Integer> intList = new ArrayList<Integer>();

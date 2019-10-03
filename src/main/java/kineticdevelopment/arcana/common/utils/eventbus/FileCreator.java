@@ -3,18 +3,24 @@ package kineticdevelopment.arcana.common.utils.eventbus;
 import java.io.File;
 import java.io.IOException;
 
+import kineticdevelopment.arcana.api.misc.ArcanaFileUtils;
 import kineticdevelopment.arcana.common.utils.Constants;
+import kineticdevelopment.arcana.common.utils.taint.TaintLevelHandler;
 import net.minecraftforge.event.entity.player.PlayerEvent.PlayerLoggedInEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class FileCreator {
+	
 	@SubscribeEvent
 	public static void onWorldLoad(PlayerLoggedInEvent event) {
-		File aspectDataDir = new File("Arcana/"+event.getPlayer().world.getWorldInfo().getWorldName(), "aspectdata");
+		File dir = ArcanaFileUtils.getWorldDirectory(event.getPlayer().world);
+		
+		File aspectDataDir = new File(dir, "Arcana/aspectdata");
 		aspectDataDir.mkdirs();
 		File playerAspectData = new File(aspectDataDir, event.getPlayer().getCachedUniqueIdString()+".aspectpool");
+		TaintLevelHandler.createTaintLevelFile(event.getPlayer().world);
 		
 		if(!playerAspectData.exists()) {
 			try {
@@ -25,7 +31,7 @@ public class FileCreator {
 			}
 		}
 		
-		File researchDataDir = new File("Arcana/"+event.getPlayer().world.getWorldInfo().getWorldName(), "researchdata");
+		File researchDataDir = new File(dir, "Arcana/researchdata");
 		researchDataDir.mkdirs();  	  
 		File playerResearchBlackList = new File(researchDataDir, event.getPlayer().getCachedUniqueIdString()+".researchblacklist");
 		
