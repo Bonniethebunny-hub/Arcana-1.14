@@ -23,8 +23,6 @@ public class TaintSpreader {
     static Block[] TaintedGrassProspects = {
             Blocks.GRASS_BLOCK,
             Blocks.MYCELIUM
-
-
     };
 
     /**
@@ -36,7 +34,6 @@ public class TaintSpreader {
             Blocks.COARSE_DIRT,
             Blocks.PODZOL,
             Blocks.SANDSTONE
-
     };
 
     /**

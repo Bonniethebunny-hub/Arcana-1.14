@@ -21,8 +21,6 @@ import kineticdevelopment.arcana.api.misc.IntegerUtils;
 import kineticdevelopment.arcana.common.utils.Constants;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.monster.ZombieEntity;
 import net.minecraft.entity.player.PlayerEntity;

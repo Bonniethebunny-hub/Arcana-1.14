@@ -3,7 +3,6 @@
  * Copyright Kinetic Development 2019
  */
 
-
 package kineticdevelopment.arcana.core;
 
 
@@ -33,28 +32,25 @@ public class Arcana {
     public static Logger LOGGER = LogManager.getLogger(MOD_ID);
 
     public Arcana() {
-
         instance = this;
         MinecraftForge.EVENT_BUS.addListener(this::serverStarting);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::loadComplete);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::commonSetupEvent);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientSetupEvent);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::dedicatedServerSetupEvent);
-
-
     }
 
-    private void dedicatedServerSetupEvent (FMLDedicatedServerSetupEvent event) {
+    private void dedicatedServerSetupEvent(FMLDedicatedServerSetupEvent event) {
         //Place anything that should only run when on a dedicated server
     }
 
-    private void commonSetupEvent (final FMLCommonSetupEvent event) {
-        ClientProxy.init();
+    private void commonSetupEvent(final FMLCommonSetupEvent event) {
         OreGeneration.setupOreGeneration();
         LOGGER.info("Setup method registered.");
     }
 
     private void clientSetupEvent(final FMLClientSetupEvent event) {
+    	ClientProxy.init();
     	ClientRegistry.registerKeyBinding(ModKeyBindings.SCANWITHGOGGLES);
     }
 

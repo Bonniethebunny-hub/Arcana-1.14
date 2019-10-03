@@ -5,7 +5,9 @@
 package kineticdevelopment.arcana.api.blocks;
 
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
+import kineticdevelopment.arcana.common.utils.taint.TaintLevelHandler;
 import kineticdevelopment.arcana.common.utils.taint.TaintSpreader;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.StairsBlock;
@@ -24,7 +26,10 @@ public class TaintedStairsBlock extends StairsBlock {
     }
 
     public void tick(BlockState state, World worldIn, BlockPos pos, Random random) {
-
-        TaintSpreader.spreadTaint(worldIn, pos);
+    	int h = ThreadLocalRandom.current().nextInt(0, 105 - ((int) TaintLevelHandler.getTaintLevel(worldIn)));
+    	
+    	if(h == 0) {
+    		TaintSpreader.spreadTaint(worldIn, pos);
+    	}
     }
 }

@@ -2,11 +2,13 @@ package kineticdevelopment.arcana.api.blocks;
 
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 import javax.annotation.Nullable;
 
 import kineticdevelopment.arcana.api.effects.ArcanaEffects;
 import kineticdevelopment.arcana.init.blocks.ModBlockStates;
+import kineticdevelopment.arcana.common.utils.taint.TaintLevelHandler;
 import kineticdevelopment.arcana.common.utils.taint.TaintSpreader;
 import net.minecraft.block.AirBlock;
 import net.minecraft.block.Block;
@@ -51,8 +53,13 @@ public class TaintedBlock extends Block {
     }
 
     public void tick(BlockState state, World worldIn, BlockPos pos, Random random) {
-
-        TaintSpreader.spreadTaint(worldIn, pos);
+        
+    	int h = ThreadLocalRandom.current().nextInt(0, 105 - ((int) TaintLevelHandler.getTaintLevel(worldIn)));
+    	
+    	if(h == 0) {
+    		TaintSpreader.spreadTaint(worldIn, pos);
+    	}
+    	
         @SuppressWarnings("unused")
 		boolean surrounded = true;
         for (int x = -1; x < 2; x++) {
