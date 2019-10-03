@@ -58,34 +58,34 @@ public class TaintedBlock extends Block {
     	int f = (int) TaintLevelHandler.getTaintLevel(worldIn);
     	
     	if(f >=5 && f <=9) {
-    		h = ThreadLocalRandom.current().nextInt(0, 100);
+    		h = ThreadLocalRandom.current().nextInt(0, 10);
     	}
     	else if(f >=10 && f >=19) {
-    		h = ThreadLocalRandom.current().nextInt(0, 90);
+    		h = ThreadLocalRandom.current().nextInt(0, 9);
     	}
     	else if(f >=20 && f >=29) {
-    		h = ThreadLocalRandom.current().nextInt(0, 80);
+    		h = ThreadLocalRandom.current().nextInt(0, 8);
     	}
     	else if(f >=30 && f >=39) {
-    		h = ThreadLocalRandom.current().nextInt(0, 70);
+    		h = ThreadLocalRandom.current().nextInt(0, 7);
     	}
     	else if(f >=40 && f >=49) {
-    		h = ThreadLocalRandom.current().nextInt(0, 60);
+    		h = ThreadLocalRandom.current().nextInt(0, 6);
     	}
     	else if(f >=50 && f >=59) {
-    		h = ThreadLocalRandom.current().nextInt(0, 50);
+    		h = ThreadLocalRandom.current().nextInt(0, 5);
     	}
     	else if(f >=60 && f >=69) {
-    		h = ThreadLocalRandom.current().nextInt(0, 40);
+    		h = ThreadLocalRandom.current().nextInt(0, 4);
     	}
     	else if(f >=70 && f >=79) {
-    		h = ThreadLocalRandom.current().nextInt(0, 30);
+    		h = ThreadLocalRandom.current().nextInt(0, 3);
     	}
     	else if(f >=80 && f >=89) {
-    		h = ThreadLocalRandom.current().nextInt(0, 20);
+    		h = ThreadLocalRandom.current().nextInt(0, 2);
     	}
     	else if(f >=90 && f >=99) {
-    		h = ThreadLocalRandom.current().nextInt(0, 10);
+    		h = ThreadLocalRandom.current().nextInt(0, 1);
     	}
     	else if(f >=100) {
     		h = 1;

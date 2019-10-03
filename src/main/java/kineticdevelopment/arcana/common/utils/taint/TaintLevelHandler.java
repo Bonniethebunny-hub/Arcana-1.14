@@ -18,7 +18,7 @@ public class TaintLevelHandler {
     	
         if(!world.isRemote) {
             if(Minecraft.getInstance().isSingleplayer()) {
-                final File file = new File(dir, "TaintLevel.taint");
+                final File file = new File(dir, "Arcana/TaintLevel.taint");
                 CompoundNBT nbt;
         		try {
         			if(!file.exists()) {
@@ -45,7 +45,7 @@ public class TaintLevelHandler {
         }
 
         if(world.isRemote) {
-            final File file = new File(dir, "TaintLevel.taint");
+            final File file = new File(dir, "Arcana/TaintLevel.taint");
             CompoundNBT nbt;
     		try {
     			if(!file.exists()) {
@@ -76,7 +76,7 @@ public class TaintLevelHandler {
     	
         if (!world.isRemote) {
         	CompoundNBT nbt;
-        	final File file = new File(dir, "TaintLevel.taint");
+        	final File file = new File(dir, "Arcana/TaintLevel.taint");
         	try {
         		nbt = CompressedStreamTools.readCompressed(new FileInputStream(file));
         		float returnvalue = nbt.getFloat("TaintLevel");
@@ -96,7 +96,7 @@ public class TaintLevelHandler {
     	File dir = ArcanaFileUtils.getWorldDirectory(world);
     	
         if (!world.isRemote) {
-        	final File file = new File(dir, "TaintLevel.taint");
+        	final File file = new File(dir, "Arcana/TaintLevel.taint");
             CompoundNBT nbt;
     		try {
     			if(!file.exists()) {
@@ -128,7 +128,7 @@ public class TaintLevelHandler {
     	File dir = ArcanaFileUtils.getWorldDirectory(world);
     	
         if (!world.isRemote) {
-        	final File file = new File(dir, "TaintLevel.taint");
+        	final File file = new File(dir, "Arcana/TaintLevel.taint");
             CompoundNBT nbt;
     		try {
     			if(!file.exists()) {
