@@ -16,7 +16,8 @@ import kineticdevelopment.arcana.api.exceptions.AspectNotFoundException;
 import kineticdevelopment.arcana.api.exceptions.BlockHasNoAspectsException;
 import kineticdevelopment.arcana.api.exceptions.ItemHasNoAspectsException;
 import kineticdevelopment.arcana.api.exceptions.MobHasNoAspectsException;
-import kineticdevelopment.arcana.api.misc.IntegerUtils;
+import kineticdevelopment.arcana.api.misc.ArcanaFileUtils;
+import kineticdevelopment.arcana.api.misc.ArcanaIntegerUtils;
 import kineticdevelopment.arcana.common.utils.Constants;
 import net.minecraft.block.Block;
 import net.minecraft.entity.LivingEntity;
@@ -153,9 +154,10 @@ public class AspectPoolHandler {
 	public static void addAspectsToPlayer(PlayerEntity player, World world, AspectType[] aspect, int amount) throws FileNotFoundException, IOException {
 		File aspectDataDir = null;
 		File playerAspectData = null;
+		File dir = ArcanaFileUtils.getWorldDirectory(world);
 		CompoundNBT nbt;
 		try {
-			aspectDataDir = new File("Arcana/"+world.getWorldInfo().getWorldName(), "aspectdata");
+			aspectDataDir = new File(dir, "Arcana/aspectdata");
 			aspectDataDir.mkdirs();
 			playerAspectData = new File(aspectDataDir, player.getCachedUniqueIdString()+".aspectpool");
 			
@@ -198,9 +200,10 @@ public class AspectPoolHandler {
 	public static void removeAspectsFromPlayer(PlayerEntity player, World world, AspectType[] aspect, int amount) {
 		File aspectDataDir = null;
 		File playerAspectData = null;
+		File dir = ArcanaFileUtils.getWorldDirectory(world);
 		CompoundNBT nbt;
 		try {
-			aspectDataDir = new File("Arcana/"+world.getWorldInfo().getWorldName(), "aspectdata");
+			aspectDataDir = new File(dir, "Arcana/aspectdata");
 			aspectDataDir.mkdirs();
 			playerAspectData = new File(aspectDataDir, player.getCachedUniqueIdString()+".aspectpool");
 			
@@ -244,9 +247,10 @@ public class AspectPoolHandler {
 	@Nullable
 	public static ArrayList<AspectType> getPlayerAspects(PlayerEntity player, World world) {
 		ArrayList<AspectType> aspectlist = new ArrayList<Aspect.AspectType>();
+		File dir = ArcanaFileUtils.getWorldDirectory(world);
 		
 		try {
-			File aspectDataDir = new File("Arcana/"+world.getWorldInfo().getWorldName(), "aspectdata");
+			File aspectDataDir = new File(dir, "Arcana/aspectdata");
 			
 			aspectDataDir.mkdirs();
 			
@@ -289,9 +293,10 @@ public class AspectPoolHandler {
 	 */
 	public static int getPlayerAspectAmount(PlayerEntity player, Aspect.AspectType type, World world) throws AspectNotFoundException {
 		int returnint = 2138008;
+		File dir = ArcanaFileUtils.getWorldDirectory(world);
 		
 		try {
-			File aspectDataDir = new File("Arcana/"+world.getWorldInfo().getWorldName(), "aspectdata");
+			File aspectDataDir = new File(dir, "Arcana/aspectdata");
 			
 			aspectDataDir.mkdirs();
 			
@@ -319,11 +324,13 @@ public class AspectPoolHandler {
 	public static void addBlockToPlayerResearchBlackList(Block block, PlayerEntity player, World world) {
 		File researchDataDir = null;
 		File playerResearchBlackList = null;
+		File dir = ArcanaFileUtils.getWorldDirectory(world);
+		
 		CompoundNBT nbt;
 		List<Integer> ids;
 		int[] ids1;
 		try {
-			researchDataDir = new File("Arcana/"+world.getWorldInfo().getWorldName(), "researchdata");
+			researchDataDir = new File(dir, "Arcana/researchdata");
 			researchDataDir.mkdirs();  	  
 			playerResearchBlackList = new File(researchDataDir, player.getCachedUniqueIdString()+".researchblacklist");
 			
@@ -336,7 +343,7 @@ public class AspectPoolHandler {
 			else {
 				nbt = CompressedStreamTools.readCompressed(new FileInputStream(playerResearchBlackList));
 				ids1 = nbt.getIntArray("Blocks");
-				ids = IntegerUtils.ArrayToList(ids1);
+				ids = ArcanaIntegerUtils.ArrayToList(ids1);
 				if(!isBlockOnPlayerResearchBlackList(block, player, world)) {
 					ids.add(Item.getIdFromItem(block.asItem()));
 				}
@@ -357,9 +364,11 @@ public class AspectPoolHandler {
 	}
 	
 	public static boolean isBlockOnPlayerResearchBlackList(Block block, PlayerEntity player, World world) throws FileNotFoundException {
+		File dir = ArcanaFileUtils.getWorldDirectory(world);
+		
 		try {
 			int[] ids;
-			File researchDataDir = new File("Arcana/"+world.getWorldInfo().getWorldName(), "researchdata");
+			File researchDataDir = new File(dir, "Arcana/researchdata");
 			researchDataDir.mkdirs();  	  
 			File playerResearchBlackList = new File(researchDataDir, player.getCachedUniqueIdString()+".researchblacklist");;
 			CompoundNBT nbt2 = null;
