@@ -54,13 +54,47 @@ public class TaintedBlock extends Block {
 
     public void tick(BlockState state, World worldIn, BlockPos pos, Random random) {
         
-    	int h = ThreadLocalRandom.current().nextInt(0, 105 - ((int) TaintLevelHandler.getTaintLevel(worldIn)));
+    	int h = 0;
+    	int f = (int) TaintLevelHandler.getTaintLevel(worldIn);
     	
-    	if(h == 0) {
+    	if(f >=5 && f <=9) {
+    		h = ThreadLocalRandom.current().nextInt(0, 100);
+    	}
+    	else if(f >=10 && f >=19) {
+    		h = ThreadLocalRandom.current().nextInt(0, 90);
+    	}
+    	else if(f >=20 && f >=29) {
+    		h = ThreadLocalRandom.current().nextInt(0, 80);
+    	}
+    	else if(f >=30 && f >=39) {
+    		h = ThreadLocalRandom.current().nextInt(0, 70);
+    	}
+    	else if(f >=40 && f >=49) {
+    		h = ThreadLocalRandom.current().nextInt(0, 60);
+    	}
+    	else if(f >=50 && f >=59) {
+    		h = ThreadLocalRandom.current().nextInt(0, 50);
+    	}
+    	else if(f >=60 && f >=69) {
+    		h = ThreadLocalRandom.current().nextInt(0, 40);
+    	}
+    	else if(f >=70 && f >=79) {
+    		h = ThreadLocalRandom.current().nextInt(0, 30);
+    	}
+    	else if(f >=80 && f >=89) {
+    		h = ThreadLocalRandom.current().nextInt(0, 20);
+    	}
+    	else if(f >=90 && f >=99) {
+    		h = ThreadLocalRandom.current().nextInt(0, 10);
+    	}
+    	else if(f >=100) {
+    		h = 1;
+    	}
+    	
+    	if(h == 1) {
     		TaintSpreader.spreadTaint(worldIn, pos);
     	}
     	
-        @SuppressWarnings("unused")
 		boolean surrounded = true;
         for (int x = -1; x < 2; x++) {
             for (int y = -1; y < 2; y++) {
@@ -75,7 +109,7 @@ public class TaintedBlock extends Block {
             }
         }
         
-        if(surrounded = true) {
+        if(surrounded == true) {
         	worldIn.setBlockState(pos, state.with(ModBlockStates.FULLYTAINTED, true));
         }
     }

@@ -33,15 +33,19 @@ public class KeyPressedEvents {
 				if(player.getItemStackFromSlot(EquipmentSlotType.HEAD).isItemEqual(new ItemStack(ArcanaArmour.aspect_goggles))) {
 					if(Minecraft.getInstance().currentScreen instanceof InventoryScreen) {
 						InventoryScreen inv = (InventoryScreen) Minecraft.getInstance().currentScreen;
-						Item item = player.inventory.getStackInSlot(inv.getSlotUnderMouse().getSlotIndex()).getItem();
-						
-						AspectPoolHandler.addItemAspectsToPlayer(item, player, Minecraft.getInstance().world, 1);
+						if(player.inventory.getStackInSlot(inv.getSlotUnderMouse().getSlotIndex()).getItem() != null) {
+							Item item = player.inventory.getStackInSlot(inv.getSlotUnderMouse().getSlotIndex()).getItem();
+							
+							AspectPoolHandler.addItemAspectsToPlayer(item, player, Minecraft.getInstance().world, 1);
+						}
 					}
 					else if(Minecraft.getInstance().currentScreen instanceof CreativeScreen) {
 						CreativeScreen inv = (CreativeScreen) Minecraft.getInstance().currentScreen;
-						Item item = player.inventory.getStackInSlot(inv.getSlotUnderMouse().getSlotIndex()).getItem();
-						
-						AspectPoolHandler.addItemAspectsToPlayer(item, player, Minecraft.getInstance().world, 1);
+						if(player.inventory.getStackInSlot(inv.getSlotUnderMouse().getSlotIndex()) != null) {
+							Item item = player.inventory.getStackInSlot(inv.getSlotUnderMouse().getSlotIndex()).getItem();
+							
+							AspectPoolHandler.addItemAspectsToPlayer(item, player, Minecraft.getInstance().world, 1);
+						}
 					}
 					else {
 						if(Minecraft.getInstance().objectMouseOver.getType().equals(Type.ENTITY)) {
