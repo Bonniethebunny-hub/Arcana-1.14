@@ -13,7 +13,9 @@ import net.minecraft.item.Items;
 public class AspectAssignments {
 	@SuppressWarnings("serial")
 	static HashMap<Block, AspectType[]> BlockAspects = new HashMap<Block, AspectType[]>() {{
-		
+
+
+		put(Blocks.ACACIA_BUTTON, new AspectType[] {AspectType.MOVEMENT, AspectType.TREE, AspectType.ENERGY});
 		put(Blocks.DIRT, new AspectType[] {Aspect.AspectType.EARTH});
 		put(Blocks.ICE, new AspectType[] {Aspect.AspectType.ICE, Aspect.AspectType.WATER});
 		

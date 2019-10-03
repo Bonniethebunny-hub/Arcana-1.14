@@ -9,6 +9,7 @@ import kineticdevelopment.arcana.api.aspects.AspectItem;
 import kineticdevelopment.arcana.api.registry.ArcanaItems;
 import kineticdevelopment.arcana.common.utils.creativetab.ArcanaAspectsItemGroup;
 import net.minecraft.item.Item;
+import net.minecraft.util.text.StringTextComponent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -20,6 +21,8 @@ public class ModAspects {
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> even)
     {
+        ArcanaItems.aspect_overworld = registerItem(new AspectItem(new Item.Properties().maxStackSize(64).group(ArcanaAspectsItemGroup.instance )),  "aspect_overworld" );
+        ArcanaItems.aspect_energy = registerItem(new AspectItem(new Item.Properties().maxStackSize(64).group(ArcanaAspectsItemGroup.instance)), "aspect_energy");
         ArcanaItems.aspect_air = registerItem(new AspectItem(new Item.Properties().maxStackSize(64).group(ArcanaAspectsItemGroup.instance)), "aspect_air");
         ArcanaItems.aspect_armour = registerItem(new AspectItem(new Item.Properties().maxStackSize(64).group(ArcanaAspectsItemGroup.instance)), "aspect_armour");
         ArcanaItems.aspect_aura = registerItem(new AspectItem(new Item.Properties().maxStackSize(64).group(ArcanaAspectsItemGroup.instance)), "aspect_aura");

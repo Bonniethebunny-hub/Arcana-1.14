@@ -59,7 +59,10 @@ public class Aspect {
 		WATER,
 		WEAPON,
 		WIND,
-		WRATH
+		WRATH,
+		ENERGY,
+		OVERWORLD
+
 	}
 	
 	@Nullable
@@ -119,6 +122,8 @@ public class Aspect {
 			case "WEAPON": return AspectType.WEAPON;
 			case "WIND": return AspectType.WIND;
 			case "WRATH": return AspectType.WRATH;
+			case "OVERWORLD": return AspectType.OVERWORLD;
+			case "ENERGY": return AspectType.ENERGY;
 		}
 	}
 }

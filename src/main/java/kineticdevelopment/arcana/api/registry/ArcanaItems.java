@@ -74,6 +74,8 @@ public class ArcanaItems {
     public static Item aspect_weapon;
     public static Item aspect_wind;
     public static Item aspect_wrath;
+    public static Item aspect_overworld;
+    public static Item aspect_energy;
 
 
 
