@@ -19,6 +19,7 @@ public class Aspect {
 		EARTH,
 		ELDRITCH,
 		ENDER,
+		ENERGY,
 		ENVY,
 		EXCHANGE,
 		FABRIC,
@@ -39,9 +40,11 @@ public class Aspect {
 		MANA,
 		METAL,
 		MINING,
+		MIND,
 		MOVEMENT,
 		NETHER,
 		ORDER,
+		OVERWORLD,
 		PLANT,
 		PRIDE,
 		SEEDS,
@@ -59,11 +62,7 @@ public class Aspect {
 		WATER,
 		WEAPON,
 		WIND,
-		WRATH,
-		ENERGY,
-		OVERWORLD,
-		MIND
-
+		WRATH
 	}
 	
 	@Nullable

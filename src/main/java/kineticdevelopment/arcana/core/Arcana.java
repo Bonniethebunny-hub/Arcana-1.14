@@ -55,11 +55,8 @@ public class Arcana {
     }
 
     private void loadComplete(final FMLLoadCompleteEvent event) {
-
-
     }
 
     public void serverStarting(FMLServerStartingEvent event) {
-
     }
 }
