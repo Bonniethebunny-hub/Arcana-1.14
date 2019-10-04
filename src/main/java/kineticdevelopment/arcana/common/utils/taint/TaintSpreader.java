@@ -124,6 +124,15 @@ public class TaintSpreader {
         put(Blocks.OAK_PLANKS, ArcanaBlocks.tainted_oak_planks);
         put(Blocks.OAK_SLAB, ArcanaBlocks.tainted_plank_slab);
         put(Blocks.COBBLESTONE_SLAB, ArcanaBlocks.tainted_rock_slab);
+        put(Blocks.REDSTONE_BLOCK, ArcanaBlocks.tainted_redstone_block);
+        put(ArcanaBlocks.thaumium_block, ArcanaBlocks.tainted_thaumium_block);
+        put(Blocks.LAPIS_BLOCK, ArcanaBlocks.tainted_lapis_block);
+        put(Blocks.IRON_BLOCK, ArcanaBlocks.tainted_iron_block);
+        put(Blocks.GOLD_BLOCK, ArcanaBlocks.tainted_gold_block);
+        put(Blocks.EMERALD_BLOCK, ArcanaBlocks.tainted_emerald_block);
+        put(Blocks.DIAMOND_BLOCK, ArcanaBlocks.tainted_diamond_block);
+        put(Blocks.COAL_BLOCK, ArcanaBlocks.tainted_coal_block);
+        put(ArcanaBlocks.arcanium_block, ArcanaBlocks.tainted_arcanium_block);
         
         put(ArcanaBlocks.tainted_amber_ore, Blocks.GRASS);
         

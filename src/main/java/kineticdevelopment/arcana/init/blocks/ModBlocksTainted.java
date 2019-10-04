@@ -108,6 +108,16 @@ public class ModBlocksTainted {
         tainted_oak_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "tainted_oak_log");
         tainted_oak_leaves = registerBlock(new TaintedLeavesBlock(), "tainted_oak_leaves");
 
+        //Tainted Full mat. blocks
+        tainted_redstone_block = registerBlock(new TaintedBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F,6.0F).sound(SoundType.METAL)), "tainted_redstone_block");
+        tainted_thaumium_block = registerBlock(new TaintedBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F,6.0F).sound(SoundType.METAL)), "tainted_thaumium_block");
+        tainted_lapis_block = registerBlock(new TaintedBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F,6.0F).sound(SoundType.STONE)), "tainted_lapis_block");
+        tainted_iron_block = registerBlock(new TaintedBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F,6.0F).sound(SoundType.METAL)), "tainted_iron_block");
+        tainted_gold_block = registerBlock(new TaintedBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F,6.0F).sound(SoundType.METAL)), "tainted_gold_block");
+        tainted_emerald_block = registerBlock(new TaintedBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F,6.0F).sound(SoundType.METAL)), "tainted_emerald_block");
+        tainted_diamond_block = registerBlock(new TaintedBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F,6.0F).sound(SoundType.METAL)), "tainted_diamond_block");
+        tainted_coal_block = registerBlock(new TaintedBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F,6.0F).sound(SoundType.STONE)), "tainted_coal_block");
+        tainted_arcanium_block = registerBlock(new TaintedBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F,6.0F).sound(SoundType.METAL)), "tainted_arcanium_block");
 
         tainted_grass_block = registerBlock(new TaintedGrassBlock(Block.Properties.create(Material.GOURD).hardnessAndResistance(0.1F,0.2F).sound(SoundType.GROUND)), "tainted_grass_block");
         tainted_farmland = registerBlock(new TaintedFarmland(Block.Properties.create(Material.GOURD).hardnessAndResistance(0.1F,0.2F).sound(SoundType.GROUND)), "tainted_farmland");

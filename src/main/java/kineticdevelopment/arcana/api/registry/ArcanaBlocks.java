@@ -85,6 +85,17 @@ public class ArcanaBlocks {
 
     //tainted grass
 
+    //tainted full mat. blocks
+    public static Block tainted_redstone_block;
+    public static Block tainted_thaumium_block;
+    public static Block tainted_lapis_block;
+    public static Block tainted_iron_block;
+    public static Block tainted_gold_block;
+    public static Block tainted_emerald_block;
+    public static Block tainted_diamond_block;
+    public static Block tainted_coal_block;
+    public static Block tainted_arcanium_block;
+
     //ore
     public static Block amber_ore;
     public static Block cinnabar_ore;
@@ -155,7 +166,15 @@ public class ArcanaBlocks {
     public static Block untainted_oak_log;
     public static Block untainted_oak_leaves;
 
-
+    public static Block untainted_redstone_block;
+    public static Block untainted_thaumium_block;
+    public static Block untainted_lapis_block;
+    public static Block untainted_iron_block;
+    public static Block untainted_gold_block;
+    public static Block untainted_emerald_block;
+    public static Block untainted_diamond_block;
+    public static Block untainted_coal_block;
+    public static Block untainted_arcanium_block;
 
     //untainted  rocks
     public static Block untainted_rock;
@@ -164,8 +183,6 @@ public class ArcanaBlocks {
     //untainted  other
     public static Block untainted_sand;
     public static Block untainted_gravel;
-
-
 
     //untainted plants
     public static Block untainted_fibers;
@@ -176,6 +193,10 @@ public class ArcanaBlocks {
     public static Block untainted_pumpkin;
     public static Block untainted_jack_olantern;
     public static Block untainted_carved_pumpkin;
+
+    //Mat. Blocks
+    public static Block arcanium_block;
+    public static Block thaumium_block;
 
     //nodes
     public static Block bright_node;
