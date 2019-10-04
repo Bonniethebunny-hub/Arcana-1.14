@@ -105,10 +105,36 @@ public class TaintSpreader {
 
     @SuppressWarnings("serial")
     static HashMap<Block, Block> singleBlockConversions = new HashMap<Block, Block>() {{
+
+        //Trees
         put(Blocks.OAK_LOG, ArcanaBlocks.tainted_oak_log);
         put(Blocks.OAK_LEAVES, ArcanaBlocks.tainted_oak_leaves);
+        put(Blocks.OAK_STAIRS, ArcanaBlocks.tainted_plank_stairs);
+        put(Blocks.OAK_PLANKS, ArcanaBlocks.tainted_oak_planks);
+        put(Blocks.OAK_SLAB, ArcanaBlocks.tainted_plank_slab);
+
+        put(Blocks.ACACIA_LOG, ArcanaBlocks.tainted_acacia_log);
+        put(Blocks.STRIPPED_ACACIA_LOG, ArcanaBlocks.tainted_stripped_acacia_log);
+        put(Blocks.ACACIA_LEAVES, ArcanaBlocks.tainted_acacia_leaves);
+        //put(Blocks.ACACIA_STAIRS, ArcanaBlocks.tainted_acacia_stairs);
+        put(Blocks.ACACIA_PLANKS, ArcanaBlocks.tainted_acacia_planks);
+        //put(Blocks.ACACIA_SLAB, ArcanaBlocks.tainted_acacia_slab);
+
+        put(Blocks.SPRUCE_LOG, ArcanaBlocks.tainted_spruce_log);
+        put(Blocks.STRIPPED_SPRUCE_LOG, ArcanaBlocks.tainted_stripped_spruce_log);
+        put(Blocks.SPRUCE_LEAVES, ArcanaBlocks.tainted_spruce_leaves);
+        //put(Blocks.SPRUCE_STAIRS, ArcanaBlocks.tainted_spruce_stairs);
+        put(Blocks.SPRUCE_PLANKS, ArcanaBlocks.tainted_spruce_planks);
+        //put(Blocks.SPRUCE_SLAB, ArcanaBlocks.tainted_spruce_slab);
+
+        //Misc
         put(Blocks.GRASS_PATH, ArcanaBlocks.tainted_path);
         put(Blocks.FARMLAND, ArcanaBlocks.tainted_farmland);
+        put(Blocks.SAND, ArcanaBlocks.tainted_sand);
+        put(Blocks.RED_SAND, ArcanaBlocks.tainted_sand);
+        put(Blocks.GRAVEL, ArcanaBlocks.tainted_gravel);
+
+        //Ores
         put(Blocks.COAL_ORE, ArcanaBlocks.tainted_coal_ore);
         put(Blocks.DIAMOND_ORE, ArcanaBlocks.tainted_diamond_ore);
         put(Blocks.IRON_ORE, ArcanaBlocks.tainted_iron_ore);
@@ -117,12 +143,8 @@ public class TaintSpreader {
         put(Blocks.LAPIS_ORE, ArcanaBlocks.tainted_lapis_lazuli_ore);
         put(Blocks.EMERALD_ORE, ArcanaBlocks.tainted_emerald_ore);
         //put(ArcanaBlocks.cinnabar_ore, ArcanaBlocks.tainted_cinnabar_ore);
-        put(Blocks.SAND, ArcanaBlocks.tainted_sand);
-        put(Blocks.RED_SAND, ArcanaBlocks.tainted_sand);
-        put(Blocks.GRAVEL, ArcanaBlocks.tainted_gravel);
-        put(Blocks.OAK_STAIRS, ArcanaBlocks.tainted_plank_stairs);
-        put(Blocks.OAK_PLANKS, ArcanaBlocks.tainted_oak_planks);
-        put(Blocks.OAK_SLAB, ArcanaBlocks.tainted_plank_slab);
+
+        //Mat. Blocks
         put(Blocks.COBBLESTONE_SLAB, ArcanaBlocks.tainted_rock_slab);
         put(Blocks.REDSTONE_BLOCK, ArcanaBlocks.tainted_redstone_block);
         put(ArcanaBlocks.thaumium_block, ArcanaBlocks.tainted_thaumium_block);
@@ -133,7 +155,8 @@ public class TaintSpreader {
         put(Blocks.DIAMOND_BLOCK, ArcanaBlocks.tainted_diamond_block);
         put(Blocks.COAL_BLOCK, ArcanaBlocks.tainted_coal_block);
         put(ArcanaBlocks.arcanium_block, ArcanaBlocks.tainted_arcanium_block);
-        
+
+
         put(ArcanaBlocks.tainted_amber_ore, Blocks.GRASS);
         
         //To be replaced with tainted wood pile

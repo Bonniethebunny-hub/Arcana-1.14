@@ -108,6 +108,20 @@ public class ModBlocksTainted {
         tainted_oak_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "tainted_oak_log");
         tainted_oak_leaves = registerBlock(new TaintedLeavesBlock(), "tainted_oak_leaves");
 
+        tainted_acacia_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "tainted_acacia_log");
+        tainted_acacia_planks = registerBlock(new TaintedBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "tainted_acacia_planks");
+        //tainted_acacia_slab = registerBlock(new TaintedSlab(Block.Properties.from(tainted_acacia_planks)), "tainted_acacia_slab");
+        //tainted_acacia_stairs = registerBlock(new TaintedStairsBlock(tainted_acacia_planks.getDefaultState(), Block.Properties.from(tainted_greatwood_planks)), "tainted_acacia_stairs");
+        tainted_stripped_acacia_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "tainted_stripped_acacia_log");
+        tainted_acacia_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "tainted_acacia_leaves");
+
+        tainted_spruce_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "tainted_spruce_log");
+        tainted_spruce_planks = registerBlock(new TaintedBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "tainted_spruce_planks");
+        //tainted_spruce_slab = registerBlock(new TaintedSlab(Block.Properties.from(tainted_spruce_planks)), "tainted_spruce_slab");
+        //tainted_spruce_stairs = registerBlock(new TaintedStairsBlock(tainted_spruce_planks.getDefaultState(), Block.Properties.from(tainted_spruce_planks)), "tainted_spruce_stairs");
+        tainted_stripped_spruce_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "tainted_stripped_spruce_log");
+        tainted_spruce_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "tainted_spruce_leaves");
+
         //Tainted Full mat. blocks
         tainted_redstone_block = registerBlock(new TaintedBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F,6.0F).sound(SoundType.METAL)), "tainted_redstone_block");
         tainted_thaumium_block = registerBlock(new TaintedBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F,6.0F).sound(SoundType.METAL)), "tainted_thaumium_block");

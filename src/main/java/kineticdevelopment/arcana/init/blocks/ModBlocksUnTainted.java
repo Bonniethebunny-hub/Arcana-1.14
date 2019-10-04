@@ -79,6 +79,20 @@ public class ModBlocksUnTainted {
         untainted_oak_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_oak_log");
         untainted_oak_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "untainted_oak_leaves");
 
+        untainted_acacia_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_acacia_log");
+        untainted_acacia_planks = registerBlock(new TaintedBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_acacia_planks");
+        //untainted_acacia_slab = registerBlock(new TaintedSlab(Block.Properties.from(untainted_acacia_planks)), "untainted_acacia_slab");
+        //untainted_acacia_stairs = registerBlock(new TaintedStairsBlock(tainted_acacia_planks.getDefaultState(), Block.Properties.from(untainted_greatwood_planks)), "untainted_acacia_stairs");
+        untainted_stripped_acacia_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_stripped_acacia_log");
+        untainted_acacia_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "untainted_acacia_leaves");
+
+        untainted_spruce_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_spruce_log");
+        untainted_spruce_planks = registerBlock(new TaintedBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_spruce_planks");
+        //untainted_spruce_slab = registerBlock(new TaintedSlab(Block.Properties.from(untainted_spruce_planks)), "untainted_spruce_slab");
+        //untainted_spruce_stairs = registerBlock(new TaintedStairsBlock(tainted_spruce_planks.getDefaultState(), Block.Properties.from(untainted_spruce_planks)), "untainted_spruce_stairs");
+        untainted_stripped_spruce_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_stripped_spruce_log");
+        untainted_spruce_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "untainted_spruce_leaves");
+
         //Full mat. blocks
         untainted_redstone_block = registerBlock(new TaintedBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F,6.0F).sound(SoundType.METAL)), "untainted_redstone_block");
         untainted_thaumium_block = registerBlock(new TaintedBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F,6.0F).sound(SoundType.METAL)), "untainted_thaumium_block");
