@@ -14,10 +14,13 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.EntityRayTraceResult;
 import net.minecraft.util.math.RayTraceResult.Type;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.world.World;
+import net.minecraft.world.dimension.DimensionType;
 import net.minecraftforge.client.event.InputEvent.KeyInputEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -29,22 +32,23 @@ public class KeyPressedEvents {
 	public static void onKeyPressed(KeyInputEvent event) {
 		if(event.getKey() == ModKeyBindings.SCANWITHGOGGLES.getKey().getKeyCode() && !Minecraft.getInstance().isGamePaused()) {
 			if(event.getAction() == GLFW.GLFW_RELEASE) {
-				PlayerEntity player = Minecraft.getInstance().player;
+				PlayerEntity player = (PlayerEntity) Minecraft.getInstance().player;
+				World world = Minecraft.getInstance().getIntegratedServer().getWorld(DimensionType.OVERWORLD);
 				if(player.getItemStackFromSlot(EquipmentSlotType.HEAD).isItemEqual(new ItemStack(ArcanaArmour.aspect_goggles))) {
 					if(Minecraft.getInstance().currentScreen instanceof InventoryScreen) {
 						InventoryScreen inv = (InventoryScreen) Minecraft.getInstance().currentScreen;
-						if(player.inventory.getStackInSlot(inv.getSlotUnderMouse().getSlotIndex()).getItem() != null) {
+						if(inv.getSlotUnderMouse() != null) {
 							Item item = player.inventory.getStackInSlot(inv.getSlotUnderMouse().getSlotIndex()).getItem();
 							
-							AspectPoolHandler.addItemAspectsToPlayer(item, player, Minecraft.getInstance().world, 1);
+							AspectPoolHandler.addItemAspectsToPlayer(item, player, world, 1);
 						}
 					}
 					else if(Minecraft.getInstance().currentScreen instanceof CreativeScreen) {
 						CreativeScreen inv = (CreativeScreen) Minecraft.getInstance().currentScreen;
-						if(player.inventory.getStackInSlot(inv.getSlotUnderMouse().getSlotIndex()) != null) {
+						if(inv.getSlotUnderMouse() != null) {
 							Item item = player.inventory.getStackInSlot(inv.getSlotUnderMouse().getSlotIndex()).getItem();
 							
-							AspectPoolHandler.addItemAspectsToPlayer(item, player, Minecraft.getInstance().world, 1);
+							AspectPoolHandler.addItemAspectsToPlayer(item, player, world, 1);
 						}
 					}
 					else {
@@ -52,11 +56,11 @@ public class KeyPressedEvents {
 							//Needs some work
 							LivingEntity entity = (LivingEntity) ((EntityRayTraceResult) Minecraft.getInstance().objectMouseOver).getEntity();
 							
-							AspectPoolHandler.addMobAspectsToPlayer(entity, player, Minecraft.getInstance().world, 1);
+							AspectPoolHandler.addMobAspectsToPlayer(entity, player, world, 1);
 						}
 						if(Minecraft.getInstance().objectMouseOver.getType().equals(Type.BLOCK)) {
-							Block block = Minecraft.getInstance().world.getBlockState(((BlockRayTraceResult) Minecraft.getInstance().objectMouseOver).getPos()).getBlock();
-							AspectPoolHandler.addBlockAspectsToPlayer(block, player, Minecraft.getInstance().world, 1);
+							Block block = world.getBlockState(((BlockRayTraceResult) Minecraft.getInstance().objectMouseOver).getPos()).getBlock();
+							AspectPoolHandler.addBlockAspectsToPlayer(block, player, world, 1);
 						}
 					}
 				}

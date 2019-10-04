@@ -6,7 +6,6 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Map.Entry;
 
 import javax.annotation.Nullable;
@@ -17,7 +16,6 @@ import kineticdevelopment.arcana.api.exceptions.BlockHasNoAspectsException;
 import kineticdevelopment.arcana.api.exceptions.ItemHasNoAspectsException;
 import kineticdevelopment.arcana.api.exceptions.MobHasNoAspectsException;
 import kineticdevelopment.arcana.api.misc.ArcanaFileUtils;
-import kineticdevelopment.arcana.api.misc.ArcanaIntegerUtils;
 import kineticdevelopment.arcana.common.utils.Constants;
 import net.minecraft.block.Block;
 import net.minecraft.entity.LivingEntity;
@@ -81,7 +79,7 @@ public class AspectPoolHandler {
 	
 	public static void addBlockAspectsToPlayer(Block block, PlayerEntity player, World world, int amount) {
 		try {
-			if(!isBlockOnPlayerResearchBlackList(block, player, world)) {
+			if(!DOLHandler.isBlockOnPlayerDOL(block, player, world)) {
 				AspectType[] aspects;
 				try {
 					aspects = AspectPoolHandler.getBlockAspects(block);
@@ -97,7 +95,7 @@ public class AspectPoolHandler {
 					e.printStackTrace();
 				}
 				
-				AspectPoolHandler.addBlockToPlayerResearchBlackList(block, player, world);
+				DOLHandler.addBlockToPlayerDOL(block, player, world);
 			}
 			else {
 				//Debug
@@ -111,16 +109,24 @@ public class AspectPoolHandler {
 	public static void addItemAspectsToPlayer(Item item, PlayerEntity player, World world, int amount) {
 		AspectType[] aspects;
 		try {
-			aspects = AspectPoolHandler.getItemAspects(item);
-			
-			for(int i=0; i<aspects.length; i++) {
-				try {
-					AspectPoolHandler.addAspectsToPlayer(player, world, aspects, amount);
-				} catch (IOException e) {
-					e.printStackTrace();
+			if(DOLHandler.isItemOnPlayerDOL(item, player, world)) {
+				aspects = AspectPoolHandler.getItemAspects(item);
+				
+				for(int i=0; i<aspects.length; i++) {
+					try {
+						AspectPoolHandler.addAspectsToPlayer(player, world, aspects, amount);
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
 				}
+				
+				DOLHandler.addItemToPlayerDOL(item, player, world);
 			}
-		} catch (ItemHasNoAspectsException e) {
+			else {
+				//Debug
+				System.out.println("This item was already scanned!");
+			}
+		} catch (ItemHasNoAspectsException | FileNotFoundException e) {
 			e.printStackTrace();
 		}
 	}
@@ -128,17 +134,25 @@ public class AspectPoolHandler {
 	public static void addMobAspectsToPlayer(LivingEntity entity, PlayerEntity player, World world, int amount) {
 		AspectType[] aspects;
 		try {
-			aspects = AspectPoolHandler.getMobAspects(entity);
-			
-        	for(int i=0; i<aspects.length; i++) {
-        		try {
-					AspectPoolHandler.addAspectsToPlayer(player, world, aspects, amount);
-					System.out.println("Added aspects for mob "+entity.getName().getFormattedText());
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-        	}
-		} catch (MobHasNoAspectsException e) {
+			if(!DOLHandler.isEntityOnPlayerDOL(entity, player, world)) {
+				aspects = AspectPoolHandler.getMobAspects(entity);
+				
+	        	for(int i=0; i<aspects.length; i++) {
+	        		try {
+						AspectPoolHandler.addAspectsToPlayer(player, world, aspects, amount);
+						System.out.println("Added aspects for mob "+entity.getName().getFormattedText());
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+	        	}
+	        	
+	        	DOLHandler.addEntityToPlayerDOL(entity, player, world);
+			}
+			else {
+				//Debug
+				System.out.println("This entity was already scanned!");
+			}
+		} catch (MobHasNoAspectsException | FileNotFoundException e) {
 			e.printStackTrace();
 		}
 	}
@@ -173,7 +187,7 @@ public class AspectPoolHandler {
 			
 			for(int i=0; i < aspect.length; i++) {
 				if(!aspects.contains(aspect[i])) {
-					nbt.putInt(aspect[i].name(), 1);
+					nbt.putInt(aspect[i].name(), amount);
 					
 					notifyOfAspectDiscovery(player, aspect[i]);
 				}
@@ -319,83 +333,5 @@ public class AspectPoolHandler {
 		else {
 			throw new AspectNotFoundException("Aspect "+type.name()+" not found for player "+player.getName().getFormattedText());
 		}
-	}
-	
-	public static void addBlockToPlayerResearchBlackList(Block block, PlayerEntity player, World world) {
-		File researchDataDir = null;
-		File playerResearchBlackList = null;
-		File dir = ArcanaFileUtils.getWorldDirectory(world);
-		
-		CompoundNBT nbt;
-		List<Integer> ids;
-		int[] ids1;
-		try {
-			researchDataDir = new File(dir, "Arcana/researchdata");
-			researchDataDir.mkdirs();  	  
-			playerResearchBlackList = new File(researchDataDir, player.getCachedUniqueIdString()+".researchblacklist");
-			
-			if(!playerResearchBlackList.exists()) {
-				playerResearchBlackList.createNewFile();
-				nbt = new CompoundNBT();
-				ids = new ArrayList<Integer>();
-				ids.add(Item.getIdFromItem(block.asItem()));
-			}
-			else {
-				nbt = CompressedStreamTools.readCompressed(new FileInputStream(playerResearchBlackList));
-				ids1 = nbt.getIntArray("Blocks");
-				ids = ArcanaIntegerUtils.ArrayToList(ids1);
-				if(!isBlockOnPlayerResearchBlackList(block, player, world)) {
-					ids.add(Item.getIdFromItem(block.asItem()));
-				}
-			}
-			
-			nbt.putIntArray("Blocks", ids);
-			
-			try (FileOutputStream fileoutputstream = new FileOutputStream(playerResearchBlackList)) {
-	            CompressedStreamTools.writeCompressed(nbt, fileoutputstream);
-	         } catch (IOException e) {
-	        	 e.printStackTrace();
-	         }
-		} 
-		
-		catch (IOException e) {
-			Constants.LOGGER.warn("Failed to write to "+player.getCachedUniqueIdString()+".aspectpool");
-		}
-	}
-	
-	public static boolean isBlockOnPlayerResearchBlackList(Block block, PlayerEntity player, World world) throws FileNotFoundException {
-		File dir = ArcanaFileUtils.getWorldDirectory(world);
-		
-		try {
-			int[] ids;
-			File researchDataDir = new File(dir, "Arcana/researchdata");
-			researchDataDir.mkdirs();  	  
-			File playerResearchBlackList = new File(researchDataDir, player.getCachedUniqueIdString()+".researchblacklist");;
-			CompoundNBT nbt2 = null;
-			
-			if(!playerResearchBlackList.exists()) {
-				throw new FileNotFoundException();
-			}
-			else {
-				nbt2 = CompressedStreamTools.readCompressed(new FileInputStream(playerResearchBlackList));
-			}
-			
-			ids = nbt2.getIntArray("Blacklist");
-			
-			for(int i = 0; i < ids.length; i++) {
-				if(Item.getIdFromItem(block.asItem()) == ids[i]) {
-					return true;
-				}
-			}
-			
-			//Debug
-			System.out.println(ids.toString());
-		}
-
-		catch(IOException e) {
-			e.printStackTrace();
-		}
-		
-		return false;
 	}
 }

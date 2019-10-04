@@ -33,12 +33,12 @@ public class FileCreator {
 		
 		File researchDataDir = new File(dir, "Arcana/researchdata");
 		researchDataDir.mkdirs();  	  
-		File playerResearchBlackList = new File(researchDataDir, event.getPlayer().getCachedUniqueIdString()+".researchblacklist");
+		File playerdiscoveredobjects = new File(researchDataDir, event.getPlayer().getCachedUniqueIdString()+".DOL");
 		
-		if(!playerResearchBlackList.exists()) {
+		if(!playerdiscoveredobjects.exists()) {
 			try {
-				playerResearchBlackList.createNewFile();
-				Constants.LOGGER.info("Created researchdata file for user "+event.getPlayer().getName().getFormattedText()+" at "+playerResearchBlackList.getAbsolutePath());
+				playerdiscoveredobjects.createNewFile();
+				Constants.LOGGER.info("Created discoveredobjects file for user "+event.getPlayer().getName().getFormattedText()+" at "+playerdiscoveredobjects.getAbsolutePath());
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
