@@ -99,7 +99,7 @@ public class ArcanaBlocks {
 
     //tainted grass
 
-    //tainted full mat. blocks
+    //tainted mat. blocks
     public static Block tainted_redstone_block;
     public static Block tainted_thaumium_block;
     public static Block tainted_lapis_block;
