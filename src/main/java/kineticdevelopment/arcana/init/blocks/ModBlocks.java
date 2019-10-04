@@ -62,7 +62,7 @@ public class ModBlocks {
         dair_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "dair_log");
         dair_planks = registerBlock(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "dair_planks");
         //dair_slab = registerBlock(new SlabBlock(Block.Properties.from(dair_planks)), "dair_slab");
-        //dair_stairs = registerBlock(new ArcanaStairsBlock(dair_planks.getDefaultState(), Block.Properties.from(dair_planks)), "dair_stairs");
+        dair_stairs = registerBlock(new ArcanaStairsBlock(dair_planks.getDefaultState(), Block.Properties.from(dair_planks)), "dair_stairs");
         stripped_dair_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "stripped_dair_log");
         dair_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "dair_leaves");
         //dair_trapdoor = registerBlock(new ArcanaTrapDoorBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "dair_trapdoor");
