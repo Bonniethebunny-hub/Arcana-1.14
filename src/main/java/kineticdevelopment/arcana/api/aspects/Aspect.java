@@ -61,7 +61,8 @@ public class Aspect {
 		WIND,
 		WRATH,
 		ENERGY,
-		OVERWORLD
+		OVERWORLD,
+		MIND
 
 	}
 	
@@ -124,6 +125,7 @@ public class Aspect {
 			case "WRATH": return AspectType.WRATH;
 			case "OVERWORLD": return AspectType.OVERWORLD;
 			case "ENERGY": return AspectType.ENERGY;
+			case "MIND": return AspectType.MIND;
 		}
 	}
 }

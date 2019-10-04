@@ -81,6 +81,7 @@ public class AspectItem extends Item {
 			case "WRATH": tooltip.add(new StringTextComponent(TextFormatting.DARK_AQUA +"Concussus")); break;
 			case "OVERWORLD": tooltip.add(new StringTextComponent(TextFormatting.DARK_AQUA +"Overworld")); break;
 			case "ENERGY": tooltip.add(new StringTextComponent(TextFormatting.DARK_AQUA +"Potentia")); break;
+
 		}
 	}
 }
