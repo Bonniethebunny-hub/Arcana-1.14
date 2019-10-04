@@ -127,6 +127,13 @@ public class TaintSpreader {
         put(Blocks.SPRUCE_PLANKS, ArcanaBlocks.tainted_spruce_planks);
         //put(Blocks.SPRUCE_SLAB, ArcanaBlocks.tainted_spruce_slab);
 
+        put(ArcanaBlocks.dair_log, ArcanaBlocks.tainted_dair_log);
+        put(ArcanaBlocks.stripped_dair_log, ArcanaBlocks.tainted_stripped_dair_log);
+        put(ArcanaBlocks.dair_leaves, ArcanaBlocks.tainted_dair_leaves);
+        //put(ArcanaBlocks.dair_stairs, ArcanaBlocks.tainted_dair_stairs);
+        put(ArcanaBlocks.dair_planks, ArcanaBlocks.tainted_dair_planks);
+        //put(ArcanaBlocks.dair_slab, ArcanaBlocks.tainted_dair_slab);
+
         //Misc
         put(Blocks.GRASS_PATH, ArcanaBlocks.tainted_path);
         put(Blocks.FARMLAND, ArcanaBlocks.tainted_farmland);

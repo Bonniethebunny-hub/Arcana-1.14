@@ -59,6 +59,16 @@ public class ModBlocks {
         hawthorn_door = registerBlock(new ArcanaDoorBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "hawthorn_door");
         hawthorn_sapling = registerBlock(new ArcanaSaplingBlock(new HawthornTree(), Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(1.0F).sound(SoundType.PLANT)), "hawthorn_sapling");
 
+        dair_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "dair_log");
+        dair_planks = registerBlock(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "dair_planks");
+        //dair_slab = registerBlock(new SlabBlock(Block.Properties.from(dair_planks)), "dair_slab");
+        //dair_stairs = registerBlock(new ArcanaStairsBlock(dair_planks.getDefaultState(), Block.Properties.from(dair_planks)), "dair_stairs");
+        stripped_dair_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "stripped_dair_log");
+        dair_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "dair_leaves");
+        //dair_trapdoor = registerBlock(new ArcanaTrapDoorBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "dair_trapdoor");
+        //dair_door = registerBlock(new ArcanaDoorBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "dair_door");
+        //dair_sapling = registerBlock(new ArcanaSaplingBlock(new DairTree(), Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(1.0F).sound(SoundType.PLANT)), "dair_sapling");
+
         // regular ores
         amber_ore = registerBlock(new OreBlock(Block.Properties.create(Material.ROCK)), "amber_ore");
 

@@ -93,6 +93,13 @@ public class ModBlocksUnTainted {
         untainted_stripped_spruce_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_stripped_spruce_log");
         untainted_spruce_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "untainted_spruce_leaves");
 
+        untainted_dair_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_dair_log");
+        untainted_dair_planks = registerBlock(new TaintedBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_dair_planks");
+        //untainted_dair_slab = registerBlock(new TaintedSlab(Block.Properties.from(untainted_dair_planks)), "untainted_dair_slab");
+        //untainted_dair_stairs = registerBlock(new TaintedStairsBlock(tainted_dair_planks.getDefaultState(), Block.Properties.from(untainted_dair_planks)), "untainted_dair_stairs");
+        untainted_stripped_dair_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_stripped_dair_log");
+        untainted_dair_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "untainted_dair_leaves");
+
         //Full mat. blocks
         untainted_redstone_block = registerBlock(new TaintedBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F,6.0F).sound(SoundType.METAL)), "untainted_redstone_block");
         untainted_thaumium_block = registerBlock(new TaintedBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F,6.0F).sound(SoundType.METAL)), "untainted_thaumium_block");
