@@ -44,21 +44,21 @@ public class ArcanaBlocks {
     public static Block tainted_acacia_planks;
     public static Block tainted_acacia_log;
     public static Block tainted_stripped_acacia_log;
-    //public static Block tainted_acacia_slab;
+    public static Block tainted_acacia_slab;
     public static Block tainted_acacia_stairs;
 
     public static Block tainted_spruce_leaves;
     public static Block tainted_spruce_planks;
     public static Block tainted_spruce_log;
     public static Block tainted_stripped_spruce_log;
-    //public static Block tainted_spruce_slab;
+    public static Block tainted_spruce_slab;
     public static Block tainted_spruce_stairs;
 
     public static Block tainted_dair_leaves;
     public static Block tainted_dair_planks;
     public static Block tainted_dair_log;
     public static Block tainted_stripped_dair_log;
-    //public static Block tainted_dair_slab;
+    public static Block tainted_dair_slab;
     public static Block tainted_dair_stairs;
 
     public static Block tainted_grass_block;
@@ -203,21 +203,21 @@ public class ArcanaBlocks {
     public static Block untainted_acacia_planks;
     public static Block untainted_acacia_log;
     public static Block untainted_stripped_acacia_log;
-    //public static Block untainted_acacia_slab;
+    public static Block untainted_acacia_slab;
     public static Block untainted_acacia_stairs;
 
     public static Block untainted_spruce_leaves;
     public static Block untainted_spruce_planks;
     public static Block untainted_spruce_log;
     public static Block untainted_stripped_spruce_log;
-    //public static Block untainted_spruce_slab;
+    public static Block untainted_spruce_slab;
     public static Block untainted_spruce_stairs;
 
     public static Block untainted_dair_leaves;
     public static Block untainted_dair_planks;
     public static Block untainted_dair_log;
     public static Block untainted_stripped_dair_log;
-    //public static Block untainted_dair_slab;
+    public static Block untainted_dair_slab;
     public static Block untainted_dair_stairs;
 
     public static Block untainted_redstone_block;

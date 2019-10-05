@@ -82,21 +82,21 @@ public class ModBlocksUnTainted {
 
         untainted_acacia_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_acacia_log");
         untainted_acacia_planks = registerBlock(new TaintedBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_acacia_planks");
-        //untainted_acacia_slab = registerBlock(new TaintedSlab(Block.Properties.from(untainted_acacia_planks)), "untainted_acacia_slab");
+        untainted_acacia_slab = registerBlock(new TaintedSlab(Block.Properties.from(untainted_acacia_planks)), "untainted_acacia_slab");
         untainted_acacia_stairs = registerBlock(new TaintedStairsBlock(tainted_acacia_planks.getDefaultState(), Block.Properties.from(untainted_acacia_planks)), "untainted_acacia_stairs");
         untainted_stripped_acacia_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_stripped_acacia_log");
         untainted_acacia_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "untainted_acacia_leaves");
 
         untainted_spruce_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_spruce_log");
         untainted_spruce_planks = registerBlock(new TaintedBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_spruce_planks");
-        //untainted_spruce_slab = registerBlock(new TaintedSlab(Block.Properties.from(untainted_spruce_planks)), "untainted_spruce_slab");
+        untainted_spruce_slab = registerBlock(new TaintedSlab(Block.Properties.from(untainted_spruce_planks)), "untainted_spruce_slab");
         untainted_spruce_stairs = registerBlock(new TaintedStairsBlock(tainted_spruce_planks.getDefaultState(), Block.Properties.from(untainted_spruce_planks)), "untainted_spruce_stairs");
         untainted_stripped_spruce_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_stripped_spruce_log");
         untainted_spruce_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "untainted_spruce_leaves");
 
         untainted_dair_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_dair_log");
         untainted_dair_planks = registerBlock(new TaintedBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_dair_planks");
-        //untainted_dair_slab = registerBlock(new TaintedSlab(Block.Properties.from(untainted_dair_planks)), "untainted_dair_slab");
+        untainted_dair_slab = registerBlock(new TaintedSlab(Block.Properties.from(untainted_dair_planks)), "untainted_dair_slab");
         untainted_dair_stairs = registerBlock(new TaintedStairsBlock(tainted_dair_planks.getDefaultState(), Block.Properties.from(untainted_dair_planks)), "untainted_dair_stairs");
         untainted_stripped_dair_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_stripped_dair_log");
         untainted_dair_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "untainted_dair_leaves");
