@@ -94,7 +94,7 @@ public class ModBlocksTainted {
         tainted_greatwood_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "tainted_greatwood_log");
         tainted_greatwood_planks = registerBlock(new TaintedBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "tainted_greatwood_planks");
         tainted_greatwood_slab = registerBlock(new TaintedSlab(Block.Properties.from(tainted_greatwood_planks)), "tainted_greatwood_slab");
-        untainted_greatwood_stairs = registerBlock(new TaintedStairsBlock(tainted_greatwood_planks.getDefaultState(), Block.Properties.from(tainted_greatwood_planks)), "tainted_greatwood_stairs");
+        tainted_greatwood_stairs = registerBlock(new TaintedStairsBlock(tainted_greatwood_planks.getDefaultState(), Block.Properties.from(tainted_greatwood_planks)), "tainted_greatwood_stairs");
         stripped_tainted_greatwood_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "stripped_tainted_greatwood_log");
         tainted_greatwood_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "tainted_greatwood_leaves");
 
@@ -107,6 +107,7 @@ public class ModBlocksTainted {
 
         tainted_oak_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "tainted_oak_log");
         tainted_oak_leaves = registerBlock(new TaintedLeavesBlock(), "tainted_oak_leaves");
+        tainted_stripped_oak_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "tainted_stripped_oak_log");
 
         tainted_acacia_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "tainted_acacia_log");
         tainted_acacia_planks = registerBlock(new TaintedBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "tainted_acacia_planks");

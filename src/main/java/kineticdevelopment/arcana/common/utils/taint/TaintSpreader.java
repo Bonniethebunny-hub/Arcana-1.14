@@ -112,6 +112,7 @@ public class TaintSpreader {
         put(Blocks.OAK_STAIRS, ArcanaBlocks.tainted_plank_stairs);
         put(Blocks.OAK_PLANKS, ArcanaBlocks.tainted_oak_planks);
         put(Blocks.OAK_SLAB, ArcanaBlocks.tainted_plank_slab);
+        put(Blocks.STRIPPED_OAK_LOG, ArcanaBlocks.tainted_stripped_oak_log);
 
         put(Blocks.ACACIA_LOG, ArcanaBlocks.tainted_acacia_log);
         put(Blocks.STRIPPED_ACACIA_LOG, ArcanaBlocks.tainted_stripped_acacia_log);

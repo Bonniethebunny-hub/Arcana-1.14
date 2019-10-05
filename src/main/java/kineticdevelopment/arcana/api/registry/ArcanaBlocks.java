@@ -14,6 +14,7 @@ public class ArcanaBlocks {
     public static Block tainted_oak_planks;
     public static Block tainted_plank_stairs;
     public static Block tainted_plank_slab;
+    public static Block tainted_stripped_oak_log;
 
     public static Block tainted_willow_log;
     public static Block tainted_willow_planks;
@@ -172,6 +173,7 @@ public class ArcanaBlocks {
     public static Block untainted_oak_planks;
     public static Block untainted_plank_stairs;
     public static Block untainted_plank_slab;
+    public static Block untainted_stripped_oak_log;
 
     public static Block untainted_willow_log;
     public static Block untainted_willow_planks;

@@ -8,7 +8,7 @@
       "x": 90
     },
     "axis=x": {
-      "model": "arcana:block/dead_tree_log",
+      "model": "arcana:block/dead_log",
       "x": 90,
       "y": 90
     }
