@@ -67,7 +67,7 @@ public class ModBlocksUnTainted {
         untainted_greatwood_slab = registerBlock(new SlabBlock(Block.Properties.from(untainted_greatwood_planks)), "untainted_greatwood_slab");
         untainted_greatwood_stairs = registerBlock(new ArcanaStairsBlock(untainted_greatwood_planks.getDefaultState(), Block.Properties.from(untainted_greatwood_planks)), "untainted_greatwood_stairs");
         stripped_untainted_greatwood_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "stripped_untainted_greatwood_log");
-        untainted_greatwood_leaves = registerBlock(new Block(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "untainted_greatwood_leaves");
+        untainted_greatwood_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "untainted_greatwood_leaves");
 
         untainted_hawthorn_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_hawthorn_log");
         untainted_hawthorn_planks = registerBlock(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_hawthorn_planks");

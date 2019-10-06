@@ -153,9 +153,29 @@ public class ArcanaBlocks {
     public static Block hawthorn_door;
     public static Block hawthorn_sapling;
 
+    public static Block greatwood_log;
+    public static Block greatwood_planks;
+    public static Block greatwood_slab;
+    public static Block greatwood_stairs;
+    public static Block stripped_greatwood_log;
+    public static Block greatwood_leaves;
+    //public static Block greatwood_trapdoor;
+    //public static Block greatwood_door;
+    //public static Block greatwood_sapling;
+
+    public static Block willow_log;
+    public static Block willow_planks;
+    public static Block willow_slab;
+    public static Block willow_stairs;
+    public static Block stripped_willow_log;
+    public static Block willow_leaves;
+    //public static Block willow_trapdoor;
+    //public static Block willow_door;
+    //public static Block willow_sapling;
+
     public static Block dair_log;
     public static Block dair_planks;
-    //public static Block dair_slab;
+    public static Block dair_slab;
     public static Block dair_stairs;
     public static Block stripped_dair_log;
     public static Block dair_leaves;

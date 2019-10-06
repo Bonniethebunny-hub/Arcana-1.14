@@ -133,7 +133,21 @@ public class TaintSpreader {
         put(ArcanaBlocks.dair_leaves, ArcanaBlocks.tainted_dair_leaves);
         put(ArcanaBlocks.dair_stairs, ArcanaBlocks.tainted_dair_stairs);
         put(ArcanaBlocks.dair_planks, ArcanaBlocks.tainted_dair_planks);
-        //put(ArcanaBlocks.dair_slab, ArcanaBlocks.tainted_dair_slab);
+        put(ArcanaBlocks.dair_slab, ArcanaBlocks.tainted_dair_slab);
+
+        put(ArcanaBlocks.greatwood_log, ArcanaBlocks.tainted_greatwood_log);
+        put(ArcanaBlocks.stripped_greatwood_log, ArcanaBlocks.stripped_tainted_greatwood_log);
+        put(ArcanaBlocks.greatwood_leaves, ArcanaBlocks.tainted_greatwood_leaves);
+        put(ArcanaBlocks.greatwood_stairs, ArcanaBlocks.tainted_greatwood_stairs);
+        put(ArcanaBlocks.greatwood_planks, ArcanaBlocks.tainted_greatwood_planks);
+        put(ArcanaBlocks.greatwood_slab, ArcanaBlocks.tainted_greatwood_slab);
+
+        put(ArcanaBlocks.willow_log, ArcanaBlocks.tainted_willow_log);
+        put(ArcanaBlocks.stripped_willow_log, ArcanaBlocks.stripped_tainted_willow_log);
+        put(ArcanaBlocks.willow_leaves, ArcanaBlocks.tainted_willow_leaves);
+        put(ArcanaBlocks.willow_stairs, ArcanaBlocks.tainted_willow_stairs);
+        put(ArcanaBlocks.willow_planks, ArcanaBlocks.tainted_willow_planks);
+        put(ArcanaBlocks.willow_slab, ArcanaBlocks.tainted_willow_slab);
 
         //Misc
         put(Blocks.GRASS_PATH, ArcanaBlocks.tainted_path);

@@ -61,13 +61,33 @@ public class ModBlocks {
 
         dair_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "dair_log");
         dair_planks = registerBlock(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "dair_planks");
-        //dair_slab = registerBlock(new SlabBlock(Block.Properties.from(dair_planks)), "dair_slab");
+        dair_slab = registerBlock(new SlabBlock(Block.Properties.from(dair_planks)), "dair_slab");
         dair_stairs = registerBlock(new ArcanaStairsBlock(dair_planks.getDefaultState(), Block.Properties.from(dair_planks)), "dair_stairs");
         stripped_dair_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "stripped_dair_log");
         dair_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "dair_leaves");
         //dair_trapdoor = registerBlock(new ArcanaTrapDoorBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "dair_trapdoor");
         //dair_door = registerBlock(new ArcanaDoorBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "dair_door");
         //dair_sapling = registerBlock(new ArcanaSaplingBlock(new DairTree(), Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(1.0F).sound(SoundType.PLANT)), "dair_sapling");
+
+        greatwood_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "greatwood_log");
+        greatwood_planks = registerBlock(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "greatwood_planks");
+        greatwood_slab = registerBlock(new SlabBlock(Block.Properties.from(greatwood_planks)), "greatwood_slab");
+        greatwood_stairs = registerBlock(new ArcanaStairsBlock(greatwood_planks.getDefaultState(), Block.Properties.from(greatwood_planks)), "greatwood_stairs");
+        stripped_greatwood_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "stripped_greatwood_log");
+        greatwood_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "greatwood_leaves");
+        //greatwood_trapdoor = registerBlock(new ArcanaTrapDoorBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "greatwood_trapdoor");
+        //greatwood_door = registerBlock(new ArcanaDoorBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "greatwood_door");
+        //greatwood_sapling = registerBlock(new ArcanaSaplingBlock(new DairTree(), Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(1.0F).sound(SoundType.PLANT)), "greatwood_sapling");
+
+        willow_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "willow_log");
+        willow_planks = registerBlock(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "willow_planks");
+        willow_slab = registerBlock(new SlabBlock(Block.Properties.from(willow_planks)), "willow_slab");
+        willow_stairs = registerBlock(new ArcanaStairsBlock(willow_planks.getDefaultState(), Block.Properties.from(willow_planks)), "willow_stairs");
+        stripped_willow_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "stripped_willow_log");
+        willow_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "willow_leaves");
+        //willow_trapdoor = registerBlock(new ArcanaTrapDoorBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "willow_trapdoor");
+        //willow_door = registerBlock(new ArcanaDoorBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "willow_door");
+        //willow_sapling = registerBlock(new ArcanaSaplingBlock(new DairTree(), Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(1.0F).sound(SoundType.PLANT)), "willow_sapling");
 
         // regular ores
         amber_ore = registerBlock(new OreBlock(Block.Properties.create(Material.ROCK)), "amber_ore");
