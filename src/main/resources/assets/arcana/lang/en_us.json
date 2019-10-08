@@ -199,7 +199,8 @@
   "item.arcana.trypophobius_stick": "Trypophobius Stick",
   "item.arcana.quicksilver": "Quicksliver",
   "item.arcana.amber": "Amber",
-
+  "block.arcana.magical_grass": "Magical Grass Block",
+  "block.arcana.magical_forest_grass": "Magical Grass",
   "_comment": "Tainted Items",
   "item.arcana.tainted_melon_slice": "Tainted Melon Slice",
 

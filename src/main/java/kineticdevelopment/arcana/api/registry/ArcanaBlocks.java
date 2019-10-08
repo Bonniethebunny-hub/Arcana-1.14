@@ -257,6 +257,8 @@ public class ArcanaBlocks {
     //untainted  other
     public static Block untainted_sand;
     public static Block untainted_gravel;
+    public static Block magical_grass;
+    public static Block magical_forest_grass;
 
     //untainted plants
     public static Block untainted_fibers;

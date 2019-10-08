@@ -1,6 +1,5 @@
-package kineticdevelopment.arcana.common.blocks.tainted;
+package kineticdevelopment.arcana.common.blocks;
 
-import kineticdevelopment.arcana.api.blocks.TaintedBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -10,15 +9,14 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 
-public class TaintedSoil extends TaintedBlock {
-    public TaintedSoil() {
+public class MagicalGrass extends Block {
+    public MagicalGrass() {
         super(Block.Properties.create(Material.EARTH)
-                .sound(SoundType.WET_GRASS)
-                .hardnessAndResistance(0.1f)
+                .sound(SoundType.GROUND)
+                .hardnessAndResistance(0.5f)
         );
 
     }
-
     @Override
     public boolean canSustainPlant(BlockState state, IBlockReader world, BlockPos pos, Direction facing, net.minecraftforge.common.IPlantable plantable) {
         BlockState plant = plantable.getPlant(world, pos.offset(facing));
