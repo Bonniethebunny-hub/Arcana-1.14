@@ -16,6 +16,11 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.CompressedStreamTools;
 import net.minecraft.world.World;
 
+/**
+ * Handles anything to do with the DOL file
+ * @author Atlas
+ * @see AspectPoolHandler
+ */
 public class DOLHandler {
 	public static void addBlockToPlayerDOL(Block block, PlayerEntity player, World world) {
 		File researchDataDir = null;

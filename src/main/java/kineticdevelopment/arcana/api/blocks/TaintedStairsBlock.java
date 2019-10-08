@@ -1,7 +1,3 @@
-/**
- Used for stairs as they don't have a public constructor. Please always use this class when making a stair block.
- **/
-
 package kineticdevelopment.arcana.api.blocks;
 
 import java.util.Random;
@@ -14,7 +10,12 @@ import net.minecraft.block.StairsBlock;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-
+/**
+ * All Arcana tainted stairs blocks should extend this class
+ * @see TaintedBlock
+ * @see TaintedLeavesBlock
+ * @see TaintedSlab
+ */
 public class TaintedStairsBlock extends StairsBlock {
     public TaintedStairsBlock(BlockState state, Properties properties) {
         super(state, properties);

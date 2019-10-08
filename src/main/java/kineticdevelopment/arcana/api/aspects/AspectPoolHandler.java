@@ -31,21 +31,34 @@ import net.minecraft.world.World;
  * Handles anything to do with the aspect pool
  * @author Atlas
  * @see Aspect
+ * @see DOLHandler
  */
 public class AspectPoolHandler {
 	
+	/**
+	 * Alerts the player of an aspect discovery
+	 * @param player
+	 * @param aspect
+	 */
 	public static void notifyOfAspectDiscovery(PlayerEntity player, AspectType aspect) {
 		player.sendStatusMessage(new StringTextComponent("You've just discovered the aspect of "+aspect.name()), true);
 	}
 	
+	/**
+	 * Alerts the player of aspect gain
+	 * @param player
+	 * @param aspect
+	 * @param amount
+	 */
 	public static void notifyOfKnownAspectGain(PlayerEntity player, AspectType aspect, int amount) {
 		player.sendStatusMessage(new StringTextComponent("You've just gained "+amount+" of aspect "+aspect.name()), true);
 	}
 	
 	/**
-	 * Returns an Item Array with all the Aspects of a block
+	 * Returns an AspectType Array with all the Aspects of a block
 	 * @param block
 	 * @return AspectType[]
+	 * @throws BlockHasNoAspectsException
 	 */
 	public static AspectType[] getBlockAspects(Block block) throws BlockHasNoAspectsException {
 		for (Entry<Block, AspectType[]> entry : AspectAssignments.BlockAspects.entrySet()) {
@@ -57,6 +70,12 @@ public class AspectPoolHandler {
 		throw new BlockHasNoAspectsException("Block "+block.getNameTextComponent().getFormattedText()+" has no assigned aspects!");
 	}
 	
+	/**
+	 * Returns an AspectType Array with all the aspects of an item
+	 * @param item
+	 * @return AspectType[]
+	 * @throws ItemHasNoAspectsException
+	 */
 	public static AspectType[] getItemAspects(Item item) throws ItemHasNoAspectsException {
 		for (Entry<Item, AspectType[]> entry : AspectAssignments.ItemAspects.entrySet()) {
 			if (item.equals(entry.getKey().getItem())) {
@@ -67,6 +86,12 @@ public class AspectPoolHandler {
 		throw new ItemHasNoAspectsException("Item "+item.getName().getFormattedText()+" has no assigned aspects!");
 	}
 	
+	/**
+	 * Returns an AspectType Array with all the aspects of an entity
+	 * @param entity
+	 * @return AspectType[]
+	 * @throws MobHasNoAspectsException
+	 */
 	public static AspectType[] getMobAspects(LivingEntity entity) throws MobHasNoAspectsException {
 		for (Entry<Class<? extends LivingEntity>, AspectType[]> entry : AspectAssignments.MobAspects.entrySet()) {
 			if(entity.getClass() == entry.getKey()) {
@@ -77,6 +102,13 @@ public class AspectPoolHandler {
 		throw new MobHasNoAspectsException("Entity "+entity.getName().getFormattedText()+" has no assigned aspects!");
 	}
 	
+	/**
+	 * Adds all the aspects a block has to a player
+	 * @param block
+	 * @param player
+	 * @param world
+	 * @param amount
+	 */
 	public static void addBlockAspectsToPlayer(Block block, PlayerEntity player, World world, int amount) {
 		try {
 			if(!DOLHandler.isBlockOnPlayerDOL(block, player, world)) {
@@ -106,6 +138,13 @@ public class AspectPoolHandler {
 		}
 	}
 	
+	/**
+	 * Adds all the aspects an item has to a player
+	 * @param item
+	 * @param player
+	 * @param world
+	 * @param amount
+	 */
 	public static void addItemAspectsToPlayer(Item item, PlayerEntity player, World world, int amount) {
 		AspectType[] aspects;
 		try {
@@ -131,6 +170,13 @@ public class AspectPoolHandler {
 		}
 	}
 	
+	/**
+	 * Adds all the aspects an entity has to a player
+	 * @param entity
+	 * @param player
+	 * @param world
+	 * @param amount
+	 */
 	public static void addMobAspectsToPlayer(LivingEntity entity, PlayerEntity player, World world, int amount) {
 		AspectType[] aspects;
 		try {
@@ -158,10 +204,11 @@ public class AspectPoolHandler {
 	}
 
 	/**
-	 * Adds the specified aspect to the player's pool
+	 * Adds the specified aspect to a player's aspect pool
 	 * @param player
 	 * @param world
 	 * @param aspect
+	 * @param amount
 	 * @throws IOException 
 	 * @throws FileNotFoundException 
 	 */
@@ -211,6 +258,13 @@ public class AspectPoolHandler {
 		}
 	}
 	
+	/**
+	 * Removes the specified amount of an aspect from a player's aspect pool
+	 * @param player
+	 * @param world
+	 * @param aspect
+	 * @param amount
+	 */
 	public static void removeAspectsFromPlayer(PlayerEntity player, World world, AspectType[] aspect, int amount) {
 		File aspectDataDir = null;
 		File playerAspectData = null;
@@ -302,7 +356,7 @@ public class AspectPoolHandler {
 	 * @param player
 	 * @param type
 	 * @param world
-	 * @return 
+	 * @return Integer
 	 * @throws AspectNotFoundException
 	 */
 	public static int getPlayerAspectAmount(PlayerEntity player, Aspect.AspectType type, World world) throws AspectNotFoundException {

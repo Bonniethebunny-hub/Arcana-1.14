@@ -4,6 +4,11 @@ import javax.annotation.Nullable;
 
 import kineticdevelopment.arcana.api.exceptions.AspectNotFoundException;
 
+/**
+ * Contains enum and utilities for aspects
+ * @author Atlas
+ * @see AspectItem
+ */
 public class Aspect {
 	
 	public enum AspectType {

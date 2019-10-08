@@ -1,7 +1,3 @@
-/**
- Used for stairs as they don't have a public constructor. Please always use this class when making a stair block.
- **/
-
 package kineticdevelopment.arcana.api.blocks;
 
 import net.minecraft.block.Block;
@@ -13,7 +9,9 @@ import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 
-
+/**
+ * All Arcana flower blocks should extend this class
+ */
 public class ArcanaFlowerBlock extends BushBlock {
 
     public ArcanaFlowerBlock(Properties properties) {

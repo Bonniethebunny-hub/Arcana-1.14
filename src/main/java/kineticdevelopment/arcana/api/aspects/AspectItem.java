@@ -14,6 +14,12 @@ import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
+/**
+ * All aspect's items should use this class
+ * @author Atlas
+ * @author SleepingTea
+ * @see Aspect
+ */
 public class AspectItem extends Item {
 
 	public AspectItem(Properties properties) {

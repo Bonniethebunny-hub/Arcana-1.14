@@ -14,6 +14,9 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import java.util.Random;
 
+/**
+ * All Arcana sapling blocks should extend this class
+ */
 public class ArcanaSaplingBlock extends SaplingBlock implements IGrowable {
 
     public static final IntegerProperty STAGE = BlockStateProperties.STAGE_0_1;

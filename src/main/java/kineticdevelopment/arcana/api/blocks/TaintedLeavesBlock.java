@@ -17,6 +17,12 @@ import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
+/**
+ * All Arcana tainted leaves blocks should extend this class
+ * @see TaintedBlock
+ * @see TaintedSlab
+ * @see TaintedStairsBlock
+ */
 public class TaintedLeavesBlock extends TaintedBlock {
 
         public TaintedLeavesBlock() {

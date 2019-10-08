@@ -11,6 +11,12 @@ import net.minecraft.entity.monster.SkeletonEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 
+/**
+ * Contains the Hashmaps for the aspect assignments to Blocks, Items, and Entities
+ * @author Atlas
+ * @see AspectPoolHandler
+ * @see Aspect
+ */
 public class AspectAssignments {
 	@SuppressWarnings("serial")
 	static HashMap<Block, AspectType[]> BlockAspects = new HashMap<Block, AspectType[]>() {{

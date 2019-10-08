@@ -27,7 +27,12 @@ import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-
+/**
+ * All Arcana tainted blocks should extend this class
+ * @see TaintedLeavesBlock
+ * @see TaintedSlab
+ * @see TaintedStairsBlock
+ */
 public class TaintedBlock extends Block {
 	
 	public static final BooleanProperty FULLYTAINTED = ModBlockStates.FULLYTAINTED;

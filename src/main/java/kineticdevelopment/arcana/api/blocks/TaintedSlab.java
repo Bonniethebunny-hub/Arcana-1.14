@@ -10,6 +10,12 @@ import net.minecraft.block.SlabBlock;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+/**
+ * All Arcana tainted slab blocks should extend this class
+ * @see TaintedBlock
+ * @see TaintedLeavesBlock
+ * @see TaintedStairsBlock
+ */
 public class TaintedSlab extends SlabBlock {
 
 	public TaintedSlab(Properties properties) {
