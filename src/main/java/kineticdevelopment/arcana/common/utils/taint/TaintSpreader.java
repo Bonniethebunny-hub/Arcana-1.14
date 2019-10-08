@@ -14,12 +14,17 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Handles the spread of taint
+ * @author Atlas
+ * @see TaintCleaner
+ * @see TaintLevelHandler
+ */
 public class TaintSpreader {
 
     /**
      * List of blocks tainted grass spreads to
      */
-
     static Block[] TaintedGrassProspects = {
             Blocks.GRASS_BLOCK,
             Blocks.MYCELIUM
@@ -28,7 +33,6 @@ public class TaintSpreader {
     /**
      * List of blocks tainted soil spreads to
      */
-
     static Block[] TaintedSoilProspects = {
             Blocks.DIRT,
             Blocks.COARSE_DIRT,
@@ -79,7 +83,10 @@ public class TaintSpreader {
             Blocks.JUNGLE_LEAVES,
             Blocks.DARK_OAK_LEAVES
     };
-
+    
+    /**
+     * List of blocks Tainted Flowers spread to
+     */
     static Block[] TaintedFlowerProspects = {
             Blocks.CORNFLOWER,
             Blocks.SUNFLOWER,
@@ -101,8 +108,10 @@ public class TaintSpreader {
             Blocks.GRASS,
             Blocks.TALL_GRASS
     };
-
-
+    
+    /**
+     * Hashmap of single block spreading
+     */
     @SuppressWarnings("serial")
     static HashMap<Block, Block> singleBlockConversions = new HashMap<Block, Block>() {{
 

@@ -24,18 +24,13 @@ public class TaintLevelHandler {
         			if(!file.exists()) {
         				file.createNewFile();
         				nbt = new CompoundNBT();
+        				nbt.putFloat("TaintLevel", 0);
+        				try (FileOutputStream fileoutputstream = new FileOutputStream(file)) {
+            				CompressedStreamTools.writeCompressed(nbt, fileoutputstream);
+            			} catch (IOException e) {
+            				e.printStackTrace();
+            			}
         			}
-        			else {
-        				nbt = CompressedStreamTools.readCompressed(new FileInputStream(file));
-        			}
-        			
-        			nbt.putFloat("TaintLevel", 0);
-        			
-        			try (FileOutputStream fileoutputstream = new FileOutputStream(file)) {
-        	            CompressedStreamTools.writeCompressed(nbt, fileoutputstream);
-        	         } catch (IOException e) {
-        	        	 e.printStackTrace();
-        	         }
         		} 
         		
         		catch (IOException e) {
@@ -51,18 +46,14 @@ public class TaintLevelHandler {
     			if(!file.exists()) {
     				file.createNewFile();
     				nbt = new CompoundNBT();
+    				nbt.putFloat("TaintLevel", 0);
+        			
+        			try (FileOutputStream fileoutputstream = new FileOutputStream(file)) {
+        				CompressedStreamTools.writeCompressed(nbt, fileoutputstream);
+        			} catch (IOException e) {
+        				e.printStackTrace();
+        			}
     			}
-    			else {
-    				nbt = CompressedStreamTools.readCompressed(new FileInputStream(file));
-    			}
-    			
-    			nbt.putFloat("TaintLevel", 0);
-    			
-    			try (FileOutputStream fileoutputstream = new FileOutputStream(file)) {
-    	            CompressedStreamTools.writeCompressed(nbt, fileoutputstream);
-    	         } catch (IOException e) {
-    	        	 e.printStackTrace();
-    	         }
     		} 
     		
     		catch (IOException e) {

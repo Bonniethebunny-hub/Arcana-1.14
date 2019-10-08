@@ -65,31 +65,31 @@ public class TaintedBlock extends Block {
     	if(f >=5 && f <=9) {
     		h = ThreadLocalRandom.current().nextInt(0, 10);
     	}
-    	else if(f >=10 && f >=19) {
+    	else if(f >=10 && f <=19) {
     		h = ThreadLocalRandom.current().nextInt(0, 9);
     	}
-    	else if(f >=20 && f >=29) {
+    	else if(f >=20 && f <=29) {
     		h = ThreadLocalRandom.current().nextInt(0, 8);
     	}
-    	else if(f >=30 && f >=39) {
+    	else if(f >=30 && f <=39) {
     		h = ThreadLocalRandom.current().nextInt(0, 7);
     	}
-    	else if(f >=40 && f >=49) {
+    	else if(f >=40 && f <=49) {
     		h = ThreadLocalRandom.current().nextInt(0, 6);
     	}
-    	else if(f >=50 && f >=59) {
+    	else if(f >=50 && f <=59) {
     		h = ThreadLocalRandom.current().nextInt(0, 5);
     	}
-    	else if(f >=60 && f >=69) {
+    	else if(f >=60 && f <=69) {
     		h = ThreadLocalRandom.current().nextInt(0, 4);
     	}
-    	else if(f >=70 && f >=79) {
+    	else if(f >=70 && f <=79) {
     		h = ThreadLocalRandom.current().nextInt(0, 3);
     	}
-    	else if(f >=80 && f >=89) {
+    	else if(f >=80 && f <=89) {
     		h = ThreadLocalRandom.current().nextInt(0, 2);
     	}
-    	else if(f >=90 && f >=99) {
+    	else if(f >=90 && f <=99) {
     		h = ThreadLocalRandom.current().nextInt(0, 1);
     	}
     	else if(f >=100) {
