@@ -1,10 +1,9 @@
 package kineticdevelopment.arcana.api.spells;
 
-import kineticdevelopment.arcana.api.spells.effects.SpellEffectEarth;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ServiceLoader;
+
+import kineticdevelopment.arcana.api.spells.effects.SpellEffectEarth;
 
 public class SpellEffectHandler {
 

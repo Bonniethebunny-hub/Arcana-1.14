@@ -26,7 +26,7 @@ logoFile="arcana.png" #optional
 # A text field displayed in the mod UI
 credits="Iban and Alphalilly  " #optional
 # A text field displayed in the mod UI
-authors="SleepingTea, Atlas, Artemis, and Alex #optional
+authors="SleepingTea, Atlas, Artemis, and Alex" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description='''
 Arcana is a magic mod for Minecraft inspired by Thaumcraft and Azanor13.

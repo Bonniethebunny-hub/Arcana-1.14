@@ -9,7 +9,6 @@ import kineticdevelopment.arcana.api.aspects.AspectItem;
 import kineticdevelopment.arcana.api.registry.ArcanaItems;
 import kineticdevelopment.arcana.common.utils.creativetab.ArcanaAspectsItemGroup;
 import net.minecraft.item.Item;
-import net.minecraft.util.text.StringTextComponent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;

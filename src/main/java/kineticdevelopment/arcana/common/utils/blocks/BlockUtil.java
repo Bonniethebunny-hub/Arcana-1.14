@@ -13,11 +13,11 @@ import java.util.Collection;
 
 public class BlockUtil {
 
-    public static IProperty getAxisProperty(BlockState log) {
+    public static IProperty<?> getAxisProperty(BlockState log) {
 
-        for (IProperty property : log.getProperties()) {
+        for (IProperty<?> property : log.getProperties()) {
 
-            Collection allowedValues = property.getAllowedValues();
+            Collection<?> allowedValues = property.getAllowedValues();
             if (allowedValues.contains(Direction.Axis.X) && allowedValues.contains(Direction.Axis.Y) && allowedValues.contains(Direction.Axis.Z)) {
 
                 return property;

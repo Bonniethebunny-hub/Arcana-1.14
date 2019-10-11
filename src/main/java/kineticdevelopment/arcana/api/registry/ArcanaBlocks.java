@@ -77,6 +77,7 @@ public class ArcanaBlocks {
     public static Block tainted_sand;
     public static Block tainted_gravel;
     public static Block tainted_goo;
+    public static Block tainted_altar;
 
     //tainted ores
     public static Block tainted_cinnabar_ore;
