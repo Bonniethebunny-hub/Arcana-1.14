@@ -29,6 +29,6 @@ public class ArcanaRotatableBlock extends CarvedPumpkinBlock {
     }
 
     public BlockRenderLayer getRenderLayer() {
-        return BlockRenderLayer.TRANSLUCENT;
+        return BlockRenderLayer.CUTOUT_MIPPED;
     }
 }

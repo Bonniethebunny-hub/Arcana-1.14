@@ -2,6 +2,7 @@
 {
   "credit": "Made with Blockbench",
   "textures": {
+    "particle": "arcana:block/greatwood_planks",
     "1": "arcana:block/hear_no_evil"
   },
   "elements": [

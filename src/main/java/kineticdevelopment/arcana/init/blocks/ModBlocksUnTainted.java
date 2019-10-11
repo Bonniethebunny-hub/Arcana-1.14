@@ -31,11 +31,6 @@ public class ModBlocksUnTainted {
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
 
-        //Tainted Planks
-        untainted_oak_planks = registerBlock(new Block(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)), "untainted_oak_planks");
-        untainted_plank_stairs = registerBlock(new ArcanaStairsBlock(untainted_oak_planks.getDefaultState(), Block.Properties.from(untainted_oak_planks)), "untainted_plank_stairs");
-        untainted_plank_slab = registerBlock(new SlabBlock(Block.Properties.from(untainted_oak_planks)), "untainted_plank_slab");
-
         //Tainted Rocks
         untainted_rock = registerBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F,6.0F).sound(SoundType.STONE)), "untainted_rock");
         untainted_rock_slab = registerBlock(new SlabBlock(Block.Properties.from(untainted_rock)), "untainted_rock_slab");
@@ -71,46 +66,49 @@ public class ModBlocksUnTainted {
 
         untainted_hawthorn_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_hawthorn_log");
         untainted_hawthorn_planks = registerBlock(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_hawthorn_planks");
-        untainted_hawthorn_slab = registerBlock(new SlabBlock(Block.Properties.from(tainted_hawthorn_planks)), "untainted_hawthorn_slab");
-        untainted_hawthorn_stairs = registerBlock(new ArcanaStairsBlock(tainted_hawthorn_planks.getDefaultState(), Block.Properties.from(tainted_greatwood_planks)), "untainted_hawthorn_stairs");
+        untainted_hawthorn_slab = registerBlock(new SlabBlock(Block.Properties.from(untainted_hawthorn_planks)), "untainted_hawthorn_slab");
+        untainted_hawthorn_stairs = registerBlock(new ArcanaStairsBlock(untainted_hawthorn_planks.getDefaultState(), Block.Properties.from(tainted_greatwood_planks)), "untainted_hawthorn_stairs");
         stripped_untainted_hawthorn_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "stripped_untainted_hawthorn_log");
         untainted_hawthorn_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "untainted_hawthorn_leaves");
 
         untainted_oak_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_oak_log");
         untainted_oak_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "untainted_oak_leaves");
         untainted_stripped_oak_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_stripped_oak_log");
+        untainted_oak_planks = registerBlock(new Block(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)), "untainted_oak_planks");
+        untainted_plank_stairs = registerBlock(new ArcanaStairsBlock(untainted_oak_planks.getDefaultState(), Block.Properties.from(untainted_oak_planks)), "untainted_plank_stairs");
+        untainted_plank_slab = registerBlock(new SlabBlock(Block.Properties.from(untainted_oak_planks)), "untainted_plank_slab");
 
         untainted_acacia_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_acacia_log");
-        untainted_acacia_planks = registerBlock(new TaintedBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_acacia_planks");
-        untainted_acacia_slab = registerBlock(new TaintedSlab(Block.Properties.from(untainted_acacia_planks)), "untainted_acacia_slab");
-        untainted_acacia_stairs = registerBlock(new TaintedStairsBlock(tainted_acacia_planks.getDefaultState(), Block.Properties.from(untainted_acacia_planks)), "untainted_acacia_stairs");
+        untainted_acacia_planks = registerBlock(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_acacia_planks");
+        untainted_acacia_slab = registerBlock(new SlabBlock(Block.Properties.from(untainted_acacia_planks)), "untainted_acacia_slab");
+        untainted_acacia_stairs = registerBlock(new ArcanaStairsBlock(untainted_acacia_planks.getDefaultState(), Block.Properties.from(untainted_acacia_planks)), "untainted_acacia_stairs");
         untainted_stripped_acacia_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_stripped_acacia_log");
         untainted_acacia_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "untainted_acacia_leaves");
 
         untainted_spruce_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_spruce_log");
-        untainted_spruce_planks = registerBlock(new TaintedBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_spruce_planks");
-        untainted_spruce_slab = registerBlock(new TaintedSlab(Block.Properties.from(untainted_spruce_planks)), "untainted_spruce_slab");
-        untainted_spruce_stairs = registerBlock(new TaintedStairsBlock(tainted_spruce_planks.getDefaultState(), Block.Properties.from(untainted_spruce_planks)), "untainted_spruce_stairs");
+        untainted_spruce_planks = registerBlock(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_spruce_planks");
+        untainted_spruce_slab = registerBlock(new SlabBlock(Block.Properties.from(untainted_spruce_planks)), "untainted_spruce_slab");
+        untainted_spruce_stairs = registerBlock(new ArcanaStairsBlock(untainted_spruce_planks.getDefaultState(), Block.Properties.from(untainted_spruce_planks)), "untainted_spruce_stairs");
         untainted_stripped_spruce_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_stripped_spruce_log");
         untainted_spruce_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "untainted_spruce_leaves");
 
         untainted_dair_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_dair_log");
-        untainted_dair_planks = registerBlock(new TaintedBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_dair_planks");
-        untainted_dair_slab = registerBlock(new TaintedSlab(Block.Properties.from(untainted_dair_planks)), "untainted_dair_slab");
-        untainted_dair_stairs = registerBlock(new TaintedStairsBlock(tainted_dair_planks.getDefaultState(), Block.Properties.from(untainted_dair_planks)), "untainted_dair_stairs");
+        untainted_dair_planks = registerBlock(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_dair_planks");
+        untainted_dair_slab = registerBlock(new SlabBlock(Block.Properties.from(untainted_dair_planks)), "untainted_dair_slab");
+        untainted_dair_stairs = registerBlock(new ArcanaStairsBlock(untainted_dair_planks.getDefaultState(), Block.Properties.from(untainted_dair_planks)), "untainted_dair_stairs");
         untainted_stripped_dair_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_stripped_dair_log");
         untainted_dair_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "untainted_dair_leaves");
 
         //Full mat. blocks
-        untainted_redstone_block = registerBlock(new TaintedBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F,6.0F).sound(SoundType.METAL)), "untainted_redstone_block");
-        untainted_thaumium_block = registerBlock(new TaintedBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F,6.0F).sound(SoundType.METAL)), "untainted_thaumium_block");
-        untainted_lapis_block = registerBlock(new TaintedBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F,6.0F).sound(SoundType.STONE)), "untainted_lapis_block");
-        untainted_iron_block = registerBlock(new TaintedBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F,6.0F).sound(SoundType.METAL)), "untainted_iron_block");
-        untainted_gold_block = registerBlock(new TaintedBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F,6.0F).sound(SoundType.METAL)), "untainted_gold_block");
-        untainted_emerald_block = registerBlock(new TaintedBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F,6.0F).sound(SoundType.METAL)), "untainted_emerald_block");
-        untainted_diamond_block = registerBlock(new TaintedBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F,6.0F).sound(SoundType.METAL)), "untainted_diamond_block");
-        untainted_coal_block = registerBlock(new TaintedBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F,6.0F).sound(SoundType.STONE)), "untainted_coal_block");
-        untainted_arcanium_block = registerBlock(new TaintedBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F,6.0F).sound(SoundType.METAL)), "untainted_arcanium_block");
+        untainted_redstone_block = registerBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F,6.0F).sound(SoundType.METAL)), "untainted_redstone_block");
+        untainted_thaumium_block = registerBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F,6.0F).sound(SoundType.METAL)), "untainted_thaumium_block");
+        untainted_lapis_block = registerBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F,6.0F).sound(SoundType.STONE)), "untainted_lapis_block");
+        untainted_iron_block = registerBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F,6.0F).sound(SoundType.METAL)), "untainted_iron_block");
+        untainted_gold_block = registerBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F,6.0F).sound(SoundType.METAL)), "untainted_gold_block");
+        untainted_emerald_block = registerBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F,6.0F).sound(SoundType.METAL)), "untainted_emerald_block");
+        untainted_diamond_block = registerBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F,6.0F).sound(SoundType.METAL)), "untainted_diamond_block");
+        untainted_coal_block = registerBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F,6.0F).sound(SoundType.STONE)), "untainted_coal_block");
+        untainted_arcanium_block = registerBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F,6.0F).sound(SoundType.METAL)), "untainted_arcanium_block");
     }
 
 

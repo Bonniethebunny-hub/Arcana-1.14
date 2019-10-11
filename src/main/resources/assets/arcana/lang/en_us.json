@@ -4,6 +4,7 @@
   "itemGroup.arcana_aspects": "Aspects",
   "itemGroup.arcana_tainted": "Tainted Blocks",
 
+
   "_comment": "Tainted Blocks",
   "block.arcana.tainted_crust": "Tainted Crust",
   "block.arcana.tainted_crust_slab": "Tainted Crust Slab",
@@ -30,13 +31,13 @@
   "block.arcana.tainted_greatwood_slab": "Tainted Greatwood Slab",
   "block.arcana.tainted_greatwood_stairs": "Tainted Greatwood Stairs",
   "block.arcana.tainted_greatwood_leaves": "Tainted Greatwood Leaves",
-  "block.arcana.stripped_tainted_greatwood_log": "Stripped Tainted Greatwood Log",
+  "block.arcana.stripped_tainted_greatwood_log": "Tainted Stripped Greatwood Log",
   "block.arcana.tainted_hawthorn_log": "Tainted Hawthorn Log",
   "block.arcana.tainted_hawthorn_planks": "Tainted Hawthorn Planks",
   "block.arcana.tainted_hawthorn_slab": "Tainted Hawthorn Slab",
   "block.arcana.tainted_hawthorn_stairs": "Tainted Hawthorn Stairs",
   "block.arcana.tainted_hawthorn_leaves": "Tainted Hawthorn Leaves",
-  "block.arcana.stripped_tainted_hawthorn_log": "Stripped Tainted Hawthorn Log",
+  "block.arcana.stripped_tainted_hawthorn_log": "Tainted Stripped Hawthorn Log",
   "block.arcana.hawthorn_trapdoor": "Hawthorn Trapdoor",
   "block.arcana.tainted_acacia_leaves" : "Tainted Acacia Leaves",
   "block.arcana.tainted_acacia_log" : "Tainted Acacia Log",
@@ -91,15 +92,14 @@
   "block.arcana.tainted_path": "Tainted Grass Path",
 
 
-
-  "_comment": "Ununtainted Blocks",
-  "block.arcana.ununtainted_crust": "Untainted Crust",
-  "block.arcana.ununtainted_crust_slab": "Untainted Crust Slab",
-  "block.arcana.ununtainted_oak_planks": "Untainted Oak Planks",
+  "_comment": "Untainted Blocks",
+  "block.arcana.untainted_crust": "Untainted Crust",
+  "block.arcana.untainted_crust_slab": "Untainted Crust Slab",
+  "block.arcana.untainted_oak_planks": "Untainted Oak Planks",
   "block.arcana.untainted_plank_stairs": "Untainted Oak Planks Stairs",
   "block.arcana.untainted_plank_slab": "Untainted Oak Planks Slab",
   "block.arcana.untainted_stripped_oak_log": "Untainted Stripped Oak Log",
-  "block.arcana.taint_fibers": "UntaintedFibers",
+  "block.arcana.untaint_fibers": "Untainted Fibers",
   "block.arcana.untainted_rock_slab": "Untainted Rock Slab",
   "block.arcana.untainted_rock": "Untainted Rock",
   "block.arcana.untainted_soil": "Untainted Soil",
@@ -110,13 +110,13 @@
   "block.arcana.untainted_willow_slab": "Untainted Willow Slab",
   "block.arcana.untainted_willow_stairs": "Untainted Willow Stairs",
   "block.arcana.untainted_willow_leaves": "Untainted Willow Leaves",
-  "block.arcana.stripped_untainted_willow_log": "Stripped Untainted Willow Log",
+  "block.arcana.stripped_untainted_willow_log": "Untainted Stripped Willow Log",
   "block.arcana.untainted_greatwood_log": "Untainted Greatwood Log",
   "block.arcana.untainted_greatwood_planks": "Untainted Greatwood Planks",
   "block.arcana.untainted_greatwood_slab": "Untainted Greatwood Slab",
   "block.arcana.untainted_greatwood_stairs": "Untainted Greatwood Stairs",
   "block.arcana.untainted_greatwood_leaves": "Untainted Greatwood Leaves",
-  "block.arcana.stripped_untainted_greatwood_log": "Stripped Untainted Greatwood Log",
+  "block.arcana.stripped_untainted_greatwood_log": "Untainted Stripped Greatwood Log",
   "block.arcana.untainted_hawthorn_log": "Untainted Hawthorn Log",
   "block.arcana.untainted_hawthorn_planks": "Untainted Hawthorn Planks",
   "block.arcana.untainted_hawthorn_slab": "Untainted Hawthorn Slab",
@@ -152,10 +152,10 @@
   "block.arcana.untainted_arcanium_block" : "Untainted Arcanium Block",
   "block.arcana.untainted_goo": "Untainted Goo",
   "block.arcana.untainted_melon": "Untainted Melon",
-  "block.arcana.untainted_pumpkin": "UntaintedPumpkin",
+  "block.arcana.untainted_pumpkin": "Untainted Pumpkin",
   "block.arcana.untainted_carved_pumpkin": "Untainted Carved Pumpkin",
-  "block.arcana.untainted_jack_olantern": "UntaintedJack O'Lantern",
-  "block.arcana.untainted_flower": "UntaintedFlower",
+  "block.arcana.untainted_jack_olantern": "Untainted Jack O'Lantern",
+  "block.arcana.untainted_flower": "Untainted Flower",
   "block.arcana.untainted_bush": "Untainted Bush",
   "block.arcana.untainted_mushroom": "Untainted Mushroom",
   "block.arcana.untainted_oak_log": "Untainted Oak Log",
@@ -163,7 +163,6 @@
   "block.arcana.untainted_grass_block": "Untainted Grass Block",
   "block.arcana.untainted_farmland": "Untainted Farmland",
   "block.arcana.untainted_path": "Untainted Grass Path",
-
 
 
   "_comment": "Normal Blocks",
@@ -182,6 +181,8 @@
   "block.arcana.trypophobius_planks": "Trypophobius Planks",
   "block.arcana.trypophobius_slab": "Trypophobius Slab",
   "block.arcana.trypophobius_stairs": "Trypophobius Stairs",
+  "block.arcana.hawthorn_sapling": "Hawthorn Sapling",
+  "block.arcana.hawthorn_door": "Hawthorn Door",
   "block.arcana.hawthorn_leaves": "Hawthorn Leaves",
   "block.arcana.hawthorn_log": "Hawthorn Log",
   "block.arcana.hawthorn_planks": "Hawthorn Planks",
@@ -193,6 +194,26 @@
   "block.arcana.dair_planks": "Dair Planks",
   "block.arcana.stripped_dair_log": "Stripped Dair Log",
   "block.arcana.dair_stairs": "Dair Stairs",
+  "block.arcana.dair_slab": "Dair Slab",
+  "block.arcana.willow_log": "Willow Log",
+  "block.arcana.willow_planks": "Willow Planks",
+  "block.arcana.willow_slab": "Willow Slab",
+  "block.arcana.willow_stairs": "Willow Stairs",
+  "block.arcana.willow_leaves": "Willow Leaves",
+  "block.arcana.stripped_willow_log": "Stripped Willow Log",
+  "block.arcana.greatwood_log": "Greatwood Log",
+  "block.arcana.greatwood_planks": "Greatwood Planks",
+  "block.arcana.greatwood_slab": "Greatwood Slab",
+  "block.arcana.greatwood_stairs": "Greatwood Stairs",
+  "block.arcana.greatwood_leaves": "Greatwood Leaves",
+  "block.arcana.stripped_greatwood_log": "Stripped Greatwood Log",
+
+  "block.arcana.thaumium_block": "Thaumium Block",
+  "block.arcana.arcanium_block": "Arcanium Block",
+
+  "block.arcana.amber_ore": "Amber Ore",
+  "block.arcana.hear_no_evil": "Hear No Evil",
+
 
   "_comment": "Normal Items",
   "item.arcana.dead_stick": "Dead Stick",
@@ -203,17 +224,21 @@
   "block.arcana.magical_forest_grass": "Magical Grass",
   "_comment": "Tainted Items",
   "item.arcana.tainted_melon_slice": "Tainted Melon Slice",
+  "item.arcana.aspect_goggles": "Aspect Goggles",
 
 
   "_comment": "Books",
   "item.arcana.thaumonomicon": "Thaumonomicon",
-  
+
+
   "_comment": "Effects",
    "effect.arcana.tainted": "Tainted",
-   
+
+
   "_comment": "Death Messages",
   "death.attack.Taint.player": "%1$s was consumed by Taint",
   "death.attack.Taint": "%1$s was consumed by Taint",
+
 
   "_comment": "Aspects",
   "item.arcana.aspect_air": "Air",
