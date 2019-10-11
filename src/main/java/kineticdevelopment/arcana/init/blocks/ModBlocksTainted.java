@@ -119,9 +119,9 @@ public class ModBlocksTainted {
         stripped_tainted_hawthorn_log = registerBlock(new TaintedLogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "stripped_tainted_hawthorn_log");
         tainted_hawthorn_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "tainted_hawthorn_leaves");
 
-        tainted_oak_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "tainted_oak_log");
+        tainted_oak_log = registerBlock(new TaintedLogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "tainted_oak_log");
         tainted_oak_leaves = registerBlock(new TaintedLeavesBlock(), "tainted_oak_leaves");
-        tainted_stripped_oak_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "tainted_stripped_oak_log");
+        tainted_stripped_oak_log = registerBlock(new TaintedLogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "tainted_stripped_oak_log");
 
         tainted_acacia_log = registerBlock(new TaintedLogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "tainted_acacia_log");
         tainted_acacia_planks = registerBlock(new TaintedBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "tainted_acacia_planks");
@@ -152,7 +152,6 @@ public class ModBlocksTainted {
         tainted_birch_leaves = registerBlock(new TaintedLeavesBlock(), "tainted_birch_leaves");
 
         tainted_darkoak_leaves = registerBlock(new TaintedLeavesBlock(), "tainted_darkoak_leaves");
-
         tainted_jungle_leaves = registerBlock(new TaintedLeavesBlock(), "tainted_jungle_leaves");
 
         //Tainted Full mat. blocks

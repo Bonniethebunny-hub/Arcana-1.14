@@ -67,7 +67,7 @@ public class ModBlocksUnTainted {
         untainted_hawthorn_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_hawthorn_log");
         untainted_hawthorn_planks = registerBlock(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_hawthorn_planks");
         untainted_hawthorn_slab = registerBlock(new SlabBlock(Block.Properties.from(untainted_hawthorn_planks)), "untainted_hawthorn_slab");
-        untainted_hawthorn_stairs = registerBlock(new ArcanaStairsBlock(untainted_hawthorn_planks.getDefaultState(), Block.Properties.from(tainted_greatwood_planks)), "untainted_hawthorn_stairs");
+        untainted_hawthorn_stairs = registerBlock(new ArcanaStairsBlock(untainted_hawthorn_planks.getDefaultState(), Block.Properties.from(untainted_hawthorn_planks)), "untainted_hawthorn_stairs");
         stripped_untainted_hawthorn_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "stripped_untainted_hawthorn_log");
         untainted_hawthorn_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "untainted_hawthorn_leaves");
 
@@ -107,7 +107,6 @@ public class ModBlocksUnTainted {
         untainted_birch_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "untainted_birch_leaves");
 
         //untainted_darkoak_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "untainted_darkoak_leaves");
-
         //untainted_jungle_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "untainted_jungle_leaves");
 
         //Full mat. blocks
