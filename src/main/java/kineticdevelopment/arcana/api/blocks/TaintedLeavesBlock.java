@@ -43,7 +43,7 @@ public class TaintedLeavesBlock extends TaintedBlock {
             return VoxelShapes.fullCube();
         }
 
-    //public BlockRenderLayer getRenderLayer() {return BlockRenderLayer.CUTOUT_MIPPED;}
+    public BlockRenderLayer getRenderLayer() {return BlockRenderLayer.CUTOUT_MIPPED;}
 
     @SuppressWarnings("deprecation")
         @Override
