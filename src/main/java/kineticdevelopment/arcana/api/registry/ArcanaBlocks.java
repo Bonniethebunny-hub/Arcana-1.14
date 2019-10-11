@@ -61,6 +61,17 @@ public class ArcanaBlocks {
     public static Block tainted_dair_slab;
     public static Block tainted_dair_stairs;
 
+    public static Block tainted_birch_leaves;
+    public static Block tainted_birch_log;
+    public static Block tainted_birch_planks;
+    public static Block tainted_stripped_birch_log;
+    //public static Block tainted_birch_slab;
+    //public static Block tainted_birch_stairs;
+    //public static Block tainted_birch_sapling;
+
+    public static Block tainted_darkoak_leaves;
+    public static Block tainted_jungle_leaves;
+
     public static Block tainted_grass_block;
     public static Block tainted_farmland;
     public static Block tainted_path;
@@ -121,8 +132,8 @@ public class ArcanaBlocks {
 
     //ore
     public static Block amber_ore;
-    public static Block cinnabar_ore;
-    public static Block arcanium_ore;
+    //public static Block cinnabar_ore;
+    //public static Block arcanium_ore;
 
     //arcane blocks
     public static Block arcane_stone;
@@ -186,8 +197,8 @@ public class ArcanaBlocks {
 
     //statue
     public static Block hear_no_evil;
-    public static Block speak_no_evil;
-    public static Block see_no_evil;
+    //public static Block speak_no_evil;
+    //public static Block see_no_evil;
 
     //untainted blocks
 
@@ -240,6 +251,17 @@ public class ArcanaBlocks {
     public static Block untainted_stripped_dair_log;
     public static Block untainted_dair_slab;
     public static Block untainted_dair_stairs;
+
+    public static Block untainted_birch_leaves;
+    public static Block untainted_birch_log;
+    public static Block untainted_birch_planks;
+    public static Block untainted_stripped_birch_log;
+    //public static Block untainted_birch_slab;
+    //public static Block untainted_birch_stairs;
+    //public static Block untainted_birch_sapling;
+
+    //public static Block untainted_darkoak_leaves;
+    //public static Block untainted_jungle_leaves;
 
     public static Block untainted_redstone_block;
     public static Block untainted_thaumium_block;

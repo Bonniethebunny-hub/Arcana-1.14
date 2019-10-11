@@ -99,6 +99,17 @@ public class ModBlocksUnTainted {
         untainted_stripped_dair_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_stripped_dair_log");
         untainted_dair_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "untainted_dair_leaves");
 
+        untainted_birch_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_birch_log");
+        untainted_birch_planks = registerBlock(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_birch_planks");
+        //untainted_birch_slab = registerBlock(new SlabBlock(Block.Properties.from(untainted_birch_planks)), "untainted_birch_slab");
+        //untainted_birch_stairs = registerBlock(new ArcanaStairsBlock(untainted_birch_planks.getDefaultState(), Block.Properties.from(untainted_birch_planks)), "untainted_birch_stairs");
+        untainted_stripped_birch_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_stripped_birch_log");
+        untainted_birch_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "untainted_birch_leaves");
+
+        //untainted_darkoak_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "untainted_darkoak_leaves");
+
+        //untainted_jungle_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "untainted_jungle_leaves");
+
         //Full mat. blocks
         untainted_redstone_block = registerBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F,6.0F).sound(SoundType.METAL)), "untainted_redstone_block");
         untainted_thaumium_block = registerBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F,6.0F).sound(SoundType.METAL)), "untainted_thaumium_block");

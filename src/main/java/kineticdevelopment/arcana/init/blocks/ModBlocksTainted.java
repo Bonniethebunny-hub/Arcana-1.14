@@ -4,91 +4,6 @@
 
 package kineticdevelopment.arcana.init.blocks;
 
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.stripped_tainted_greatwood_log;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.stripped_tainted_hawthorn_log;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.stripped_tainted_willow_log;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_acacia_leaves;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_acacia_log;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_acacia_planks;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_acacia_slab;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_acacia_stairs;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_altar;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_amber_ore;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_arcanium_block;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_arcanium_ore;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_bush;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_carved_pumpkin;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_cinnabar_ore;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_coal_block;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_coal_ore;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_crust;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_crust_slab;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_dair_leaves;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_dair_log;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_dair_planks;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_dair_slab;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_dair_stairs;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_destroyed_ore;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_diamond_block;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_diamond_ore;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_emerald_block;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_emerald_ore;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_farmland;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_fibers;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_flower;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_gold_block;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_gold_ore;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_goo;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_grass_block;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_gravel;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_greatwood_leaves;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_greatwood_log;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_greatwood_planks;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_greatwood_slab;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_greatwood_stairs;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_hawthorn_leaves;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_hawthorn_log;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_hawthorn_planks;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_hawthorn_slab;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_hawthorn_stairs;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_iron_block;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_iron_ore;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_jack_olantern;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_lapis_block;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_lapis_lazuli_ore;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_melon;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_mushroom;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_oak_leaves;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_oak_log;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_oak_planks;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_path;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_plank_slab;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_plank_stairs;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_pumpkin;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_redstone_block;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_redstone_ore;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_rock;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_rock_slab;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_ruby_ore;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_sand;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_silver_ore;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_soil;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_spruce_leaves;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_spruce_log;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_spruce_planks;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_spruce_slab;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_spruce_stairs;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_stripped_acacia_log;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_stripped_dair_log;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_stripped_oak_log;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_stripped_spruce_log;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_thaumium_block;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_willow_leaves;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_willow_log;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_willow_planks;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_willow_slab;
-import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_willow_stairs;
-
 import kineticdevelopment.arcana.api.blocks.ArcanaFlowerBlock;
 import kineticdevelopment.arcana.api.blocks.TaintedBlock;
 import kineticdevelopment.arcana.api.blocks.TaintedLeavesBlock;
@@ -129,6 +44,9 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
+
+import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.*;
+import static kineticdevelopment.arcana.api.registry.ArcanaBlocks.tainted_jungle_leaves;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModBlocksTainted {
@@ -225,6 +143,17 @@ public class ModBlocksTainted {
         tainted_dair_stairs = registerBlock(new TaintedStairsBlock(tainted_dair_planks.getDefaultState(), Block.Properties.from(tainted_dair_planks)), "tainted_dair_stairs");
         tainted_stripped_dair_log = registerBlock(new TaintedLogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "tainted_stripped_dair_log");
         tainted_dair_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "tainted_dair_leaves");
+
+        tainted_birch_log = registerBlock(new TaintedLogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "tainted_birch_log");
+        tainted_birch_planks = registerBlock(new TaintedBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "tainted_birch_planks");
+        //tainted_birch_slab = registerBlock(new TaintedSlab(Block.Properties.from(tainted_birch_planks)), "tainted_birch_slab");
+        //tainted_birch_stairs = registerBlock(new TaintedStairsBlock(tainted_birch_planks.getDefaultState(), Block.Properties.from(tainted_birch_planks)), "tainted_birch_stairs");
+        tainted_stripped_birch_log = registerBlock(new TaintedLogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "tainted_stripped_birch_log");
+        tainted_birch_leaves = registerBlock(new TaintedLeavesBlock(), "tainted_birch_leaves");
+
+        tainted_darkoak_leaves = registerBlock(new TaintedLeavesBlock(), "tainted_darkoak_leaves");
+
+        tainted_jungle_leaves = registerBlock(new TaintedLeavesBlock(), "tainted_jungle_leaves");
 
         //Tainted Full mat. blocks
         tainted_redstone_block = registerBlock(new TaintedBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0F,6.0F).sound(SoundType.METAL)), "tainted_redstone_block");

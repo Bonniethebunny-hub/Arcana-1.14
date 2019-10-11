@@ -94,8 +94,8 @@ public class ModBlocks {
 
         //statues
         hear_no_evil = registerBlock(new ArcanaRotatableBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "hear_no_evil");
-        speak_no_evil = registerBlock(new ArcanaRotatableBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "speak_no_evil");
-        see_no_evil = registerBlock(new ArcanaRotatableBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "see_no_evil");
+        //speak_no_evil = registerBlock(new ArcanaRotatableBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "speak_no_evil");
+        //see_no_evil = registerBlock(new ArcanaRotatableBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "see_no_evil");
 
         //mat. blocks
         arcanium_block = registerBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F,3.0F).sound(SoundType.METAL)), "arcanium_block");

@@ -80,8 +80,6 @@ public class TaintSpreader {
      * List of blocks taint goo spreads to
      */
     static Block[] TaintGooProspects = {
-            Blocks.JUNGLE_LEAVES,
-            Blocks.DARK_OAK_LEAVES
     };
     
     /**
@@ -157,6 +155,16 @@ public class TaintSpreader {
         put(ArcanaBlocks.willow_stairs, ArcanaBlocks.tainted_willow_stairs);
         put(ArcanaBlocks.willow_planks, ArcanaBlocks.tainted_willow_planks);
         put(ArcanaBlocks.willow_slab, ArcanaBlocks.tainted_willow_slab);
+
+        put(Blocks.BIRCH_LOG, ArcanaBlocks.tainted_birch_log);
+        put(Blocks.STRIPPED_BIRCH_LOG, ArcanaBlocks.tainted_stripped_birch_log);
+        put(Blocks.BIRCH_LEAVES, ArcanaBlocks.tainted_birch_leaves);
+        //put(Blocks.BIRCH_STAIRS, ArcanaBlocks.taitned_birch_stairs);
+        put(Blocks.BIRCH_PLANKS, ArcanaBlocks.tainted_birch_planks);
+        //put(Blocks.BIRCH_SLAB, ArcanaBlocks.taitned_birch_slab);
+
+        put(Blocks.DARK_OAK_LEAVES, ArcanaBlocks.tainted_darkoak_leaves);
+        put(Blocks.JUNGLE_LEAVES, ArcanaBlocks.tainted_jungle_leaves);
 
         //Misc
         put(Blocks.GRASS_PATH, ArcanaBlocks.tainted_path);
