@@ -51,8 +51,10 @@ Dev Log: https://arcanamod.net/
 
 Patreon: https://www.patreon.com/arcanamod
 
+Download: https://www.curseforge.com/minecraft/mc-mods/arcana
 
 
+## License
 
 Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) https://creativecommons.org/licenses/by-nc/4.0/
 
