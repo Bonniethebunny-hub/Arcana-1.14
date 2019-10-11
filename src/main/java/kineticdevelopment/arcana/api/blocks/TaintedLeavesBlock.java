@@ -1,9 +1,7 @@
 package kineticdevelopment.arcana.api.blocks;
 
 import kineticdevelopment.arcana.common.utils.taint.TaintLevelHandler;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.SoundType;
+import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.BlockRenderLayer;
@@ -13,9 +11,12 @@ import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IEnviromentBlockReader;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+
+import static net.minecraft.block.LeavesBlock.*;
 
 /**
  * All Arcana tainted leaves blocks should extend this class
@@ -25,7 +26,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
  */
 public class TaintedLeavesBlock extends TaintedBlock {
 
-        public TaintedLeavesBlock() {
+    public TaintedLeavesBlock() {
             super(Block.Properties.create(Material.MISCELLANEOUS)
                     .sound(SoundType.PLANT)
                     .hardnessAndResistance(3.0f)
@@ -42,16 +43,9 @@ public class TaintedLeavesBlock extends TaintedBlock {
             return VoxelShapes.fullCube();
         }
 
-        public BlockRenderLayer getRenderLayer() {
-            return BlockRenderLayer.TRANSLUCENT;
-        }
+    //public BlockRenderLayer getRenderLayer() {return BlockRenderLayer.CUTOUT_MIPPED;}
 
-        @SuppressWarnings("deprecation")
-        @OnlyIn(Dist.CLIENT)
-        public boolean isSideInvisible(BlockState state, BlockState adjacentBlockState, Direction side) {
-            return adjacentBlockState.getBlock() == this || super.isSideInvisible(state, adjacentBlockState, side);
-        }
-
+    @SuppressWarnings("deprecation")
         @Override
         public void onBlockHarvested(World worldIn, BlockPos pos, BlockState state, PlayerEntity player) {
             worldIn.playEvent(player, 2001, pos, getStateId(state));
