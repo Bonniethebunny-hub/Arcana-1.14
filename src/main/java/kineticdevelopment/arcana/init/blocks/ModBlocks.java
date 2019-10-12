@@ -105,6 +105,15 @@ public class ModBlocks {
 
         //node
         bright_node = registerBlock(new ArcanaFlowerBlock(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.PLANT)), "bright_node");
+
+        //taint scrubber
+        //This is a just place holder to add the models into the game.
+        taint_booster = registerBlock(new ArcanaRotatableBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F,3.0F).sound(SoundType.METAL)), "taint_booster");
+        taint_bore = registerBlock(new ArcanaRotatableBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F,3.0F).sound(SoundType.METAL)), "taint_bore");
+        taint_scrubber = registerBlock(new ArcanaRotatableBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F,3.0F).sound(SoundType.METAL)), "taint_scrubber");
+        taint_scrubber_mk2 = registerBlock(new ArcanaRotatableBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F,3.0F).sound(SoundType.METAL)), "taint_scrubber_mk2");
+        taint_sucker = registerBlock(new ArcanaRotatableBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F,3.0F).sound(SoundType.METAL)), "taint_sucker");
+
     }
 
 

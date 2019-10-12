@@ -4,6 +4,9 @@
   "itemGroup.arcana_aspects": "Aspects",
   "itemGroup.arcana_tainted": "Tainted Blocks",
 
+  "_comment": "Mobs",
+  "item.arcana.mana_creeper_egg": "Mana Creeper Spawn Egg",
+  "entity.arcana.mana_creeper": "Mana Creeper",
 
   "_comment": "Tainted Blocks",
   "block.arcana.tainted_crust": "Tainted Crust",
