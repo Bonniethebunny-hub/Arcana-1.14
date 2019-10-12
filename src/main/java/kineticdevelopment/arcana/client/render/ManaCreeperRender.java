@@ -18,7 +18,8 @@ import javax.annotation.Nullable;
 public class ManaCreeperRender extends MobRenderer<ManaCreeper, ManaCreeperModel> {
 
     public ManaCreeperRender(EntityRendererManager manager) {
-        super(manager, new ManaCreeperModel(), 02f);
+        //Shadow size
+        super(manager, new ManaCreeperModel(), 0f);
 
     }
 
