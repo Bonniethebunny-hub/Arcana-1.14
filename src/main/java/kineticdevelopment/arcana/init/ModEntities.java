@@ -2,9 +2,10 @@
  * All items should be listed here.
  */
 
-package kineticdevelopment.arcana.init.item_entities;
+package kineticdevelopment.arcana.init;
 
 
+import kineticdevelopment.arcana.init.ModMobEntities;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
@@ -20,7 +21,10 @@ public class ModEntities {
     @SubscribeEvent
     public static void registerEntities(RegistryEvent.Register<EntityType<?>> event)
     {
-
+        event.getRegistry().registerAll(
+                ModMobEntities.Mana_Creeper
+        );
+        ModMobEntities.registerEntintySpawns();
 
     }
 

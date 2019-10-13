@@ -213,6 +213,13 @@ public class ArcanaBlocks {
     //public static Block speak_no_evil;
     //public static Block see_no_evil;
 
+    //taint scrubber
+    public static Block taint_scrubber;
+    public static Block taint_sucker;
+    public static Block taint_bore;
+    public static Block taint_scrubber_mk2;
+    public static Block taint_booster;
+
     //untainted blocks
 
     public static Block untainted_oak_planks;

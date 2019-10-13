@@ -6,8 +6,10 @@
 package kineticdevelopment.arcana.core;
 
 
+import kineticdevelopment.arcana.client.render.ArcanaRenderRegistry;
 import kineticdevelopment.arcana.common.world.OreGeneration;
 import kineticdevelopment.arcana.init.ModKeyBindings;
+import net.minecraft.client.renderer.model.ModelResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
@@ -52,6 +54,8 @@ public class Arcana {
     private void clientSetupEvent(final FMLClientSetupEvent event) {
     	ClientProxy.init();
     	ClientRegistry.registerKeyBinding(ModKeyBindings.SCANWITHGOGGLES);
+
+        ArcanaRenderRegistry.registryEntityRenders();
     }
 
     private void loadComplete(final FMLLoadCompleteEvent event) {
@@ -59,4 +63,5 @@ public class Arcana {
 
     public void serverStarting(FMLServerStartingEvent event) {
     }
+
 }

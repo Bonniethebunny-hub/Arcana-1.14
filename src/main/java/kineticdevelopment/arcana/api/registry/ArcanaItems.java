@@ -8,6 +8,9 @@ import net.minecraft.item.Item;
 
 public class ArcanaItems {
 
+    //spawn eggs
+    public static Item mana_creeper_egg;
+
     public static Item thaumonomicon;
     public static Item quicksilver;
     public static Item amber;
