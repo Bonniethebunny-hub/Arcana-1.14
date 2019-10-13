@@ -70,7 +70,20 @@ public class ArcanaBlocks {
     //public static Block tainted_birch_sapling;
 
     public static Block tainted_darkoak_leaves;
+    public static Block tainted_darkoak_log;
+    public static Block tainted_darkoak_planks;
+    public static Block tainted_stripped_darkoak_log;
+    //public static Block tainted_darkoak_slab;
+    //public static Block tainted_darkoak_stairs;
+    //public static Block tainted_darkoak_sapling;
+
     public static Block tainted_jungle_leaves;
+    public static Block tainted_jungle_log;
+    public static Block tainted_jungle_planks;
+    public static Block tainted_stripped_jungle_log;
+    //public static Block tainted_jungle_slab;
+    //public static Block tainted_jungle_stairs;
+    //public static Block tainted_jungle_sapling;
 
     public static Block tainted_grass_block;
     public static Block tainted_farmland;
@@ -260,8 +273,20 @@ public class ArcanaBlocks {
     //public static Block untainted_birch_stairs;
     //public static Block untainted_birch_sapling;
 
-    //public static Block untainted_darkoak_leaves;
-    //public static Block untainted_jungle_leaves;
+    public static Block untainted_darkoak_log;
+    public static Block untainted_darkoak_planks;
+    public static Block untainted_stripped_darkoak_log;
+    //public static Block untainted_darkoak_slab;
+    //public static Block untainted_darkoak_stairs;
+    //public static Block untainted_darkoak_sapling;
+
+    public static Block untainted_jungle_log;
+    public static Block untainted_jungle_planks;
+    public static Block untainted_stripped_jungle_log;
+    //public static Block untainted_jungle_slab;
+    //public static Block untainted_jungle_stairs;
+    //public static Block untainted_jungle_sapling;
+    public static Block untainted_jungle_leaves;
 
     public static Block untainted_redstone_block;
     public static Block untainted_thaumium_block;

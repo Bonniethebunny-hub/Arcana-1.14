@@ -163,8 +163,19 @@ public class TaintSpreader {
         put(Blocks.BIRCH_PLANKS, ArcanaBlocks.tainted_birch_planks);
         //put(Blocks.BIRCH_SLAB, ArcanaBlocks.taitned_birch_slab);
 
+        put(Blocks.DARK_OAK_LOG, ArcanaBlocks.tainted_darkoak_log);
+        put(Blocks.STRIPPED_DARK_OAK_LOG, ArcanaBlocks.tainted_stripped_darkoak_log);
         put(Blocks.DARK_OAK_LEAVES, ArcanaBlocks.tainted_darkoak_leaves);
+        //put(Blocks.DARK_OAK_STAIRS, ArcanaBlocks.taitned_darkoak_stairs);
+        put(Blocks.DARK_OAK_PLANKS, ArcanaBlocks.tainted_darkoak_planks);
+        //put(Blocks.DARK_OAK_SLAB, ArcanaBlocks.taitned_darkoak_slab);
+
+        put(Blocks.JUNGLE_LOG, ArcanaBlocks.tainted_jungle_log);
+        put(Blocks.STRIPPED_JUNGLE_LOG, ArcanaBlocks.tainted_stripped_jungle_log);
         put(Blocks.JUNGLE_LEAVES, ArcanaBlocks.tainted_jungle_leaves);
+        //put(Blocks.JUNGLE_STAIRS, ArcanaBlocks.taitned_jungle_stairs);
+        put(Blocks.JUNGLE_PLANKS, ArcanaBlocks.tainted_jungle_planks);
+        //put(Blocks.JUNGLE_SLAB, ArcanaBlocks.taitned_jungle_slab);
 
         //Misc
         put(Blocks.GRASS_PATH, ArcanaBlocks.tainted_path);

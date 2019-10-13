@@ -151,7 +151,18 @@ public class ModBlocksTainted {
         tainted_stripped_birch_log = registerBlock(new TaintedLogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "tainted_stripped_birch_log");
         tainted_birch_leaves = registerBlock(new TaintedLeavesBlock(), "tainted_birch_leaves");
 
+        tainted_darkoak_log = registerBlock(new TaintedLogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "tainted_darkoak_log");
+        tainted_darkoak_planks = registerBlock(new TaintedBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "tainted_darkoak_planks");
+        //tainted_darkoak_slab = registerBlock(new TaintedSlab(Block.Properties.from(tainted_darkoak_planks)), "tainted_darkoak_slab");
+        //tainted_darkoak_stairs = registerBlock(new TaintedStairsBlock(tainted_darkoak_planks.getDefaultState(), Block.Properties.from(tainted_darkoak_planks)), "tainted_darkoak_stairs");
+        tainted_stripped_darkoak_log = registerBlock(new TaintedLogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "tainted_stripped_darkoak_log");
         tainted_darkoak_leaves = registerBlock(new TaintedLeavesBlock(), "tainted_darkoak_leaves");
+
+        tainted_jungle_log = registerBlock(new TaintedLogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "tainted_jungle_log");
+        tainted_jungle_planks = registerBlock(new TaintedBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "tainted_jungle_planks");
+        //tainted_jungle_slab = registerBlock(new TaintedSlab(Block.Properties.from(tainted_jungle_planks)), "tainted_jungle_slab");
+        //tainted_jungle_stairs = registerBlock(new TaintedStairsBlock(tainted_jungle_planks.getDefaultState(), Block.Properties.from(tainted_jungle_planks)), "tainted_jungle_stairs");
+        tainted_stripped_jungle_log = registerBlock(new TaintedLogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "tainted_stripped_jungle_log");
         tainted_jungle_leaves = registerBlock(new TaintedLeavesBlock(), "tainted_jungle_leaves");
 
         //Tainted Full mat. blocks
