@@ -7,6 +7,7 @@ import java.io.IOException;
 
 import kineticdevelopment.arcana.api.misc.ArcanaFileUtils;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.CompressedStreamTools;
 import net.minecraft.world.World;
@@ -84,8 +85,13 @@ public class TaintLevelHandler {
     }
 
     public static void increaseTaintLevel(World world, float amount) {
+
+    	if(world instanceof ClientWorld) {
+    		return;
+		}
+
     	File dir = ArcanaFileUtils.getWorldDirectory(world);
-    	
+
         if (!world.isRemote) {
         	final File file = new File(dir, "Arcana/TaintLevel.taint");
             CompoundNBT nbt;
@@ -97,18 +103,18 @@ public class TaintLevelHandler {
     			else {
     				nbt = CompressedStreamTools.readCompressed(new FileInputStream(file));
     			}
-    			
+
     			nbt.putFloat("TaintLevel", getTaintLevel(world) + amount);
-    			
+
     			System.out.println((getTaintLevel(world) + amount));
-    			
+
     			try (FileOutputStream fileoutputstream = new FileOutputStream(file)) {
     	            CompressedStreamTools.writeCompressed(nbt, fileoutputstream);
     	         } catch (IOException e) {
     	        	 e.printStackTrace();
     	         }
-    		} 
-    		
+    		}
+
     		catch (IOException e) {
     			e.printStackTrace();
     		}
