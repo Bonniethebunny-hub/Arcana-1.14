@@ -29,7 +29,7 @@ public class Arcana {
     public static final String MOD_ID = "arcana";
 
     public static Arcana instance;
-    public static final CommonProxy proxy = DistExecutor.runForDist(() -> ClientProxy::new, () -> CommonProxy::new);
+    public static CommonProxy proxy = DistExecutor.runForDist(() -> ClientProxy::new, () -> CommonProxy::new);
 
     public static Logger LOGGER = LogManager.getLogger(MOD_ID);
 
