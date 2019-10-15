@@ -111,7 +111,7 @@ public class ModBlocksUnTainted {
         //untainted_darkoak_slab = registerBlock(new SlabBlock(Block.Properties.from(untainted_darkoak_planks)), "untainted_darkoak_slab");
         //untainted_darkoak_stairs = registerBlock(new ArcanaStairsBlock(untainted_darkoak_planks.getDefaultState(), Block.Properties.from(untainted_darkoak_planks)), "untainted_darkoak_stairs");
         untainted_stripped_darkoak_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_stripped_darkoak_log");
-        //untainted_darkoak_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "untainted_darkoak_leaves");
+        untainted_darkoak_leaves = registerBlock(new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT)), "untainted_darkoak_leaves");
 
         untainted_jungle_log = registerBlock(new LogBlock(MaterialColor.AIR, Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_jungle_log");
         untainted_jungle_planks = registerBlock(new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD)), "untainted_jungle_planks");

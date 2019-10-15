@@ -280,6 +280,7 @@ public class ArcanaBlocks {
     //public static Block untainted_birch_stairs;
     //public static Block untainted_birch_sapling;
 
+    public static Block untainted_darkoak_leaves;
     public static Block untainted_darkoak_log;
     public static Block untainted_darkoak_planks;
     public static Block untainted_stripped_darkoak_log;
