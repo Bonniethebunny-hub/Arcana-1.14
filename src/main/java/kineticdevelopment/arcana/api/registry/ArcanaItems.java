@@ -18,6 +18,7 @@ public class ArcanaItems {
     public static Item silver; //not added as item
     public static Item dead_stick;
     public static Item trypophobius_stick;
+    public static Item wand;
 
     //Food
     public static Item tainted_melon_slice;
@@ -79,7 +80,6 @@ public class ArcanaItems {
     public static Item aspect_wrath;
     public static Item aspect_overworld;
     public static Item aspect_energy;
-
 
 
 }

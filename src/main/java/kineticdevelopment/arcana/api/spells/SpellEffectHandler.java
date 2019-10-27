@@ -9,13 +9,13 @@ import javax.annotation.Nullable;
 
 public class SpellEffectHandler {
 
-    List<SpellEffect> effects = new ArrayList<>();
+    private static List<SpellEffect> effects = new ArrayList<>();
 
 
     @Nullable
-    public SpellEffect getEffect(String effectType) {
+    public static SpellEffect getEffect(String effectType) {
         for(SpellEffect effect : effects) {
-            if(effect.getType().toString().toLowerCase().equals(effectType.toLowerCase())) {
+            if(effect.getType().toString().toUpperCase().equals(effectType.toUpperCase())) {
                 return effect;
             }
         }

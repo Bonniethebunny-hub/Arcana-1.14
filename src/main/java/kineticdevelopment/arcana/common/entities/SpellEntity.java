@@ -44,7 +44,7 @@ public class SpellEntity extends ProjectileItemEntity {
     protected void onImpact(RayTraceResult result) {
         if(result instanceof BlockRayTraceResult) {
             BlockRayTraceResult resultBlock = (BlockRayTraceResult) result;
-            effect.getEffect(Arcana.proxy.getEntityWorld(this).getBlockState(resultBlock.getPos()), power);
+            //effect.getEffect(resultBlock.getPos(), resultBlock.get, power);
         }
         if(result instanceof EntityRayTraceResult) {
             EntityRayTraceResult resultEntity = (EntityRayTraceResult) result;

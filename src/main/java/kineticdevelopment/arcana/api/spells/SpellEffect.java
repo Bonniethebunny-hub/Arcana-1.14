@@ -3,13 +3,15 @@ package kineticdevelopment.arcana.api.spells;
 import kineticdevelopment.arcana.api.aspects.Aspect.AspectType;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 
 public interface SpellEffect {
 
     AspectType getType();
 
     // Effect on block position
-    void getEffect(BlockState block, int power);
+    void getEffect(BlockPos block, World world, int power);
 
     // Effect on entity
     void getEffect(LivingEntity entity, int power);
