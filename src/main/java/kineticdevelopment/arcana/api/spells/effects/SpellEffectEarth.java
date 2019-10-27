@@ -11,8 +11,8 @@ import net.minecraft.world.World;
 public class SpellEffectEarth implements SpellEffect {
 
     @Override
-    public Aspect.AspectType getType() {
-        return Aspect.AspectType.EARTH;
+    public String getName() {
+        return "EARTH";
     }
 
     @Override

@@ -42,7 +42,7 @@ public class Spell {
 
         StringBuilder effects = new StringBuilder();
         for(SpellEffect effect : this.effects) {
-            effects.append(effect.getType().toString()).append(";");
+            effects.append(effect.getName()).append(";");
         }
 
         tag.putString("effects", effects.toString());

@@ -15,14 +15,14 @@ public class SpellEffectHandler {
     @Nullable
     public static SpellEffect getEffect(String effectType) {
         for(SpellEffect effect : effects) {
-            if(effect.getType().toString().toUpperCase().equals(effectType.toUpperCase())) {
+            if(effect.getName().toUpperCase().equals(effectType.toUpperCase())) {
                 return effect;
             }
         }
         return null;
     }
 
-    public void init() {
+    public static void init() {
         effects.add(new SpellEffectEarth());
     }
 

@@ -6,6 +6,7 @@
 package kineticdevelopment.arcana.core;
 
 
+import kineticdevelopment.arcana.api.spells.SpellEffectHandler;
 import kineticdevelopment.arcana.client.render.ArcanaRenderRegistry;
 import kineticdevelopment.arcana.common.world.OreGeneration;
 import kineticdevelopment.arcana.init.ModKeyBindings;
@@ -59,6 +60,7 @@ public class Arcana {
     }
 
     private void loadComplete(final FMLLoadCompleteEvent event) {
+        SpellEffectHandler.init();
     }
 
     public void serverStarting(FMLServerStartingEvent event) {

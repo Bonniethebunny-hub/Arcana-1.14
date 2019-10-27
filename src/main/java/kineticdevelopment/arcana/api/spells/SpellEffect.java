@@ -8,7 +8,7 @@ import net.minecraft.world.World;
 
 public interface SpellEffect {
 
-    AspectType getType();
+    String getName();
 
     // Effect on block position
     void getEffect(BlockPos block, World world, int power);
