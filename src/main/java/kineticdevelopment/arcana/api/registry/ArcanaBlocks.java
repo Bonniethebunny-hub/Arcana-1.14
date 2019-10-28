@@ -10,7 +10,8 @@ import net.minecraft.block.Block;
 public class ArcanaBlocks {
 
     //objects with functions
-    public static  Block crucible;
+    public static Block crucible;
+    public static Block aspect_bookshelf;
     //tainted trees
     public static Block tainted_oak_planks;
     public static Block tainted_plank_stairs;

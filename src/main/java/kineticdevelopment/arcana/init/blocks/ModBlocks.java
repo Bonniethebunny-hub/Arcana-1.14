@@ -9,6 +9,7 @@ import kineticdevelopment.arcana.api.blocks.ArcanaDoorBlock;
 import kineticdevelopment.arcana.api.blocks.ArcanaSaplingBlock;
 import kineticdevelopment.arcana.api.blocks.ArcanaStairsBlock;
 import kineticdevelopment.arcana.api.blocks.ArcanaTrapDoorBlock;
+import kineticdevelopment.arcana.common.blocks.with_function.Aspect_Bookshelf;
 import kineticdevelopment.arcana.common.blocks.with_function.Crucible;
 import kineticdevelopment.arcana.common.trees.HawthornTree;
 import net.minecraft.block.*;
@@ -117,6 +118,7 @@ public class ModBlocks {
 
         //objects with function
         crucible = registerBlock(new Crucible(), "crucible");
+        aspect_bookshelf = registerBlock(new Aspect_Bookshelf(), "aspect_bookshelf");
     }
 
 
