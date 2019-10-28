@@ -9,6 +9,7 @@ import kineticdevelopment.arcana.api.blocks.ArcanaDoorBlock;
 import kineticdevelopment.arcana.api.blocks.ArcanaSaplingBlock;
 import kineticdevelopment.arcana.api.blocks.ArcanaStairsBlock;
 import kineticdevelopment.arcana.api.blocks.ArcanaTrapDoorBlock;
+import kineticdevelopment.arcana.common.blocks.with_function.Crucible;
 import kineticdevelopment.arcana.common.trees.HawthornTree;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
@@ -114,6 +115,8 @@ public class ModBlocks {
         taint_scrubber_mk2 = registerBlock(new ArcanaRotatableBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F,3.0F).sound(SoundType.METAL)), "taint_scrubber_mk2");
         taint_sucker = registerBlock(new ArcanaRotatableBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F,3.0F).sound(SoundType.METAL)), "taint_sucker");
 
+        //objects with function
+        crucible = registerBlock(new Crucible(), "crucible");
     }
 
 
