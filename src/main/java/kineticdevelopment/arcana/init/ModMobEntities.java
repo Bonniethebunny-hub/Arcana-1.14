@@ -18,7 +18,7 @@ import net.minecraftforge.event.RegistryEvent;
 public class ModMobEntities {
 
 
-    public static EntityType<?> Mana_Creeper = EntityType.Builder.create(ManaCreeper::new, EntityClassification.CREATURE).build(Arcana.MOD_ID + ":mana_creeper").setRegistryName(ModItems.location("mana_creeper")) ;
+    public static EntityType<?> Mana_Creeper = EntityType.Builder.create(ManaCreeper::new, EntityClassification.CREATURE).build(Arcana.MOD_ID + ":mana_creeper").setRegistryName(ModItems.location("mana_creeper"));
 
 
     //Spawn Eggs

@@ -5,20 +5,19 @@
 package kineticdevelopment.arcana.init.item_entities;
 
 
-import kineticdevelopment.arcana.api.registry.ArcanaNodes;
+import kineticdevelopment.arcana.common.nodes.*;
 import kineticdevelopment.arcana.common.utils.creativetab.ArcanaItemGroup;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraftforge.common.ToolType;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import static kineticdevelopment.arcana.init.item_entities.ModItems.location;
+import static kineticdevelopment.arcana.api.registry.ArcanaNodes.*;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModINodes {
@@ -31,7 +30,13 @@ public class ModINodes {
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent<Block> event)
     {
-        ArcanaNodes.normal_node = registerBlock(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F,3.0F).sound(SoundType.METAL)), "normal_node");
+        bright_node = registerBlock(new BrightNode(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F,3.0F).sound(SoundType.METAL)), "bright_node");
+        eldritch_node = registerBlock(new EldritchNode(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F,3.0F).sound(SoundType.METAL)), "eldritch_node");
+        fading_node = registerBlock(new FadingNode(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F,3.0F).sound(SoundType.METAL)), "fading_node");
+        hungry_node = registerBlock(new HungryNode(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F,3.0F).sound(SoundType.METAL)), "hungry_node");
+        normal_node = registerBlock(new NormalNode(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F,3.0F).sound(SoundType.METAL)), "normal_node");
+        pure_node = registerBlock(new PureNode(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F,3.0F).sound(SoundType.METAL)), "pure_node");
+        tainted_node = registerBlock(new TaintedNode(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F,3.0F).sound(SoundType.METAL)), "tainted_node");
     }
 
     public static Block registerBlock(Block block, String name)
