@@ -105,8 +105,6 @@ public class ModBlocks {
         magical_grass = registerBlock(new Block(Block.Properties.create(Material.EARTH).hardnessAndResistance(0.5F, 0.5F).sound(SoundType.GROUND)), "magical_grass");
         magical_forest_grass = registerBlock(new ArcanaFlowerBlock(Block.Properties.create(Material.PLANTS).hardnessAndResistance(0.0F, 0.0F).sound(SoundType.PLANT)), "magical_forest_grass");
 
-        //node
-        bright_node = registerBlock(new ArcanaFlowerBlock(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.PLANT)), "bright_node");
 
         //taint scrubber
         //This is a just place holder to add the models into the game.

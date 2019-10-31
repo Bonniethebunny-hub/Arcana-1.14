@@ -23,15 +23,3 @@ run
 
 # Files from Forge MDK
 forge*changelog.txt
-src/main/java/kineticdevelopment/init/ModBlocks.java
-.DS_Store
-.DS_Store
-.DS_Store
-src/.DS_Store
-src/main/.DS_Store
-src/main/resources/.DS_Store
-src/main/resources/assets/.DS_Store
-src/main/resources/assets/arcana/.DS_Store
-src/main/resources/assets/arcana/textures/.DS_Store
-src/main/resources/assets/arcana/textures/block/.DS_Store
-src/main/resources/assets/arcana/textures/item/.DS_Store
