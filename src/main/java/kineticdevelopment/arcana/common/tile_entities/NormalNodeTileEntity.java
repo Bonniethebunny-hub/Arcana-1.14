@@ -9,15 +9,12 @@ import static kineticdevelopment.arcana.api.registry.ArcanaTileEntities.normal_n
 
 public class NormalNodeTileEntity extends TileEntity implements ITickableTileEntity {
 
-    private boolean particle = false;
-
     public NormalNodeTileEntity() { super(normal_node_entity); }
 
     @Override
     public void tick() {
-        if(world.isRemote() && !particle) {
-            Minecraft.getInstance().player.getEntityWorld().addParticle(ArcanaParticles.NORMAL_NODE_PARTICLE, getParticleX(), getParticleY(), getParticleZ(), 0, 0, 0);
-            particle = true;
+        if(world.isRemote()) {
+            Minecraft.getInstance().player.getEntityWorld().addParticle(ArcanaParticles.NORMAL_NODE_PARTICLE, true, getParticleX(), getParticleY(), getParticleZ(), 0, 0, 0);
         }
     }
 

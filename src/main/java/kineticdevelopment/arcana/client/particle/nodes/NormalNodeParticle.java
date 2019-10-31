@@ -1,19 +1,16 @@
 package kineticdevelopment.arcana.client.particle.nodes;
 
-import jdk.nashorn.internal.runtime.regexp.joni.constants.NodeType;
 import kineticdevelopment.arcana.api.registry.ArcanaNodes;
-import kineticdevelopment.arcana.common.nodes.Node;
-import kineticdevelopment.arcana.core.Arcana;
-import net.minecraft.block.Blocks;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.particle.*;
+import net.minecraft.client.particle.IParticleFactory;
+import net.minecraft.client.particle.IParticleRenderType;
+import net.minecraft.client.particle.Particle;
+import net.minecraft.client.particle.SpriteTexturedParticle;
 import net.minecraft.particles.BasicParticleType;
 import net.minecraft.util.IItemProvider;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import org.w3c.dom.NodeList;
 
 @OnlyIn(Dist.CLIENT)
 public class NormalNodeParticle extends SpriteTexturedParticle {
@@ -22,7 +19,7 @@ public class NormalNodeParticle extends SpriteTexturedParticle {
         super(p_i48192_1_, p_i48192_2_, p_i48192_4_, p_i48192_6_);
         this.setSprite(Minecraft.getInstance().getItemRenderer().getItemModelMesher().getParticleIcon(p_i48192_8_));
         this.particleGravity = 0.0F;
-        this.maxAge = 80;
+        this.maxAge = 1;
         this.canCollide = false;
     }
 

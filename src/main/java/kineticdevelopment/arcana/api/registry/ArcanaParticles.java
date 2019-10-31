@@ -6,10 +6,11 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.particles.BasicParticleType;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.particles.ParticleType;
+import net.minecraft.particles.ParticleTypes;
 import net.minecraft.util.registry.Registry;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
-public class ArcanaParticles {
+public class ArcanaParticles extends ParticleTypes {
 
     public static final BasicParticleType NORMAL_NODE_PARTICLE = register(Arcana.MOD_ID + ":normal_node_particle", true);
 

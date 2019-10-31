@@ -14,9 +14,9 @@ import net.minecraftforge.fml.common.Mod;
 public class ModParticles {
 
     @SubscribeEvent
-    public void registerParticles(final ParticleFactoryRegisterEvent event)
+    public static void registerParticles(final ParticleFactoryRegisterEvent event)
     {
-       // System.out.println("Registering particle factories...");
+        //System.out.println("Registering particle factories...");
         Minecraft.getInstance().particles.registerFactory(ArcanaParticles.NORMAL_NODE_PARTICLE, new NormalNodeParticle.Factory());
     }
 
