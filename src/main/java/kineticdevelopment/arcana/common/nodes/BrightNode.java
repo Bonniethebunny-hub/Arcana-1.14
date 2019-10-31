@@ -12,9 +12,9 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
-public class BrightNode extends Block {
+public class BrightNode extends Node {
 
-    public BrightNode(Properties p_i48440_1_) {
-        super(p_i48440_1_);
+    public BrightNode(Properties property) {
+        super(property);
     }
 }

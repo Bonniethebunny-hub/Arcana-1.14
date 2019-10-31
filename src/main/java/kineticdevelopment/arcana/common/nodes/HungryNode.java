@@ -2,10 +2,10 @@ package kineticdevelopment.arcana.common.nodes;
 
 import net.minecraft.block.Block;
 
-public class HungryNode extends Block {
+public class HungryNode extends Node {
 
-    public HungryNode(Properties p_i48440_1_) {
-        super(p_i48440_1_);
+    public HungryNode(Properties property) {
+        super(property);
     }
 
 }

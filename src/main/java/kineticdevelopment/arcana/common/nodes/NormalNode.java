@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 
 public class NormalNode extends Node {
 
-    public NormalNode(Properties p_i48440_1_) { super(p_i48440_1_); }
+    public NormalNode(Properties property) { super(property); }
 
     @Override
     public TileEntity createNewTileEntity(IBlockReader p_196283_1_) {

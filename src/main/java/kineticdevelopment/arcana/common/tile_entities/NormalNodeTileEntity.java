@@ -1,6 +1,6 @@
 package kineticdevelopment.arcana.common.tile_entities;
 
-import kineticdevelopment.arcana.api.registry.ArcanaParticleTypes;
+import kineticdevelopment.arcana.api.registry.ArcanaParticles;
 import net.minecraft.client.Minecraft;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
@@ -16,7 +16,7 @@ public class NormalNodeTileEntity extends TileEntity implements ITickableTileEnt
     @Override
     public void tick() {
         if(world.isRemote() && !particle) {
-            Minecraft.getInstance().player.getEntityWorld().addParticle(ArcanaParticleTypes.NORMAL_NODE_PARTICLE, getParticleX(), getParticleY(), getParticleZ(), 0, 0, 0);
+            Minecraft.getInstance().player.getEntityWorld().addParticle(ArcanaParticles.NORMAL_NODE_PARTICLE, getParticleX(), getParticleY(), getParticleZ(), 0, 0, 0);
             particle = true;
         }
     }

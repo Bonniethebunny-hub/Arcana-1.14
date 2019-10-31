@@ -1,6 +1,5 @@
 {
-    "parent": "item/generated",
-    "textures": {
-        "layer0": "arcana:nodes/normal_node"
-    }
+  "textures": {
+    "particle": "arcana:nodes/normal_node"
+  }
 }
