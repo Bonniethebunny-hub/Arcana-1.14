@@ -88,70 +88,7 @@ public class ModParticles {
     @SubscribeEvent
     public static void registerParticles(final RegistryEvent.Register<ParticleType<?>> event)
     {
-        //System.out.println("Registering node particles...");
+        //System.out.println("Registering particles...");
         BasicParticleType type = ArcanaParticles.BRIGHT_NODE_PARTICLE;
-        type = ArcanaParticles.ELDRITCH_NODE_PARTICLE;
-        type = ArcanaParticles.FADING_NODE_PARTICLE;
-        type = ArcanaParticles.HUNGRY_NODE_PARTICLE;
-        type = ArcanaParticles.NORMAL_NODE_PARTICLE;
-        type = ArcanaParticles.PURE_NODE_PARTICLE;
-        type = ArcanaParticles.TAINTED_NODE_PARTICLE;
-
-        //System.out.println("Registering aspect particles...");
-        type = ArcanaParticles.ASPECT_AIR_PARTICLE;
-        type = ArcanaParticles.ASPECT_ARMOUR_PARTICLE;
-        type = ArcanaParticles.ASPECT_AURA_PARTICLE;
-        type = ArcanaParticles.ASPECT_BEAST_PARTICLE;
-        type = ArcanaParticles.ASPECT_CHAOS_PARTICLE;
-        type = ArcanaParticles.ASPECT_CRAFTING_PARTICLE;
-        type = ArcanaParticles.ASPECT_CRYSTAL_PARTICLE;
-        type = ArcanaParticles.ASPECT_DARKNESS_PARTICLE;
-        type = ArcanaParticles.ASPECT_DEATH_PARTICLE;
-        type = ArcanaParticles.ASPECT_EARTH_PARTICLE;
-        type = ArcanaParticles.ASPECT_ELDRITCH_PARTICLE;
-        type = ArcanaParticles.ASPECT_ENDER_PARTICLE;
-        type = ArcanaParticles.ASPECT_ENERGY_PARTICLE;
-        type = ArcanaParticles.ASPECT_ENVY_PARTICLE;
-        type = ArcanaParticles.ASPECT_EXCHANGE_PARTICLE;
-        type = ArcanaParticles.ASPECT_FABRIC_PARTICLE;
-        type = ArcanaParticles.ASPECT_FIRE_PARTICLE;
-        type = ArcanaParticles.ASPECT_FLESH_PARTICLE;
-        type = ArcanaParticles.ASPECT_FLIGHT_PARTICLE;
-        type = ArcanaParticles.ASPECT_GLUTTONY_PARTICLE;
-        type = ArcanaParticles.ASPECT_GREED_PARTICLE;
-        type = ArcanaParticles.ASPECT_HARVEST_PARTICLE;
-        type = ArcanaParticles.ASPECT_HUMAN_PARTICLE;
-        type = ArcanaParticles.ASPECT_ICE_PARTICLE;
-        type = ArcanaParticles.ASPECT_IMPRISON_PARTICLE;
-        type = ArcanaParticles.ASPECT_JOURNEY_PARTICLE;
-        type = ArcanaParticles.ASPECT_LIFE_PARTICLE;
-        type = ArcanaParticles.ASPECT_LIGHT_PARTICLE;
-        type = ArcanaParticles.ASPECT_LUST_PARTICLE;
-        type = ArcanaParticles.ASPECT_MACHINE_PARTICLE;
-        type = ArcanaParticles.ASPECT_MANA_PARTICLE;
-        type = ArcanaParticles.ASPECT_METAL_PARTICLE;
-        type = ArcanaParticles.ASPECT_MIND_PARTICLE;
-        type = ArcanaParticles.ASPECT_MINING_PARTICLE;
-        type = ArcanaParticles.ASPECT_MOVEMENT_PARTICLE;
-        type = ArcanaParticles.ASPECT_NETHER_PARTICLE;
-        type = ArcanaParticles.ASPECT_ORDER_PARTICLE;
-        type = ArcanaParticles.ASPECT_OVERWORLD_PARTICLE;
-        type = ArcanaParticles.ASPECT_PLANT_PARTICLE;
-        type = ArcanaParticles.ASPECT_PRIDE_PARTICLE;
-        type = ArcanaParticles.ASPECT_SEEDS_PARTICLE;
-        type = ArcanaParticles.ASPECT_SENSES_PARTICLE;
-        type = ArcanaParticles.ASPECT_SLIME_PARTICLE;
-        type = ArcanaParticles.ASPECT_SLOTH_PARTICLE;
-        type = ArcanaParticles.ASPECT_SPIRIT_PARTICLE;
-        type = ArcanaParticles.ASPECT_STRENGTH_PARTICLE;
-        type = ArcanaParticles.ASPECT_TAINT_PARTICLE;
-        type = ArcanaParticles.ASPECT_TOOL_PARTICLE;
-        type = ArcanaParticles.ASPECT_TREE_PARTICLE;
-        type = ArcanaParticles.ASPECT_UNDEAD_PARTICLE;
-        type = ArcanaParticles.ASPECT_VACUUM_PARTICLE;
-        type = ArcanaParticles.ASPECT_VENOM_PARTICLE;
-        type = ArcanaParticles.ASPECT_WATER_PARTICLE;
-        type = ArcanaParticles.ASPECT_WEAPON_PARTICLE;
-        type = ArcanaParticles.ASPECT_WIND_PARTICLE;
     }
 }
