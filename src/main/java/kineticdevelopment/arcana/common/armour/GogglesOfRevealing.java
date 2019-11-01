@@ -20,11 +20,11 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class GogglesOfRevealing extends ArmorItem {
-    public GogglesOfRevealing(final String name, IArmorMaterial materialIn, EquipmentSlotType slot, Properties builder) {
-        super(materialIn, slot, builder);
+public class GogglesOfRevealing extends AspectGogglesHelmet {
 
-        this.setRegistryName(name);
+
+    public GogglesOfRevealing(String name, IArmorMaterial materialIn, EquipmentSlotType slot, Properties builder) {
+        super(name, materialIn, slot, builder);
     }
 
     @Override

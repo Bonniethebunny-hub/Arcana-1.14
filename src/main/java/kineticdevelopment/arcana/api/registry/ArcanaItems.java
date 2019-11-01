@@ -36,6 +36,7 @@ public class ArcanaItems {
     public static Item aspect_earth;
     public static Item aspect_eldritch;
     public static Item aspect_ender;
+    public static Item aspect_energy;
     public static Item aspect_envy;
     public static Item aspect_exchange;
     public static Item aspect_fabric;
@@ -60,6 +61,7 @@ public class ArcanaItems {
     public static Item aspect_movement;
     public static Item aspect_nether;
     public static Item aspect_order;
+    public static Item aspect_overworld;
     public static Item aspect_plant;
     public static Item aspect_pride;
     public static Item aspect_seeds;
@@ -78,8 +80,6 @@ public class ArcanaItems {
     public static Item aspect_weapon;
     public static Item aspect_wind;
     public static Item aspect_wrath;
-    public static Item aspect_overworld;
-    public static Item aspect_energy;
 
 
 }
