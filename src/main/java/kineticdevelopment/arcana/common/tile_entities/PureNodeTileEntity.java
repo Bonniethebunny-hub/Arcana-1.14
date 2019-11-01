@@ -12,6 +12,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 import static kineticdevelopment.arcana.api.registry.ArcanaTileEntities.*;
+import static kineticdevelopment.arcana.client.helpers.Particles.ASPECT_PARTICLE_DISTANCE;
 
 public class PureNodeTileEntity extends TileEntity implements ITickableTileEntity {
 
@@ -26,7 +27,7 @@ public class PureNodeTileEntity extends TileEntity implements ITickableTileEntit
             if(priority > 0) {
                 playerWorld.addParticle(ArcanaParticles.PURE_NODE_PARTICLE, true, getParticleX(), getParticleY(), getParticleZ(), 0, 0, 0);
             }
-            if(priority > 1 && getBlockOnCursor(player, playerWorld)) {
+            if(priority > 1 && isBlockOnCursor(player, playerWorld)) {
                 playerWorld.addParticle(ArcanaParticles.ASPECT_PRIDE_PARTICLE, true, getParticleX(), getParticleY() + 1, getParticleZ(), 0, 0, 0);
             }
         }
@@ -58,11 +59,11 @@ public class PureNodeTileEntity extends TileEntity implements ITickableTileEntit
         }
     }
 
-    private boolean getBlockOnCursor(ClientPlayerEntity player, World playerWorld) {
-        double reachDistance = 3;
+    //Checks if the block being looked at is the correct block
+    private boolean isBlockOnCursor(ClientPlayerEntity player, World playerWorld) {
         Vec3d startPos = new Vec3d(player.getPositionVector().getX(), player.getPositionVector().getY() + player.getEyeHeight(), player.getPositionVector().getZ());
         Vec3d look = player.getLook(1.0F);
-        Vec3d endPos = startPos.add(look.getX() * reachDistance, look.getY() * reachDistance, look.getZ() * reachDistance);
+        Vec3d endPos = startPos.add(look.getX() * ASPECT_PARTICLE_DISTANCE, look.getY() * ASPECT_PARTICLE_DISTANCE, look.getZ() * ASPECT_PARTICLE_DISTANCE);
         RayTraceResult result = playerWorld.rayTraceBlocks(new RayTraceContext(startPos, endPos, RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, player));
         return playerWorld.getBlockState(new BlockPos(result.getHitVec())).getBlock().getRegistryName().toString().equals("arcana:pure_node");
     }
