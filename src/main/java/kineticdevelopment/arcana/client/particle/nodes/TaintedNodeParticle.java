@@ -1,8 +1,11 @@
 package kineticdevelopment.arcana.client.particle.nodes;
 
 import kineticdevelopment.arcana.api.registry.ArcanaNodes;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.IParticleFactory;
+import net.minecraft.client.particle.IParticleRenderType;
 import net.minecraft.client.particle.Particle;
+import net.minecraft.client.particle.SpriteTexturedParticle;
 import net.minecraft.particles.BasicParticleType;
 import net.minecraft.util.IItemProvider;
 import net.minecraft.world.World;
@@ -10,9 +13,9 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
-public class NormalNodeParticle extends NodeParticle {
+public class TaintedNodeParticle extends NodeParticle {
 
-    public NormalNodeParticle(World p_i48192_1_, double p_i48192_2_, double p_i48192_4_, double p_i48192_6_, IItemProvider p_i48192_8_) {
+    public TaintedNodeParticle(World p_i48192_1_, double p_i48192_2_, double p_i48192_4_, double p_i48192_6_, IItemProvider p_i48192_8_) {
         super(p_i48192_1_, p_i48192_2_, p_i48192_4_, p_i48192_6_, p_i48192_8_);
     }
 
@@ -22,7 +25,7 @@ public class NormalNodeParticle extends NodeParticle {
         }
 
         public Particle makeParticle(BasicParticleType p_199234_1_, World p_199234_2_, double p_199234_3_, double p_199234_5_, double p_199234_7_, double p_199234_9_, double p_199234_11_, double p_199234_13_) {
-            return new NormalNodeParticle(p_199234_2_, p_199234_3_, p_199234_5_, p_199234_7_, ArcanaNodes.normal_node.asItem());
+            return new TaintedNodeParticle(p_199234_2_, p_199234_3_, p_199234_5_, p_199234_7_, ArcanaNodes.tainted_node.asItem());
         }
     }
 }

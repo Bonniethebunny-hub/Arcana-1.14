@@ -332,7 +332,4 @@ public class ArcanaBlocks {
     public static Block arcanium_block;
     public static Block thaumium_block;
 
-    //nodes
-    public static Block bright_node;
-
 }
