@@ -1,41 +1,32 @@
 package kineticdevelopment.arcana.client.helpers;
 
-import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class ArcanaHelper {
 
-    public static final int ASPECT_GOGGLES_PRIORITY = 1;
-    public static final int GOGGLES_OF_REVEALING_PRIORITY = 2;
-
     /**
      * Helper function to check if the block the character is looking at matches the given registry name
-     * @param playerInstance Minecraft Instance
-     * @param registryName Registry Name of block (Including ModID - Example: "arcana:bright_node")
-     * @return - <b>True</b> If registry names match
+     * @param match Blockstate of block to check
+     * @return - <b>True</b> If the blockstates are equal
      */
-    public static boolean isBlockOnCursor(Minecraft playerInstance, String registryName) {
-        World playerWorld = playerInstance.player.getEntityWorld();
-        Vec3d location = playerInstance.objectMouseOver.getHitVec();
-        return playerWorld.getBlockState(new BlockPos(location)).getBlock().getRegistryName().toString().equals(registryName);
-    }
-
-    public static int getGogglesPriority() {
-        String helmet = Minecraft.getInstance().player.inventory.armorInventory.get(3).getItem().getRegistryName().toString();
-        switch (helmet) {
-            case "arcana:aspect_goggles": {
-                return 1;
-            }
-            case "arcana:goggles_of_revealing": {
-                return 2;
-            }
-            default:
-                return 0;
+    @OnlyIn(Dist.CLIENT)
+    public static boolean isBlockOnCursor(BlockState match) {
+        World w = Minecraft.getInstance().world;
+        RayTraceResult over = Minecraft.getInstance().objectMouseOver;
+        if (over.getType() == RayTraceResult.Type.BLOCK && over instanceof BlockRayTraceResult) {
+            BlockPos at = ((BlockRayTraceResult) over).getPos();
+            return match.equals(w.getBlockState(at));
         }
+        return false; //Not looking at a block atm.
     }
 
     public static Vec3d getTileEntityCenteredParticle(TileEntity tile) {

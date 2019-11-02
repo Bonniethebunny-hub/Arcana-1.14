@@ -48,4 +48,9 @@ public class GogglesOfRevealing extends AspectGogglesHelmet {
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         tooltip.add(new StringTextComponent(TextFormatting.RED + "For Finding Nodes and other Magical Items!"));
     }
+
+    @Override
+    public GogglesPriority getPriority() {
+        return GogglesPriority.SHOW_NODE_AND_ASPECTS;
+    }
 }

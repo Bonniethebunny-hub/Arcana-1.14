@@ -20,7 +20,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class AspectGogglesHelmet extends ArmorItem {
+public class AspectGogglesHelmet extends ArmorItem implements Goggles {
     public AspectGogglesHelmet(final String name, IArmorMaterial materialIn, EquipmentSlotType slot, Properties builder) {
         super(materialIn, slot, builder);
 
@@ -53,5 +53,10 @@ public class AspectGogglesHelmet extends ArmorItem {
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         tooltip.add(new StringTextComponent(TextFormatting.RED + "For scanning aspects!"));
+    }
+
+    @Override
+    public GogglesPriority getPriority() {
+        return GogglesPriority.SHOW_NODE;
     }
 }
