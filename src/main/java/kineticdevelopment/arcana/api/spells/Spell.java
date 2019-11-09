@@ -1,8 +1,17 @@
 package kineticdevelopment.arcana.api.spells;
 
 import kineticdevelopment.arcana.api.aspects.Aspect;
+import kineticdevelopment.arcana.common.entities.SpellEntity;
+import kineticdevelopment.arcana.init.ModEntities;
+import net.minecraft.block.Blocks;
+import net.minecraft.client.Minecraft;
+import net.minecraft.command.arguments.EntityAnchorArgument;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.ProjectileItemEntity;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,12 +37,24 @@ public class Spell {
                 if(effect == null) {
                     continue;
                 }
-                effect.getEffect(player, power);
-                effect.getEffect(player.getPosition(), player.getEntityWorld(), power);
+                if(Minecraft.getInstance().objectMouseOver instanceof BlockRayTraceResult) {
+                    if(player.getEntityWorld().getBlockState(((BlockRayTraceResult) Minecraft.getInstance().objectMouseOver).getPos()) != Blocks.AIR.getDefaultState()) {
+                        effect.getEffect(((BlockRayTraceResult) Minecraft.getInstance().objectMouseOver).getPos(), player.getEntityWorld(), power);
+                    } else {
+                        effect.getEffect(player, power);
+                    }
+                }
+                //effect.getEffect(player.getPosition(), player.getEntityWorld(), power);
             }
         }
         if(core == Aspect.AspectType.AIR) {
-
+            SpellEntity entity = new SpellEntity((EntityType<ProjectileItemEntity>) ModEntities.spellProjectile,  player.getPosition().getX(), player.getPosition().getY(), player.getPosition().getZ(), player.getEntityWorld());
+            entity.setEffects(effects);
+            entity.setWorld(player.getEntityWorld());
+            entity.setPower(power);
+            Vec3d newVel = entity.getLookVec().add(20, -0.4, 20);
+            entity.setVelocity(newVel.getX(), newVel.getY(), newVel.getZ());
+            player.getEntityWorld().addEntity(entity);
         }
     }
 

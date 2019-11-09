@@ -12,6 +12,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.particles.RedstoneParticleData;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.EntityRayTraceResult;
 import net.minecraft.util.math.RayTraceResult;
@@ -23,8 +24,9 @@ import javax.annotation.Nonnull;
 
 public class SpellEntity extends ProjectileItemEntity {
 
-    private SpellEffect effect;
+    private SpellEffect[] effects;
     private int power;
+    private World world;
 
     public SpellEntity(EntityType<? extends ProjectileItemEntity> type, World worldIn) {
         super(type, worldIn);
@@ -38,24 +40,44 @@ public class SpellEntity extends ProjectileItemEntity {
         super(type, livingEntityIn, worldIn);
     }
 
+    public void setPower(int power) {
+        this.power = power;
+    }
 
+    @Override
+    public void setWorld(World world) {
+        this.world = world;
+    }
 
     @Override
     protected void onImpact(RayTraceResult result) {
         if(result instanceof BlockRayTraceResult) {
             BlockRayTraceResult resultBlock = (BlockRayTraceResult) result;
-            //effect.getEffect(resultBlock.getPos(), resultBlock.get, power);
+            for(SpellEffect effect : effects) {
+                effect.getEffect(resultBlock.getPos(), world , power);
+            }
+            this.remove();
         }
         if(result instanceof EntityRayTraceResult) {
             EntityRayTraceResult resultEntity = (EntityRayTraceResult) result;
             if(resultEntity.getEntity() instanceof LivingEntity) {
-                effect.getEffect((LivingEntity)resultEntity.getEntity(), power);
+                for(SpellEffect effect : effects) {
+                    effect.getEffect((LivingEntity)resultEntity.getEntity(), power);
+                }
             }
+            this.remove();
         }
     }
 
-    public void setEffect(SpellEffect effect) {
-        this.effect = effect;
+    @Override
+    public void tick() {
+
+
+        super.tick();
+    }
+
+    public void setEffects(SpellEffect[] effects) {
+        this.effects = effects;
     }
 
 
