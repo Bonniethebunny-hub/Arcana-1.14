@@ -3,6 +3,7 @@ package kineticdevelopment.arcana.init;
 import kineticdevelopment.arcana.api.registry.ArcanaParticles;
 import kineticdevelopment.arcana.client.particles.aspects.*;
 import kineticdevelopment.arcana.client.particles.nodes.*;
+import kineticdevelopment.arcana.client.particles.numbers.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.particles.BasicParticleType;
 import net.minecraft.particles.ParticleType;
@@ -83,6 +84,18 @@ public class ModParticles {
         Minecraft.getInstance().particles.registerFactory(ArcanaParticles.ASPECT_WEAPON_PARTICLE, new AspectWeaponParticle.Factory());
         Minecraft.getInstance().particles.registerFactory(ArcanaParticles.ASPECT_WIND_PARTICLE, new AspectWindParticle.Factory());
         Minecraft.getInstance().particles.registerFactory(ArcanaParticles.ASPECT_WRATH_PARTICLE, new AspectWrathParticle.Factory());
+
+        //System.out.println("Registering aspect number particle factories...");
+        Minecraft.getInstance().particles.registerFactory(ArcanaParticles.NUMBER_PARTICLE_0, new AspectCount0.Factory());
+        Minecraft.getInstance().particles.registerFactory(ArcanaParticles.NUMBER_PARTICLE_1, new AspectCount1.Factory());
+        Minecraft.getInstance().particles.registerFactory(ArcanaParticles.NUMBER_PARTICLE_2, new AspectCount2.Factory());
+        Minecraft.getInstance().particles.registerFactory(ArcanaParticles.NUMBER_PARTICLE_3, new AspectCount3.Factory());
+        Minecraft.getInstance().particles.registerFactory(ArcanaParticles.NUMBER_PARTICLE_4, new AspectCount4.Factory());
+        Minecraft.getInstance().particles.registerFactory(ArcanaParticles.NUMBER_PARTICLE_5, new AspectCount5.Factory());
+        Minecraft.getInstance().particles.registerFactory(ArcanaParticles.NUMBER_PARTICLE_6, new AspectCount6.Factory());
+        Minecraft.getInstance().particles.registerFactory(ArcanaParticles.NUMBER_PARTICLE_7, new AspectCount7.Factory());
+        Minecraft.getInstance().particles.registerFactory(ArcanaParticles.NUMBER_PARTICLE_8, new AspectCount8.Factory());
+        Minecraft.getInstance().particles.registerFactory(ArcanaParticles.NUMBER_PARTICLE_9, new AspectCount9.Factory());
     }
 
     @SubscribeEvent

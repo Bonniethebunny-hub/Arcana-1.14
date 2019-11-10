@@ -20,11 +20,4 @@ public class TaintedNode extends Node {
     public TileEntity createNewTileEntity(IBlockReader p_196283_1_) {
         return setEntity(new TaintedNodeTileEntity());
     }
-
-    @Override
-    public void onBlockHarvested(World worldIn, BlockPos pos, BlockState state, PlayerEntity player) {
-        removeEntity();
-        worldIn.playEvent(player, 2001, pos, getStateId(state));
-    }
-
 }

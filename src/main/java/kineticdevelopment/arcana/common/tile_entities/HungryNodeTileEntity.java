@@ -1,28 +1,29 @@
 package kineticdevelopment.arcana.common.tile_entities;
 
 import kineticdevelopment.arcana.api.registry.ArcanaParticles;
-import net.minecraft.tileentity.ITickableTileEntity;
-import net.minecraft.tileentity.TileEntity;
+import net.minecraft.particles.BasicParticleType;
+import net.minecraft.tileentity.TileEntityType;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 
 import static kineticdevelopment.arcana.api.registry.ArcanaTileEntities.hungry_node_entity;
 
-public class HungryNodeTileEntity extends TileEntity implements NodeTileEntity, ITickableTileEntity {
+public class HungryNodeTileEntity extends NodeTileEntity {
 
-    public HungryNodeTileEntity() { super(hungry_node_entity); }
+    protected HungryNodeTileEntity(TileEntityType<?> typeIn) {
+        super(typeIn);
+    }
+
+    public HungryNodeTileEntity() {
+        this(hungry_node_entity);
+    }
+
+    protected ITextComponent getDefaultName() {
+        return new TranslationTextComponent("Hungry Node");
+    }
 
     @Override
-    public void tick() {
-        if(world.isRemote()) {
-            switch(getGogglePriority()) {
-                case SHOW_NODE:
-                    showNode(ArcanaParticles.HUNGRY_NODE_PARTICLE);
-                    break;
-                case SHOW_NODE_AND_ASPECTS:
-                    showNodeAndAspects(ArcanaParticles.HUNGRY_NODE_PARTICLE);
-                    break;
-                default:
-                    break;
-            }
-        }
+    public BasicParticleType getParticle() {
+        return ArcanaParticles.HUNGRY_NODE_PARTICLE;
     }
 }

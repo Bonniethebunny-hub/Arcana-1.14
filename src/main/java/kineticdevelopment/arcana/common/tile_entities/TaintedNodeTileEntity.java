@@ -1,28 +1,29 @@
 package kineticdevelopment.arcana.common.tile_entities;
 
 import kineticdevelopment.arcana.api.registry.ArcanaParticles;
-import net.minecraft.tileentity.ITickableTileEntity;
-import net.minecraft.tileentity.TileEntity;
+import net.minecraft.particles.BasicParticleType;
+import net.minecraft.tileentity.TileEntityType;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 
 import static kineticdevelopment.arcana.api.registry.ArcanaTileEntities.tainted_node_entity;
 
-public class TaintedNodeTileEntity extends TileEntity implements NodeTileEntity, ITickableTileEntity {
+public class TaintedNodeTileEntity extends NodeTileEntity {
 
-    public TaintedNodeTileEntity() { super(tainted_node_entity); }
+    protected TaintedNodeTileEntity(TileEntityType<?> typeIn) {
+        super(typeIn);
+    }
+
+    public TaintedNodeTileEntity() {
+        this(tainted_node_entity);
+    }
+
+    protected ITextComponent getDefaultName() {
+        return new TranslationTextComponent("Tainted Node");
+    }
 
     @Override
-    public void tick() {
-        if(world.isRemote()) {
-            switch(getGogglePriority()) {
-                case SHOW_NODE:
-                    showNode(ArcanaParticles.TAINTED_NODE_PARTICLE);
-                    break;
-                case SHOW_NODE_AND_ASPECTS:
-                    showNodeAndAspects(ArcanaParticles.TAINTED_NODE_PARTICLE);
-                    break;
-                default:
-                    break;
-            }
-        }
+    public BasicParticleType getParticle() {
+        return ArcanaParticles.TAINTED_NODE_PARTICLE;
     }
 }

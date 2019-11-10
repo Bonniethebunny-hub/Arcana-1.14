@@ -4,6 +4,8 @@ import kineticdevelopment.arcana.api.registry.ArcanaItems;
 import kineticdevelopment.arcana.client.particles.nodes.BrightNodeParticle;
 import net.minecraft.client.particle.IParticleFactory;
 import net.minecraft.client.particle.Particle;
+import net.minecraft.client.renderer.ActiveRenderInfo;
+import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.particles.BasicParticleType;
 import net.minecraft.util.IItemProvider;
 import net.minecraft.world.World;
@@ -22,7 +24,7 @@ public class AspectIceParticle extends AspectParticle {
         }
 
         public Particle makeParticle(BasicParticleType p_199234_1_, World p_199234_2_, double p_199234_3_, double p_199234_5_, double p_199234_7_, double p_199234_9_, double p_199234_11_, double p_199234_13_) {
-            return new BrightNodeParticle(p_199234_2_, p_199234_3_, p_199234_5_, p_199234_7_, ArcanaItems.aspect_ice);
+            return new AspectParticle(p_199234_2_, p_199234_3_, p_199234_5_, p_199234_7_, ArcanaItems.aspect_ice);
         }
     }
 }

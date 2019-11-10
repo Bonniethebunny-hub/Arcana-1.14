@@ -81,5 +81,14 @@ public class ArcanaItems {
     public static Item aspect_wind;
     public static Item aspect_wrath;
 
-
+    public static Item aspect_number_0;
+    public static Item aspect_number_1;
+    public static Item aspect_number_2;
+    public static Item aspect_number_3;
+    public static Item aspect_number_4;
+    public static Item aspect_number_5;
+    public static Item aspect_number_6;
+    public static Item aspect_number_7;
+    public static Item aspect_number_8;
+    public static Item aspect_number_9;
 }

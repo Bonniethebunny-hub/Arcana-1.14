@@ -6,11 +6,12 @@
 package kineticdevelopment.arcana.core;
 
 
+import kineticdevelopment.arcana.api.packets.ArcanaPacketHandler;
+import kineticdevelopment.arcana.api.packets.ShowAspectsPacket;
 import kineticdevelopment.arcana.api.spells.SpellEffectHandler;
 import kineticdevelopment.arcana.client.render.ArcanaRenderRegistry;
 import kineticdevelopment.arcana.common.world.OreGeneration;
 import kineticdevelopment.arcana.init.ModKeyBindings;
-import net.minecraft.client.renderer.model.ModelResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
@@ -41,6 +42,7 @@ public class Arcana {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::commonSetupEvent);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientSetupEvent);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::dedicatedServerSetupEvent);
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::registerPackets);
     }
 
     private void dedicatedServerSetupEvent(FMLDedicatedServerSetupEvent event) {
@@ -57,6 +59,11 @@ public class Arcana {
     	ClientRegistry.registerKeyBinding(ModKeyBindings.SCANWITHGOGGLES);
 
         ArcanaRenderRegistry.registryEntityRenders();
+    }
+
+    public void registerPackets(final FMLClientSetupEvent event) {
+        int id = 0;
+        ArcanaPacketHandler.SHOW_ASPECTS.registerMessage(id++, ShowAspectsPacket.class, ShowAspectsPacket::encode, ShowAspectsPacket::decode, ShowAspectsPacket::handle);
     }
 
     private void loadComplete(final FMLLoadCompleteEvent event) {

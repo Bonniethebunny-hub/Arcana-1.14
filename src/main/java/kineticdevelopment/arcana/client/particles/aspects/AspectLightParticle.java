@@ -22,7 +22,7 @@ public class AspectLightParticle extends AspectParticle {
         }
 
         public Particle makeParticle(BasicParticleType p_199234_1_, World p_199234_2_, double p_199234_3_, double p_199234_5_, double p_199234_7_, double p_199234_9_, double p_199234_11_, double p_199234_13_) {
-            return new BrightNodeParticle(p_199234_2_, p_199234_3_, p_199234_5_, p_199234_7_, ArcanaItems.aspect_light);
+            return new AspectParticle(p_199234_2_, p_199234_3_, p_199234_5_, p_199234_7_, ArcanaItems.aspect_light);
         }
     }
 }

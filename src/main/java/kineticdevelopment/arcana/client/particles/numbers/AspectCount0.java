@@ -1,0 +1,34 @@
+package kineticdevelopment.arcana.client.particles.numbers;
+
+import kineticdevelopment.arcana.api.registry.ArcanaItems;
+import kineticdevelopment.arcana.api.registry.ArcanaNodes;
+import kineticdevelopment.arcana.client.particles.nodes.BrightNodeParticle;
+import kineticdevelopment.arcana.client.particles.nodes.NodeParticle;
+import kineticdevelopment.arcana.core.Arcana;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.particle.IParticleFactory;
+import net.minecraft.client.particle.Particle;
+import net.minecraft.client.renderer.texture.AtlasTexture;
+import net.minecraft.particles.BasicParticleType;
+import net.minecraft.util.IItemProvider;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
+
+public class AspectCount0 extends AspectNumberParticle {
+
+    public AspectCount0(World p_i48192_1_, double p_i48192_2_, double p_i48192_4_, double p_i48192_6_, IItemProvider p_i48192_8_) {
+        super(p_i48192_1_, p_i48192_2_, p_i48192_4_, p_i48192_6_, p_i48192_8_);
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    public static class Factory implements IParticleFactory<BasicParticleType> {
+        public Factory() {
+        }
+
+        public Particle makeParticle(BasicParticleType p_199234_1_, World p_199234_2_, double p_199234_3_, double p_199234_5_, double p_199234_7_, double p_199234_9_, double p_199234_11_, double p_199234_13_) {
+            return new AspectNumberParticle(p_199234_2_, p_199234_3_, p_199234_5_, p_199234_7_, ArcanaItems.aspect_number_0.asItem());
+        }
+    }
+}

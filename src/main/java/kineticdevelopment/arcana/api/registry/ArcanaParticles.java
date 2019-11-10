@@ -76,6 +76,20 @@ public class ArcanaParticles extends ParticleTypes {
     public static final BasicParticleType ASPECT_WIND_PARTICLE = register(Arcana.MOD_ID + ":aspect_wind_particle", true);
     public static final BasicParticleType ASPECT_WRATH_PARTICLE = register(Arcana.MOD_ID + ":aspect_wrath_particle", true);
 
+    //Particles for number of aspects in nodes
+    public static final BasicParticleType NUMBER_PARTICLE_0 = register(Arcana.MOD_ID + ":number_particle_0", true);
+    public static final BasicParticleType NUMBER_PARTICLE_1 = register(Arcana.MOD_ID + ":number_particle_1", true);
+    public static final BasicParticleType NUMBER_PARTICLE_2 = register(Arcana.MOD_ID + ":number_particle_2", true);
+    public static final BasicParticleType NUMBER_PARTICLE_3 = register(Arcana.MOD_ID + ":number_particle_3", true);
+    public static final BasicParticleType NUMBER_PARTICLE_4 = register(Arcana.MOD_ID + ":number_particle_4", true);
+    public static final BasicParticleType NUMBER_PARTICLE_5 = register(Arcana.MOD_ID + ":number_particle_5", true);
+    public static final BasicParticleType NUMBER_PARTICLE_6 = register(Arcana.MOD_ID + ":number_particle_6", true);
+    public static final BasicParticleType NUMBER_PARTICLE_7 = register(Arcana.MOD_ID + ":number_particle_7", true);
+    public static final BasicParticleType NUMBER_PARTICLE_8 = register(Arcana.MOD_ID + ":number_particle_8", true);
+    public static final BasicParticleType NUMBER_PARTICLE_9 = register(Arcana.MOD_ID + ":number_particle_9", true);
+
+
+
     private static BasicParticleType register(String key, boolean alwaysShow) {
         System.out.println("Registering particle: " + key);
         return (BasicParticleType) Registry.<ParticleType<? extends IParticleData>>register(Registry.PARTICLE_TYPE, key, new BasicParticleType(alwaysShow));

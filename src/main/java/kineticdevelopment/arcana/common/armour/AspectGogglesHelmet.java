@@ -45,7 +45,7 @@ public class AspectGogglesHelmet extends ArmorItem implements Goggles {
 
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
-        Constants.LOGGER.info("THIS WORKS! (Test)");
+        //Constants.LOGGER.info("THIS WORKS! (Test)");
         return super.onItemRightClick(worldIn, playerIn, handIn);
     }
 

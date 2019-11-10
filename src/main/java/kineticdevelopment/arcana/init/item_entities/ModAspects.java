@@ -77,7 +77,16 @@ public class ModAspects {
         ArcanaItems.aspect_wind = registerItem(new AspectItem(new Item.Properties().maxStackSize(64).group(ArcanaAspectsItemGroup.instance)), "aspect_wind");
         ArcanaItems.aspect_wrath = registerItem(new AspectItem(new Item.Properties().maxStackSize(64).group(ArcanaAspectsItemGroup.instance)), "aspect_wrath");
 
-
+        ArcanaItems.aspect_number_0 = registerItem(new Item(new Item.Properties().maxStackSize(64).group(ArcanaAspectsItemGroup.instance)), "aspect_number_0");
+        ArcanaItems.aspect_number_1 = registerItem(new Item(new Item.Properties().maxStackSize(64).group(ArcanaAspectsItemGroup.instance)), "aspect_number_1");
+        ArcanaItems.aspect_number_2 = registerItem(new Item(new Item.Properties().maxStackSize(64).group(ArcanaAspectsItemGroup.instance)), "aspect_number_2");
+        ArcanaItems.aspect_number_3 = registerItem(new Item(new Item.Properties().maxStackSize(64).group(ArcanaAspectsItemGroup.instance)), "aspect_number_3");
+        ArcanaItems.aspect_number_4 = registerItem(new Item(new Item.Properties().maxStackSize(64).group(ArcanaAspectsItemGroup.instance)), "aspect_number_4");
+        ArcanaItems.aspect_number_5 = registerItem(new Item(new Item.Properties().maxStackSize(64).group(ArcanaAspectsItemGroup.instance)), "aspect_number_5");
+        ArcanaItems.aspect_number_6 = registerItem(new Item(new Item.Properties().maxStackSize(64).group(ArcanaAspectsItemGroup.instance)), "aspect_number_6");
+        ArcanaItems.aspect_number_7 = registerItem(new Item(new Item.Properties().maxStackSize(64).group(ArcanaAspectsItemGroup.instance)), "aspect_number_7");
+        ArcanaItems.aspect_number_8 = registerItem(new Item(new Item.Properties().maxStackSize(64).group(ArcanaAspectsItemGroup.instance)), "aspect_number_8");
+        ArcanaItems.aspect_number_9 = registerItem(new Item(new Item.Properties().maxStackSize(64).group(ArcanaAspectsItemGroup.instance)), "aspect_number_9");
 
 
 

@@ -1,28 +1,30 @@
 package kineticdevelopment.arcana.common.tile_entities;
 
 import kineticdevelopment.arcana.api.registry.ArcanaParticles;
-import net.minecraft.tileentity.ITickableTileEntity;
-import net.minecraft.tileentity.TileEntity;
+import net.minecraft.particles.BasicParticleType;
+import net.minecraft.tileentity.TileEntityType;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 
 import static kineticdevelopment.arcana.api.registry.ArcanaTileEntities.bright_node_entity;
 
-public class BrightNodeTileEntity extends TileEntity implements NodeTileEntity, ITickableTileEntity {
+public class BrightNodeTileEntity extends NodeTileEntity {
 
-    public BrightNodeTileEntity() { super(bright_node_entity); }
+
+    protected BrightNodeTileEntity(TileEntityType<?> typeIn) {
+        super(typeIn);
+    }
+
+    public BrightNodeTileEntity() {
+        this(bright_node_entity);
+    }
+
+    protected ITextComponent getDefaultName() {
+        return new TranslationTextComponent("Bright Node");
+    }
 
     @Override
-    public void tick() {
-        if(world.isRemote()) {
-            switch(getGogglePriority()) {
-                case SHOW_NODE:
-                    showNode(ArcanaParticles.BRIGHT_NODE_PARTICLE);
-                    break;
-                case SHOW_NODE_AND_ASPECTS:
-                    showNodeAndAspects(ArcanaParticles.BRIGHT_NODE_PARTICLE);
-                    break;
-                default:
-                    break;
-            }
-        }
+    public BasicParticleType getParticle() {
+        return ArcanaParticles.BRIGHT_NODE_PARTICLE;
     }
 }
