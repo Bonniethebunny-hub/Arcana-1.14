@@ -5,7 +5,6 @@
 
 package kineticdevelopment.arcana.core;
 
-
 import kineticdevelopment.arcana.api.packets.ArcanaPacketHandler;
 import kineticdevelopment.arcana.api.packets.ShowAspectsPacket;
 import kineticdevelopment.arcana.api.spells.SpellEffectHandler;

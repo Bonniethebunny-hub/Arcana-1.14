@@ -1,26 +1,15 @@
 package kineticdevelopment.arcana.common.entities;
 
-import kineticdevelopment.arcana.api.spells.Spell;
 import kineticdevelopment.arcana.api.spells.SpellEffect;
-import kineticdevelopment.arcana.core.Arcana;
-import net.minecraft.entity.*;
-import net.minecraft.entity.projectile.AbstractFireballEntity;
-import net.minecraft.entity.projectile.DamagingProjectileEntity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.projectile.ProjectileItemEntity;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.network.datasync.DataParameter;
-import net.minecraft.particles.RedstoneParticleData;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.EntityRayTraceResult;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
-import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.common.util.LazyOptional;
-
-import javax.annotation.Nonnull;
 
 public class SpellEntity extends ProjectileItemEntity {
 

@@ -1,9 +1,6 @@
 package kineticdevelopment.arcana.client.particles.aspects;
 
 import kineticdevelopment.arcana.api.registry.ArcanaItems;
-import kineticdevelopment.arcana.api.registry.ArcanaNodes;
-import kineticdevelopment.arcana.client.particles.nodes.BrightNodeParticle;
-import kineticdevelopment.arcana.init.item_entities.ModAspects;
 import net.minecraft.client.particle.IParticleFactory;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.particles.BasicParticleType;

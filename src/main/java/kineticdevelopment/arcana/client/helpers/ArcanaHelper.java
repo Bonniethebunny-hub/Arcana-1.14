@@ -30,7 +30,8 @@ public class ArcanaHelper {
         }
         return false; //Not looking at a block atm.
     }
-
+    
+    
     public static boolean isNodeOnCursor(NodeTileEntity match) {
         World w = Minecraft.getInstance().world;
         RayTraceResult over = Minecraft.getInstance().objectMouseOver;

@@ -1,17 +1,10 @@
 package kineticdevelopment.arcana.client.particles.numbers;
 
 import kineticdevelopment.arcana.api.registry.ArcanaItems;
-import kineticdevelopment.arcana.api.registry.ArcanaNodes;
-import kineticdevelopment.arcana.client.particles.nodes.BrightNodeParticle;
-import kineticdevelopment.arcana.client.particles.nodes.NodeParticle;
-import kineticdevelopment.arcana.core.Arcana;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.IParticleFactory;
 import net.minecraft.client.particle.Particle;
-import net.minecraft.client.renderer.texture.AtlasTexture;
 import net.minecraft.particles.BasicParticleType;
 import net.minecraft.util.IItemProvider;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;

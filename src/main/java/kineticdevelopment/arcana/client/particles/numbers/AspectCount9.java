@@ -1,7 +1,6 @@
 package kineticdevelopment.arcana.client.particles.numbers;
 
 import kineticdevelopment.arcana.api.registry.ArcanaItems;
-import kineticdevelopment.arcana.client.particles.nodes.NodeParticle;
 import net.minecraft.client.particle.IParticleFactory;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.particles.BasicParticleType;

@@ -6,7 +6,6 @@ import kineticdevelopment.arcana.common.entities.ManaCreeper;
 import kineticdevelopment.arcana.common.utils.creativetab.ArcanaItemGroup;
 import kineticdevelopment.arcana.core.Arcana;
 import kineticdevelopment.arcana.init.item_entities.ModItems;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.Item;

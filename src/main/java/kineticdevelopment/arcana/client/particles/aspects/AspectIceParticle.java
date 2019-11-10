@@ -1,11 +1,8 @@
 package kineticdevelopment.arcana.client.particles.aspects;
 
 import kineticdevelopment.arcana.api.registry.ArcanaItems;
-import kineticdevelopment.arcana.client.particles.nodes.BrightNodeParticle;
 import net.minecraft.client.particle.IParticleFactory;
 import net.minecraft.client.particle.Particle;
-import net.minecraft.client.renderer.ActiveRenderInfo;
-import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.particles.BasicParticleType;
 import net.minecraft.util.IItemProvider;
 import net.minecraft.world.World;

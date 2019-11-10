@@ -1,6 +1,5 @@
 package kineticdevelopment.arcana.client.particles.aspects;
 
-import kineticdevelopment.arcana.client.particles.nodes.NodeParticle;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.IParticleFactory;
@@ -12,8 +11,6 @@ import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.particles.BasicParticleType;
 import net.minecraft.util.IItemProvider;
 import net.minecraft.world.World;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class AspectParticle extends SpriteTexturedParticle {
 

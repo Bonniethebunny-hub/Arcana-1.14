@@ -1,14 +1,8 @@
 package kineticdevelopment.arcana.common.nodes;
 
-import kineticdevelopment.arcana.common.tile_entities.BrightNodeTileEntity;
 import kineticdevelopment.arcana.common.tile_entities.FadingNodeTileEntity;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
-import net.minecraft.world.World;
 
 public class FadingNode extends Node {
 

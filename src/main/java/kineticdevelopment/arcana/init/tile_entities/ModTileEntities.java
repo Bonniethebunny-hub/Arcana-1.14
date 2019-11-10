@@ -4,22 +4,38 @@
 
 package kineticdevelopment.arcana.init.tile_entities;
 
-import kineticdevelopment.arcana.api.registry.ArcanaNodes;
-import kineticdevelopment.arcana.common.nodes.BrightNode;
-import kineticdevelopment.arcana.common.nodes.EldritchNode;
-import kineticdevelopment.arcana.common.tile_entities.*;
+import static kineticdevelopment.arcana.api.registry.ArcanaNodes.bright_node;
+import static kineticdevelopment.arcana.api.registry.ArcanaNodes.eldritch_node;
+import static kineticdevelopment.arcana.api.registry.ArcanaNodes.fading_node;
+import static kineticdevelopment.arcana.api.registry.ArcanaNodes.hungry_node;
+import static kineticdevelopment.arcana.api.registry.ArcanaNodes.normal_node;
+import static kineticdevelopment.arcana.api.registry.ArcanaNodes.pure_node;
+import static kineticdevelopment.arcana.api.registry.ArcanaNodes.tainted_node;
+import static kineticdevelopment.arcana.api.registry.ArcanaTileEntities.bright_node_entity;
+import static kineticdevelopment.arcana.api.registry.ArcanaTileEntities.eldritch_node_entity;
+import static kineticdevelopment.arcana.api.registry.ArcanaTileEntities.fading_node_entity;
+import static kineticdevelopment.arcana.api.registry.ArcanaTileEntities.hungry_node_entity;
+import static kineticdevelopment.arcana.api.registry.ArcanaTileEntities.normal_node_entity;
+import static kineticdevelopment.arcana.api.registry.ArcanaTileEntities.pure_node_entity;
+import static kineticdevelopment.arcana.api.registry.ArcanaTileEntities.tainted_node_entity;
+
+import kineticdevelopment.arcana.common.tile_entities.BrightNodeTileEntity;
+import kineticdevelopment.arcana.common.tile_entities.EldritchNodeTileEntity;
+import kineticdevelopment.arcana.common.tile_entities.FadingNodeTileEntity;
+import kineticdevelopment.arcana.common.tile_entities.HungryNodeTileEntity;
+import kineticdevelopment.arcana.common.tile_entities.NormalNodeTileEntity;
+import kineticdevelopment.arcana.common.tile_entities.PureNodeTileEntity;
+import kineticdevelopment.arcana.common.tile_entities.TaintedNodeTileEntity;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-import static kineticdevelopment.arcana.api.registry.ArcanaNodes.*;
-import static kineticdevelopment.arcana.api.registry.ArcanaTileEntities.*;
-
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModTileEntities {
 
-    @SubscribeEvent
+    @SuppressWarnings("unchecked")
+	@SubscribeEvent
     public static void RegisterTileEntities(RegistryEvent.Register<TileEntityType<?>> event) {
         event.getRegistry().registerAll
             (

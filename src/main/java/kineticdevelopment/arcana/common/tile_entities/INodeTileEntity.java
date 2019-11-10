@@ -4,8 +4,6 @@ import kineticdevelopment.arcana.common.nodes.Node;
 import net.minecraft.particles.BasicParticleType;
 import net.minecraft.particles.ParticleTypes;
 
-import java.util.ArrayList;
-
 public interface INodeTileEntity {
 
     default int getParticleHorizontalLimit() {
