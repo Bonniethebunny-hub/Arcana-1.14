@@ -1,6 +1,7 @@
 package kineticdevelopment.arcana.common.entities;
 
 import kineticdevelopment.arcana.api.spells.SpellEffect;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.projectile.ProjectileItemEntity;
@@ -33,6 +34,7 @@ public class SpellEntity extends ProjectileItemEntity {
         this.power = power;
     }
 
+
     @Override
     public void setWorld(World world) {
         this.world = world;
@@ -60,8 +62,7 @@ public class SpellEntity extends ProjectileItemEntity {
 
     @Override
     public void tick() {
-
-
+        Minecraft.getInstance().player.getEntityWorld().addParticle(effects[0].getParticle(), this.getPositionVector().getX(), this.getPositionVector().getY(), this.getPositionVector().getZ(), 0, 0,0);
         super.tick();
     }
 

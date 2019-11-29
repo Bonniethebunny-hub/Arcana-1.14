@@ -4,14 +4,11 @@ import kineticdevelopment.arcana.api.aspects.Aspect;
 import kineticdevelopment.arcana.common.entities.SpellEntity;
 import kineticdevelopment.arcana.init.ModEntities;
 import net.minecraft.block.Blocks;
-import net.minecraft.client.Minecraft;
-import net.minecraft.command.arguments.EntityAnchorArgument;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileItemEntity;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.util.math.BlockRayTraceResult;
-import net.minecraft.util.math.Vec3d;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,29 +29,66 @@ public class Spell {
 
 
     public void cast(PlayerEntity player) {
-        if(core == Aspect.AspectType.EARTH) {
-            for(SpellEffect effect : effects) {
-                if(effect == null) {
+
+        switch(core) {
+            case EARTH:
+                for (SpellEffect effect : effects) {
+                if (effect == null) {
                     continue;
                 }
-                if(Minecraft.getInstance().objectMouseOver instanceof BlockRayTraceResult) {
-                    if(player.getEntityWorld().getBlockState(((BlockRayTraceResult) Minecraft.getInstance().objectMouseOver).getPos()) != Blocks.AIR.getDefaultState()) {
-                        effect.getEffect(((BlockRayTraceResult) Minecraft.getInstance().objectMouseOver).getPos(), player.getEntityWorld(), power);
-                    } else {
-                        effect.getEffect(player, power);
-                    }
+                if (player.getEntityWorld().getBlockState(player.getPosition()) != Blocks.AIR.getDefaultState()) {
+                    effect.getEffect(player.getPosition(), player.getEntityWorld(), power);
+                    effect.getEffect(player, power);
+                } else {
+                    effect.getEffect(player, power);
                 }
                 //effect.getEffect(player.getPosition(), player.getEntityWorld(), power);
-            }
+            }break;
+            case AIR:
+                SpellEntity entity = new SpellEntity((EntityType<ProjectileItemEntity>) ModEntities.spellProjectile, player.getPosition().getX(), player.getPosition().getY(), player.getPosition().getZ(), player.getEntityWorld());
+                entity.setEffects(effects);
+                entity.setWorld(player.getEntityWorld());
+                entity.setPower(power);
+                entity.setPosition(player.posX, player.getBoundingBox().minY + (double) player.getEyeHeight(), player.posZ);
+                entity.setNoGravity(true);
+                entity.shoot(player, player.rotationPitch, player.rotationYaw, 2.0F, 1.5F, 0.0F);
+                player.getEntityWorld().addEntity(entity);
+                break;
+            case CHAOS:
+                List<LivingEntity> nearbyEntities = player.getEntityWorld().getEntitiesWithinAABB(LivingEntity.class, player.getBoundingBox().expand(power, power, power));
+                for (LivingEntity ent : nearbyEntities) {
+                    if (ent != player) {
+                        for (SpellEffect effect : effects) {
+                            effect.getEffect(ent, power);
+                        }
+                    }
+                }
+                break;
+            case WATER:
+                float yaw = player.rotationYaw - 2F;
+                for (int i = 0; i < 5; i++) {
+                    SpellEntity entity1 = new SpellEntity((EntityType<ProjectileItemEntity>) ModEntities.spellProjectile, player.getPosition().getX(), player.getPosition().getY(), player.getPosition().getZ(), player.getEntityWorld());
+                    entity1.setEffects(effects);
+                    entity1.setWorld(player.getEntityWorld());
+                    entity1.setPower(power);
+                    entity1.setPosition(player.posX, player.getBoundingBox().minY + (double) player.getEyeHeight(), player.posZ);
+                    entity1.setNoGravity(true);
+                    entity1.shoot(player, player.rotationPitch, yaw, 2.0F, 1.5F, 0.0F);
+                    yaw = yaw + 1F;
+                    player.getEntityWorld().addEntity(entity1);
+                }
+
         }
-        if(core == Aspect.AspectType.AIR) {
-            SpellEntity entity = new SpellEntity((EntityType<ProjectileItemEntity>) ModEntities.spellProjectile,  player.getPosition().getX(), player.getPosition().getY(), player.getPosition().getZ(), player.getEntityWorld());
-            entity.setEffects(effects);
-            entity.setWorld(player.getEntityWorld());
-            entity.setPower(power);
-            Vec3d newVel = entity.getLookVec().add(20, -0.4, 20);
-            entity.setVelocity(newVel.getX(), newVel.getY(), newVel.getZ());
-            player.getEntityWorld().addEntity(entity);
+
+        if (core == Aspect.AspectType.AIR) {
+
+        }
+        if (core == Aspect.AspectType.CHAOS) {
+
+        }
+        if (core == Aspect.AspectType.WATER) {
+
+
         }
     }
 
@@ -62,7 +96,7 @@ public class Spell {
         CompoundNBT tag = new CompoundNBT();
 
         StringBuilder effects = new StringBuilder();
-        for(SpellEffect effect : this.effects) {
+        for (SpellEffect effect : this.effects) {
             effects.append(effect.getName()).append(";");
         }
 
@@ -77,7 +111,7 @@ public class Spell {
 
     public static Spell fromNBT(CompoundNBT spell) {
         List<SpellEffect> effects = new ArrayList<>();
-        for(String effect : spell.getString("effects").split(";")) {
+        for (String effect : spell.getString("effects").split(";")) {
             effects.add(SpellEffectHandler.getEffect(effect));
         }
         Aspect.AspectType core = Aspect.AspectType.valueOf(spell.getString("core").toUpperCase());

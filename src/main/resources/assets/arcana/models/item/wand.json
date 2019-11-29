@@ -2,7 +2,7 @@
   "credit": "Made with Blockbench",
   "ambientocclusion": false,
   "textures": {
-    "0": "arcana/wand"
+    "0": "arcana:item/wand"
   },
   "elements": [
     {

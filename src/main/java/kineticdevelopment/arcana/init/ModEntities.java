@@ -5,12 +5,16 @@
 package kineticdevelopment.arcana.init;
 
 
+import kineticdevelopment.arcana.api.spells.SpellEffect;
+import kineticdevelopment.arcana.common.entities.ManaCreeper;
 import kineticdevelopment.arcana.common.entities.SpellEntity;
 import kineticdevelopment.arcana.core.Arcana;
+import kineticdevelopment.arcana.init.ModMobEntities;
 import kineticdevelopment.arcana.init.item_entities.ModItems;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.projectile.ProjectileItemEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;

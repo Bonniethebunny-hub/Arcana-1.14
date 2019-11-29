@@ -6,7 +6,7 @@ package kineticdevelopment.arcana.init.item_entities;
 
 
 import kineticdevelopment.arcana.api.registry.ArcanaItems;
-import kineticdevelopment.arcana.common.items.ItemWand;
+import kineticdevelopment.arcana.common.items.wand.ItemWand;
 import kineticdevelopment.arcana.common.items.Thaumonomicon;
 import kineticdevelopment.arcana.common.utils.creativetab.ArcanaItemGroup;
 import kineticdevelopment.arcana.init.ModMobEntities;

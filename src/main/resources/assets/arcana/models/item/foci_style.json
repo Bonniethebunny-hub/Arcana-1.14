@@ -1,0 +1,10 @@
+{
+  "parent":"item/handheld",
+  "textures": {
+    "layer0":"dimensionshiftmain:items/glass_bottle_chaos_essence"
+  },
+  "overrides": [
+    { "predicate": { "type": 1 }, "model": "arcana:item/other_model_or_texture1" },
+    { "predicate": { "type": 2 }, "model": "dimensionshiftmain:item/other_model_or_texture2" }
+  ]
+}
