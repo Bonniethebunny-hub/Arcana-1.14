@@ -52,7 +52,7 @@ public class AspectGogglesHelmet extends ArmorItem implements Goggles {
     @OnlyIn(Dist.CLIENT)
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        tooltip.add(new StringTextComponent(TextFormatting.RED + "For scanning aspects!"));
+        tooltip.add(new StringTextComponent(TextFormatting.RED + "For learning more about the world"));
     }
 
     @Override
