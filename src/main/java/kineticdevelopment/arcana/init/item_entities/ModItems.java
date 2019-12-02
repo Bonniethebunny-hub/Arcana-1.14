@@ -6,7 +6,8 @@ package kineticdevelopment.arcana.init.item_entities;
 
 
 import kineticdevelopment.arcana.api.registry.ArcanaItems;
-import kineticdevelopment.arcana.common.items.wand.ItemWand;
+import kineticdevelopment.arcana.common.items.ItemFocus;
+import kineticdevelopment.arcana.common.items.wand.wands.ItemWand;
 import kineticdevelopment.arcana.common.items.Thaumonomicon;
 import kineticdevelopment.arcana.common.utils.creativetab.ArcanaItemGroup;
 import kineticdevelopment.arcana.init.ModMobEntities;
@@ -31,8 +32,8 @@ public class ModItems {
         ArcanaItems.dead_stick = registerItem(new Item(new Item.Properties().maxStackSize(64).group(ArcanaItemGroup.instance)), "dead_stick");
         ArcanaItems.trypophobius_stick = registerItem(new Item(new Item.Properties().maxStackSize(64).group(ArcanaItemGroup.instance)),"trypophobius_stick");
         ArcanaItems.tainted_melon_slice = registerItem(new Item(new Item.Properties().maxStackSize(64).group(ArcanaItemGroup.instance)),"tainted_melon_slice");
-        ArcanaItems.wand = registerItem(new ItemWand(new Item.Properties().maxStackSize(1).setNoRepair().group(ArcanaItemGroup.instance)), "wand");
-
+        ArcanaItems.basicwand = registerItem(new ItemWand(new Item.Properties().maxStackSize(1).setNoRepair().group(ArcanaItemGroup.instance)), "basicwand");
+        ArcanaItems.focus = registerItem(new ItemFocus(new Item.Properties().maxStackSize(1).setNoRepair().group(ArcanaItemGroup.instance)), "focus");
 
 
         //spawn eggs
@@ -40,7 +41,6 @@ public class ModItems {
     }
 
     public static Item registerItem(Item item, String name) {
-
         item.setRegistryName(name);
         ForgeRegistries.ITEMS.register(item);
         return item;

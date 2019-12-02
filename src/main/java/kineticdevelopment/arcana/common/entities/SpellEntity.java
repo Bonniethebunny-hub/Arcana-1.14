@@ -1,6 +1,8 @@
 package kineticdevelopment.arcana.common.entities;
 
-import kineticdevelopment.arcana.api.spells.SpellEffect;
+import kineticdevelopment.arcana.api.spells.ISpellEffect;
+import kineticdevelopment.arcana.api.spells.Spell;
+import kineticdevelopment.arcana.common.utils.damagesource.SpellDamage;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -14,9 +16,10 @@ import net.minecraft.world.World;
 
 public class SpellEntity extends ProjectileItemEntity {
 
-    private SpellEffect[] effects;
-    private int power;
+    private Spell spell;
     private World world;
+    private LivingEntity caster;
+
 
     public SpellEntity(EntityType<? extends ProjectileItemEntity> type, World worldIn) {
         super(type, worldIn);
@@ -30,30 +33,36 @@ public class SpellEntity extends ProjectileItemEntity {
         super(type, livingEntityIn, worldIn);
     }
 
-    public void setPower(int power) {
-        this.power = power;
-    }
-
-
     @Override
     public void setWorld(World world) {
         this.world = world;
+    }
+
+    public void setCaster(LivingEntity caster) {
+        this.caster = caster;
+    }
+
+    public void setSpell(Spell spell) {
+        this.spell = spell;
     }
 
     @Override
     protected void onImpact(RayTraceResult result) {
         if(result instanceof BlockRayTraceResult) {
             BlockRayTraceResult resultBlock = (BlockRayTraceResult) result;
-            for(SpellEffect effect : effects) {
-                effect.getEffect(resultBlock.getPos(), world , power);
+            for(ISpellEffect effect : spell.getEffects()) {
+                effect.getEffect(resultBlock.getPos(), world , spell.getPower());
             }
             this.remove();
         }
         if(result instanceof EntityRayTraceResult) {
             EntityRayTraceResult resultEntity = (EntityRayTraceResult) result;
             if(resultEntity.getEntity() instanceof LivingEntity) {
-                for(SpellEffect effect : effects) {
-                    effect.getEffect((LivingEntity)resultEntity.getEntity(), power);
+                for(ISpellEffect effect : spell.getEffects()) {
+                    effect.getEffect((LivingEntity)resultEntity.getEntity(), spell.getPower());
+                    if(effect.isAttack()) {
+                        resultEntity.getEntity().attackEntityFrom(new SpellDamage(spell.getName(), caster), 0);
+                    }
                 }
             }
             this.remove();
@@ -62,13 +71,16 @@ public class SpellEntity extends ProjectileItemEntity {
 
     @Override
     public void tick() {
-        Minecraft.getInstance().player.getEntityWorld().addParticle(effects[0].getParticle(), this.getPositionVector().getX(), this.getPositionVector().getY(), this.getPositionVector().getZ(), 0, 0,0);
+
+        if(spell == null) {
+            this.remove(false);
+        }
+
+
+        Minecraft.getInstance().player.getEntityWorld().addParticle(spell.getEffects()[0].getParticle(), this.getPositionVector().getX(), this.getPositionVector().getY(), this.getPositionVector().getZ(), 0, 0,0);
         super.tick();
     }
 
-    public void setEffects(SpellEffect[] effects) {
-        this.effects = effects;
-    }
 
 
     @Override

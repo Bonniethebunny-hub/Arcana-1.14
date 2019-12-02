@@ -18,7 +18,11 @@ public class ArcanaItems {
     public static Item silver; //not added as item
     public static Item dead_stick;
     public static Item trypophobius_stick;
-    public static Item wand;
+
+    //Wand stuff
+    public static Item basicwand;
+    public static Item focus;
+
 
     //Food
     public static Item tainted_melon_slice;

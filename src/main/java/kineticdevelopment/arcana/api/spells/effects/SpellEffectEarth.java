@@ -1,6 +1,6 @@
 package kineticdevelopment.arcana.api.spells.effects;
 
-import kineticdevelopment.arcana.api.spells.SpellEffect;
+import kineticdevelopment.arcana.api.spells.ISpellEffect;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.particles.BasicParticleType;
@@ -8,7 +8,7 @@ import net.minecraft.particles.ParticleTypes;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class SpellEffectEarth implements SpellEffect {
+public class SpellEffectEarth implements ISpellEffect {
 
     @Override
     public String getName() {
@@ -33,7 +33,12 @@ public class SpellEffectEarth implements SpellEffect {
 
     @Override
     public BasicParticleType getParticle() {
-        return ParticleTypes.FLAME;
+        return ParticleTypes.BUBBLE;
+    }
+
+    @Override
+    public boolean isAttack() {
+        return false;
     }
 
 }

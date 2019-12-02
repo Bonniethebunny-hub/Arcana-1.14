@@ -1,20 +1,20 @@
 package kineticdevelopment.arcana.api.spells;
 
+import kineticdevelopment.arcana.api.spells.effects.SpellEffectEarth;
+import kineticdevelopment.arcana.api.spells.effects.SpellEffectFire;
+
+import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-import kineticdevelopment.arcana.api.spells.effects.SpellEffectEarth;
-
-import javax.annotation.Nullable;
-
 public class SpellEffectHandler {
 
-    private static List<SpellEffect> effects = new ArrayList<>();
+    private static List<ISpellEffect> effects = new ArrayList<>();
 
 
     @Nullable
-    public static SpellEffect getEffect(String effectType) {
-        for(SpellEffect effect : effects) {
+    public static ISpellEffect getEffect(String effectType) {
+        for(ISpellEffect effect : effects) {
             if(effect.getName().toUpperCase().equals(effectType.toUpperCase())) {
                 return effect;
             }
@@ -24,6 +24,7 @@ public class SpellEffectHandler {
 
     public static void init() {
         effects.add(new SpellEffectEarth());
+        effects.add(new SpellEffectFire());
     }
 
 }

@@ -1,9 +1,7 @@
-package kineticdevelopment.arcana.common.items.wand;
+package kineticdevelopment.arcana.common.items.wand.wands;
 
-import kineticdevelopment.arcana.api.aspects.Aspect;
 import kineticdevelopment.arcana.api.spells.Spell;
-import kineticdevelopment.arcana.api.spells.SpellEffect;
-import kineticdevelopment.arcana.api.spells.SpellEffectHandler;
+import kineticdevelopment.arcana.common.items.wand.CapType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -11,7 +9,6 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 
@@ -29,10 +26,13 @@ public class ItemWand extends Item {
             return ActionResult.newResult(ActionResultType.PASS, player.getHeldItem(handIn));
         }
         if(handIn == Hand.MAIN_HAND) {
-            Spell spellObj = new Spell(new SpellEffect[]{SpellEffectHandler.getEffect("EARTH")}, Aspect.AspectType.AIR, "MerlinsHeal", 10);
-
-            spellObj.cast(player);
-            player.sendMessage(new StringTextComponent("Casted spell"));
+            ItemStack item = player.getHeldItem(handIn);
+            if(item.hasTag()) {
+                if(!item.getTag().getCompound("foci").isEmpty()) {
+                    Spell spell = Spell.fromNBT(item.getTag().getCompound("foci"));
+                    spell.cast(player);
+                }
+            }
         }
 
         return ActionResult.newResult(ActionResultType.PASS, player.getHeldItem(handIn));

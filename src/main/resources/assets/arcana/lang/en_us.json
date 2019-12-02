@@ -236,10 +236,18 @@
   "item.arcana.amber": "Amber",
   "block.arcana.magical_grass": "Magical Grass Block",
   "block.arcana.magical_forest_grass": "Magical Grass",
-  "item.arcana.wand": "Merlin's Wand",
+
   "_comment": "Tainted Items",
   "item.arcana.tainted_melon_slice": "Tainted Melon Slice",
   "item.arcana.aspect_goggles": "Research Goggles",
+
+  "_comment": "Wand stuff",
+  "item.arcana.basicwand": "Basic Wand",
+  "item.arcana.silverwoodwand": "Silverwood Wand",
+  "item.arcana.hawthornwand": "Hawthorn Wand",
+  "item.arcana.dairwand": "Dair Wand",
+  "item.arcana.arcaniumwand": "Arcanium Wand",
+  "item.arcana.focus": "Wand Focus",
 
 
   "_comment": "Books",
@@ -253,6 +261,7 @@
   "_comment": "Death Messages",
   "death.attack.Taint.player": "%1$s was consumed by Taint",
   "death.attack.Taint": "%1$s was consumed by Taint",
+  "death.attack.Spell": "%1$s was killed by $s using $s",
 
 
   "_comment": "Aspects",
