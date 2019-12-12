@@ -1,6 +1,6 @@
 package kineticdevelopment.arcana.client.helpers;
 
-import kineticdevelopment.arcana.common.armour.AspectGogglesHelmet;
+import kineticdevelopment.arcana.common.armour.ResearchGogglesHelmet;
 import kineticdevelopment.arcana.common.armour.GogglesPriority;
 import kineticdevelopment.arcana.common.tile_entities.NodeTileEntity;
 import net.minecraft.block.BlockState;
@@ -45,7 +45,7 @@ public class ArcanaHelper {
     public static GogglesPriority getGogglePriority() {
         ClientPlayerEntity player = Minecraft.getInstance().player;
         return !player.getItemStackFromSlot(EquipmentSlotType.HEAD).isEmpty()
-                ? ((AspectGogglesHelmet)player.getItemStackFromSlot(EquipmentSlotType.HEAD).getItem()).getPriority()
+                ? ((ResearchGogglesHelmet)player.getItemStackFromSlot(EquipmentSlotType.HEAD).getItem()).getPriority()
                 : GogglesPriority.SHOW_NONE;
     }
 
@@ -55,6 +55,6 @@ public class ArcanaHelper {
 
     public static boolean playerCanSeeNodes() {
         ClientPlayerEntity player = Minecraft.getInstance().player;
-        return !player.getItemStackFromSlot(EquipmentSlotType.HEAD).isEmpty() ? player.getItemStackFromSlot(EquipmentSlotType.HEAD).getItem() instanceof AspectGogglesHelmet : false;
+        return !player.getItemStackFromSlot(EquipmentSlotType.HEAD).isEmpty() ? player.getItemStackFromSlot(EquipmentSlotType.HEAD).getItem() instanceof ResearchGogglesHelmet : false;
     }
 }

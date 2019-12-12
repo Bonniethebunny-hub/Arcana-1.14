@@ -17,7 +17,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class GogglesOfRevealing extends AspectGogglesHelmet {
+public class GogglesOfRevealing extends ResearchGogglesHelmet {
 
 
     public GogglesOfRevealing(String name, IArmorMaterial materialIn, EquipmentSlotType slot, Properties builder) {

@@ -20,8 +20,8 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class AspectGogglesHelmet extends ArmorItem implements Goggles {
-    public AspectGogglesHelmet(final String name, IArmorMaterial materialIn, EquipmentSlotType slot, Properties builder) {
+public class ResearchGogglesHelmet extends ArmorItem implements Goggles {
+    public ResearchGogglesHelmet(final String name, IArmorMaterial materialIn, EquipmentSlotType slot, Properties builder) {
         super(materialIn, slot, builder);
 
         this.setRegistryName(name);
@@ -40,7 +40,7 @@ public class AspectGogglesHelmet extends ArmorItem implements Goggles {
     @Nullable
     @Override
     public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-        return Constants.MOD_ID + ":textures/item/aspect_goggles_layer_1.png";
+        return Constants.MOD_ID + ":textures/item/research_goggles_model.png";
     }
 
     @Override
@@ -52,7 +52,7 @@ public class AspectGogglesHelmet extends ArmorItem implements Goggles {
     @OnlyIn(Dist.CLIENT)
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        tooltip.add(new StringTextComponent(TextFormatting.RED + "For learning more about the world"));
+        tooltip.add(new StringTextComponent(TextFormatting.RED + "For learning more about the world around you."));
     }
 
     @Override
