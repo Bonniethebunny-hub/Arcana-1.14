@@ -14,7 +14,7 @@ import java.util.function.Supplier;
 
 
 public enum ArmourMaterial implements IArmorMaterial {
-    aspect_goggles_helm ("aspect_goggles", 5, new int[]{1, 2, 3, 1}, 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, () -> {
+    research_goggles_helm ("research_goggles", 5, new int[]{1, 2, 3, 1}, 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F, () -> {
         return Ingredient.fromItems(Items.LEATHER);
     });
 

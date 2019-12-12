@@ -21,8 +21,8 @@ public class ModArmour {
     @SuppressWarnings("unused")
     public static void onItemsRegistry(final RegistryEvent.Register<Item> event) {
         Item.Properties properties = new Item.Properties();
-        event.getRegistry().register(new ResearchGogglesHelmet("aspect_goggles", ArmourMaterial.aspect_goggles_helm, EquipmentSlotType.HEAD, (new Item.Properties()).group(ArcanaItemGroup.instance)));
-        event.getRegistry().register(new GogglesOfRevealing("goggles_of_revealing", ArmourMaterial.aspect_goggles_helm, EquipmentSlotType.HEAD, (new Item.Properties()).group(ArcanaItemGroup.instance)));
+        event.getRegistry().register(new ResearchGogglesHelmet("research_goggles", ArmourMaterial.research_goggles_helm, EquipmentSlotType.HEAD, (new Item.Properties()).group(ArcanaItemGroup.instance)));
+        event.getRegistry().register(new GogglesOfRevealing("goggles_of_revealing", ArmourMaterial.research_goggles_helm, EquipmentSlotType.HEAD, (new Item.Properties()).group(ArcanaItemGroup.instance)));
         System.out.println("Armour Registered!");
     }
 }
