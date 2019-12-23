@@ -9,7 +9,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.BlockRenderLayer;
+//import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
@@ -34,9 +34,7 @@ public class TaintedGoo extends TaintedBlock {
         return VoxelShapes.fullCube();
     }
 
-    public BlockRenderLayer getRenderLayer() {
-        return BlockRenderLayer.TRANSLUCENT;
-    }
+   // public BlockRenderLayer getRenderLayer() {return BlockRenderLayer.TRANSLUCENT;}
 
     @SuppressWarnings("deprecation")
     @OnlyIn(Dist.CLIENT)

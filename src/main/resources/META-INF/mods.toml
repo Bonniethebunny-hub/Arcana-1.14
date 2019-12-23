@@ -18,9 +18,9 @@ version="BETA-0.0.1" #mandatory
  # A display name for the mod
 displayName="Arcana" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification <here>
-updateJSONURL="http://myurl.me/" #optional
+updateJSONURL="" #optional
 # A URL for the "homepage" for this mod, displayed in the mod UI
-displayURL="https://arcana.com/" #optional
+displayURL="https://arcanamod.net/" #optional
 # A file name (in the root of the mod JAR) containing a logo for display
 logoFile="arcana.png" #optional
 # A text field displayed in the mod UI
@@ -48,6 +48,6 @@ Arcana is a magic mod for Minecraft inspired by Thaumcraft and Azanor13.
 [[dependencies.arcana]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.14.4]"
+    versionRange="[1.15.1]"
     ordering="NONE"
     side="BOTH"

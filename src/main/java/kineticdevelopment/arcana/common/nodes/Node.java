@@ -11,7 +11,7 @@ import net.minecraft.inventory.container.INamedContainerProvider;
 import net.minecraft.stats.Stat;
 import net.minecraft.stats.Stats;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.BlockRenderLayer;
+//import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
@@ -36,10 +36,8 @@ public abstract class Node extends ContainerBlock {
     @Override
     public BlockRenderType getRenderType(BlockState p_149645_1_) { return BlockRenderType.INVISIBLE; }
 
-    @Override
-    public BlockRenderLayer getRenderLayer() {
-        return BlockRenderLayer.TRANSLUCENT;
-    }
+ //   @Override
+  //  public BlockRenderLayer getRenderLayer() {return BlockRenderLayer.TRANSLUCENT;}
 
     @Override
     public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
